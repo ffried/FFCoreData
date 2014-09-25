@@ -6,8 +6,7 @@
 //  Copyright (c) 2014 Florian Friedrich. All rights reserved.
 //
 
-//#if FFCDTARGET_PHONE
-#import <FFCoreData/FFCoreData.h>
+#import <FFCoreData/FFCDFetchedResultsControllerDelegate.h>
 @import UIKit.UITableView;
 
 /**
@@ -48,4 +47,3 @@
                                        tableView:(UITableView *)tableView NS_DESIGNATED_INITIALIZER;
 
 @end
-//#endif

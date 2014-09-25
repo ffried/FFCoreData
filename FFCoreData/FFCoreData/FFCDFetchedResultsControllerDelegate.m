@@ -8,6 +8,7 @@
 
 #import "FFCDFetchedResultsControllerDelegate.h"
 #import "FFCDFetchedResultsControllerDelegate+Internal.h"
+#import "FFCoreData.h"
 
 @implementation FFCDFetchedResultsControllerDelegate
 

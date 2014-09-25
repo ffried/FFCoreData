@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 Florian Friedrich. All rights reserved.
 //
 
-#if FFCDTARGET_PHONE
 #import "FFCDCollectionViewFetchedResultsControllerDelegate.h"
 #import "FFCDFetchedResultsControllerDelegate+Internal.h"
 
@@ -88,6 +87,4 @@
     [self.collectionView moveItemAtIndexPath:fromIndexPath toIndexPath:toIndexPath];
 }
 
-
 @end
-#endif

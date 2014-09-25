@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Florian Friedrich. All rights reserved.
 
 #import "NSManagedObject+FFCDFindAndOrCreate.h"
+#import "FFCoreData.h"
 
 @implementation NSManagedObject (FFCDFindAndOrCreate)
 
