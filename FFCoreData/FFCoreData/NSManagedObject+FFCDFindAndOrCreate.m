@@ -17,7 +17,7 @@
 
 #import "NSManagedObject+FFCDFindAndOrCreate.h"
 
-@implementation NSManagedObject (FFFindAndOrCreate)
+@implementation NSManagedObject (FFCDFindAndOrCreate)
 
 #pragma mark - Just create
 + (instancetype)createObjectInManagedObjectContext:(NSManagedObjectContext *)context {

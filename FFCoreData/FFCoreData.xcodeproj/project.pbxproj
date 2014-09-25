@@ -159,13 +159,13 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07876A4719D4311500F21E7D /* FFCDCollectionViewFetchedResultsControllerDelegate.h in Headers */,
-				07876A4419D42AA100F21E7D /* FFCoreDataDefines.h in Headers */,
 				07876A1C19D41E7000F21E7D /* FFCoreData.h in Headers */,
-				07876A3A19D4247100F21E7D /* FFCDFetchedResultsControllerDelegate+Internal.h in Headers */,
+				07876A4419D42AA100F21E7D /* FFCoreDataDefines.h in Headers */,
 				07876A3519D41F7C00F21E7D /* FFCDFetchedResultsControllerDelegate.h in Headers */,
-				07876A4E19D4344C00F21E7D /* NSManagedObject+FFCDFindAndOrCreate.h in Headers */,
+				07876A4719D4311500F21E7D /* FFCDCollectionViewFetchedResultsControllerDelegate.h in Headers */,
 				07876A4019D426D800F21E7D /* FFCDTableViewFetchedResultsControllerDelegate.h in Headers */,
+				07876A3A19D4247100F21E7D /* FFCDFetchedResultsControllerDelegate+Internal.h in Headers */,
+				07876A4E19D4344C00F21E7D /* NSManagedObject+FFCDFindAndOrCreate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,11 +213,13 @@
 		07876A0D19D41E7000F21E7D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = FF;
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Florian Friedrich";
 				TargetAttributes = {
 					07876A1519D41E7000F21E7D = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = 8AVR59FNSV;
 					};
 					07876A2019D41E7000F21E7D = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -323,7 +325,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -362,7 +364,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -375,6 +377,7 @@
 		07876A2A19D41E7000F21E7D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -391,6 +394,7 @@
 		07876A2B19D41E7000F21E7D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;

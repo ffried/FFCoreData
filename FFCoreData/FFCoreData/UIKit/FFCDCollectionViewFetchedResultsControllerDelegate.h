@@ -6,7 +6,8 @@
 //  Copyright (c) 2014 Florian Friedrich. All rights reserved.
 //
 
-#import <FFCoreData/CoreData.h>
+#if FFCDTARGET_PHONE
+#import <FFCoreData/FFCDFetchedResultsControllerDelegate.h>
 @import UIKit.UICollectionView;
 
 /**
@@ -42,3 +43,4 @@
                                   collectionView:(UICollectionView *)collectionView NS_DESIGNATED_INITIALIZER;
 
 @end
+#endif

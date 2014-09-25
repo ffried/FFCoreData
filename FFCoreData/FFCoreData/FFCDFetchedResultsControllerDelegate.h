@@ -44,3 +44,4 @@
                                         delegate:(id<FFCDFetchedResultsControllerDelegate>)delegate NS_DESIGNATED_INITIALIZER;
 
 @end
+#endif

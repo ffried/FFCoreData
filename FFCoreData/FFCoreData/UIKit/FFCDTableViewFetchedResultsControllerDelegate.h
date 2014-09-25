@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Florian Friedrich. All rights reserved.
 //
 
+#if FFCDTARGET_PHONE
 #import <FFCoreData/FFCDFetchedResultsControllerDelegate.h>
 @import UIKit.UITableView;
 
