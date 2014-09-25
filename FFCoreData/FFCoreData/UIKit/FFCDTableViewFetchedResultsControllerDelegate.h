@@ -48,3 +48,4 @@
                                        tableView:(UITableView *)tableView NS_DESIGNATED_INITIALIZER;
 
 @end
+#endif

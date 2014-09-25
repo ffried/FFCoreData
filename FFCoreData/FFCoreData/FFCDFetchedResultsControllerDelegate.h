@@ -1,5 +1,6 @@
 //
 //  FFCDFetchedResultsControllerDelegate.h
+//  FFCoreData
 //
 //  Created by Florian Friedrich on 14.12.13.
 //  Copyright (c) 2013 Florian Friedrich. All rights reserved.
