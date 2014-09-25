@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>2DE6AEBD-8433-4E4D-BCAD-43FCC15DA129</string>
+	<key>IDESourceControlProjectName</key>
+	<string>FFCoreData</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>8C1E4D9F05C92AE2BD65271F4A0B520DB9DCA9E4</key>
+		<string>github.com:ffried/FFCoreData.git</string>
+		<key>BD823090FD19316296016232567AD1DCE6A0CF51</key>
+		<string>https://bitbucket.org/friesoft/jungschi-bambus.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>FFCoreData/FFCoreData.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>8C1E4D9F05C92AE2BD65271F4A0B520DB9DCA9E4</key>
+		<string>../../..</string>
+		<key>BD823090FD19316296016232567AD1DCE6A0CF51</key>
+		<string>../../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:ffried/FFCoreData.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>8C1E4D9F05C92AE2BD65271F4A0B520DB9DCA9E4</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BD823090FD19316296016232567AD1DCE6A0CF51</string>
+			<key>IDESourceControlWCCName</key>
+			<string>..</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>8C1E4D9F05C92AE2BD65271F4A0B520DB9DCA9E4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>FFCoreData</string>
+		</dict>
+	</array>
+</dict>
+</plist>
