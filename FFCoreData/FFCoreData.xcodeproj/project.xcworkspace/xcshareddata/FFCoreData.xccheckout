@@ -22,7 +22,7 @@
 		<key>8C1E4D9F05C92AE2BD65271F4A0B520DB9DCA9E4</key>
 		<string>../../..</string>
 		<key>BD823090FD19316296016232567AD1DCE6A0CF51</key>
-		<string>../../../../../..</string>
+		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>github.com:ffried/FFCoreData.git</string>
@@ -38,7 +38,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>BD823090FD19316296016232567AD1DCE6A0CF51</string>
 			<key>IDESourceControlWCCName</key>
-			<string>..</string>
+			<string></string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>

@@ -7,7 +7,7 @@
 //
 
 //#if FFCDTARGET_PHONE
-#import <FFCoreData/FFCDFetchedResultsControllerDelegate.h>
+#import <FFCoreData/FFCoreData.h>
 @import UIKit.UICollectionView;
 
 /**
