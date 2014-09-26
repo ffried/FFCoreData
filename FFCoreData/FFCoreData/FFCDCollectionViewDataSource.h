@@ -63,6 +63,6 @@ forItemAtIndexPath:(NSIndexPath *)indexPath
  */
 - (instancetype)initWithFetchedResultsController:(NSFetchedResultsController *)fetchedResultsController
                                         delegate:(id<FFCDCollectionViewDataSourceDelegate>)delegate
-                                  collectionView:(UICollectionView *)collectionView;
+                                  collectionView:(UICollectionView *)collectionView NS_DESIGNATED_INITIALIZER;
 
 @end

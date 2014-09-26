@@ -73,6 +73,6 @@
  */
 - (instancetype)initWithFetchedResultsController:(NSFetchedResultsController *)fetchedResultsController
                                         delegate:(id<FFCDTableViewDataSourceDelegate>)delegate
-                                       tableView:(UITableView *)tableView;
+                                       tableView:(UITableView *)tableView NS_DESIGNATED_INITIALIZER;
 
 @end
