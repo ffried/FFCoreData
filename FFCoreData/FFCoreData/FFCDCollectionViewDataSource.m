@@ -44,6 +44,13 @@ cellIdentifierForItemAtIndexPath:(NSIndexPath *)indexPath {
     return [self.delegate collectionView:collectionView cellIdentifierForItemAtIndexPath:indexPath];
 }
 
+- (BOOL)respondsToSelector:(SEL)aSelector {
+    if (aSelector == @selector(collectionView:viewForSupplementaryElementOfKind:atIndexPath:)) {
+        return [self.delegate respondsToSelector:aSelector];
+    }
+    return [super respondsToSelector:aSelector];
+}
+
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     NSInteger sections = self.fetchedResultsController.sections.count;
@@ -70,6 +77,17 @@ cellIdentifierForItemAtIndexPath:(NSIndexPath *)indexPath {
                forItemAtIndexPath:indexPath
                        withObject:object];
     return cell;
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView
+           viewForSupplementaryElementOfKind:(NSString *)kind
+                                 atIndexPath:(NSIndexPath *)indexPath {
+    if ([self.delegate respondsToSelector:_cmd]) {
+        return [self.delegate collectionView:collectionView
+    viewForSupplementaryElementOfKind:kind
+                          atIndexPath:indexPath];
+    }
+    return nil;
 }
 
 @end
