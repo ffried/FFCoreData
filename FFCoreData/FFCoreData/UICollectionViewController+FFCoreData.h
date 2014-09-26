@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Florian Friedrich. All rights reserved.
 //
 
-@import Foundation;
-@import UIKit;
-@import CoreData;
+@import UIKit.UICollectionViewController;
+@class NSManagedObjectContext;
+@class NSFetchedResultsController;
 @class FFCDCollectionViewFetchedResultsControllerDelegate;
 @class FFCDCollectionViewDataSource;
 @protocol FFCDFetchedResultsControllerDelegate;

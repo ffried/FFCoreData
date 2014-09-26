@@ -7,8 +7,8 @@
 //
 
 @import Foundation;
-@import CoreData.NSFetchedResultsController;
 @import UIKit.UITableView;
+@class NSFetchedResultsController;
 
 /**
  *  The delegate protocol for FFTableViewDataSource.

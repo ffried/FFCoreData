@@ -7,7 +7,7 @@
 //
 
 @import Foundation;
-@import CoreData;
+@import CoreData.NSFetchedResultsController;
 
 /**
  *  The delegate protocol of FFNSFetchedResultsControllerDelegate.
@@ -19,7 +19,7 @@
 /**
  *  Handles the delegate of a NSFetchedResultsController but allows to override the methods to do work on yourself.
  */
-@interface FFCDFetchedResultsControllerDelegate : NSObject
+@interface FFCDFetchedResultsControllerDelegate : NSObject <NSFetchedResultsControllerDelegate>
 
 /**
  *  The NSFetchedResultsController to handle the delegate for.

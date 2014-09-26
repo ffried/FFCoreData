@@ -7,8 +7,8 @@
 //
 
 @import Foundation;
-@import CoreData.NSFetchedResultsController;
 @import UIKit.UICollectionView;
+@class NSFetchedResultsController;
 
 @protocol FFCDCollectionViewDataSourceDelegate <NSObject>
 

@@ -7,9 +7,8 @@
 //
 
 #import "FFCDFetchedResultsControllerDelegate.h"
-#import "FFCoreData.h"
 
-@interface FFCDFetchedResultsControllerDelegate (Internal) <NSFetchedResultsControllerDelegate>
+@interface FFCDFetchedResultsControllerDelegate (Internal)
 
 - (void)beginUpdates;
 

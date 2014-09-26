@@ -7,9 +7,7 @@
 //
 
 #import "UITableViewController+FFCoreData.h"
-#import <FFCoreData/FFCoreDataDefines.h>
-#import <FFCoreData/FFCDTableViewFetchedResultsControllerDelegate.h>
-#import <FFCoreData/FFCDTableViewDataSource.h>
+#import "FFCoreData.h"
 #import <objc/runtime.h>
 
 @implementation UITableViewController (FFCoreData)

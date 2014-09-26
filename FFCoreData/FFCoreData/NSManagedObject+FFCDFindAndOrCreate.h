@@ -7,7 +7,8 @@
 //
 
 @import Foundation;
-@import CoreData;
+@import CoreData.NSManagedObject;
+@class NSManagedObjectContext;
 
 // Defines
 #ifndef kNSManagedObjectFFCDFindOrCreateCrashOnError

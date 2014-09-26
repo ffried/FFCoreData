@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Florian Friedrich. All rights reserved.
 //
 
-@import Foundation;
-@import UIKit;
-@import CoreData;
+@import UIKit.UITableViewController;
+@class NSManagedObjectContext;
+@class NSFetchedResultsController;
 @class FFCDTableViewFetchedResultsControllerDelegate;
 @class FFCDTableViewDataSource;
 @protocol FFCDFetchedResultsControllerDelegate;

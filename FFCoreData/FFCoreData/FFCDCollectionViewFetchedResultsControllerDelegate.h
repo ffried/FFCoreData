@@ -7,7 +7,7 @@
 //
 
 #import <FFCoreData/FFCDFetchedResultsControllerDelegate.h>
-@import UIKit.UICollectionView;
+@class UICollectionView;
 
 /**
  *  Manages a NSFetchedResultsController for a UICollectionView.

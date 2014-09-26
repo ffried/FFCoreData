@@ -9,6 +9,7 @@
 //#if FFCDTARGET_PHONE
 #import "FFCDTableViewFetchedResultsControllerDelegate.h"
 #import "FFCDFetchedResultsControllerDelegate+Internal.h"
+#import "FFCoreData.h"
 
 @implementation FFCDTableViewFetchedResultsControllerDelegate
 

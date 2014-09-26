@@ -7,6 +7,7 @@
 //
 
 #import "FFCDTableViewDataSource.h"
+#import "FFCoreData.h"
 
 @interface FFCDTableViewDataSource ()
 - (NSString *)tableView:(UITableView *)tableView cellIdentifierForRowAtIndexPath:(NSIndexPath *)indexPath;

@@ -7,9 +7,7 @@
 //
 
 #import "UICollectionViewController+FFCoreData.h"
-#import <FFCoreData/FFCoreDataDefines.h>
-#import <FFCoreData/FFCDCollectionViewFetchedResultsControllerDelegate.h>
-#import <FFCoreData/FFCDCollectionViewDataSource.h>
+#import "FFCoreData.h"
 #import <objc/runtime.h>
 
 @implementation UICollectionViewController (FFCoreData)
