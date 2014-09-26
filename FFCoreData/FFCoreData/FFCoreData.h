@@ -16,11 +16,14 @@ FOUNDATION_EXPORT double FFCoreDataVersionNumber;
 FOUNDATION_EXPORT const unsigned char FFCoreDataVersionString[];
 
 #import <FFCoreData/FFCoreDataDefines.h>
+
 #import <FFCoreData/FFCDFetchedResultsControllerDelegate.h>
 #import <FFCoreData/NSManagedObject+FFCDFindAndOrCreate.h>
 
 #if FFCDTARGET_PHONE
     #import <FFCoreData/FFCDTableViewFetchedResultsControllerDelegate.h>
     #import <FFCoreData/FFCDCollectionViewFetchedResultsControllerDelegate.h>
-#endif
 
+    #import <FFCoreData/FFCDTableViewDataSource.h>
+    #import <FFCoreData/FFCDCollectionViewDataSource.h>
+#endif
