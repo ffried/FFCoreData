@@ -10,7 +10,7 @@
 #import <FFCoreData/FFCoreDataDefines.h>
 #import <FFCoreData/FFCDCollectionViewFetchedResultsControllerDelegate.h>
 #import <FFCoreData/FFCDCollectionViewDataSource.h>
-#import <objc/objc-runtime.h>
+#import <objc/runtime.h>
 
 @implementation UICollectionViewController (FFCoreData)
 
