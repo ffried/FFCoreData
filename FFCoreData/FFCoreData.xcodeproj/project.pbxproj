@@ -13,6 +13,11 @@
 		071D620C19D4BDFF00C1999D /* FFCDCollectionViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 071D620A19D4BDFF00C1999D /* FFCDCollectionViewDataSource.h */; };
 		071D620D19D4BDFF00C1999D /* FFCDCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 071D620B19D4BDFF00C1999D /* FFCDCollectionViewDataSource.m */; };
 		071D620E19D4BDFF00C1999D /* FFCDCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 071D620B19D4BDFF00C1999D /* FFCDCollectionViewDataSource.m */; };
+		074657F719D576060088A6F5 /* UITableViewController+FFCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = 074657F519D576060088A6F5 /* UITableViewController+FFCoreData.h */; };
+		074657F819D576060088A6F5 /* UITableViewController+FFCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 074657F619D576060088A6F5 /* UITableViewController+FFCoreData.m */; };
+		074657FA19D58EA70088A6F5 /* FFCoreDataDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = 074657F919D58EA70088A6F5 /* FFCoreDataDefines.m */; };
+		074657FD19D58F8A0088A6F5 /* UICollectionViewController+FFCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = 074657FB19D58F8A0088A6F5 /* UICollectionViewController+FFCoreData.h */; };
+		074657FE19D58F8A0088A6F5 /* UICollectionViewController+FFCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 074657FC19D58F8A0088A6F5 /* UICollectionViewController+FFCoreData.m */; };
 		0756A6C219D4669900F42CFD /* FFCDCollectionViewFetchedResultsControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0756A6BE19D4669900F42CFD /* FFCDCollectionViewFetchedResultsControllerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0756A6C319D4669900F42CFD /* FFCDCollectionViewFetchedResultsControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0756A6BF19D4669900F42CFD /* FFCDCollectionViewFetchedResultsControllerDelegate.m */; };
 		0756A6C419D4669900F42CFD /* FFCDCollectionViewFetchedResultsControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0756A6BF19D4669900F42CFD /* FFCDCollectionViewFetchedResultsControllerDelegate.m */; };
@@ -38,6 +43,11 @@
 		071D620619D4BB6E00C1999D /* FFCDTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFCDTableViewDataSource.m; sourceTree = "<group>"; };
 		071D620A19D4BDFF00C1999D /* FFCDCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFCDCollectionViewDataSource.h; sourceTree = "<group>"; };
 		071D620B19D4BDFF00C1999D /* FFCDCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFCDCollectionViewDataSource.m; sourceTree = "<group>"; };
+		074657F519D576060088A6F5 /* UITableViewController+FFCoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewController+FFCoreData.h"; sourceTree = "<group>"; };
+		074657F619D576060088A6F5 /* UITableViewController+FFCoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewController+FFCoreData.m"; sourceTree = "<group>"; };
+		074657F919D58EA70088A6F5 /* FFCoreDataDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFCoreDataDefines.m; sourceTree = "<group>"; };
+		074657FB19D58F8A0088A6F5 /* UICollectionViewController+FFCoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionViewController+FFCoreData.h"; sourceTree = "<group>"; };
+		074657FC19D58F8A0088A6F5 /* UICollectionViewController+FFCoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionViewController+FFCoreData.m"; sourceTree = "<group>"; };
 		0756A6BE19D4669900F42CFD /* FFCDCollectionViewFetchedResultsControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFCDCollectionViewFetchedResultsControllerDelegate.h; sourceTree = "<group>"; };
 		0756A6BF19D4669900F42CFD /* FFCDCollectionViewFetchedResultsControllerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFCDCollectionViewFetchedResultsControllerDelegate.m; sourceTree = "<group>"; };
 		0756A6C019D4669900F42CFD /* FFCDTableViewFetchedResultsControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFCDTableViewFetchedResultsControllerDelegate.h; sourceTree = "<group>"; };
@@ -97,9 +107,21 @@
 			name = DataSources;
 			sourceTree = "<group>";
 		};
+		074657F419D575CB0088A6F5 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				074657F519D576060088A6F5 /* UITableViewController+FFCoreData.h */,
+				074657F619D576060088A6F5 /* UITableViewController+FFCoreData.m */,
+				074657FB19D58F8A0088A6F5 /* UICollectionViewController+FFCoreData.h */,
+				074657FC19D58F8A0088A6F5 /* UICollectionViewController+FFCoreData.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		0756A6C819D4669F00F42CFD /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				074657F419D575CB0088A6F5 /* Categories */,
 				071D620419D4BB4100C1999D /* DataSources */,
 				071D620319D4BB3800C1999D /* Delegates */,
 			);
@@ -131,6 +153,7 @@
 				07876A4A19D433CC00F21E7D /* NSFetchedResultsController */,
 				07876A4B19D4341600F21E7D /* NSManagedObject */,
 				07876A4319D42AA000F21E7D /* FFCoreDataDefines.h */,
+				074657F919D58EA70088A6F5 /* FFCoreDataDefines.m */,
 				07876A1B19D41E7000F21E7D /* FFCoreData.h */,
 				07876A1919D41E7000F21E7D /* Supporting Files */,
 			);
@@ -193,7 +216,9 @@
 				0756A6C219D4669900F42CFD /* FFCDCollectionViewFetchedResultsControllerDelegate.h in Headers */,
 				071D620C19D4BDFF00C1999D /* FFCDCollectionViewDataSource.h in Headers */,
 				0756A6CB19D466D800F42CFD /* NSManagedObject+FFCDFindAndOrCreate.h in Headers */,
+				074657FD19D58F8A0088A6F5 /* UICollectionViewController+FFCoreData.h in Headers */,
 				0756A6C519D4669900F42CFD /* FFCDTableViewFetchedResultsControllerDelegate.h in Headers */,
+				074657F719D576060088A6F5 /* UITableViewController+FFCoreData.h in Headers */,
 				07876A1C19D41E7000F21E7D /* FFCoreData.h in Headers */,
 				07876A4419D42AA100F21E7D /* FFCoreDataDefines.h in Headers */,
 				07876A3519D41F7C00F21E7D /* FFCDFetchedResultsControllerDelegate.h in Headers */,
@@ -299,9 +324,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				071D620D19D4BDFF00C1999D /* FFCDCollectionViewDataSource.m in Sources */,
+				074657FE19D58F8A0088A6F5 /* UICollectionViewController+FFCoreData.m in Sources */,
 				0756A6C319D4669900F42CFD /* FFCDCollectionViewFetchedResultsControllerDelegate.m in Sources */,
+				074657FA19D58EA70088A6F5 /* FFCoreDataDefines.m in Sources */,
 				07876A3619D41F7C00F21E7D /* FFCDFetchedResultsControllerDelegate.m in Sources */,
 				0756A6C619D4669900F42CFD /* FFCDTableViewFetchedResultsControllerDelegate.m in Sources */,
+				074657F819D576060088A6F5 /* UITableViewController+FFCoreData.m in Sources */,
 				071D620819D4BB6E00C1999D /* FFCDTableViewDataSource.m in Sources */,
 				0756A6CC19D466D800F42CFD /* NSManagedObject+FFCDFindAndOrCreate.m in Sources */,
 				07876A3B19D4247100F21E7D /* FFCDFetchedResultsControllerDelegate+Internal.m in Sources */,
