@@ -7,7 +7,6 @@
 //
 
 #import "FFCoreDataDefines.h"
-@import Foundation;
 
 const void *FFCDPropertyKeyFromSelector(SEL selector) {
     static NSString *const FFCDSetterPrefix = @"set";

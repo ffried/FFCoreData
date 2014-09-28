@@ -8,6 +8,7 @@
 
 #ifndef FFCoreData_FFCoreDataDefines_h
 #define FFCoreData_FFCoreDataDefines_h
+@import Foundation;
 
 #ifdef __IPHONE_OS_VERSION_MIN_REQUIRED
 #define FFCDTARGET_PHONE 1

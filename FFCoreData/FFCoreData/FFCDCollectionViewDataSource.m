@@ -7,7 +7,8 @@
 //
 
 #import "FFCDCollectionViewDataSource.h"
-#import "FFCoreData_Internal.h"
+#import "FFCoreData.h"
+#import "FFCoreDataDefines.h"
 
 @interface FFCDCollectionViewDataSource ()
 - (NSString *)collectionView:(UICollectionView *)collectionView cellIdentifierForItemAtIndexPath:(NSIndexPath *)indexPath;

@@ -8,7 +8,8 @@
 
 #import "FFCDTableViewFetchedResultsControllerDelegate.h"
 #import "FFCDFetchedResultsControllerDelegate+Internal.h"
-#import "FFCoreData_Internal.h"
+#import "FFCoreData.h"
+#import "FFCoreDataDefines.h"
 
 @implementation FFCDTableViewFetchedResultsControllerDelegate
 
