@@ -6,10 +6,9 @@
 //  Copyright (c) 2014 Florian Friedrich. All rights reserved.
 //
 
-//#if FFCDTARGET_PHONE
 #import "FFCDTableViewFetchedResultsControllerDelegate.h"
 #import "FFCDFetchedResultsControllerDelegate+Internal.h"
-#import "FFCoreData.h"
+#import "FFCoreData_Internal.h"
 
 @implementation FFCDTableViewFetchedResultsControllerDelegate
 
@@ -101,4 +100,3 @@
 }
 
 @end
-//#endif

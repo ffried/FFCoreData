@@ -21,5 +21,5 @@ const void *FFCDPropertyKeyFromSelector(SEL selector) {
         NSString *restOfKey = [key substringFromIndex:1];
         key = [[firstLetter lowercaseString] stringByAppendingString:restOfKey];
     }
-    return (__bridge const void *)(key);
+    return NSSelectorFromString(key);
 }

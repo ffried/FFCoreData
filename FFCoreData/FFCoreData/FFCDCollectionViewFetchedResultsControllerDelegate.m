@@ -8,7 +8,7 @@
 
 #import "FFCDCollectionViewFetchedResultsControllerDelegate.h"
 #import "FFCDFetchedResultsControllerDelegate+Internal.h"
-#import "FFCoreData.h"
+#import "FFCoreData_Internal.h"
 
 @implementation FFCDCollectionViewFetchedResultsControllerDelegate
 

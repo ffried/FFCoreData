@@ -15,12 +15,18 @@ FOUNDATION_EXPORT double FFCoreDataVersionNumber;
 //! Project version string for FFCoreData.
 FOUNDATION_EXPORT const unsigned char FFCoreDataVersionString[];
 
-#import <FFCoreData/FFCoreDataDefines.h>
+#ifndef NS_DESIGNATED_INITIALIZER
+    #if __has_attribute(objc_designated_initializer)
+        #define NS_DESIGNATED_INITIALIZER __attribute((objc_designated_initializer))
+    #else
+        #define NS_DESIGNATED_INITIALIZER
+    #endif
+#endif
 
 #import <FFCoreData/FFCDFetchedResultsControllerDelegate.h>
 #import <FFCoreData/NSManagedObject+FFCDFindAndOrCreate.h>
 
-#if FFCDTARGET_PHONE
+#if __IPHONE_OS_VERSION_MIN_REQUIRED
     #import <FFCoreData/FFCDTableViewFetchedResultsControllerDelegate.h>
     #import <FFCoreData/FFCDCollectionViewFetchedResultsControllerDelegate.h>
 
