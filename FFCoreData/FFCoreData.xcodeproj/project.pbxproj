@@ -32,10 +32,10 @@
 		07876A3519D41F7C00F21E7D /* FFCDFetchedResultsControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 07876A3319D41F7C00F21E7D /* FFCDFetchedResultsControllerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07876A3619D41F7C00F21E7D /* FFCDFetchedResultsControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07876A3419D41F7C00F21E7D /* FFCDFetchedResultsControllerDelegate.m */; };
 		07876A3719D41F7C00F21E7D /* FFCDFetchedResultsControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07876A3419D41F7C00F21E7D /* FFCDFetchedResultsControllerDelegate.m */; };
-		07876A3A19D4247100F21E7D /* FFCDFetchedResultsControllerDelegate+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 07876A3819D4247100F21E7D /* FFCDFetchedResultsControllerDelegate+Internal.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		07876A3A19D4247100F21E7D /* FFCDFetchedResultsControllerDelegate+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 07876A3819D4247100F21E7D /* FFCDFetchedResultsControllerDelegate+Internal.h */; };
 		07876A3B19D4247100F21E7D /* FFCDFetchedResultsControllerDelegate+Internal.m in Sources */ = {isa = PBXBuildFile; fileRef = 07876A3919D4247100F21E7D /* FFCDFetchedResultsControllerDelegate+Internal.m */; };
 		07876A3C19D4247100F21E7D /* FFCDFetchedResultsControllerDelegate+Internal.m in Sources */ = {isa = PBXBuildFile; fileRef = 07876A3919D4247100F21E7D /* FFCDFetchedResultsControllerDelegate+Internal.m */; };
-		07876A4419D42AA100F21E7D /* FFCoreDataDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 07876A4319D42AA000F21E7D /* FFCoreDataDefines.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		07876A4419D42AA100F21E7D /* FFCoreDataDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 07876A4319D42AA000F21E7D /* FFCoreDataDefines.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
