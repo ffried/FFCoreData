@@ -271,7 +271,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = FF;
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Florian Friedrich";
 				TargetAttributes = {
 					07876A1519D41E7000F21E7D = {
