@@ -89,12 +89,14 @@
                                                     argumentArray:argumentArray.copy];
     }
     
-    __autoreleasing NSError *localError = nil;
-    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&localError];
-    if (!fetchedObjects && localError) {
-        if (error != nil) error = &localError;
-        
-        FFLog(@"Error while executing findOrCreate fetch request: %@", localError);
+    NSError *__autoreleasing *errorPtr = error;
+    if (errorPtr == NULL) {
+        __autoreleasing NSError *localError = nil;
+        errorPtr = &localError;
+    }
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:errorPtr];
+    if (fetchedObjects == nil && *errorPtr != nil) {
+        FFLog(@"Error while executing findOrCreate fetch request: %@", *errorPtr);
 #if kNSManagedObjectFFCDFindOrCreateCrashOnError
         abort();
 #endif
