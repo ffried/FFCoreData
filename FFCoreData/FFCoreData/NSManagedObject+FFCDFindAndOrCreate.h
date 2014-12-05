@@ -7,8 +7,7 @@
 //
 
 @import Foundation;
-@import CoreData.NSManagedObject;
-@class NSManagedObjectContext;
+@import CoreData;
 
 // Defines
 #ifndef kNSManagedObjectFFCDFindOrCreateCrashOnError
@@ -17,10 +16,6 @@
 #else
     #define kNSManagedObjectFFCDFindOrCreateCrashOnError NO
 #endif
-#endif
-
-#ifndef kNSManagedObjectFFCDFindOrCreateDefaultCombineAction
-    #define kNSManagedObjectFFCDFindOrCreateDefaultCombineAction @"AND"
 #endif
 
 /**
@@ -46,7 +41,32 @@
                     inManagedObjectContext:(NSManagedObjectContext *)context;
 
 #pragma mark - Just find
-// Single values
+#pragma mark All objects
+/**
+ *  Finds all objects in a given context and the class name as entity name.
+ *  @param context The context in which to search.
+ *  @return An array containing all objects (may be empty) or nil if an error occurred.
+ */
++ (NSArray *)allObjectsInContext:(NSManagedObjectContext *)context;
+/**
+ *  Finds all objects of a given entity in a given context.
+ *  @param entity  The entity of which to fetch all objects.
+ *  @param context The context in which to search.
+ *  @return An array containing all objects (may be empty) or nil if an error occurred.
+ */
++ (NSArray *)allObjectsWithEntity:(NSString *)entity inContext:(NSManagedObjectContext *)context;
+/**
+ *  Finds all objects of a given entity in a given context.
+ *  @param entity  The entity of which to fetch all objects.
+ *  @param context The context in which to search.
+ *  @param error   A pointer to a NSError in which to store any error.
+ *  @return An array containing all objects (may be empty) or nil if an error occurred.
+ */
++ (NSArray *)allObjectsWithEntity:(NSString *)entity
+                        inContext:(NSManagedObjectContext *)context
+                        withError:(NSError *__autoreleasing *)error;
+
+#pragma mark Single values
 /**
  *  Find objects by a key and an objectValue in a given context and the class name as entity.
  *  @param key         The key to which to match the objectvalue.
@@ -84,7 +104,7 @@
                 inManagedObjectContext:(NSManagedObjectContext *)context
                              withError:(NSError *__autoreleasing *)error;
 
-// Multiple values
+#pragma mark Multiple values
 /**
  *  Find objects by a key/objectValue dictionary in a given context and the class name as entity name.
  *  @param keyObjectDictionary The dictionary containing keys and objects to match.
@@ -116,8 +136,40 @@
                 inManagedObjectContext:(NSManagedObjectContext *)context
                              withError:(NSError *__autoreleasing *)error;
 
+#pragma mark Predicates
+/**
+ *  Finds objects using a predicate in a given context and the class name as entity name.
+ *  @param predicate The predicate to use for the fetch request.
+ *  @param context   The context in which to search.
+ *  @return An array of found objects (may be empty) or nil if an error occurred.
+ */
++ (NSArray *)findObjectsByUsingPredicate:(NSPredicate *)predicate
+                               inContext:(NSManagedObjectContext *)context;
+/**
+ *  Finds objects of a given entity using a predicate in a given context.
+ *  @param entityName The entity of which to search objects.
+ *  @param predicate  The predicate to use for the fetch request.
+ *  @param context    The context in which to search.
+ *  @return An array of found objects (may be empty) or nil if an error occurred.
+ */
++ (NSArray *)findObjectsWithEntityName:(NSString *)entityName
+                      byUsingPredicate:(NSPredicate *)predicate
+                             inContext:(NSManagedObjectContext *)context;
+/**
+ *  Finds objects of a given entity using a predicate in a given context.
+ *  @param entityName The entity of which to search objects.
+ *  @param predicate  The predicate to use for the fetch request.
+ *  @param context    The context in which to search.
+ *  @param error      A pointer to a NSError in which to store any error.
+ *  @return An array of found objects (may be empty) or nil if an error occurred.
+ */
++ (NSArray *)findObjectsWithEntityName:(NSString *)entityName
+                      byUsingPredicate:(NSPredicate *)predicate
+                             inContext:(NSManagedObjectContext *)context
+                             withError:(NSError *__autoreleasing *)error;
+
 #pragma mark - Find or Create
-// Singleton objects
+#pragma mark Singleton objects
 /**
  *  Finds or creates an object in a given managed object context and the class name as entity.
  *  @param context The context in which to search/create the object
@@ -144,7 +196,7 @@
                                        withError:(NSError *__autoreleasing *)error;
 
 
-// Single values
+#pragma mark Single values
 /**
  *  Finds or creates an object with a given objectvalue for a given key in a given managed object context and the class as entity name.
  *  @param key         The key of the objectvalue to match.
@@ -182,7 +234,7 @@
                           inManagedObjectContext:(NSManagedObjectContext *)context
                                        withError:(NSError *__autoreleasing *)error;
 
-// Multiple values
+#pragma mark Multiple values
 /**
  *  Finds or creates an object with given keys/objectvalues in a given managed object context with the class as entity.
  *  @param keyObjectDictionary The keys/objectvalues of the object to search/create.

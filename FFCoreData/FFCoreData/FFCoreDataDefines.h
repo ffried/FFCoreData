@@ -26,7 +26,7 @@
 #endif
 #endif
 
-#define FFCDPropertyKey() FFCDPropertyKeyFromSelector(_cmd)
 extern const void *FFCDPropertyKeyFromSelector(SEL selector);
+#define FFCDPropertyKey() FFCDPropertyKeyFromSelector(_cmd)
 
 #endif

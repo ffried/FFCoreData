@@ -24,11 +24,27 @@
 }
 
 #pragma mark - Just find
+#pragma mark All objects
++ (NSArray *)allObjectsInContext:(NSManagedObjectContext *)context {
+    return [self allObjectsWithEntity:NSStringFromClass(self) inContext:context];
+}
+
++ (NSArray *)allObjectsWithEntity:(NSString *)entity inContext:(NSManagedObjectContext *)context {
+    return [self allObjectsWithEntity:entity inContext:context withError:nil];
+}
+
++ (NSArray *)allObjectsWithEntity:(NSString *)entity
+                        inContext:(NSManagedObjectContext *)context
+                        withError:(NSError *__autoreleasing *)error {
+    return [self findObjectsWithEntityName:entity byUsingPredicate:nil inContext:context withError:error];
+}
+
 #pragma mark Single values
 + (NSArray *)findObjectsByKey:(NSString *)key
                   objectValue:(NSObject *)objectValue
        inManagedObjectContext:(NSManagedObjectContext *)context {
-    return [self findObjectsByKeyObjectValue:@{key: objectValue} inManagedObjectContext:context];
+    return [self findObjectsByKeyObjectValue:@{key: objectValue}
+                      inManagedObjectContext:context];
 }
 
 + (NSArray *)findObjectsWithEntityName:(NSString *)entityName
@@ -52,7 +68,8 @@
 }
 
 #pragma mark Multiple values
-+ (NSArray *)findObjectsByKeyObjectValue:(NSDictionary *)keyObjectDictionary inManagedObjectContext:(NSManagedObjectContext *)context {
++ (NSArray *)findObjectsByKeyObjectValue:(NSDictionary *)keyObjectDictionary
+                  inManagedObjectContext:(NSManagedObjectContext *)context {
     return [self findObjectsWithEntityName:NSStringFromClass(self)
                      byKeyObjectDictionary:keyObjectDictionary
                     inManagedObjectContext:context];
@@ -71,26 +88,52 @@
                  byKeyObjectDictionary:(NSDictionary *)keyObjectDictionary
                 inManagedObjectContext:(NSManagedObjectContext *)context
                              withError:(NSError *__autoreleasing *)error {
-    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:entityName];
-    
+    NSPredicate *predicate = nil;
     if (keyObjectDictionary) {
-        NSMutableString *formatString = [[NSMutableString alloc] init];
-        NSMutableArray *argumentArray = [[NSMutableArray alloc] init];
+        NSMutableArray *subpredicates = [NSMutableArray array];
         
         [keyObjectDictionary enumerateKeysAndObjectsUsingBlock:^(NSString *key, id obj, BOOL *stop) {
-            if (formatString.length > 0) {
-                [formatString appendFormat:@" %@ ", kNSManagedObjectFFCDFindOrCreateDefaultCombineAction];
-            }
-            [formatString appendString:[NSString stringWithFormat:@"%@ == %@", key, @"%@"]];
-            [argumentArray addObject:obj];
+            NSPredicate *p = [NSPredicate predicateWithFormat:@"%K == %@", key, obj];
+            [subpredicates addObject:p];
         }];
         
-        fetchRequest.predicate = [NSPredicate predicateWithFormat:formatString.copy
-                                                    argumentArray:argumentArray.copy];
+        predicate = [[NSCompoundPredicate alloc] initWithType:NSAndPredicateType
+                                                subpredicates:[NSArray arrayWithArray:subpredicates]];
+    }
+    
+    return [self findObjectsWithEntityName:entityName
+                          byUsingPredicate:predicate
+                                 inContext:context
+                                 withError:error];;
+}
+
+#pragma mark Predicates
++ (NSArray *)findObjectsByUsingPredicate:(NSPredicate *)predicate inContext:(NSManagedObjectContext *)context {
+    return [self findObjectsWithEntityName:NSStringFromClass(self)
+                          byUsingPredicate:predicate
+                                 inContext:context];
+}
+
++ (NSArray *)findObjectsWithEntityName:(NSString *)entityName
+                      byUsingPredicate:(NSPredicate *)predicate
+                             inContext:(NSManagedObjectContext *)context {
+    return [self findObjectsWithEntityName:entityName
+                          byUsingPredicate:predicate
+                                 inContext:context
+                                 withError:nil];
+}
+
++ (NSArray *)findObjectsWithEntityName:(NSString *)entityName
+                      byUsingPredicate:(NSPredicate *)predicate
+                             inContext:(NSManagedObjectContext *)context
+                             withError:(NSError *__autoreleasing *)error {
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:entityName];
+    if (predicate) {
+        fetchRequest.predicate = predicate;
     }
     
     NSError *__autoreleasing *errorPtr = error;
-    if (errorPtr == NULL) {
+    if (errorPtr == nil) {
         __autoreleasing NSError *localError = nil;
         errorPtr = &localError;
     }
@@ -178,7 +221,8 @@
                                        withError:(NSError *__autoreleasing *)error {
     NSArray *fetchedObjects = [self findObjectsWithEntityName:entityName
                                         byKeyObjectDictionary:keyObjectDictionary
-                                       inManagedObjectContext:context withError:error];
+                                       inManagedObjectContext:context
+                                                    withError:error];
     
     NSManagedObject *managedObject;
     if (fetchedObjects && fetchedObjects.count > 0) {
