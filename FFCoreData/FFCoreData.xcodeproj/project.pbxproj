@@ -27,7 +27,7 @@
 		0756A6CB19D466D800F42CFD /* NSManagedObject+FFCDFindAndOrCreate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0756A6C919D466D800F42CFD /* NSManagedObject+FFCDFindAndOrCreate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0756A6CC19D466D800F42CFD /* NSManagedObject+FFCDFindAndOrCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0756A6CA19D466D800F42CFD /* NSManagedObject+FFCDFindAndOrCreate.m */; };
 		0756A6CD19D466D800F42CFD /* NSManagedObject+FFCDFindAndOrCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0756A6CA19D466D800F42CFD /* NSManagedObject+FFCDFindAndOrCreate.m */; };
-		07593A061A36E2DB00EDACD7 /* FFCDDataManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 07593A041A36E2DB00EDACD7 /* FFCDDataManager.h */; };
+		07593A061A36E2DB00EDACD7 /* FFCDDataManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 07593A041A36E2DB00EDACD7 /* FFCDDataManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07593A071A36E2DB00EDACD7 /* FFCDDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 07593A051A36E2DB00EDACD7 /* FFCDDataManager.m */; };
 		07593A081A36E2DB00EDACD7 /* FFCDDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 07593A051A36E2DB00EDACD7 /* FFCDDataManager.m */; };
 		07876A1C19D41E7000F21E7D /* FFCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = 07876A1B19D41E7000F21E7D /* FFCoreData.h */; settings = {ATTRIBUTES = (Public, ); }; };
