@@ -23,6 +23,7 @@ FOUNDATION_EXPORT const unsigned char FFCoreDataVersionString[];
     #endif
 #endif
 
+#import <FFCoreData/FFCDDataManager.h>
 #import <FFCoreData/FFCDFetchedResultsControllerDelegate.h>
 #import <FFCoreData/NSManagedObject+FFCDFindAndOrCreate.h>
 
