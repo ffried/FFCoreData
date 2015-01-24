@@ -62,5 +62,4 @@
     return objc_setAssociatedObject(self, FFCDPropertyKey(), dataSoure, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-
 @end

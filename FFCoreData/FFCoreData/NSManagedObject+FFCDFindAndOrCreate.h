@@ -12,9 +12,9 @@
 // Defines
 #ifndef kNSManagedObjectFFCDFindOrCreateCrashOnError
 #if DEBUG
-    #define kNSManagedObjectFFCDFindOrCreateCrashOnError YES
+    #define kNSManagedObjectFFCDFindOrCreateCrashOnError 1
 #else
-    #define kNSManagedObjectFFCDFindOrCreateCrashOnError NO
+    #define kNSManagedObjectFFCDFindOrCreateCrashOnError 0
 #endif
 #endif
 
