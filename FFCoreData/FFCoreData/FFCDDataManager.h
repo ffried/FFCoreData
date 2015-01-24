@@ -9,18 +9,12 @@
 @import Foundation;
 @import CoreData;
 
-/**
- *  Manages the core data stack of an app.
- */
-@interface FFCDDataManager : NSObject
-
-/**
- *  Returns the shared manager.
- *  @return The shared manager instance.
- */
-+ (instancetype)sharedManager;
-
-@end
+#ifndef FFCDManagerAllowsStoreDeletion
+#define FFCDManagerAllowsStoreDeletion DEBUG
+#endif
+#ifndef FFCDManagerCrashesOnFailure
+#define FFCDManagerCrashesOnFailure DEBUG
+#endif
 
 /**
  *  Returns the main context.
@@ -50,3 +44,10 @@ extern void FFCDSaveContext(NSManagedObjectContext *context);
  *  Saves the main context.
  */
 extern void FFCDSaveMainContext();
+
+#if FFCDManagerAllowsStoreDeletion
+/**
+ *  Deletes the data store!
+ */
+extern void FFCDClearDataStore();
+#endif

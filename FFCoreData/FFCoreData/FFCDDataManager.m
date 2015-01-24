@@ -14,14 +14,18 @@ static NSString *const FFCDDataManagerModelNameInfoDictionaryKey = @"FFCDDataMan
 static NSString *const FFCDDataManagerSQLiteNameInfoDictionaryKey = @"FFCDDataManagerSQLiteName";
 static NSString *const FFCDDataManagerTargetNameInfoDictionaryKey = @"CFBundleDisplayName";
 
-@interface FFCDDataManager ()
+@interface FFCDDataManager : NSObject
 @property (nonatomic, strong, readonly) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, strong, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (nonatomic, strong, readonly) NSManagedObjectContext *backgroundSavingContext;
 @property (nonatomic, strong, readonly) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong, readonly) NSURL *storeURL;
 @property (nonatomic, strong, readonly) NSString *targetName;
 @property (nonatomic, strong, readonly) NSString *modelName;
 @property (nonatomic, strong, readonly) NSString *sqliteName;
+
++ (instancetype)sharedManager;
+- (void)clearDataStore;
 @end
 
 @implementation FFCDDataManager
@@ -82,22 +86,19 @@ static NSString *const FFCDDataManagerTargetNameInfoDictionaryKey = @"CFBundleDi
 // If the coordinator doesn't already exist, it is created and the application's store added to it.
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
     if (!_persistentStoreCoordinator) {
-        NSString *pathComponent = [NSString stringWithFormat:@"%@.sqlite", self.sqliteName];
-        NSURL *storeURL = [[self applicationDataDirectory] URLByAppendingPathComponent:pathComponent];
-        
         __autoreleasing NSError *error = nil;
         _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.managedObjectModel];
         if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType
                                                        configuration:nil
-                                                                 URL:storeURL
+                                                                 URL:self.storeURL
                                                              options:@{NSMigratePersistentStoresAutomaticallyOption: @YES,
                                                                        NSInferMappingModelAutomaticallyOption: @YES}
                                                                error:&error]) {
             // Delete the file
-            [[NSFileManager defaultManager] removeItemAtURL:storeURL error:nil];
+            [self clearDataStore];
             if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType
                                                            configuration:nil
-                                                                     URL:storeURL
+                                                                     URL:self.storeURL
                                                                  options:nil
                                                                    error:&error]) {
                 /*
@@ -125,7 +126,7 @@ static NSString *const FFCDDataManagerTargetNameInfoDictionaryKey = @"CFBundleDi
                  */
 //                DDLogError(@"Unresolved error %@, %@", error, [error userInfo]);
                 FFLog(@"Unresolved error %@, %@", error, [error userInfo]);
-#if DEBUG
+#if FFCDManagerCrashesOnFailure
                 abort();
 #endif
             }
@@ -156,10 +157,18 @@ static NSString *const FFCDDataManagerTargetNameInfoDictionaryKey = @"CFBundleDi
     return tempContext;
 }
 
+#pragma mark - Clearing
+- (void)clearDataStore {
+    __autoreleasing NSError *error = nil;
+    if (![[NSFileManager defaultManager] removeItemAtURL:self.storeURL error:&error]) {
+        FFLog(@"Failed to delete data store: %@", error);
+    }
+}
+
 #pragma mark - Data Directory
 - (NSURL *)applicationDataDirectory {
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSURL *dataFolderURL;
+    NSURL *dataFolderURL = nil;
 #if TARGET_OS_IPHONE
     dataFolderURL = [[fileManager URLsForDirectory:NSDocumentDirectory
                                          inDomains:NSUserDomainMask] lastObject];
@@ -181,7 +190,13 @@ static NSString *const FFCDDataManagerTargetNameInfoDictionaryKey = @"CFBundleDi
     return dataFolderURL;
 }
 
-#pragma mark - Model Name
+#pragma mark - Store URL
+- (NSURL *)storeURL {
+    NSString *pathComponent = [NSString stringWithFormat:@"%@.sqlite", self.sqliteName];
+    return [[self applicationDataDirectory] URLByAppendingPathComponent:pathComponent];
+}
+
+#pragma mark - Names
 - (NSString *)targetName {
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
     return infoDictionary[FFCDDataManagerTargetNameInfoDictionaryKey];
@@ -244,3 +259,9 @@ void FFCDSaveContext(NSManagedObjectContext *context) {
 }
 
 void FFCDSaveMainContext() { FFCDSaveContext(FFCDMainContext()); }
+
+#if FFCDManagerAllowsStoreDeletion
+void FFCDClearDataStore() {
+    [[FFCDDataManager sharedManager] clearDataStore];
+}
+#endif
