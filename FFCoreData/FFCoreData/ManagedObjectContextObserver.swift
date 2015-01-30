@@ -11,9 +11,17 @@ import FFCoreData
 public typealias MOCObserverBlock = (observer: MOCObserver, changes: [String: [NSManagedObjectID]]?) -> ()
 
 public class MOCObserver {
+    private struct MOCNotificationObserver {
+        let observer: NSObjectProtocol
+        let object: NSObject?
+    }
+    
     private let notificationCenter = NSNotificationCenter.defaultCenter()
     
     public private(set) var contexts: [NSManagedObjectContext]?
+    
+    private let workerQueue = NSOperationQueue()
+    private var observers = [MOCNotificationObserver]()
     
     public var queue: NSOperationQueue
     public var handler: MOCObserverBlock
@@ -22,12 +30,17 @@ public class MOCObserver {
         self.contexts = contexts
         self.handler = block
         self.queue = NSOperationQueue.currentQueue() ?? NSOperationQueue.mainQueue()
+        let observerBlock: (note: NSNotification!) -> Void = { [unowned self] (note) in
+            self.managedObjectContextDidChange(note)
+        }
         if contexts?.count > 0 {
             for ctx in contexts! {
-                notificationCenter.addObserver(self, selector: "managedObjectContextDidChange:", name: NSManagedObjectContextObjectsDidChangeNotification, object: ctx)
+                let obsObj = notificationCenter.addObserverForName(NSManagedObjectContextObjectsDidChangeNotification, object: ctx, queue: workerQueue, usingBlock: observerBlock)
+                observers.append(MOCNotificationObserver(observer: obsObj, object: ctx))
             }
         } else {
-            notificationCenter.addObserver(self, selector: "managedObjectContextDidChange:", name: NSManagedObjectContextObjectsDidChangeNotification, object: nil)
+            let obsObj = notificationCenter.addObserverForName(NSManagedObjectContextObjectsDidChangeNotification, object: nil, queue: workerQueue, usingBlock: observerBlock)
+            observers.append(MOCNotificationObserver(observer: obsObj, object: nil))
         }
         if fireInitially {
             block(observer: self, changes: nil)
@@ -35,12 +48,8 @@ public class MOCObserver {
     }
     
     deinit {
-        if let contexts = contexts {
-            for ctx in contexts {
-                notificationCenter.removeObserver(self, name: NSManagedObjectContextObjectsDidChangeNotification, object: ctx)
-            }
-        } else {
-            notificationCenter.removeObserver(self, name: NSManagedObjectContextObjectsDidChangeNotification, object: nil)
+        for observer in observers {
+            notificationCenter.removeObserver(observer.observer, name: NSManagedObjectContextObjectsDidChangeNotification, object: observer.object)
         }
     }
     
