@@ -10,7 +10,7 @@
 @import CoreData;
 
 #ifndef FFCDManagerAllowsStoreDeletion
-#define FFCDManagerAllowsStoreDeletion DEBUG
+#define FFCDManagerAllowsStoreDeletion 1
 #endif
 #ifndef FFCDManagerCrashesOnFailure
 #define FFCDManagerCrashesOnFailure DEBUG
