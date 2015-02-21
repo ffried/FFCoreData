@@ -128,9 +128,7 @@
                              inContext:(NSManagedObjectContext *)context
                              withError:(NSError *__autoreleasing *)error {
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:entityName];
-    if (predicate) {
-        fetchRequest.predicate = predicate;
-    }
+    fetchRequest.predicate = predicate;
     
     NSError *__autoreleasing *errorPtr = error;
     if (errorPtr == nil) {
