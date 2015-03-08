@@ -84,8 +84,14 @@
 
 - (void)updateSubobjectAtIndexPath:(NSIndexPath *)indexPath {
     [super updateSubobjectAtIndexPath:indexPath];
+    BOOL selected = [self.tableView.indexPathsForSelectedRows containsObject:indexPath];
     [self.tableView reloadRowsAtIndexPaths:@[indexPath]
                           withRowAnimation:self.animation];
+    if (selected) {
+        [self.tableView selectRowAtIndexPath:indexPath
+                                    animated:NO
+                              scrollPosition:UITableViewScrollPositionNone];
+    }
 }
 
 - (void)removeSubobjectAtIndexPath:(NSIndexPath *)indexPath {

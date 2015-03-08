@@ -75,7 +75,13 @@
 
 - (void)updateSubobjectAtIndexPath:(NSIndexPath *)indexPath {
     [super updateSubobjectAtIndexPath:indexPath];
+    BOOL selected = [self.collectionView.indexPathsForSelectedItems containsObject:indexPath];
     [self.collectionView reloadItemsAtIndexPaths:@[indexPath]];
+    if (selected) {
+        [self.collectionView selectItemAtIndexPath:indexPath
+                                          animated:NO
+                                    scrollPosition:UICollectionViewScrollPositionNone];
+    }
 }
 
 - (void)removeSubobjectAtIndexPath:(NSIndexPath *)indexPath {
