@@ -58,45 +58,35 @@ public class MOCObserver {
     }
     
     private func managedObjectContextDidChange(notification: NSNotification) {
-        if let userInfo =  notification.userInfo {
-            if let changes = filteredChangeDictionary(userInfo) {
-                queue.addOperationWithBlock {
-                    self.handler(observer: self, changes: changes)
-                }
+        if let userInfo = notification.userInfo, let changes = filteredChangeDictionary(userInfo) {
+            queue.addOperationWithBlock {
+                self.handler(observer: self, changes: changes)
             }
         }
     }
     
     private func filteredChangeDictionary(changes: [NSObject: AnyObject]) -> [String: [NSManagedObjectID]]? {
-        var inserted = changes[NSInsertedObjectsKey] as? NSSet
-        var updated = changes[NSUpdatedObjectsKey] as? NSSet
-        var deleted = changes[NSDeletedObjectsKey] as? NSSet
+        var inserted = changes[NSInsertedObjectsKey] as? Set<NSManagedObject>
+        var updated = changes[NSUpdatedObjectsKey] as? Set<NSManagedObject>
+        var deleted = changes[NSDeletedObjectsKey] as? Set<NSManagedObject>
         
-        let testBlock = { (object: AnyObject!, stop: UnsafeMutablePointer<ObjCBool>) -> Bool in
-            return self.includeManagedObject(object as NSManagedObject)
+        let testBlock = { (object: NSManagedObject) -> Bool in
+            return self.includeManagedObject(object)
         }
         
-        inserted = inserted?.objectsPassingTest(testBlock).valueForKey("objectID") as? NSSet
-        updated = updated?.objectsPassingTest(testBlock).valueForKey("objectID") as? NSSet
-        deleted = deleted?.objectsPassingTest(testBlock).valueForKey("objectID") as? NSSet
+        let insertedIDs = filter(inserted ?? [], includeManagedObject).map { $0.objectID }
+        let updatedIDs = filter(updated ?? [], includeManagedObject).map { $0.objectID }
+        let deletedIDs = filter(deleted ?? [], includeManagedObject).map { $0.objectID }
         
         var newChanges = [String: [NSManagedObjectID]]()
-        if let objIDs = inserted?.allObjects as? [NSManagedObjectID] {
-            if countElements(objIDs) > 0 {
-                newChanges[NSInsertedObjectsKey] = objIDs
-            }
+        let objectIDsAndKeys = [
+            (insertedIDs, NSInsertedObjectsKey),
+            (updatedIDs, NSUpdatedObjectsKey),
+            (deletedIDs, NSDeletedObjectsKey)
+        ]
+        for (objIDs, key) in objectIDsAndKeys {
+            if count(objIDs) > 0 { newChanges[key] = objIDs }
         }
-        if let objIDs = updated?.allObjects as? [NSManagedObjectID] {
-            if countElements(objIDs) > 0 {
-                newChanges[NSUpdatedObjectsKey] = objIDs
-            }
-        }
-        if let objIDs = deleted?.allObjects as? [NSManagedObjectID] {
-            if countElements(objIDs) > 0 {
-                newChanges[NSDeletedObjectsKey] = objIDs
-            }
-        }
-        
-        return (countElements(newChanges) > 0) ? newChanges : nil
+        return (count(newChanges) > 0) ? newChanges : nil
     }
 }
