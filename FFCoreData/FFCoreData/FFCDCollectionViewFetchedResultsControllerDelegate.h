@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Florian Friedrich. All rights reserved.
 //
 
-#import <FFCoreData/FFCDFetchedResultsControllerDelegate.h>
+#import <FFCoreData/FFCDUIKitFetchedResultsControllerDelegate.h>
 @class UICollectionView;
 
 /**
  *  Manages a NSFetchedResultsController for a UICollectionView.
  */
-@interface FFCDCollectionViewFetchedResultsControllerDelegate : FFCDFetchedResultsControllerDelegate
+@interface FFCDCollectionViewFetchedResultsControllerDelegate : FFCDUIKitFetchedResultsControllerDelegate
 
 /**
  *  The UICollectionView on which the changes will be applied.

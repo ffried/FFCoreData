@@ -7,7 +7,7 @@
 //
 
 #import "FFCDCollectionViewFetchedResultsControllerDelegate.h"
-#import "FFCDFetchedResultsControllerDelegate+Internal.h"
+#import "FFCDUIKitFetchedResultsControllerDelegate+Internal.h"
 #import "FFCoreData.h"
 #import "FFCoreDataDefines.h"
 
@@ -44,6 +44,16 @@
 
 - (void)endUpdates {
     [super endUpdates];
+    [self reapplySelections];
+}
+
+- (void)selectIndexPaths:(NSArray *)indexPaths {
+    [super selectIndexPaths:indexPaths];
+    [indexPaths enumerateObjectsUsingBlock:^(NSIndexPath *indexPath, NSUInteger idx, BOOL *stop) {
+        [self.collectionView selectItemAtIndexPath:indexPath
+                                          animated:NO
+                                    scrollPosition:UICollectionViewScrollPositionNone];
+    }];
 }
 
 #pragma mark - Sections
@@ -77,11 +87,7 @@
     [super updateSubobjectAtIndexPath:indexPath];
     BOOL selected = [self.collectionView.indexPathsForSelectedItems containsObject:indexPath];
     [self.collectionView reloadItemsAtIndexPaths:@[indexPath]];
-    if (selected) {
-        [self.collectionView selectItemAtIndexPath:indexPath
-                                          animated:NO
-                                    scrollPosition:UICollectionViewScrollPositionNone];
-    }
+    if (selected) { [self.selectedIndexPaths addObject:indexPath]; }
 }
 
 - (void)removeSubobjectAtIndexPath:(NSIndexPath *)indexPath {

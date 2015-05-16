@@ -7,7 +7,7 @@
 //
 
 #import "FFCDTableViewFetchedResultsControllerDelegate.h"
-#import "FFCDFetchedResultsControllerDelegate+Internal.h"
+#import "FFCDUIKitFetchedResultsControllerDelegate+Internal.h"
 #import "FFCoreData.h"
 #import "FFCoreDataDefines.h"
 
@@ -49,6 +49,14 @@
 - (void)endUpdates {
     [super endUpdates];
     [self.tableView endUpdates];
+    [self reapplySelections];
+}
+
+- (void)selectIndexPaths:(NSArray *)indexPaths {
+    [super selectIndexPaths:indexPaths];
+    [indexPaths enumerateObjectsUsingBlock:^(NSIndexPath *indexPath, NSUInteger idx, BOOL *stop) {
+        [self.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
+    }];
 }
 
 #pragma mark - Sections
@@ -87,11 +95,7 @@
     BOOL selected = [self.tableView.indexPathsForSelectedRows containsObject:indexPath];
     [self.tableView reloadRowsAtIndexPaths:@[indexPath]
                           withRowAnimation:self.animation];
-    if (selected) {
-        [self.tableView selectRowAtIndexPath:indexPath
-                                    animated:NO
-                              scrollPosition:UITableViewScrollPositionNone];
-    }
+    if (selected) { [self.selectedIndexPaths addObject:indexPath]; }
 }
 
 - (void)removeSubobjectAtIndexPath:(NSIndexPath *)indexPath {

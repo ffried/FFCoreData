@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0700FD981A73F22B00570B96 /* MOCEntitiesObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0700FD971A73F22B00570B96 /* MOCEntitiesObserver.swift */; };
+		071BD3B11B074D410035EA49 /* FFCDUIKitFetchedResultsControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 071BD3AF1B074D410035EA49 /* FFCDUIKitFetchedResultsControllerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		071BD3B21B074D410035EA49 /* FFCDUIKitFetchedResultsControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 071BD3B01B074D410035EA49 /* FFCDUIKitFetchedResultsControllerDelegate.m */; };
+		071BD3B51B07509D0035EA49 /* FFCDUIKitFetchedResultsControllerDelegate+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 071BD3B31B07509D0035EA49 /* FFCDUIKitFetchedResultsControllerDelegate+Internal.h */; };
+		071BD3B61B07509D0035EA49 /* FFCDUIKitFetchedResultsControllerDelegate+Internal.m in Sources */ = {isa = PBXBuildFile; fileRef = 071BD3B41B07509D0035EA49 /* FFCDUIKitFetchedResultsControllerDelegate+Internal.m */; };
 		071D620719D4BB6E00C1999D /* FFCDTableViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 071D620519D4BB6E00C1999D /* FFCDTableViewDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		071D620819D4BB6E00C1999D /* FFCDTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 071D620619D4BB6E00C1999D /* FFCDTableViewDataSource.m */; };
 		071D620919D4BB6E00C1999D /* FFCDTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 071D620619D4BB6E00C1999D /* FFCDTableViewDataSource.m */; };
@@ -46,6 +50,10 @@
 
 /* Begin PBXFileReference section */
 		0700FD971A73F22B00570B96 /* MOCEntitiesObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOCEntitiesObserver.swift; sourceTree = "<group>"; };
+		071BD3AF1B074D410035EA49 /* FFCDUIKitFetchedResultsControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFCDUIKitFetchedResultsControllerDelegate.h; sourceTree = "<group>"; };
+		071BD3B01B074D410035EA49 /* FFCDUIKitFetchedResultsControllerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFCDUIKitFetchedResultsControllerDelegate.m; sourceTree = "<group>"; };
+		071BD3B31B07509D0035EA49 /* FFCDUIKitFetchedResultsControllerDelegate+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FFCDUIKitFetchedResultsControllerDelegate+Internal.h"; sourceTree = "<group>"; };
+		071BD3B41B07509D0035EA49 /* FFCDUIKitFetchedResultsControllerDelegate+Internal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FFCDUIKitFetchedResultsControllerDelegate+Internal.m"; sourceTree = "<group>"; };
 		071D620519D4BB6E00C1999D /* FFCDTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFCDTableViewDataSource.h; sourceTree = "<group>"; };
 		071D620619D4BB6E00C1999D /* FFCDTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFCDTableViewDataSource.m; sourceTree = "<group>"; };
 		071D620A19D4BDFF00C1999D /* FFCDCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFCDCollectionViewDataSource.h; sourceTree = "<group>"; };
@@ -103,6 +111,10 @@
 				0756A6BF19D4669900F42CFD /* FFCDCollectionViewFetchedResultsControllerDelegate.m */,
 				0756A6C019D4669900F42CFD /* FFCDTableViewFetchedResultsControllerDelegate.h */,
 				0756A6C119D4669900F42CFD /* FFCDTableViewFetchedResultsControllerDelegate.m */,
+				071BD3AF1B074D410035EA49 /* FFCDUIKitFetchedResultsControllerDelegate.h */,
+				071BD3B01B074D410035EA49 /* FFCDUIKitFetchedResultsControllerDelegate.m */,
+				071BD3B31B07509D0035EA49 /* FFCDUIKitFetchedResultsControllerDelegate+Internal.h */,
+				071BD3B41B07509D0035EA49 /* FFCDUIKitFetchedResultsControllerDelegate+Internal.m */,
 			);
 			name = Delegates;
 			sourceTree = "<group>";
@@ -139,7 +151,7 @@
 			name = UIKit;
 			sourceTree = "<group>";
 		};
-07593A031A36E2C900EDACD7 /* CoreDataManager */ = {
+		07593A031A36E2C900EDACD7 /* CoreDataManager */ = {
 			isa = PBXGroup;
 			children = (
 				07593A041A36E2DB00EDACD7 /* FFCDDataManager.h */,
@@ -148,7 +160,7 @@
 			name = CoreDataManager;
 			sourceTree = "<group>";
 		};
-076576931A73CC0400EEA793 /* ManagedObjectContext Observer */ = {
+		076576931A73CC0400EEA793 /* ManagedObjectContext Observer */ = {
 			isa = PBXGroup;
 			children = (
 				076576941A73CC3500EEA793 /* ManagedObjectContextObserver.swift */,
@@ -247,6 +259,8 @@
 				07876A1C19D41E7000F21E7D /* FFCoreData.h in Headers */,
 				07876A3519D41F7C00F21E7D /* FFCDFetchedResultsControllerDelegate.h in Headers */,
 				07593A061A36E2DB00EDACD7 /* FFCDDataManager.h in Headers */,
+				071BD3B51B07509D0035EA49 /* FFCDUIKitFetchedResultsControllerDelegate+Internal.h in Headers */,
+				071BD3B11B074D410035EA49 /* FFCDUIKitFetchedResultsControllerDelegate.h in Headers */,
 				0756A6C519D4669900F42CFD /* FFCDTableViewFetchedResultsControllerDelegate.h in Headers */,
 				0756A6C219D4669900F42CFD /* FFCDCollectionViewFetchedResultsControllerDelegate.h in Headers */,
 				071D620719D4BB6E00C1999D /* FFCDTableViewDataSource.h in Headers */,
@@ -360,7 +374,9 @@
 				076576951A73CC3500EEA793 /* ManagedObjectContextObserver.swift in Sources */,
 				071D620D19D4BDFF00C1999D /* FFCDCollectionViewDataSource.m in Sources */,
 				074657FE19D58F8A0088A6F5 /* UICollectionViewController+FFCoreData.m in Sources */,
+				071BD3B61B07509D0035EA49 /* FFCDUIKitFetchedResultsControllerDelegate+Internal.m in Sources */,
 				0756A6C319D4669900F42CFD /* FFCDCollectionViewFetchedResultsControllerDelegate.m in Sources */,
+				071BD3B21B074D410035EA49 /* FFCDUIKitFetchedResultsControllerDelegate.m in Sources */,
 				074657FA19D58EA70088A6F5 /* FFCoreDataDefines.m in Sources */,
 				07876A3619D41F7C00F21E7D /* FFCDFetchedResultsControllerDelegate.m in Sources */,
 				0756A6C619D4669900F42CFD /* FFCDTableViewFetchedResultsControllerDelegate.m in Sources */,
