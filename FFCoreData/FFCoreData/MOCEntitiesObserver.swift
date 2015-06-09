@@ -21,16 +21,16 @@ public class MOCEntitiesObserver: MOCObserver {
     }
     
     override func includeManagedObject(object: NSManagedObject) -> Bool {
-        return contains(entityNames, object.entity.name ?? object.entity.managedObjectClassName)
+        return entityNames.contains((object.entity.name ?? object.entity.managedObjectClassName))
     }
 }
 
 public extension NSManagedObject {
-    public static func createMOCEntitiesObserver(fireInitially: Bool = false, block: MOCObserverBlock) -> MOCEntitiesObserver {
-        return createMOCEntitiesObserver(fireInitially: fireInitially, contexts: nil, block: block)
+    public static func createMOCEntitiesObserver(fireInitially: Bool = false, block: MOCObserver.MOCObserverBlock) -> MOCEntitiesObserver {
+        return createMOCEntitiesObserver(fireInitially, contexts: nil, block: block)
     }
     
-    public static func createMOCEntitiesObserver(fireInitially: Bool = false, contexts: [NSManagedObjectContext]? = nil, block: MOCObserverBlock) -> MOCEntitiesObserver {
+    public static func createMOCEntitiesObserver(fireInitially: Bool = false, contexts: [NSManagedObjectContext]? = nil, block: MOCObserver.MOCObserverBlock) -> MOCEntitiesObserver {
         var className = NSStringFromClass(self)
         if let range = className.rangeOfString(".") { // Fix Swift class names
             className = className.substringFromIndex(range.endIndex)

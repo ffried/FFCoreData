@@ -8,9 +8,9 @@
 
 import FFCoreData
 
-public typealias MOCObserverBlock = (observer: MOCObserver, changes: [String: [NSManagedObjectID]]?) -> ()
-
 public class MOCObserver {
+    public typealias MOCObserverBlock = (observer: MOCObserver, changes: [String: [NSManagedObjectID]]?) -> ()
+    
     private struct MOCNotificationObserver {
         let observer: NSObjectProtocol
         let object: NSObject?
@@ -66,17 +66,13 @@ public class MOCObserver {
     }
     
     private func filteredChangeDictionary(changes: [NSObject: AnyObject]) -> [String: [NSManagedObjectID]]? {
-        var inserted = changes[NSInsertedObjectsKey] as? Set<NSManagedObject>
-        var updated = changes[NSUpdatedObjectsKey] as? Set<NSManagedObject>
-        var deleted = changes[NSDeletedObjectsKey] as? Set<NSManagedObject>
+        let inserted = changes[NSInsertedObjectsKey] as? Set<NSManagedObject>
+        let updated = changes[NSUpdatedObjectsKey] as? Set<NSManagedObject>
+        let deleted = changes[NSDeletedObjectsKey] as? Set<NSManagedObject>
         
-        let testBlock = { (object: NSManagedObject) -> Bool in
-            return self.includeManagedObject(object)
-        }
-        
-        let insertedIDs = filter(inserted ?? [], includeManagedObject).map { $0.objectID }
-        let updatedIDs = filter(updated ?? [], includeManagedObject).map { $0.objectID }
-        let deletedIDs = filter(deleted ?? [], includeManagedObject).map { $0.objectID }
+        let insertedIDs = inserted?.filter(includeManagedObject).map { $0.objectID }
+        let updatedIDs = updated?.filter(includeManagedObject).map { $0.objectID }
+        let deletedIDs = deleted?.filter(includeManagedObject).map { $0.objectID }
         
         var newChanges = [String: [NSManagedObjectID]]()
         let objectIDsAndKeys = [
@@ -85,8 +81,8 @@ public class MOCObserver {
             (deletedIDs, NSDeletedObjectsKey)
         ]
         for (objIDs, key) in objectIDsAndKeys {
-            if count(objIDs) > 0 { newChanges[key] = objIDs }
+            if objIDs?.count > 0 { newChanges[key] = objIDs }
         }
-        return (count(newChanges) > 0) ? newChanges : nil
+        return (newChanges.count > 0) ? newChanges : nil
     }
 }

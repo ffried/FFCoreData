@@ -33,7 +33,4 @@ FOUNDATION_EXPORT const unsigned char FFCoreDataVersionString[];
 
     #import <FFCoreData/FFCDTableViewDataSource.h>
     #import <FFCoreData/FFCDCollectionViewDataSource.h>
-
-    #import <FFCoreData/UITableViewController+FFCoreData.h>
-    #import <FFCoreData/UICollectionViewController+FFCoreData.h>
 #endif
