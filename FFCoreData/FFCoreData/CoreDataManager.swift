@@ -8,20 +8,7 @@
 
 import FFCoreData
 
-/*
-@property (nonatomic, strong, readonly) NSManagedObjectModel *managedObjectModel;
-@property (nonatomic, strong, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-@property (nonatomic, strong, readonly) NSManagedObjectContext *backgroundSavingContext;
-@property (nonatomic, strong, readonly) NSManagedObjectContext *managedObjectContext;
-@property (nonatomic, strong, readonly) NSURL *storeURL;
-@property (nonatomic, strong, readonly) NSString *targetName;
-@property (nonatomic, strong, readonly) NSString *modelName;
-@property (nonatomic, strong, readonly) NSString *sqliteName;
-
-+ (instancetype)sharedManager;
-- (void)clearDataStore;*/
-
-private struct CoreDataManager {
+private class CoreDataManager {
     private let managedObjectModel: NSManagedObjectModel = {
         let modelURL = NSBundle.mainBundle().URLForResource("", withExtension: "momd")!
         return NSManagedObjectModel(contentsOfURL: modelURL)!
@@ -36,8 +23,14 @@ private struct CoreDataManager {
         do {
             try coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: nil, options: CoreDataManager.persistenStoreOptions)
         } catch {
-//            clearDataStore()
-            do { try coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: nil, options: nil) }
+            do {
+                try self.clearDataStore()
+            } catch {
+                print("Failed to delete data store")
+            }
+            do {
+                try coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: nil, options: nil)
+            }
             catch {
                 fatalError("Could not add persistent store with error: \(error)")
             }
@@ -45,7 +38,7 @@ private struct CoreDataManager {
         return coordinator
         }()
     
-    private var applicationDataDirectory: NSURL {
+    private let applicationDataDirectory: NSURL = {
         let fileManager = NSFileManager.defaultManager()
         let dataFolderURL: NSURL
 #if os(iOS)
@@ -64,36 +57,109 @@ private struct CoreDataManager {
         }
 #endif
         return dataFolderURL
-    }
-    /*
-    #pragma mark - Store URL
-    - (NSURL *)storeURL {
-    NSString *pathComponent = [NSString stringWithFormat:@"%@.sqlite", self.sqliteName];
-    return [[self applicationDataDirectory] URLByAppendingPathComponent:pathComponent];
+    }()
+
+    private lazy var backgroundSavingContext: NSManagedObjectContext = {
+        let coordinator = self.persistentStoreCoordinator
+        let ctx = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
+        ctx.persistentStoreCoordinator = coordinator
+        ctx.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+        return ctx
+    }()
+    
+    private lazy var managedObjectContext: NSManagedObjectContext = {
+        let parentContext = self.backgroundSavingContext
+        let ctx = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
+        ctx.parentContext = parentContext
+        return ctx
+    }()
+
+    private static let InfoDictionaryTargetNameKey = "CFBundleDisplayName"
+    private static let InfoDictionarySQLiteNameKey = "FFCDDataManagerSQLiteName"
+    private static let InfoDictionaryModelNameKey = "FFCDDataManagerModelName"
+    private let targetName: String = {
+        let infoDict = NSBundle.mainBundle().infoDictionary!
+        return infoDict[CoreDataManager.InfoDictionaryTargetNameKey] as! String
+    }()
+    private lazy var sqliteName: String = {
+        let infoDict = NSBundle.mainBundle().infoDictionary!
+        let sqliteName = infoDict[CoreDataManager.InfoDictionarySQLiteNameKey] as? String
+        return sqliteName ?? self.targetName
+    }()
+    private lazy var modelName: String = {
+        let infoDict = NSBundle.mainBundle().infoDictionary!
+        let modelName = infoDict[CoreDataManager.InfoDictionaryModelNameKey] as? String
+        return modelName ?? self.targetName
+    }()
+    
+    private var storeURL: NSURL {
+        let pathComponent = self.sqliteName + ".sqlite"
+        return self.applicationDataDirectory.URLByAppendingPathComponent(pathComponent)
     }
     
-    #pragma mark - Names
-    - (NSString *)targetName {
-    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
-    return infoDictionary[FFCDDataManagerTargetNameInfoDictionaryKey];
+    private func createTemporaryMainContext() -> NSManagedObjectContext {
+        return createTemporaryContextWithConcurrencyType(.MainQueueConcurrencyType)
     }
     
-    - (NSString *)modelName {
-    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
-    NSString *modelName = infoDictionary[FFCDDataManagerModelNameInfoDictionaryKey];
-    if (!modelName.length) { modelName = self.targetName; }
-    return modelName;
+    private func createTemporaryBackgroundContext() -> NSManagedObjectContext {
+        return createTemporaryContextWithConcurrencyType(.PrivateQueueConcurrencyType)
     }
     
-    - (NSString *)sqliteName {
-    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
-    NSString *sqliteName = infoDictionary[FFCDDataManagerSQLiteNameInfoDictionaryKey];
-    if (!sqliteName.length) { sqliteName = self.targetName; }
-    return sqliteName;
+    private func createTemporaryContextWithConcurrencyType(type: NSManagedObjectContextConcurrencyType) -> NSManagedObjectContext {
+        let parentContext = managedObjectContext
+        let tempCtx = NSManagedObjectContext(concurrencyType: type)
+        tempCtx.parentContext = parentContext
+        tempCtx.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+        tempCtx.undoManager = nil
+        return tempCtx
     }
-*/
+    
+    private func clearDataStore() throws {
+        try NSFileManager.defaultManager().removeItemAtURL(storeURL)
+    }
+    
+    private func saveContext(ctx: NSManagedObjectContext) {
+        if !ctx.hasChanges { return }
+        do {
+            try ctx.save()
+            switch ctx {
+            case managedObjectContext:
+                print("Main ManagedObjectContext saved successfully!")
+            case backgroundSavingContext:
+                print("Background ManagedObjectContext saved successfully!")
+            default:
+                print("ManagedObjectContext \(ctx) saved successfully!")
+            }
+        } catch {
+            print("Unresolved error while saving ManagedObjectContext \(error)")
+        }
+        if let parentContext = ctx.parentContext {
+            parentContext.performBlock { self.saveContext(parentContext) }
+        }
+    }
 }
 
-//public var MainContext: NSManagedObjectContext = {
-//
-//}()
+public struct CoreDataStack {
+    private static let Manager = CoreDataManager()
+    public static let MainContext: NSManagedObjectContext = CoreDataStack.Manager.managedObjectContext
+    
+    public static func saveMainContext() {
+        CoreDataStack.saveContext(CoreDataStack.MainContext)
+    }
+    
+    public static func saveContext(context: NSManagedObjectContext) {
+        context.performBlockAndWait { CoreDataStack.Manager.saveContext(context) }
+    }
+    
+    public static func createTemporaryMainContext() -> NSManagedObjectContext {
+        return CoreDataStack.Manager.createTemporaryMainContext()
+    }
+    
+    public static func createTemporaryBackgroundContext() -> NSManagedObjectContext {
+        return CoreDataStack.Manager.createTemporaryBackgroundContext()
+    }
+    
+    public func clearDataStore() throws {
+        try CoreDataStack.Manager.clearDataStore()
+    }
+}
