@@ -14,14 +14,14 @@ private class CoreDataManager {
         return NSManagedObjectModel(contentsOfURL: modelURL)!
     }()
     
-    private static let persistenStoreOptions = [
-        NSMigratePersistentStoresAutomaticallyOption: true,
-        NSInferMappingModelAutomaticallyOption: true
-    ]
     private lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
         do {
-            try coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: nil, options: CoreDataManager.persistenStoreOptions)
+            let options = [
+                NSMigratePersistentStoresAutomaticallyOption: true,
+                NSInferMappingModelAutomaticallyOption: true
+            ]
+            try coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: nil, options: options)
         } catch {
             do {
                 try self.clearDataStore()
@@ -91,11 +91,10 @@ private class CoreDataManager {
         let modelName = infoDict[CoreDataManager.InfoDictionaryModelNameKey] as? String
         return modelName ?? self.targetName
     }()
-    
-    private var storeURL: NSURL {
+    private lazy var storeURL: NSURL = {
         let pathComponent = self.sqliteName + ".sqlite"
         return self.applicationDataDirectory.URLByAppendingPathComponent(pathComponent)
-    }
+    }()
     
     private func createTemporaryMainContext() -> NSManagedObjectContext {
         return createTemporaryContextWithConcurrencyType(.MainQueueConcurrencyType)
@@ -124,14 +123,14 @@ private class CoreDataManager {
             try ctx.save()
             switch ctx {
             case managedObjectContext:
-                print("Main ManagedObjectContext saved successfully!")
+                print("Main NSManagedObjectContext saved successfully!")
             case backgroundSavingContext:
-                print("Background ManagedObjectContext saved successfully!")
+                print("Background NSManagedObjectContext saved successfully!")
             default:
-                print("ManagedObjectContext \(ctx) saved successfully!")
+                print("NSManagedObjectContext \(ctx) saved successfully!")
             }
         } catch {
-            print("Unresolved error while saving ManagedObjectContext \(error)")
+            print("Unresolved error while saving NSManagedObjectContext \(error)")
         }
         if let parentContext = ctx.parentContext {
             parentContext.performBlock { self.saveContext(parentContext) }
@@ -141,11 +140,10 @@ private class CoreDataManager {
 
 public struct CoreDataStack {
     private static let Manager = CoreDataManager()
+    
     public static let MainContext: NSManagedObjectContext = CoreDataStack.Manager.managedObjectContext
     
-    public static func saveMainContext() {
-        CoreDataStack.saveContext(CoreDataStack.MainContext)
-    }
+    public static func saveMainContext() { CoreDataStack.saveContext(CoreDataStack.MainContext) }
     
     public static func saveContext(context: NSManagedObjectContext) {
         context.performBlockAndWait { CoreDataStack.Manager.saveContext(context) }
@@ -159,7 +157,5 @@ public struct CoreDataStack {
         return CoreDataStack.Manager.createTemporaryBackgroundContext()
     }
     
-    public func clearDataStore() throws {
-        try CoreDataStack.Manager.clearDataStore()
-    }
+    public func clearDataStore() throws { try CoreDataStack.Manager.clearDataStore() }
 }
