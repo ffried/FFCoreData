@@ -6,15 +6,7 @@
 //  Copyright © 2015 Florian Friedrich. All rights reserved.
 //
 
-//import FFCoreData
-
-private func StringFromClass(c: AnyClass) -> String {
-    var className = NSStringFromClass(c)
-    if let range = className.rangeOfString(".", options: .BackwardsSearch) { // Fix Swift class names
-        className = className.substringFromIndex(range.endIndex)
-    }
-    return className
-}
+import FFCoreData
 
 internal extension NSManagedObject {
     internal static func entityInContext(context: NSManagedObjectContext) -> NSEntityDescription? {

@@ -31,7 +31,7 @@ public extension NSManagedObject {
     }
     
     public static func createMOCEntitiesObserver(fireInitially: Bool = false, contexts: [NSManagedObjectContext]? = nil, block: MOCObserver.MOCObserverBlock) -> MOCEntitiesObserver {
-        var className = NSStringFromClass(self)
+        var className = StringFromClass(self)
         if let range = className.rangeOfString(".", options: .BackwardsSearch) { // Fix Swift class names
             className = className.substringFromIndex(range.endIndex)
         }

@@ -1,0 +1,3 @@
+[submodule "FFCoreData/Submodules/FFFoundation"]
+	path = FFCoreData/Submodules/FFFoundation
+	url = https://github.com/ffried/FFFoundation.git

@@ -18,11 +18,29 @@
 		07A64BEF1B2C3B940008EFF2 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A64BEE1B2C3B940008EFF2 /* TableViewDataSource.swift */; };
 		07A64BF11B2C4CCB0008EFF2 /* CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A64BF01B2C4CCB0008EFF2 /* CollectionViewDataSource.swift */; };
 		07A64BF31B2C53480008EFF2 /* NSManagedObject+FindAndOrCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A64BF21B2C53480008EFF2 /* NSManagedObject+FindAndOrCreate.swift */; };
+		07A64BFE1B2C77C40008EFF2 /* FFFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A64BFB1B2C77BB0008EFF2 /* FFFoundation.framework */; };
 		07AA24341B27617000FA689B /* UITableViewController+FFCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA24331B27617000FA689B /* UITableViewController+FFCoreData.swift */; };
 		07AA24361B276EDB00FA689B /* UICollectionViewController+FFCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA24351B276EDB00FA689B /* UICollectionViewController+FFCoreData.swift */; };
 		07AA24381B28037E00FA689B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA24371B28037E00FA689B /* CoreDataManager.swift */; };
 		07AA243A1B2A0F0900FA689B /* FetchedResulsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA24391B2A0F0900FA689B /* FetchedResulsControllerDelegate.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		07A64BFA1B2C77BB0008EFF2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 07A64BF51B2C77BB0008EFF2 /* FFFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 07FF5E271A3761D0006928A9;
+			remoteInfo = FFFoundation;
+		};
+		07A64BFC1B2C77BB0008EFF2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 07A64BF51B2C77BB0008EFF2 /* FFFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 07FF5E321A3761D1006928A9;
+			remoteInfo = FFFoundationTests;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0700FD971A73F22B00570B96 /* MOCEntitiesObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOCEntitiesObserver.swift; sourceTree = "<group>"; };
@@ -40,6 +58,7 @@
 		07A64BEE1B2C3B940008EFF2 /* TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		07A64BF01B2C4CCB0008EFF2 /* CollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewDataSource.swift; sourceTree = "<group>"; };
 		07A64BF21B2C53480008EFF2 /* NSManagedObject+FindAndOrCreate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+FindAndOrCreate.swift"; sourceTree = "<group>"; };
+		07A64BF51B2C77BB0008EFF2 /* FFFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FFFoundation.xcodeproj; path = Submodules/FFFoundation/FFFoundation/FFFoundation.xcodeproj; sourceTree = SOURCE_ROOT; };
 		07AA24331B27617000FA689B /* UITableViewController+FFCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewController+FFCoreData.swift"; sourceTree = "<group>"; };
 		07AA24351B276EDB00FA689B /* UICollectionViewController+FFCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewController+FFCoreData.swift"; sourceTree = "<group>"; };
 		07AA24371B28037E00FA689B /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -51,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07A64BFE1B2C77C40008EFF2 /* FFFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +161,7 @@
 		07876A1819D41E7000F21E7D /* FFCoreData */ = {
 			isa = PBXGroup;
 			children = (
+				07A64BF51B2C77BB0008EFF2 /* FFFoundation.xcodeproj */,
 				076576931A73CC0400EEA793 /* ManagedObjectContext Observer */,
 				0756A6C819D4669F00F42CFD /* UIKit */,
 				07876A4A19D433CC00F21E7D /* NSFetchedResultsController */,
@@ -191,6 +212,15 @@
 				07A64BF21B2C53480008EFF2 /* NSManagedObject+FindAndOrCreate.swift */,
 			);
 			name = NSManagedObject;
+			sourceTree = "<group>";
+		};
+		07A64BF61B2C77BB0008EFF2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				07A64BFB1B2C77BB0008EFF2 /* FFFoundation.framework */,
+				07A64BFD1B2C77BB0008EFF2 /* FFFoundationTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,7 +285,6 @@
 				TargetAttributes = {
 					07876A1519D41E7000F21E7D = {
 						CreatedOnToolsVersion = 6.0.1;
-						DevelopmentTeam = 8AVR59FNSV;
 					};
 					07876A2019D41E7000F21E7D = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -272,6 +301,12 @@
 			mainGroup = 07876A0C19D41E7000F21E7D;
 			productRefGroup = 07876A1719D41E7000F21E7D /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 07A64BF61B2C77BB0008EFF2 /* Products */;
+					ProjectRef = 07A64BF51B2C77BB0008EFF2 /* FFFoundation.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				07876A1519D41E7000F21E7D /* FFCoreData */,
@@ -279,6 +314,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		07A64BFB1B2C77BB0008EFF2 /* FFFoundation.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FFFoundation.framework;
+			remoteRef = 07A64BFA1B2C77BB0008EFF2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		07A64BFD1B2C77BB0008EFF2 /* FFFoundationTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = FFFoundationTests.xctest;
+			remoteRef = 07A64BFC1B2C77BB0008EFF2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		07876A1419D41E7000F21E7D /* Resources */ = {
