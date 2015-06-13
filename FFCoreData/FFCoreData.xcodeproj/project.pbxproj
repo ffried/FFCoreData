@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0700FD981A73F22B00570B96 /* MOCEntitiesObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0700FD971A73F22B00570B96 /* MOCEntitiesObserver.swift */; };
-		0756A6CB19D466D800F42CFD /* NSManagedObject+FFCDFindAndOrCreate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0756A6C919D466D800F42CFD /* NSManagedObject+FFCDFindAndOrCreate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0756A6CC19D466D800F42CFD /* NSManagedObject+FFCDFindAndOrCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0756A6CA19D466D800F42CFD /* NSManagedObject+FFCDFindAndOrCreate.m */; };
-		0756A6CD19D466D800F42CFD /* NSManagedObject+FFCDFindAndOrCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0756A6CA19D466D800F42CFD /* NSManagedObject+FFCDFindAndOrCreate.m */; };
 		076576951A73CC3500EEA793 /* ManagedObjectContextObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076576941A73CC3500EEA793 /* ManagedObjectContextObserver.swift */; };
 		076576971A73D4D500EEA793 /* MOCObjectsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076576961A73D4D500EEA793 /* MOCObjectsObserver.swift */; };
 		07876A1C19D41E7000F21E7D /* FFCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = 07876A1B19D41E7000F21E7D /* FFCoreData.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -20,6 +17,7 @@
 		07A64BED1B2C29A30008EFF2 /* CollectionViewFetchedResultsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A64BEC1B2C29A30008EFF2 /* CollectionViewFetchedResultsControllerDelegate.swift */; };
 		07A64BEF1B2C3B940008EFF2 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A64BEE1B2C3B940008EFF2 /* TableViewDataSource.swift */; };
 		07A64BF11B2C4CCB0008EFF2 /* CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A64BF01B2C4CCB0008EFF2 /* CollectionViewDataSource.swift */; };
+		07A64BF31B2C53480008EFF2 /* NSManagedObject+FindAndOrCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A64BF21B2C53480008EFF2 /* NSManagedObject+FindAndOrCreate.swift */; };
 		07AA24341B27617000FA689B /* UITableViewController+FFCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA24331B27617000FA689B /* UITableViewController+FFCoreData.swift */; };
 		07AA24361B276EDB00FA689B /* UICollectionViewController+FFCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA24351B276EDB00FA689B /* UICollectionViewController+FFCoreData.swift */; };
 		07AA24381B28037E00FA689B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA24371B28037E00FA689B /* CoreDataManager.swift */; };
@@ -28,8 +26,6 @@
 
 /* Begin PBXFileReference section */
 		0700FD971A73F22B00570B96 /* MOCEntitiesObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOCEntitiesObserver.swift; sourceTree = "<group>"; };
-		0756A6C919D466D800F42CFD /* NSManagedObject+FFCDFindAndOrCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+FFCDFindAndOrCreate.h"; sourceTree = "<group>"; };
-		0756A6CA19D466D800F42CFD /* NSManagedObject+FFCDFindAndOrCreate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+FFCDFindAndOrCreate.m"; sourceTree = "<group>"; };
 		076576941A73CC3500EEA793 /* ManagedObjectContextObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectContextObserver.swift; sourceTree = "<group>"; };
 		076576961A73D4D500EEA793 /* MOCObjectsObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOCObjectsObserver.swift; sourceTree = "<group>"; };
 		07876A1619D41E7000F21E7D /* FFCoreData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FFCoreData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,6 +39,7 @@
 		07A64BEC1B2C29A30008EFF2 /* CollectionViewFetchedResultsControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewFetchedResultsControllerDelegate.swift; sourceTree = "<group>"; };
 		07A64BEE1B2C3B940008EFF2 /* TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		07A64BF01B2C4CCB0008EFF2 /* CollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewDataSource.swift; sourceTree = "<group>"; };
+		07A64BF21B2C53480008EFF2 /* NSManagedObject+FindAndOrCreate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+FindAndOrCreate.swift"; sourceTree = "<group>"; };
 		07AA24331B27617000FA689B /* UITableViewController+FFCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewController+FFCoreData.swift"; sourceTree = "<group>"; };
 		07AA24351B276EDB00FA689B /* UICollectionViewController+FFCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewController+FFCoreData.swift"; sourceTree = "<group>"; };
 		07AA24371B28037E00FA689B /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -191,8 +188,7 @@
 		07876A4B19D4341600F21E7D /* NSManagedObject */ = {
 			isa = PBXGroup;
 			children = (
-				0756A6C919D466D800F42CFD /* NSManagedObject+FFCDFindAndOrCreate.h */,
-				0756A6CA19D466D800F42CFD /* NSManagedObject+FFCDFindAndOrCreate.m */,
+				07A64BF21B2C53480008EFF2 /* NSManagedObject+FindAndOrCreate.swift */,
 			);
 			name = NSManagedObject;
 			sourceTree = "<group>";
@@ -205,7 +201,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				07876A1C19D41E7000F21E7D /* FFCoreData.h in Headers */,
-				0756A6CB19D466D800F42CFD /* NSManagedObject+FFCDFindAndOrCreate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,10 +311,10 @@
 				07AA24361B276EDB00FA689B /* UICollectionViewController+FFCoreData.swift in Sources */,
 				07AA24381B28037E00FA689B /* CoreDataManager.swift in Sources */,
 				0700FD981A73F22B00570B96 /* MOCEntitiesObserver.swift in Sources */,
+				07A64BF31B2C53480008EFF2 /* NSManagedObject+FindAndOrCreate.swift in Sources */,
 				07A64BF11B2C4CCB0008EFF2 /* CollectionViewDataSource.swift in Sources */,
 				07A64BED1B2C29A30008EFF2 /* CollectionViewFetchedResultsControllerDelegate.swift in Sources */,
 				07A64BEF1B2C3B940008EFF2 /* TableViewDataSource.swift in Sources */,
-				0756A6CC19D466D800F42CFD /* NSManagedObject+FFCDFindAndOrCreate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,7 +322,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0756A6CD19D466D800F42CFD /* NSManagedObject+FFCDFindAndOrCreate.m in Sources */,
 				07876A2619D41E7000F21E7D /* FFCoreDataTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
