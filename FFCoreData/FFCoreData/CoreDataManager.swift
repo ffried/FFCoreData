@@ -9,8 +9,8 @@
 import FFCoreData
 
 private class CoreDataManager {
-    private let managedObjectModel: NSManagedObjectModel = {
-        let modelURL = NSBundle.mainBundle().URLForResource("", withExtension: "momd")!
+    private lazy var managedObjectModel: NSManagedObjectModel = {
+        let modelURL = self.configuration.bundle.URLForResource(self.configuration.modelName, withExtension: "momd")!
         return NSManagedObjectModel(contentsOfURL: modelURL)!
     }()
     
@@ -37,27 +37,6 @@ private class CoreDataManager {
         }
         return coordinator
         }()
-    
-    private let applicationDataDirectory: NSURL = {
-        let fileManager = NSFileManager.defaultManager()
-        let dataFolderURL: NSURL
-#if os(iOS)
-        dataFolderURL = fileManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).last!
-#elseif os(OSX)
-        let url = fileManager.URLsForDirectory(.ApplicationSupportDirectory, inDomains: .UserDomainMask).last!
-        dataFolderURL = url.URLByAppendingPathComponent(NSApp.identifier)
-        var isDir = false
-        let exists = fileManager.fileExistsAtPath(dataFolderURL.path!, isDirectory: &isDir)
-        if !exists || (exists && !isDir) {
-            do {
-                try fileManager.createDirectoryAtURL(dataFolderURL, withIntermediateDirectories: true, attributes: nil)
-            } catch {
-                print("Could not create application support folder: \(error)")
-            }
-        }
-#endif
-        return dataFolderURL
-    }()
 
     private lazy var backgroundSavingContext: NSManagedObjectContext = {
         let coordinator = self.persistentStoreCoordinator
@@ -73,28 +52,12 @@ private class CoreDataManager {
         ctx.parentContext = parentContext
         return ctx
     }()
-
-    private static let InfoDictionaryTargetNameKey = "CFBundleDisplayName"
-    private static let InfoDictionarySQLiteNameKey = "FFCDDataManagerSQLiteName"
-    private static let InfoDictionaryModelNameKey = "FFCDDataManagerModelName"
-    private let targetName: String = {
-        let infoDict = NSBundle.mainBundle().infoDictionary!
-        return infoDict[CoreDataManager.InfoDictionaryTargetNameKey] as! String
-    }()
-    private lazy var sqliteName: String = {
-        let infoDict = NSBundle.mainBundle().infoDictionary!
-        let sqliteName = infoDict[CoreDataManager.InfoDictionarySQLiteNameKey] as? String
-        return sqliteName ?? self.targetName
-    }()
-    private lazy var modelName: String = {
-        let infoDict = NSBundle.mainBundle().infoDictionary!
-        let modelName = infoDict[CoreDataManager.InfoDictionaryModelNameKey] as? String
-        return modelName ?? self.targetName
-    }()
-    private lazy var storeURL: NSURL = {
-        let pathComponent = self.sqliteName + ".sqlite"
-        return self.applicationDataDirectory.URLByAppendingPathComponent(pathComponent)
-    }()
+    
+    private let configuration: CoreDataStack.Configuration
+    
+    init(configuration: CoreDataStack.Configuration) {
+        self.configuration = configuration
+    }
     
     private func createTemporaryMainContext() -> NSManagedObjectContext {
         return createTemporaryContextWithConcurrencyType(.MainQueueConcurrencyType)
@@ -114,7 +77,7 @@ private class CoreDataManager {
     }
     
     private func clearDataStore() throws {
-        try NSFileManager.defaultManager().removeItemAtURL(storeURL)
+        try NSFileManager.defaultManager().removeItemAtURL(configuration.storeURL)
     }
     
     private func saveContext(ctx: NSManagedObjectContext) {
@@ -139,7 +102,63 @@ private class CoreDataManager {
 }
 
 public struct CoreDataStack {
-    private static let Manager = CoreDataManager()
+    public struct Configuration {
+        private static let InfoDictionarySQLiteNameKey = "FFCDDataManagerSQLiteName"
+        private static let InfoDictionaryModelNameKey = "FFCDDataManagerModelName"
+        private static let LegacyConfiguration: Configuration = {
+            let bundle = NSBundle.mainBundle()
+            var modelName: String? = nil
+            var sqliteName: String? = nil
+            if let infoDict = bundle.infoDictionary {
+                modelName = infoDict[Configuration.InfoDictionaryModelNameKey] as? String
+                sqliteName = infoDict[Configuration.InfoDictionarySQLiteNameKey] as? String
+            }
+            return Configuration(bundle: bundle, modelName: modelName, sqliteName: sqliteName)
+        }()
+        
+        public let bundle: NSBundle
+        public let modelName: String
+        public let sqliteName: String
+        
+        private let storeURL: NSURL
+        private let applicationDataDirectory: NSURL = {
+            let fileManager = NSFileManager.defaultManager()
+            let dataFolderURL: NSURL
+            #if os(iOS)
+            dataFolderURL = fileManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).last!
+            #elseif os(OSX)
+            let url = fileManager.URLsForDirectory(.ApplicationSupportDirectory, inDomains: .UserDomainMask).last!
+            dataFolderURL = url.URLByAppendingPathComponent(NSApp.identifier)
+            var isDir = false
+            let exists = fileManager.fileExistsAtPath(dataFolderURL.path!, isDirectory: &isDir)
+            if !exists || (exists && !isDir) {
+                do {
+                    try fileManager.createDirectoryAtURL(dataFolderURL, withIntermediateDirectories: true, attributes: nil)
+                } catch {
+                    print("Could not create application support folder: \(error)")
+                }
+            }
+            #endif
+            return dataFolderURL
+        }()
+        
+        private static let InfoDictionaryTargetDisplayNameKey = "CFBundleDisplayName"
+        private static let InfoDictionaryTargetNameKey = String(kCFBundleNameKey)
+        public init(bundle: NSBundle, modelName: String? = nil, sqliteName: String? = nil) {
+            func targetName(bundle: NSBundle) -> String {
+                let infoDict = bundle.infoDictionary!
+                let name = infoDict[Configuration.InfoDictionaryTargetDisplayNameKey] ?? infoDict[Configuration.InfoDictionaryTargetNameKey]
+                return name as! String
+            }
+            self.bundle = bundle
+            self.modelName = modelName ?? targetName(bundle)
+            self.sqliteName = sqliteName ?? (targetName(bundle) + ".sqlite")
+            self.storeURL = applicationDataDirectory.URLByAppendingPathComponent(self.sqliteName)
+        }
+    }
+    
+    public static var configuration = Configuration.LegacyConfiguration
+    private static let Manager = CoreDataManager(configuration: CoreDataStack.configuration)
     
     public static let MainContext: NSManagedObjectContext = CoreDataStack.Manager.managedObjectContext
     

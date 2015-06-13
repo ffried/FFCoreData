@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8118.17" systemVersion="14D136" minimumToolsVersion="Xcode 7.0">
+    <entity name="TestEntity" representedClassName=".TestEntity" syncable="YES">
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="TestEntity" positionX="-63" positionY="-18" width="128" height="60"/>
+    </elements>
+</model>

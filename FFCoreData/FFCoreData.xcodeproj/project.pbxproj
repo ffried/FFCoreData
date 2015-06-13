@@ -8,10 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		0700FD981A73F22B00570B96 /* MOCEntitiesObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0700FD971A73F22B00570B96 /* MOCEntitiesObserver.swift */; };
+		0741EB201B2C84B4002593F6 /* TestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0741EB1E1B2C84B4002593F6 /* TestModel.xcdatamodeld */; };
+		0741EB261B2C85ED002593F6 /* TestEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0741EB241B2C85ED002593F6 /* TestEntity+CoreDataProperties.swift */; };
+		0741EB271B2C85ED002593F6 /* TestEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0741EB251B2C85ED002593F6 /* TestEntity.swift */; };
+		0741EB291B2C8618002593F6 /* FFCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0741EB281B2C8618002593F6 /* FFCoreDataTests.swift */; };
 		076576951A73CC3500EEA793 /* ManagedObjectContextObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076576941A73CC3500EEA793 /* ManagedObjectContextObserver.swift */; };
 		076576971A73D4D500EEA793 /* MOCObjectsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076576961A73D4D500EEA793 /* MOCObjectsObserver.swift */; };
 		07876A1C19D41E7000F21E7D /* FFCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = 07876A1B19D41E7000F21E7D /* FFCoreData.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		07876A2619D41E7000F21E7D /* FFCoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07876A2519D41E7000F21E7D /* FFCoreDataTests.m */; };
 		07A64BE91B2C240F0008EFF2 /* UIKitFetchedResultsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A64BE81B2C240F0008EFF2 /* UIKitFetchedResultsControllerDelegate.swift */; };
 		07A64BEB1B2C266A0008EFF2 /* TableViewFetchedResultsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A64BEA1B2C266A0008EFF2 /* TableViewFetchedResultsControllerDelegate.swift */; };
 		07A64BED1B2C29A30008EFF2 /* CollectionViewFetchedResultsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A64BEC1B2C29A30008EFF2 /* CollectionViewFetchedResultsControllerDelegate.swift */; };
@@ -44,6 +47,11 @@
 
 /* Begin PBXFileReference section */
 		0700FD971A73F22B00570B96 /* MOCEntitiesObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOCEntitiesObserver.swift; sourceTree = "<group>"; };
+		0741EB1F1B2C84B4002593F6 /* TestModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModel.xcdatamodel; sourceTree = "<group>"; };
+		0741EB231B2C85ED002593F6 /* FFCoreDataTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FFCoreDataTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		0741EB241B2C85ED002593F6 /* TestEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TestEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0741EB251B2C85ED002593F6 /* TestEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestEntity.swift; sourceTree = "<group>"; };
+		0741EB281B2C8618002593F6 /* FFCoreDataTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFCoreDataTests.swift; sourceTree = "<group>"; };
 		076576941A73CC3500EEA793 /* ManagedObjectContextObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectContextObserver.swift; sourceTree = "<group>"; };
 		076576961A73D4D500EEA793 /* MOCObjectsObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOCObjectsObserver.swift; sourceTree = "<group>"; };
 		07876A1619D41E7000F21E7D /* FFCoreData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FFCoreData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,7 +59,6 @@
 		07876A1B19D41E7000F21E7D /* FFCoreData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFCoreData.h; sourceTree = "<group>"; };
 		07876A2119D41E7000F21E7D /* FFCoreDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FFCoreDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07876A2419D41E7000F21E7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		07876A2519D41E7000F21E7D /* FFCoreDataTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFCoreDataTests.m; sourceTree = "<group>"; };
 		07A64BE81B2C240F0008EFF2 /* UIKitFetchedResultsControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitFetchedResultsControllerDelegate.swift; sourceTree = "<group>"; };
 		07A64BEA1B2C266A0008EFF2 /* TableViewFetchedResultsControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewFetchedResultsControllerDelegate.swift; sourceTree = "<group>"; };
 		07A64BEC1B2C29A30008EFF2 /* CollectionViewFetchedResultsControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewFetchedResultsControllerDelegate.swift; sourceTree = "<group>"; };
@@ -184,7 +191,10 @@
 		07876A2219D41E7000F21E7D /* FFCoreDataTests */ = {
 			isa = PBXGroup;
 			children = (
-				07876A2519D41E7000F21E7D /* FFCoreDataTests.m */,
+				0741EB241B2C85ED002593F6 /* TestEntity+CoreDataProperties.swift */,
+				0741EB251B2C85ED002593F6 /* TestEntity.swift */,
+				0741EB281B2C8618002593F6 /* FFCoreDataTests.swift */,
+				0741EB1E1B2C84B4002593F6 /* TestModel.xcdatamodeld */,
 				07876A2319D41E7000F21E7D /* Supporting Files */,
 			);
 			path = FFCoreDataTests;
@@ -193,6 +203,7 @@
 		07876A2319D41E7000F21E7D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0741EB231B2C85ED002593F6 /* FFCoreDataTests-Bridging-Header.h */,
 				07876A2419D41E7000F21E7D /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -374,7 +385,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07876A2619D41E7000F21E7D /* FFCoreDataTests.m in Sources */,
+				0741EB271B2C85ED002593F6 /* TestEntity.swift in Sources */,
+				0741EB261B2C85ED002593F6 /* TestEntity+CoreDataProperties.swift in Sources */,
+				0741EB201B2C84B4002593F6 /* TestModel.xcdatamodeld in Sources */,
+				0741EB291B2C8618002593F6 /* FFCoreDataTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +516,7 @@
 		07876A2D19D41E7000F21E7D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -514,12 +529,15 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.ffried.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FFCoreDataTests/FFCoreDataTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		07876A2E19D41E7000F21E7D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -528,6 +546,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.ffried.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FFCoreDataTests/FFCoreDataTests-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -562,6 +581,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0741EB1E1B2C84B4002593F6 /* TestModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0741EB1F1B2C84B4002593F6 /* TestModel.xcdatamodel */,
+			);
+			currentVersion = 0741EB1F1B2C84B4002593F6 /* TestModel.xcdatamodel */;
+			path = TestModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 07876A0D19D41E7000F21E7D /* Project object */;
 }
