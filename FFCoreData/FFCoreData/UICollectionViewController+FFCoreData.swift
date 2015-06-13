@@ -62,9 +62,9 @@ public extension UICollectionViewController {
     /**
     *  The data source for the tableview.
     */
-    public var dataSource: FFCDCollectionViewDataSource? {
+    public var dataSource: CollectionViewDataSource? {
         get {
-            return objc_getAssociatedObject(self, &PropertyKeys.DataSource) as? FFCDCollectionViewDataSource
+            return objc_getAssociatedObject(self, &PropertyKeys.DataSource) as? CollectionViewDataSource
         }
         set {
             objc_setAssociatedObject(self, &PropertyKeys.DataSource, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
@@ -77,11 +77,11 @@ public extension UICollectionViewController {
     *  @param frcDelegate        The delegate for the FFCDCollectionViewFetchedResultsControllerDelegate.
     *  @param dataSourceDelegate The delegate for the FFCDCollectinViewDataSource.
     */
-    func setupWithFetchedResultsControllerDelegate(frcDelegate: FetchedResultsControllerDelegateDelegate, dataSourceDelegate: FFCDCollectionViewDataSourceDelegate) {
+    func setupWithFetchedResultsControllerDelegate(frcDelegate: FetchedResultsControllerDelegateDelegate, dataSourceDelegate: CollectionViewDataSourceDelegate) {
         if let frc = fetchedResultsController, let collectionView = collectionView {
             collectionView.delegate = self
             fetchedResultsControllDelegate = CollectionViewFetchedResultsControllerDelegate(fetchedResultsController: frc, collectionView: collectionView, delegate: frcDelegate)
-            dataSource = FFCDCollectionViewDataSource(fetchedResultsController: frc, delegate: dataSourceDelegate, collectionView: collectionView)
+            dataSource = CollectionViewDataSource(collectionView: collectionView, controller: frc, delegate: dataSourceDelegate)
         }
     }
     
@@ -89,7 +89,7 @@ public extension UICollectionViewController {
     *  Sets up the fetchedResultsControllerDelegate and the dataSource with the same delegate.
     *  @param delegate The delegate for both, the fetchedResultsControllerDelegate and the dataSource.
     */
-    func setupWithDelegate(delegate: protocol<FetchedResultsControllerDelegateDelegate, FFCDCollectionViewDataSourceDelegate>) {
+    func setupWithDelegate(delegate: protocol<FetchedResultsControllerDelegateDelegate, CollectionViewDataSourceDelegate>) {
         setupWithFetchedResultsControllerDelegate(delegate, dataSourceDelegate: delegate)
     }
 }

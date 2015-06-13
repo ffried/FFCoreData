@@ -12,7 +12,7 @@ import UIKit
 
 public class CollectionViewFetchedResultsControllerDelegate: UIKitFetchedResultsControllerDelegate {
     
-    public weak var collectionView: UICollectionView?
+    public private(set) weak var collectionView: UICollectionView?
     
     public required init(fetchedResultsController: NSFetchedResultsController, collectionView: UICollectionView, delegate: FetchedResultsControllerDelegateDelegate? = nil) {
         self.collectionView = collectionView

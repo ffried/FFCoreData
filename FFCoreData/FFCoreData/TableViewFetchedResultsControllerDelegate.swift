@@ -11,7 +11,7 @@ import FFCoreData
 import UIKit
 
 public class TableViewFetchedResultsControllerDelegate: UIKitFetchedResultsControllerDelegate {
-    public weak var tableView: UITableView?
+    public private(set) weak var tableView: UITableView?
     
     public var animation = UITableViewRowAnimation.Automatic
     

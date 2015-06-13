@@ -17,9 +17,7 @@ public class MOCObjectsObserver: MOCObserver {
             }
         }
     }
-    private var objectIDURIs: [NSURL] {
-        return objectIDs.map { $0.URIRepresentation() }
-    }
+    private var objectIDURIs: [NSURL] { return objectIDs.map { $0.URIRepresentation() } }
     
     public required init(objectIDs: [NSManagedObjectID], contexts: [NSManagedObjectContext]? = nil, fireInitially: Bool = false, block: MOCObserverBlock) {
         self.objectIDs = objectIDs

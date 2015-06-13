@@ -7,7 +7,6 @@
 
 #import "NSManagedObject+FFCDFindAndOrCreate.h"
 #import "FFCoreData.h"
-#import "FFCoreDataDefines.h"
 
 @implementation NSManagedObject (FFCDFindAndOrCreate)
 
@@ -137,7 +136,7 @@
     }
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:errorPtr];
     if (fetchedObjects == nil && *errorPtr != nil) {
-        FFLog(@"Error while executing findOrCreate fetch request: %@", *errorPtr);
+        //FFLog(@"Error while executing findOrCreate fetch request: %@", *errorPtr);
 #if kNSManagedObjectFFCDFindOrCreateCrashOnError
         abort();
 #endif

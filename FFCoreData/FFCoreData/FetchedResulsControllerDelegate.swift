@@ -12,14 +12,14 @@ public protocol FetchedResultsControllerDelegateDelegate: NSFetchedResultsContro
 
 public class FetchedResultsControllerDelegate: NSObject, NSFetchedResultsControllerDelegate {
     
-    public let fetchedResultsController: NSFetchedResultsController
+    public private(set) weak var fetchedResultsController: NSFetchedResultsController?
     public weak var delegate: FetchedResultsControllerDelegateDelegate?
     
-    internal init(fetchedResultsController: NSFetchedResultsController, delegate: FetchedResultsControllerDelegateDelegate? = nil) {
+    internal init(fetchedResultsController: NSFetchedResultsController, delegate: FetchedResultsControllerDelegateDelegate?) {
         self.fetchedResultsController = fetchedResultsController
         self.delegate = delegate
         super.init()
-        self.fetchedResultsController.delegate = self
+        self.fetchedResultsController?.delegate = self
     }
     
     // MARK: - Internal functions
