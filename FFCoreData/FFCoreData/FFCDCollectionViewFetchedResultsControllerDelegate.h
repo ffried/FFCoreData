@@ -27,7 +27,7 @@
  *  @return A new FFCDCollectionViewFetchedResultsControllerDelegate instance.
  */
 + (instancetype)delegateWithFetchedResultsController:(NSFetchedResultsController *)controller
-                                            delegate:(id<FFCDFetchedResultsControllerDelegate>)delegate
+                                            delegate:(id<FetchedResultsControllerDelegateDelegate>)delegate
                                       collectionView:(UICollectionView *)collectionView;
 
 /**
@@ -38,7 +38,7 @@
  *  @return A new FFCDCollectionViewFetchedResultsControllerDelegate instance.
  */
 - (instancetype)initWithFetchedResultsController:(NSFetchedResultsController *)fetchedResultsController
-                                        delegate:(id<FFCDFetchedResultsControllerDelegate>)delegate
+                                        delegate:(id<FetchedResultsControllerDelegateDelegate>)delegate
                                   collectionView:(UICollectionView *)collectionView NS_DESIGNATED_INITIALIZER;
 
 @end

@@ -32,7 +32,7 @@
  *  @return A new FFCDTableViewFetchedResultsControllerDelegate instance.
  */
 + (instancetype)delegateWithFetchedResultsController:(NSFetchedResultsController *)controller
-                                            delegate:(id<FFCDFetchedResultsControllerDelegate>)delegate
+                                            delegate:(id<FetchedResultsControllerDelegateDelegate>)delegate
                                            tableView:(UITableView *)tableView;
 
 /**
@@ -43,7 +43,7 @@
  *  @return A new FFCDTableViewFetchedResultsControllerDelegate instance.
  */
 - (instancetype)initWithFetchedResultsController:(NSFetchedResultsController *)fetchedResultsController
-                                        delegate:(id<FFCDFetchedResultsControllerDelegate>)delegate
+                                        delegate:(id<FetchedResultsControllerDelegateDelegate>)delegate
                                        tableView:(UITableView *)tableView NS_DESIGNATED_INITIALIZER;
 
 @end

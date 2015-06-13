@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Florian Friedrich. All rights reserved.
 //
 
-#import <FFCoreData/FFCDFetchedResultsControllerDelegate.h>
+#import "FFCoreData-Swift.h"
 
-@interface FFCDUIKitFetchedResultsControllerDelegate: FFCDFetchedResultsControllerDelegate
+@interface FFCDUIKitFetchedResultsControllerDelegate: FetchedResultsControllerDelegate
 
 /**
  *  Whether or not possible selections should be preserved. YES by default.
