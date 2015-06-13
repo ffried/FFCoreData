@@ -15,7 +15,7 @@ public class FetchedResultsControllerDelegate: NSObject, NSFetchedResultsControl
     public let fetchedResultsController: NSFetchedResultsController
     public weak var delegate: FetchedResultsControllerDelegateDelegate?
     
-    public required init(fetchedResultsController: NSFetchedResultsController, delegate: FetchedResultsControllerDelegateDelegate? = nil) {
+    internal init(fetchedResultsController: NSFetchedResultsController, delegate: FetchedResultsControllerDelegateDelegate? = nil) {
         self.fetchedResultsController = fetchedResultsController
         self.delegate = delegate
         super.init()
@@ -30,9 +30,9 @@ public class FetchedResultsControllerDelegate: NSObject, NSFetchedResultsControl
     internal func updateSectionAtIndex(index: Int) {}
     internal func moveSectionFromIndex(fromIndex: Int, toIndex: Int) {}
     
-    internal func insertSubobjectAtIndexPath(index: NSIndexPath) {}
-    internal func removeSubobjectAtIndexPath(index: NSIndexPath) {}
-    internal func updateSubobjectAtIndexPath(index: NSIndexPath) {}
+    internal func insertSubobjectAtIndexPath(indexPath: NSIndexPath) {}
+    internal func removeSubobjectAtIndexPath(indexPath: NSIndexPath) {}
+    internal func updateSubobjectAtIndexPath(indexPath: NSIndexPath) {}
     internal func moveSubobjectFromIndexPath(fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {}
     
     internal func endUpdates() {}

@@ -26,7 +26,7 @@ public extension UICollectionViewController {
             {
                 return moc
             } else {
-                self.managedObjectContext = FFCDMainContext()
+                self.managedObjectContext = CoreDataStack.MainContext
                 return self.managedObjectContext
             }
         }
@@ -50,9 +50,9 @@ public extension UICollectionViewController {
     /**
     *  The delegate of the fetched results controller.
     */
-    public var fetchedResultsControllDelegate: FFCDCollectionViewFetchedResultsControllerDelegate? {
+    public var fetchedResultsControllDelegate: CollectionViewFetchedResultsControllerDelegate? {
         get {
-            return objc_getAssociatedObject(self, &PropertyKeys.FetchedResultsControllerDelegate) as? FFCDCollectionViewFetchedResultsControllerDelegate
+            return objc_getAssociatedObject(self, &PropertyKeys.FetchedResultsControllerDelegate) as? CollectionViewFetchedResultsControllerDelegate
         }
         set {
             objc_setAssociatedObject(self, &PropertyKeys.FetchedResultsControllerDelegate, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
@@ -77,13 +77,11 @@ public extension UICollectionViewController {
     *  @param frcDelegate        The delegate for the FFCDCollectionViewFetchedResultsControllerDelegate.
     *  @param dataSourceDelegate The delegate for the FFCDCollectinViewDataSource.
     */
-    func setupWithFetchedResultsControllerDelegate(frcDelegate: FFCDFetchedResultsControllerDelegateProtocol, dataSourceDelegate: FFCDCollectionViewDataSourceDelegate) {
+    func setupWithFetchedResultsControllerDelegate(frcDelegate: FetchedResultsControllerDelegateDelegate, dataSourceDelegate: FFCDCollectionViewDataSourceDelegate) {
         if let frc = fetchedResultsController, let collectionView = collectionView {
             collectionView.delegate = self
-            fetchedResultsControllDelegate = FFCDCollectionViewFetchedResultsControllerDelegate(fetchedResultsController: frc, delegate: frcDelegate, collectionView: collectionView)
+            fetchedResultsControllDelegate = CollectionViewFetchedResultsControllerDelegate(fetchedResultsController: frc, collectionView: collectionView, delegate: frcDelegate)
             dataSource = FFCDCollectionViewDataSource(fetchedResultsController: frc, delegate: dataSourceDelegate, collectionView: collectionView)
-        } else {
-            
         }
     }
     
@@ -91,7 +89,7 @@ public extension UICollectionViewController {
     *  Sets up the fetchedResultsControllerDelegate and the dataSource with the same delegate.
     *  @param delegate The delegate for both, the fetchedResultsControllerDelegate and the dataSource.
     */
-    func setupWithDelegate(delegate: protocol<FFCDFetchedResultsControllerDelegateProtocol, FFCDCollectionViewDataSourceDelegate>) {
+    func setupWithDelegate(delegate: protocol<FetchedResultsControllerDelegateDelegate, FFCDCollectionViewDataSourceDelegate>) {
         setupWithFetchedResultsControllerDelegate(delegate, dataSourceDelegate: delegate)
     }
 }

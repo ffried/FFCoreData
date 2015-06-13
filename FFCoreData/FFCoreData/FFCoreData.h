@@ -26,9 +26,6 @@ FOUNDATION_EXPORT const unsigned char FFCoreDataVersionString[];
 #import <FFCoreData/NSManagedObject+FFCDFindAndOrCreate.h>
 
 #if __IPHONE_OS_VERSION_MIN_REQUIRED
-    #import <FFCoreData/FFCDTableViewFetchedResultsControllerDelegate.h>
-    #import <FFCoreData/FFCDCollectionViewFetchedResultsControllerDelegate.h>
-
     #import <FFCoreData/FFCDTableViewDataSource.h>
     #import <FFCoreData/FFCDCollectionViewDataSource.h>
 #endif

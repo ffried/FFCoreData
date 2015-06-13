@@ -26,7 +26,7 @@ public extension UITableViewController {
             {
                 return moc
             } else {
-                self.managedObjectContext = FFCDMainContext()
+                self.managedObjectContext = CoreDataStack.MainContext
                 return self.managedObjectContext
             }
         }
@@ -50,9 +50,9 @@ public extension UITableViewController {
     /**
     *  The delegate of the fetched results controller.
     */
-    public var fetchedResultsControllDelegate: FFCDTableViewFetchedResultsControllerDelegate? {
+    public var fetchedResultsControllDelegate: TableViewFetchedResultsControllerDelegate? {
         get {
-            return objc_getAssociatedObject(self, &PropertyKeys.FetchedResultsControllerDelegate) as? FFCDTableViewFetchedResultsControllerDelegate
+            return objc_getAssociatedObject(self, &PropertyKeys.FetchedResultsControllerDelegate) as? TableViewFetchedResultsControllerDelegate
         }
         set {
             objc_setAssociatedObject(self, &PropertyKeys.FetchedResultsControllerDelegate, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
@@ -77,10 +77,10 @@ public extension UITableViewController {
     *  @param frcDelegate        The delegate for the FFCDTableViewFetchedResultsControllerDelegate.
     *  @param dataSourceDelegate The delegate for the FFCDTableViewDataSource.
     */
-    func setupWithFetchedResultsControllerDelegate(frcDelegate: FFCDFetchedResultsControllerDelegateProtocol, dataSourceDelegate: FFCDTableViewDataSourceDelegate) {
+    func setupWithFetchedResultsControllerDelegate(frcDelegate: FetchedResultsControllerDelegateDelegate, dataSourceDelegate: FFCDTableViewDataSourceDelegate) {
         tableView.delegate = self
-        if let frc = fetchedResultsController {
-            fetchedResultsControllDelegate = FFCDTableViewFetchedResultsControllerDelegate(fetchedResultsController: frc, delegate: frcDelegate, tableView: tableView)
+        if let frc = fetchedResultsController, tableView = tableView {
+            fetchedResultsControllDelegate = TableViewFetchedResultsControllerDelegate(fetchedResultsController: frc, tableView: tableView, delegate: frcDelegate)
             dataSource = FFCDTableViewDataSource(fetchedResultsController: frc, delegate: dataSourceDelegate, tableView: tableView)
         }
     }
@@ -89,7 +89,7 @@ public extension UITableViewController {
     *  Sets up the fetchedResultsControllerDelegate and the dataSource with the same delegate.
     *  @param delegate The delegate for both, the fetchedResultsControllerDelegate and the dataSource.
     */
-    func setupWithDelegate(delegate: protocol<FFCDFetchedResultsControllerDelegateProtocol, FFCDTableViewDataSourceDelegate>) {
+    func setupWithDelegate(delegate: protocol<FetchedResultsControllerDelegateDelegate, FFCDTableViewDataSourceDelegate>) {
         setupWithFetchedResultsControllerDelegate(delegate, dataSourceDelegate: delegate)
     }
 }

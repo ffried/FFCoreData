@@ -8,10 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0700FD981A73F22B00570B96 /* MOCEntitiesObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0700FD971A73F22B00570B96 /* MOCEntitiesObserver.swift */; };
-		071BD3B11B074D410035EA49 /* FFCDUIKitFetchedResultsControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 071BD3AF1B074D410035EA49 /* FFCDUIKitFetchedResultsControllerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		071BD3B21B074D410035EA49 /* FFCDUIKitFetchedResultsControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 071BD3B01B074D410035EA49 /* FFCDUIKitFetchedResultsControllerDelegate.m */; };
-		071BD3B51B07509D0035EA49 /* FFCDUIKitFetchedResultsControllerDelegate+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 071BD3B31B07509D0035EA49 /* FFCDUIKitFetchedResultsControllerDelegate+Internal.h */; };
-		071BD3B61B07509D0035EA49 /* FFCDUIKitFetchedResultsControllerDelegate+Internal.m in Sources */ = {isa = PBXBuildFile; fileRef = 071BD3B41B07509D0035EA49 /* FFCDUIKitFetchedResultsControllerDelegate+Internal.m */; };
 		071D620719D4BB6E00C1999D /* FFCDTableViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 071D620519D4BB6E00C1999D /* FFCDTableViewDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		071D620819D4BB6E00C1999D /* FFCDTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 071D620619D4BB6E00C1999D /* FFCDTableViewDataSource.m */; };
 		071D620919D4BB6E00C1999D /* FFCDTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 071D620619D4BB6E00C1999D /* FFCDTableViewDataSource.m */; };
@@ -19,12 +15,6 @@
 		071D620D19D4BDFF00C1999D /* FFCDCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 071D620B19D4BDFF00C1999D /* FFCDCollectionViewDataSource.m */; };
 		071D620E19D4BDFF00C1999D /* FFCDCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 071D620B19D4BDFF00C1999D /* FFCDCollectionViewDataSource.m */; };
 		074657FA19D58EA70088A6F5 /* FFCoreDataDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = 074657F919D58EA70088A6F5 /* FFCoreDataDefines.m */; };
-		0756A6C219D4669900F42CFD /* FFCDCollectionViewFetchedResultsControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0756A6BE19D4669900F42CFD /* FFCDCollectionViewFetchedResultsControllerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0756A6C319D4669900F42CFD /* FFCDCollectionViewFetchedResultsControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0756A6BF19D4669900F42CFD /* FFCDCollectionViewFetchedResultsControllerDelegate.m */; };
-		0756A6C419D4669900F42CFD /* FFCDCollectionViewFetchedResultsControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0756A6BF19D4669900F42CFD /* FFCDCollectionViewFetchedResultsControllerDelegate.m */; };
-		0756A6C519D4669900F42CFD /* FFCDTableViewFetchedResultsControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0756A6C019D4669900F42CFD /* FFCDTableViewFetchedResultsControllerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0756A6C619D4669900F42CFD /* FFCDTableViewFetchedResultsControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0756A6C119D4669900F42CFD /* FFCDTableViewFetchedResultsControllerDelegate.m */; };
-		0756A6C719D4669900F42CFD /* FFCDTableViewFetchedResultsControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0756A6C119D4669900F42CFD /* FFCDTableViewFetchedResultsControllerDelegate.m */; };
 		0756A6CB19D466D800F42CFD /* NSManagedObject+FFCDFindAndOrCreate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0756A6C919D466D800F42CFD /* NSManagedObject+FFCDFindAndOrCreate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0756A6CC19D466D800F42CFD /* NSManagedObject+FFCDFindAndOrCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0756A6CA19D466D800F42CFD /* NSManagedObject+FFCDFindAndOrCreate.m */; };
 		0756A6CD19D466D800F42CFD /* NSManagedObject+FFCDFindAndOrCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0756A6CA19D466D800F42CFD /* NSManagedObject+FFCDFindAndOrCreate.m */; };
@@ -33,6 +23,9 @@
 		07876A1C19D41E7000F21E7D /* FFCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = 07876A1B19D41E7000F21E7D /* FFCoreData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07876A2619D41E7000F21E7D /* FFCoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07876A2519D41E7000F21E7D /* FFCoreDataTests.m */; };
 		07876A4419D42AA100F21E7D /* FFCoreDataDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 07876A4319D42AA000F21E7D /* FFCoreDataDefines.h */; };
+		07A64BE91B2C240F0008EFF2 /* UIKitFetchedResultsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A64BE81B2C240F0008EFF2 /* UIKitFetchedResultsControllerDelegate.swift */; };
+		07A64BEB1B2C266A0008EFF2 /* TableViewFetchedResultsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A64BEA1B2C266A0008EFF2 /* TableViewFetchedResultsControllerDelegate.swift */; };
+		07A64BED1B2C29A30008EFF2 /* CollectionViewFetchedResultsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A64BEC1B2C29A30008EFF2 /* CollectionViewFetchedResultsControllerDelegate.swift */; };
 		07AA24341B27617000FA689B /* UITableViewController+FFCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA24331B27617000FA689B /* UITableViewController+FFCoreData.swift */; };
 		07AA24361B276EDB00FA689B /* UICollectionViewController+FFCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA24351B276EDB00FA689B /* UICollectionViewController+FFCoreData.swift */; };
 		07AA24381B28037E00FA689B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA24371B28037E00FA689B /* CoreDataManager.swift */; };
@@ -41,19 +34,11 @@
 
 /* Begin PBXFileReference section */
 		0700FD971A73F22B00570B96 /* MOCEntitiesObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOCEntitiesObserver.swift; sourceTree = "<group>"; };
-		071BD3AF1B074D410035EA49 /* FFCDUIKitFetchedResultsControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFCDUIKitFetchedResultsControllerDelegate.h; sourceTree = "<group>"; };
-		071BD3B01B074D410035EA49 /* FFCDUIKitFetchedResultsControllerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFCDUIKitFetchedResultsControllerDelegate.m; sourceTree = "<group>"; };
-		071BD3B31B07509D0035EA49 /* FFCDUIKitFetchedResultsControllerDelegate+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FFCDUIKitFetchedResultsControllerDelegate+Internal.h"; sourceTree = "<group>"; };
-		071BD3B41B07509D0035EA49 /* FFCDUIKitFetchedResultsControllerDelegate+Internal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FFCDUIKitFetchedResultsControllerDelegate+Internal.m"; sourceTree = "<group>"; };
 		071D620519D4BB6E00C1999D /* FFCDTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFCDTableViewDataSource.h; sourceTree = "<group>"; };
 		071D620619D4BB6E00C1999D /* FFCDTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFCDTableViewDataSource.m; sourceTree = "<group>"; };
 		071D620A19D4BDFF00C1999D /* FFCDCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFCDCollectionViewDataSource.h; sourceTree = "<group>"; };
 		071D620B19D4BDFF00C1999D /* FFCDCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFCDCollectionViewDataSource.m; sourceTree = "<group>"; };
 		074657F919D58EA70088A6F5 /* FFCoreDataDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFCoreDataDefines.m; sourceTree = "<group>"; };
-		0756A6BE19D4669900F42CFD /* FFCDCollectionViewFetchedResultsControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFCDCollectionViewFetchedResultsControllerDelegate.h; sourceTree = "<group>"; };
-		0756A6BF19D4669900F42CFD /* FFCDCollectionViewFetchedResultsControllerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFCDCollectionViewFetchedResultsControllerDelegate.m; sourceTree = "<group>"; };
-		0756A6C019D4669900F42CFD /* FFCDTableViewFetchedResultsControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFCDTableViewFetchedResultsControllerDelegate.h; sourceTree = "<group>"; };
-		0756A6C119D4669900F42CFD /* FFCDTableViewFetchedResultsControllerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFCDTableViewFetchedResultsControllerDelegate.m; sourceTree = "<group>"; };
 		0756A6C919D466D800F42CFD /* NSManagedObject+FFCDFindAndOrCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+FFCDFindAndOrCreate.h"; sourceTree = "<group>"; };
 		0756A6CA19D466D800F42CFD /* NSManagedObject+FFCDFindAndOrCreate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+FFCDFindAndOrCreate.m"; sourceTree = "<group>"; };
 		076576941A73CC3500EEA793 /* ManagedObjectContextObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectContextObserver.swift; sourceTree = "<group>"; };
@@ -65,6 +50,9 @@
 		07876A2419D41E7000F21E7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07876A2519D41E7000F21E7D /* FFCoreDataTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFCoreDataTests.m; sourceTree = "<group>"; };
 		07876A4319D42AA000F21E7D /* FFCoreDataDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFCoreDataDefines.h; sourceTree = "<group>"; };
+		07A64BE81B2C240F0008EFF2 /* UIKitFetchedResultsControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitFetchedResultsControllerDelegate.swift; sourceTree = "<group>"; };
+		07A64BEA1B2C266A0008EFF2 /* TableViewFetchedResultsControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewFetchedResultsControllerDelegate.swift; sourceTree = "<group>"; };
+		07A64BEC1B2C29A30008EFF2 /* CollectionViewFetchedResultsControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewFetchedResultsControllerDelegate.swift; sourceTree = "<group>"; };
 		07AA24331B27617000FA689B /* UITableViewController+FFCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewController+FFCoreData.swift"; sourceTree = "<group>"; };
 		07AA24351B276EDB00FA689B /* UICollectionViewController+FFCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewController+FFCoreData.swift"; sourceTree = "<group>"; };
 		07AA24371B28037E00FA689B /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -92,14 +80,9 @@
 		071D620319D4BB3800C1999D /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
-				0756A6BE19D4669900F42CFD /* FFCDCollectionViewFetchedResultsControllerDelegate.h */,
-				0756A6BF19D4669900F42CFD /* FFCDCollectionViewFetchedResultsControllerDelegate.m */,
-				0756A6C019D4669900F42CFD /* FFCDTableViewFetchedResultsControllerDelegate.h */,
-				0756A6C119D4669900F42CFD /* FFCDTableViewFetchedResultsControllerDelegate.m */,
-				071BD3AF1B074D410035EA49 /* FFCDUIKitFetchedResultsControllerDelegate.h */,
-				071BD3B01B074D410035EA49 /* FFCDUIKitFetchedResultsControllerDelegate.m */,
-				071BD3B31B07509D0035EA49 /* FFCDUIKitFetchedResultsControllerDelegate+Internal.h */,
-				071BD3B41B07509D0035EA49 /* FFCDUIKitFetchedResultsControllerDelegate+Internal.m */,
+				07A64BE81B2C240F0008EFF2 /* UIKitFetchedResultsControllerDelegate.swift */,
+				07A64BEA1B2C266A0008EFF2 /* TableViewFetchedResultsControllerDelegate.swift */,
+				07A64BEC1B2C29A30008EFF2 /* CollectionViewFetchedResultsControllerDelegate.swift */,
 			);
 			name = Delegates;
 			sourceTree = "<group>";
@@ -236,10 +219,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				07876A1C19D41E7000F21E7D /* FFCoreData.h in Headers */,
-				071BD3B51B07509D0035EA49 /* FFCDUIKitFetchedResultsControllerDelegate+Internal.h in Headers */,
-				071BD3B11B074D410035EA49 /* FFCDUIKitFetchedResultsControllerDelegate.h in Headers */,
-				0756A6C519D4669900F42CFD /* FFCDTableViewFetchedResultsControllerDelegate.h in Headers */,
-				0756A6C219D4669900F42CFD /* FFCDCollectionViewFetchedResultsControllerDelegate.h in Headers */,
 				071D620719D4BB6E00C1999D /* FFCDTableViewDataSource.h in Headers */,
 				071D620C19D4BDFF00C1999D /* FFCDCollectionViewDataSource.h in Headers */,
 				0756A6CB19D466D800F42CFD /* NSManagedObject+FFCDFindAndOrCreate.h in Headers */,
@@ -345,6 +324,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07A64BE91B2C240F0008EFF2 /* UIKitFetchedResultsControllerDelegate.swift in Sources */,
+				07A64BEB1B2C266A0008EFF2 /* TableViewFetchedResultsControllerDelegate.swift in Sources */,
 				076576971A73D4D500EEA793 /* MOCObjectsObserver.swift in Sources */,
 				07AA24341B27617000FA689B /* UITableViewController+FFCoreData.swift in Sources */,
 				07AA243A1B2A0F0900FA689B /* FetchedResulsControllerDelegate.swift in Sources */,
@@ -352,12 +333,9 @@
 				07AA24361B276EDB00FA689B /* UICollectionViewController+FFCoreData.swift in Sources */,
 				07AA24381B28037E00FA689B /* CoreDataManager.swift in Sources */,
 				071D620D19D4BDFF00C1999D /* FFCDCollectionViewDataSource.m in Sources */,
-				071BD3B61B07509D0035EA49 /* FFCDUIKitFetchedResultsControllerDelegate+Internal.m in Sources */,
-				0756A6C319D4669900F42CFD /* FFCDCollectionViewFetchedResultsControllerDelegate.m in Sources */,
-				071BD3B21B074D410035EA49 /* FFCDUIKitFetchedResultsControllerDelegate.m in Sources */,
 				074657FA19D58EA70088A6F5 /* FFCoreDataDefines.m in Sources */,
-				0756A6C619D4669900F42CFD /* FFCDTableViewFetchedResultsControllerDelegate.m in Sources */,
 				0700FD981A73F22B00570B96 /* MOCEntitiesObserver.swift in Sources */,
+				07A64BED1B2C29A30008EFF2 /* CollectionViewFetchedResultsControllerDelegate.swift in Sources */,
 				071D620819D4BB6E00C1999D /* FFCDTableViewDataSource.m in Sources */,
 				0756A6CC19D466D800F42CFD /* NSManagedObject+FFCDFindAndOrCreate.m in Sources */,
 			);
@@ -367,9 +345,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0756A6C719D4669900F42CFD /* FFCDTableViewFetchedResultsControllerDelegate.m in Sources */,
 				071D620919D4BB6E00C1999D /* FFCDTableViewDataSource.m in Sources */,
-				0756A6C419D4669900F42CFD /* FFCDCollectionViewFetchedResultsControllerDelegate.m in Sources */,
 				0756A6CD19D466D800F42CFD /* NSManagedObject+FFCDFindAndOrCreate.m in Sources */,
 				071D620E19D4BDFF00C1999D /* FFCDCollectionViewDataSource.m in Sources */,
 				07876A2619D41E7000F21E7D /* FFCoreDataTests.m in Sources */,
