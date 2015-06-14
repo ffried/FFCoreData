@@ -12,8 +12,8 @@
 import Foundation
 import CoreData
 
-extension TestEntity {
+public extension TestEntity {
 
-    @NSManaged var uuid: String?
+    @NSManaged public var uuid: String?
 
 }

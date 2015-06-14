@@ -26,9 +26,29 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
-      buildConfiguration = "Debug">
+      codeCoverageEnabled = "YES"
+      buildConfiguration = "Release">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "07876A2019D41E7000F21E7D"
+               BuildableName = "FFCoreDataTests.xctest"
+               BlueprintName = "FFCoreDataTests"
+               ReferencedContainer = "container:FFCoreData.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "07876A1519D41E7000F21E7D"
+            BuildableName = "FFCoreData.framework"
+            BlueprintName = "FFCoreData"
+            ReferencedContainer = "container:FFCoreData.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>

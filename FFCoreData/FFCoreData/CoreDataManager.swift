@@ -16,12 +16,13 @@ private class CoreDataManager {
     
     private lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
+        let url = self.configuration.storeURL
         do {
             let options = [
                 NSMigratePersistentStoresAutomaticallyOption: true,
                 NSInferMappingModelAutomaticallyOption: true
             ]
-            try coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: nil, options: options)
+            try coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: options)
         } catch {
             do {
                 try self.clearDataStore()
@@ -29,7 +30,7 @@ private class CoreDataManager {
                 print("Failed to delete data store")
             }
             do {
-                try coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: nil, options: nil)
+                try coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil)
             }
             catch {
                 fatalError("Could not add persistent store with error: \(error)")
@@ -144,20 +145,21 @@ public struct CoreDataStack {
         
         private static let InfoDictionaryTargetDisplayNameKey = "CFBundleDisplayName"
         private static let InfoDictionaryTargetNameKey = String(kCFBundleNameKey)
+        private static let DefaultTargetName = "UNKNOWN_TARGET_NAME"
         public init(bundle: NSBundle, modelName: String? = nil, sqliteName: String? = nil) {
             func targetName(bundle: NSBundle) -> String {
                 let infoDict = bundle.infoDictionary!
                 let name = infoDict[Configuration.InfoDictionaryTargetDisplayNameKey] ?? infoDict[Configuration.InfoDictionaryTargetNameKey]
-                return name as! String
+                return (name as? String) ?? Configuration.DefaultTargetName
             }
             self.bundle = bundle
             self.modelName = modelName ?? targetName(bundle)
-            self.sqliteName = sqliteName ?? (targetName(bundle) + ".sqlite")
-            self.storeURL = applicationDataDirectory.URLByAppendingPathComponent(self.sqliteName)
+            self.sqliteName = sqliteName ?? targetName(bundle)
+            self.storeURL = applicationDataDirectory.URLByAppendingPathComponent(self.sqliteName + ".sqlite")
         }
     }
     
-    public static var configuration = Configuration.LegacyConfiguration
+    public static  var configuration = Configuration.LegacyConfiguration
     private static let Manager = CoreDataManager(configuration: CoreDataStack.configuration)
     
     public static let MainContext: NSManagedObjectContext = CoreDataStack.Manager.managedObjectContext

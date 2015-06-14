@@ -20,7 +20,7 @@ internal extension NSManagedObject {
 
 public extension NSManagedObject {
     public typealias FindAndOrCreateResult = NSManagedObject
-    public typealias KeyObjectDictionary = [String: AnyObject]
+    public typealias KeyObjectDictionary = [String: NSObject]
     
     // MARK: Create
     public static func createInManagedObjectContext(context: NSManagedObjectContext) -> Self {
@@ -36,10 +36,10 @@ public extension NSManagedObject {
         if let dict = dictionary {
             var subPredicates = [NSPredicate]()
             for (key, value) in dict {
-                let predicate = NSPredicate(format: "%K == %@", [key, value])
+                let predicate = NSPredicate(format: "%K == %@", key, value)
                 subPredicates.append(predicate)
             }
-            predicate = NSCompoundPredicate(type: .AndPredicateType, subpredicates: subPredicates)
+            predicate = NSCompoundPredicate.andPredicateWithSubpredicates(subPredicates)
         }
         return try findObjectsInManagedObjectContext(context, byUsingPredicate: predicate)
     }
@@ -53,8 +53,7 @@ public extension NSManagedObject {
     
     public static func findOrCreateObjectInManagedObjectContext(context: NSManagedObjectContext, byKeyObjectDictionary dictionary: KeyObjectDictionary? = nil) throws -> FindAndOrCreateResult {
         let foundObjects = try findObjectsInManagedObjectContext(context, byUsingKeyObjectDictionary: dictionary)
-        if foundObjects.count > 0 { return foundObjects.first! }
-        let object = createInManagedObjectContext(context)
+        let object = foundObjects.first ?? createInManagedObjectContext(context)
         if let dict = dictionary {
             for (key, value) in dict {
                 if let id = value as? NSManagedObjectID {
