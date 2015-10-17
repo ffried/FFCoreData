@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Florian Friedrich. All rights reserved.
 //
 
-import FFCoreData
+import Foundation
 
 public class MOCObjectsObserver: MOCObserver {
     public var objectIDs: [NSManagedObjectID] {

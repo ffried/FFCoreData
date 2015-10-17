@@ -7,7 +7,6 @@
 //
 
 #if os(iOS)
-import FFCoreData
 import UIKit
 
 public class UIKitFetchedResultsControllerDelegate: FetchedResultsControllerDelegate {

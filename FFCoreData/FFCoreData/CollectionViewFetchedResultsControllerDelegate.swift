@@ -7,8 +7,9 @@
 //
 
 #if os(iOS)
-import FFCoreData
+import Foundation
 import UIKit
+import CoreData
 
 public class CollectionViewFetchedResultsControllerDelegate: UIKitFetchedResultsControllerDelegate {
     
@@ -32,7 +33,7 @@ public class CollectionViewFetchedResultsControllerDelegate: UIKitFetchedResults
     // MARK: - Selection
     override func selectIndexPaths(indexPaths: [NSIndexPath]) {
         super.selectIndexPaths(indexPaths)
-        indexPaths.map { self.collectionView?.selectItemAtIndexPath($0, animated: false, scrollPosition: .None) }
+        indexPaths.forEach { self.collectionView?.selectItemAtIndexPath($0, animated: false, scrollPosition: .None) }
     }
     
     // MARK: Sections

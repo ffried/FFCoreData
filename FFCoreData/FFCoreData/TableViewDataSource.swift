@@ -7,8 +7,9 @@
 //
 
 #if os(iOS)
-import FFCoreData
+import Foundation
 import UIKit
+import CoreData
 
 @objc public protocol TableViewDataSourceDelegate: NSObjectProtocol {
     func tableView(tableView: UITableView, cellIdentifierForRowAtIndexPath indexPath: NSIndexPath) -> String
@@ -54,7 +55,7 @@ public class TableViewDataSource: NSObject, UITableViewDataSource {
     public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellIdentifier = delegate?.tableView(tableView, cellIdentifierForRowAtIndexPath: indexPath) ?? "Cell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
-        let object = fetchedResultsController?.objectAtIndexPath(indexPath)
+        let object = fetchedResultsController?.objectAtIndexPath(indexPath) as? NSManagedObject
         delegate?.tableView(tableView, configureCell: cell, forRowAtIndexPath: indexPath, withObject: object)
         return cell
     }

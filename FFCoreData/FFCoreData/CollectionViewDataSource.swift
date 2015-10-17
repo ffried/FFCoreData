@@ -7,8 +7,9 @@
 //
 
 #if os(iOS)
-import FFCoreData
+import Foundation
 import UIKit
+import CoreData
 
 @objc public protocol CollectionViewDataSourceDelegate: NSObjectProtocol {
     func collectionView(collectionView: UICollectionView, cellIdentifierForItemAtIndexPath: NSIndexPath) -> String
@@ -55,7 +56,7 @@ public class CollectionViewDataSource: NSObject, UICollectionViewDataSource {
     public func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let identifier = delegate?.collectionView(collectionView, cellIdentifierForItemAtIndexPath: indexPath) ?? "Cell"
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath)
-        let object = fetchedResultsController?.objectAtIndexPath(indexPath)
+        let object = fetchedResultsController?.objectAtIndexPath(indexPath) as? NSManagedObject
         delegate?.collectionView(collectionView, configureCell: cell, forRowAtIndexPath: indexPath, withObject: object)
         return cell
     }

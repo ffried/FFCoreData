@@ -6,7 +6,8 @@
 //  Copyright © 2015 Florian Friedrich. All rights reserved.
 //
 
-import FFCoreData
+import Foundation
+import CoreData
 
 public protocol FetchedResultsControllerDelegateDelegate: NSFetchedResultsControllerDelegate {}
 
@@ -57,7 +58,7 @@ public class FetchedResultsControllerDelegate: NSObject, NSFetchedResultsControl
         delegate?.controller?(controller, didChangeSection: sectionInfo, atIndex: sectionIndex, forChangeType: type)
     }
 
-    public func controller(controller: NSFetchedResultsController, didChangeObject anObject: NSManagedObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+    public func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
         switch type {
         case .Insert:
             insertSubobjectAtIndexPath(newIndexPath!)

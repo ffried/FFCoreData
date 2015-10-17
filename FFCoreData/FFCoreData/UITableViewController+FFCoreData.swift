@@ -7,8 +7,9 @@
 //
 
 #if os(iOS)
-import FFCoreData
+import Foundation
 import UIKit
+import CoreData
     
 public extension UITableViewController {
     private struct PropertyKeys {

@@ -6,7 +6,8 @@
 //  Copyright © 2015 Florian Friedrich. All rights reserved.
 //
 
-import FFCoreData
+import Foundation
+import CoreData
 
 internal extension NSManagedObject {
     internal static func entityInContext(context: NSManagedObjectContext) -> NSEntityDescription? {
@@ -24,7 +25,7 @@ public extension NSManagedObject {
     
     // MARK: Create
     public static func createInManagedObjectContext(context: NSManagedObjectContext) -> Self {
-        return self(entity: entityInContext(context)!, insertIntoManagedObjectContext: context)
+        return self.init(entity: entityInContext(context)!, insertIntoManagedObjectContext: context)
     }
     
     public static func allObjectsInContext(context: NSManagedObjectContext) throws -> [FindAndOrCreateResult] {
@@ -39,7 +40,7 @@ public extension NSManagedObject {
                 let predicate = NSPredicate(format: "%K == %@", key, value)
                 subPredicates.append(predicate)
             }
-            predicate = NSCompoundPredicate.andPredicateWithSubpredicates(subPredicates)
+            predicate = NSCompoundPredicate(andPredicateWithSubpredicates: subPredicates)
         }
         return try findObjectsInManagedObjectContext(context, byUsingPredicate: predicate)
     }

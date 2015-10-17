@@ -6,7 +6,8 @@
 //  Copyright © 2015 Florian Friedrich. All rights reserved.
 //
 
-import FFCoreData
+import Foundation
+import CoreData
 
 private class CoreDataManager {
     private lazy var managedObjectModel: NSManagedObjectModel = {

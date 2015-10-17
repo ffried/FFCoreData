@@ -6,7 +6,8 @@
 //  Copyright (c) 2015 Florian Friedrich. All rights reserved.
 //
 
-import FFCoreData
+import Foundation
+import CoreData
 
 public class MOCObserver {
     public typealias MOCObserverBlock = (observer: MOCObserver, changes: [String: [NSManagedObjectID]]?) -> ()

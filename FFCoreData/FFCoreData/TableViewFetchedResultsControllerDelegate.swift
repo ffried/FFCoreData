@@ -7,8 +7,9 @@
 //
 
 #if os(iOS)
-import FFCoreData
+import Foundation
 import UIKit
+import CoreData
 
 public class TableViewFetchedResultsControllerDelegate: UIKitFetchedResultsControllerDelegate {
     public private(set) weak var tableView: UITableView?
@@ -35,7 +36,7 @@ public class TableViewFetchedResultsControllerDelegate: UIKitFetchedResultsContr
     // MARK: - Selection
     override func selectIndexPaths(indexPaths: [NSIndexPath]) {
         super.selectIndexPaths(indexPaths)
-        indexPaths.map { self.tableView?.selectRowAtIndexPath($0, animated: false, scrollPosition: .None) }
+        indexPaths.forEach { self.tableView?.selectRowAtIndexPath($0, animated: false, scrollPosition: .None) }
     }
     
     // MARK: - Sections

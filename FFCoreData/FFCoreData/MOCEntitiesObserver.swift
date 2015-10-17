@@ -6,7 +6,8 @@
 //  Copyright (c) 2015 Florian Friedrich. All rights reserved.
 //
 
-import FFCoreData
+import Foundation
+import CoreData
 
 public class MOCEntitiesObserver: MOCObserver {
     public var entityNames: [String]
