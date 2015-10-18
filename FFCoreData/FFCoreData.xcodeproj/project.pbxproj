@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0700FD981A73F22B00570B96 /* MOCEntitiesObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0700FD971A73F22B00570B96 /* MOCEntitiesObserver.swift */; };
+		07300CB41BD3F51C00C1644E /* NSManagedObject+FFCDFindAndOrCreate.h in Headers */ = {isa = PBXBuildFile; fileRef = 07300CB21BD3F51C00C1644E /* NSManagedObject+FFCDFindAndOrCreate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		07300CB51BD3F51C00C1644E /* NSManagedObject+FFCDFindAndOrCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07300CB31BD3F51C00C1644E /* NSManagedObject+FFCDFindAndOrCreate.m */; settings = {ASSET_TAGS = (); }; };
 		0741EB201B2C84B4002593F6 /* TestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0741EB1E1B2C84B4002593F6 /* TestModel.xcdatamodeld */; };
 		0741EB261B2C85ED002593F6 /* TestEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0741EB241B2C85ED002593F6 /* TestEntity+CoreDataProperties.swift */; };
 		0741EB271B2C85ED002593F6 /* TestEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0741EB251B2C85ED002593F6 /* TestEntity.swift */; };
@@ -21,7 +23,6 @@
 		07A64BED1B2C29A30008EFF2 /* CollectionViewFetchedResultsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A64BEC1B2C29A30008EFF2 /* CollectionViewFetchedResultsControllerDelegate.swift */; };
 		07A64BEF1B2C3B940008EFF2 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A64BEE1B2C3B940008EFF2 /* TableViewDataSource.swift */; };
 		07A64BF11B2C4CCB0008EFF2 /* CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A64BF01B2C4CCB0008EFF2 /* CollectionViewDataSource.swift */; };
-		07A64BF31B2C53480008EFF2 /* NSManagedObject+FindAndOrCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A64BF21B2C53480008EFF2 /* NSManagedObject+FindAndOrCreate.swift */; };
 		07A64BFE1B2C77C40008EFF2 /* FFFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A64BFB1B2C77BB0008EFF2 /* FFFoundation.framework */; };
 		07AA24341B27617000FA689B /* UITableViewController+FFCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA24331B27617000FA689B /* UITableViewController+FFCoreData.swift */; };
 		07AA24361B276EDB00FA689B /* UICollectionViewController+FFCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA24351B276EDB00FA689B /* UICollectionViewController+FFCoreData.swift */; };
@@ -55,6 +56,8 @@
 
 /* Begin PBXFileReference section */
 		0700FD971A73F22B00570B96 /* MOCEntitiesObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOCEntitiesObserver.swift; sourceTree = "<group>"; };
+		07300CB21BD3F51C00C1644E /* NSManagedObject+FFCDFindAndOrCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+FFCDFindAndOrCreate.h"; sourceTree = "<group>"; };
+		07300CB31BD3F51C00C1644E /* NSManagedObject+FFCDFindAndOrCreate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+FFCDFindAndOrCreate.m"; sourceTree = "<group>"; };
 		0741EB1F1B2C84B4002593F6 /* TestModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModel.xcdatamodel; sourceTree = "<group>"; };
 		0741EB231B2C85ED002593F6 /* FFCoreDataTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FFCoreDataTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		0741EB241B2C85ED002593F6 /* TestEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TestEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -230,6 +233,8 @@
 			isa = PBXGroup;
 			children = (
 				07A64BF21B2C53480008EFF2 /* NSManagedObject+FindAndOrCreate.swift */,
+				07300CB21BD3F51C00C1644E /* NSManagedObject+FFCDFindAndOrCreate.h */,
+				07300CB31BD3F51C00C1644E /* NSManagedObject+FFCDFindAndOrCreate.m */,
 			);
 			name = NSManagedObject;
 			sourceTree = "<group>";
@@ -251,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07876A1C19D41E7000F21E7D /* FFCoreData.h in Headers */,
+				07300CB41BD3F51C00C1644E /* NSManagedObject+FFCDFindAndOrCreate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,13 +384,13 @@
 				07A64BE91B2C240F0008EFF2 /* UIKitFetchedResultsControllerDelegate.swift in Sources */,
 				07A64BEB1B2C266A0008EFF2 /* TableViewFetchedResultsControllerDelegate.swift in Sources */,
 				076576971A73D4D500EEA793 /* MOCObjectsObserver.swift in Sources */,
+				07300CB51BD3F51C00C1644E /* NSManagedObject+FFCDFindAndOrCreate.m in Sources */,
 				07AA24341B27617000FA689B /* UITableViewController+FFCoreData.swift in Sources */,
 				07AA243A1B2A0F0900FA689B /* FetchedResulsControllerDelegate.swift in Sources */,
 				076576951A73CC3500EEA793 /* ManagedObjectContextObserver.swift in Sources */,
 				07AA24361B276EDB00FA689B /* UICollectionViewController+FFCoreData.swift in Sources */,
 				07AA24381B28037E00FA689B /* CoreDataManager.swift in Sources */,
 				0700FD981A73F22B00570B96 /* MOCEntitiesObserver.swift in Sources */,
-				07A64BF31B2C53480008EFF2 /* NSManagedObject+FindAndOrCreate.swift in Sources */,
 				07A64BF11B2C4CCB0008EFF2 /* CollectionViewDataSource.swift in Sources */,
 				07A64BED1B2C29A30008EFF2 /* CollectionViewFetchedResultsControllerDelegate.swift in Sources */,
 				07A64BEF1B2C3B940008EFF2 /* TableViewDataSource.swift in Sources */,
