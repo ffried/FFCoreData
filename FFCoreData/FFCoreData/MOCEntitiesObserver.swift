@@ -28,10 +28,10 @@ public class MOCEntitiesObserver: MOCObserver {
 
 public extension NSManagedObject {
     public static func createMOCEntitiesObserver(fireInitially: Bool = false, block: MOCObserver.MOCObserverBlock) -> MOCEntitiesObserver {
-        return createMOCEntitiesObserver(fireInitially, contexts: nil, block: block)
+        return createMOCEntitiesObserver(nil, fireInitially: fireInitially, block: block)
     }
     
-    public static func createMOCEntitiesObserver(fireInitially: Bool = false, contexts: [NSManagedObjectContext]? = nil, block: MOCObserver.MOCObserverBlock) -> MOCEntitiesObserver {
+    public static func createMOCEntitiesObserver(contexts: [NSManagedObjectContext]? = nil, fireInitially: Bool = false, block: MOCObserver.MOCObserverBlock) -> MOCEntitiesObserver {
         var className = StringFromClass(self)
         if let range = className.rangeOfString(".", options: .BackwardsSearch) { // Fix Swift class names
             className = className.substringFromIndex(range.endIndex)
