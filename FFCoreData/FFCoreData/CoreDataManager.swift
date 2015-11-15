@@ -179,5 +179,5 @@ public struct CoreDataStack {
         return CoreDataStack.Manager.createTemporaryBackgroundContext()
     }
     
-    public func clearDataStore() throws { try CoreDataStack.Manager.clearDataStore() }
+    public static func clearDataStore() throws { try CoreDataStack.Manager.clearDataStore() }
 }
