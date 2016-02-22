@@ -28,13 +28,13 @@ private class CoreDataManager {
             do {
                 try self.clearDataStore()
             } catch {
-                print("Failed to delete data store")
+                print("FFCoreData: Failed to delete data store")
             }
             do {
                 try coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil)
             }
             catch {
-                fatalError("Could not add persistent store with error: \(error)")
+                fatalError("FFCoreData: Could not add persistent store with error: \(error)")
             }
         }
         return coordinator
@@ -89,14 +89,16 @@ private class CoreDataManager {
         var result = true
         do {
             try ctx.save()
+            #if DEBUG
             switch ctx {
             case managedObjectContext:
-                print("Main NSManagedObjectContext saved successfully!")
+                print("FFCoreData: Main NSManagedObjectContext saved successfully!")
             case backgroundSavingContext:
-                print("Background NSManagedObjectContext saved successfully!")
+                print("FFCoreData: Background NSManagedObjectContext saved successfully!")
             default:
-                print("NSManagedObjectContext \(ctx) saved successfully!")
+                print("FFCoreData: NSManagedObjectContext \(ctx) saved successfully!")
             }
+            #endif
         } catch {
             print("Unresolved error while saving NSManagedObjectContext \(error)")
             result = false
@@ -151,7 +153,7 @@ public struct CoreDataStack {
                 do {
                     try fileManager.createDirectoryAtURL(dataFolderURL, withIntermediateDirectories: true, attributes: nil)
                 } catch {
-                    print("Could not create application support folder: \(error)")
+                    print("FFCoreData: Could not create application support folder: \(error)")
                 }
             }
             #endif

@@ -53,7 +53,7 @@ public class FetchedResultsControllerDelegate: NSObject, NSFetchedResultsControl
         case .Delete:
             removeSectionAtIndex(sectionIndex)
         default:
-            print("Unsupported change type: \(type)")
+            print("FFCoreData: Unsupported change type: \(type)")
         }
         delegate?.controller?(controller, didChangeSection: sectionInfo, atIndex: sectionIndex, forChangeType: type)
     }

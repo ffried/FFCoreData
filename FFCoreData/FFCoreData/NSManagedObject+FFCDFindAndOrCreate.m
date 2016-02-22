@@ -137,7 +137,7 @@
     }
     FFCDCollectionResult *fetchedObjects = [context executeFetchRequest:fetchRequest error:errorPtr];
     if (fetchedObjects == nil && *errorPtr != nil) {
-        //FFLog(@"Error while executing findOrCreate fetch request: %@", *errorPtr);
+        NSLog(@"FFCoreData: Error while executing findOrCreate fetch request: %@", *errorPtr);
     }
     
     return fetchedObjects;

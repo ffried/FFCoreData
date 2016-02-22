@@ -50,7 +50,7 @@ extension NSManagedObject {
                 if let obj = value as? NSObject {
                     predicate = NSPredicate(format: "%K == %@", key, obj)
                 } else {
-                    print("A value which isn't an NSObject was used to create a predicate. Might go wrong!")
+                    print("FFCoreData: A value which isn't an NSObject was used to create a predicate. Might go wrong!")
                     predicate = NSPredicate(format: "%K == \(value)", key)
                 }
                 subPredicates.append(predicate)

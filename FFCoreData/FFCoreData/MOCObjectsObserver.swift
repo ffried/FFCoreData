@@ -13,7 +13,7 @@ public class MOCObjectsObserver: MOCObserver {
         didSet {
             let tempIDs = objectIDs.reduce(0) { $0 + ($1.temporaryID ? 1 : 0) }
             if tempIDs > 0 {
-                assertionFailure("ERROR: \(tempIDs) temporary NSManagedObjectIDs set on MOCObjectsObserver! Be sure to only use non-temporary IDs for MOCObservers!")
+                assertionFailure("FFCoreData: ERROR: \(tempIDs) temporary NSManagedObjectIDs set on MOCObjectsObserver! Be sure to only use non-temporary IDs for MOCObservers!")
             }
         }
     }
@@ -29,7 +29,7 @@ public class MOCObjectsObserver: MOCObserver {
             do {
                 try object.managedObjectContext!.obtainPermanentIDsForObjects([object])
             } catch {
-                print("Could not obtain permanent object id: \(error)")
+                print("FFCoreData: Could not obtain permanent object id: \(error)")
             }
         }
         return objectIDURIs.contains(object.objectID.URIRepresentation())
@@ -42,7 +42,7 @@ public extension NSManagedObject {
             do {
                 try managedObjectContext!.obtainPermanentIDsForObjects([self])
             } catch {
-                print("Could not obtain permanent object id: \(error)")
+                print("FFCoreData: Could not obtain permanent object id: \(error)")
             }
         }
         return MOCObjectsObserver(objectIDs: [objectID], contexts: [managedObjectContext!], fireInitially: fireInitially, block: block)
