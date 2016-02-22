@@ -82,8 +82,11 @@ private class CoreDataManager {
         try NSFileManager.defaultManager().removeItemAtURL(configuration.storeURL)
     }
     
-    private func saveContext(ctx: NSManagedObjectContext) {
-        if !ctx.hasChanges { return }
+    private func saveContext(ctx: NSManagedObjectContext, rollback: Bool, completion: Bool -> Void) {
+        guard ctx.hasChanges else {
+            return completion(true)
+        }
+        var result = true
         do {
             try ctx.save()
             switch ctx {
@@ -96,9 +99,20 @@ private class CoreDataManager {
             }
         } catch {
             print("Unresolved error while saving NSManagedObjectContext \(error)")
+            result = false
+            if rollback { ctx.rollback() }
         }
-        if let parentContext = ctx.parentContext {
-            parentContext.performBlock { self.saveContext(parentContext) }
+        if let parentContext = ctx.parentContext where result != false {
+            parentContext.performBlock {
+                self.saveContext(parentContext, rollback: rollback, completion: { success in
+                    if !success && rollback {
+                        ctx.rollback()
+                    }
+                    completion(success)
+                })
+            }
+        } else {
+            completion(result)
         }
     }
 }
@@ -160,15 +174,19 @@ public struct CoreDataStack {
         }
     }
     
-    public static  var configuration = Configuration.LegacyConfiguration
+    public static var configuration = Configuration.LegacyConfiguration
     private static let Manager = CoreDataManager(configuration: CoreDataStack.configuration)
     
-    public static let MainContext: NSManagedObjectContext = CoreDataStack.Manager.managedObjectContext
+    public static let MainContext = CoreDataStack.Manager.managedObjectContext
     
-    public static func saveMainContext() { CoreDataStack.saveContext(CoreDataStack.MainContext) }
+    public static func saveMainContext(rollback: Bool = true, completion: Bool -> Void = {_ in}) {
+        CoreDataStack.saveContext(CoreDataStack.MainContext, rollback: rollback, completion: completion)
+    }
     
-    public static func saveContext(context: NSManagedObjectContext) {
-        context.performBlockAndWait { CoreDataStack.Manager.saveContext(context) }
+    public static func saveContext(context: NSManagedObjectContext, rollback: Bool = true, completion: Bool -> Void = {_ in}) {
+        context.performBlockAndWait {
+            CoreDataStack.Manager.saveContext(context, rollback: rollback, completion: completion)
+        }
     }
     
     public static func createTemporaryMainContext() -> NSManagedObjectContext {
@@ -179,5 +197,7 @@ public struct CoreDataStack {
         return CoreDataStack.Manager.createTemporaryBackgroundContext()
     }
     
-    public static func clearDataStore() throws { try CoreDataStack.Manager.clearDataStore() }
+    public static func clearDataStore() throws {
+        try CoreDataStack.Manager.clearDataStore()
+    }
 }
