@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0700FD981A73F22B00570B96 /* MOCEntitiesObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0700FD971A73F22B00570B96 /* MOCEntitiesObserver.swift */; };
 		07300CB41BD3F51C00C1644E /* NSManagedObject+FFCDFindAndOrCreate.h in Headers */ = {isa = PBXBuildFile; fileRef = 07300CB21BD3F51C00C1644E /* NSManagedObject+FFCDFindAndOrCreate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		07300CB51BD3F51C00C1644E /* NSManagedObject+FFCDFindAndOrCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07300CB31BD3F51C00C1644E /* NSManagedObject+FFCDFindAndOrCreate.m */; settings = {ASSET_TAGS = (); }; };
+		07300CB51BD3F51C00C1644E /* NSManagedObject+FFCDFindAndOrCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07300CB31BD3F51C00C1644E /* NSManagedObject+FFCDFindAndOrCreate.m */; };
 		0741EB201B2C84B4002593F6 /* TestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0741EB1E1B2C84B4002593F6 /* TestModel.xcdatamodeld */; };
 		0741EB261B2C85ED002593F6 /* TestEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0741EB241B2C85ED002593F6 /* TestEntity+CoreDataProperties.swift */; };
 		0741EB271B2C85ED002593F6 /* TestEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0741EB251B2C85ED002593F6 /* TestEntity.swift */; };
@@ -24,8 +24,6 @@
 		07A64BEF1B2C3B940008EFF2 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A64BEE1B2C3B940008EFF2 /* TableViewDataSource.swift */; };
 		07A64BF11B2C4CCB0008EFF2 /* CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A64BF01B2C4CCB0008EFF2 /* CollectionViewDataSource.swift */; };
 		07A64BFE1B2C77C40008EFF2 /* FFFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A64BFB1B2C77BB0008EFF2 /* FFFoundation.framework */; };
-		07AA24341B27617000FA689B /* UITableViewController+FFCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA24331B27617000FA689B /* UITableViewController+FFCoreData.swift */; };
-		07AA24361B276EDB00FA689B /* UICollectionViewController+FFCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA24351B276EDB00FA689B /* UICollectionViewController+FFCoreData.swift */; };
 		07AA24381B28037E00FA689B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA24371B28037E00FA689B /* CoreDataManager.swift */; };
 		07AA243A1B2A0F0900FA689B /* FetchedResulsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA24391B2A0F0900FA689B /* FetchedResulsControllerDelegate.swift */; };
 /* End PBXBuildFile section */
@@ -77,8 +75,6 @@
 		07A64BF01B2C4CCB0008EFF2 /* CollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewDataSource.swift; sourceTree = "<group>"; };
 		07A64BF21B2C53480008EFF2 /* NSManagedObject+FindAndOrCreate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+FindAndOrCreate.swift"; sourceTree = "<group>"; };
 		07A64BF51B2C77BB0008EFF2 /* FFFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FFFoundation.xcodeproj; path = Submodules/FFFoundation/FFFoundation/FFFoundation.xcodeproj; sourceTree = SOURCE_ROOT; };
-		07AA24331B27617000FA689B /* UITableViewController+FFCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewController+FFCoreData.swift"; sourceTree = "<group>"; };
-		07AA24351B276EDB00FA689B /* UICollectionViewController+FFCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewController+FFCoreData.swift"; sourceTree = "<group>"; };
 		07AA24371B28037E00FA689B /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		07AA24391B2A0F0900FA689B /* FetchedResulsControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResulsControllerDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,19 +118,9 @@
 			name = DataSources;
 			sourceTree = "<group>";
 		};
-		074657F419D575CB0088A6F5 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				07AA24331B27617000FA689B /* UITableViewController+FFCoreData.swift */,
-				07AA24351B276EDB00FA689B /* UICollectionViewController+FFCoreData.swift */,
-			);
-			name = Extensions;
-			sourceTree = "<group>";
-		};
 		0756A6C819D4669F00F42CFD /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				074657F419D575CB0088A6F5 /* Extensions */,
 				071D620419D4BB4100C1999D /* DataSources */,
 				071D620319D4BB3800C1999D /* Delegates */,
 			);
@@ -385,10 +371,8 @@
 				07A64BEB1B2C266A0008EFF2 /* TableViewFetchedResultsControllerDelegate.swift in Sources */,
 				076576971A73D4D500EEA793 /* MOCObjectsObserver.swift in Sources */,
 				07300CB51BD3F51C00C1644E /* NSManagedObject+FFCDFindAndOrCreate.m in Sources */,
-				07AA24341B27617000FA689B /* UITableViewController+FFCoreData.swift in Sources */,
 				07AA243A1B2A0F0900FA689B /* FetchedResulsControllerDelegate.swift in Sources */,
 				076576951A73CC3500EEA793 /* ManagedObjectContextObserver.swift in Sources */,
-				07AA24361B276EDB00FA689B /* UICollectionViewController+FFCoreData.swift in Sources */,
 				07AA24381B28037E00FA689B /* CoreDataManager.swift in Sources */,
 				0700FD981A73F22B00570B96 /* MOCEntitiesObserver.swift in Sources */,
 				07A64BF11B2C4CCB0008EFF2 /* CollectionViewDataSource.swift in Sources */,
