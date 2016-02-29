@@ -20,6 +20,13 @@ typedef NSDictionary<NSString *, id> FFCDKeyObjectsDictionary;
  */
 @interface NSManagedObject (FFCDFindAndOrCreate)
 
+#pragma mark - Entity
+/**
+ * Tries to guess the entity name by using the class name. For Swift the module is removed by splitting by "." and using the last part.
+ * @return The entity name according to the class name.
+ */
++ (NSString *)entityName;
+
 #pragma mark - Just create
 /**
  *  Creates a managed object in a given managed object context with the class name as entity name.

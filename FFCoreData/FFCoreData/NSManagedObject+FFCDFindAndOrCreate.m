@@ -10,9 +10,14 @@
 
 @implementation NSManagedObject (FFCDFindAndOrCreate)
 
+#pragma mark - Entity
++ (NSString *)entityName {
+    return [NSStringFromClass(self) componentsSeparatedByString:@"."].lastObject;
+}
+
 #pragma mark - Just create
 + (instancetype)createObjectInManagedObjectContext:(NSManagedObjectContext *)context {
-    return [self createObjectWithEntityName:NSStringFromClass(self)
+    return [self createObjectWithEntityName:[self entityName]
                      inManagedObjectContext:context];
 }
 
@@ -25,7 +30,7 @@
 #pragma mark - Just find
 #pragma mark All objects
 + (FFCDCollectionResult *)allObjectsInContext:(NSManagedObjectContext *)context {
-    return [self allObjectsWithEntity:NSStringFromClass(self) inContext:context];
+    return [self allObjectsWithEntity:[self entityName] inContext:context];
 }
 
 + (FFCDCollectionResult *)allObjectsWithEntity:(NSString *)entity inContext:(NSManagedObjectContext *)context {
@@ -69,7 +74,7 @@
 #pragma mark Multiple values
 + (FFCDCollectionResult *)findObjectsByKeyObjectValue:(FFCDKeyObjectsDictionary *)keyObjectDictionary
                                inManagedObjectContext:(NSManagedObjectContext *)context {
-    return [self findObjectsWithEntityName:NSStringFromClass(self)
+    return [self findObjectsWithEntityName:[self entityName]
                      byKeyObjectDictionary:keyObjectDictionary
                     inManagedObjectContext:context];
 }
@@ -109,7 +114,7 @@
 #pragma mark Predicates
 + (FFCDCollectionResult *)findObjectsByUsingPredicate:(NSPredicate *)predicate
                                             inContext:(NSManagedObjectContext *)context {
-    return [self findObjectsWithEntityName:NSStringFromClass(self)
+    return [self findObjectsWithEntityName:[self entityName]
                           byUsingPredicate:predicate
                                  inContext:context];
 }
@@ -196,7 +201,7 @@
 #pragma mark Key/value dict methods
 + (instancetype)findOrCreateObjectByKeyObjectDictionary:(FFCDKeyObjectsDictionary *)keyObjectDictionary
                                  inManagedObjectContext:(NSManagedObjectContext *)context {
-    return [self findOrCreateObjectWithEntityName:NSStringFromClass(self)
+    return [self findOrCreateObjectWithEntityName:[self entityName]
                             byKeyObjectDictionary:keyObjectDictionary
                            inManagedObjectContext:context];
 }
