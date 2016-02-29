@@ -25,10 +25,11 @@ private class CoreDataManager {
             ]
             try coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: options)
         } catch {
+            print("FFCoreData: Failed to add persistent store with error: \(error)\nTrying to clear the data store now!")
             do {
                 try self.clearDataStore()
             } catch {
-                print("FFCoreData: Failed to delete data store")
+                print("FFCoreData: Failed to delete data store with error: \(error)")
             }
             do {
                 try coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil)
@@ -177,18 +178,18 @@ public struct CoreDataStack {
     }
     
     public static var configuration = Configuration.LegacyConfiguration
-    private static let Manager = CoreDataManager(configuration: CoreDataStack.configuration)
+    private static let Manager = CoreDataManager(configuration: configuration)
     
     public static let MainContext = CoreDataStack.Manager.managedObjectContext
-    
-    public static func saveMainContext(rollback: Bool = true, completion: Bool -> Void = {_ in}) {
-        CoreDataStack.saveContext(CoreDataStack.MainContext, rollback: rollback, completion: completion)
-    }
     
     public static func saveContext(context: NSManagedObjectContext, rollback: Bool = true, completion: Bool -> Void = {_ in}) {
         context.performBlockAndWait {
             CoreDataStack.Manager.saveContext(context, rollback: rollback, completion: completion)
         }
+    }
+    
+    public static func saveMainContext(rollback: Bool = true, completion: Bool -> Void = {_ in}) {
+        CoreDataStack.saveContext(CoreDataStack.MainContext, rollback: rollback, completion: completion)
     }
     
     public static func createTemporaryMainContext() -> NSManagedObjectContext {
