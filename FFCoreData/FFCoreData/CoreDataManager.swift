@@ -138,8 +138,8 @@ public struct CoreDataStack {
         public let modelName: String
         public let sqliteName: String
         
-        private let storeURL: NSURL
-        private let applicationDataDirectory: NSURL = {
+        public let storeURL: NSURL
+        public let dataDirectoryURL: NSURL = {
             let fileManager = NSFileManager.defaultManager()
             let dataFolderURL: NSURL
             #if os(iOS)
@@ -147,7 +147,8 @@ public struct CoreDataStack {
             #elseif os(OSX)
             let url = fileManager.URLsForDirectory(.ApplicationSupportDirectory, inDomains: .UserDomainMask).last!
             dataFolderURL = url.URLByAppendingPathComponent(NSApp.identifier)
-            var isDir = false
+            #endif
+            var isDir: ObjCBool = false
             let exists = fileManager.fileExistsAtPath(dataFolderURL.path!, isDirectory: &isDir)
             if !exists || (exists && !isDir) {
                 do {
@@ -156,7 +157,6 @@ public struct CoreDataStack {
                     print("FFCoreData: Could not create application support folder: \(error)")
                 }
             }
-            #endif
             return dataFolderURL
         }()
         
@@ -172,7 +172,7 @@ public struct CoreDataStack {
             self.bundle = bundle
             self.modelName = modelName ?? targetName(bundle)
             self.sqliteName = sqliteName ?? targetName(bundle)
-            self.storeURL = applicationDataDirectory.URLByAppendingPathComponent(self.sqliteName + ".sqlite")
+            self.storeURL = dataDirectoryURL.URLByAppendingPathComponent(self.sqliteName + ".sqlite")
         }
     }
     
