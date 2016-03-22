@@ -73,7 +73,12 @@ public class TableViewDataSource: NSObject, UITableViewDataSource {
     }
     
     public func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if let delegate = delegate where delegate.respondsToSelector("tableView:titleForHeaderInSection") {
+        #if swift(>=2.2)
+            let selectorToCheck = #selector(TableViewDataSourceDelegate.tableView(_:titleForHeaderInSection:))
+        #else
+            let selectorToCheck = "tableView:titleForHeaderInSection"
+        #endif
+        if let delegate = delegate where delegate.respondsToSelector(selectorToCheck) {
             return delegate.tableView?(tableView, titleForHeaderInSection: section)
         }
         if fetchedResultsController?.sections?.count > 0 {
@@ -96,7 +101,12 @@ public class TableViewDataSource: NSObject, UITableViewDataSource {
     }
     
     public func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return delegate?.tableView?(tableView, canMoveRowAtIndexPath: indexPath) ?? delegate?.respondsToSelector("tableView:moveRowAtIndexPath:toIndexPath:") ?? false
+        #if swift(>=2.2)
+            let selectorToCheck = #selector(TableViewDataSourceDelegate.tableView(_:moveRowAtIndexPath:toIndexPath:))
+        #else
+            let selectorToCheck = "tableView:moveRowAtIndexPath:toIndexPath:"
+        #endif
+        return delegate?.tableView?(tableView, canMoveRowAtIndexPath: indexPath) ?? delegate?.respondsToSelector(selectorToCheck) ?? false
     }
     
     public func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {

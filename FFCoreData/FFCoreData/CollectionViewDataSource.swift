@@ -50,7 +50,12 @@ public class CollectionViewDataSource: NSObject, UICollectionViewDataSource {
     }
     
     public override func respondsToSelector(aSelector: Selector) -> Bool {
-        if aSelector == "collectionView:viewForSupplementaryElementOfKind:atIndexPath:" {
+        #if swift(>=2.2)
+            let selectorToCheck = #selector(CollectionViewDataSourceDelegate.collectionView(_:viewForSupplementaryElementOfKind:atIndexPath:))
+        #else
+            let selectorToCheck = "collectionView:viewForSupplementaryElementOfKind:atIndexPath:"
+        #endif
+        if selectorToCheck == aSelector {
             return delegate?.respondsToSelector(aSelector) ?? false
         }
         return super.respondsToSelector(aSelector)
@@ -79,7 +84,12 @@ public class CollectionViewDataSource: NSObject, UICollectionViewDataSource {
     
     @available(iOS 9.0, *)
     public func collectionView(collectionView: UICollectionView, canMoveItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return delegate?.collectionView?(collectionView, canMoveItemAtIndexPath: indexPath) ?? delegate?.respondsToSelector("collectionView:moveItemAtIndexPath:toIndexPath:") ?? false
+        #if swift(>=2.2)
+            let delegateResponds = delegate?.respondsToSelector(#selector(CollectionViewDataSourceDelegate.collectionView(_:moveItemAtIndexPath:toIndexPath:)))
+        #else
+            let delegateResponds = delegate?.respondsToSelector("collectionView:moveItemAtIndexPath:toIndexPath:")
+        #endif
+        return delegate?.collectionView?(collectionView, canMoveItemAtIndexPath: indexPath) ?? delegateResponds ?? false
     }
     
     @available(iOS 9.0, *)
