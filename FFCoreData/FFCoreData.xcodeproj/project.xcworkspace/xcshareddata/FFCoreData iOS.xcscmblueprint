@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "8C1E4D9F05C92AE2BD65271F4A0B520DB9DCA9E4",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "8C1E4D9F05C92AE2BD65271F4A0B520DB9DCA9E4" : 0,
+    "5134F3F7A71ADD498CB13E4A9C7574DD5D40E192" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "EA7F224D-6A9E-49BE-8875-34B4BF2CCA51",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "8C1E4D9F05C92AE2BD65271F4A0B520DB9DCA9E4" : "FFCoreData\/",
+    "5134F3F7A71ADD498CB13E4A9C7574DD5D40E192" : "FFCoreData\/FFCoreData\/Submodules\/FFFoundation\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "FFCoreData iOS",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "FFCoreData\/FFCoreData iOS.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ffried\/FFFoundation.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5134F3F7A71ADD498CB13E4A9C7574DD5D40E192"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:ffried\/FFCoreData.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8C1E4D9F05C92AE2BD65271F4A0B520DB9DCA9E4"
+    }
+  ]
+}

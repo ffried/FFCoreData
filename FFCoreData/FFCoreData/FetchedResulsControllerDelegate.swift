@@ -92,5 +92,4 @@ public class FetchedResultsControllerDelegate: NSObject, NSFetchedResultsControl
     public func controller(controller: NSFetchedResultsController, sectionIndexTitleForSectionName sectionName: String) -> String? {
         return delegate?.controller?(controller, sectionIndexTitleForSectionName: sectionName) ?? controller.sectionIndexTitleForSectionName(sectionName)
     }
-
 }

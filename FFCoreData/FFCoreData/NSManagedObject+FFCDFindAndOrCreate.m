@@ -19,7 +19,6 @@
 //
 
 #import "NSManagedObject+FFCDFindAndOrCreate.h"
-//#import "FFCoreData.h"
 
 @implementation NSManagedObject (FFCDFindAndOrCreate)
 
@@ -43,68 +42,103 @@
 #pragma mark - Just find
 #pragma mark All objects
 + (FFCDCollectionResult *)allObjectsInContext:(NSManagedObjectContext *)context {
-    return [self allObjectsWithEntity:[self entityName] inContext:context];
+    return [self allObjectsInContext:context withError:nil] ?: @[];
 }
 
-+ (FFCDCollectionResult *)allObjectsWithEntity:(NSString *)entity inContext:(NSManagedObjectContext *)context {
-    return [self allObjectsWithEntity:entity inContext:context withError:nil];
++ (nullable FFCDCollectionResult *)allObjectsInContext:(NSManagedObjectContext *)context
+                                             withError:(NSError * __autoreleasing _Nullable *)error {
+    return [self allObjectsWithEntity:[self entityName]
+                            inContext:context
+                            withError:error];
 }
 
 + (FFCDCollectionResult *)allObjectsWithEntity:(NSString *)entity
-                                     inContext:(NSManagedObjectContext *)context
-                                     withError:(NSError * _Nullable __autoreleasing *)error {
-    return [self findObjectsWithEntityName:entity byUsingPredicate:nil inContext:context withError:error];
+                                     inContext:(NSManagedObjectContext *)context {
+    return [self allObjectsWithEntity:entity inContext:context withError:nil] ?: @[];
+}
+
++ (nullable FFCDCollectionResult *)allObjectsWithEntity:(NSString *)entity
+                                              inContext:(NSManagedObjectContext *)context
+                                              withError:(NSError * __autoreleasing _Nullable *)error {
+    return [self findObjectsWithEntityName:entity
+                          byUsingPredicate:nil
+                                 inContext:context
+                                 withError:error];
 }
 
 #pragma mark Single values
 + (FFCDCollectionResult *)findObjectsByKey:(NSString *)key
-                               objectValue:(NSObject *)objectValue
+                               objectValue:(nullable NSObject *)objectValue
                     inManagedObjectContext:(NSManagedObjectContext *)context {
-    return [self findObjectsByKeyObjectValue:@{key: objectValue}
-                      inManagedObjectContext:context];
+    return [self findObjectsByKey:key
+                      objectValue:objectValue
+           inManagedObjectContext:context
+                        withError:nil] ?: @[];
 }
 
-+ (FFCDCollectionResult *)findObjectsWithEntityName:(NSString *)entityName
-                                              byKey:(NSString *)key
-                                        objectValue:(NSObject *)objectValue
-                             inManagedObjectContext:(NSManagedObjectContext *)context {
-    return [self findObjectsWithEntityName:entityName
-                     byKeyObjectDictionary:@{key: objectValue}
-                    inManagedObjectContext:context];
-}
-
-+ (FFCDCollectionResult *)findObjectsWithEntityName:(NSString *)entityName
-                                              byKey:(NSString *)key
-                                        objectValue:(NSObject *)objectValue
++ (nullable FFCDCollectionResult *)findObjectsByKey:(NSString *)key
+                                        objectValue:(nullable NSObject *)objectValue
                              inManagedObjectContext:(NSManagedObjectContext *)context
-                                          withError:(NSError * _Nullable __autoreleasing *)error {
-    return [self findObjectsWithEntityName:entityName
-                     byKeyObjectDictionary:@{key: objectValue}
-                    inManagedObjectContext:context
-                                 withError:error];
-}
-
-#pragma mark Multiple values
-+ (FFCDCollectionResult *)findObjectsByKeyObjectValue:(FFCDKeyObjectsDictionary *)keyObjectDictionary
-                               inManagedObjectContext:(NSManagedObjectContext *)context {
+                                          withError:(NSError * __autoreleasing _Nullable *)error {
     return [self findObjectsWithEntityName:[self entityName]
-                     byKeyObjectDictionary:keyObjectDictionary
-                    inManagedObjectContext:context];
-}
-
-+ (FFCDCollectionResult *)findObjectsWithEntityName:(NSString *)entityName
-                              byKeyObjectDictionary:(FFCDKeyObjectsDictionary *)keyObjectDictionary
-                             inManagedObjectContext:(NSManagedObjectContext *)context {
-    return [self findObjectsWithEntityName:entityName
-                     byKeyObjectDictionary:keyObjectDictionary
+                                     byKey:key
+                               objectValue:objectValue
                     inManagedObjectContext:context
                                  withError:nil];
 }
 
 + (FFCDCollectionResult *)findObjectsWithEntityName:(NSString *)entityName
-                              byKeyObjectDictionary:(FFCDKeyObjectsDictionary *)keyObjectDictionary
-                             inManagedObjectContext:(NSManagedObjectContext *)context
-                                          withError:(NSError *__autoreleasing  _Nullable *)error {
+                                              byKey:(NSString *)key
+                                        objectValue:(nullable NSObject *)objectValue
+                             inManagedObjectContext:(NSManagedObjectContext *)context {
+    return [self findObjectsWithEntityName:entityName
+                                     byKey:key
+                               objectValue:objectValue
+                    inManagedObjectContext:context
+                                 withError:nil] ?: @[];
+}
+
++ (nullable FFCDCollectionResult *)findObjectsWithEntityName:(NSString *)entityName
+                                                       byKey:(NSString *)key
+                                                 objectValue:(nullable NSObject *)objectValue
+                                      inManagedObjectContext:(NSManagedObjectContext *)context
+                                                   withError:(NSError * __autoreleasing _Nullable *)error {
+    return [self findObjectsWithEntityName:entityName
+                     byKeyObjectDictionary:@{key: (objectValue ?: [NSNull null])}
+                    inManagedObjectContext:context
+                                 withError:error];
+}
+
+#pragma mark Multiple values
++ (FFCDCollectionResult *)findObjectsByKeyObjectDictionary:(nullable FFCDKeyObjectsDictionary *)keyObjectDictionary
+                                    inManagedObjectContext:(NSManagedObjectContext *)context {
+    return [self findObjectsByKeyObjectDictionary:keyObjectDictionary
+                           inManagedObjectContext:context
+                                        withError:nil] ?: @[];
+}
+
++ (nullable FFCDCollectionResult *)findObjectsByKeyObjectDictionary:(nullable FFCDKeyObjectsDictionary *)keyObjectDictionary
+                                             inManagedObjectContext:(NSManagedObjectContext *)context
+                                                          withError:(NSError * __autoreleasing _Nullable *)error {
+    return [self findObjectsWithEntityName:[self entityName]
+                     byKeyObjectDictionary:keyObjectDictionary
+                    inManagedObjectContext:context
+                                 withError:error];
+}
+
++ (FFCDCollectionResult *)findObjectsWithEntityName:(NSString *)entityName
+                              byKeyObjectDictionary:(nullable FFCDKeyObjectsDictionary *)keyObjectDictionary
+                             inManagedObjectContext:(NSManagedObjectContext *)context {
+    return [self findObjectsWithEntityName:entityName
+                     byKeyObjectDictionary:keyObjectDictionary
+                    inManagedObjectContext:context
+                                 withError:nil] ?: @[];
+}
+
++ (nullable FFCDCollectionResult *)findObjectsWithEntityName:(NSString *)entityName
+                                       byKeyObjectDictionary:(nullable FFCDKeyObjectsDictionary *)keyObjectDictionary
+                                      inManagedObjectContext:(NSManagedObjectContext *)context
+                                                   withError:(NSError * __autoreleasing _Nullable *)error {
     NSPredicate *predicate = nil;
     if (keyObjectDictionary) {
         NSMutableArray<NSPredicate *> *subpredicates = [NSMutableArray<NSPredicate *> array];
@@ -125,26 +159,35 @@
 }
 
 #pragma mark Predicates
-+ (FFCDCollectionResult *)findObjectsByUsingPredicate:(NSPredicate *)predicate
++ (FFCDCollectionResult *)findObjectsByUsingPredicate:(nullable NSPredicate *)predicate
                                             inContext:(NSManagedObjectContext *)context {
+    return [self findObjectsByUsingPredicate:predicate
+                                   inContext:context
+                                   withError:nil] ?: @[];
+}
+
++ (nullable FFCDCollectionResult *)findObjectsByUsingPredicate:(nullable NSPredicate *)predicate
+                                                     inContext:(NSManagedObjectContext *)context
+                                                     withError:(NSError * __autoreleasing _Nullable *)error {
     return [self findObjectsWithEntityName:[self entityName]
                           byUsingPredicate:predicate
-                                 inContext:context];
+                                 inContext:context
+                                 withError:error];
 }
 
 + (FFCDCollectionResult *)findObjectsWithEntityName:(NSString *)entityName
-                                   byUsingPredicate:(NSPredicate *)predicate
+                                   byUsingPredicate:(nullable NSPredicate *)predicate
                                           inContext:(NSManagedObjectContext *)context {
     return [self findObjectsWithEntityName:entityName
                           byUsingPredicate:predicate
                                  inContext:context
-                                 withError:nil];
+                                 withError:nil] ?: @[];
 }
 
-+ (FFCDCollectionResult *)findObjectsWithEntityName:(NSString *)entityName
-                                   byUsingPredicate:(NSPredicate *)predicate
-                                          inContext:(NSManagedObjectContext *)context
-                                          withError:(NSError *__autoreleasing  _Nullable *)error {
++ (nullable FFCDCollectionResult *)findObjectsWithEntityName:(NSString *)entityName
+                                            byUsingPredicate:(nullable NSPredicate *)predicate
+                                                   inContext:(NSManagedObjectContext *)context
+                                                   withError:(NSError * __autoreleasing _Nullable *)error {
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:entityName];
     fetchRequest.predicate = predicate;
     
@@ -163,20 +206,29 @@
 
 #pragma mark - Find or Create
 #pragma mark Singleton objects
-+ (instancetype)findOrCreateObjectInManagedObjectContext:(NSManagedObjectContext *)context {
-    return [self findOrCreateObjectByKeyObjectDictionary:nil inManagedObjectContext:context];
++ (null_unspecified instancetype)findOrCreateObjectInManagedObjectContext:(NSManagedObjectContext *)context {
+    return [self findOrCreateObjectInManagedObjectContext:context
+                                                withError:nil];
 }
 
-+ (instancetype)findOrCreateObjectWithEntityName:(NSString *)entityName
-                          inManagedObjectContext:(NSManagedObjectContext *)context {
++ (nullable instancetype)findOrCreateObjectInManagedObjectContext:(NSManagedObjectContext *)context
+                                                        withError:(NSError * __autoreleasing _Nullable *)error {
+    return [self findOrCreateObjectWithEntityName:[self entityName]
+                           inManagedObjectContext:context
+                                        withError:error];
+}
+
++ (null_unspecified instancetype)findOrCreateObjectWithEntityName:(NSString *)entityName
+                                           inManagedObjectContext:(NSManagedObjectContext *)context {
     return [self findOrCreateObjectWithEntityName:entityName
                             byKeyObjectDictionary:nil
-                           inManagedObjectContext:context];
+                           inManagedObjectContext:context
+                                        withError:nil];
 }
 
-+ (instancetype)findOrCreateObjectWithEntityName:(NSString *)entityName
-                          inManagedObjectContext:(NSManagedObjectContext *)context
-                                       withError:(NSError *__autoreleasing  _Nullable *)error {
++ (nullable instancetype)findOrCreateObjectWithEntityName:(NSString *)entityName
+                                   inManagedObjectContext:(NSManagedObjectContext *)context
+                                                withError:(NSError * __autoreleasing _Nullable *)error {
     return [self findOrCreateObjectWithEntityName:entityName
                             byKeyObjectDictionary:nil
                            inManagedObjectContext:context
@@ -184,54 +236,78 @@
 }
 
 #pragma mark Single key/value methods
-+ (instancetype)findOrCreateObjectByKey:(NSString *)key
-                            objectValue:(NSObject *)objectValue
-                 inManagedObjectContext:(NSManagedObjectContext *)context {
-    return [self findOrCreateObjectByKeyObjectDictionary:@{key: objectValue}
-                                  inManagedObjectContext:context];
++ (null_unspecified instancetype)findOrCreateObjectByKey:(NSString *)key
+                                             objectValue:(nullable NSObject *)objectValue
+                                  inManagedObjectContext:(NSManagedObjectContext *)context {
+    return [self findOrCreateObjectByKey:key
+                             objectValue:objectValue
+                  inManagedObjectContext:context
+                               withError:nil];
 }
 
-+ (instancetype)findOrCreateObjectWithEntityName:(NSString *)entityName
-                                           byKey:(NSString *)key
-                                     objectValue:(NSObject *)objectValue
-                          inManagedObjectContext:(NSManagedObjectContext *)context {
-    return [self findOrCreateObjectWithEntityName:entityName
-                            byKeyObjectDictionary:@{key: objectValue}
-                           inManagedObjectContext:context];
-}
-
-+ (instancetype)findOrCreateObjectWithEntityName:(NSString *)entityName
-                                           byKey:(NSString *)key
-                                     objectValue:(NSObject *)objectValue
++ (nullable instancetype)findOrCreateObjectByKey:(NSString *)key
+                                     objectValue:(nullable NSObject *)objectValue
                           inManagedObjectContext:(NSManagedObjectContext *)context
-                                       withError:(NSError *__autoreleasing  _Nullable *)error {
+                                       withError:(NSError * __autoreleasing _Nullable *)error {
+    return [self findOrCreateObjectWithEntityName:[self entityName]
+                                            byKey:key
+                                      objectValue:objectValue
+                           inManagedObjectContext:context
+                                        withError:error];
+}
+
++ (null_unspecified instancetype)findOrCreateObjectWithEntityName:(NSString *)entityName
+                                                            byKey:(NSString *)key
+                                                      objectValue:(nullable NSObject *)objectValue
+                                           inManagedObjectContext:(NSManagedObjectContext *)context {
     return [self findOrCreateObjectWithEntityName:entityName
-                            byKeyObjectDictionary:@{key: objectValue}
+                                            byKey:key
+                                      objectValue:objectValue
+                           inManagedObjectContext:context
+                                        withError:nil];
+}
+
++ (nullable instancetype)findOrCreateObjectWithEntityName:(NSString *)entityName
+                                                    byKey:(NSString *)key
+                                              objectValue:(nullable NSObject *)objectValue
+                                   inManagedObjectContext:(NSManagedObjectContext *)context
+                                                withError:(NSError * __autoreleasing  _Nullable *)error {
+    return [self findOrCreateObjectWithEntityName:entityName
+                            byKeyObjectDictionary:@{key: (objectValue ?: [NSNull null])}
                            inManagedObjectContext:context
                                         withError:error];
 }
 
 #pragma mark Key/value dict methods
-+ (instancetype)findOrCreateObjectByKeyObjectDictionary:(FFCDKeyObjectsDictionary *)keyObjectDictionary
-                                 inManagedObjectContext:(NSManagedObjectContext *)context {
-    return [self findOrCreateObjectWithEntityName:[self entityName]
-                            byKeyObjectDictionary:keyObjectDictionary
-                           inManagedObjectContext:context];
++ (null_unspecified instancetype)findOrCreateObjectByKeyObjectDictionary:(FFCDKeyObjectsDictionary *)keyObjectDictionary
+                                                  inManagedObjectContext:(NSManagedObjectContext *)context {
+    return [self findOrCreateObjectByKeyObjectDictionary:keyObjectDictionary
+                                  inManagedObjectContext:context
+                                               withError:nil];
 }
 
-+ (instancetype)findOrCreateObjectWithEntityName:(NSString *)entityName
-                           byKeyObjectDictionary:(FFCDKeyObjectsDictionary *)keyObjectDictionary
-                          inManagedObjectContext:(NSManagedObjectContext *)context {
++ (nullable instancetype)findOrCreateObjectByKeyObjectDictionary:(nullable FFCDKeyObjectsDictionary *)keyObjectDictionary
+                                          inManagedObjectContext:(NSManagedObjectContext *)context
+                                                       withError:(NSError * __autoreleasing _Nullable *)error {
+    return [self findOrCreateObjectWithEntityName:[self entityName]
+                            byKeyObjectDictionary:keyObjectDictionary
+                           inManagedObjectContext:context
+                                        withError:error];
+}
+
++ (null_unspecified instancetype)findOrCreateObjectWithEntityName:(NSString *)entityName
+                                            byKeyObjectDictionary:(nullable FFCDKeyObjectsDictionary *)keyObjectDictionary
+                                           inManagedObjectContext:(NSManagedObjectContext *)context {
     return [self findOrCreateObjectWithEntityName:entityName
                             byKeyObjectDictionary:keyObjectDictionary
                            inManagedObjectContext:context
                                         withError:nil];
 }
 
-+ (instancetype)findOrCreateObjectWithEntityName:(NSString *)entityName
-                           byKeyObjectDictionary:(FFCDKeyObjectsDictionary *)keyObjectDictionary
-                          inManagedObjectContext:(NSManagedObjectContext *)context
-                                       withError:(NSError *__autoreleasing  _Nullable *)error {
++ (nullable instancetype)findOrCreateObjectWithEntityName:(NSString *)entityName
+                                    byKeyObjectDictionary:(nullable FFCDKeyObjectsDictionary *)keyObjectDictionary
+                                   inManagedObjectContext:(NSManagedObjectContext *)context
+                                                withError:(NSError * __autoreleasing  _Nullable *)error {
     FFCDCollectionResult *fetchedObjects = [self findObjectsWithEntityName:entityName
                                                      byKeyObjectDictionary:keyObjectDictionary
                                                     inManagedObjectContext:context
@@ -241,7 +317,8 @@
     if (fetchedObjects != nil && fetchedObjects.count > 0) {
         managedObject = [fetchedObjects firstObject];
     } else {
-        managedObject = [self createObjectWithEntityName:entityName inManagedObjectContext:context];
+        managedObject = [self createObjectWithEntityName:entityName
+                                  inManagedObjectContext:context];
         if (keyObjectDictionary) {
             [keyObjectDictionary enumerateKeysAndObjectsUsingBlock:^(NSString *key, id obj, BOOL *stop) {
                 if ([obj isKindOfClass:[NSManagedObjectID class]]) {

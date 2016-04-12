@@ -21,7 +21,7 @@
 import Foundation
 import CoreData
 
-private class CoreDataManager {
+private final class CoreDataManager {
     private lazy var managedObjectModel: NSManagedObjectModel = {
         let modelURL = self.configuration.bundle.URLForResource(self.configuration.modelName, withExtension: "momd")!
         return NSManagedObjectModel(contentsOfURL: modelURL)!
@@ -68,9 +68,9 @@ private class CoreDataManager {
         return ctx
     }()
     
-    private let configuration: CoreDataStack.Configuration
+    private var configuration: CoreDataStack.Configuration
     
-    init(configuration: CoreDataStack.Configuration) {
+    private init(configuration: CoreDataStack.Configuration) {
         self.configuration = configuration
     }
     
@@ -151,15 +151,20 @@ public struct CoreDataStack {
         public let modelName: String
         public let sqliteName: String
         
-        public let storeURL: NSURL
-        public let dataDirectoryURL: NSURL = {
+        public private(set) lazy var storeURL: NSURL = {
+            self.dataDirectoryURL.URLByAppendingPathComponent(self.sqliteName + ".sqlite")
+        }()
+        #if os(OSX)
+        public let applicationSupportSubfolderName: String
+        #endif
+        public private(set) lazy var dataDirectoryURL: NSURL = {
             let fileManager = NSFileManager.defaultManager()
             let dataFolderURL: NSURL
             #if os(iOS)
             dataFolderURL = fileManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).last!
             #elseif os(OSX)
             let url = fileManager.URLsForDirectory(.ApplicationSupportDirectory, inDomains: .UserDomainMask).last!
-            dataFolderURL = url.URLByAppendingPathComponent(NSApp.identifier)
+            dataFolderURL = url.URLByAppendingPathComponent(self.applicationSupportSubfolderName)
             #endif
             var isDir: ObjCBool = false
             let exists = fileManager.fileExistsAtPath(dataFolderURL.path!, isDirectory: &isDir)
@@ -176,7 +181,8 @@ public struct CoreDataStack {
         private static let InfoDictionaryTargetDisplayNameKey = "CFBundleDisplayName"
         private static let InfoDictionaryTargetNameKey = String(kCFBundleNameKey)
         private static let DefaultTargetName = "UNKNOWN_TARGET_NAME"
-        public init(bundle: NSBundle, modelName: String? = nil, sqliteName: String? = nil) {
+        
+        private init(bundle: NSBundle, modelName: String?, sqliteName: String?, appSupportFolderName: String?) {
             func targetName(bundle: NSBundle) -> String {
                 let infoDict = bundle.infoDictionary!
                 let name = infoDict[Configuration.InfoDictionaryTargetDisplayNameKey] ?? infoDict[Configuration.InfoDictionaryTargetNameKey]
@@ -185,8 +191,20 @@ public struct CoreDataStack {
             self.bundle = bundle
             self.modelName = modelName ?? targetName(bundle)
             self.sqliteName = sqliteName ?? targetName(bundle)
-            self.storeURL = dataDirectoryURL.URLByAppendingPathComponent(self.sqliteName + ".sqlite")
+            #if os(OSX)
+                self.applicationSupportSubfolderName = appSupportFolderName ?? bundle.bundleIdentifier ?? targetName(bundle)
+            #endif
         }
+        
+        #if os(iOS)
+        public init(bundle: NSBundle, modelName: String? = nil, sqliteName: String? = nil) {
+            self.init(bundle: bundle, modelName: modelName, sqliteName: sqliteName, appSupportFolderName: nil)
+        }
+        #elseif os(OSX)
+        public init(bundle: NSBundle, applicationSupportSubfolder: String? = nil, modelName: String? = nil, sqliteName: String? = nil) {
+            self.init(bundle: bundle, modelName: modelName, sqliteName: sqliteName, appSupportFolderName: applicationSupportSubfolder)
+        }
+        #endif
     }
     
     public static var configuration = Configuration.LegacyConfiguration
