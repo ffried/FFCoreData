@@ -132,7 +132,9 @@ private final class CoreDataManager {
 }
 
 public struct CoreDataStack {
-    public static var configuration = Configuration.LegacyConfiguration
+    public static var configuration = Configuration.LegacyConfiguration {
+        didSet { NSManagedObject.setShouldRemoveNamespaceInEntityName(configuration.removeNamespacesFromEntityNames) }
+    }
     private static let Manager = CoreDataManager(configuration: configuration)
     
     public static let MainContext = CoreDataStack.Manager.managedObjectContext
