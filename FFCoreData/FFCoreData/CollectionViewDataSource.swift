@@ -35,7 +35,7 @@ import CoreData
     optional func collectionView(collectionView: UICollectionView, moveItemAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath)
 }
 
-public class CollectionViewDataSource: NSObject, UICollectionViewDataSource {
+public final class CollectionViewDataSource: NSObject, UICollectionViewDataSource {
     public private(set) weak var collectionView: UICollectionView?
     public private(set) weak var fetchedResultsController: NSFetchedResultsController?
     

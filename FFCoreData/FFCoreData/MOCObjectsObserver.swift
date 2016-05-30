@@ -19,8 +19,9 @@
 //
 
 import Foundation
+import CoreData
 
-public class MOCObjectsObserver: MOCObserver {
+public final class MOCObjectsObserver: MOCObserver {
     public var objectIDs: [NSManagedObjectID] {
         didSet {
             let tempIDs = objectIDs.reduce(0) { $0 + ($1.temporaryID ? 1 : 0) }

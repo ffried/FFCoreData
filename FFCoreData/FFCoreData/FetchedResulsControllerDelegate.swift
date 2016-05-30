@@ -25,8 +25,8 @@ public protocol FetchedResultsControllerDelegateDelegate: NSFetchedResultsContro
 
 public class FetchedResultsControllerDelegate: NSObject, NSFetchedResultsControllerDelegate {
     
-    public private(set) weak var fetchedResultsController: NSFetchedResultsController?
-    public weak var delegate: FetchedResultsControllerDelegateDelegate?
+    public private(set) final weak var fetchedResultsController: NSFetchedResultsController?
+    public final weak var delegate: FetchedResultsControllerDelegateDelegate?
     
     internal init(fetchedResultsController: NSFetchedResultsController, delegate: FetchedResultsControllerDelegateDelegate?) {
         self.fetchedResultsController = fetchedResultsController
@@ -51,12 +51,12 @@ public class FetchedResultsControllerDelegate: NSObject, NSFetchedResultsControl
     internal func endUpdates() {}
     
     // MARK: - NSFetchedResultsControllerDelegate
-    public func controllerWillChangeContent(controller: NSFetchedResultsController) {
+    public final func controllerWillChangeContent(controller: NSFetchedResultsController) {
         delegate?.controllerWillChangeContent?(controller)
         beginUpdates()
     }
     
-    public func controller(controller: NSFetchedResultsController, didChangeSection sectionInfo: NSFetchedResultsSectionInfo, atIndex sectionIndex: Int, forChangeType type: NSFetchedResultsChangeType) {
+    public final func controller(controller: NSFetchedResultsController, didChangeSection sectionInfo: NSFetchedResultsSectionInfo, atIndex sectionIndex: Int, forChangeType type: NSFetchedResultsChangeType) {
         switch type {
         case .Insert:
             insertSectionAtIndex(sectionIndex)
@@ -70,7 +70,7 @@ public class FetchedResultsControllerDelegate: NSObject, NSFetchedResultsControl
         delegate?.controller?(controller, didChangeSection: sectionInfo, atIndex: sectionIndex, forChangeType: type)
     }
 
-    public func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+    public final func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
         switch type {
         case .Insert:
             insertSubobjectAtIndexPath(newIndexPath!)
@@ -84,12 +84,12 @@ public class FetchedResultsControllerDelegate: NSObject, NSFetchedResultsControl
         delegate?.controller?(controller, didChangeObject: anObject, atIndexPath: indexPath, forChangeType: type, newIndexPath: newIndexPath)
     }
     
-    public func controllerDidChangeContent(controller: NSFetchedResultsController) {
+    public final func controllerDidChangeContent(controller: NSFetchedResultsController) {
         endUpdates()
         delegate?.controllerDidChangeContent?(controller)
     }
     
-    public func controller(controller: NSFetchedResultsController, sectionIndexTitleForSectionName sectionName: String) -> String? {
+    public final func controller(controller: NSFetchedResultsController, sectionIndexTitleForSectionName sectionName: String) -> String? {
         return delegate?.controller?(controller, sectionIndexTitleForSectionName: sectionName) ?? controller.sectionIndexTitleForSectionName(sectionName)
     }
 }

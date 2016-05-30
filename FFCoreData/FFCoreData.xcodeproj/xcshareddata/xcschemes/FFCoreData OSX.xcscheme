@@ -20,6 +20,20 @@
                ReferencedContainer = "container:FFCoreData.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "073518AB1CFC2E96001C05AA"
+               BuildableName = "FFCoreData OS X Tests.xctest"
+               BlueprintName = "FFCoreData OS X Tests"
+               ReferencedContainer = "container:FFCoreData.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -29,6 +43,15 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "07F96F131CB7930E0012C546"
+            BuildableName = "FFCoreData.framework"
+            BlueprintName = "FFCoreData OSX"
+            ReferencedContainer = "container:FFCoreData.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>

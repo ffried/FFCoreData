@@ -19,14 +19,15 @@
 //
 
 #if os(iOS)
+import Foundation
 import UIKit
 
 public class UIKitFetchedResultsControllerDelegate: FetchedResultsControllerDelegate {
-    public var preserveSelection = true
+    public final var preserveSelection = true
     
-    internal var selectedIndexPaths = Set<NSIndexPath>()
+    internal final var selectedIndexPaths = Set<NSIndexPath>()
     
-    internal func reapplySelection() {
+    internal final func reapplySelection() {
         let indexPaths = selectedIndexPaths
         selectedIndexPaths.removeAll()
         if preserveSelection { selectIndexPaths(indexPaths.map{$0}) }

@@ -21,7 +21,7 @@
 import Foundation
 import CoreData
 
-public class MOCEntitiesObserver: MOCObserver {
+public final class MOCEntitiesObserver: MOCObserver {
     public var entityNames: [String]
     
     public required init(entityNames: [String], contexts: [NSManagedObjectContext]? = nil, fireInitially: Bool = false, block: MOCObserverBlock) {

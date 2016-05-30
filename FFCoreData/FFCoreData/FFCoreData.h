@@ -27,4 +27,10 @@ FOUNDATION_EXPORT double FFCoreDataVersionNumber;
 //! Project version string for FFCoreData.
 FOUNDATION_EXPORT const unsigned char FFCoreDataVersionString[];
 
-#import <FFCoreData/NSManagedObject+FFCDFindAndOrCreate.h>
+#import <FFCoreData/NSManagedObject+FFFindAndOrCreateTypes.h>
+#import <FFCoreData/NSManagedObject+FFEntity.h>
+#import <FFCoreData/NSManagedObject+FFCreate.h>
+#import <FFCoreData/NSManagedObject+FFFind.h>
+#import <FFCoreData/NSManagedObject+FFFindOrCreate.h>
+
+#import <FFCoreData/NSManagedObject+FFFindAndOrCreate_ObjC.h>

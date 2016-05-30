@@ -20,19 +20,22 @@
 
 import Foundation
 import CoreData
+import FFFoundation
 
-//public protocol FindOrCreatable: class {
-//    // MARK: Create
-//    static func createInManagedObjectContext(context: NSManagedObjectContext) -> Self
-//    
-//    static func allObjectsInContext(context: NSManagedObjectContext) throws -> [Self]
-//    
-//    static func findObjectsInManagedObjectContext(context: NSManagedObjectContext, byUsingKeyObjectDictionary dictionary: KeyObjectDictionary?) throws -> [Self]
-//    
-//    static func findObjectsInManagedObjectContext(context: NSManagedObjectContext, byUsingPredicate predicate: NSPredicate?) throws -> [Self]
-//    
-//    static func findOrCreateObjectInManagedObjectContext(context: NSManagedObjectContext, byKeyObjectDictionary dictionary: KeyObjectDictionary?) throws -> Self
-//}
+public typealias KeyObjectDictionary = [String: AnyObject]
+
+public protocol FindOrCreatable: class {
+    // MARK: Create
+    static func createInManagedObjectContext(context: NSManagedObjectContext) -> Self
+    
+    static func allObjectsInContext(context: NSManagedObjectContext) throws -> [Self]
+    
+    static func findObjectsInManagedObjectContext(context: NSManagedObjectContext, byUsingKeyObjectDictionary dictionary: KeyObjectDictionary?) throws -> [Self]
+    
+    static func findObjectsInManagedObjectContext(context: NSManagedObjectContext, byUsingPredicate predicate: NSPredicate?) throws -> [Self]
+    
+    static func findOrCreateObjectInManagedObjectContext(context: NSManagedObjectContext, byKeyObjectDictionary dictionary: KeyObjectDictionary?) throws -> Self
+}
 
 internal extension NSManagedObject {
     internal static func entityInContext(context: NSManagedObjectContext) -> NSEntityDescription? {
@@ -50,6 +53,10 @@ extension NSManagedObject {
     
     public static func allObjectsInContext(context: NSManagedObjectContext) throws -> [FindOrCreateResult] {
         return try findObjectsInManagedObjectContext(context)
+    }
+    
+    private static func allObjectsInContext<T: NSManagedObject>(context: NSManagedObjectContext) throws -> [T] {
+        return try allObjectsInContext(context) as! [T]
     }
     
     public static func findObjectsInManagedObjectContext(context: NSManagedObjectContext, byUsingKeyObjectDictionary dictionary: KeyObjectDictionary?) throws -> [FindOrCreateResult] {

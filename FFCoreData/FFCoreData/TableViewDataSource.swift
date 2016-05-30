@@ -41,7 +41,7 @@ import CoreData
     optional func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath)
 }
 
-public class TableViewDataSource: NSObject, UITableViewDataSource {
+public final class TableViewDataSource: NSObject, UITableViewDataSource {
     public private(set) weak var tableView: UITableView?
     public private(set) weak var fetchedResultsController: NSFetchedResultsController?
     
