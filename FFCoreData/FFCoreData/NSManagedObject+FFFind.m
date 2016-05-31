@@ -218,4 +218,91 @@
     return fetchedObjects;
 }
 
+#pragma mark - Single objects
++ (nullable instancetype)findFirstObjectByUsingPredicate:(nullable NSPredicate *)predicate
+                                               inContext:(NSManagedObjectContext *)context
+                                               withError:(NSError * __autoreleasing _Nullable *)error {
+    return [self findFirstObjectByUsingPredicate:predicate
+                                        sortedBy:nil
+                                       inContext:context
+                                       withError:error];
+}
+
++ (nullable instancetype)findFirstObjectWithEntityName:(NSString *)entityName
+                                      byUsingPredicate:(nullable NSPredicate *)predicate
+                                             inContext:(NSManagedObjectContext *)context
+                                             withError:(NSError * __autoreleasing _Nullable *)error {
+    return [self findFirstObjectWithEntityName:entityName
+                              byUsingPredicate:predicate
+                                      sortedBy:nil
+                                     inContext:context
+                                     withError:error];
+}
+
++ (nullable instancetype)findFirstObjectByUsingPredicate:(nullable NSPredicate *)predicate
+                                                sortedBy:(nullable NSArray<NSSortDescriptor *> *)sortDescriptors
+                                               inContext:(NSManagedObjectContext *)context
+                                               withError:(NSError * __autoreleasing _Nullable *)error {
+    return [self findFirstObjectWithEntityName:[self entityName]
+                              byUsingPredicate:predicate
+                                      sortedBy:sortDescriptors
+                                     inContext:context
+                                     withError:error];
+}
+
++ (nullable instancetype)findFirstObjectWithEntityName:(NSString *)entityName
+                                      byUsingPredicate:(nullable NSPredicate *)predicate
+                                              sortedBy:(nullable NSArray<NSSortDescriptor *> *)sortDescriptors
+                                             inContext:(NSManagedObjectContext *)context
+                                             withError:(NSError * __autoreleasing _Nullable *)error {
+    return [self findObjectsWithEntityName:entityName
+                          byUsingPredicate:predicate
+                                  sortedBy:sortDescriptors
+                                 inContext:context
+                                 withError:error].firstObject;
+}
+
++ (nullable instancetype)findLastObjectByUsingPredicate:(nullable NSPredicate *)predicate
+                                              inContext:(NSManagedObjectContext *)context
+                                              withError:(NSError * __autoreleasing _Nullable *)error {
+    return [self findLastObjectByUsingPredicate:predicate
+                                       sortedBy:nil
+                                      inContext:context
+                                      withError:error];
+}
+
++ (nullable instancetype)findLastObjectWithEntityName:(NSString *)entityName
+                                     byUsingPredicate:(nullable NSPredicate *)predicate
+                                            inContext:(NSManagedObjectContext *)context
+                                            withError:(NSError * __autoreleasing _Nullable *)error {
+    return [self findLastObjectWithEntityName:entityName
+                             byUsingPredicate:predicate
+                                     sortedBy:nil
+                                    inContext:context
+                                    withError:error];
+}
+
++ (nullable instancetype)findLastObjectByUsingPredicate:(nullable NSPredicate *)predicate
+                                               sortedBy:(nullable NSArray<NSSortDescriptor *> *)sortDescriptors
+                                              inContext:(NSManagedObjectContext *)context
+                                              withError:(NSError * __autoreleasing _Nullable *)error {
+    return [self findLastObjectWithEntityName:[self entityName]
+                             byUsingPredicate:predicate
+                                     sortedBy:sortDescriptors
+                                    inContext:context
+                                    withError:error];
+}
+
++ (nullable instancetype)findLastObjectWithEntityName:(NSString *)entityName
+                                     byUsingPredicate:(nullable NSPredicate *)predicate
+                                             sortedBy:(nullable NSArray<NSSortDescriptor *> *)sortDescriptors
+                                            inContext:(NSManagedObjectContext *)context
+                                            withError:(NSError * __autoreleasing _Nullable *)error {
+    return [self findObjectsWithEntityName:entityName
+                          byUsingPredicate:predicate
+                                  sortedBy:sortDescriptors
+                                 inContext:context
+                                 withError:error].lastObject;
+}
+
 @end

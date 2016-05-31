@@ -239,6 +239,111 @@ NS_ASSUME_NONNULL_BEGIN
                                                    inContext:(NSManagedObjectContext *)context
                                                    withError:(NSError * __autoreleasing _Nullable *)error;
 
+#pragma mark - Single objects
+/**
+ *  Finds the first object which matches the given predicate.
+ *  @param predicate       The predicate to use for the fetch request.
+ *  @param context         The context in which to search.
+ *  @param error           A pointer to a NSError in which to store any error.
+ *  @return The first object of found objects or nil if none were found or an error occurred.
+ */
++ (nullable instancetype)findFirstObjectByUsingPredicate:(nullable NSPredicate *)predicate
+                                               inContext:(NSManagedObjectContext *)context
+                                               withError:(NSError * __autoreleasing _Nullable *)error;
+
+/**
+ *  Finds the first object of a given entityt which matches the given predicate.
+ *  @param entityName      The entity of which to search objects.
+ *  @param predicate       The predicate to use for the fetch request.
+ *  @param context         The context in which to search.
+ *  @param error           A pointer to a NSError in which to store any error.
+ *  @return The first object of found objects or nil if none were found or an error occurred.
+ */
++ (nullable instancetype)findFirstObjectWithEntityName:(NSString *)entityName
+                                      byUsingPredicate:(nullable NSPredicate *)predicate
+                                               inContext:(NSManagedObjectContext *)context
+                                               withError:(NSError * __autoreleasing _Nullable *)error;
+
+/**
+ *  Finds the first object which matches the given predicate in a result set that was sorted with the given sort descriptors.
+ *  @param predicate       The predicate to use for the fetch request.
+ *  @param sortDescriptors An array of sort descriptors to use.
+ *  @param context         The context in which to search.
+ *  @param error           A pointer to a NSError in which to store any error.
+ *  @return The first object of found objects or nil if none were found or an error occurred.
+ */
++ (nullable instancetype)findFirstObjectByUsingPredicate:(nullable NSPredicate *)predicate
+                                                sortedBy:(nullable NSArray<NSSortDescriptor *> *)sortDescriptors
+                                               inContext:(NSManagedObjectContext *)context
+                                               withError:(NSError * __autoreleasing _Nullable *)error;
+
+/**
+ *  Finds the first object of a given entity which matches the given predicate in a result set that was sorted with the given sort descriptors.
+ *  @param entityName      The entity of which to search objects.
+ *  @param predicate       The predicate to use for the fetch request.
+ *  @param sortDescriptors An array of sort descriptors to use.
+ *  @param context         The context in which to search.
+ *  @param error           A pointer to a NSError in which to store any error.
+ *  @return The first object of found objects or nil if none were found or an error occurred.
+ */
++ (nullable instancetype)findFirstObjectWithEntityName:(NSString *)entityName
+                                      byUsingPredicate:(nullable NSPredicate *)predicate
+                                              sortedBy:(nullable NSArray<NSSortDescriptor *> *)sortDescriptors
+                                             inContext:(NSManagedObjectContext *)context
+                                             withError:(NSError * __autoreleasing _Nullable *)error;
+
+/**
+ *  Finds the last object which matches the given predicate.
+ *  @param predicate       The predicate to use for the fetch request.
+ *  @param context         The context in which to search.
+ *  @param error           A pointer to a NSError in which to store any error.
+ *  @return The last object of found objects or nil if none were found or an error occurred.
+ */
++ (nullable instancetype)findLastObjectByUsingPredicate:(nullable NSPredicate *)predicate
+                                              inContext:(NSManagedObjectContext *)context
+                                              withError:(NSError * __autoreleasing _Nullable *)error;
+
+/**
+ *  Finds the last object of a given entityt which matches the given predicate.
+ *  @param entityName      The entity of which to search objects.
+ *  @param predicate       The predicate to use for the fetch request.
+ *  @param context         The context in which to search.
+ *  @param error           A pointer to a NSError in which to store any error.
+ *  @return The last object of found objects or nil if none were found or an error occurred.
+ */
++ (nullable instancetype)findLastObjectWithEntityName:(NSString *)entityName
+                                     byUsingPredicate:(nullable NSPredicate *)predicate
+                                            inContext:(NSManagedObjectContext *)context
+                                            withError:(NSError * __autoreleasing _Nullable *)error;
+
+/**
+ *  Finds the last object which matches the given predicate in a result set that was sorted with the given sort descriptors.
+ *  @param predicate       The predicate to use for the fetch request.
+ *  @param sortDescriptors An array of sort descriptors to use.
+ *  @param context         The context in which to search.
+ *  @param error           A pointer to a NSError in which to store any error.
+ *  @return The last object of found objects or nil if none were found or an error occurred.
+ */
++ (nullable instancetype)findLastObjectByUsingPredicate:(nullable NSPredicate *)predicate
+                                               sortedBy:(nullable NSArray<NSSortDescriptor *> *)sortDescriptors
+                                              inContext:(NSManagedObjectContext *)context
+                                              withError:(NSError * __autoreleasing _Nullable *)error;
+
+/**
+ *  Finds the last object of a given entity which matches the given predicate in a result set that was sorted with the given sort descriptors.
+ *  @param entityName      The entity of which to search objects.
+ *  @param predicate       The predicate to use for the fetch request.
+ *  @param sortDescriptors An array of sort descriptors to use.
+ *  @param context         The context in which to search.
+ *  @param error           A pointer to a NSError in which to store any error.
+ *  @return The last object of found objects or nil if none were found or an error occurred.
+ */
++ (nullable instancetype)findLastObjectWithEntityName:(NSString *)entityName
+                                     byUsingPredicate:(nullable NSPredicate *)predicate
+                                             sortedBy:(nullable NSArray<NSSortDescriptor *> *)sortDescriptors
+                                            inContext:(NSManagedObjectContext *)context
+                                            withError:(NSError * __autoreleasing _Nullable *)error;
+
 @end
 
 NS_ASSUME_NONNULL_END
