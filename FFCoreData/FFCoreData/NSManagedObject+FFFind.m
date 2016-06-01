@@ -168,10 +168,10 @@
 + (nullable FFCDCollectionResult *)findObjectsByUsingPredicate:(nullable NSPredicate *)predicate
                                                      inContext:(NSManagedObjectContext *)context
                                                      withError:(NSError * __autoreleasing _Nullable *)error {
-    return [self findObjectsWithEntityName:[self entityName]
-                          byUsingPredicate:predicate
-                                 inContext:context
-                                 withError:error];
+    return [self findObjectsByUsingPredicate:predicate
+                                    sortedBy:nil
+                                   inContext:context
+                                   withError:error];
 }
 
 + (nullable FFCDCollectionResult *)findObjectsWithEntityName:(NSString *)entityName
@@ -190,10 +190,11 @@
                                                       sortedBy:(nullable NSArray<NSSortDescriptor *> *)sortDescriptors
                                                      inContext:(NSManagedObjectContext *)context
                                                      withError:(NSError * _Nullable __autoreleasing *)error {
-    return [self findObjectsByUsingPredicate:predicate
-                                    sortedBy:sortDescriptors
-                                   inContext:context
-                                   withError:error];
+    return [self findObjectsWithEntityName:[self entityName]
+                          byUsingPredicate:predicate
+                                  sortedBy:sortDescriptors
+                                 inContext:context
+                                 withError:error];
 }
 
 + (nullable FFCDCollectionResult *)findObjectsWithEntityName:(NSString *)entityName
