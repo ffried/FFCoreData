@@ -520,7 +520,7 @@
 		07A64BFD1B2C77BB0008EFF2 /* FFFoundation iOSTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = "FFFoundation iOSTests.xctest";
+			path = "FFFoundation iOS Tests.xctest";
 			remoteRef = 07A64BFC1B2C77BB0008EFF2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -893,6 +893,7 @@
 				073518B61CFC2E96001C05AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		07876A1019D41E7000F21E7D /* Build configuration list for PBXProject "FFCoreData" */ = {
 			isa = XCConfigurationList;

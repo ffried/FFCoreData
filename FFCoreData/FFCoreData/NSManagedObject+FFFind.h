@@ -249,7 +249,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (nullable instancetype)findFirstObjectByUsingPredicate:(nullable NSPredicate *)predicate
                                                inContext:(NSManagedObjectContext *)context
-                                               withError:(NSError * __autoreleasing _Nullable *)error;
+                                               withError:(NSError * __autoreleasing _Nullable *)error NS_SWIFT_UNAVAILABLE("Should return nil, but doesn't");
 
 /**
  *  Finds the first object of a given entityt which matches the given predicate.
@@ -262,7 +262,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (nullable instancetype)findFirstObjectWithEntityName:(NSString *)entityName
                                       byUsingPredicate:(nullable NSPredicate *)predicate
                                                inContext:(NSManagedObjectContext *)context
-                                               withError:(NSError * __autoreleasing _Nullable *)error;
+                                               withError:(NSError * __autoreleasing _Nullable *)error NS_SWIFT_UNAVAILABLE("Should return nil, but doesn't");
 
 /**
  *  Finds the first object which matches the given predicate in a result set that was sorted with the given sort descriptors.
@@ -275,7 +275,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (nullable instancetype)findFirstObjectByUsingPredicate:(nullable NSPredicate *)predicate
                                                 sortedBy:(nullable NSArray<NSSortDescriptor *> *)sortDescriptors
                                                inContext:(NSManagedObjectContext *)context
-                                               withError:(NSError * __autoreleasing _Nullable *)error;
+                                               withError:(NSError * __autoreleasing _Nullable *)error NS_SWIFT_UNAVAILABLE("Should return nil, but doesn't");
 
 /**
  *  Finds the first object of a given entity which matches the given predicate in a result set that was sorted with the given sort descriptors.
@@ -290,7 +290,7 @@ NS_ASSUME_NONNULL_BEGIN
                                       byUsingPredicate:(nullable NSPredicate *)predicate
                                               sortedBy:(nullable NSArray<NSSortDescriptor *> *)sortDescriptors
                                              inContext:(NSManagedObjectContext *)context
-                                             withError:(NSError * __autoreleasing _Nullable *)error;
+                                             withError:(NSError * __autoreleasing _Nullable *)error NS_SWIFT_UNAVAILABLE("Should return nil, but doesn't");
 
 /**
  *  Finds the last object which matches the given predicate.
@@ -301,7 +301,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (nullable instancetype)findLastObjectByUsingPredicate:(nullable NSPredicate *)predicate
                                               inContext:(NSManagedObjectContext *)context
-                                              withError:(NSError * __autoreleasing _Nullable *)error;
+                                              withError:(NSError * __autoreleasing _Nullable *)error NS_SWIFT_UNAVAILABLE("Should return nil, but doesn't");
 
 /**
  *  Finds the last object of a given entityt which matches the given predicate.
@@ -314,7 +314,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (nullable instancetype)findLastObjectWithEntityName:(NSString *)entityName
                                      byUsingPredicate:(nullable NSPredicate *)predicate
                                             inContext:(NSManagedObjectContext *)context
-                                            withError:(NSError * __autoreleasing _Nullable *)error;
+                                            withError:(NSError * __autoreleasing _Nullable *)error NS_SWIFT_UNAVAILABLE("Should return nil, but doesn't");
 
 /**
  *  Finds the last object which matches the given predicate in a result set that was sorted with the given sort descriptors.
@@ -327,7 +327,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (nullable instancetype)findLastObjectByUsingPredicate:(nullable NSPredicate *)predicate
                                                sortedBy:(nullable NSArray<NSSortDescriptor *> *)sortDescriptors
                                               inContext:(NSManagedObjectContext *)context
-                                              withError:(NSError * __autoreleasing _Nullable *)error;
+                                              withError:(NSError * __autoreleasing _Nullable *)error NS_SWIFT_UNAVAILABLE("Should return nil, but doesn't");
 
 /**
  *  Finds the last object of a given entity which matches the given predicate in a result set that was sorted with the given sort descriptors.
@@ -342,7 +342,7 @@ NS_ASSUME_NONNULL_BEGIN
                                      byUsingPredicate:(nullable NSPredicate *)predicate
                                              sortedBy:(nullable NSArray<NSSortDescriptor *> *)sortDescriptors
                                             inContext:(NSManagedObjectContext *)context
-                                            withError:(NSError * __autoreleasing _Nullable *)error;
+                                            withError:(NSError * __autoreleasing _Nullable *)error NS_SWIFT_UNAVAILABLE("Should return nil, but doesn't");
 
 @end
 
