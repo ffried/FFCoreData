@@ -39,16 +39,8 @@ public final class MOCEntitiesObserver: MOCObserver {
 }
 
 public extension NSManagedObject {
-    public static func createMOCEntitiesObserver(fireInitially: Bool = false, block: MOCObserver.MOCObserverBlock) -> MOCEntitiesObserver {
-        return createMOCEntitiesObserver(nil, fireInitially: fireInitially, block: block)
-    }
-    
     public static func createMOCEntitiesObserver(contexts: [NSManagedObjectContext]? = nil, fireInitially: Bool = false, block: MOCObserver.MOCObserverBlock) -> MOCEntitiesObserver {
-        var className = StringFromClass(self)
-        if let range = className.rangeOfString(".", options: .BackwardsSearch) { // Fix Swift class names
-            className = className.substringFromIndex(range.endIndex)
-        }
-        return MOCEntitiesObserver(entityNames: [className], contexts: contexts, fireInitially: fireInitially, block: block)
+        return MOCEntitiesObserver(entityNames: [entityName()], contexts: contexts, fireInitially: fireInitially, block: block)
     }
 }
 

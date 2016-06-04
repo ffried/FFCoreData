@@ -24,8 +24,8 @@ import CoreData
 public final class MOCObjectsObserver: MOCObserver {
     public var objectIDs: [NSManagedObjectID] {
         didSet {
-            let tempIDs = objectIDs.reduce(0) { $0 + ($1.temporaryID ? 1 : 0) }
-            if tempIDs > 0 {
+            let tempIDs = objectIDs.filter { $0.temporaryID }
+            if tempIDs.count > 0 {
                 assertionFailure("FFCoreData: ERROR: \(tempIDs) temporary NSManagedObjectIDs set on MOCObjectsObserver! Be sure to only use non-temporary IDs for MOCObservers!")
             }
         }
@@ -40,7 +40,7 @@ public final class MOCObjectsObserver: MOCObserver {
     override func includeManagedObject(object: NSManagedObject) -> Bool {
         if object.objectID.temporaryID {
             do {
-                try object.managedObjectContext!.obtainPermanentIDsForObjects([object])
+                try object.managedObjectContext?.obtainPermanentIDsForObjects([object])
             } catch {
                 print("FFCoreData: Could not obtain permanent object id: \(error)")
             }
