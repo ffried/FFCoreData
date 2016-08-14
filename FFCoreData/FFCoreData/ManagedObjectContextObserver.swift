@@ -29,32 +29,58 @@ public class MOCObserver {
         let object: NSObject?
     }
     
+    #if swift(>=3.0)
+    private let notificationCenter = NotificationCenter.default
+    #else
     private let notificationCenter = NSNotificationCenter.defaultCenter()
+    #endif
     
     public private(set) final var contexts: [NSManagedObjectContext]?
     
-    private let workerQueue = NSOperationQueue()
     private var observers = [MOCNotificationObserver]()
+    #if swift(>=3.0)
+    private let workerQueue = OperationQueue()
+    
+    public final var queue: OperationQueue
+    #else
+    private let workerQueue = NSOperationQueue()
     
     public final var queue: NSOperationQueue
+    #endif
     public final var handler: MOCObserverBlock
     
     public init(contexts: [NSManagedObjectContext]? = nil, fireInitially: Bool = false, block: MOCObserverBlock) {
         self.contexts = contexts
         self.handler = block
-        self.queue = NSOperationQueue.currentQueue() ?? NSOperationQueue.mainQueue()
-        let observerBlock: (note: NSNotification) -> Void = { [unowned self] (note) in
-            self.managedObjectContextDidChange(note)
-        }
-        if let contexts = contexts where contexts.count > 0 {
-            contexts.forEach {
-                let obsObj = notificationCenter.addObserverForName(NSManagedObjectContextObjectsDidChangeNotification, object: $0, queue: workerQueue, usingBlock: observerBlock)
-                observers.append(MOCNotificationObserver(observer: obsObj, object: $0))
+        #if swift(>=3.0)
+            self.queue = OperationQueue.current ?? OperationQueue.main
+            let observerBlock: (note: Notification) -> Void = { [unowned self] (note) in
+                self.managedObjectContextDidChange(notification: note)
             }
-        } else {
-            let obsObj = notificationCenter.addObserverForName(NSManagedObjectContextObjectsDidChangeNotification, object: nil, queue: workerQueue, usingBlock: observerBlock)
-            observers.append(MOCNotificationObserver(observer: obsObj, object: nil))
-        }
+            if let contexts = contexts, !contexts.isEmpty {
+                contexts.forEach {
+                    let obsObj = notificationCenter.addObserver(forName: .NSManagedObjectContextObjectsDidChange, object: $0, queue: workerQueue, using: observerBlock)
+                    observers.append(MOCNotificationObserver(observer: obsObj, object: $0))
+                }
+            } else {
+                let obsObj = notificationCenter.addObserver(forName: .NSManagedObjectContextObjectsDidChange, object: nil, queue: workerQueue, using: observerBlock)
+                observers.append(MOCNotificationObserver(observer: obsObj, object: nil))
+            }
+        #else
+            self.queue = NSOperationQueue.currentQueue() ?? NSOperationQueue.mainQueue()
+            let observerBlock: (note: NSNotification) -> Void = { [unowned self] (note) in
+                self.managedObjectContextDidChange(note)
+            }
+            if let contexts = contexts where !contexts.isEmpty {
+                contexts.forEach {
+                    let obsObj = notificationCenter.addObserverForName(NSManagedObjectContextObjectsDidChangeNotification, object: $0, queue: workerQueue, usingBlock: observerBlock)
+                    observers.append(MOCNotificationObserver(observer: obsObj, object: $0))
+                }
+            } else {
+                let obsObj = notificationCenter.addObserverForName(NSManagedObjectContextObjectsDidChangeNotification, object: nil, queue: workerQueue, usingBlock: observerBlock)
+                observers.append(MOCNotificationObserver(observer: obsObj, object: nil))
+            }
+        #endif
         if fireInitially {
             block(observer: self, changes: nil)
         }
@@ -62,22 +88,62 @@ public class MOCObserver {
     
     deinit {
         observers.forEach {
-            notificationCenter.removeObserver($0.observer, name: NSManagedObjectContextObjectsDidChangeNotification, object: $0.object)
+            #if swift(>=3.0)
+                notificationCenter.removeObserver($0.observer, name: .NSManagedObjectContextObjectsDidChange, object: $0.object)
+            #else
+                notificationCenter.removeObserver($0.observer, name: NSManagedObjectContextObjectsDidChangeNotification, object: $0.object)
+            #endif
         }
     }
     
+    #if swift(>=3.0)
+    internal func include(managedObject: NSManagedObject) -> Bool {
+        return true
+    }
+    #else
     internal func includeManagedObject(object: NSManagedObject) -> Bool {
         return true
     }
+    #endif
     
     private final func managedObjectContextDidChange(notification: NSNotification) {
-        if let userInfo = notification.userInfo, changes = filteredChangeDictionary(userInfo) {
-            queue.addOperationWithBlock {
-                self.handler(observer: self, changes: changes)
+        #if swift(>=3.0)
+            if let userInfo = notification.userInfo, let changes = filtered(changeDictionary: userInfo) {
+                queue.addOperation {
+                    self.handler(observer: self, changes: changes)
+                }
             }
-        }
+        #else
+            if let userInfo = notification.userInfo, changes = filteredChangeDictionary(userInfo) {
+                queue.addOperationWithBlock {
+                    self.handler(observer: self, changes: changes)
+                }
+            }
+        #endif
     }
     
+    #if swift(>=3.0)
+    private final func filtered(changeDictionary changes: [NSObject: AnyObject]) -> [String: [NSManagedObjectID]]? {
+        let inserted = changes[NSInsertedObjectsKey] as? Set<NSManagedObject>
+        let updated = changes[NSUpdatedObjectsKey] as? Set<NSManagedObject>
+        let deleted = changes[NSDeletedObjectsKey] as? Set<NSManagedObject>
+        
+        let insertedIDs = inserted?.filter(include).map { $0.objectID }
+        let updatedIDs = updated?.filter(include).map { $0.objectID }
+        let deletedIDs = deleted?.filter(include).map { $0.objectID }
+        
+        var newChanges = [String: [NSManagedObjectID]]()
+        let objectIDsAndKeys = [
+            (insertedIDs, NSInsertedObjectsKey),
+            (updatedIDs, NSUpdatedObjectsKey),
+            (deletedIDs, NSDeletedObjectsKey)
+        ]
+        for (objIDs, key) in objectIDsAndKeys {
+            if objIDs?.count > 0 { newChanges[key] = objIDs }
+        }
+        return (newChanges.count > 0) ? newChanges : nil
+    }
+    #else
     private final func filteredChangeDictionary(changes: [NSObject: AnyObject]) -> [String: [NSManagedObjectID]]? {
         let inserted = changes[NSInsertedObjectsKey] as? Set<NSManagedObject>
         let updated = changes[NSUpdatedObjectsKey] as? Set<NSManagedObject>
@@ -98,4 +164,5 @@ public class MOCObserver {
         }
         return (newChanges.count > 0) ? newChanges : nil
     }
+    #endif
 }

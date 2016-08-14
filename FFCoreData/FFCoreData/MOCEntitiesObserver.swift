@@ -33,9 +33,15 @@ public final class MOCEntitiesObserver: MOCObserver {
         self.init(entityNames: entities.map { return $0.name ?? $0.managedObjectClassName }, contexts: contexts, fireInitially: fireInitially, block: block)
     }
     
+    #if swift(>=3.0)
+    override func include(managedObject: NSManagedObject) -> Bool {
+        return entityNames.contains((managedObject.entity.name ?? managedObject.entity.managedObjectClassName))
+    }
+    #else
     override func includeManagedObject(object: NSManagedObject) -> Bool {
         return entityNames.contains((object.entity.name ?? object.entity.managedObjectClassName))
     }
+    #endif
 }
 
 public extension NSManagedObject {
