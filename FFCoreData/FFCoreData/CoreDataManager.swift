@@ -77,39 +77,53 @@ private final class CoreDataManager {
         return ctx
     }()
     
-    private lazy var managedObjectContext: NSManagedObjectContext = {
+    #if swift(>=3.0)
+    fileprivate lazy var managedObjectContext: NSManagedObjectContext = {
         let parentContext = self.backgroundSavingContext
-        #if swift(>=3.0)
-            let ctx = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
-            ctx.parent = parentContext
-        #else
-            let ctx = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
-            ctx.parentContext = parentContext
-        #endif
+        let ctx = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+        ctx.parent = parentContext
         return ctx
     }()
+    #else
+    private lazy var managedObjectContext: NSManagedObjectContext = {
+        let parentContext = self.backgroundSavingContext
+        let ctx = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
+        ctx.parentContext = parentContext
+        return ctx
+    }()
+    #endif
     
+    #if swift(>=3.0)
+    private(set) fileprivate var configuration: CoreDataStack.Configuration
+    
+    fileprivate init(configuration: CoreDataStack.Configuration) {
+        self.configuration = configuration
+    }
+    #else
     private var configuration: CoreDataStack.Configuration
     
     private init(configuration: CoreDataStack.Configuration) {
         self.configuration = configuration
     }
+    #endif
     
+    #if swift(>=3.0)
+    fileprivate func createTemporaryMainContext() -> NSManagedObjectContext {
+        return createTemporaryContext(withConcurrencyType: .mainQueueConcurrencyType)
+    }
+    
+    fileprivate func createTemporaryBackgroundContext() -> NSManagedObjectContext {
+        return createTemporaryContext(withConcurrencyType: .privateQueueConcurrencyType)
+    }
+    #else
     private func createTemporaryMainContext() -> NSManagedObjectContext {
-        #if swift(>=3.0)
-            return createTemporaryContext(withConcurrencyType: .mainQueueConcurrencyType)
-        #else
-            return createTemporaryContextWithConcurrencyType(.MainQueueConcurrencyType)
-        #endif
+        return createTemporaryContextWithConcurrencyType(.MainQueueConcurrencyType)
     }
     
     private func createTemporaryBackgroundContext() -> NSManagedObjectContext {
-        #if swift(>=3.0)
-            return createTemporaryContext(withConcurrencyType: .privateQueueConcurrencyType)
-        #else
-            return createTemporaryContextWithConcurrencyType(.PrivateQueueConcurrencyType)
-        #endif
+        return createTemporaryContextWithConcurrencyType(.PrivateQueueConcurrencyType)
     }
+    #endif
     
     #if swift(>=3.0)
     private func createTemporaryContext(withConcurrencyType type: NSManagedObjectContextConcurrencyType) -> NSManagedObjectContext {
@@ -131,16 +145,18 @@ private final class CoreDataManager {
     }
     #endif
     
-    private func clearDataStore() throws {
-        #if swift(>=3.0)
-            try FileManager.default.removeItem(at: configuration.storeURL)
-        #else
-            try NSFileManager.defaultManager().removeItemAtURL(configuration.storeURL)
-        #endif
+    #if swift(>=3.0)
+    fileprivate func clearDataStore() throws {
+        try FileManager.default.removeItem(at: configuration.storeURL)
     }
+    #else
+    private func clearDataStore() throws {
+        try NSFileManager.defaultManager().removeItemAtURL(configuration.storeURL)
+    }
+    #endif
     
     #if swift(>=3.0)
-    private func save(context ctx: NSManagedObjectContext, rollback: Bool, completion: (Bool) -> Void) {
+    fileprivate func save(context ctx: NSManagedObjectContext, rollback: Bool, completion: @escaping (Bool) -> Void) {
         guard ctx.hasChanges else {
             return completion(true)
         }
@@ -228,7 +244,7 @@ public struct CoreDataStack {
     #endif
     
     #if swift(>=3.0)
-    public static func save(context: NSManagedObjectContext, rollback: Bool = true, completion: (Bool) -> Void = {_ in}) {
+    public static func save(context: NSManagedObjectContext, rollback: Bool = true, completion: @escaping (Bool) -> Void = {_ in}) {
         context.performAndWait {
             CoreDataStack.manager.save(context: context, rollback: rollback, completion: completion)
         }
@@ -241,7 +257,7 @@ public struct CoreDataStack {
     }
     #endif
     
-    public static func saveMainContext(rollback: Bool = true, completion: (Bool) -> Void = {_ in}) {
+    public static func saveMainContext(rollback: Bool = true, completion: @escaping (Bool) -> Void = {_ in}) {
         #if swift(>=3.0)
             CoreDataStack.save(context: CoreDataStack.mainContext, rollback: rollback, completion: completion)
         #else
@@ -267,16 +283,21 @@ extension CoreDataStack {
         private static let infoDictionarySQLiteNameKey = "FFCDDataManagerSQLiteName"
         private static let infoDictionaryModelNameKey = "FFCDDataManagerModelName"
         
-        private static let legacyConfiguration: Configuration = {
-            #if swift(>=3.0)
-                let bundle = Bundle.main
-            #else
-                let bundle = NSBundle.mainBundle()
-            #endif
+        #if swift(>=3.0)
+        fileprivate static let legacyConfiguration: Configuration = {
+            let bundle = Bundle.main
             let modelName = bundle.infoDictionary?[Configuration.infoDictionaryModelNameKey] as? String
             let sqliteName = bundle.infoDictionary?[Configuration.infoDictionarySQLiteNameKey] as? String
             return Configuration(bundle: bundle, modelName: modelName, sqliteName: sqliteName)
         }()
+        #else
+        private static let legacyConfiguration: Configuration = {
+            let bundle = NSBundle.mainBundle()
+            let modelName = bundle.infoDictionary?[Configuration.infoDictionaryModelNameKey] as? String
+            let sqliteName = bundle.infoDictionary?[Configuration.infoDictionarySQLiteNameKey] as? String
+            return Configuration(bundle: bundle, modelName: modelName, sqliteName: sqliteName)
+        }()
+        #endif
         
         #if swift(>=3.0)
         public let bundle: Bundle

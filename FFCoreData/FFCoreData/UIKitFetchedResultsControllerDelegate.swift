@@ -18,11 +18,25 @@
 //  limitations under the License.
 //
 
-#if os(iOS)
 import Foundation
 import UIKit
 
-public class UIKitFetchedResultsControllerDelegate: FetchedResultsControllerDelegate {
+#if swift(>=3.0)
+public class UIKitFetchedResultsControllerManager<Result: NSFetchRequestResult>: FetchedResultsControllerManager<Result> {
+    public final var preserveSelection = true
+    
+    internal final var selectedIndexPaths = Set<IndexPath>()
+    
+    internal final func reapplySelection() {
+        let indexPaths = selectedIndexPaths
+        selectedIndexPaths.removeAll()
+        if preserveSelection { select(indexPaths: Array(indexPaths)) }
+    }
+    
+    internal func select(indexPaths: Array<IndexPath>) {}
+}
+#else
+public class UIKitFetchedResultsControllerManager: FetchedResultsControllerManager {
     public final var preserveSelection = true
     
     internal final var selectedIndexPaths = Set<NSIndexPath>()

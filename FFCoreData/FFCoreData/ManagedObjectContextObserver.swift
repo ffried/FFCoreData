@@ -22,7 +22,11 @@ import Foundation
 import CoreData
 
 public class MOCObserver {
+    #if swift(>=3.0)
+    public typealias MOCObserverBlock = @escaping (_ observer: MOCObserver, _ changes: [String: [NSManagedObjectID]]?) -> ()
+    #else
     public typealias MOCObserverBlock = (observer: MOCObserver, changes: [String: [NSManagedObjectID]]?) -> ()
+    #endif
     
     private struct MOCNotificationObserver {
         let observer: NSObjectProtocol
@@ -54,7 +58,7 @@ public class MOCObserver {
         self.handler = block
         #if swift(>=3.0)
             self.queue = OperationQueue.current ?? OperationQueue.main
-            let observerBlock: (note: Notification) -> Void = { [unowned self] (note) in
+            let observerBlock = { [unowned self] (note: Notification) in
                 self.managedObjectContextDidChange(notification: note)
             }
             if let contexts = contexts, !contexts.isEmpty {
@@ -82,7 +86,11 @@ public class MOCObserver {
             }
         #endif
         if fireInitially {
-            block(observer: self, changes: nil)
+            #if swift(>=3.0)
+                block(self, nil)
+            #else
+                block(observer: self, changes: nil)
+            #endif
         }
     }
     
@@ -106,24 +114,26 @@ public class MOCObserver {
     }
     #endif
     
-    private final func managedObjectContextDidChange(notification: NSNotification) {
-        #if swift(>=3.0)
-            if let userInfo = notification.userInfo, let changes = filtered(changeDictionary: userInfo) {
-                queue.addOperation {
-                    self.handler(observer: self, changes: changes)
-                }
+    #if swift(>=3.0)
+    private final func managedObjectContextDidChange(notification: Notification) {
+        if let userInfo = notification.userInfo, let changes = filtered(changeDictionary: userInfo) {
+            queue.addOperation {
+                self.handler(self, changes)
             }
-        #else
-            if let userInfo = notification.userInfo, changes = filteredChangeDictionary(userInfo) {
-                queue.addOperationWithBlock {
-                    self.handler(observer: self, changes: changes)
-                }
-            }
-        #endif
+        }
     }
+    #else
+    private final func managedObjectContextDidChange(notification: NSNotification) {
+        if let userInfo = notification.userInfo, changes = filteredChangeDictionary(userInfo) {
+            queue.addOperationWithBlock {
+                self.handler(observer: self, changes: changes)
+            }
+        }
+    }
+    #endif
     
     #if swift(>=3.0)
-    private final func filtered(changeDictionary changes: [NSObject: AnyObject]) -> [String: [NSManagedObjectID]]? {
+    private final func filtered(changeDictionary changes: [AnyHashable: Any]) -> [String: [NSManagedObjectID]]? {
         let inserted = changes[NSInsertedObjectsKey] as? Set<NSManagedObject>
         let updated = changes[NSUpdatedObjectsKey] as? Set<NSManagedObject>
         let deleted = changes[NSDeletedObjectsKey] as? Set<NSManagedObject>
@@ -132,16 +142,18 @@ public class MOCObserver {
         let updatedIDs = updated?.filter(include).map { $0.objectID }
         let deletedIDs = deleted?.filter(include).map { $0.objectID }
         
-        var newChanges = [String: [NSManagedObjectID]]()
-        let objectIDsAndKeys = [
+        let newChanges = [
             (insertedIDs, NSInsertedObjectsKey),
             (updatedIDs, NSUpdatedObjectsKey),
             (deletedIDs, NSDeletedObjectsKey)
-        ]
-        for (objIDs, key) in objectIDsAndKeys {
-            if objIDs?.count > 0 { newChanges[key] = objIDs }
+            ].reduce([String: [NSManagedObjectID]]()) {
+                var newResult = $0
+                if let objIds = $1.0, !objIds.isEmpty {
+                    newResult[$1.1] = objIds
+                }
+                return newResult
         }
-        return (newChanges.count > 0) ? newChanges : nil
+        return (newChanges.isEmpty) ? nil : newChanges
     }
     #else
     private final func filteredChangeDictionary(changes: [NSObject: AnyObject]) -> [String: [NSManagedObjectID]]? {

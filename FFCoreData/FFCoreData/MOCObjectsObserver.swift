@@ -34,13 +34,16 @@ public final class MOCObjectsObserver: MOCObserver {
             }
         }
     }
-    private final var objectIDURIs: [NSURL] {
-        #if swift(>=3.0)
-            return objectIDs.map { $0.uriRepresentation() }
-        #else
-            return objectIDs.map { $0.URIRepresentation() }
-        #endif
+    
+    #if swift(>=3.0)
+    private final var objectIDURIs: [URL] {
+        return objectIDs.map { $0.uriRepresentation() }
     }
+    #else
+    private final var objectIDURIs: [NSURL] {
+        return objectIDs.map { $0.URIRepresentation() }
+    }
+    #endif
     
     public required init(objectIDs: [NSManagedObjectID], contexts: [NSManagedObjectContext]? = nil, fireInitially: Bool = false, block: MOCObserverBlock) {
         self.objectIDs = objectIDs

@@ -18,16 +18,32 @@
 //  limitations under the License.
 //
 
-#if os(iOS)
 import Foundation
 import UIKit
 import CoreData
 
 @objc public protocol TableViewDataSourceDelegate: class, NSObjectProtocol {
+    #if swift(>=3.0)
+    func tableView(_ tableView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> String
+    func tableView(_ tableView: UITableView, configure cell: UITableViewCell, forRowAt indexPath: IndexPath, with object: NSFetchRequestResult?)
+    
+    // See UITableViewDataSource
+    
+    @objc optional func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
+    @objc optional func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String?
+    
+    @objc optional func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
+    @objc optional func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool
+    
+    @objc optional func sectionIndexTitles(for tableView: UITableView) -> [String]?
+    @objc optional func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int
+    
+    @objc optional func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
+    @objc optional func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath)
+    #else
     func tableView(tableView: UITableView, cellIdentifierForRowAtIndexPath indexPath: NSIndexPath) -> String
     func tableView(tableView: UITableView, configureCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath, withObject object: NSManagedObject?)
     
-    // See UITableViewDataSource
     optional func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String?
     optional func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String?
     
@@ -39,8 +55,80 @@ import CoreData
     
     optional func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath)
     optional func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath)
+    #endif
 }
 
+#if swift(>=3.0)
+public final class TableViewDataSource: NSObject, UITableViewDataSource {
+    public private(set) weak var tableView: UITableView?
+    public private(set) weak var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>?
+    
+    public weak var delegate: TableViewDataSourceDelegate?
+    
+    public required init(tableView: UITableView, controller: NSFetchedResultsController<NSFetchRequestResult>, delegate: TableViewDataSourceDelegate) {
+        self.fetchedResultsController = controller
+        self.tableView = tableView
+        self.delegate = delegate
+        super.init()
+        self.tableView?.dataSource = self
+    }
+    
+    // MARK: UITableViewDataSource
+    @objc public func numberOfSections(in tableView: UITableView) -> Int {
+        return fetchedResultsController?.sections?.count ?? 0
+    }
+    
+    @objc public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return fetchedResultsController?.sections?[section].numberOfObjects ?? 0
+    }
+    
+    @objc public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellIdentifier = delegate?.tableView(tableView, cellIdentifierForRowAt: indexPath) ?? "Cell"
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        let object = fetchedResultsController?.object(at: indexPath)
+        delegate?.tableView(tableView, configure: cell, forRowAt: indexPath, with: object)
+        return cell
+    }
+    
+    @objc public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let selectorToCheck = #selector(TableViewDataSourceDelegate.tableView(_:titleForHeaderInSection:))
+        if let delegate = delegate, delegate.responds(to: selectorToCheck) {
+            return delegate.tableView?(tableView, titleForHeaderInSection: section)
+        }
+        if let count = fetchedResultsController?.sections?.count, count > 0 {
+            return fetchedResultsController?.sections?[section].name
+        }
+        return nil
+    }
+    
+    @objc public func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+        return delegate?.tableView?(tableView, sectionForSectionIndexTitle: title, at: index)
+            ?? fetchedResultsController?.section(forSectionIndexTitle: title, at: index)
+            ?? 0
+    }
+    
+    @objc public func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        return delegate?.tableView?(tableView, titleForFooterInSection: section)
+    }
+    
+    @objc public func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return delegate?.tableView?(tableView, canEditRowAt: indexPath) ?? true
+    }
+    
+    @objc public func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        let selectorToCheck = #selector(TableViewDataSourceDelegate.tableView(_:moveRowAt:to:))
+        return delegate?.tableView?(tableView, canMoveRowAt: indexPath) ?? delegate?.responds(to: selectorToCheck) ?? false
+    }
+    
+    @objc public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        delegate?.tableView?(tableView, commit: editingStyle, forRowAt: indexPath)
+    }
+    
+    @objc public func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        delegate?.tableView?(tableView, moveRowAt: sourceIndexPath, to: destinationIndexPath)
+    }
+}
+#else
 public final class TableViewDataSource: NSObject, UITableViewDataSource {
     public private(set) weak var tableView: UITableView?
     public private(set) weak var fetchedResultsController: NSFetchedResultsController?

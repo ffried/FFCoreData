@@ -18,12 +18,22 @@
 //  limitations under the License.
 //
 
-#if os(iOS)
 import Foundation
 import UIKit
 import CoreData
 
 @objc public protocol CollectionViewDataSourceDelegate: class, NSObjectProtocol {
+    #if swift(>=3.0)
+    func collectionView(_ collectionView: UICollectionView, cellIdentifierForItemAt: IndexPath) -> String
+    func collectionView(_ collectionView: UICollectionView, configure cell: UICollectionViewCell, forItemAt indexPath: IndexPath, with: NSFetchRequestResult?)
+    
+    // See UICollectionViewDataSource
+    @objc optional func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView
+    @available(iOS 9.0, *)
+    @objc optional func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool
+    @available(iOS 9.0, *)
+    @objc optional func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath)
+    #else
     func collectionView(collectionView: UICollectionView, cellIdentifierForItemAtIndexPath: NSIndexPath) -> String
     func collectionView(collectionView: UICollectionView, configureCell cell: UICollectionViewCell, forRowAtIndexPath indexPath: NSIndexPath, withObject: NSManagedObject?)
     
@@ -33,8 +43,65 @@ import CoreData
     optional func collectionView(collectionView: UICollectionView, canMoveItemAtIndexPath indexPath: NSIndexPath) -> Bool
     @available(iOS 9.0, *)
     optional func collectionView(collectionView: UICollectionView, moveItemAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath)
+    #endif
 }
 
+#if swift(>=3.0)
+public final class CollectionViewDataSource: NSObject, UICollectionViewDataSource {
+    public private(set) weak var collectionView: UICollectionView?
+    public private(set) weak var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>?
+    
+    public weak var delegate: CollectionViewDataSourceDelegate?
+    
+    public required init(collectionView: UICollectionView, controller: NSFetchedResultsController<NSFetchRequestResult>, delegate: CollectionViewDataSourceDelegate? = nil) {
+        self.fetchedResultsController = controller
+        self.collectionView = collectionView
+        self.delegate = delegate
+        super.init()
+        self.collectionView?.dataSource = self
+    }
+    
+    @objc public override func responds(to aSelector: Selector) -> Bool {
+        let selectorToCheck = #selector(CollectionViewDataSourceDelegate.collectionView(_:viewForSupplementaryElementOfKind:at:))
+        if selectorToCheck == aSelector {
+            return delegate?.responds(to: aSelector) ?? false
+        }
+        return super.responds(to: aSelector)
+    }
+    
+    // MARK: - UICollectionViewDataSource
+    @objc public func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return fetchedResultsController?.sections?.count ?? 0
+    }
+    
+    @objc public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return fetchedResultsController?.sections?[section].numberOfObjects ?? 0
+    }
+    
+    @objc public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let identifier = delegate?.collectionView(collectionView, cellIdentifierForItemAt: indexPath) ?? "Cell"
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)
+        let object = fetchedResultsController?.object(at: indexPath)
+        delegate?.collectionView(collectionView, configure: cell, forItemAt: indexPath, with: object)
+        return cell
+    }
+    
+    @objc public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        return delegate!.collectionView!(collectionView, viewForSupplementaryElementOfKind: kind, at: indexPath)
+    }
+    
+    @available(iOS 9.0, *)
+    @objc public func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
+        let delegateResponds = delegate?.responds(to: #selector(CollectionViewDataSourceDelegate.collectionView(_:moveItemAt:to:)))
+        return delegate?.collectionView?(collectionView, canMoveItemAt: indexPath) ?? delegateResponds ?? false
+    }
+    
+    @available(iOS 9.0, *)
+    public func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        delegate?.collectionView?(collectionView, moveItemAt: sourceIndexPath, to: destinationIndexPath)
+    }
+}
+#else
 public final class CollectionViewDataSource: NSObject, UICollectionViewDataSource {
     public private(set) weak var collectionView: UICollectionView?
     public private(set) weak var fetchedResultsController: NSFetchedResultsController?

@@ -21,14 +21,88 @@
 import Foundation
 import CoreData
 
-public protocol FetchedResultsControllerDelegateDelegate: NSFetchedResultsControllerDelegate {}
+public protocol FetchedResultsControllerManagerDelegate: NSFetchedResultsControllerDelegate {}
 
-public class FetchedResultsControllerDelegate: NSObject, NSFetchedResultsControllerDelegate {
+#if swift(>=3.0)
+public class FetchedResultsControllerManager<Result: NSFetchRequestResult>: NSObject, NSFetchedResultsControllerDelegate {
+    
+    public typealias Controller = NSFetchedResultsController<Result>
+    
+    public private(set) final weak var fetchedResultsController: Controller?
+    public final weak var delegate: FetchedResultsControllerManagerDelegate?
+    
+    internal init(fetchedResultsController: Controller, delegate: FetchedResultsControllerManagerDelegate?) {
+        self.fetchedResultsController = fetchedResultsController
+        self.delegate = delegate
+        super.init()
+        self.fetchedResultsController?.delegate = self
+    }
+    
+    // MARK: - Internal functions
+    internal func beginUpdates() {}
+    
+    internal func insertSection(at index: Int) {}
+    internal func removeSection(at index: Int) {}
+    internal func updateSection(at index: Int) {}
+    internal func moveSection(from oldIndex: Int, to newIndex: Int) {}
+    
+    internal func insertSubobject(at indexPath: IndexPath) {}
+    internal func removeSubobject(at indexPath: IndexPath) {}
+    internal func updateSubobject(at indexPath: IndexPath) {}
+    internal func moveSubobject(from oldIndexPath: IndexPath, to newIndexPath: IndexPath) {}
+    
+    internal func endUpdates() {}
+    
+    // MARK: - NSFetchedResultsControllerDelegate
+    @objc public final func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        delegate?.controllerWillChangeContent?(controller)
+        beginUpdates()
+    }
+    
+    @objc public final func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
+        switch type {
+        case .insert:
+            insertSection(at: sectionIndex)
+        case .update:
+            updateSection(at: sectionIndex)
+        case .delete:
+            removeSection(at: sectionIndex)
+        default:
+            print("FFCoreData: Unsupported change type: \(type)")
+        }
+        delegate?.controller?(controller, didChange: sectionInfo, atSectionIndex: sectionIndex, for: type)
+    }
+    
+    @objc public func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+        case .insert:
+            insertSubobject(at: newIndexPath!)
+        case .update:
+            updateSubobject(at: indexPath!)
+        case .delete:
+            removeSubobject(at: indexPath!)
+        case .move:
+            moveSubobject(from: indexPath!, to: newIndexPath!)
+        }
+        delegate?.controller?(controller, didChange: anObject, at: indexPath, for: type, newIndexPath: newIndexPath)
+    }
+    
+    public final func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        endUpdates()
+        delegate?.controllerDidChangeContent?(controller)
+    }
+    
+    public final func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, sectionIndexTitleForSectionName sectionName: String) -> String? {
+        return delegate?.controller?(controller, sectionIndexTitleForSectionName: sectionName) ?? controller.sectionIndexTitle(forSectionName: sectionName)
+    }
+}
+#else
+public class FetchedResultsControllerManager: NSObject, NSFetchedResultsControllerDelegate {
     
     public private(set) final weak var fetchedResultsController: NSFetchedResultsController?
-    public final weak var delegate: FetchedResultsControllerDelegateDelegate?
+    public final weak var delegate: FetchedResultsControllerManagerDelegate?
     
-    internal init(fetchedResultsController: NSFetchedResultsController, delegate: FetchedResultsControllerDelegateDelegate?) {
+    internal init(fetchedResultsController: NSFetchedResultsController, delegate: FetchedResultsControllerManagerDelegate?) {
         self.fetchedResultsController = fetchedResultsController
         self.delegate = delegate
         super.init()
@@ -93,3 +167,4 @@ public class FetchedResultsControllerDelegate: NSObject, NSFetchedResultsControl
         return delegate?.controller?(controller, sectionIndexTitleForSectionName: sectionName) ?? controller.sectionIndexTitleForSectionName(sectionName)
     }
 }
+#endif
