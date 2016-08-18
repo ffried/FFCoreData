@@ -101,7 +101,7 @@ public class TableViewFetchedResultsControllerManager: UIKitFetchedResultsContro
     
     public var animation = UITableViewRowAnimation.Automatic
     
-    public required init(fetchedResultsController: NSFetchedResultsController, tableView: UITableView, delegate: FetchedResultsControllerDelegateDelegate? = nil) {
+    public required init(fetchedResultsController: NSFetchedResultsController, tableView: UITableView, delegate: FetchedResultsControllerManagerDelegate? = nil) {
         self.tableView = tableView
         super.init(fetchedResultsController: fetchedResultsController, delegate: delegate)
     }

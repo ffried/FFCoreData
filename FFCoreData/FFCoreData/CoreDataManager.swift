@@ -257,13 +257,15 @@ public struct CoreDataStack {
     }
     #endif
     
+    #if swift(>=3.0)
     public static func saveMainContext(rollback: Bool = true, completion: @escaping (Bool) -> Void = {_ in}) {
-        #if swift(>=3.0)
-            CoreDataStack.save(context: CoreDataStack.mainContext, rollback: rollback, completion: completion)
-        #else
-            CoreDataStack.saveContext(CoreDataStack.MainContext, rollback: rollback, completion: completion)
-        #endif
+        CoreDataStack.save(context: CoreDataStack.mainContext, rollback: rollback, completion: completion)
     }
+    #else
+    public static func saveMainContext(rollback: Bool = true, completion: (Bool) -> Void = {_ in}) {
+        CoreDataStack.saveContext(CoreDataStack.MainContext, rollback: rollback, completion: completion)
+    }
+    #endif
     
     public static func createTemporaryMainContext() -> NSManagedObjectContext {
         return CoreDataStack.manager.createTemporaryMainContext()

@@ -97,7 +97,7 @@ public class CollectionViewFetchedResultsControllerManager: UIKitFetchedResultsC
     
     public private(set) weak var collectionView: UICollectionView?
     
-    public required init(fetchedResultsController: NSFetchedResultsController, collectionView: UICollectionView, delegate: FetchedResultsControllerDelegateDelegate? = nil) {
+    public required init(fetchedResultsController: NSFetchedResultsController, collectionView: UICollectionView, delegate: FetchedResultsControllerManagerDelegate? = nil) {
         self.collectionView = collectionView
         super.init(fetchedResultsController: fetchedResultsController, delegate: delegate)
     }
