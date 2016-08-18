@@ -328,8 +328,8 @@ extension CoreDataStack {
             #if os(iOS)
                 dataFolderURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).last!
             #elseif os(OSX)
-                let url = fileManager.urls(for: .applicationSupportDirectory, inDomains: .userDomainMask).last!
-                dataFolderURL = url.URLByAppendingPathComponent(self.applicationSupportSubfolderName)
+                let url = fileManager.urls(for: .applicationSupportDirectory, in: .userDomainMask).last!
+                dataFolderURL = url.appendingPathComponent(self.applicationSupportSubfolderName)
             #endif
             var isDir: ObjCBool = false
             let exists = fileManager.fileExists(atPath: dataFolderURL.path, isDirectory: &isDir)
