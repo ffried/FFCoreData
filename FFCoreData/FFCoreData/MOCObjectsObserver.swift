@@ -45,10 +45,17 @@ public final class MOCObjectsObserver: MOCObserver {
     }
     #endif
     
+    #if swift(>=3.0)
+    public required init(objectIDs: [NSManagedObjectID], contexts: [NSManagedObjectContext]? = nil, fireInitially: Bool = false, block: @escaping MOCObserverBlock) {
+        self.objectIDs = objectIDs
+        super.init(contexts: contexts, fireInitially: fireInitially, block: block)
+    }
+    #else
     public required init(objectIDs: [NSManagedObjectID], contexts: [NSManagedObjectContext]? = nil, fireInitially: Bool = false, block: MOCObserverBlock) {
         self.objectIDs = objectIDs
         super.init(contexts: contexts, fireInitially: fireInitially, block: block)
     }
+    #endif
     
     #if swift(>=3.0)
     override func include(managedObject: NSManagedObject) -> Bool {
@@ -76,24 +83,29 @@ public final class MOCObjectsObserver: MOCObserver {
 }
 
 public extension NSManagedObject {
-    public func createMOCObjectObserver(fireInitially: Bool = false, block: MOCObserver.MOCObserverBlock) -> MOCObjectsObserver {
-        #if swift(>=3.0)
-            if objectID.isTemporaryID {
-                do {
-                    try managedObjectContext?.obtainPermanentIDs(for: [self])
-                } catch {
-                    print("FFCoreData: Could not obtain permanent object id: \(error)")
-                }
+    #if swift(>=3.0)
+    public func createMOCObjectObserver(fireInitially: Bool = false, block: @escaping MOCObserver.MOCObserverBlock) -> MOCObjectsObserver {
+        if objectID.isTemporaryID {
+            do {
+                try managedObjectContext?.obtainPermanentIDs(for: [self])
+            } catch {
+                print("FFCoreData: Could not obtain permanent object id: \(error)")
             }
-        #else
-            if objectID.temporaryID {
-                do {
-                    try managedObjectContext!.obtainPermanentIDsForObjects([self])
-                } catch {
-                    print("FFCoreData: Could not obtain permanent object id: \(error)")
-                }
-            }
-        #endif
+        }
+        
         return MOCObjectsObserver(objectIDs: [objectID], contexts: managedObjectContext.map { [$0] }, fireInitially: fireInitially, block: block)
     }
+    #else
+    public func createMOCObjectObserver(fireInitially: Bool = false, block: MOCObserver.MOCObserverBlock) -> MOCObjectsObserver {
+        if objectID.temporaryID {
+            do {
+                try managedObjectContext!.obtainPermanentIDsForObjects([self])
+            } catch {
+                print("FFCoreData: Could not obtain permanent object id: \(error)")
+            }
+        }
+    
+        return MOCObjectsObserver(objectIDs: [objectID], contexts: managedObjectContext.map { [$0] }, fireInitially: fireInitially, block: block)
+    }
+    #endif
 }

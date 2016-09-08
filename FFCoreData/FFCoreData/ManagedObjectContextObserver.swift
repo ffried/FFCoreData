@@ -23,7 +23,7 @@ import CoreData
 
 public class MOCObserver {
     #if swift(>=3.0)
-    public typealias MOCObserverBlock = @escaping (_ observer: MOCObserver, _ changes: [String: [NSManagedObjectID]]?) -> ()
+    public typealias MOCObserverBlock = (MOCObserver, _ changes: [String: [NSManagedObjectID]]?) -> ()
     #else
     public typealias MOCObserverBlock = (observer: MOCObserver, changes: [String: [NSManagedObjectID]]?) -> ()
     #endif
@@ -53,46 +53,49 @@ public class MOCObserver {
     #endif
     public final var handler: MOCObserverBlock
     
-    public init(contexts: [NSManagedObjectContext]? = nil, fireInitially: Bool = false, block: MOCObserverBlock) {
+    #if swift(>=3.0)
+    public init(contexts: [NSManagedObjectContext]? = nil, fireInitially: Bool = false, block: @escaping MOCObserverBlock) {
         self.contexts = contexts
         self.handler = block
-        #if swift(>=3.0)
-            self.queue = OperationQueue.current ?? OperationQueue.main
-            let observerBlock = { [unowned self] (note: Notification) in
-                self.managedObjectContextDidChange(notification: note)
+        self.queue = OperationQueue.current ?? OperationQueue.main
+        let observerBlock = { [unowned self] (note: Notification) in
+            self.managedObjectContextDidChange(notification: note)
+        }
+        if let contexts = contexts, !contexts.isEmpty {
+            contexts.forEach {
+                let obsObj = notificationCenter.addObserver(forName: .NSManagedObjectContextObjectsDidChange, object: $0, queue: workerQueue, using: observerBlock)
+                observers.append(MOCNotificationObserver(observer: obsObj, object: $0))
             }
-            if let contexts = contexts, !contexts.isEmpty {
-                contexts.forEach {
-                    let obsObj = notificationCenter.addObserver(forName: .NSManagedObjectContextObjectsDidChange, object: $0, queue: workerQueue, using: observerBlock)
-                    observers.append(MOCNotificationObserver(observer: obsObj, object: $0))
-                }
-            } else {
-                let obsObj = notificationCenter.addObserver(forName: .NSManagedObjectContextObjectsDidChange, object: nil, queue: workerQueue, using: observerBlock)
-                observers.append(MOCNotificationObserver(observer: obsObj, object: nil))
-            }
-        #else
-            self.queue = NSOperationQueue.currentQueue() ?? NSOperationQueue.mainQueue()
-            let observerBlock: (note: NSNotification) -> Void = { [unowned self] (note) in
-                self.managedObjectContextDidChange(note)
-            }
-            if let contexts = contexts where !contexts.isEmpty {
-                contexts.forEach {
-                    let obsObj = notificationCenter.addObserverForName(NSManagedObjectContextObjectsDidChangeNotification, object: $0, queue: workerQueue, usingBlock: observerBlock)
-                    observers.append(MOCNotificationObserver(observer: obsObj, object: $0))
-                }
-            } else {
-                let obsObj = notificationCenter.addObserverForName(NSManagedObjectContextObjectsDidChangeNotification, object: nil, queue: workerQueue, usingBlock: observerBlock)
-                observers.append(MOCNotificationObserver(observer: obsObj, object: nil))
-            }
-        #endif
+        } else {
+            let obsObj = notificationCenter.addObserver(forName: .NSManagedObjectContextObjectsDidChange, object: nil, queue: workerQueue, using: observerBlock)
+            observers.append(MOCNotificationObserver(observer: obsObj, object: nil))
+        }
         if fireInitially {
-            #if swift(>=3.0)
-                block(self, nil)
-            #else
-                block(observer: self, changes: nil)
-            #endif
+            block(self, nil)
         }
     }
+    #else
+    public init(contexts: [NSManagedObjectContext]? = nil, fireInitially: Bool = false, block: @escaping MOCObserverBlock) {
+        self.contexts = contexts
+        self.handler = block
+        self.queue = NSOperationQueue.currentQueue() ?? NSOperationQueue.mainQueue()
+        let observerBlock: (note: NSNotification) -> Void = { [unowned self] (note) in
+            self.managedObjectContextDidChange(note)
+        }
+        if let contexts = contexts where !contexts.isEmpty {
+            contexts.forEach {
+                let obsObj = notificationCenter.addObserverForName(NSManagedObjectContextObjectsDidChangeNotification, object: $0, queue: workerQueue, usingBlock: observerBlock)
+                observers.append(MOCNotificationObserver(observer: obsObj, object: $0))
+            }
+        } else {
+            let obsObj = notificationCenter.addObserverForName(NSManagedObjectContextObjectsDidChangeNotification, object: nil, queue: workerQueue, usingBlock: observerBlock)
+            observers.append(MOCNotificationObserver(observer: obsObj, object: nil))
+        }
+        if fireInitially {
+            block(observer: self, changes: nil)
+        }
+    }
+    #endif
     
     deinit {
         observers.forEach {
