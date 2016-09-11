@@ -59,13 +59,13 @@ import CoreData
 }
 
 #if swift(>=3.0)
-public final class TableViewDataSource: NSObject, UITableViewDataSource {
+public final class TableViewDataSource<Result: NSFetchRequestResult>: NSObject, UITableViewDataSource {
     public private(set) weak var tableView: UITableView?
-    public private(set) weak var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>?
+    public private(set) weak var fetchedResultsController: NSFetchedResultsController<Result>?
     
     public weak var delegate: TableViewDataSourceDelegate?
     
-    public required init(tableView: UITableView, controller: NSFetchedResultsController<NSFetchRequestResult>, delegate: TableViewDataSourceDelegate) {
+    public required init(tableView: UITableView, controller: NSFetchedResultsController<Result>, delegate: TableViewDataSourceDelegate) {
         self.fetchedResultsController = controller
         self.tableView = tableView
         self.delegate = delegate

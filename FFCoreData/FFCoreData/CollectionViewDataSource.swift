@@ -47,13 +47,13 @@ import CoreData
 }
 
 #if swift(>=3.0)
-public final class CollectionViewDataSource: NSObject, UICollectionViewDataSource {
+public final class CollectionViewDataSource<Result: NSFetchRequestResult>: NSObject, UICollectionViewDataSource {
     public private(set) weak var collectionView: UICollectionView?
-    public private(set) weak var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>?
+    public private(set) weak var fetchedResultsController: NSFetchedResultsController<Result>?
     
     public weak var delegate: CollectionViewDataSourceDelegate?
     
-    public required init(collectionView: UICollectionView, controller: NSFetchedResultsController<NSFetchRequestResult>, delegate: CollectionViewDataSourceDelegate? = nil) {
+    public required init(collectionView: UICollectionView, controller: NSFetchedResultsController<Result>, delegate: CollectionViewDataSourceDelegate? = nil) {
         self.fetchedResultsController = controller
         self.collectionView = collectionView
         self.delegate = delegate
