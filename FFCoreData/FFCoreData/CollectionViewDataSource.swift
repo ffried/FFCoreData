@@ -28,11 +28,14 @@ import CoreData
     func collectionView(_ collectionView: UICollectionView, configure cell: UICollectionViewCell, forItemAt indexPath: IndexPath, with: NSFetchRequestResult?)
     
     // See UICollectionViewDataSource
-    @objc optional func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView
+    @objc(collectionView:viewForSupplementaryElementOfKind:atIndexPath:)
+    optional func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView
     @available(iOS 9.0, *)
-    @objc optional func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool
+    @objc(collectionView:canMoveItemAtIndexPath:)
+    optional func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool
     @available(iOS 9.0, *)
-    @objc optional func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath)
+    @objc(collectionView:moveItemAtIndexPath:toIndexPath:)
+    optional func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath)
     #else
     func collectionView(collectionView: UICollectionView, cellIdentifierForItemAtIndexPath: NSIndexPath) -> String
     func collectionView(collectionView: UICollectionView, configureCell cell: UICollectionViewCell, forRowAtIndexPath indexPath: NSIndexPath, withObject: NSManagedObject?)
@@ -70,7 +73,8 @@ public final class CollectionViewDataSource<Result: NSFetchRequestResult>: NSObj
     }
     
     // MARK: - UICollectionViewDataSource
-    @objc public func numberOfSections(in collectionView: UICollectionView) -> Int {
+    @objc(numberOfSectionsInCollectionView:)
+    public func numberOfSections(in collectionView: UICollectionView) -> Int {
         return fetchedResultsController?.sections?.count ?? 0
     }
     
@@ -78,7 +82,8 @@ public final class CollectionViewDataSource<Result: NSFetchRequestResult>: NSObj
         return fetchedResultsController?.sections?[section].numberOfObjects ?? 0
     }
     
-    @objc public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    @objc(collectionView:cellForItemAtIndexPath:)
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let identifier = delegate?.collectionView(collectionView, cellIdentifierForItemAt: indexPath) ?? "Cell"
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)
         let object = fetchedResultsController?.object(at: indexPath)
@@ -86,17 +91,20 @@ public final class CollectionViewDataSource<Result: NSFetchRequestResult>: NSObj
         return cell
     }
     
-    @objc public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+    @objc(collectionView:viewForSupplementaryElementOfKind:atIndexPath:)
+    public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         return delegate!.collectionView!(collectionView, viewForSupplementaryElementOfKind: kind, at: indexPath)
     }
     
     @available(iOS 9.0, *)
-    @objc public func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
+    @objc(collectionView:canMoveItemAtIndexPath:)
+    public func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
         let delegateResponds = delegate?.responds(to: #selector(CollectionViewDataSourceDelegate.collectionView(_:moveItemAt:to:)))
         return delegate?.collectionView?(collectionView, canMoveItemAt: indexPath) ?? delegateResponds ?? false
     }
     
     @available(iOS 9.0, *)
+    @objc(collectionView:moveItemAtIndexPath:toIndexPath:)
     public func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         delegate?.collectionView?(collectionView, moveItemAt: sourceIndexPath, to: destinationIndexPath)
     }
