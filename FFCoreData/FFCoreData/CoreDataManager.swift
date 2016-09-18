@@ -20,6 +20,7 @@
 
 import Foundation
 import CoreData
+import FFFoundation
 
 private final class CoreDataManager {
     private lazy var managedObjectModel: NSManagedObjectModel = {
@@ -308,63 +309,76 @@ extension CoreDataStack {
         #endif
         public let modelName: String
         public let sqliteName: String
+        private var sqliteStoreName: String { return sqliteName + ".sqlite" }
         
         public let removeNamespacesFromEntityNames: Bool
         
         #if swift(>=3.0)
-        public private(set) lazy var storeURL: URL = {
-            self.dataDirectoryURL.appendingPathComponent(self.sqliteName + ".sqlite")
-        }()
+        public let storePath: URL
         #else
-        public private(set) lazy var storeURL: NSURL = {
-            self.dataDirectoryURL.URLByAppendingPathComponent(self.sqliteName + ".sqlite")
-        }()
+        public let storePath: NSURL
         #endif
+        
+        #if swift(>=3.0)
+        public private(set) lazy var storeURL: URL = self.storePath.appendingPathComponent(self.sqliteStoreName)
+        #else
+        public private(set) lazy var storeURL: NSURL = self.storePath.URLByAppendPathComponent(self.sqliteStoreName)
+        #endif
+        
         #if os(OSX)
         public let applicationSupportSubfolderName: String
         #endif
+        
         #if swift(>=3.0)
-        public private(set) lazy var dataDirectoryURL: URL = {
+        #if os(iOS)
+        public static let appDataDirectoryURL: URL = {
             let fileManager = FileManager.default
-            let dataFolderURL: URL
-            #if os(iOS)
-                dataFolderURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).last!
-            #elseif os(OSX)
-                let url = fileManager.urls(for: .applicationSupportDirectory, in: .userDomainMask).last!
-                dataFolderURL = url.appendingPathComponent(self.applicationSupportSubfolderName)
-            #endif
-            var isDir: ObjCBool = false
-            let exists = fileManager.fileExists(atPath: dataFolderURL.path, isDirectory: &isDir)
-            if !exists || (exists && !isDir.boolValue) {
-                do {
-                    try fileManager.createDirectory(at: dataFolderURL, withIntermediateDirectories: true, attributes: nil)
-                } catch {
-                    print("FFCoreData: Could not create application support folder: \(error)")
-                }
+            let dataFolderURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).last!
+            do {
+                try fileManager.createDirectoryIfNeeded(at: dataFolderURL)
+            } catch {
+                print("FFCoreData: Could not create application support folder: \(error)")
             }
             return dataFolderURL
         }()
+        #elseif os(OSX)
+        public static func appDataDirectoryURL(withSubfolderName subfolderName: String) -> URL {
+            let fileManager = FileManager.default
+            let url = fileManager.urls(for: .applicationSupportDirectory, in: .userDomainMask).last!
+            let dataFolderURL = url.appendingPathComponent(subfolderName)
+            do {
+                try fileManager.createDirectoryIfNeeded(at: dataFolderURL)
+            } catch {
+                print("FFCoreData: Could not create application support folder: \(error)")
+            }
+            return dataFolderURL
+        }
+        #endif
         #else
-        public private(set) lazy var dataDirectoryURL: NSURL = {
+        #if os(iOS)
+        public static let appDataDirectoryURL: NSURL = {
             let fileManager = NSFileManager.defaultManager()
-            let dataFolderURL: NSURL
-            #if os(iOS)
-                dataFolderURL = fileManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).last!
-            #elseif os(OSX)
-                let url = fileManager.URLsForDirectory(.ApplicationSupportDirectory, inDomains: .UserDomainMask).last!
-                dataFolderURL = url.URLByAppendingPathComponent(self.applicationSupportSubfolderName)
-            #endif
-            var isDir: ObjCBool = false
-            let exists = fileManager.fileExistsAtPath(dataFolderURL.path!, isDirectory: &isDir)
-            if !exists || (exists && !isDir) {
-                do {
-                    try fileManager.createDirectoryAtURL(dataFolderURL, withIntermediateDirectories: true, attributes: nil)
-                } catch {
-                    print("FFCoreData: Could not create application support folder: \(error)")
-                }
+            let dataFolderURL = fileManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).last!
+            do {
+                try fileManager.createDirectoryAtURLIfNeeded(dataFolderURL)
+            } catch {
+                print("FFCoreData: Could not create application support folder: \(error)")
             }
             return dataFolderURL
         }()
+        #elseif os(OSX)
+        public static func appDataDirectoryURLWithSubfolderName(subfolderName: String) -> NSURL {
+            let fileManager = NSFileManager.defaultManager()
+            let url = fileManager.URLsForDirectory(.ApplicationSupportDirectory, inDomains: .UserDomainMask).last!
+            let dataFolderURL = url.URLByAppendingPathComponent(subfolderName)
+            do {
+                try fileManager.createDirectoryAtURLIfNeeded(dataFolderURL)
+            } catch {
+                print("FFCoreData: Could not create application support folder: \(error)")
+            }
+            return dataFolderURL
+        }
+        #endif
         #endif
         
         private static let InfoDictionaryTargetDisplayNameKey = "CFBundleDisplayName"
@@ -372,53 +386,65 @@ extension CoreDataStack {
         private static let DefaultTargetName = "UNKNOWN_TARGET_NAME"
         
         #if swift(>=3.0)
-        private init(bundle: Bundle, modelName: String?, sqliteName: String?, appSupportFolderName: String?, removeNamespaces: Bool) {
+        private init(bundle: Bundle, modelName: String?, sqliteName: String?, storePath: URL?, appSupportFolderName: String?, removeNamespaces: Bool) {
             func targetName(from bundle: Bundle) -> String {
                 guard let infoDict = bundle.infoDictionary else { return Configuration.DefaultTargetName }
                 let name = infoDict[Configuration.InfoDictionaryTargetDisplayNameKey] ?? infoDict[Configuration.InfoDictionaryTargetNameKey]
                 return (name as? String) ?? Configuration.DefaultTargetName
             }
+            
             self.bundle = bundle
             self.modelName = modelName ?? targetName(from: bundle)
             self.sqliteName = sqliteName ?? targetName(from: bundle)
-            #if os(OSX)
-                self.applicationSupportSubfolderName = appSupportFolderName ?? bundle.bundleIdentifier ?? targetName(from: bundle)
-            #endif
             self.removeNamespacesFromEntityNames = removeNamespaces
+            
+            #if os(iOS)
+                self.storePath = storePath ?? CoreDataStack.Configuration.appDataDirectoryURL
+            #elseif os(OSX)
+                let subfolderName = appSupportFolderName ?? bundle.bundleIdentifier ?? targetName(from: bundle)
+                self.applicationSupportSubfolderName = subfolderName
+                self.storePath = storePath ?? CoreDataStack.Configuration.appDataDirectoryURL(withSubfolderName: subfolderName)
+            #endif
         }
         
         #if os(iOS)
-        public init(bundle: Bundle, modelName: String? = nil, sqliteName: String? = nil, removeNamespaces: Bool = true) {
-            self.init(bundle: bundle, modelName: modelName, sqliteName: sqliteName, appSupportFolderName: nil, removeNamespaces: removeNamespaces)
+        public init(bundle: Bundle, storePath: URL? = nil, modelName: String? = nil, sqliteName: String? = nil, removeNamespaces: Bool = true) {
+            self.init(bundle: bundle, modelName: modelName, sqliteName: sqliteName, storePath: storePath, appSupportFolderName: nil, removeNamespaces: removeNamespaces)
         }
         #elseif os(OSX)
-        public init(bundle: Bundle, applicationSupportSubfolder: String? = nil, modelName: String? = nil, sqliteName: String? = nil, removeNamespaces: Bool = true) {
-            self.init(bundle: bundle, modelName: modelName, sqliteName: sqliteName, appSupportFolderName: applicationSupportSubfolder, removeNamespaces: removeNamespaces)
+        public init(bundle: Bundle, applicationSupportSubfolder: String? = nil, storePath: URL? = nil, modelName: String? = nil, sqliteName: String? = nil, removeNamespaces: Bool = true) {
+            self.init(bundle: bundle, modelName: modelName, sqliteName: sqliteName, storePath: storePath, appSupportFolderName: applicationSupportSubfolder, removeNamespaces: removeNamespaces)
         }
         #endif
         #else
-        private init(bundle: NSBundle, modelName: String?, sqliteName: String?, appSupportFolderName: String?, removeNamespaces: Bool) {
+        private init(bundle: NSBundle, modelName: String?, sqliteName: String?, storePath: NSURL?, appSupportFolderName: String?, removeNamespaces: Bool) {
             func targetName(bundle: NSBundle) -> String {
                 guard let infoDict = bundle.infoDictionary else { return Configuration.DefaultTargetName }
                 let name = infoDict[Configuration.InfoDictionaryTargetDisplayNameKey] ?? infoDict[Configuration.InfoDictionaryTargetNameKey]
                 return (name as? String) ?? Configuration.DefaultTargetName
             }
+
             self.bundle = bundle
             self.modelName = modelName ?? targetName(bundle)
             self.sqliteName = sqliteName ?? targetName(bundle)
-            #if os(OSX)
-                self.applicationSupportSubfolderName = appSupportFolderName ?? bundle.bundleIdentifier ?? targetName(bundle)
-            #endif
             self.removeNamespacesFromEntityNames = removeNamespaces
+        
+            #if os(iOS)
+                self.storePath = storePath ?? CoreDataStack.Configuration.appDataDirectoryURL
+            #elseif os(OSX)
+                let subfolderName = appSupportFolderName ?? bundle.bundleIdentifier ?? targetName(bundle)
+                self.applicationSupportSubfolderName = subfolderName
+                self.storePath = storePath ?? CoreDataStack.Configuration.appDataDirectoryURLWithSubfolderName(subfolderName)
+            #endif
         }
         
         #if os(iOS)
-        public init(bundle: NSBundle, modelName: String? = nil, sqliteName: String? = nil, removeNamespaces: Bool = true) {
-            self.init(bundle: bundle, modelName: modelName, sqliteName: sqliteName, appSupportFolderName: nil, removeNamespaces: removeNamespaces)
+        public init(bundle: NSBundle, storePath: NSURL? = nil, modelName: String? = nil, sqliteName: String? = nil, removeNamespaces: Bool = true) {
+            self.init(bundle: bundle, modelName: modelName, sqliteName: sqliteName, storePath: storePath, appSupportFolderName: nil, removeNamespaces: removeNamespaces)
         }
         #elseif os(OSX)
-        public init(bundle: NSBundle, applicationSupportSubfolder: String? = nil, modelName: String? = nil, sqliteName: String? = nil, removeNamespaces: Bool = true) {
-            self.init(bundle: bundle, modelName: modelName, sqliteName: sqliteName, appSupportFolderName: applicationSupportSubfolder, removeNamespaces: removeNamespaces)
+        public init(bundle: NSBundle, applicationSupportSubfolder: String? = nil, storePath: NSURL? = nil, modelName: String? = nil, sqliteName: String? = nil, removeNamespaces: Bool = true) {
+            self.init(bundle: bundle, modelName: modelName, sqliteName: sqliteName, storePath: storePath, appSupportFolderName: applicationSupportSubfolder, removeNamespaces: removeNamespaces)
         }
         #endif
         #endif
