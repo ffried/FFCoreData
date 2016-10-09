@@ -19,7 +19,7 @@
 //
 
 import XCTest
-@testable import FFCoreData
+import FFCoreData
 
 class FFCoreDataTests: XCTestCase {
 
