@@ -322,7 +322,7 @@
 				07A64BFB1B2C77BB0008EFF2 /* FFFoundation.framework */,
 				07F96F1F1CB7930E0012C546 /* FFFoundation.framework */,
 				07A64BFD1B2C77BB0008EFF2 /* FFFoundation iOS Tests.xctest */,
-				073518C01CFC322B001C05AA /* FFFoundation OS X Tests.xctest */,
+				073518C01CFC322B001C05AA /* FFFoundation macOS Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -473,7 +473,9 @@
 				TargetAttributes = {
 					073518AB1CFC2E96001C05AA = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 8AVR59FNSV;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 					};
 					07876A1519D41E7000F21E7D = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -482,7 +484,9 @@
 					};
 					07876A2019D41E7000F21E7D = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = 8AVR59FNSV;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 					};
 					07F96F131CB7930E0012C546 = {
 						CreatedOnToolsVersion = 7.3;
@@ -518,10 +522,10 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		073518C01CFC322B001C05AA /* FFFoundation OS X Tests.xctest */ = {
+		073518C01CFC322B001C05AA /* FFFoundation macOS Tests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = "FFFoundation OS X Tests.xctest";
+			path = "FFFoundation macOS Tests.xctest";
 			remoteRef = 073518BF1CFC322B001C05AA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -660,14 +664,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 8AVR59FNSV;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "FFCoreData macOS Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = "net.ffried.FFCoreData-OS-X-Tests";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.ffried.FFCoreData-macOS-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -679,14 +684,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 8AVR59FNSV;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "FFCoreData macOS Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = "net.ffried.FFCoreData-OS-X-Tests";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.ffried.FFCoreData-macOS-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -833,12 +839,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				DEVELOPMENT_TEAM = 8AVR59FNSV;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -847,6 +850,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.ffried.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "FFCoreData iOS";
+				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "FFCoreData iOS Tests/FFCoreDataTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -857,16 +861,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				DEVELOPMENT_TEAM = 8AVR59FNSV;
 				INFOPLIST_FILE = "FFCoreData iOS Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.ffried.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "FFCoreData iOS";
+				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "FFCoreData iOS Tests/FFCoreDataTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
