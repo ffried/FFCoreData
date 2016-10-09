@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "07F96F131CB7930E0012C546"
                BuildableName = "FFCoreData.framework"
-               BlueprintName = "FFCoreData OSX"
+               BlueprintName = "FFCoreData macOS"
                ReferencedContainer = "container:FFCoreData.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,8 +29,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "073518AB1CFC2E96001C05AA"
-               BuildableName = "FFCoreData OS X Tests.xctest"
-               BlueprintName = "FFCoreData OS X Tests"
+               BuildableName = "FFCoreData macOS Tests.xctest"
+               BlueprintName = "FFCoreData macOS Tests"
                ReferencedContainer = "container:FFCoreData.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -40,15 +40,26 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "073518AB1CFC2E96001C05AA"
+               BuildableName = "FFCoreData macOS Tests.xctest"
+               BlueprintName = "FFCoreData macOS Tests"
+               ReferencedContainer = "container:FFCoreData.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "07F96F131CB7930E0012C546"
             BuildableName = "FFCoreData.framework"
-            BlueprintName = "FFCoreData OSX"
+            BlueprintName = "FFCoreData macOS"
             ReferencedContainer = "container:FFCoreData.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -70,7 +81,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "07F96F131CB7930E0012C546"
             BuildableName = "FFCoreData.framework"
-            BlueprintName = "FFCoreData OSX"
+            BlueprintName = "FFCoreData macOS"
             ReferencedContainer = "container:FFCoreData.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -88,7 +99,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "07F96F131CB7930E0012C546"
             BuildableName = "FFCoreData.framework"
-            BlueprintName = "FFCoreData OSX"
+            BlueprintName = "FFCoreData macOS"
             ReferencedContainer = "container:FFCoreData.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

@@ -10,7 +10,6 @@
 		0700FD981A73F22B00570B96 /* MOCEntitiesObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0700FD971A73F22B00570B96 /* MOCEntitiesObserver.swift */; };
 		07300CB41BD3F51C00C1644E /* NSManagedObject+FFFindOrCreate.h in Headers */ = {isa = PBXBuildFile; fileRef = 07300CB21BD3F51C00C1644E /* NSManagedObject+FFFindOrCreate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07300CB51BD3F51C00C1644E /* NSManagedObject+FFFindOrCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07300CB31BD3F51C00C1644E /* NSManagedObject+FFFindOrCreate.m */; };
-		073518AF1CFC2E96001C05AA /* FFCoreData_OS_X_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073518AE1CFC2E96001C05AA /* FFCoreData_OS_X_Tests.swift */; };
 		073518B11CFC2E96001C05AA /* FFCoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F96F141CB7930E0012C546 /* FFCoreData.framework */; };
 		073518BA1CFC3105001C05AA /* NSManagedObject+FFFindAndOrCreate_ObjC.h in Headers */ = {isa = PBXBuildFile; fileRef = 073518B81CFC3105001C05AA /* NSManagedObject+FFFindAndOrCreate_ObjC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		073518BB1CFC3105001C05AA /* NSManagedObject+FFFindAndOrCreate_ObjC.h in Headers */ = {isa = PBXBuildFile; fileRef = 073518B81CFC3105001C05AA /* NSManagedObject+FFFindAndOrCreate_ObjC.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -30,10 +29,6 @@
 		073518D51CFC5A8F001C05AA /* NSManagedObject+FFCreate.h in Headers */ = {isa = PBXBuildFile; fileRef = 073518D21CFC5A8F001C05AA /* NSManagedObject+FFCreate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		073518D61CFC5A8F001C05AA /* NSManagedObject+FFCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 073518D31CFC5A8F001C05AA /* NSManagedObject+FFCreate.m */; };
 		073518D71CFC5A8F001C05AA /* NSManagedObject+FFCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 073518D31CFC5A8F001C05AA /* NSManagedObject+FFCreate.m */; };
-		0741EB201B2C84B4002593F6 /* TestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0741EB1E1B2C84B4002593F6 /* TestModel.xcdatamodeld */; };
-		0741EB261B2C85ED002593F6 /* TestEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0741EB241B2C85ED002593F6 /* TestEntity+CoreDataProperties.swift */; };
-		0741EB271B2C85ED002593F6 /* TestEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0741EB251B2C85ED002593F6 /* TestEntity.swift */; };
-		0741EB291B2C8618002593F6 /* FFCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0741EB281B2C8618002593F6 /* FFCoreDataTests.swift */; };
 		0741EB2C1B2DEBC5002593F6 /* FFCoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07876A1619D41E7000F21E7D /* FFCoreData.framework */; };
 		076576951A73CC3500EEA793 /* ManagedObjectContextObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076576941A73CC3500EEA793 /* ManagedObjectContextObserver.swift */; };
 		076576971A73D4D500EEA793 /* MOCObjectsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076576961A73D4D500EEA793 /* MOCObjectsObserver.swift */; };
@@ -54,6 +49,14 @@
 		07D8F0581CB794D000245BC5 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA24371B28037E00FA689B /* CoreDataManager.swift */; };
 		07D8F0591CB794D300245BC5 /* FFCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = 07876A1B19D41E7000F21E7D /* FFCoreData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07D8F05A1CB795CB00245BC5 /* FFFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F96F1F1CB7930E0012C546 /* FFFoundation.framework */; };
+		07F82FE11DAA7ADA00DBCBAA /* FFCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F82FDC1DAA7ADA00DBCBAA /* FFCoreDataTests.swift */; };
+		07F82FE21DAA7ADA00DBCBAA /* FFCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F82FDC1DAA7ADA00DBCBAA /* FFCoreDataTests.swift */; };
+		07F82FE31DAA7ADA00DBCBAA /* TestEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F82FDD1DAA7ADA00DBCBAA /* TestEntity+CoreDataProperties.swift */; };
+		07F82FE41DAA7ADA00DBCBAA /* TestEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F82FDD1DAA7ADA00DBCBAA /* TestEntity+CoreDataProperties.swift */; };
+		07F82FE51DAA7ADA00DBCBAA /* TestEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F82FDE1DAA7ADA00DBCBAA /* TestEntity.swift */; };
+		07F82FE61DAA7ADA00DBCBAA /* TestEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F82FDE1DAA7ADA00DBCBAA /* TestEntity.swift */; };
+		07F82FE71DAA7ADA00DBCBAA /* TestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 07F82FDF1DAA7ADA00DBCBAA /* TestModel.xcdatamodeld */; };
+		07F82FE81DAA7ADA00DBCBAA /* TestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 07F82FDF1DAA7ADA00DBCBAA /* TestModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,9 +108,7 @@
 		0700FD971A73F22B00570B96 /* MOCEntitiesObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOCEntitiesObserver.swift; sourceTree = "<group>"; };
 		07300CB21BD3F51C00C1644E /* NSManagedObject+FFFindOrCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+FFFindOrCreate.h"; sourceTree = "<group>"; };
 		07300CB31BD3F51C00C1644E /* NSManagedObject+FFFindOrCreate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+FFFindOrCreate.m"; sourceTree = "<group>"; };
-		073518AC1CFC2E96001C05AA /* FFCoreData OS X Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FFCoreData OS X Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		073518AE1CFC2E96001C05AA /* FFCoreData_OS_X_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFCoreData_OS_X_Tests.swift; sourceTree = "<group>"; };
-		073518B01CFC2E96001C05AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		073518AC1CFC2E96001C05AA /* FFCoreData macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FFCoreData macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		073518B81CFC3105001C05AA /* NSManagedObject+FFFindAndOrCreate_ObjC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+FFFindAndOrCreate_ObjC.h"; sourceTree = "<group>"; };
 		073518B91CFC3105001C05AA /* NSManagedObject+FFFindAndOrCreate_ObjC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+FFFindAndOrCreate_ObjC.m"; sourceTree = "<group>"; };
 		073518C11CFC3267001C05AA /* NSManagedObject+FFFindAndOrCreateTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+FFFindAndOrCreateTypes.h"; sourceTree = "<group>"; };
@@ -117,11 +118,7 @@
 		073518CD1CFC5866001C05AA /* NSManagedObject+FFEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+FFEntity.m"; sourceTree = "<group>"; };
 		073518D21CFC5A8F001C05AA /* NSManagedObject+FFCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+FFCreate.h"; sourceTree = "<group>"; };
 		073518D31CFC5A8F001C05AA /* NSManagedObject+FFCreate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+FFCreate.m"; sourceTree = "<group>"; };
-		0741EB1F1B2C84B4002593F6 /* TestModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModel.xcdatamodel; sourceTree = "<group>"; };
 		0741EB231B2C85ED002593F6 /* FFCoreDataTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FFCoreDataTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		0741EB241B2C85ED002593F6 /* TestEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TestEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		0741EB251B2C85ED002593F6 /* TestEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestEntity.swift; sourceTree = "<group>"; };
-		0741EB281B2C8618002593F6 /* FFCoreDataTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFCoreDataTests.swift; sourceTree = "<group>"; };
 		076576941A73CC3500EEA793 /* ManagedObjectContextObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectContextObserver.swift; sourceTree = "<group>"; };
 		076576961A73D4D500EEA793 /* MOCObjectsObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOCObjectsObserver.swift; sourceTree = "<group>"; };
 		07876A1619D41E7000F21E7D /* FFCoreData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FFCoreData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,8 +135,13 @@
 		07A64BF51B2C77BB0008EFF2 /* FFFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FFFoundation.xcodeproj; path = Submodules/FFFoundation/FFFoundation/FFFoundation.xcodeproj; sourceTree = SOURCE_ROOT; };
 		07AA24371B28037E00FA689B /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		07AA24391B2A0F0900FA689B /* FetchedResulsControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResulsControllerDelegate.swift; sourceTree = "<group>"; };
+		07F82FDC1DAA7ADA00DBCBAA /* FFCoreDataTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFCoreDataTests.swift; sourceTree = "<group>"; };
+		07F82FDD1DAA7ADA00DBCBAA /* TestEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TestEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		07F82FDE1DAA7ADA00DBCBAA /* TestEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestEntity.swift; sourceTree = "<group>"; };
+		07F82FE01DAA7ADA00DBCBAA /* TestModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModel.xcdatamodel; sourceTree = "<group>"; };
+		07F82FEE1DAA7B5700DBCBAA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07F82FF11DAA7BAD00DBCBAA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07F96F141CB7930E0012C546 /* FFCoreData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FFCoreData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		07F96F181CB7930E0012C546 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,15 +199,6 @@
 			name = DataSources;
 			sourceTree = "<group>";
 		};
-		073518AD1CFC2E96001C05AA /* FFCoreData OS X Tests */ = {
-			isa = PBXGroup;
-			children = (
-				073518AE1CFC2E96001C05AA /* FFCoreData_OS_X_Tests.swift */,
-				073518B01CFC2E96001C05AA /* Info.plist */,
-			);
-			path = "FFCoreData OS X Tests";
-			sourceTree = "<group>";
-		};
 		073518B71CFC2F3B001C05AA /* FFCoreData iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -247,9 +240,10 @@
 				07A64BF51B2C77BB0008EFF2 /* FFFoundation.xcodeproj */,
 				07876A1819D41E7000F21E7D /* FFCoreData */,
 				073518B71CFC2F3B001C05AA /* FFCoreData iOS */,
-				07F96F151CB7930E0012C546 /* FFCoreData OSX */,
+				07F82FF01DAA7BAD00DBCBAA /* FFCoreData macOS */,
+				07F82FDB1DAA7ADA00DBCBAA /* FFCoreData Tests */,
 				07876A2219D41E7000F21E7D /* FFCoreData iOS Tests */,
-				073518AD1CFC2E96001C05AA /* FFCoreData OS X Tests */,
+				07F82FED1DAA7B5700DBCBAA /* FFCoreData macOS Tests */,
 				07876A1719D41E7000F21E7D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -260,7 +254,7 @@
 				07876A1619D41E7000F21E7D /* FFCoreData.framework */,
 				07876A2119D41E7000F21E7D /* FFCoreData iOS.xctest */,
 				07F96F141CB7930E0012C546 /* FFCoreData.framework */,
-				073518AC1CFC2E96001C05AA /* FFCoreData OS X Tests.xctest */,
+				073518AC1CFC2E96001C05AA /* FFCoreData macOS Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -281,10 +275,6 @@
 		07876A2219D41E7000F21E7D /* FFCoreData iOS Tests */ = {
 			isa = PBXGroup;
 			children = (
-				0741EB241B2C85ED002593F6 /* TestEntity+CoreDataProperties.swift */,
-				0741EB251B2C85ED002593F6 /* TestEntity.swift */,
-				0741EB281B2C8618002593F6 /* FFCoreDataTests.swift */,
-				0741EB1E1B2C84B4002593F6 /* TestModel.xcdatamodeld */,
 				07876A2319D41E7000F21E7D /* Supporting Files */,
 			);
 			path = "FFCoreData iOS Tests";
@@ -337,12 +327,31 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		07F96F151CB7930E0012C546 /* FFCoreData OSX */ = {
+		07F82FDB1DAA7ADA00DBCBAA /* FFCoreData Tests */ = {
 			isa = PBXGroup;
 			children = (
-				07F96F181CB7930E0012C546 /* Info.plist */,
+				07F82FDC1DAA7ADA00DBCBAA /* FFCoreDataTests.swift */,
+				07F82FDD1DAA7ADA00DBCBAA /* TestEntity+CoreDataProperties.swift */,
+				07F82FDE1DAA7ADA00DBCBAA /* TestEntity.swift */,
+				07F82FDF1DAA7ADA00DBCBAA /* TestModel.xcdatamodeld */,
 			);
-			path = "FFCoreData OSX";
+			path = "FFCoreData Tests";
+			sourceTree = "<group>";
+		};
+		07F82FED1DAA7B5700DBCBAA /* FFCoreData macOS Tests */ = {
+			isa = PBXGroup;
+			children = (
+				07F82FEE1DAA7B5700DBCBAA /* Info.plist */,
+			);
+			path = "FFCoreData macOS Tests";
+			sourceTree = "<group>";
+		};
+		07F82FF01DAA7BAD00DBCBAA /* FFCoreData macOS */ = {
+			isa = PBXGroup;
+			children = (
+				07F82FF11DAA7BAD00DBCBAA /* Info.plist */,
+			);
+			path = "FFCoreData macOS";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,9 +388,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		073518AB1CFC2E96001C05AA /* FFCoreData OS X Tests */ = {
+		073518AB1CFC2E96001C05AA /* FFCoreData macOS Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 073518B41CFC2E96001C05AA /* Build configuration list for PBXNativeTarget "FFCoreData OS X Tests" */;
+			buildConfigurationList = 073518B41CFC2E96001C05AA /* Build configuration list for PBXNativeTarget "FFCoreData macOS Tests" */;
 			buildPhases = (
 				073518A81CFC2E96001C05AA /* Sources */,
 				073518A91CFC2E96001C05AA /* Frameworks */,
@@ -392,9 +401,9 @@
 			dependencies = (
 				073518B31CFC2E96001C05AA /* PBXTargetDependency */,
 			);
-			name = "FFCoreData OS X Tests";
+			name = "FFCoreData macOS Tests";
 			productName = "FFCoreData OS X Tests";
-			productReference = 073518AC1CFC2E96001C05AA /* FFCoreData OS X Tests.xctest */;
+			productReference = 073518AC1CFC2E96001C05AA /* FFCoreData macOS Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		07876A1519D41E7000F21E7D /* FFCoreData iOS */ = {
@@ -433,9 +442,9 @@
 			productReference = 07876A2119D41E7000F21E7D /* FFCoreData iOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		07F96F131CB7930E0012C546 /* FFCoreData OSX */ = {
+		07F96F131CB7930E0012C546 /* FFCoreData macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 07F96F201CB7930E0012C546 /* Build configuration list for PBXNativeTarget "FFCoreData OSX" */;
+			buildConfigurationList = 07F96F201CB7930E0012C546 /* Build configuration list for PBXNativeTarget "FFCoreData macOS" */;
 			buildPhases = (
 				07F96F0F1CB7930E0012C546 /* Sources */,
 				07F96F101CB7930E0012C546 /* Frameworks */,
@@ -446,7 +455,7 @@
 			);
 			dependencies = (
 			);
-			name = "FFCoreData OSX";
+			name = "FFCoreData macOS";
 			productName = "FFCoreData OSX";
 			productReference = 07F96F141CB7930E0012C546 /* FFCoreData.framework */;
 			productType = "com.apple.product-type.framework";
@@ -501,9 +510,9 @@
 			projectRoot = "";
 			targets = (
 				07876A1519D41E7000F21E7D /* FFCoreData iOS */,
-				07F96F131CB7930E0012C546 /* FFCoreData OSX */,
+				07F96F131CB7930E0012C546 /* FFCoreData macOS */,
 				07876A2019D41E7000F21E7D /* FFCoreData iOS Tests */,
-				073518AB1CFC2E96001C05AA /* FFCoreData OS X Tests */,
+				073518AB1CFC2E96001C05AA /* FFCoreData macOS Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -575,7 +584,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				073518AF1CFC2E96001C05AA /* FFCoreData_OS_X_Tests.swift in Sources */,
+				07F82FE61DAA7ADA00DBCBAA /* TestEntity.swift in Sources */,
+				07F82FE81DAA7ADA00DBCBAA /* TestModel.xcdatamodeld in Sources */,
+				07F82FE21DAA7ADA00DBCBAA /* FFCoreDataTests.swift in Sources */,
+				07F82FE41DAA7ADA00DBCBAA /* TestEntity+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,10 +617,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0741EB271B2C85ED002593F6 /* TestEntity.swift in Sources */,
-				0741EB261B2C85ED002593F6 /* TestEntity+CoreDataProperties.swift in Sources */,
-				0741EB201B2C84B4002593F6 /* TestModel.xcdatamodeld in Sources */,
-				0741EB291B2C8618002593F6 /* FFCoreDataTests.swift in Sources */,
+				07F82FE51DAA7ADA00DBCBAA /* TestEntity.swift in Sources */,
+				07F82FE31DAA7ADA00DBCBAA /* TestEntity+CoreDataProperties.swift in Sources */,
+				07F82FE11DAA7ADA00DBCBAA /* FFCoreDataTests.swift in Sources */,
+				07F82FE71DAA7ADA00DBCBAA /* TestModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,7 +645,7 @@
 /* Begin PBXTargetDependency section */
 		073518B31CFC2E96001C05AA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 07F96F131CB7930E0012C546 /* FFCoreData OSX */;
+			target = 07F96F131CB7930E0012C546 /* FFCoreData macOS */;
 			targetProxy = 073518B21CFC2E96001C05AA /* PBXContainerItemProxy */;
 		};
 		0741EB2B1B2DEBB0002593F6 /* PBXTargetDependency */ = {
@@ -652,7 +664,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "FFCoreData OS X Tests/Info.plist";
+				INFOPLIST_FILE = "FFCoreData macOS Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.ffried.FFCoreData-OS-X-Tests";
@@ -671,7 +683,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "FFCoreData OS X Tests/Info.plist";
+				INFOPLIST_FILE = "FFCoreData macOS Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.ffried.FFCoreData-OS-X-Tests";
@@ -875,7 +887,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "FFCoreData OSX/Info.plist";
+				INFOPLIST_FILE = "FFCoreData macOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
@@ -901,7 +913,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "FFCoreData OSX/Info.plist";
+				INFOPLIST_FILE = "FFCoreData macOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
@@ -915,7 +927,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		073518B41CFC2E96001C05AA /* Build configuration list for PBXNativeTarget "FFCoreData OS X Tests" */ = {
+		073518B41CFC2E96001C05AA /* Build configuration list for PBXNativeTarget "FFCoreData macOS Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				073518B51CFC2E96001C05AA /* Debug */,
@@ -951,7 +963,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		07F96F201CB7930E0012C546 /* Build configuration list for PBXNativeTarget "FFCoreData OSX" */ = {
+		07F96F201CB7930E0012C546 /* Build configuration list for PBXNativeTarget "FFCoreData macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				07F96F191CB7930E0012C546 /* Debug */,
@@ -963,12 +975,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		0741EB1E1B2C84B4002593F6 /* TestModel.xcdatamodeld */ = {
+		07F82FDF1DAA7ADA00DBCBAA /* TestModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				0741EB1F1B2C84B4002593F6 /* TestModel.xcdatamodel */,
+				07F82FE01DAA7ADA00DBCBAA /* TestModel.xcdatamodel */,
 			);
-			currentVersion = 0741EB1F1B2C84B4002593F6 /* TestModel.xcdatamodel */;
+			currentVersion = 07F82FE01DAA7ADA00DBCBAA /* TestModel.xcdatamodel */;
 			path = TestModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

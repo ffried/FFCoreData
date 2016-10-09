@@ -19,16 +19,16 @@
 //
 
 import XCTest
-import FFCoreData
+@testable import FFCoreData
 
 class FFCoreDataTests: XCTestCase {
 
     lazy var context: NSManagedObjectContext = {
-        let bundle = NSBundle(forClass: self.dynamicType)
+        let bundle = Bundle(for: type(of: self))
         let sqliteName = "TestData"
         let modelName = "TestModel"
         CoreDataStack.configuration = CoreDataStack.Configuration(bundle: bundle, modelName: modelName, sqliteName: sqliteName)
-        return CoreDataStack.MainContext
+        return CoreDataStack.mainContext
         }()
     let testUUID = "c1b45162-12b4-11e5-8a0d-10ddb1c330b4"
     
@@ -40,7 +40,7 @@ class FFCoreDataTests: XCTestCase {
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
-        CoreDataStack.saveContext(context)
+        CoreDataStack.save(context: context)
         super.tearDown()
     }
     
@@ -51,55 +51,54 @@ class FFCoreDataTests: XCTestCase {
     }
     
     func testObjectCreation() {
-        let obj = TestEntity.createObjectInManagedObjectContext(context)
-        obj.uuid = NSUUID().UUIDString
+        let obj = TestEntity.createObject(in: context)
+        obj.uuid = UUID().uuidString
         XCTAssertNotNil(obj, "Created object must not be nil!")
-        context.deleteObject(obj)
+        context.delete(obj)
     }
     
     func testSearchObject() {
-        
         do {
-            let obj = try TestEntity.findOrCreateObjectByKeyObjectDictionary(["uuid": testUUID], inManagedObjectContext: context)
+            let obj = try TestEntity.findOrCreateObject(byKeyObjectDictionary: ["uuid": testUUID], in: context)
             XCTAssertEqual(obj.uuid, testUUID, "UUIDs of found or created object and search params must be the same!")
-            context.deleteObject(obj)
+            context.delete(obj)
         } catch {
             XCTFail("Find or create must not fail: \(error)")
         }
     }
     
-    private func createTempObjects(count: Int, _ context: NSManagedObjectContext) throws {
+    private func createTempObjects(amount count: Int, in context: NSManagedObjectContext) throws {
         for _ in 0..<count {
-            let uuid = NSUUID().UUIDString
-            try TestEntity.findOrCreateObjectByKeyObjectDictionary(["uuid": uuid], inManagedObjectContext: context)
+            let uuid = UUID().uuidString
+            try TestEntity.findOrCreateObject(byKeyObjectDictionary: ["uuid": uuid], in: context)
         }
     }
     
     func testSearchObjects() {
         do {
             let count = 100
-            try createTempObjects(count, context)
-            let objects = try TestEntity.allObjectsInContext(context) as? [TestEntity]
+            try createTempObjects(amount: count, in: context)
+            let objects = try TestEntity.allObjects(in: context) as? [TestEntity]
             XCTAssertNotNil(objects, "Found objects must not be nil!")
             XCTAssertGreaterThanOrEqual(objects!.count, count, "Count of found objects must be greater than or equal to the created objects")
-            objects?.forEach(context.deleteObject)
+            objects?.forEach(context.delete)
         } catch {
             XCTFail("Find must not fail: \(error)")
         }
     }
     
     func testParentStore() {
-        let mainCtx = CoreDataStack.MainContext
+        let mainCtx = CoreDataStack.mainContext
         let tempCtx = CoreDataStack.createTemporaryBackgroundContext()
         do {
             let count = 100
-            try createTempObjects(count, tempCtx)
-            CoreDataStack.saveContext(tempCtx)
-            let objects = try TestEntity.allObjectsInContext(context) as? [TestEntity]
+            try createTempObjects(amount: count, in: tempCtx)
+            CoreDataStack.save(context: tempCtx)
+            let objects = try TestEntity.allObjects(in: context) as? [TestEntity]
             XCTAssertNotNil(objects, "Found objects must not be nil!")
             XCTAssertGreaterThanOrEqual(objects!.count, count, "Count of found objects must be greater than or equal to the created objects")
-            objects?.map(mainCtx.deleteObject)
-            CoreDataStack.saveContext(tempCtx)
+            objects?.forEach(mainCtx.delete)
+            CoreDataStack.save(context: tempCtx)
         } catch {
             XCTFail("Find must not fail: \(error)")
         }
