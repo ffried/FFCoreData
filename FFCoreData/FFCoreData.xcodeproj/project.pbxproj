@@ -7,108 +7,67 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0700FD981A73F22B00570B96 /* MOCEntitiesObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0700FD971A73F22B00570B96 /* MOCEntitiesObserver.swift */; };
-		07300CB41BD3F51C00C1644E /* NSManagedObject+FFFindOrCreate.h in Headers */ = {isa = PBXBuildFile; fileRef = 07300CB21BD3F51C00C1644E /* NSManagedObject+FFFindOrCreate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		07300CB51BD3F51C00C1644E /* NSManagedObject+FFFindOrCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07300CB31BD3F51C00C1644E /* NSManagedObject+FFFindOrCreate.m */; };
-		073518B11CFC2E96001C05AA /* FFCoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F96F141CB7930E0012C546 /* FFCoreData.framework */; };
-		073518BA1CFC3105001C05AA /* NSManagedObject+FFFindAndOrCreate_ObjC.h in Headers */ = {isa = PBXBuildFile; fileRef = 073518B81CFC3105001C05AA /* NSManagedObject+FFFindAndOrCreate_ObjC.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		073518BB1CFC3105001C05AA /* NSManagedObject+FFFindAndOrCreate_ObjC.h in Headers */ = {isa = PBXBuildFile; fileRef = 073518B81CFC3105001C05AA /* NSManagedObject+FFFindAndOrCreate_ObjC.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		073518BC1CFC3105001C05AA /* NSManagedObject+FFFindAndOrCreate_ObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 073518B91CFC3105001C05AA /* NSManagedObject+FFFindAndOrCreate_ObjC.m */; };
-		073518BD1CFC3105001C05AA /* NSManagedObject+FFFindAndOrCreate_ObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 073518B91CFC3105001C05AA /* NSManagedObject+FFFindAndOrCreate_ObjC.m */; };
-		073518C21CFC3267001C05AA /* NSManagedObject+FFFindAndOrCreateTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 073518C11CFC3267001C05AA /* NSManagedObject+FFFindAndOrCreateTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		073518C31CFC3267001C05AA /* NSManagedObject+FFFindAndOrCreateTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 073518C11CFC3267001C05AA /* NSManagedObject+FFFindAndOrCreateTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		073518C81CFC57FA001C05AA /* NSManagedObject+FFFind.h in Headers */ = {isa = PBXBuildFile; fileRef = 073518C61CFC57FA001C05AA /* NSManagedObject+FFFind.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		073518C91CFC57FA001C05AA /* NSManagedObject+FFFind.h in Headers */ = {isa = PBXBuildFile; fileRef = 073518C61CFC57FA001C05AA /* NSManagedObject+FFFind.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		073518CA1CFC57FA001C05AA /* NSManagedObject+FFFind.m in Sources */ = {isa = PBXBuildFile; fileRef = 073518C71CFC57FA001C05AA /* NSManagedObject+FFFind.m */; };
-		073518CB1CFC57FA001C05AA /* NSManagedObject+FFFind.m in Sources */ = {isa = PBXBuildFile; fileRef = 073518C71CFC57FA001C05AA /* NSManagedObject+FFFind.m */; };
-		073518CE1CFC5866001C05AA /* NSManagedObject+FFEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = 073518CC1CFC5866001C05AA /* NSManagedObject+FFEntity.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		073518CF1CFC5866001C05AA /* NSManagedObject+FFEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = 073518CC1CFC5866001C05AA /* NSManagedObject+FFEntity.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		073518D01CFC5866001C05AA /* NSManagedObject+FFEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 073518CD1CFC5866001C05AA /* NSManagedObject+FFEntity.m */; };
-		073518D11CFC5866001C05AA /* NSManagedObject+FFEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 073518CD1CFC5866001C05AA /* NSManagedObject+FFEntity.m */; };
-		073518D41CFC5A8F001C05AA /* NSManagedObject+FFCreate.h in Headers */ = {isa = PBXBuildFile; fileRef = 073518D21CFC5A8F001C05AA /* NSManagedObject+FFCreate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		073518D51CFC5A8F001C05AA /* NSManagedObject+FFCreate.h in Headers */ = {isa = PBXBuildFile; fileRef = 073518D21CFC5A8F001C05AA /* NSManagedObject+FFCreate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		073518D61CFC5A8F001C05AA /* NSManagedObject+FFCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 073518D31CFC5A8F001C05AA /* NSManagedObject+FFCreate.m */; };
-		073518D71CFC5A8F001C05AA /* NSManagedObject+FFCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 073518D31CFC5A8F001C05AA /* NSManagedObject+FFCreate.m */; };
-		0741EB2C1B2DEBC5002593F6 /* FFCoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07876A1619D41E7000F21E7D /* FFCoreData.framework */; };
-		076576951A73CC3500EEA793 /* ManagedObjectContextObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076576941A73CC3500EEA793 /* ManagedObjectContextObserver.swift */; };
-		076576971A73D4D500EEA793 /* MOCObjectsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076576961A73D4D500EEA793 /* MOCObjectsObserver.swift */; };
-		07876A1C19D41E7000F21E7D /* FFCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = 07876A1B19D41E7000F21E7D /* FFCoreData.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		07A64BE91B2C240F0008EFF2 /* UIKitFetchedResultsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A64BE81B2C240F0008EFF2 /* UIKitFetchedResultsControllerDelegate.swift */; };
-		07A64BEB1B2C266A0008EFF2 /* TableViewFetchedResultsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A64BEA1B2C266A0008EFF2 /* TableViewFetchedResultsControllerDelegate.swift */; };
-		07A64BED1B2C29A30008EFF2 /* CollectionViewFetchedResultsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A64BEC1B2C29A30008EFF2 /* CollectionViewFetchedResultsControllerDelegate.swift */; };
-		07A64BEF1B2C3B940008EFF2 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A64BEE1B2C3B940008EFF2 /* TableViewDataSource.swift */; };
-		07A64BF11B2C4CCB0008EFF2 /* CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A64BF01B2C4CCB0008EFF2 /* CollectionViewDataSource.swift */; };
-		07A64BFE1B2C77C40008EFF2 /* FFFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A64BFB1B2C77BB0008EFF2 /* FFFoundation.framework */; };
-		07AA24381B28037E00FA689B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA24371B28037E00FA689B /* CoreDataManager.swift */; };
-		07AA243A1B2A0F0900FA689B /* FetchedResulsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA24391B2A0F0900FA689B /* FetchedResulsControllerDelegate.swift */; };
-		07D8F0521CB7949C00245BC5 /* ManagedObjectContextObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076576941A73CC3500EEA793 /* ManagedObjectContextObserver.swift */; };
-		07D8F0531CB794A100245BC5 /* MOCObjectsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076576961A73D4D500EEA793 /* MOCObjectsObserver.swift */; };
-		07D8F0541CB794A500245BC5 /* MOCEntitiesObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0700FD971A73F22B00570B96 /* MOCEntitiesObserver.swift */; };
-		07D8F0561CB794C400245BC5 /* NSManagedObject+FFFindOrCreate.h in Headers */ = {isa = PBXBuildFile; fileRef = 07300CB21BD3F51C00C1644E /* NSManagedObject+FFFindOrCreate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		07D8F0571CB794CB00245BC5 /* NSManagedObject+FFFindOrCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07300CB31BD3F51C00C1644E /* NSManagedObject+FFFindOrCreate.m */; };
-		07D8F0581CB794D000245BC5 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA24371B28037E00FA689B /* CoreDataManager.swift */; };
-		07D8F0591CB794D300245BC5 /* FFCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = 07876A1B19D41E7000F21E7D /* FFCoreData.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		07D8F05A1CB795CB00245BC5 /* FFFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F96F1F1CB7930E0012C546 /* FFFoundation.framework */; };
-		07F82FE11DAA7ADA00DBCBAA /* FFCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F82FDC1DAA7ADA00DBCBAA /* FFCoreDataTests.swift */; };
-		07F82FE21DAA7ADA00DBCBAA /* FFCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F82FDC1DAA7ADA00DBCBAA /* FFCoreDataTests.swift */; };
-		07F82FE31DAA7ADA00DBCBAA /* TestEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F82FDD1DAA7ADA00DBCBAA /* TestEntity+CoreDataProperties.swift */; };
-		07F82FE41DAA7ADA00DBCBAA /* TestEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F82FDD1DAA7ADA00DBCBAA /* TestEntity+CoreDataProperties.swift */; };
-		07F82FE51DAA7ADA00DBCBAA /* TestEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F82FDE1DAA7ADA00DBCBAA /* TestEntity.swift */; };
-		07F82FE61DAA7ADA00DBCBAA /* TestEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F82FDE1DAA7ADA00DBCBAA /* TestEntity.swift */; };
-		07F82FE71DAA7ADA00DBCBAA /* TestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 07F82FDF1DAA7ADA00DBCBAA /* TestModel.xcdatamodeld */; };
-		07F82FE81DAA7ADA00DBCBAA /* TestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 07F82FDF1DAA7ADA00DBCBAA /* TestModel.xcdatamodeld */; };
+		0714084F1E7FF504004318C9 /* FFCoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 071408461E7FF504004318C9 /* FFCoreData.framework */; };
+		0714085D1E7FFD27004318C9 /* ManagedObjectContextObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076576941A73CC3500EEA793 /* ManagedObjectContextObserver.swift */; };
+		0714085E1E7FFD28004318C9 /* MOCObjectsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076576961A73D4D500EEA793 /* MOCObjectsObserver.swift */; };
+		0714085F1E7FFD28004318C9 /* MOCEntitiesObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0700FD971A73F22B00570B96 /* MOCEntitiesObserver.swift */; };
+		071408601E7FFD34004318C9 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A64BEE1B2C3B940008EFF2 /* TableViewDataSource.swift */; };
+		071408611E7FFD34004318C9 /* CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A64BF01B2C4CCB0008EFF2 /* CollectionViewDataSource.swift */; };
+		071408621E7FFD51004318C9 /* UIKitFetchedResultsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A64BE81B2C240F0008EFF2 /* UIKitFetchedResultsControllerDelegate.swift */; };
+		071408631E7FFD51004318C9 /* TableViewFetchedResultsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A64BEA1B2C266A0008EFF2 /* TableViewFetchedResultsControllerDelegate.swift */; };
+		071408641E7FFD51004318C9 /* CollectionViewFetchedResultsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A64BEC1B2C29A30008EFF2 /* CollectionViewFetchedResultsControllerDelegate.swift */; };
+		071408651E7FFD58004318C9 /* FetchedResulsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA24391B2A0F0900FA689B /* FetchedResulsControllerDelegate.swift */; };
+		071408661E7FFD83004318C9 /* NSManagedObject+FFFindAndOrCreateTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 073518C11CFC3267001C05AA /* NSManagedObject+FFFindAndOrCreateTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		071408671E7FFD89004318C9 /* NSManagedObject+FFEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = 073518CC1CFC5866001C05AA /* NSManagedObject+FFEntity.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		071408681E7FFD92004318C9 /* NSManagedObject+FFEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 073518CD1CFC5866001C05AA /* NSManagedObject+FFEntity.m */; };
+		071408691E7FFD92004318C9 /* NSManagedObject+FFCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 073518D31CFC5A8F001C05AA /* NSManagedObject+FFCreate.m */; };
+		0714086A1E7FFD92004318C9 /* NSManagedObject+FFFind.m in Sources */ = {isa = PBXBuildFile; fileRef = 073518C71CFC57FA001C05AA /* NSManagedObject+FFFind.m */; };
+		0714086B1E7FFD92004318C9 /* NSManagedObject+FFFindOrCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07300CB31BD3F51C00C1644E /* NSManagedObject+FFFindOrCreate.m */; };
+		0714086C1E7FFD92004318C9 /* NSManagedObject+FFFindAndOrCreate_ObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 073518B91CFC3105001C05AA /* NSManagedObject+FFFindAndOrCreate_ObjC.m */; };
+		0714086D1E7FFD9F004318C9 /* NSManagedObject+FFCreate.h in Headers */ = {isa = PBXBuildFile; fileRef = 073518D21CFC5A8F001C05AA /* NSManagedObject+FFCreate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0714086E1E7FFD9F004318C9 /* NSManagedObject+FFFind.h in Headers */ = {isa = PBXBuildFile; fileRef = 073518C61CFC57FA001C05AA /* NSManagedObject+FFFind.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0714086F1E7FFD9F004318C9 /* NSManagedObject+FFFindOrCreate.h in Headers */ = {isa = PBXBuildFile; fileRef = 07300CB21BD3F51C00C1644E /* NSManagedObject+FFFindOrCreate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		071408701E7FFD9F004318C9 /* NSManagedObject+FFFindAndOrCreate_ObjC.h in Headers */ = {isa = PBXBuildFile; fileRef = 073518B81CFC3105001C05AA /* NSManagedObject+FFFindAndOrCreate_ObjC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		071408711E7FFDAE004318C9 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA24371B28037E00FA689B /* CoreDataManager.swift */; };
+		071408721E7FFDD8004318C9 /* FFCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F82FDC1DAA7ADA00DBCBAA /* FFCoreDataTests.swift */; };
+		071408731E7FFDDE004318C9 /* TestEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F82FDD1DAA7ADA00DBCBAA /* TestEntity+CoreDataProperties.swift */; };
+		071408741E7FFDE0004318C9 /* TestEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F82FDE1DAA7ADA00DBCBAA /* TestEntity.swift */; };
+		071408751E7FFDE4004318C9 /* TestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 07F82FDF1DAA7ADA00DBCBAA /* TestModel.xcdatamodeld */; };
+		071408771E8001C1004318C9 /* FFCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = 07876A1B19D41E7000F21E7D /* FFCoreData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		073518B21CFC2E96001C05AA /* PBXContainerItemProxy */ = {
+		0714083B1E7FF3FE004318C9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 07876A0D19D41E7000F21E7D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 07F96F131CB7930E0012C546;
-			remoteInfo = "FFCoreData OSX";
-		};
-		073518BF1CFC322B001C05AA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 07A64BF51B2C77BB0008EFF2 /* FFFoundation.xcodeproj */;
+			containerPortal = 071408361E7FF3FE004318C9 /* FFFoundation.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 0735189A1CFC2D1E001C05AA;
-			remoteInfo = "FFFoundation OS X Tests";
-		};
-		0741EB2A1B2DEBB0002593F6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 07876A0D19D41E7000F21E7D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 07876A1519D41E7000F21E7D;
-			remoteInfo = FFCoreData;
-		};
-		07A64BFA1B2C77BB0008EFF2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 07A64BF51B2C77BB0008EFF2 /* FFFoundation.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 07FF5E271A3761D0006928A9;
+			remoteGlobalIDString = OBJ_36;
 			remoteInfo = FFFoundation;
 		};
-		07A64BFC1B2C77BB0008EFF2 /* PBXContainerItemProxy */ = {
+		0714083D1E7FF3FE004318C9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 07A64BF51B2C77BB0008EFF2 /* FFFoundation.xcodeproj */;
+			containerPortal = 071408361E7FF3FE004318C9 /* FFFoundation.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 07FF5E321A3761D1006928A9;
+			remoteGlobalIDString = OBJ_37;
 			remoteInfo = FFFoundationTests;
 		};
-		07F96F1E1CB7930E0012C546 /* PBXContainerItemProxy */ = {
+		071408501E7FF504004318C9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 07A64BF51B2C77BB0008EFF2 /* FFFoundation.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 07D72E821CB53DFC006FDB41;
-			remoteInfo = "FFFoundation Mac";
+			containerPortal = 07876A0D19D41E7000F21E7D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 071408451E7FF504004318C9;
+			remoteInfo = FFCoreData;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0700FD971A73F22B00570B96 /* MOCEntitiesObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOCEntitiesObserver.swift; sourceTree = "<group>"; };
+		071408361E7FF3FE004318C9 /* FFFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FFFoundation.xcodeproj; path = Submodules/FFFoundation/FFFoundation.xcodeproj; sourceTree = "<group>"; };
+		071408461E7FF504004318C9 /* FFCoreData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FFCoreData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0714084E1E7FF504004318C9 /* FFCoreDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FFCoreDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		071408761E7FFEC0004318C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07300CB21BD3F51C00C1644E /* NSManagedObject+FFFindOrCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+FFFindOrCreate.h"; sourceTree = "<group>"; };
 		07300CB31BD3F51C00C1644E /* NSManagedObject+FFFindOrCreate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+FFFindOrCreate.m"; sourceTree = "<group>"; };
-		073518AC1CFC2E96001C05AA /* FFCoreData macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FFCoreData macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		073518B81CFC3105001C05AA /* NSManagedObject+FFFindAndOrCreate_ObjC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+FFFindAndOrCreate_ObjC.h"; sourceTree = "<group>"; };
 		073518B91CFC3105001C05AA /* NSManagedObject+FFFindAndOrCreate_ObjC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+FFFindAndOrCreate_ObjC.m"; sourceTree = "<group>"; };
 		073518C11CFC3267001C05AA /* NSManagedObject+FFFindAndOrCreateTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+FFFindAndOrCreateTypes.h"; sourceTree = "<group>"; };
@@ -118,68 +77,51 @@
 		073518CD1CFC5866001C05AA /* NSManagedObject+FFEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+FFEntity.m"; sourceTree = "<group>"; };
 		073518D21CFC5A8F001C05AA /* NSManagedObject+FFCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+FFCreate.h"; sourceTree = "<group>"; };
 		073518D31CFC5A8F001C05AA /* NSManagedObject+FFCreate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+FFCreate.m"; sourceTree = "<group>"; };
-		0741EB231B2C85ED002593F6 /* FFCoreDataTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FFCoreDataTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		076576941A73CC3500EEA793 /* ManagedObjectContextObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectContextObserver.swift; sourceTree = "<group>"; };
 		076576961A73D4D500EEA793 /* MOCObjectsObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOCObjectsObserver.swift; sourceTree = "<group>"; };
-		07876A1619D41E7000F21E7D /* FFCoreData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FFCoreData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		07876A1A19D41E7000F21E7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "FFCoreData iOS/Info.plist"; sourceTree = "<group>"; };
 		07876A1B19D41E7000F21E7D /* FFCoreData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFCoreData.h; sourceTree = "<group>"; };
-		07876A2119D41E7000F21E7D /* FFCoreData iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FFCoreData iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		07876A2419D41E7000F21E7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07A64BE81B2C240F0008EFF2 /* UIKitFetchedResultsControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitFetchedResultsControllerDelegate.swift; sourceTree = "<group>"; };
 		07A64BEA1B2C266A0008EFF2 /* TableViewFetchedResultsControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewFetchedResultsControllerDelegate.swift; sourceTree = "<group>"; };
 		07A64BEC1B2C29A30008EFF2 /* CollectionViewFetchedResultsControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewFetchedResultsControllerDelegate.swift; sourceTree = "<group>"; };
 		07A64BEE1B2C3B940008EFF2 /* TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		07A64BF01B2C4CCB0008EFF2 /* CollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewDataSource.swift; sourceTree = "<group>"; };
 		07A64BF21B2C53480008EFF2 /* NSManagedObject+FindAndOrCreate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+FindAndOrCreate.swift"; sourceTree = "<group>"; };
-		07A64BF51B2C77BB0008EFF2 /* FFFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FFFoundation.xcodeproj; path = Submodules/FFFoundation/FFFoundation/FFFoundation.xcodeproj; sourceTree = SOURCE_ROOT; };
 		07AA24371B28037E00FA689B /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		07AA24391B2A0F0900FA689B /* FetchedResulsControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResulsControllerDelegate.swift; sourceTree = "<group>"; };
 		07F82FDC1DAA7ADA00DBCBAA /* FFCoreDataTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFCoreDataTests.swift; sourceTree = "<group>"; };
 		07F82FDD1DAA7ADA00DBCBAA /* TestEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TestEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		07F82FDE1DAA7ADA00DBCBAA /* TestEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestEntity.swift; sourceTree = "<group>"; };
 		07F82FE01DAA7ADA00DBCBAA /* TestModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModel.xcdatamodel; sourceTree = "<group>"; };
-		07F82FEE1DAA7B5700DBCBAA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		07F82FF11DAA7BAD00DBCBAA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		07F96F141CB7930E0012C546 /* FFCoreData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FFCoreData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		073518A91CFC2E96001C05AA /* Frameworks */ = {
+		071408421E7FF504004318C9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				073518B11CFC2E96001C05AA /* FFCoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		07876A1219D41E7000F21E7D /* Frameworks */ = {
+		0714084B1E7FF504004318C9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07A64BFE1B2C77C40008EFF2 /* FFFoundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		07876A1E19D41E7000F21E7D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0741EB2C1B2DEBC5002593F6 /* FFCoreData.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		07F96F101CB7930E0012C546 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				07D8F05A1CB795CB00245BC5 /* FFFoundation.framework in Frameworks */,
+				0714084F1E7FF504004318C9 /* FFCoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		071408371E7FF3FE004318C9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0714083C1E7FF3FE004318C9 /* FFFoundation.framework */,
+				0714083E1E7FF3FE004318C9 /* FFFoundationTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		071D620319D4BB3800C1999D /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,14 +139,6 @@
 				07A64BF01B2C4CCB0008EFF2 /* CollectionViewDataSource.swift */,
 			);
 			name = DataSources;
-			sourceTree = "<group>";
-		};
-		073518B71CFC2F3B001C05AA /* FFCoreData iOS */ = {
-			isa = PBXGroup;
-			children = (
-				07876A1A19D41E7000F21E7D /* Info.plist */,
-			);
-			name = "FFCoreData iOS";
 			sourceTree = "<group>";
 		};
 		0756A6C819D4669F00F42CFD /* UIKit */ = {
@@ -237,13 +171,9 @@
 		07876A0C19D41E7000F21E7D = {
 			isa = PBXGroup;
 			children = (
-				07A64BF51B2C77BB0008EFF2 /* FFFoundation.xcodeproj */,
+				071408361E7FF3FE004318C9 /* FFFoundation.xcodeproj */,
 				07876A1819D41E7000F21E7D /* FFCoreData */,
-				073518B71CFC2F3B001C05AA /* FFCoreData iOS */,
-				07F82FF01DAA7BAD00DBCBAA /* FFCoreData macOS */,
 				07F82FDB1DAA7ADA00DBCBAA /* FFCoreData Tests */,
-				07876A2219D41E7000F21E7D /* FFCoreData iOS Tests */,
-				07F82FED1DAA7B5700DBCBAA /* FFCoreData macOS Tests */,
 				07876A1719D41E7000F21E7D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -251,10 +181,8 @@
 		07876A1719D41E7000F21E7D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				07876A1619D41E7000F21E7D /* FFCoreData.framework */,
-				07876A2119D41E7000F21E7D /* FFCoreData iOS.xctest */,
-				07F96F141CB7930E0012C546 /* FFCoreData.framework */,
-				073518AC1CFC2E96001C05AA /* FFCoreData macOS Tests.xctest */,
+				071408461E7FF504004318C9 /* FFCoreData.framework */,
+				0714084E1E7FF504004318C9 /* FFCoreDataTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -268,25 +196,9 @@
 				07876A4B19D4341600F21E7D /* NSManagedObject */,
 				07593A031A36E2C900EDACD7 /* CoreDataManager */,
 				07876A1B19D41E7000F21E7D /* FFCoreData.h */,
+				071408761E7FFEC0004318C9 /* Info.plist */,
 			);
 			path = FFCoreData;
-			sourceTree = "<group>";
-		};
-		07876A2219D41E7000F21E7D /* FFCoreData iOS Tests */ = {
-			isa = PBXGroup;
-			children = (
-				07876A2319D41E7000F21E7D /* Supporting Files */,
-			);
-			path = "FFCoreData iOS Tests";
-			sourceTree = "<group>";
-		};
-		07876A2319D41E7000F21E7D /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				0741EB231B2C85ED002593F6 /* FFCoreDataTests-Bridging-Header.h */,
-				07876A2419D41E7000F21E7D /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		07876A4A19D433CC00F21E7D /* NSFetchedResultsController */ = {
@@ -316,17 +228,6 @@
 			name = NSManagedObject;
 			sourceTree = "<group>";
 		};
-		07A64BF61B2C77BB0008EFF2 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				07A64BFB1B2C77BB0008EFF2 /* FFFoundation.framework */,
-				07F96F1F1CB7930E0012C546 /* FFFoundation.framework */,
-				07A64BFD1B2C77BB0008EFF2 /* FFFoundation iOS Tests.xctest */,
-				073518C01CFC322B001C05AA /* FFFoundation macOS Tests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		07F82FDB1DAA7ADA00DBCBAA /* FFCoreData Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -338,127 +239,61 @@
 			path = "FFCoreData Tests";
 			sourceTree = "<group>";
 		};
-		07F82FED1DAA7B5700DBCBAA /* FFCoreData macOS Tests */ = {
-			isa = PBXGroup;
-			children = (
-				07F82FEE1DAA7B5700DBCBAA /* Info.plist */,
-			);
-			path = "FFCoreData macOS Tests";
-			sourceTree = "<group>";
-		};
-		07F82FF01DAA7BAD00DBCBAA /* FFCoreData macOS */ = {
-			isa = PBXGroup;
-			children = (
-				07F82FF11DAA7BAD00DBCBAA /* Info.plist */,
-			);
-			path = "FFCoreData macOS";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		07876A1319D41E7000F21E7D /* Headers */ = {
+		071408431E7FF504004318C9 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				073518C21CFC3267001C05AA /* NSManagedObject+FFFindAndOrCreateTypes.h in Headers */,
-				073518D41CFC5A8F001C05AA /* NSManagedObject+FFCreate.h in Headers */,
-				073518BA1CFC3105001C05AA /* NSManagedObject+FFFindAndOrCreate_ObjC.h in Headers */,
-				07876A1C19D41E7000F21E7D /* FFCoreData.h in Headers */,
-				073518C81CFC57FA001C05AA /* NSManagedObject+FFFind.h in Headers */,
-				07300CB41BD3F51C00C1644E /* NSManagedObject+FFFindOrCreate.h in Headers */,
-				073518CE1CFC5866001C05AA /* NSManagedObject+FFEntity.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		07F96F111CB7930E0012C546 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				073518C31CFC3267001C05AA /* NSManagedObject+FFFindAndOrCreateTypes.h in Headers */,
-				073518D51CFC5A8F001C05AA /* NSManagedObject+FFCreate.h in Headers */,
-				073518BB1CFC3105001C05AA /* NSManagedObject+FFFindAndOrCreate_ObjC.h in Headers */,
-				07D8F0561CB794C400245BC5 /* NSManagedObject+FFFindOrCreate.h in Headers */,
-				073518C91CFC57FA001C05AA /* NSManagedObject+FFFind.h in Headers */,
-				07D8F0591CB794D300245BC5 /* FFCoreData.h in Headers */,
-				073518CF1CFC5866001C05AA /* NSManagedObject+FFEntity.h in Headers */,
+				0714086D1E7FFD9F004318C9 /* NSManagedObject+FFCreate.h in Headers */,
+				071408661E7FFD83004318C9 /* NSManagedObject+FFFindAndOrCreateTypes.h in Headers */,
+				0714086E1E7FFD9F004318C9 /* NSManagedObject+FFFind.h in Headers */,
+				0714086F1E7FFD9F004318C9 /* NSManagedObject+FFFindOrCreate.h in Headers */,
+				071408771E8001C1004318C9 /* FFCoreData.h in Headers */,
+				071408701E7FFD9F004318C9 /* NSManagedObject+FFFindAndOrCreate_ObjC.h in Headers */,
+				071408671E7FFD89004318C9 /* NSManagedObject+FFEntity.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		073518AB1CFC2E96001C05AA /* FFCoreData macOS Tests */ = {
+		071408451E7FF504004318C9 /* FFCoreData */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 073518B41CFC2E96001C05AA /* Build configuration list for PBXNativeTarget "FFCoreData macOS Tests" */;
+			buildConfigurationList = 071408571E7FF504004318C9 /* Build configuration list for PBXNativeTarget "FFCoreData" */;
 			buildPhases = (
-				073518A81CFC2E96001C05AA /* Sources */,
-				073518A91CFC2E96001C05AA /* Frameworks */,
-				073518AA1CFC2E96001C05AA /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				073518B31CFC2E96001C05AA /* PBXTargetDependency */,
-			);
-			name = "FFCoreData macOS Tests";
-			productName = "FFCoreData OS X Tests";
-			productReference = 073518AC1CFC2E96001C05AA /* FFCoreData macOS Tests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		07876A1519D41E7000F21E7D /* FFCoreData iOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 07876A2919D41E7000F21E7D /* Build configuration list for PBXNativeTarget "FFCoreData iOS" */;
-			buildPhases = (
-				07876A1119D41E7000F21E7D /* Sources */,
-				07876A1219D41E7000F21E7D /* Frameworks */,
-				07876A1319D41E7000F21E7D /* Headers */,
-				07876A1419D41E7000F21E7D /* Resources */,
+				071408411E7FF504004318C9 /* Sources */,
+				071408421E7FF504004318C9 /* Frameworks */,
+				071408431E7FF504004318C9 /* Headers */,
+				071408441E7FF504004318C9 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "FFCoreData iOS";
+			name = FFCoreData;
 			productName = FFCoreData;
-			productReference = 07876A1619D41E7000F21E7D /* FFCoreData.framework */;
+			productReference = 071408461E7FF504004318C9 /* FFCoreData.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		07876A2019D41E7000F21E7D /* FFCoreData iOS Tests */ = {
+		0714084D1E7FF504004318C9 /* FFCoreDataTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 07876A2C19D41E7000F21E7D /* Build configuration list for PBXNativeTarget "FFCoreData iOS Tests" */;
+			buildConfigurationList = 0714085A1E7FF504004318C9 /* Build configuration list for PBXNativeTarget "FFCoreDataTests" */;
 			buildPhases = (
-				07876A1D19D41E7000F21E7D /* Sources */,
-				07876A1E19D41E7000F21E7D /* Frameworks */,
-				07876A1F19D41E7000F21E7D /* Resources */,
+				0714084A1E7FF504004318C9 /* Sources */,
+				0714084B1E7FF504004318C9 /* Frameworks */,
+				0714084C1E7FF504004318C9 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				0741EB2B1B2DEBB0002593F6 /* PBXTargetDependency */,
+				071408511E7FF504004318C9 /* PBXTargetDependency */,
 			);
-			name = "FFCoreData iOS Tests";
+			name = FFCoreDataTests;
 			productName = FFCoreDataTests;
-			productReference = 07876A2119D41E7000F21E7D /* FFCoreData iOS.xctest */;
+			productReference = 0714084E1E7FF504004318C9 /* FFCoreDataTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		07F96F131CB7930E0012C546 /* FFCoreData macOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 07F96F201CB7930E0012C546 /* Build configuration list for PBXNativeTarget "FFCoreData macOS" */;
-			buildPhases = (
-				07F96F0F1CB7930E0012C546 /* Sources */,
-				07F96F101CB7930E0012C546 /* Frameworks */,
-				07F96F111CB7930E0012C546 /* Headers */,
-				07F96F121CB7930E0012C546 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "FFCoreData macOS";
-			productName = "FFCoreData OSX";
-			productReference = 07F96F141CB7930E0012C546 /* FFCoreData.framework */;
-			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -467,30 +302,16 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = FF;
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Florian Friedrich";
 				TargetAttributes = {
-					073518AB1CFC2E96001C05AA = {
-						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 8AVR59FNSV;
-						LastSwiftMigration = 0800;
+					071408451E7FF504004318C9 = {
+						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
 					};
-					07876A1519D41E7000F21E7D = {
-						CreatedOnToolsVersion = 6.0.1;
-						LastSwiftMigration = 0800;
-						ProvisioningStyle = Automatic;
-					};
-					07876A2019D41E7000F21E7D = {
-						CreatedOnToolsVersion = 6.0.1;
-						DevelopmentTeam = 8AVR59FNSV;
-						LastSwiftMigration = 0800;
-						ProvisioningStyle = Automatic;
-					};
-					07F96F131CB7930E0012C546 = {
-						CreatedOnToolsVersion = 7.3;
-						LastSwiftMigration = 0800;
+					0714084D1E7FF504004318C9 = {
+						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -507,74 +328,44 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 07A64BF61B2C77BB0008EFF2 /* Products */;
-					ProjectRef = 07A64BF51B2C77BB0008EFF2 /* FFFoundation.xcodeproj */;
+					ProductGroup = 071408371E7FF3FE004318C9 /* Products */;
+					ProjectRef = 071408361E7FF3FE004318C9 /* FFFoundation.xcodeproj */;
 				},
 			);
 			projectRoot = "";
 			targets = (
-				07876A1519D41E7000F21E7D /* FFCoreData iOS */,
-				07F96F131CB7930E0012C546 /* FFCoreData macOS */,
-				07876A2019D41E7000F21E7D /* FFCoreData iOS Tests */,
-				073518AB1CFC2E96001C05AA /* FFCoreData macOS Tests */,
+				071408451E7FF504004318C9 /* FFCoreData */,
+				0714084D1E7FF504004318C9 /* FFCoreDataTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		073518C01CFC322B001C05AA /* FFFoundation macOS Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "FFFoundation macOS Tests.xctest";
-			remoteRef = 073518BF1CFC322B001C05AA /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		07A64BFB1B2C77BB0008EFF2 /* FFFoundation.framework */ = {
+		0714083C1E7FF3FE004318C9 /* FFFoundation.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = FFFoundation.framework;
-			remoteRef = 07A64BFA1B2C77BB0008EFF2 /* PBXContainerItemProxy */;
+			remoteRef = 0714083B1E7FF3FE004318C9 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		07A64BFD1B2C77BB0008EFF2 /* FFFoundation iOS Tests.xctest */ = {
+		0714083E1E7FF3FE004318C9 /* FFFoundationTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = "FFFoundation iOS Tests.xctest";
-			remoteRef = 07A64BFC1B2C77BB0008EFF2 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		07F96F1F1CB7930E0012C546 /* FFFoundation.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = FFFoundation.framework;
-			remoteRef = 07F96F1E1CB7930E0012C546 /* PBXContainerItemProxy */;
+			path = FFFoundationTests.xctest;
+			remoteRef = 0714083D1E7FF3FE004318C9 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
-		073518AA1CFC2E96001C05AA /* Resources */ = {
+		071408441E7FF504004318C9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		07876A1419D41E7000F21E7D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		07876A1F19D41E7000F21E7D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		07F96F121CB7930E0012C546 /* Resources */ = {
+		0714084C1E7FF504004318C9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -584,118 +375,134 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		073518A81CFC2E96001C05AA /* Sources */ = {
+		071408411E7FF504004318C9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07F82FE61DAA7ADA00DBCBAA /* TestEntity.swift in Sources */,
-				07F82FE81DAA7ADA00DBCBAA /* TestModel.xcdatamodeld in Sources */,
-				07F82FE21DAA7ADA00DBCBAA /* FFCoreDataTests.swift in Sources */,
-				07F82FE41DAA7ADA00DBCBAA /* TestEntity+CoreDataProperties.swift in Sources */,
+				0714086A1E7FFD92004318C9 /* NSManagedObject+FFFind.m in Sources */,
+				071408631E7FFD51004318C9 /* TableViewFetchedResultsControllerDelegate.swift in Sources */,
+				071408611E7FFD34004318C9 /* CollectionViewDataSource.swift in Sources */,
+				071408711E7FFDAE004318C9 /* CoreDataManager.swift in Sources */,
+				071408681E7FFD92004318C9 /* NSManagedObject+FFEntity.m in Sources */,
+				071408641E7FFD51004318C9 /* CollectionViewFetchedResultsControllerDelegate.swift in Sources */,
+				0714085E1E7FFD28004318C9 /* MOCObjectsObserver.swift in Sources */,
+				0714086B1E7FFD92004318C9 /* NSManagedObject+FFFindOrCreate.m in Sources */,
+				071408621E7FFD51004318C9 /* UIKitFetchedResultsControllerDelegate.swift in Sources */,
+				0714085D1E7FFD27004318C9 /* ManagedObjectContextObserver.swift in Sources */,
+				0714086C1E7FFD92004318C9 /* NSManagedObject+FFFindAndOrCreate_ObjC.m in Sources */,
+				071408601E7FFD34004318C9 /* TableViewDataSource.swift in Sources */,
+				071408691E7FFD92004318C9 /* NSManagedObject+FFCreate.m in Sources */,
+				0714085F1E7FFD28004318C9 /* MOCEntitiesObserver.swift in Sources */,
+				071408651E7FFD58004318C9 /* FetchedResulsControllerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		07876A1119D41E7000F21E7D /* Sources */ = {
+		0714084A1E7FF504004318C9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07A64BE91B2C240F0008EFF2 /* UIKitFetchedResultsControllerDelegate.swift in Sources */,
-				073518D61CFC5A8F001C05AA /* NSManagedObject+FFCreate.m in Sources */,
-				073518CA1CFC57FA001C05AA /* NSManagedObject+FFFind.m in Sources */,
-				073518BC1CFC3105001C05AA /* NSManagedObject+FFFindAndOrCreate_ObjC.m in Sources */,
-				07A64BEB1B2C266A0008EFF2 /* TableViewFetchedResultsControllerDelegate.swift in Sources */,
-				076576971A73D4D500EEA793 /* MOCObjectsObserver.swift in Sources */,
-				07300CB51BD3F51C00C1644E /* NSManagedObject+FFFindOrCreate.m in Sources */,
-				07AA243A1B2A0F0900FA689B /* FetchedResulsControllerDelegate.swift in Sources */,
-				076576951A73CC3500EEA793 /* ManagedObjectContextObserver.swift in Sources */,
-				07AA24381B28037E00FA689B /* CoreDataManager.swift in Sources */,
-				0700FD981A73F22B00570B96 /* MOCEntitiesObserver.swift in Sources */,
-				07A64BF11B2C4CCB0008EFF2 /* CollectionViewDataSource.swift in Sources */,
-				07A64BED1B2C29A30008EFF2 /* CollectionViewFetchedResultsControllerDelegate.swift in Sources */,
-				073518D01CFC5866001C05AA /* NSManagedObject+FFEntity.m in Sources */,
-				07A64BEF1B2C3B940008EFF2 /* TableViewDataSource.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		07876A1D19D41E7000F21E7D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				07F82FE51DAA7ADA00DBCBAA /* TestEntity.swift in Sources */,
-				07F82FE31DAA7ADA00DBCBAA /* TestEntity+CoreDataProperties.swift in Sources */,
-				07F82FE11DAA7ADA00DBCBAA /* FFCoreDataTests.swift in Sources */,
-				07F82FE71DAA7ADA00DBCBAA /* TestModel.xcdatamodeld in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		07F96F0F1CB7930E0012C546 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				07D8F0581CB794D000245BC5 /* CoreDataManager.swift in Sources */,
-				073518BD1CFC3105001C05AA /* NSManagedObject+FFFindAndOrCreate_ObjC.m in Sources */,
-				073518CB1CFC57FA001C05AA /* NSManagedObject+FFFind.m in Sources */,
-				07D8F0531CB794A100245BC5 /* MOCObjectsObserver.swift in Sources */,
-				07D8F0521CB7949C00245BC5 /* ManagedObjectContextObserver.swift in Sources */,
-				07D8F0571CB794CB00245BC5 /* NSManagedObject+FFFindOrCreate.m in Sources */,
-				073518D11CFC5866001C05AA /* NSManagedObject+FFEntity.m in Sources */,
-				073518D71CFC5A8F001C05AA /* NSManagedObject+FFCreate.m in Sources */,
-				07D8F0541CB794A500245BC5 /* MOCEntitiesObserver.swift in Sources */,
+				071408741E7FFDE0004318C9 /* TestEntity.swift in Sources */,
+				071408751E7FFDE4004318C9 /* TestModel.xcdatamodeld in Sources */,
+				071408721E7FFDD8004318C9 /* FFCoreDataTests.swift in Sources */,
+				071408731E7FFDDE004318C9 /* TestEntity+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		073518B31CFC2E96001C05AA /* PBXTargetDependency */ = {
+		071408511E7FF504004318C9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 07F96F131CB7930E0012C546 /* FFCoreData macOS */;
-			targetProxy = 073518B21CFC2E96001C05AA /* PBXContainerItemProxy */;
-		};
-		0741EB2B1B2DEBB0002593F6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 07876A1519D41E7000F21E7D /* FFCoreData iOS */;
-			targetProxy = 0741EB2A1B2DEBB0002593F6 /* PBXContainerItemProxy */;
+			target = 071408451E7FF504004318C9 /* FFCoreData */;
+			targetProxy = 071408501E7FF504004318C9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		073518B51CFC2E96001C05AA /* Debug */ = {
+		071408581E7FF504004318C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				COMBINE_HIDPI_IMAGES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 8AVR59FNSV;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "FFCoreData macOS Tests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = "net.ffried.FFCoreData-macOS-Tests";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = FFCoreData/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.ffried.FFCoreData;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
-		073518B61CFC2E96001C05AA /* Release */ = {
+		071408591E7FF504004318C9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				COMBINE_HIDPI_IMAGES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 8AVR59FNSV;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "FFCoreData macOS Tests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = "net.ffried.FFCoreData-macOS-Tests";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = FFCoreData/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.ffried.FFCoreData;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		0714085B1E7FF504004318C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = "FFCoreData Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.ffried.FFCoreDataTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		0714085C1E7FF504004318C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				INFOPLIST_FILE = "FFCoreData Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.ffried.FFCoreDataTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -704,8 +511,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -724,8 +529,6 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_NAME = FFCoreData;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -733,19 +536,27 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "$(inherited) @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(FRAMEWORK_NAME)";
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TVOS_DEPLOYMENT_TARGET = 10.0;
+				VALID_ARCHS = "arm64 armv7 armv7s x86_64 i386";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
 			};
 			name = Debug;
 		};
@@ -753,8 +564,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -773,8 +582,6 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_NAME = FFCoreData;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -782,196 +589,49 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "$(inherited) @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(FRAMEWORK_NAME)";
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TVOS_DEPLOYMENT_TARGET = 10.0;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s x86_64 i386";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		07876A2A19D41E7000F21E7D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "FFCoreData iOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "net.ffried.$(PRODUCT_NAME:rfc1034identifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Debug;
-		};
-		07876A2B19D41E7000F21E7D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "FFCoreData iOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "net.ffried.$(PRODUCT_NAME:rfc1034identifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
-		07876A2D19D41E7000F21E7D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 8AVR59FNSV;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "FFCoreData iOS Tests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "net.ffried.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "FFCoreData iOS";
-				SDKROOT = iphoneos;
-				SWIFT_OBJC_BRIDGING_HEADER = "FFCoreData iOS Tests/FFCoreDataTests-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Debug;
-		};
-		07876A2E19D41E7000F21E7D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 8AVR59FNSV;
-				INFOPLIST_FILE = "FFCoreData iOS Tests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "net.ffried.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "FFCoreData iOS";
-				SDKROOT = iphoneos;
-				SWIFT_OBJC_BRIDGING_HEADER = "FFCoreData iOS Tests/FFCoreDataTests-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
-		07F96F191CB7930E0012C546 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ANALYZER_NONNULL = YES;
-				CODE_SIGN_IDENTITY = "";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_VERSION = A;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "FFCoreData macOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_BUNDLE_IDENTIFIER = "net.ffried.$(PRODUCT_NAME:rfc1034identifier)";
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Debug;
-		};
-		07F96F1A1CB7930E0012C546 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ANALYZER_NONNULL = YES;
-				CODE_SIGN_IDENTITY = "";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_VERSION = A;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "FFCoreData macOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_BUNDLE_IDENTIFIER = "net.ffried.$(PRODUCT_NAME:rfc1034identifier)";
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		073518B41CFC2E96001C05AA /* Build configuration list for PBXNativeTarget "FFCoreData macOS Tests" */ = {
+		071408571E7FF504004318C9 /* Build configuration list for PBXNativeTarget "FFCoreData" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				073518B51CFC2E96001C05AA /* Debug */,
-				073518B61CFC2E96001C05AA /* Release */,
+				071408581E7FF504004318C9 /* Debug */,
+				071408591E7FF504004318C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+		};
+		0714085A1E7FF504004318C9 /* Build configuration list for PBXNativeTarget "FFCoreDataTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0714085B1E7FF504004318C9 /* Debug */,
+				0714085C1E7FF504004318C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		07876A1019D41E7000F21E7D /* Build configuration list for PBXProject "FFCoreData" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				07876A2719D41E7000F21E7D /* Debug */,
 				07876A2819D41E7000F21E7D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		07876A2919D41E7000F21E7D /* Build configuration list for PBXNativeTarget "FFCoreData iOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				07876A2A19D41E7000F21E7D /* Debug */,
-				07876A2B19D41E7000F21E7D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		07876A2C19D41E7000F21E7D /* Build configuration list for PBXNativeTarget "FFCoreData iOS Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				07876A2D19D41E7000F21E7D /* Debug */,
-				07876A2E19D41E7000F21E7D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		07F96F201CB7930E0012C546 /* Build configuration list for PBXNativeTarget "FFCoreData macOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				07F96F191CB7930E0012C546 /* Debug */,
-				07F96F1A1CB7930E0012C546 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

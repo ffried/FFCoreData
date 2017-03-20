@@ -18,16 +18,18 @@
 //  limitations under the License.
 //
 
-import Foundation
-import UIKit
-import CoreData
+#if os(iOS)
+import struct Foundation.IndexSet
+import struct Foundation.IndexPath
+import protocol CoreData.NSFetchRequestResult
+import class CoreData.NSFetchedResultsController
+import class UIKit.UICollectionView
 
-#if swift(>=3.0)
 public final class CollectionViewFetchedResultsControllerManager<Result: NSFetchRequestResult>: UIKitFetchedResultsControllerManager<Result> {
     
     public private(set) weak var collectionView: UICollectionView?
     
-    public required init(fetchedResultsController: Controller, collectionView: UICollectionView, delegate: FetchedResultsControllerManagerDelegate? = nil) {
+    public required init(fetchedResultsController: Controller, collectionView: UICollectionView, delegate: Delegate? = nil) {
         self.collectionView = collectionView
         super.init(fetchedResultsController: fetchedResultsController, delegate: delegate)
     }
@@ -43,7 +45,7 @@ public final class CollectionViewFetchedResultsControllerManager<Result: NSFetch
     }
     
     // MARK: - Selection
-    override func select(indexPaths: [IndexPath]) {
+    override func select(indexPaths: Set<IndexPath>) {
         super.select(indexPaths: indexPaths)
         indexPaths.forEach { self.collectionView?.selectItem(at: $0, animated: false, scrollPosition: []) }
     }
@@ -90,76 +92,6 @@ public final class CollectionViewFetchedResultsControllerManager<Result: NSFetch
     override func moveSubobject(from oldIndexPath: IndexPath, to newIndexPath: IndexPath) {
         super.moveSubobject(from: oldIndexPath, to: newIndexPath)
         collectionView?.moveItem(at: oldIndexPath, to: newIndexPath)
-    }
-}
-#else
-public class CollectionViewFetchedResultsControllerManager: UIKitFetchedResultsControllerManager {
-    
-    public private(set) weak var collectionView: UICollectionView?
-    
-    public required init(fetchedResultsController: NSFetchedResultsController, collectionView: UICollectionView, delegate: FetchedResultsControllerManagerDelegate? = nil) {
-        self.collectionView = collectionView
-        super.init(fetchedResultsController: fetchedResultsController, delegate: delegate)
-    }
-    
-    // MARK: - Begin / End Updates
-    override func beginUpdates() {
-        super.beginUpdates()
-    }
-    
-    override func endUpdates() {
-        super.endUpdates()
-        reapplySelection()
-    }
-    
-    // MARK: - Selection
-    override func selectIndexPaths(indexPaths: [NSIndexPath]) {
-        super.selectIndexPaths(indexPaths)
-        indexPaths.forEach { self.collectionView?.selectItemAtIndexPath($0, animated: false, scrollPosition: .None) }
-    }
-    
-    // MARK: Sections
-    override func insertSectionAtIndex(index: Int) {
-        super.insertSectionAtIndex(index)
-        collectionView?.insertSections(NSIndexSet(index: index))
-    }
-    
-    override func updateSectionAtIndex(index: Int) {
-        super.updateSectionAtIndex(index)
-        collectionView?.reloadSections(NSIndexSet(index: index))
-    }
-    
-    override func removeSectionAtIndex(index: Int) {
-        super.removeSectionAtIndex(index)
-        collectionView?.deleteSections(NSIndexSet(index: index))
-    }
-    
-    override func moveSectionFromIndex(fromIndex: Int, toIndex: Int) {
-        super.moveSectionFromIndex(fromIndex, toIndex: toIndex)
-        collectionView?.moveSection(fromIndex, toSection: toIndex)
-    }
-    
-    // MARK: - Items
-    override func insertSubobjectAtIndexPath(indexPath: NSIndexPath) {
-        super.insertSubobjectAtIndexPath(indexPath)
-        collectionView?.insertItemsAtIndexPaths([indexPath])
-    }
-    
-    override func updateSubobjectAtIndexPath(indexPath: NSIndexPath) {
-        super.updateSubobjectAtIndexPath(indexPath)
-        let selected = collectionView?.indexPathsForSelectedItems()?.contains(indexPath)
-        collectionView?.reloadItemsAtIndexPaths([indexPath])
-        if let s = selected where s == true { selectedIndexPaths.insert(indexPath) }
-    }
-    
-    override func removeSubobjectAtIndexPath(indexPath: NSIndexPath) {
-        super.removeSubobjectAtIndexPath(indexPath)
-        collectionView?.deleteItemsAtIndexPaths([indexPath])
-    }
-    
-    override func moveSubobjectFromIndexPath(fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-        super.moveSubobjectFromIndexPath(fromIndexPath, toIndexPath: toIndexPath)
-        collectionView?.moveItemAtIndexPath(fromIndexPath, toIndexPath: toIndexPath)
     }
 }
 #endif
