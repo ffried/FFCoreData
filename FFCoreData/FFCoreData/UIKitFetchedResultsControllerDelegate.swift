@@ -18,10 +18,10 @@
 //  limitations under the License.
 //
 
-import Foundation
-import UIKit
+#if os(iOS)
+import struct Foundation.IndexPath
+import protocol CoreData.NSFetchRequestResult
 
-#if swift(>=3.0)
 public class UIKitFetchedResultsControllerManager<Result: NSFetchRequestResult>: FetchedResultsControllerManager<Result> {
     public final var preserveSelection = true
     
@@ -30,23 +30,9 @@ public class UIKitFetchedResultsControllerManager<Result: NSFetchRequestResult>:
     internal final func reapplySelection() {
         let indexPaths = selectedIndexPaths
         selectedIndexPaths.removeAll()
-        if preserveSelection { select(indexPaths: Array(indexPaths)) }
+        if preserveSelection { select(indexPaths: indexPaths) }
     }
     
-    internal func select(indexPaths: Array<IndexPath>) {}
-}
-#else
-public class UIKitFetchedResultsControllerManager: FetchedResultsControllerManager {
-    public final var preserveSelection = true
-    
-    internal final var selectedIndexPaths = Set<NSIndexPath>()
-    
-    internal final func reapplySelection() {
-        let indexPaths = selectedIndexPaths
-        selectedIndexPaths.removeAll()
-        if preserveSelection { selectIndexPaths(indexPaths.map{$0}) }
-    }
-    
-    internal func selectIndexPaths(indexPaths: [NSIndexPath]) {}
+    internal func select(indexPaths: Set<IndexPath>) {}
 }
 #endif

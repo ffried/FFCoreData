@@ -18,8 +18,8 @@
 //  limitations under the License.
 //
 
-@import Foundation;
-@import CoreData;
+@import Foundation.NSString;
+@import CoreData.NSManagedObject;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -34,21 +34,14 @@ NS_ASSUME_NONNULL_BEGIN
  * Tries to guess the entity name by using the class name. For Swift the module is removed by splitting by "." and using the last part.
  * @return The entity name according to the class name.
  */
-+ (NSString *)entityName;
+@property (nonatomic, class, copy, readonly) NSString *entityName;
 
 #pragma mark - Namespace
 /**
  *  Whether or not the namespace should be removed when converting the class name to the entity name.
  *  @note This only affects Swift projects.
- *  @return `YES` if the namespace should be removed. `NO` otherwise.
  */
-+ (BOOL)shouldRemoveNamespaceInEntityName;
-/**
- *  Set whether or not the namespace should be removed when converting the class name to the entity name.
- *  @note: This only affects Swift projects.
- *  @param shouldRemove `YES` if the namespace should be removed. `NO` otherwise.
- */
-+ (void)setShouldRemoveNamespaceInEntityName:(BOOL)shouldRemove;
+@property (nonatomic, class, assign) BOOL shouldRemoveNamespaceInEntityName;
 
 @end
 

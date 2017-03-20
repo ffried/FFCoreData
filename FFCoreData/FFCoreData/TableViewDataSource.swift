@@ -18,12 +18,19 @@
 //  limitations under the License.
 //
 
-import Foundation
-import UIKit
-import CoreData
+#if os(iOS)
+import protocol Foundation.NSObjectProtocol
+import class Foundation.NSObject
+import struct Foundation.IndexPath
+import let Foundation.NSNotFound
+import enum UIKit.UITableViewCellEditingStyle
+import protocol UIKit.UITableViewDataSource
+import class UIKit.UITableView
+import class UIKit.UITableViewCell
+import protocol CoreData.NSFetchRequestResult
+import class CoreData.NSFetchedResultsController
 
 @objc public protocol TableViewDataSourceDelegate: class, NSObjectProtocol {
-    #if swift(>=3.0)
     func tableView(_ tableView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> String
     func tableView(_ tableView: UITableView, configure cell: UITableViewCell, forRowAt indexPath: IndexPath, with object: NSFetchRequestResult?)
     
@@ -46,25 +53,8 @@ import CoreData
     optional func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
     @objc(tableView:moveRowAtIndexPath:toIndexPath:)
     optional func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath)
-    #else
-    func tableView(tableView: UITableView, cellIdentifierForRowAtIndexPath indexPath: NSIndexPath) -> String
-    func tableView(tableView: UITableView, configureCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath, withObject object: NSManagedObject?)
-    
-    optional func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String?
-    optional func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String?
-    
-    optional func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool
-    optional func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool
-    
-    optional func sectionIndexTitlesForTableView(tableView: UITableView) -> [String]?
-    optional func tableView(tableView: UITableView, sectionForSectionIndexTitle title: String, atIndex index: Int) -> Int
-    
-    optional func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath)
-    optional func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath)
-    #endif
 }
 
-#if swift(>=3.0)
 public final class TableViewDataSource<Result: NSFetchRequestResult>: NSObject, UITableViewDataSource {
     public private(set) weak var tableView: UITableView?
     public private(set) weak var fetchedResultsController: NSFetchedResultsController<Result>?
@@ -122,7 +112,7 @@ public final class TableViewDataSource<Result: NSFetchRequestResult>: NSObject, 
     public func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
         return delegate?.tableView?(tableView, sectionForSectionIndexTitle: title, at: index)
             ?? fetchedResultsController?.section(forSectionIndexTitle: title, at: index)
-            ?? 0
+            ?? NSNotFound
     }
     
     @objc(tableView:canEditRowAtIndexPath:)
@@ -144,87 +134,6 @@ public final class TableViewDataSource<Result: NSFetchRequestResult>: NSObject, 
     @objc(tableView:moveRowAtIndexPath:toIndexPath:)
     public func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         delegate?.tableView?(tableView, moveRowAt: sourceIndexPath, to: destinationIndexPath)
-    }
-}
-#else
-public final class TableViewDataSource: NSObject, UITableViewDataSource {
-    public private(set) weak var tableView: UITableView?
-    public private(set) weak var fetchedResultsController: NSFetchedResultsController?
-    
-    public weak var delegate: TableViewDataSourceDelegate?
-    
-    public required init(tableView: UITableView, controller: NSFetchedResultsController, delegate: TableViewDataSourceDelegate) {
-        self.fetchedResultsController = controller
-        self.tableView = tableView
-        self.delegate = delegate
-        super.init()
-        self.tableView?.dataSource = self
-    }
-    
-    // MARK: UITableViewDataSource
-    public func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return fetchedResultsController?.sections?.count ?? 0
-    }
-    
-    public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return fetchedResultsController?.sections?[section].numberOfObjects ?? 0
-    }
-    
-    public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cellIdentifier = delegate?.tableView(tableView, cellIdentifierForRowAtIndexPath: indexPath) ?? "Cell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
-        let object = fetchedResultsController?.objectAtIndexPath(indexPath) as? NSManagedObject
-        delegate?.tableView(tableView, configureCell: cell, forRowAtIndexPath: indexPath, withObject: object)
-        return cell
-    }
-    
-    public func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        #if swift(>=2.2)
-            let selectorToCheck = #selector(TableViewDataSourceDelegate.tableView(_:titleForHeaderInSection:))
-        #else
-    let selectorToCheck: Selector = "tableView:titleForHeaderInSection:"
-        #endif
-        if let delegate = delegate where delegate.respondsToSelector(selectorToCheck) {
-            return delegate.tableView?(tableView, titleForHeaderInSection: section)
-        }
-        if fetchedResultsController?.sections?.count > 0 {
-            return fetchedResultsController?.sections?[section].name
-        }
-        return nil
-    }
-    
-    public func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        return delegate?.tableView?(tableView, titleForFooterInSection: section)
-    }
-    
-    public func sectionIndexTitlesForTableView(tableView: UITableView) -> [String]? {
-        return delegate?.sectionIndexTitlesForTableView?(tableView) ?? fetchedResultsController?.sectionIndexTitles
-    }
-    
-    public func tableView(tableView: UITableView, sectionForSectionIndexTitle title: String, atIndex index: Int) -> Int {
-        return delegate?.tableView?(tableView, sectionForSectionIndexTitle: title, atIndex: index) ??
-            fetchedResultsController?.sectionForSectionIndexTitle(title, atIndex: index) ?? 0
-    }
-    
-    public func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return delegate?.tableView?(tableView, canEditRowAtIndexPath: indexPath) ?? true
-    }
-    
-    public func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        #if swift(>=2.2)
-            let selectorToCheck = #selector(TableViewDataSourceDelegate.tableView(_:moveRowAtIndexPath:toIndexPath:))
-        #else
-            let selectorToCheck: Selector = "tableView:moveRowAtIndexPath:toIndexPath:"
-        #endif
-        return delegate?.tableView?(tableView, canMoveRowAtIndexPath: indexPath) ?? delegate?.respondsToSelector(selectorToCheck) ?? false
-    }
-    
-    public func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        delegate?.tableView?(tableView, commitEditingStyle: editingStyle, forRowAtIndexPath: indexPath)
-    }
-    
-    public func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
-        delegate?.tableView?(tableView, moveRowAtIndexPath: sourceIndexPath, toIndexPath: destinationIndexPath)
     }
 }
 #endif

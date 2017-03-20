@@ -25,7 +25,7 @@
 #pragma mark - Entity
 + (NSString *)entityName {
     NSString *className = NSStringFromClass(self);
-    if ([self shouldRemoveNamespaceInEntityName]) {
+    if (self.shouldRemoveNamespaceInEntityName) {
         className = [className componentsSeparatedByString:@"."].lastObject;
     }
     return className;
@@ -33,7 +33,6 @@
 
 #pragma mark - Namespace
 static BOOL shouldRemoveNamespace = YES;
-
 + (BOOL)shouldRemoveNamespaceInEntityName {
     return shouldRemoveNamespace;
 }

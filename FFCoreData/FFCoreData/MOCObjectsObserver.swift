@@ -18,46 +18,28 @@
 //  limitations under the License.
 //
 
-import Foundation
-import CoreData
+import struct Foundation.URL
+import class CoreData.NSManagedObjectID
+import class CoreData.NSManagedObject
+import class CoreData.NSManagedObjectContext
 
 public final class MOCObjectsObserver: MOCObserver {
     public var objectIDs: [NSManagedObjectID] {
         didSet {
-            #if swift(>=3.0)
-                let tempIDs = objectIDs.filter { $0.isTemporaryID }
-            #else
-                let tempIDs = objectIDs.filter { $0.temporaryID }
-            #endif
-            if !tempIDs.isEmpty {
-                assertionFailure("FFCoreData: ERROR: \(tempIDs) temporary NSManagedObjectIDs set on MOCObjectsObserver! Be sure to only use non-temporary IDs for MOCObservers!")
-            }
+            assert(objectIDs.filter { $0.isTemporaryID }.isEmpty,
+                   "FFCoreData: ERROR: Temporary NSManagedObjectIDs set on MOCObjectsObserver! Be sure to only use non-temporary IDs for MOCObservers!")
         }
     }
     
-    #if swift(>=3.0)
     private final var objectIDURIs: [URL] {
         return objectIDs.map { $0.uriRepresentation() }
     }
-    #else
-    private final var objectIDURIs: [NSURL] {
-        return objectIDs.map { $0.URIRepresentation() }
-    }
-    #endif
     
-    #if swift(>=3.0)
     public required init(objectIDs: [NSManagedObjectID], contexts: [NSManagedObjectContext]? = nil, fireInitially: Bool = false, block: @escaping MOCObserverBlock) {
         self.objectIDs = objectIDs
         super.init(contexts: contexts, fireInitially: fireInitially, block: block)
     }
-    #else
-    public required init(objectIDs: [NSManagedObjectID], contexts: [NSManagedObjectContext]? = nil, fireInitially: Bool = false, block: MOCObserverBlock) {
-        self.objectIDs = objectIDs
-        super.init(contexts: contexts, fireInitially: fireInitially, block: block)
-    }
-    #endif
-    
-    #if swift(>=3.0)
+
     override func include(managedObject: NSManagedObject) -> Bool {
         if managedObject.objectID.isTemporaryID {
             do {
@@ -68,22 +50,9 @@ public final class MOCObjectsObserver: MOCObserver {
         }
         return objectIDURIs.contains(managedObject.objectID.uriRepresentation())
     }
-    #else
-    override func includeManagedObject(object: NSManagedObject) -> Bool {
-        if object.objectID.temporaryID {
-            do {
-                try object.managedObjectContext?.obtainPermanentIDsForObjects([object])
-            } catch {
-                print("FFCoreData: Could not obtain permanent object id: \(error)")
-            }
-        }
-        return objectIDURIs.contains(object.objectID.URIRepresentation())
-    }
-    #endif
 }
 
 public extension NSManagedObject {
-    #if swift(>=3.0)
     public func createMOCObjectObserver(fireInitially: Bool = false, block: @escaping MOCObserver.MOCObserverBlock) -> MOCObjectsObserver {
         if objectID.isTemporaryID {
             do {
@@ -95,17 +64,4 @@ public extension NSManagedObject {
         
         return MOCObjectsObserver(objectIDs: [objectID], contexts: managedObjectContext.map { [$0] }, fireInitially: fireInitially, block: block)
     }
-    #else
-    public func createMOCObjectObserver(fireInitially: Bool = false, block: MOCObserver.MOCObserverBlock) -> MOCObjectsObserver {
-        if objectID.temporaryID {
-            do {
-                try managedObjectContext!.obtainPermanentIDsForObjects([self])
-            } catch {
-                print("FFCoreData: Could not obtain permanent object id: \(error)")
-            }
-        }
-    
-        return MOCObjectsObserver(objectIDs: [objectID], contexts: managedObjectContext.map { [$0] }, fireInitially: fireInitially, block: block)
-    }
-    #endif
 }

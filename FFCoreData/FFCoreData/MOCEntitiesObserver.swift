@@ -18,13 +18,13 @@
 //  limitations under the License.
 //
 
-import Foundation
-import CoreData
+import class CoreData.NSEntityDescription
+import class CoreData.NSManagedObject
+import class CoreData.NSManagedObjectContext
 
 public final class MOCEntitiesObserver: MOCObserver {
     public var entityNames: [String]
     
-    #if swift(>=3.0)
     public required init(entityNames: [String], contexts: [NSManagedObjectContext]? = nil, fireInitially: Bool = false, block: @escaping MOCObserverBlock) {
         self.entityNames = entityNames
         super.init(contexts: contexts, fireInitially: fireInitially, block: block)
@@ -33,37 +33,14 @@ public final class MOCEntitiesObserver: MOCObserver {
     public convenience init(entities: [NSEntityDescription], contexts: [NSManagedObjectContext]? = nil, fireInitially: Bool = false, block: @escaping MOCObserverBlock) {
         self.init(entityNames: entities.map { return $0.name ?? $0.managedObjectClassName }, contexts: contexts, fireInitially: fireInitially, block: block)
     }
-    #else
-    public required init(entityNames: [String], contexts: [NSManagedObjectContext]? = nil, fireInitially: Bool = false, block: MOCObserverBlock) {
-        self.entityNames = entityNames
-        super.init(contexts: contexts, fireInitially: fireInitially, block: block)
-    }
     
-    public convenience init(entities: [NSEntityDescription], contexts: [NSManagedObjectContext]? = nil, fireInitially: Bool = false, block: MOCObserverBlock) {
-        self.init(entityNames: entities.map { return $0.name ?? $0.managedObjectClassName }, contexts: contexts, fireInitially: fireInitially, block: block)
-    }
-    #endif
-    
-    #if swift(>=3.0)
     override func include(managedObject: NSManagedObject) -> Bool {
         return entityNames.contains((managedObject.entity.name ?? managedObject.entity.managedObjectClassName))
     }
-    #else
-    override func includeManagedObject(object: NSManagedObject) -> Bool {
-        return entityNames.contains((object.entity.name ?? object.entity.managedObjectClassName))
-    }
-    #endif
 }
 
 public extension NSManagedObject {
-    #if swift(>=3.0)
     public static func createMOCEntitiesObserver(for contexts: [NSManagedObjectContext]? = nil, fireInitially: Bool = false, block: @escaping MOCObserver.MOCObserverBlock) -> MOCEntitiesObserver {
-        return MOCEntitiesObserver(entityNames: [entityName()], contexts: contexts, fireInitially: fireInitially, block: block)
+        return MOCEntitiesObserver(entityNames: [entityName], contexts: contexts, fireInitially: fireInitially, block: block)
     }
-    #else
-    public static func createMOCEntitiesObserver(contexts: [NSManagedObjectContext]? = nil, fireInitially: Bool = false, block: MOCObserver.MOCObserverBlock) -> MOCEntitiesObserver {
-        return MOCEntitiesObserver(entityNames: [entityName()], contexts: contexts, fireInitially: fireInitially, block: block)
-    }
-    #endif
 }
-

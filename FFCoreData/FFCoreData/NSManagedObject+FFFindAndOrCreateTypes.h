@@ -21,7 +21,7 @@
 #ifndef NSManagedObject_FFFindAndOrCreateTypes_h
 #define NSManagedObject_FFFindAndOrCreateTypes_h
 
-typedef NSArray<__kindof NSManagedObject  *> FFCDCollectionResult;
+typedef NSArray<__kindof NSManagedObject *> FFCDCollectionResult;
 typedef NSDictionary<NSString *, id> FFCDKeyObjectsDictionary;
 
 #endif /* NSManagedObject_FFFindAndOrCreateTypes_h */
