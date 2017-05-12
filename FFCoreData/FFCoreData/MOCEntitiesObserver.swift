@@ -39,7 +39,7 @@ public final class MOCEntitiesObserver: MOCObserver {
     }
 }
 
-public extension NSManagedObject {
+public extension Fetchable where Self: NSManagedObject {
     public static func createMOCEntitiesObserver(for contexts: [NSManagedObjectContext]? = nil, fireInitially: Bool = false, block: @escaping MOCObserver.MOCObserverBlock) -> MOCEntitiesObserver {
         return MOCEntitiesObserver(entityNames: [entityName], contexts: contexts, fireInitially: fireInitially, block: block)
     }

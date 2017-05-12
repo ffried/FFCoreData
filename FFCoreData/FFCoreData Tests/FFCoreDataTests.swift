@@ -44,6 +44,12 @@ class FFCoreDataTests: XCTestCase {
         super.tearDown()
     }
     
+    private func createTempObjects(amount count: Int, in context: NSManagedObjectContext) throws {
+        for _ in 0..<count {
+            _ = try TestEntity.findOrCreate(in: context, by: ["uuid": UUID().uuidString])
+        }
+    }
+    
     func testContextCreation() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
@@ -51,15 +57,31 @@ class FFCoreDataTests: XCTestCase {
     }
     
     func testObjectCreation() {
-        let obj = TestEntity.createObject(in: context)
-        obj.uuid = UUID().uuidString
-        XCTAssertNotNil(obj, "Created object must not be nil!")
-        context.delete(obj)
+        do {
+            let obj = try TestEntity.create(in: context)
+            obj.uuid = UUID().uuidString
+            XCTAssertNotNil(obj)
+            context.delete(obj)
+        } catch {
+            XCTFail("Threw error: \(error)")
+        }
+    }
+    
+    func testObjectCreationWithDictionary() {
+        do {
+            let uuid = UUID().uuidString
+            let dict: KeyObjectDictionary = ["uuid": uuid]
+            let obj = try TestEntity.create(in: context, applying: dict)
+            XCTAssertEqual(obj.uuid, uuid)
+            context.delete(obj)
+        } catch {
+            XCTFail("Threw error: \(error)")
+        }
     }
     
     func testSearchObject() {
         do {
-            let obj = try TestEntity.findOrCreateObject(byKeyObjectDictionary: ["uuid": testUUID], in: context)
+            let obj = try TestEntity.findOrCreate(in: context, by: ["uuid": testUUID])
             XCTAssertEqual(obj.uuid, testUUID, "UUIDs of found or created object and search params must be the same!")
             context.delete(obj)
         } catch {
@@ -67,21 +89,14 @@ class FFCoreDataTests: XCTestCase {
         }
     }
     
-    private func createTempObjects(amount count: Int, in context: NSManagedObjectContext) throws {
-        for _ in 0..<count {
-            let uuid = UUID().uuidString
-            try TestEntity.findOrCreateObject(byKeyObjectDictionary: ["uuid": uuid], in: context)
-        }
-    }
-    
     func testSearchObjects() {
         do {
             let count = 100
             try createTempObjects(amount: count, in: context)
-            let objects = try TestEntity.allObjects(in: context) as? [TestEntity]
+            let objects = try TestEntity.all(in: context)
             XCTAssertNotNil(objects, "Found objects must not be nil!")
-            XCTAssertGreaterThanOrEqual(objects!.count, count, "Count of found objects must be greater than or equal to the created objects")
-            objects?.forEach(context.delete)
+            XCTAssertGreaterThanOrEqual(objects.count, count, "Count of found objects must be greater than or equal to the created objects")
+            objects.forEach(context.delete)
         } catch {
             XCTFail("Find must not fail: \(error)")
         }
@@ -94,10 +109,10 @@ class FFCoreDataTests: XCTestCase {
             let count = 100
             try createTempObjects(amount: count, in: tempCtx)
             CoreDataStack.save(context: tempCtx)
-            let objects = try TestEntity.allObjects(in: context) as? [TestEntity]
+            let objects = try TestEntity.all(in: context)
             XCTAssertNotNil(objects, "Found objects must not be nil!")
-            XCTAssertGreaterThanOrEqual(objects!.count, count, "Count of found objects must be greater than or equal to the created objects")
-            objects?.forEach(mainCtx.delete)
+            XCTAssertGreaterThanOrEqual(objects.count, count, "Count of found objects must be greater than or equal to the created objects")
+            objects.forEach(mainCtx.delete)
             CoreDataStack.save(context: tempCtx)
         } catch {
             XCTFail("Find must not fail: \(error)")

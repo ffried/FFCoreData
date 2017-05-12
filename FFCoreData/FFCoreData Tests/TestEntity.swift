@@ -20,9 +20,10 @@
 
 import Foundation
 import CoreData
+import FFCoreData
 
 //@objc(TestEntity)
-public class TestEntity: NSManagedObject {
+public final class TestEntity: NSManagedObject, FindOrCreatable {
 
 // Insert code here to add functionality to your managed object subclass
 
