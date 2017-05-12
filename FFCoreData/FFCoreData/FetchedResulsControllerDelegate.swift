@@ -28,6 +28,7 @@ import class CoreData.NSFetchedResultsController
 
 @objc public protocol FetchedResultsControllerManagerDelegate: NSFetchedResultsControllerDelegate {}
 
+@available(OSX 10.12, *)
 public class FetchedResultsControllerManager<Result: NSFetchRequestResult>: NSObject, NSFetchedResultsControllerDelegate {
     
     public typealias Controller = NSFetchedResultsController<Result>

@@ -22,88 +22,137 @@ import Foundation
 import CoreData
 import FFFoundation
 
-public typealias KeyObjectDictionary = [String: AnyObject]
+public typealias KeyObjectDictionary = [String: Any]
 
-public protocol FindOrCreatable: class {
-    // MARK: Create
-    static func createInManagedObjectContext(context: NSManagedObjectContext) -> Self
+fileprivate extension Sequence where Iterator.Element == KeyObjectDictionary.Iterator.Element {
+    func asPredicate(with compoundType: NSCompoundPredicate.LogicalType) -> NSCompoundPredicate {
+        let subPredicates = map { (key, value) -> NSPredicate in
+            let predicate: NSPredicate
+            if let obj = value as? CVarArg {
+                predicate = NSPredicate(format: "%K == %@", key, obj)
+            } else {
+                print("FFCoreData: A value which is not an CVarArg was used to create a predicate. Might go wrong!")
+                predicate = NSPredicate(format: "%K == \(value)", key)
+            }
+            return predicate
+        }
+        return NSCompoundPredicate(type: compoundType, subpredicates: subPredicates)
+    }
     
-    static func allObjectsInContext(context: NSManagedObjectContext) throws -> [Self]
+    func apply(to object: NSObject, in context: NSManagedObjectContext) {
+        forEach { (key, value) in
+            if let id = value as? NSManagedObjectID {
+                object.setValue(context.object(with: id), forKey: key)
+            } else {
+                object.setValue(value, forKey: key)
+            }
+        }
+    }
+}
+
+public protocol Fetchable: NSFetchRequestResult {
+    static var entityName: String { get }
     
-    static func findObjectsInManagedObjectContext(context: NSManagedObjectContext, byUsingKeyObjectDictionary dictionary: KeyObjectDictionary?) throws -> [Self]
+    static func fetchRequest() -> NSFetchRequest<Self>
+}
+
+public protocol FindOrCreatable: Fetchable {
+    static func create(in context: NSManagedObjectContext, applying: KeyObjectDictionary?) throws -> Self
     
-    static func findObjectsInManagedObjectContext(context: NSManagedObjectContext, byUsingPredicate predicate: NSPredicate?) throws -> [Self]
+    static func find(in context: NSManagedObjectContext, by dictionary: KeyObjectDictionary) throws -> [Self]
+    static func find(in context: NSManagedObjectContext, by dictionary: KeyObjectDictionary, sortedBy sortDescriptors: [NSSortDescriptor]) throws -> [Self]
     
-    static func findOrCreateObjectInManagedObjectContext(context: NSManagedObjectContext, byKeyObjectDictionary dictionary: KeyObjectDictionary?) throws -> Self
+    static func find(in context: NSManagedObjectContext, with predicate: NSPredicate?, sortedBy sortDescriptors: [NSSortDescriptor]?) throws -> [Self]
+    
+    static func findOrCreate(in context: NSManagedObjectContext, by dictionary: KeyObjectDictionary?) throws -> Self
+}
+
+public extension Fetchable {
+    static func fetchRequest() -> NSFetchRequest<Self> {
+        return NSFetchRequest(entityName: entityName)
+    }
+}
+
+public extension Fetchable where Self: NSManagedObject {
+    public static var entityName: String {
+        return String(class: self, removeNamespace: shouldRemoveNamespaceInEntityName)
+    }
+}
+
+internal extension Fetchable {
+    internal static func entity(in context: NSManagedObjectContext) throws -> NSEntityDescription {
+        guard let entity = NSEntityDescription.entity(forEntityName: entityName, in: context) else {
+            throw FindOrCreatableError.invalidEntity(entityName: entityName)
+        }
+        return entity
+    }
+}
+
+public extension FindOrCreatable {
+    public static func create(in context: NSManagedObjectContext) throws -> Self {
+        return try create(in: context, applying: nil)
+    }
+    
+    public static func all(in context: NSManagedObjectContext) throws -> [Self] {
+        return try find(in: context)
+    }
+    
+    public static func find(in context: NSManagedObjectContext) throws -> [Self] {
+        return try find(in: context, with: nil)
+    }
+    
+    public static func find(in context: NSManagedObjectContext, by dictionary: KeyObjectDictionary) throws -> [Self] {
+        return try find(in: context, with: dictionary.asPredicate(with: .and))
+    }
+    
+    static func find(in context: NSManagedObjectContext, by dictionary: KeyObjectDictionary, sortedBy sortDescriptors: [NSSortDescriptor]) throws -> [Self] {
+        return try find(in: context, with: dictionary.asPredicate(with: .and), sortedBy: sortDescriptors)
+    }
+    
+    public static func find(in context: NSManagedObjectContext, with predicate: NSPredicate?) throws -> [Self] {
+        return try find(in: context, with: predicate, sortedBy: nil)
+    }
+    
+    static func find(in context: NSManagedObjectContext, with predicate: NSPredicate?, sortedBy sortDescriptors: [NSSortDescriptor]?) throws -> [Self] {
+        let request = fetchRequest()
+        request.predicate = predicate
+        request.sortDescriptors = sortDescriptors
+        return try context.fetch(request)
+    }
+    
+    public static func findOrCreate(in context: NSManagedObjectContext) throws -> Self {
+        return try findOrCreate(in: context, by: nil)
+    }
+}
+
+public extension FindOrCreatable where Self: NSObject {
+    public static func findOrCreate(in context: NSManagedObjectContext, by dictionary: KeyObjectDictionary?) throws -> Self {
+        let foundObjects = try find(in: context, with: dictionary?.asPredicate(with: .and))
+        let object = try foundObjects.first ?? create(in: context)
+        dictionary?.apply(to: object, in: context)
+        return object
+    }
+}
+
+public extension FindOrCreatable where Self: NSManagedObject {
+    public static func create(in context: NSManagedObjectContext, applying dictionary: KeyObjectDictionary?) throws -> Self {
+        let obj = self.init(entity: try entity(in: context), insertInto: context)
+        dictionary?.apply(to: obj, in: context)
+        return obj
+    }
 }
 
 internal extension NSManagedObject {
-    internal static func entityInContext(context: NSManagedObjectContext) -> NSEntityDescription? {
-        return entityWithName(StringFromClass(self), inContext: context)
-    }
-    
-    internal static func entityWithName(name: String, inContext context: NSManagedObjectContext) -> NSEntityDescription? {
-        return NSEntityDescription.entityForName(name, inManagedObjectContext: context)
-    }
+    @nonobjc internal static var shouldRemoveNamespaceInEntityName: Bool = true
 }
 
-extension NSManagedObject {
-    public typealias KeyObjectDictionary = [String: AnyObject]
-    public typealias FindOrCreateResult = NSManagedObject
+public enum FindOrCreatableError: Error, CustomStringConvertible {
+    case invalidEntity(entityName: String)
     
-    public static func allObjectsInContext(context: NSManagedObjectContext) throws -> [FindOrCreateResult] {
-        return try findObjectsInManagedObjectContext(context)
-    }
-    
-    private static func allObjectsInContext<T: NSManagedObject>(context: NSManagedObjectContext) throws -> [T] {
-        return try allObjectsInContext(context) as! [T]
-    }
-    
-    public static func findObjectsInManagedObjectContext(context: NSManagedObjectContext, byUsingKeyObjectDictionary dictionary: KeyObjectDictionary?) throws -> [FindOrCreateResult] {
-        var predicate: NSPredicate? = nil
-        if let dict = dictionary {
-            var subPredicates = [NSPredicate]()
-            for (key, value) in dict {
-                let predicate: NSPredicate
-                if let obj = value as? NSObject {
-                    predicate = NSPredicate(format: "%K == %@", key, obj)
-                } else {
-                    print("FFCoreData: A value which isn't an NSObject was used to create a predicate. Might go wrong!")
-                    predicate = NSPredicate(format: "%K == \(value)", key)
-                }
-                subPredicates.append(predicate)
-            }
-            predicate = NSCompoundPredicate(andPredicateWithSubpredicates: subPredicates)
+    public var description: String {
+        switch self {
+        case .invalidEntity(let entityName):
+            return "Invalid entity with name \"\(entityName)\""
         }
-        return try findObjectsInManagedObjectContext(context, byUsingPredicate: predicate)
-    }
-    
-    public static func findObjectsInManagedObjectContext(context: NSManagedObjectContext, byUsingPredicate predicate: NSPredicate? = nil) throws -> [FindOrCreateResult] {
-        let entity = entityInContext(context)!.name!
-        let fetchRequest = NSFetchRequest(entityName: entity)
-        fetchRequest.predicate = predicate
-        return try context.executeFetchRequest(fetchRequest) as! [FindOrCreateResult]
-    }
-    
-    public static func findOrCreateObjectInManagedObjectContext(context: NSManagedObjectContext, byKeyObjectDictionary dictionary: KeyObjectDictionary? = nil) throws -> FindOrCreateResult {
-        let foundObjects = try findObjectsInManagedObjectContext(context, byUsingKeyObjectDictionary: dictionary)
-        let object = foundObjects.first ?? createInManagedObjectContext(context)
-//        if let managedObject = object as? NSManagedObject {
-        if let dict = dictionary {
-            for (key, value) in dict {
-                if let id = value as? NSManagedObjectID {
-                    object.setValue(context.objectWithID(id), forKey: key)
-                } else {
-                    object.setValue(value, forKey: key)
-                }
-            }
-        }
-//        }
-        return object
-    }
-
-    // MARK: Create
-    public static func createInManagedObjectContext(context: NSManagedObjectContext) -> FindOrCreateResult {
-        return self.init(entity: entityInContext(context)!, insertIntoManagedObjectContext: context)
     }
 }
