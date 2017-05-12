@@ -60,7 +60,9 @@ public protocol FindOrCreatable: Fetchable {
     static func create(in context: NSManagedObjectContext, applying: KeyObjectDictionary?) throws -> Self
     
     static func find(in context: NSManagedObjectContext, by dictionary: KeyObjectDictionary) throws -> [Self]
-    static func find(in context: NSManagedObjectContext, with predicate: NSPredicate?) throws -> [Self]
+    static func find(in context: NSManagedObjectContext, by dictionary: KeyObjectDictionary, sortedBy sortDescriptors: [NSSortDescriptor]) throws -> [Self]
+    
+    static func find(in context: NSManagedObjectContext, with predicate: NSPredicate?, sortedBy sortDescriptors: [NSSortDescriptor]?) throws -> [Self]
     
     static func findOrCreate(in context: NSManagedObjectContext, by dictionary: KeyObjectDictionary?) throws -> Self
 }
@@ -103,9 +105,18 @@ public extension FindOrCreatable {
         return try find(in: context, with: dictionary.asPredicate(with: .and))
     }
     
+    static func find(in context: NSManagedObjectContext, by dictionary: KeyObjectDictionary, sortedBy sortDescriptors: [NSSortDescriptor]) throws -> [Self] {
+        return try find(in: context, with: dictionary.asPredicate(with: .and), sortedBy: sortDescriptors)
+    }
+    
     public static func find(in context: NSManagedObjectContext, with predicate: NSPredicate?) throws -> [Self] {
+        return try find(in: context, with: predicate, sortedBy: nil)
+    }
+    
+    static func find(in context: NSManagedObjectContext, with predicate: NSPredicate?, sortedBy sortDescriptors: [NSSortDescriptor]?) throws -> [Self] {
         let request = fetchRequest()
         request.predicate = predicate
+        request.sortDescriptors = sortDescriptors
         return try context.fetch(request)
     }
     
