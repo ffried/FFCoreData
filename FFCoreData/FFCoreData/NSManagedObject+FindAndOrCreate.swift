@@ -28,10 +28,11 @@ fileprivate extension Sequence where Iterator.Element == KeyObjectDictionary.Ite
     func asPredicate(with compoundType: NSCompoundPredicate.LogicalType) -> NSCompoundPredicate {
         let subPredicates = map { (key, value) -> NSPredicate in
             let predicate: NSPredicate
-            if let obj = value as? CVarArg {
+            // The ReferenceConvertible objects currently need to use its reference type. Casting to NSObject should do the trick.
+            if let obj: CVarArg = (value as? CVarArg) ?? (value as? ReferenceConvertible as? NSObject) {
                 predicate = NSPredicate(format: "%K == %@", key, obj)
             } else {
-                print("FFCoreData: A value which is not an CVarArg was used to create a predicate. Might go wrong!")
+                print("FFCoreData: The value for key \"\(key)\" is not a CVarArg. This predicate might go wrong!")
                 predicate = NSPredicate(format: "%K == \(value)", key)
             }
             return predicate
