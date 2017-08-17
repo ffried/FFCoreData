@@ -29,7 +29,7 @@ fileprivate extension Sequence where Iterator.Element == KeyObjectDictionary.Ite
         let subPredicates = map { (key, value) -> NSPredicate in
             let predicate: NSPredicate
             // The ReferenceConvertible objects currently need to use its reference type. Casting to NSObject should do the trick.
-            if let obj: CVarArg = (value as? CVarArg) ?? (value as? ReferenceConvertible as? NSObject) {
+            if let obj: CVarArg = (value as? CVarArg) ?? (value as? NSObject) {
                 predicate = NSPredicate(format: "%K == %@", key, obj)
             } else {
                 print("FFCoreData: The value for key \"\(key)\" is not a CVarArg. This predicate might go wrong!")
