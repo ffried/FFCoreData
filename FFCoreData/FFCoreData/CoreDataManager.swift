@@ -25,7 +25,11 @@ import FFFoundation
 private final class CoreDataManager {
     private lazy var managedObjectModel: NSManagedObjectModel = {
         let modelURL = self.configuration.bundle.url(forResource: self.configuration.modelName, withExtension: "momd")!
-        return NSManagedObjectModel(contentsOf: modelURL)!
+        #if swift(>=3.2)
+            return NSManagedObjectModel(contentsOf: modelURL)
+        #else
+            return NSManagedObjectModel(contentsOf: modelURL)!
+        #endif
     }()
     
     private lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
