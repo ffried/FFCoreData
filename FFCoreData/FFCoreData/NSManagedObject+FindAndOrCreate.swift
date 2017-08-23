@@ -24,20 +24,17 @@ import FFFoundation
 
 public typealias KeyObjectDictionary = [String: Any]
 
+public extension NSPredicate {
+    public convenience init(format: String, arguments: Any...) {
+        self.init(format: format, argumentArray: arguments)
+    }
+}
+
 fileprivate extension Sequence where Iterator.Element == KeyObjectDictionary.Iterator.Element {
     func asPredicate(with compoundType: NSCompoundPredicate.LogicalType) -> NSCompoundPredicate {
-        let subPredicates = map { (key, value) -> NSPredicate in
-            let predicate: NSPredicate
-            // The ReferenceConvertible objects currently need to use its reference type. Casting to NSObject should do the trick.
-            if let obj: CVarArg = (value as? CVarArg) ?? (value as? NSObject) {
-                predicate = NSPredicate(format: "%K == %@", key, obj)
-            } else {
-                print("FFCoreData: The value for key \"\(key)\" is not a CVarArg. This predicate might go wrong!")
-                predicate = NSPredicate(format: "%K == \(value)", key)
-            }
-            return predicate
-        }
-        return NSCompoundPredicate(type: compoundType, subpredicates: subPredicates)
+        return NSCompoundPredicate(type: compoundType, subpredicates: map {
+            NSPredicate(format: "%K == %@", arguments: $0.key, $0.value)
+        })
     }
     
     func apply(to object: NSObject, in context: NSManagedObjectContext) {
