@@ -123,20 +123,16 @@ public extension FindOrCreatable {
     }
 }
 
-public extension FindOrCreatable where Self: NSObject {
-    public static func findOrCreate(in context: NSManagedObjectContext, by dictionary: KeyObjectDictionary?) throws -> Self {
-        let foundObjects = try find(in: context, with: dictionary?.asPredicate(with: .and))
-        let object = try foundObjects.first ?? create(in: context)
-        dictionary?.apply(to: object, in: context)
-        return object
-    }
-}
-
 public extension FindOrCreatable where Self: NSManagedObject {
     public static func create(in context: NSManagedObjectContext, applying dictionary: KeyObjectDictionary?) throws -> Self {
         let obj = self.init(entity: try entity(in: context), insertInto: context)
         dictionary?.apply(to: obj, in: context)
         return obj
+    }
+
+    public static func findOrCreate(in context: NSManagedObjectContext, by dictionary: KeyObjectDictionary?) throws -> Self {
+        let foundObjects = try find(in: context, with: dictionary?.asPredicate(with: .and))
+        return try foundObjects.first ?? create(in: context, applying: dictionary)
     }
 }
 
