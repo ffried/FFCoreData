@@ -162,8 +162,7 @@ public extension FindOrCreatable where Self: NSManagedObject {
     }
 
     public static func findOrCreate(in context: NSManagedObjectContext, by dictionary: KeyObjectDictionary?) throws -> Self {
-        let foundObject = try findFirst(in: context, with: dictionary?.asPredicate(with: .and))
-        return try foundObject ?? create(in: context, applying: dictionary)
+        return try findFirst(in: context, with: dictionary?.asPredicate(with: .and)) ?? create(in: context, applying: dictionary)
     }
 }
 
