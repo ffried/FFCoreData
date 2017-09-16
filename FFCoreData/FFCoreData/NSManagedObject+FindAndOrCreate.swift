@@ -61,13 +61,25 @@ public protocol FindOrCreatable: Fetchable {
     static func find(in context: NSManagedObjectContext, by dictionary: KeyObjectDictionary, sortedBy sortDescriptors: [NSSortDescriptor]) throws -> [Self]
     
     static func find(in context: NSManagedObjectContext, with predicate: NSPredicate?, sortedBy sortDescriptors: [NSSortDescriptor]?) throws -> [Self]
-    
+
+    static func findFirst(in context: NSManagedObjectContext, by dictionary: KeyObjectDictionary) throws -> Self?
+    static func findFirst(in context: NSManagedObjectContext, by dictionary: KeyObjectDictionary, sortedBy sortDescriptors: [NSSortDescriptor]) throws -> Self?
+
+    static func findFirst(in context: NSManagedObjectContext, with predicate: NSPredicate?, sortedBy sortDescriptors: [NSSortDescriptor]?) throws -> Self?
+
     static func findOrCreate(in context: NSManagedObjectContext, by dictionary: KeyObjectDictionary?) throws -> Self
 }
 
 public extension Fetchable {
-    static func fetchRequest() -> NSFetchRequest<Self> {
+    public static func fetchRequest() -> NSFetchRequest<Self> {
         return NSFetchRequest(entityName: entityName)
+    }
+
+    public static func fetchRequest(with predicate: NSPredicate?, sortedBy sortDescriptors: [NSSortDescriptor]?) -> NSFetchRequest<Self> {
+        let fetchRequest = self.fetchRequest()
+        fetchRequest.predicate = predicate
+        fetchRequest.sortDescriptors = sortDescriptors
+        return fetchRequest
     }
 }
 
@@ -111,13 +123,32 @@ public extension FindOrCreatable {
         return try find(in: context, with: predicate, sortedBy: nil)
     }
     
-    static func find(in context: NSManagedObjectContext, with predicate: NSPredicate?, sortedBy sortDescriptors: [NSSortDescriptor]?) throws -> [Self] {
-        let request = fetchRequest()
-        request.predicate = predicate
-        request.sortDescriptors = sortDescriptors
-        return try context.fetch(request)
+    public static func find(in context: NSManagedObjectContext, with predicate: NSPredicate?, sortedBy sortDescriptors: [NSSortDescriptor]?) throws -> [Self] {
+        return try context.fetch(fetchRequest(with: predicate, sortedBy: sortDescriptors))
     }
-    
+
+    public static func findFirst(in context: NSManagedObjectContext) throws -> Self? {
+        return try findFirst(in: context, with: nil)
+    }
+
+    public static func findFirst(in context: NSManagedObjectContext, by dictionary: KeyObjectDictionary) throws -> Self? {
+        return try findFirst(in: context, with: dictionary.asPredicate(with: .and))
+    }
+
+    static func findFirst(in context: NSManagedObjectContext, by dictionary: KeyObjectDictionary, sortedBy sortDescriptors: [NSSortDescriptor]) throws -> Self? {
+        return try findFirst(in: context, with: dictionary.asPredicate(with: .and), sortedBy: sortDescriptors)
+    }
+
+    public static func findFirst(in context: NSManagedObjectContext, with predicate: NSPredicate?) throws -> Self? {
+        return try findFirst(in: context, with: predicate, sortedBy: nil)
+    }
+
+    public static func findFirst(in context: NSManagedObjectContext, with predicate: NSPredicate?, sortedBy sortDescriptors: [NSSortDescriptor]?) throws -> Self? {
+        let request = fetchRequest(with: predicate, sortedBy: sortDescriptors)
+        request.fetchLimit = 1
+        return try context.fetch(request).first
+    }
+
     public static func findOrCreate(in context: NSManagedObjectContext) throws -> Self {
         return try findOrCreate(in: context, by: nil)
     }
@@ -131,8 +162,8 @@ public extension FindOrCreatable where Self: NSManagedObject {
     }
 
     public static func findOrCreate(in context: NSManagedObjectContext, by dictionary: KeyObjectDictionary?) throws -> Self {
-        let foundObjects = try find(in: context, with: dictionary?.asPredicate(with: .and))
-        return try foundObjects.first ?? create(in: context, applying: dictionary)
+        let foundObject = try findFirst(in: context, with: dictionary?.asPredicate(with: .and))
+        return try foundObject ?? create(in: context, applying: dictionary)
     }
 }
 
@@ -140,13 +171,20 @@ internal extension NSManagedObject {
     @nonobjc internal static var shouldRemoveNamespaceInEntityName: Bool = true
 }
 
-public enum FindOrCreatableError: Error, CustomStringConvertible {
+public enum FindOrCreatableError: Error, Equatable, CustomStringConvertible {
     case invalidEntity(entityName: String)
     
     public var description: String {
         switch self {
         case .invalidEntity(let entityName):
             return "Invalid entity with name \"\(entityName)\""
+        }
+    }
+
+    public static func ==(lhs: FindOrCreatableError, rhs: FindOrCreatableError) -> Bool {
+        switch (lhs, rhs) {
+        case (.invalidEntity(let lhsEntityName), .invalidEntity(let rhsEntityName)):
+            return lhsEntityName == rhsEntityName
         }
     }
 }
