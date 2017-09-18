@@ -164,6 +164,27 @@ public extension FindOrCreatable where Self: NSManagedObject {
     public static func findOrCreate(in context: NSManagedObjectContext, by dictionary: KeyObjectDictionary?) throws -> Self {
         return try findFirst(in: context, with: dictionary?.asPredicate(with: .and)) ?? create(in: context, applying: dictionary)
     }
+
+#if swift(>=4.0)
+    /// Safely accessess the given KeyPath on the objects managedObjectContext.
+    /// If no managedObjectContext is there, it directly accesses the property.
+    public subscript<T>(safe keyPath: ReferenceWritableKeyPath<Self, T>) -> T {
+        get {
+            if let moc = managedObjectContext {
+                return moc.sync { self[keyPath: keyPath] }
+            } else {
+                return self[keyPath: keyPath]
+            }
+        }
+        set {
+            if let moc = managedObjectContext {
+                moc.sync { self[keyPath: keyPath] = newValue }
+            } else {
+                self[keyPath: keyPath] = newValue
+            }
+        }
+    }
+#endif
 }
 
 internal extension NSManagedObject {
@@ -185,5 +206,27 @@ public enum FindOrCreatableError: Error, Equatable, CustomStringConvertible {
         case (.invalidEntity(let lhsEntityName), .invalidEntity(let rhsEntityName)):
             return lhsEntityName == rhsEntityName
         }
+    }
+}
+
+public extension NSManagedObjectContext {
+    private enum Result<T> { case value(T), error(Error) }
+    
+    public final func sync<T>(do work: () throws -> T) rethrows -> T {
+        return try {
+            var result: Result<T>!
+            performAndWait {
+                do { result = try .value(work()) }
+                catch { result = .error(error) }
+            }
+            switch result! {
+            case .value(let val): return val
+            case .error(let err): throw err
+            }
+        }()
+    }
+
+    public final func async(do work: @escaping () -> ()) {
+        perform(work)
     }
 }
