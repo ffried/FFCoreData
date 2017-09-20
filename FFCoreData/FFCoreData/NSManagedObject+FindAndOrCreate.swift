@@ -211,7 +211,7 @@ public enum FindOrCreatableError: Error, Equatable, CustomStringConvertible {
 
 public extension NSManagedObjectContext {
     private enum Result<T> { case value(T), error(Error) }
-    
+
     public final func sync<T>(do work: () throws -> T) rethrows -> T {
         return try {
             var result: Result<T>!
@@ -226,6 +226,7 @@ public extension NSManagedObjectContext {
         }()
     }
 
+    @_inlineable
     public final func async(do work: @escaping () -> ()) {
         perform(work)
     }
