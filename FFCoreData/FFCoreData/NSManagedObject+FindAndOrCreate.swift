@@ -165,7 +165,6 @@ public extension FindOrCreatable where Self: NSManagedObject {
         return try findFirst(in: context, with: dictionary?.asPredicate(with: .and)) ?? create(in: context, applying: dictionary)
     }
 
-#if swift(>=4.0)
     /// Safely accessess the given KeyPath on the objects managedObjectContext.
     /// If no managedObjectContext is there, it directly accesses the property.
     public subscript<T>(safe keyPath: ReferenceWritableKeyPath<Self, T>) -> T {
@@ -184,7 +183,6 @@ public extension FindOrCreatable where Self: NSManagedObject {
             }
         }
     }
-#endif
 }
 
 internal extension NSManagedObject {

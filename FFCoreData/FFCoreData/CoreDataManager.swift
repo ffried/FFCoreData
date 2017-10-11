@@ -190,7 +190,7 @@ extension CoreDataStack {
         public let applicationSupportSubfolderName: String
         #endif
 
-        #if os(iOS)
+        #if os(iOS) || os(watchOS) || os(tvOS)
         public static let appDataDirectoryURL: URL = {
             let fileManager = FileManager.default
             let dataFolderURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).last!
@@ -231,7 +231,7 @@ extension CoreDataStack {
             self.sqliteName = sqliteName ?? targetName(from: bundle)
             self.removeNamespacesFromEntityNames = removeNamespaces
             
-            #if os(iOS)
+            #if os(iOS) || os(watchOS) || os(tvOS)
                 self.storePath = storePath ?? CoreDataStack.Configuration.appDataDirectoryURL
             #elseif os(OSX)
                 let subfolderName = appSupportFolderName ?? bundle.bundleIdentifier ?? targetName(from: bundle)
@@ -240,7 +240,7 @@ extension CoreDataStack {
             #endif
         }
         
-        #if os(iOS)
+        #if os(iOS) || os(watchOS) || os(tvOS)
         public init(bundle: Bundle, storePath: URL? = nil, modelName: String? = nil, sqliteName: String? = nil, removeNamespaces: Bool = true) {
             self.init(bundle: bundle, modelName: modelName, sqliteName: sqliteName, storePath: storePath, appSupportFolderName: nil, removeNamespaces: removeNamespaces)
         }
