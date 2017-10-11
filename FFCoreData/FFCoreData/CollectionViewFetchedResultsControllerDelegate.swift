@@ -18,7 +18,7 @@
 //  limitations under the License.
 //
 
-#if os(iOS)
+#if os(iOS) || os(tvOS)
 import struct Foundation.IndexSet
 import struct Foundation.IndexPath
 import protocol CoreData.NSFetchRequestResult

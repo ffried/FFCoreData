@@ -18,7 +18,7 @@
 //  limitations under the License.
 //
 
-#if os(iOS)
+#if os(iOS) || os(tvOS)
 import protocol Foundation.NSObjectProtocol
 import struct Foundation.Selector
 import class Foundation.NSObject
@@ -69,16 +69,16 @@ public final class CollectionViewDataSource<Result: NSFetchRequestResult>: NSObj
     
     // MARK: - UICollectionViewDataSource
     @objc(numberOfSectionsInCollectionView:)
-    public func numberOfSections(in collectionView: UICollectionView) -> Int {
+    public dynamic func numberOfSections(in collectionView: UICollectionView) -> Int {
         return fetchedResultsController?.sections?.count ?? 0
     }
     
-    @objc public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    @objc public dynamic func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return fetchedResultsController?.sections?[section].numberOfObjects ?? 0
     }
     
     @objc(collectionView:cellForItemAtIndexPath:)
-    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    public dynamic func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let identifier = delegate?.collectionView(collectionView, cellIdentifierForItemAt: indexPath) ?? "Cell"
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)
         let object = fetchedResultsController?.object(at: indexPath)
@@ -87,20 +87,20 @@ public final class CollectionViewDataSource<Result: NSFetchRequestResult>: NSObj
     }
     
     @objc(collectionView:viewForSupplementaryElementOfKind:atIndexPath:)
-    public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+    public dynamic func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         return delegate!.collectionView!(collectionView, viewForSupplementaryElementOfKind: kind, at: indexPath)
     }
     
     @available(iOS 9.0, *)
     @objc(collectionView:canMoveItemAtIndexPath:)
-    public func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
+    public dynamic func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
         let delegateResponds = delegate?.responds(to: #selector(CollectionViewDataSourceDelegate.collectionView(_:moveItemAt:to:)))
         return delegate?.collectionView?(collectionView, canMoveItemAt: indexPath) ?? delegateResponds ?? false
     }
     
     @available(iOS 9.0, *)
     @objc(collectionView:moveItemAtIndexPath:toIndexPath:)
-    public func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+    public dynamic func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         delegate?.collectionView?(collectionView, moveItemAt: sourceIndexPath, to: destinationIndexPath)
     }
 }

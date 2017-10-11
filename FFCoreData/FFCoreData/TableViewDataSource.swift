@@ -18,7 +18,7 @@
 //  limitations under the License.
 //
 
-#if os(iOS)
+#if os(iOS) || os(tvOS)
 import protocol Foundation.NSObjectProtocol
 import class Foundation.NSObject
 import struct Foundation.IndexPath
@@ -71,16 +71,16 @@ public final class TableViewDataSource<Result: NSFetchRequestResult>: NSObject, 
     
     // MARK: UITableViewDataSource
     @objc(numberOfSectionsInTableView:)
-    public func numberOfSections(in tableView: UITableView) -> Int {
+    public dynamic func numberOfSections(in tableView: UITableView) -> Int {
         return fetchedResultsController?.sections?.count ?? 0
     }
     
-    @objc public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    @objc public dynamic func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return fetchedResultsController?.sections?[section].numberOfObjects ?? 0
     }
     
     @objc(tableView:cellForRowAtIndexPath:)
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public dynamic func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = delegate?.tableView(tableView, cellIdentifierForRowAt: indexPath) ?? "Cell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         let object = fetchedResultsController?.object(at: indexPath)
@@ -88,7 +88,7 @@ public final class TableViewDataSource<Result: NSFetchRequestResult>: NSObject, 
         return cell
     }
     
-    @objc public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    @objc public dynamic func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let selectorToCheck = #selector(TableViewDataSourceDelegate.tableView(_:titleForHeaderInSection:))
         if let delegate = delegate, delegate.responds(to: selectorToCheck) {
             return delegate.tableView?(tableView, titleForHeaderInSection: section)
@@ -99,40 +99,40 @@ public final class TableViewDataSource<Result: NSFetchRequestResult>: NSObject, 
         return nil
     }
     
-    @objc public func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+    @objc public dynamic func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         return delegate?.tableView?(tableView, titleForFooterInSection: section)
     }
     
     @objc(sectionIndexTitlesForTableView:)
-    public func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+    public dynamic func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         return delegate?.sectionIndexTitles?(for: tableView) ?? fetchedResultsController?.sectionIndexTitles
     }
     
     @objc(tableView:sectionForSectionIndexTitle:atIndex:)
-    public func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+    public dynamic func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
         return delegate?.tableView?(tableView, sectionForSectionIndexTitle: title, at: index)
             ?? fetchedResultsController?.section(forSectionIndexTitle: title, at: index)
             ?? NSNotFound
     }
     
     @objc(tableView:canEditRowAtIndexPath:)
-    public func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+    public dynamic func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return delegate?.tableView?(tableView, canEditRowAt: indexPath) ?? true
     }
     
     @objc(tableView:canMoveRowAtIndexPath:)
-    public func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+    public dynamic func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         let selectorToCheck = #selector(TableViewDataSourceDelegate.tableView(_:moveRowAt:to:))
         return delegate?.tableView?(tableView, canMoveRowAt: indexPath) ?? delegate?.responds(to: selectorToCheck) ?? false
     }
     
     @objc(tableView:commitEditingStyle:forRowAtIndexPath:)
-    public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    public dynamic func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         delegate?.tableView?(tableView, commit: editingStyle, forRowAt: indexPath)
     }
     
     @objc(tableView:moveRowAtIndexPath:toIndexPath:)
-    public func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+    public dynamic func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         delegate?.tableView?(tableView, moveRowAt: sourceIndexPath, to: destinationIndexPath)
     }
 }

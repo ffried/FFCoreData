@@ -26,7 +26,7 @@ import class CoreData.NSManagedObjectContext
 public final class MOCObjectsObserver: MOCObserver {
     public var objectIDs: [NSManagedObjectID] {
         didSet {
-            assert(objectIDs.filter { $0.isTemporaryID }.isEmpty,
+            precondition(objectIDs.filter { $0.isTemporaryID }.isEmpty,
                    "FFCoreData: ERROR: Temporary NSManagedObjectIDs set on MOCObjectsObserver! Be sure to only use non-temporary IDs for MOCObservers!")
         }
     }

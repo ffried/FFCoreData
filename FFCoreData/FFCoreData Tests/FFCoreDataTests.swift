@@ -29,7 +29,7 @@ class FFCoreDataTests: XCTestCase {
         let modelName = "TestModel"
         CoreDataStack.configuration = CoreDataStack.Configuration(bundle: bundle, modelName: modelName, sqliteName: sqliteName)
         return CoreDataStack.mainContext
-        }()
+    }()
     let testUUID = "c1b45162-12b4-11e5-8a0d-10ddb1c330b4"
     
     override func setUp() {
@@ -46,7 +46,7 @@ class FFCoreDataTests: XCTestCase {
     
     private func createTempObjects(amount count: Int, in context: NSManagedObjectContext) throws {
         for _ in 0..<count {
-            _ = try TestEntity.findOrCreate(in: context, by: ["uuid": UUID().uuidString])
+            _ = try TestEntity.findOrCreate(in: context, by: [#keyPath(TestEntity.uuid): UUID().uuidString])
         }
     }
     
@@ -70,7 +70,7 @@ class FFCoreDataTests: XCTestCase {
     func testObjectCreationWithDictionary() {
         do {
             let uuid = UUID().uuidString
-            let dict: KeyObjectDictionary = ["uuid": uuid]
+            let dict: KeyObjectDictionary = [#keyPath(TestEntity.uuid): uuid]
             let obj = try TestEntity.create(in: context, applying: dict)
             XCTAssertEqual(obj.uuid, uuid)
             context.delete(obj)
@@ -81,7 +81,7 @@ class FFCoreDataTests: XCTestCase {
     
     func testSearchObject() {
         do {
-            let obj = try TestEntity.findOrCreate(in: context, by: ["uuid": testUUID])
+            let obj = try TestEntity.findOrCreate(in: context, by: [#keyPath(TestEntity.uuid): testUUID])
             XCTAssertEqual(obj.uuid, testUUID, "UUIDs of found or created object and search params must be the same!")
             context.delete(obj)
         } catch {
