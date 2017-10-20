@@ -52,6 +52,8 @@ public protocol Fetchable: NSFetchRequestResult {
     static var entityName: String { get }
     
     static func fetchRequest() -> NSFetchRequest<Self>
+
+    static func count(in context: NSManagedObjectContext) throws -> Int
 }
 
 public protocol FindOrCreatable: Fetchable {
@@ -68,6 +70,8 @@ public protocol FindOrCreatable: Fetchable {
     static func findFirst(in context: NSManagedObjectContext, with predicate: NSPredicate?, sortedBy sortDescriptors: [NSSortDescriptor]?) throws -> Self?
 
     static func findOrCreate(in context: NSManagedObjectContext, by dictionary: KeyObjectDictionary?) throws -> Self
+
+    static func random(upTo randomBound: Int, in context: NSManagedObjectContext) throws -> Self?
 }
 
 public extension Fetchable {
@@ -75,11 +79,24 @@ public extension Fetchable {
         return NSFetchRequest(entityName: entityName)
     }
 
-    public static func fetchRequest(with predicate: NSPredicate?, sortedBy sortDescriptors: [NSSortDescriptor]?) -> NSFetchRequest<Self> {
+    public static func fetchRequest(with predicate: NSPredicate?,
+                                    sortedBy sortDescriptors: [NSSortDescriptor]?,
+                                    offsetBy offset: Int? = nil,
+                                    limitedBy limit: Int? = nil) -> NSFetchRequest<Self> {
         let fetchRequest = self.fetchRequest()
         fetchRequest.predicate = predicate
         fetchRequest.sortDescriptors = sortDescriptors
+        if let limit = limit {
+            fetchRequest.fetchLimit = limit
+        }
+        if let offset = offset {
+            fetchRequest.fetchOffset = offset
+        }
         return fetchRequest
+    }
+
+    public static func count(in context: NSManagedObjectContext) throws -> Int {
+        return try context.count(for: fetchRequest())
     }
 }
 
@@ -152,6 +169,17 @@ public extension FindOrCreatable {
     public static func findOrCreate(in context: NSManagedObjectContext) throws -> Self {
         return try findOrCreate(in: context, by: nil)
     }
+
+    public static func random(in context: NSManagedObjectContext) throws -> Self? {
+        return try random(upTo: count(in: context), in: context)
+    }
+
+    public static func random(upTo randomBound: Int, in context: NSManagedObjectContext) throws -> Self? {
+        let fr = fetchRequest()
+        fr.fetchOffset = Int(arc4random_uniform(UInt32(randomBound)))
+        fr.fetchLimit = 1
+        return try context.fetch(fr).first
+    }
 }
 
 public extension FindOrCreatable where Self: NSManagedObject {
@@ -181,6 +209,14 @@ public extension FindOrCreatable where Self: NSManagedObject {
             } else {
                 self[keyPath: keyPath] = newValue
             }
+        }
+    }
+
+    public subscript<T>(safe keyPath: KeyPath<Self, T>) -> T {
+        if let moc = managedObjectContext {
+            return moc.sync { self[keyPath: keyPath] }
+        } else {
+            return self[keyPath: keyPath]
         }
     }
 }
