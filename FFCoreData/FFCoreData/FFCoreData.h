@@ -18,8 +18,7 @@
 //  limitations under the License.
 //
 
-@import FFFoundation;
-@import CoreData;
+@import Foundation;
 
 //! Project version number for FFCoreData.
 FOUNDATION_EXPORT double FFCoreDataVersionNumber;
