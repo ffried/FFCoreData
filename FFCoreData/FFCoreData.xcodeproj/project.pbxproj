@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,7 +25,7 @@
 		071408771E8001C1004318C9 /* FFCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = 07876A1B19D41E7000F21E7D /* FFCoreData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		073F000C1F99F45700E2708A /* CoreDataDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073F000B1F99F45700E2708A /* CoreDataDecodable.swift */; };
 		0788305D1E824C2A00A0F103 /* NSManagedObject+FindAndOrCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A64BF21B2C53480008EFF2 /* NSManagedObject+FindAndOrCreate.swift */; };
-		07F2F4651FB03E5C0064559C /* FFFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F2F4661FB03E5C0064559C /* FFFoundation.framework */; };
+		07F2F4981FB049700064559C /* FFFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F2F4991FB049700064559C /* FFFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +55,7 @@
 		07A64BF21B2C53480008EFF2 /* NSManagedObject+FindAndOrCreate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+FindAndOrCreate.swift"; sourceTree = "<group>"; };
 		07AA24371B28037E00FA689B /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		07AA24391B2A0F0900FA689B /* FetchedResulsControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResulsControllerDelegate.swift; sourceTree = "<group>"; };
-		07F2F4661FB03E5C0064559C /* FFFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FFFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		07F2F4991FB049700064559C /* FFFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FFFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		07F82FDC1DAA7ADA00DBCBAA /* FFCoreDataTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFCoreDataTests.swift; sourceTree = "<group>"; };
 		07F82FDD1DAA7ADA00DBCBAA /* TestEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TestEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		07F82FDE1DAA7ADA00DBCBAA /* TestEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestEntity.swift; sourceTree = "<group>"; };
@@ -67,7 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07F2F4651FB03E5C0064559C /* FFFoundation.framework in Frameworks */,
+				07F2F4981FB049700064559C /* FFFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,7 +181,7 @@
 		07F2F4641FB03E5C0064559C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				07F2F4661FB03E5C0064559C /* FFFoundation.framework */,
+				07F2F4991FB049700064559C /* FFFoundation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -269,7 +269,7 @@
 				};
 			};
 			buildConfigurationList = 07876A1019D41E7000F21E7D /* Build configuration list for PBXProject "FFCoreData" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (

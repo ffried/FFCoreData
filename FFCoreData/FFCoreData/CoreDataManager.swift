@@ -139,28 +139,26 @@ public struct CoreDataStack {
     }
     private static let manager = CoreDataManager(configuration: configuration)
     
-    public static let mainContext = CoreDataStack.manager.managedObjectContext
+    public static let mainContext = manager.managedObjectContext
     
-    public static func save(context: NSManagedObjectContext, rollback: Bool = true, completion: @escaping (Bool) -> Void = {_ in}) {
-        context.performAndWait {
-            CoreDataStack.manager.save(context: context, rollback: rollback, completion: completion)
-        }
+    public static func save(context: NSManagedObjectContext, rollback: Bool = true, completion: @escaping (Bool) -> () = { _ in }) {
+        context.sync { manager.save(context: context, rollback: rollback, completion: completion) }
     }
 
-    public static func saveMainContext(rollback: Bool = true, completion: @escaping (Bool) -> Void = {_ in}) {
-        CoreDataStack.save(context: CoreDataStack.mainContext, rollback: rollback, completion: completion)
+    public static func saveMainContext(rollback: Bool = true, completion: @escaping (Bool) -> () = { _ in }) {
+        save(context: mainContext, rollback: rollback, completion: completion)
     }
     
     public static func createTemporaryMainContext() -> NSManagedObjectContext {
-        return CoreDataStack.manager.createTemporaryMainContext()
+        return manager.createTemporaryMainContext()
     }
     
     public static func createTemporaryBackgroundContext() -> NSManagedObjectContext {
-        return CoreDataStack.manager.createTemporaryBackgroundContext()
+        return manager.createTemporaryBackgroundContext()
     }
 
     public static func clearDataStore() throws {
-        try CoreDataStack.manager.clearDataStore()
+        try manager.clearDataStore()
     }
 }
 
@@ -215,15 +213,15 @@ extension CoreDataStack {
         }
         #endif
         
-        private static let InfoDictionaryTargetDisplayNameKey = "CFBundleDisplayName"
-        private static let InfoDictionaryTargetNameKey = String(kCFBundleNameKey)
-        private static let DefaultTargetName = "UNKNOWN_TARGET_NAME"
+        private static let infoDictionaryTargetDisplayNameKey = "CFBundleDisplayName"
+        private static let infoDictionaryTargetNameKey = String(kCFBundleNameKey)
+        private static let defaultTargetName = "UNKNOWN_TARGET_NAME"
         
         private init(bundle: Bundle, modelName: String?, sqliteName: String?, storePath: URL?, appSupportFolderName: String?, removeNamespaces: Bool) {
             func targetName(from bundle: Bundle) -> String {
-                guard let infoDict = bundle.infoDictionary else { return Configuration.DefaultTargetName }
-                let name = infoDict[Configuration.InfoDictionaryTargetDisplayNameKey] ?? infoDict[Configuration.InfoDictionaryTargetNameKey]
-                return (name as? String) ?? Configuration.DefaultTargetName
+                guard let infoDict = bundle.infoDictionary else { return Configuration.defaultTargetName }
+                let name = infoDict[Configuration.infoDictionaryTargetDisplayNameKey] ?? infoDict[Configuration.infoDictionaryTargetNameKey]
+                return (name as? String) ?? Configuration.defaultTargetName
             }
             
             self.bundle = bundle
