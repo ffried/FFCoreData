@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "container:FFCoreData.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "container:Submodules/FFFoundation/FFFoundation.xcodeproj">
+   </FileRef>
+</Workspace>
