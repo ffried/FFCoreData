@@ -5,6 +5,6 @@
       location = "container:FFCoreData.xcodeproj">
    </FileRef>
    <FileRef
-      location = "container:Submodules/FFFoundation/FFFoundation.xcodeproj">
+      location = "container:Submodules/FFFoundation/Xcode/FFFoundation.xcodeproj">
    </FileRef>
 </Workspace>

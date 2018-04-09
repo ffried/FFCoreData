@@ -3,28 +3,28 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0714084F1E7FF504004318C9 /* FFCoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 071408461E7FF504004318C9 /* FFCoreData.framework */; };
-		0714085D1E7FFD27004318C9 /* ManagedObjectContextObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076576941A73CC3500EEA793 /* ManagedObjectContextObserver.swift */; };
-		0714085E1E7FFD28004318C9 /* MOCObjectsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076576961A73D4D500EEA793 /* MOCObjectsObserver.swift */; };
-		0714085F1E7FFD28004318C9 /* MOCEntitiesObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0700FD971A73F22B00570B96 /* MOCEntitiesObserver.swift */; };
-		071408601E7FFD34004318C9 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A64BEE1B2C3B940008EFF2 /* TableViewDataSource.swift */; };
-		071408611E7FFD34004318C9 /* CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A64BF01B2C4CCB0008EFF2 /* CollectionViewDataSource.swift */; };
-		071408621E7FFD51004318C9 /* UIKitFetchedResultsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A64BE81B2C240F0008EFF2 /* UIKitFetchedResultsControllerDelegate.swift */; };
-		071408631E7FFD51004318C9 /* TableViewFetchedResultsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A64BEA1B2C266A0008EFF2 /* TableViewFetchedResultsControllerDelegate.swift */; };
-		071408641E7FFD51004318C9 /* CollectionViewFetchedResultsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A64BEC1B2C29A30008EFF2 /* CollectionViewFetchedResultsControllerDelegate.swift */; };
-		071408651E7FFD58004318C9 /* FetchedResulsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA24391B2A0F0900FA689B /* FetchedResulsControllerDelegate.swift */; };
-		071408711E7FFDAE004318C9 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA24371B28037E00FA689B /* CoreDataManager.swift */; };
 		071408721E7FFDD8004318C9 /* FFCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F82FDC1DAA7ADA00DBCBAA /* FFCoreDataTests.swift */; };
 		071408731E7FFDDE004318C9 /* TestEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F82FDD1DAA7ADA00DBCBAA /* TestEntity+CoreDataProperties.swift */; };
 		071408741E7FFDE0004318C9 /* TestEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F82FDE1DAA7ADA00DBCBAA /* TestEntity.swift */; };
 		071408751E7FFDE4004318C9 /* TestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 07F82FDF1DAA7ADA00DBCBAA /* TestModel.xcdatamodeld */; };
 		071408771E8001C1004318C9 /* FFCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = 07876A1B19D41E7000F21E7D /* FFCoreData.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		073F000C1F99F45700E2708A /* CoreDataDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073F000B1F99F45700E2708A /* CoreDataDecodable.swift */; };
-		0788305D1E824C2A00A0F103 /* NSManagedObject+FindAndOrCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A64BF21B2C53480008EFF2 /* NSManagedObject+FindAndOrCreate.swift */; };
+		0762C951207BA68700F9F0A8 /* ManagedObjectContextObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762C94E207BA68700F9F0A8 /* ManagedObjectContextObserver.swift */; };
+		0762C952207BA68700F9F0A8 /* MOCObjectsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762C94F207BA68700F9F0A8 /* MOCObjectsObserver.swift */; };
+		0762C953207BA68700F9F0A8 /* MOCEntitiesObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762C950207BA68700F9F0A8 /* MOCEntitiesObserver.swift */; };
+		0762C963207BA6EC00F9F0A8 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762C955207BA6EC00F9F0A8 /* CoreDataManager.swift */; };
+		0762C964207BA6EC00F9F0A8 /* FetchedResulsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762C957207BA6EC00F9F0A8 /* FetchedResulsControllerDelegate.swift */; };
+		0762C965207BA6EC00F9F0A8 /* CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762C95A207BA6EC00F9F0A8 /* CollectionViewDataSource.swift */; };
+		0762C966207BA6EC00F9F0A8 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762C95B207BA6EC00F9F0A8 /* TableViewDataSource.swift */; };
+		0762C967207BA6EC00F9F0A8 /* CollectionViewFetchedResultsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762C95D207BA6EC00F9F0A8 /* CollectionViewFetchedResultsControllerDelegate.swift */; };
+		0762C968207BA6EC00F9F0A8 /* TableViewFetchedResultsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762C95E207BA6EC00F9F0A8 /* TableViewFetchedResultsControllerDelegate.swift */; };
+		0762C969207BA6EC00F9F0A8 /* UIKitFetchedResultsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762C95F207BA6EC00F9F0A8 /* UIKitFetchedResultsControllerDelegate.swift */; };
+		0762C96A207BA6EC00F9F0A8 /* NSManagedObject+FindAndOrCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762C961207BA6EC00F9F0A8 /* NSManagedObject+FindAndOrCreate.swift */; };
+		0762C96B207BA6EC00F9F0A8 /* CoreDataDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762C962207BA6EC00F9F0A8 /* CoreDataDecodable.swift */; };
 		07F2F4981FB049700064559C /* FFFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F2F4991FB049700064559C /* FFFoundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,22 +39,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0700FD971A73F22B00570B96 /* MOCEntitiesObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOCEntitiesObserver.swift; sourceTree = "<group>"; };
 		071408461E7FF504004318C9 /* FFCoreData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FFCoreData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0714084E1E7FF504004318C9 /* FFCoreDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FFCoreDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		071408761E7FFEC0004318C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		073F000B1F99F45700E2708A /* CoreDataDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDecodable.swift; sourceTree = "<group>"; };
-		076576941A73CC3500EEA793 /* ManagedObjectContextObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectContextObserver.swift; sourceTree = "<group>"; };
-		076576961A73D4D500EEA793 /* MOCObjectsObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOCObjectsObserver.swift; sourceTree = "<group>"; };
+		0762C94E207BA68700F9F0A8 /* ManagedObjectContextObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectContextObserver.swift; sourceTree = "<group>"; };
+		0762C94F207BA68700F9F0A8 /* MOCObjectsObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOCObjectsObserver.swift; sourceTree = "<group>"; };
+		0762C950207BA68700F9F0A8 /* MOCEntitiesObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOCEntitiesObserver.swift; sourceTree = "<group>"; };
+		0762C955207BA6EC00F9F0A8 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		0762C957207BA6EC00F9F0A8 /* FetchedResulsControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResulsControllerDelegate.swift; sourceTree = "<group>"; };
+		0762C95A207BA6EC00F9F0A8 /* CollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewDataSource.swift; sourceTree = "<group>"; };
+		0762C95B207BA6EC00F9F0A8 /* TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
+		0762C95D207BA6EC00F9F0A8 /* CollectionViewFetchedResultsControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewFetchedResultsControllerDelegate.swift; sourceTree = "<group>"; };
+		0762C95E207BA6EC00F9F0A8 /* TableViewFetchedResultsControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewFetchedResultsControllerDelegate.swift; sourceTree = "<group>"; };
+		0762C95F207BA6EC00F9F0A8 /* UIKitFetchedResultsControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitFetchedResultsControllerDelegate.swift; sourceTree = "<group>"; };
+		0762C961207BA6EC00F9F0A8 /* NSManagedObject+FindAndOrCreate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+FindAndOrCreate.swift"; sourceTree = "<group>"; };
+		0762C962207BA6EC00F9F0A8 /* CoreDataDecodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataDecodable.swift; sourceTree = "<group>"; };
 		07876A1B19D41E7000F21E7D /* FFCoreData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFCoreData.h; sourceTree = "<group>"; };
-		07A64BE81B2C240F0008EFF2 /* UIKitFetchedResultsControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitFetchedResultsControllerDelegate.swift; sourceTree = "<group>"; };
-		07A64BEA1B2C266A0008EFF2 /* TableViewFetchedResultsControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewFetchedResultsControllerDelegate.swift; sourceTree = "<group>"; };
-		07A64BEC1B2C29A30008EFF2 /* CollectionViewFetchedResultsControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewFetchedResultsControllerDelegate.swift; sourceTree = "<group>"; };
-		07A64BEE1B2C3B940008EFF2 /* TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
-		07A64BF01B2C4CCB0008EFF2 /* CollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewDataSource.swift; sourceTree = "<group>"; };
-		07A64BF21B2C53480008EFF2 /* NSManagedObject+FindAndOrCreate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+FindAndOrCreate.swift"; sourceTree = "<group>"; };
-		07AA24371B28037E00FA689B /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		07AA24391B2A0F0900FA689B /* FetchedResulsControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResulsControllerDelegate.swift; sourceTree = "<group>"; };
 		07F2F4991FB049700064559C /* FFFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FFFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		07F82FDC1DAA7ADA00DBCBAA /* FFCoreDataTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFCoreDataTests.swift; sourceTree = "<group>"; };
 		07F82FDD1DAA7ADA00DBCBAA /* TestEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TestEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -82,50 +82,67 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		071D620319D4BB3800C1999D /* Delegates */ = {
+		0762C94D207BA68700F9F0A8 /* ManagedObjectContext Observer */ = {
 			isa = PBXGroup;
 			children = (
-				07A64BE81B2C240F0008EFF2 /* UIKitFetchedResultsControllerDelegate.swift */,
-				07A64BEA1B2C266A0008EFF2 /* TableViewFetchedResultsControllerDelegate.swift */,
-				07A64BEC1B2C29A30008EFF2 /* CollectionViewFetchedResultsControllerDelegate.swift */,
+				0762C94E207BA68700F9F0A8 /* ManagedObjectContextObserver.swift */,
+				0762C950207BA68700F9F0A8 /* MOCEntitiesObserver.swift */,
+				0762C94F207BA68700F9F0A8 /* MOCObjectsObserver.swift */,
 			);
-			name = Delegates;
+			path = "ManagedObjectContext Observer";
 			sourceTree = "<group>";
 		};
-		071D620419D4BB4100C1999D /* DataSources */ = {
+		0762C954207BA6EC00F9F0A8 /* CoreDataManager */ = {
 			isa = PBXGroup;
 			children = (
-				07A64BEE1B2C3B940008EFF2 /* TableViewDataSource.swift */,
-				07A64BF01B2C4CCB0008EFF2 /* CollectionViewDataSource.swift */,
+				0762C955207BA6EC00F9F0A8 /* CoreDataManager.swift */,
 			);
-			name = DataSources;
+			path = CoreDataManager;
 			sourceTree = "<group>";
 		};
-		0756A6C819D4669F00F42CFD /* UIKit */ = {
+		0762C956207BA6EC00F9F0A8 /* NSFetchedResultsController */ = {
 			isa = PBXGroup;
 			children = (
-				071D620419D4BB4100C1999D /* DataSources */,
-				071D620319D4BB3800C1999D /* Delegates */,
+				0762C957207BA6EC00F9F0A8 /* FetchedResulsControllerDelegate.swift */,
 			);
-			name = UIKit;
+			path = NSFetchedResultsController;
 			sourceTree = "<group>";
 		};
-		07593A031A36E2C900EDACD7 /* CoreDataManager */ = {
+		0762C958207BA6EC00F9F0A8 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				07AA24371B28037E00FA689B /* CoreDataManager.swift */,
+				0762C959207BA6EC00F9F0A8 /* DataSources */,
+				0762C95C207BA6EC00F9F0A8 /* Delegates */,
 			);
-			name = CoreDataManager;
+			path = UIKit;
 			sourceTree = "<group>";
 		};
-		076576931A73CC0400EEA793 /* ManagedObjectContext Observer */ = {
+		0762C959207BA6EC00F9F0A8 /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
-				076576941A73CC3500EEA793 /* ManagedObjectContextObserver.swift */,
-				076576961A73D4D500EEA793 /* MOCObjectsObserver.swift */,
-				0700FD971A73F22B00570B96 /* MOCEntitiesObserver.swift */,
+				0762C95A207BA6EC00F9F0A8 /* CollectionViewDataSource.swift */,
+				0762C95B207BA6EC00F9F0A8 /* TableViewDataSource.swift */,
 			);
-			name = "ManagedObjectContext Observer";
+			path = DataSources;
+			sourceTree = "<group>";
+		};
+		0762C95C207BA6EC00F9F0A8 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				0762C95D207BA6EC00F9F0A8 /* CollectionViewFetchedResultsControllerDelegate.swift */,
+				0762C95E207BA6EC00F9F0A8 /* TableViewFetchedResultsControllerDelegate.swift */,
+				0762C95F207BA6EC00F9F0A8 /* UIKitFetchedResultsControllerDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		0762C960207BA6EC00F9F0A8 /* NSManagedObject */ = {
+			isa = PBXGroup;
+			children = (
+				0762C961207BA6EC00F9F0A8 /* NSManagedObject+FindAndOrCreate.swift */,
+				0762C962207BA6EC00F9F0A8 /* CoreDataDecodable.swift */,
+			);
+			path = NSManagedObject;
 			sourceTree = "<group>";
 		};
 		07876A0C19D41E7000F21E7D = {
@@ -150,32 +167,15 @@
 		07876A1819D41E7000F21E7D /* FFCoreData */ = {
 			isa = PBXGroup;
 			children = (
-				076576931A73CC0400EEA793 /* ManagedObjectContext Observer */,
-				0756A6C819D4669F00F42CFD /* UIKit */,
-				07876A4A19D433CC00F21E7D /* NSFetchedResultsController */,
-				07876A4B19D4341600F21E7D /* NSManagedObject */,
-				07593A031A36E2C900EDACD7 /* CoreDataManager */,
+				0762C954207BA6EC00F9F0A8 /* CoreDataManager */,
+				0762C94D207BA68700F9F0A8 /* ManagedObjectContext Observer */,
+				0762C956207BA6EC00F9F0A8 /* NSFetchedResultsController */,
+				0762C960207BA6EC00F9F0A8 /* NSManagedObject */,
+				0762C958207BA6EC00F9F0A8 /* UIKit */,
 				07876A1B19D41E7000F21E7D /* FFCoreData.h */,
 				071408761E7FFEC0004318C9 /* Info.plist */,
 			);
 			path = FFCoreData;
-			sourceTree = "<group>";
-		};
-		07876A4A19D433CC00F21E7D /* NSFetchedResultsController */ = {
-			isa = PBXGroup;
-			children = (
-				07AA24391B2A0F0900FA689B /* FetchedResulsControllerDelegate.swift */,
-			);
-			name = NSFetchedResultsController;
-			sourceTree = "<group>";
-		};
-		07876A4B19D4341600F21E7D /* NSManagedObject */ = {
-			isa = PBXGroup;
-			children = (
-				07A64BF21B2C53480008EFF2 /* NSManagedObject+FindAndOrCreate.swift */,
-				073F000B1F99F45700E2708A /* CoreDataDecodable.swift */,
-			);
-			name = NSManagedObject;
 			sourceTree = "<group>";
 		};
 		07F2F4641FB03E5C0064559C /* Frameworks */ = {
@@ -255,7 +255,7 @@
 			attributes = {
 				CLASSPREFIX = FF;
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Florian Friedrich";
 				TargetAttributes = {
 					071408451E7FF504004318C9 = {
@@ -269,7 +269,7 @@
 				};
 			};
 			buildConfigurationList = 07876A1019D41E7000F21E7D /* Build configuration list for PBXProject "FFCoreData" */;
-			compatibilityVersion = "Xcode 8.0";
+			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -308,18 +308,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				071408631E7FFD51004318C9 /* TableViewFetchedResultsControllerDelegate.swift in Sources */,
-				071408611E7FFD34004318C9 /* CollectionViewDataSource.swift in Sources */,
-				071408711E7FFDAE004318C9 /* CoreDataManager.swift in Sources */,
-				071408641E7FFD51004318C9 /* CollectionViewFetchedResultsControllerDelegate.swift in Sources */,
-				073F000C1F99F45700E2708A /* CoreDataDecodable.swift in Sources */,
-				0714085E1E7FFD28004318C9 /* MOCObjectsObserver.swift in Sources */,
-				071408621E7FFD51004318C9 /* UIKitFetchedResultsControllerDelegate.swift in Sources */,
-				0788305D1E824C2A00A0F103 /* NSManagedObject+FindAndOrCreate.swift in Sources */,
-				0714085D1E7FFD27004318C9 /* ManagedObjectContextObserver.swift in Sources */,
-				071408601E7FFD34004318C9 /* TableViewDataSource.swift in Sources */,
-				0714085F1E7FFD28004318C9 /* MOCEntitiesObserver.swift in Sources */,
-				071408651E7FFD58004318C9 /* FetchedResulsControllerDelegate.swift in Sources */,
+				0762C951207BA68700F9F0A8 /* ManagedObjectContextObserver.swift in Sources */,
+				0762C965207BA6EC00F9F0A8 /* CollectionViewDataSource.swift in Sources */,
+				0762C967207BA6EC00F9F0A8 /* CollectionViewFetchedResultsControllerDelegate.swift in Sources */,
+				0762C96A207BA6EC00F9F0A8 /* NSManagedObject+FindAndOrCreate.swift in Sources */,
+				0762C96B207BA6EC00F9F0A8 /* CoreDataDecodable.swift in Sources */,
+				0762C952207BA68700F9F0A8 /* MOCObjectsObserver.swift in Sources */,
+				0762C968207BA6EC00F9F0A8 /* TableViewFetchedResultsControllerDelegate.swift in Sources */,
+				0762C963207BA6EC00F9F0A8 /* CoreDataManager.swift in Sources */,
+				0762C969207BA6EC00F9F0A8 /* UIKitFetchedResultsControllerDelegate.swift in Sources */,
+				0762C953207BA68700F9F0A8 /* MOCEntitiesObserver.swift in Sources */,
+				0762C966207BA6EC00F9F0A8 /* TableViewDataSource.swift in Sources */,
+				0762C964207BA6EC00F9F0A8 /* FetchedResulsControllerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,12 +360,17 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = FFCoreData/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = net.ffried.FFCoreData;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -385,7 +390,11 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = FFCoreData/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = net.ffried.FFCoreData;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -404,11 +413,16 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				INFOPLIST_FILE = "FFCoreData Tests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = net.ffried.FFCoreDataTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -424,7 +438,11 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				INFOPLIST_FILE = "FFCoreData Tests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = net.ffried.FFCoreDataTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -441,12 +459,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -473,8 +493,15 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "$(inherited) @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"$(inherited)",
+					"@loader_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -500,12 +527,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -526,13 +555,21 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "$(inherited) @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"$(inherited)",
+					"@loader_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(FRAMEWORK_NAME)";
 				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TVOS_DEPLOYMENT_TARGET = 10.0;
