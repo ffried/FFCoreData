@@ -184,7 +184,7 @@ extension CoreDataStack {
         public let storePath: URL
         public private(set) lazy var storeURL: URL = self.storePath.appendingPathComponent(self.sqliteStoreName)
         
-        #if os(OSX)
+        #if os(macOS)
         public let applicationSupportSubfolderName: String
         #endif
 
@@ -199,7 +199,7 @@ extension CoreDataStack {
             }
             return dataFolderURL
         }()
-        #elseif os(OSX)
+        #elseif os(macOS)
         public static func appDataDirectoryURL(withSubfolderName subfolderName: String) -> URL {
             let fileManager = FileManager.default
             let url = fileManager.urls(for: .applicationSupportDirectory, in: .userDomainMask).last!
@@ -231,7 +231,7 @@ extension CoreDataStack {
             
             #if os(iOS) || os(watchOS) || os(tvOS)
                 self.storePath = storePath ?? CoreDataStack.Configuration.appDataDirectoryURL
-            #elseif os(OSX)
+            #elseif os(macOS)
                 let subfolderName = appSupportFolderName ?? bundle.bundleIdentifier ?? targetName(from: bundle)
                 self.applicationSupportSubfolderName = subfolderName
                 self.storePath = storePath ?? CoreDataStack.Configuration.appDataDirectoryURL(withSubfolderName: subfolderName)
@@ -242,7 +242,7 @@ extension CoreDataStack {
         public init(bundle: Bundle, storePath: URL? = nil, modelName: String? = nil, sqliteName: String? = nil, removeNamespaces: Bool = true) {
             self.init(bundle: bundle, modelName: modelName, sqliteName: sqliteName, storePath: storePath, appSupportFolderName: nil, removeNamespaces: removeNamespaces)
         }
-        #elseif os(OSX)
+        #elseif os(macOS)
         public init(bundle: Bundle, applicationSupportSubfolder: String? = nil, storePath: URL? = nil, modelName: String? = nil, sqliteName: String? = nil, removeNamespaces: Bool = true) {
             self.init(bundle: bundle, modelName: modelName, sqliteName: sqliteName, storePath: storePath, appSupportFolderName: applicationSupportSubfolder, removeNamespaces: removeNamespaces)
         }

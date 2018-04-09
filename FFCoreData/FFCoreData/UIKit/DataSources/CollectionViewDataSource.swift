@@ -18,7 +18,7 @@
 //  limitations under the License.
 //
 
-#if os(iOS) || os(tvOS)
+#if canImport(UIKit)
 import protocol Foundation.NSObjectProtocol
 import struct Foundation.Selector
 import class Foundation.NSObject
