@@ -22,15 +22,15 @@ import Foundation
 import CoreData
 import FFFoundation
 
-private final class CoreDataManager {
+fileprivate final class CoreDataManager {
     private lazy var managedObjectModel: NSManagedObjectModel = {
-        let modelURL = self.configuration.bundle.url(forResource: self.configuration.modelName, withExtension: "momd")!
+        let modelURL = configuration.bundle.url(forResource: configuration.modelName, withExtension: "momd")!
         return NSManagedObjectModel(contentsOf: modelURL)!
     }()
     
     private lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
-        let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-        let url = self.configuration.storeURL
+        let coordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)
+        let url = configuration.databaseURL
         do {
             let options = [
                 NSMigratePersistentStoresAutomaticallyOption: true,
@@ -38,64 +38,66 @@ private final class CoreDataManager {
             ]
             try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: url, options: options)
         } catch {
-            print("FFCoreData: Failed to add persistent store with error: \(error)\nTrying to clear the data store now!")
+            func message(for error: Error) -> String { return "FFCoreData: Failed to add persistent store with error: \(error)" }
+            guard configuration.clearDataStoreOnSetupFailure else { fatalError(message(for: error)) }
+            
+            print("\(message(for: error))\nTrying to clear the data store now!")
             do {
-                try self.clearDataStore()
+                try clearDataStore()
             } catch {
                 print("FFCoreData: Failed to delete data store with error: \(error)")
             }
             do {
                 try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: url, options: nil)
             } catch {
-                fatalError("FFCoreData: Could not add persistent store with error: \(error)")
+                fatalError(message(for: error))
             }
         }
         return coordinator
     }()
     
     private lazy var backgroundSavingContext: NSManagedObjectContext = {
-        let coordinator = self.persistentStoreCoordinator
         let ctx = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
-        ctx.persistentStoreCoordinator = coordinator
+        ctx.persistentStoreCoordinator = persistentStoreCoordinator
         ctx.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
         return ctx
     }()
     
-    fileprivate lazy var managedObjectContext: NSManagedObjectContext = {
-        let parentContext = self.backgroundSavingContext
+    private(set) lazy var managedObjectContext: NSManagedObjectContext = {
         let ctx = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
-        ctx.parent = parentContext
+        ctx.parent = backgroundSavingContext
         return ctx
     }()
     
-    private(set) fileprivate var configuration: CoreDataStack.Configuration
-    
-    fileprivate init(configuration: CoreDataStack.Configuration) {
+    let configuration: CoreDataStack.Configuration
+    init(configuration: CoreDataStack.Configuration) {
         self.configuration = configuration
     }
     
-    fileprivate func createTemporaryMainContext() -> NSManagedObjectContext {
+    func createTemporaryMainContext() -> NSManagedObjectContext {
         return createTemporaryContext(with: .mainQueueConcurrencyType)
     }
     
-    fileprivate func createTemporaryBackgroundContext() -> NSManagedObjectContext {
+    func createTemporaryBackgroundContext() -> NSManagedObjectContext {
         return createTemporaryContext(with: .privateQueueConcurrencyType)
     }
     
     private func createTemporaryContext(with type: NSManagedObjectContextConcurrencyType) -> NSManagedObjectContext {
-        let parentContext = managedObjectContext
         let tempCtx = NSManagedObjectContext(concurrencyType: type)
-        tempCtx.parent = parentContext
+        tempCtx.parent = managedObjectContext
         tempCtx.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
         tempCtx.undoManager = nil
         return tempCtx
     }
     
-    fileprivate func clearDataStore() throws {
-        try FileManager.default.removeItem(at: configuration.storeURL)
+    func clearDataStore() throws {
+        let fileManager = FileManager.default
+        try fileManager.contentsOfDirectory(at: configuration.storePath, includingPropertiesForKeys: nil, options: [])
+            .filter { $0.lastPathComponent.hasPrefix(configuration.sqliteName) }
+            .forEach(fileManager.removeItem)
     }
     
-    fileprivate func save(context ctx: NSManagedObjectContext, rollback: Bool, completion: @escaping (Bool) -> Void) {
+    func save(context ctx: NSManagedObjectContext, rollback: Bool, completion: @escaping (Bool) -> Void) {
         guard ctx.hasChanges else {
             return completion(true)
         }
@@ -135,11 +137,15 @@ private final class CoreDataManager {
 
 public struct CoreDataStack {
     public static var configuration = Configuration.legacyConfiguration {
-        didSet { NSManagedObject.shouldRemoveNamespaceInEntityName = configuration.removeNamespacesFromEntityNames }
+        didSet {
+            NSManagedObject.shouldRemoveNamespaceInEntityName = configuration.removeNamespacesFromEntityNames
+            _manager.reset()
+        }
     }
-    private static let manager = CoreDataManager(configuration: configuration)
+    private static var _manager = Lazy { CoreDataManager(configuration: CoreDataStack.configuration) }
+    private static var manager: CoreDataManager { return _manager.value }
     
-    public static let mainContext = manager.managedObjectContext
+    public static var mainContext: NSManagedObjectContext { return manager.managedObjectContext }
     
     public static func save(context: NSManagedObjectContext, rollback: Bool = true, completion: @escaping (Bool) -> () = { _ in }) {
         context.sync { manager.save(context: context, rollback: rollback, completion: completion) }
@@ -173,43 +179,47 @@ extension CoreDataStack {
             let sqliteName = bundle.infoDictionary?[Configuration.infoDictionarySQLiteNameKey] as? String
             return Configuration(bundle: bundle, modelName: modelName, sqliteName: sqliteName)
         }()
+
+        public struct Options: OptionSet {
+            public typealias RawValue = UInt
+            public let rawValue: RawValue
+            public init(rawValue: RawValue) { self.rawValue = rawValue }
+        }
         
         public let bundle: Bundle
         public let modelName: String
         public let sqliteName: String
-        private var sqliteStoreName: String { return sqliteName + ".sqlite" }
-        
-        public let removeNamespacesFromEntityNames: Bool
-        
         public let storePath: URL
-        public private(set) lazy var storeURL: URL = self.storePath.appendingPathComponent(self.sqliteStoreName)
-        
+
+        private var sqliteStoreName: String { return sqliteName + ".sqlite" }
+        public var databaseURL: URL { return storePath.appendingPathComponent(sqliteStoreName) }
+
         #if os(macOS)
         public let applicationSupportSubfolderName: String
         #endif
 
-        #if os(iOS) || os(watchOS) || os(tvOS)
-        public static let appDataDirectoryURL: URL = {
+        public let options: Options
+        public var removeNamespacesFromEntityNames: Bool { return options.contains(.removeNamespacesFromEntityNames) }
+        public var clearDataStoreOnSetupFailure: Bool { return options.contains(.clearDataStoreOnSetupFailure) }
+
+        private static func url(for searchPathDirectory: FileManager.SearchPathDirectory, subDirectoryName: String? = nil) -> URL {
             let fileManager = FileManager.default
-            let dataFolderURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).last!
-            do {
-                try fileManager.createDirectoryIfNeeded(at: dataFolderURL)
-            } catch {
-                print("FFCoreData: Could not create application support folder: \(error)")
+            var dataDirectory = fileManager.urls(for: searchPathDirectory, in: .userDomainMask)[0]
+            if let subfolderName = subDirectoryName {
+                dataDirectory.appendPathComponent(subfolderName)
             }
-            return dataFolderURL
-        }()
+            do {
+                try fileManager.createDirectoryIfNeeded(at: dataDirectory)
+            } catch {
+                print("FFCoreData: Could not create data folder: \(error)")
+            }
+            return dataDirectory
+        }
+        #if os(iOS) || os(watchOS) || os(tvOS)
+        public static let appDataDirectoryURL: URL = url(for: .documentDirectory)
         #elseif os(macOS)
         public static func appDataDirectoryURL(withSubfolderName subfolderName: String) -> URL {
-            let fileManager = FileManager.default
-            let url = fileManager.urls(for: .applicationSupportDirectory, in: .userDomainMask).last!
-            let dataFolderURL = url.appendingPathComponent(subfolderName)
-            do {
-                try fileManager.createDirectoryIfNeeded(at: dataFolderURL)
-            } catch {
-                print("FFCoreData: Could not create application support folder: \(error)")
-            }
-            return dataFolderURL
+            return url(for: .applicationSupportDirectory, subDirectoryName: subfolderName)
         }
         #endif
         
@@ -217,7 +227,12 @@ extension CoreDataStack {
         private static let infoDictionaryTargetNameKey = String(kCFBundleNameKey)
         private static let defaultTargetName = "UNKNOWN_TARGET_NAME"
         
-        private init(bundle: Bundle, modelName: String?, sqliteName: String?, storePath: URL?, appSupportFolderName: String?, removeNamespaces: Bool) {
+        private init(bundle: Bundle,
+                     modelName: String?,
+                     sqliteName: String?,
+                     storePath: URL?,
+                     appSupportFolderName: String?,
+                     options: Options) {
             func targetName(from bundle: Bundle) -> String {
                 guard let infoDict = bundle.infoDictionary else { return Configuration.defaultTargetName }
                 let name = infoDict[Configuration.infoDictionaryTargetDisplayNameKey] ?? infoDict[Configuration.infoDictionaryTargetNameKey]
@@ -227,8 +242,8 @@ extension CoreDataStack {
             self.bundle = bundle
             self.modelName = modelName ?? targetName(from: bundle)
             self.sqliteName = sqliteName ?? targetName(from: bundle)
-            self.removeNamespacesFromEntityNames = removeNamespaces
-            
+            self.options = options
+
             #if os(iOS) || os(watchOS) || os(tvOS)
                 self.storePath = storePath ?? CoreDataStack.Configuration.appDataDirectoryURL
             #elseif os(macOS)
@@ -239,13 +254,39 @@ extension CoreDataStack {
         }
         
         #if os(iOS) || os(watchOS) || os(tvOS)
-        public init(bundle: Bundle, storePath: URL? = nil, modelName: String? = nil, sqliteName: String? = nil, removeNamespaces: Bool = true) {
-            self.init(bundle: bundle, modelName: modelName, sqliteName: sqliteName, storePath: storePath, appSupportFolderName: nil, removeNamespaces: removeNamespaces)
+        public init(bundle: Bundle,
+                    storePath: URL? = nil,
+                    modelName: String? = nil,
+                    sqliteName: String? = nil,
+                    options: Options = .`default`) {
+            self.init(bundle: bundle,
+                      modelName: modelName,
+                      sqliteName: sqliteName,
+                      storePath: storePath,
+                      appSupportFolderName: nil,
+                      options: options)
         }
         #elseif os(macOS)
-        public init(bundle: Bundle, applicationSupportSubfolder: String? = nil, storePath: URL? = nil, modelName: String? = nil, sqliteName: String? = nil, removeNamespaces: Bool = true) {
-            self.init(bundle: bundle, modelName: modelName, sqliteName: sqliteName, storePath: storePath, appSupportFolderName: applicationSupportSubfolder, removeNamespaces: removeNamespaces)
+        public init(bundle: Bundle,
+                    applicationSupportSubfolder: String? = nil,
+                    storePath: URL? = nil,
+                    modelName: String? = nil,
+                    sqliteName: String? = nil,
+                    options: Options = .`default`) {
+            self.init(bundle: bundle,
+                      modelName: modelName,
+                      sqliteName: sqliteName,
+                      storePath: storePath,
+                      appSupportFolderName: applicationSupportSubfolder,
+                      options: options)
         }
         #endif
     }
+}
+
+public extension CoreDataStack.Configuration.Options {
+    public static var `default`: CoreDataStack.Configuration.Options { return .removeNamespacesFromEntityNames }
+
+    public static let removeNamespacesFromEntityNames: CoreDataStack.Configuration.Options = .init(rawValue: 1 << 0)
+    public static let clearDataStoreOnSetupFailure: CoreDataStack.Configuration.Options = .init(rawValue: 1 << 1)
 }
