@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		0714084F1E7FF504004318C9 /* FFCoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 071408461E7FF504004318C9 /* FFCoreData.framework */; };
 		071408721E7FFDD8004318C9 /* FFCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F82FDC1DAA7ADA00DBCBAA /* FFCoreDataTests.swift */; };
-		071408731E7FFDDE004318C9 /* TestEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F82FDD1DAA7ADA00DBCBAA /* TestEntity+CoreDataProperties.swift */; };
-		071408741E7FFDE0004318C9 /* TestEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F82FDE1DAA7ADA00DBCBAA /* TestEntity.swift */; };
 		071408751E7FFDE4004318C9 /* TestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 07F82FDF1DAA7ADA00DBCBAA /* TestModel.xcdatamodeld */; };
 		071408771E8001C1004318C9 /* FFCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = 07876A1B19D41E7000F21E7D /* FFCoreData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0762C951207BA68700F9F0A8 /* ManagedObjectContextObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762C94E207BA68700F9F0A8 /* ManagedObjectContextObserver.swift */; };
@@ -25,6 +23,8 @@
 		0762C969207BA6EC00F9F0A8 /* UIKitFetchedResultsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762C95F207BA6EC00F9F0A8 /* UIKitFetchedResultsControllerDelegate.swift */; };
 		0762C96A207BA6EC00F9F0A8 /* NSManagedObject+FindAndOrCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762C961207BA6EC00F9F0A8 /* NSManagedObject+FindAndOrCreate.swift */; };
 		0762C96B207BA6EC00F9F0A8 /* CoreDataDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762C962207BA6EC00F9F0A8 /* CoreDataDecodable.swift */; };
+		07A0E41420C16F8100685192 /* TestConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A0E41220C16F7600685192 /* TestConfiguration.swift */; };
+		07AE934820C1545D00B3C983 /* CoreDataDecodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AE934620C1544100B3C983 /* CoreDataDecodableTests.swift */; };
 		07F2F4981FB049700064559C /* FFFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F2F4991FB049700064559C /* FFFoundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,10 +55,10 @@
 		0762C961207BA6EC00F9F0A8 /* NSManagedObject+FindAndOrCreate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+FindAndOrCreate.swift"; sourceTree = "<group>"; };
 		0762C962207BA6EC00F9F0A8 /* CoreDataDecodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataDecodable.swift; sourceTree = "<group>"; };
 		07876A1B19D41E7000F21E7D /* FFCoreData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFCoreData.h; sourceTree = "<group>"; };
+		07A0E41220C16F7600685192 /* TestConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConfiguration.swift; sourceTree = "<group>"; };
+		07AE934620C1544100B3C983 /* CoreDataDecodableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDecodableTests.swift; sourceTree = "<group>"; };
 		07F2F4991FB049700064559C /* FFFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FFFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		07F82FDC1DAA7ADA00DBCBAA /* FFCoreDataTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFCoreDataTests.swift; sourceTree = "<group>"; };
-		07F82FDD1DAA7ADA00DBCBAA /* TestEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TestEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		07F82FDE1DAA7ADA00DBCBAA /* TestEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestEntity.swift; sourceTree = "<group>"; };
 		07F82FE01DAA7ADA00DBCBAA /* TestModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -190,9 +190,9 @@
 			isa = PBXGroup;
 			children = (
 				07F82FDC1DAA7ADA00DBCBAA /* FFCoreDataTests.swift */,
-				07F82FDD1DAA7ADA00DBCBAA /* TestEntity+CoreDataProperties.swift */,
-				07F82FDE1DAA7ADA00DBCBAA /* TestEntity.swift */,
+				07AE934620C1544100B3C983 /* CoreDataDecodableTests.swift */,
 				07F82FDF1DAA7ADA00DBCBAA /* TestModel.xcdatamodeld */,
+				07A0E41220C16F7600685192 /* TestConfiguration.swift */,
 			);
 			path = "FFCoreData Tests";
 			sourceTree = "<group>";
@@ -327,10 +327,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				071408741E7FFDE0004318C9 /* TestEntity.swift in Sources */,
+				07AE934820C1545D00B3C983 /* CoreDataDecodableTests.swift in Sources */,
 				071408751E7FFDE4004318C9 /* TestModel.xcdatamodeld in Sources */,
+				07A0E41420C16F8100685192 /* TestConfiguration.swift in Sources */,
 				071408721E7FFDD8004318C9 /* FFCoreDataTests.swift in Sources */,
-				071408731E7FFDDE004318C9 /* TestEntity+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,7 +492,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -502,7 +502,7 @@
 					"$(inherited)",
 					"@loader_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(FRAMEWORK_NAME)";
@@ -554,7 +554,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -564,7 +564,7 @@
 					"$(inherited)",
 					"@loader_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(FRAMEWORK_NAME)";
 				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
