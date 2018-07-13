@@ -23,6 +23,7 @@
 		0762C969207BA6EC00F9F0A8 /* UIKitFetchedResultsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762C95F207BA6EC00F9F0A8 /* UIKitFetchedResultsControllerDelegate.swift */; };
 		0762C96A207BA6EC00F9F0A8 /* NSManagedObject+FindAndOrCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762C961207BA6EC00F9F0A8 /* NSManagedObject+FindAndOrCreate.swift */; };
 		0762C96B207BA6EC00F9F0A8 /* CoreDataDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762C962207BA6EC00F9F0A8 /* CoreDataDecodable.swift */; };
+		077C041020F8C4030074BEFA /* SwiftSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077C040F20F8C4030074BEFA /* SwiftSupport.swift */; };
 		07A0E41420C16F8100685192 /* TestConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A0E41220C16F7600685192 /* TestConfiguration.swift */; };
 		07AE934820C1545D00B3C983 /* CoreDataDecodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AE934620C1544100B3C983 /* CoreDataDecodableTests.swift */; };
 		07F2F4981FB049700064559C /* FFFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F2F4991FB049700064559C /* FFFoundation.framework */; };
@@ -54,6 +55,7 @@
 		0762C95F207BA6EC00F9F0A8 /* UIKitFetchedResultsControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitFetchedResultsControllerDelegate.swift; sourceTree = "<group>"; };
 		0762C961207BA6EC00F9F0A8 /* NSManagedObject+FindAndOrCreate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+FindAndOrCreate.swift"; sourceTree = "<group>"; };
 		0762C962207BA6EC00F9F0A8 /* CoreDataDecodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataDecodable.swift; sourceTree = "<group>"; };
+		077C040F20F8C4030074BEFA /* SwiftSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSupport.swift; sourceTree = "<group>"; };
 		07876A1B19D41E7000F21E7D /* FFCoreData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFCoreData.h; sourceTree = "<group>"; };
 		07A0E41220C16F7600685192 /* TestConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConfiguration.swift; sourceTree = "<group>"; };
 		07AE934620C1544100B3C983 /* CoreDataDecodableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDecodableTests.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				0762C956207BA6EC00F9F0A8 /* NSFetchedResultsController */,
 				0762C960207BA6EC00F9F0A8 /* NSManagedObject */,
 				0762C958207BA6EC00F9F0A8 /* UIKit */,
+				077C040F20F8C4030074BEFA /* SwiftSupport.swift */,
 				07876A1B19D41E7000F21E7D /* FFCoreData.h */,
 				071408761E7FFEC0004318C9 /* Info.plist */,
 			);
@@ -317,6 +320,7 @@
 				0762C968207BA6EC00F9F0A8 /* TableViewFetchedResultsControllerDelegate.swift in Sources */,
 				0762C963207BA6EC00F9F0A8 /* CoreDataManager.swift in Sources */,
 				0762C969207BA6EC00F9F0A8 /* UIKitFetchedResultsControllerDelegate.swift in Sources */,
+				077C041020F8C4030074BEFA /* SwiftSupport.swift in Sources */,
 				0762C953207BA68700F9F0A8 /* MOCEntitiesObserver.swift in Sources */,
 				0762C966207BA6EC00F9F0A8 /* TableViewDataSource.swift in Sources */,
 				0762C964207BA6EC00F9F0A8 /* FetchedResulsControllerDelegate.swift in Sources */,

@@ -48,9 +48,14 @@ import class CoreData.NSFetchedResultsController
     optional func sectionIndexTitles(for tableView: UITableView) -> [String]?
     @objc(tableView:sectionForSectionIndexTitle:atIndex:)
     optional func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int
-    
+
+    #if swift(>=4.2)
+    @objc(tableView:commitEditingStyle:forRowAtIndexPath:)
+    optional func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath)
+    #else
     @objc(tableView:commitEditingStyle:forRowAtIndexPath:)
     optional func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
+    #endif
     @objc(tableView:moveRowAtIndexPath:toIndexPath:)
     optional func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath)
 }
@@ -125,11 +130,18 @@ public final class TableViewDataSource<Result: NSFetchRequestResult>: NSObject, 
         let selectorToCheck = #selector(TableViewDataSourceDelegate.tableView(_:moveRowAt:to:))
         return delegate?.tableView?(tableView, canMoveRowAt: indexPath) ?? delegate?.responds(to: selectorToCheck) ?? false
     }
-    
+
+    #if swift(>=4.2)
+    @objc(tableView:commitEditingStyle:forRowAtIndexPath:)
+    public dynamic func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        delegate?.tableView?(tableView, commit: editingStyle, forRowAt: indexPath)
+    }
+    #else
     @objc(tableView:commitEditingStyle:forRowAtIndexPath:)
     public dynamic func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         delegate?.tableView?(tableView, commit: editingStyle, forRowAt: indexPath)
     }
+    #endif
     
     @objc(tableView:moveRowAtIndexPath:toIndexPath:)
     public dynamic func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {

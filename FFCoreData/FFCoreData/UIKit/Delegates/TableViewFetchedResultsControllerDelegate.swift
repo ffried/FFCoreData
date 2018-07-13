@@ -28,8 +28,12 @@ import class UIKit.UITableView
 
 public final class TableViewFetchedResultsControllerManager<Result: NSFetchRequestResult>: UIKitFetchedResultsControllerManager<Result> {
     public private(set) weak var tableView: UITableView?
-    
+
+    #if swift(>=4.2)
+    public var animation: UITableView.RowAnimation = .automatic
+    #else
     public var animation: UITableViewRowAnimation = .automatic
+    #endif
     
     public required init(fetchedResultsController: Controller, tableView: UITableView, delegate: Delegate? = nil) {
         self.tableView = tableView
