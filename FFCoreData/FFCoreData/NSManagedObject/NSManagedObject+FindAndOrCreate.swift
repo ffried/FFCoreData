@@ -30,7 +30,7 @@ public extension NSPredicate {
     }
 }
 
-fileprivate extension Sequence where Iterator.Element == KeyObjectDictionary.Iterator.Element {
+fileprivate extension Sequence where Element == KeyObjectDictionary.Element {
     func asPredicate(with compoundType: NSCompoundPredicate.LogicalType) -> NSCompoundPredicate {
         return NSCompoundPredicate(type: compoundType, subpredicates: map {
             NSPredicate(format: "%K == %@", arguments: $0.key, $0.value)
@@ -234,13 +234,6 @@ public enum FindOrCreatableError: Error, Equatable, CustomStringConvertible {
             return "Invalid entity with name \"\(entityName)\""
         }
     }
-
-    public static func ==(lhs: FindOrCreatableError, rhs: FindOrCreatableError) -> Bool {
-        switch (lhs, rhs) {
-        case (.invalidEntity(let lhsEntityName), .invalidEntity(let rhsEntityName)):
-            return lhsEntityName == rhsEntityName
-        }
-    }
 }
 
 public extension NSManagedObjectContext {
@@ -260,8 +253,15 @@ public extension NSManagedObjectContext {
         }()
     }
 
+    #if swift(>=4.2)
+    @inlinable
+    public final func async(do work: @escaping () -> ()) {
+        perform(work)
+    }
+    #else
     @_inlineable
     public final func async(do work: @escaping () -> ()) {
         perform(work)
     }
+    #endif
 }
