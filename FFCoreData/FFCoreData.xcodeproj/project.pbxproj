@@ -11,6 +11,7 @@
 		071408721E7FFDD8004318C9 /* FFCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F82FDC1DAA7ADA00DBCBAA /* FFCoreDataTests.swift */; };
 		071408751E7FFDE4004318C9 /* TestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 07F82FDF1DAA7ADA00DBCBAA /* TestModel.xcdatamodeld */; };
 		071408771E8001C1004318C9 /* FFCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = 07876A1B19D41E7000F21E7D /* FFCoreData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0747F31D210B53CF009BFDAD /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0747F31C210B53CF009BFDAD /* Logging.swift */; };
 		0762C951207BA68700F9F0A8 /* ManagedObjectContextObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762C94E207BA68700F9F0A8 /* ManagedObjectContextObserver.swift */; };
 		0762C952207BA68700F9F0A8 /* MOCObjectsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762C94F207BA68700F9F0A8 /* MOCObjectsObserver.swift */; };
 		0762C953207BA68700F9F0A8 /* MOCEntitiesObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762C950207BA68700F9F0A8 /* MOCEntitiesObserver.swift */; };
@@ -43,6 +44,7 @@
 		071408461E7FF504004318C9 /* FFCoreData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FFCoreData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0714084E1E7FF504004318C9 /* FFCoreDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FFCoreDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		071408761E7FFEC0004318C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0747F31C210B53CF009BFDAD /* Logging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
 		0762C94E207BA68700F9F0A8 /* ManagedObjectContextObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectContextObserver.swift; sourceTree = "<group>"; };
 		0762C94F207BA68700F9F0A8 /* MOCObjectsObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOCObjectsObserver.swift; sourceTree = "<group>"; };
 		0762C950207BA68700F9F0A8 /* MOCEntitiesObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOCEntitiesObserver.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				0762C960207BA6EC00F9F0A8 /* NSManagedObject */,
 				0762C958207BA6EC00F9F0A8 /* UIKit */,
 				077C040F20F8C4030074BEFA /* SwiftSupport.swift */,
+				0747F31C210B53CF009BFDAD /* Logging.swift */,
 				07876A1B19D41E7000F21E7D /* FFCoreData.h */,
 				071408761E7FFEC0004318C9 /* Info.plist */,
 			);
@@ -314,6 +317,7 @@
 				0762C951207BA68700F9F0A8 /* ManagedObjectContextObserver.swift in Sources */,
 				0762C965207BA6EC00F9F0A8 /* CollectionViewDataSource.swift in Sources */,
 				0762C967207BA6EC00F9F0A8 /* CollectionViewFetchedResultsControllerDelegate.swift in Sources */,
+				0747F31D210B53CF009BFDAD /* Logging.swift in Sources */,
 				0762C96A207BA6EC00F9F0A8 /* NSManagedObject+FindAndOrCreate.swift in Sources */,
 				0762C96B207BA6EC00F9F0A8 /* CoreDataDecodable.swift in Sources */,
 				0762C952207BA68700F9F0A8 /* MOCObjectsObserver.swift in Sources */,

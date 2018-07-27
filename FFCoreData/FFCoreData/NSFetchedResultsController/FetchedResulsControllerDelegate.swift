@@ -25,6 +25,11 @@ import protocol CoreData.NSFetchedResultsControllerDelegate
 import protocol CoreData.NSFetchedResultsSectionInfo
 import enum CoreData.NSFetchedResultsChangeType
 import class CoreData.NSFetchedResultsController
+#if canImport(os)
+import func os.os_log
+#else
+import func FFFoundation.os_log
+#endif
 
 @objc public protocol FetchedResultsControllerManagerDelegate: NSFetchedResultsControllerDelegate {}
 
@@ -75,7 +80,7 @@ public class FetchedResultsControllerManager<Result: NSFetchRequestResult>: NSOb
         case .delete:
             removeSection(at: sectionIndex)
         default:
-            print("FFCoreData: Unsupported change type: \(type)")
+            os_log("Unsupported change type: %lld", log: .ffCoreData, type: .default, type.rawValue)
         }
         delegate?.controller?(controller, didChange: sectionInfo, atSectionIndex: sectionIndex, for: type)
     }

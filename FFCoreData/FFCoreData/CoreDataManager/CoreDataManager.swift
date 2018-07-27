@@ -21,6 +21,9 @@
 import Foundation
 import CoreData
 import FFFoundation
+#if canImport(os)
+import os
+#endif
 
 fileprivate final class CoreDataManager {
     private lazy var managedObjectModel: NSManagedObjectModel = {
@@ -38,19 +41,21 @@ fileprivate final class CoreDataManager {
             ]
             try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: url, options: options)
         } catch {
-            func message(for error: Error) -> String { return "FFCoreData: Failed to add persistent store with error: \(error)" }
-            guard configuration.clearDataStoreOnSetupFailure else { fatalError(message(for: error)) }
-            
-            print("\(message(for: error))\nTrying to clear the data store now!")
+            guard configuration.clearDataStoreOnSetupFailure else {
+                os_log("Failed to add persistent store with error: %@", log: .ffCoreData, type: .fault, String(describing: error))
+                fatalError("FFCoreData: Failed to add persistent store with error: \(error)")
+            }
+            os_log("Failed to add persistent store with error: %@\nTrying to delete the data store now!", log: .ffCoreData, type: .error, String(describing: error))
             do {
                 try clearDataStore()
             } catch {
-                print("FFCoreData: Failed to delete data store with error: \(error)")
+                os_log("Failed to delete data store with error: %@!", log: .ffCoreData, type: .error, String(describing: error))
             }
             do {
                 try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: url, options: nil)
             } catch {
-                fatalError(message(for: error))
+                os_log("Failed to add persistent store with error: %@", log: .ffCoreData, type: .fault, String(describing: error))
+                fatalError("FFCoreData: Failed to add persistent store with error: \(error)")
             }
         }
         return coordinator
@@ -104,18 +109,16 @@ fileprivate final class CoreDataManager {
         var result = true
         do {
             try ctx.save()
-            #if DEBUG
-                switch ctx {
-                case managedObjectContext:
-                    print("FFCoreData: Main NSManagedObjectContext saved successfully!")
-                case backgroundSavingContext:
-                    print("FFCoreData: Background NSManagedObjectContext saved successfully!")
-                default:
-                    print("FFCoreData: NSManagedObjectContext \(ctx) saved successfully!")
-                }
-            #endif
+            switch ctx {
+            case managedObjectContext:
+                os_log("Main NSManagedObjectContext saved successfully!", log: .ffCoreData, type: .debug)
+            case backgroundSavingContext:
+                os_log("Background NSManagedObjectContext saved successfully!", log: .ffCoreData, type: .debug)
+            default:
+                os_log("NSManagedObjectContext %@ saved successfully!", log: .ffCoreData, type: .debug, ctx)
+            }
         } catch {
-            print("Unresolved error while saving NSManagedObjectContext \(error)")
+            os_log("Unresolved error while saving NSManagedObjectContext!%@", log: .ffCoreData, type: .error, rollback ? " Rolling back..." : "")
             result = false
             if rollback { ctx.rollback() }
         }
@@ -211,7 +214,7 @@ extension CoreDataStack {
             do {
                 try fileManager.createDirectoryIfNeeded(at: dataDirectory)
             } catch {
-                print("FFCoreData: Could not create data folder: \(error)")
+                os_log("Could not create data folder: %@", log: .ffCoreData, type: .error, String(describing: error))
             }
             return dataDirectory
         }
