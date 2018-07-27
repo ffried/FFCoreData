@@ -22,6 +22,11 @@ import struct Foundation.URL
 import class CoreData.NSManagedObjectID
 import class CoreData.NSManagedObject
 import class CoreData.NSManagedObjectContext
+#if canImport(os)
+import func os.os_log
+#else
+import func FFFoundation.os_log
+#endif
 
 public final class MOCObjectsObserver: MOCObserver {
     public var objectIDs: [NSManagedObjectID] {
@@ -45,7 +50,7 @@ public final class MOCObjectsObserver: MOCObserver {
             do {
                 try managedObject.managedObjectContext?.obtainPermanentIDs(for: [managedObject])
             } catch {
-                print("FFCoreData: Could not obtain permanent object id: \(error)")
+                os_log("Could not obtain permanent object id: %@", log: .ffCoreData, type: .error, String(describing: error))
             }
         }
         return objectIDURIs.contains(managedObject.objectID.uriRepresentation())
@@ -58,7 +63,7 @@ public extension NSManagedObject {
             do {
                 try managedObjectContext?.obtainPermanentIDs(for: [self])
             } catch {
-                print("FFCoreData: Could not obtain permanent object id: \(error)")
+                os_log("Could not obtain permanent object id: %@", log: .ffCoreData, type: .error, String(describing: error))
             }
         }
         
