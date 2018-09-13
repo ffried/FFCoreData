@@ -253,15 +253,8 @@ public extension NSManagedObjectContext {
         }()
     }
 
-    #if swift(>=4.2)
     @inlinable
     public final func async(do work: @escaping () -> ()) {
         perform(work)
     }
-    #else
-    @_inlineable
-    public final func async(do work: @escaping () -> ()) {
-        perform(work)
-    }
-    #endif
 }
