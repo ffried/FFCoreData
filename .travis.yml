@@ -2,9 +2,20 @@ branches:
   only:
     - master
     - develop
-language: swift
+
 os: osx
 osx_image: xcode10
-xcode_project: FFCoreData/FFCoreData.xcworkspace
-xcode_scheme: FFCoreData
-xcode_destination: platform=iOS Simulator,OS=12.0,name=iPad Pro (9.7-inch)
+language: swift
+
+env:
+  global:
+    - XCODE_WORKSPACE="FFCoreData/FFCoreData.xcworkspace"
+    - XCODE_SCHEME=FFCoreData
+script: ./scripts/build_xcode.sh
+
+jobs:
+  include:
+    - name: "iOS"
+      env: XCODE_DESTINATION="platform=iOS Simulator,OS=12.0,name=iPad Pro (9.7-inch)"
+    - name: "macOS"
+      env: XCODE_DESTINATION="platform=macOS"
