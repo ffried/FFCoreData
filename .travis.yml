@@ -1,7 +1,6 @@
 branches:
   only:
     - master
-    - develop
 
 os: osx
 osx_image: xcode10
