@@ -59,13 +59,11 @@ final class CoreDataDecodableTests: XCTestCase {
     }
 
     private func generateTestJSON(count: Int) throws -> Data {
-        func randInt(_ val: Int) -> Int { return Int(arc4random_uniform(.init(val))) }
-        func randBool(_ val: Int) -> Bool { return randInt(val) % 2 == 0 }
         let dtos = (1...count).map {
             DecodableEntity.DTO(idenfitier: "ID_\($0)",
-                name: randBool($0) ? nil : "Test_\($0)",
-                isTested: randBool($0),
-                counter: .init(randInt($0)))
+                name: Bool.random() ? nil : "Test_\($0)",
+                isTested: .random(),
+                counter: .random(in: 0..<Int32($0)))
         }
         return try JSONEncoder().encode(dtos)
     }

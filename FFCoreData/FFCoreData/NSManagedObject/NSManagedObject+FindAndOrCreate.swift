@@ -176,7 +176,7 @@ public extension FindOrCreatable {
 
     public static func random(upTo randomBound: Int, in context: NSManagedObjectContext) throws -> Self? {
         let fr = fetchRequest()
-        fr.fetchOffset = Int(arc4random_uniform(UInt32(randomBound)))
+        fr.fetchOffset = Int.random(in: 0..<randomBound)
         fr.fetchLimit = 1
         return try context.fetch(fr).first
     }
