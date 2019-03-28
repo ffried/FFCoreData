@@ -31,13 +31,13 @@ public protocol CoreDataDecodable: Decodable {
     mutating func update(from dto: DTO) throws
 }
 
-public extension CoreDataDecodable {
+extension CoreDataDecodable {
     public init(from decoder: Decoder) throws {
         try self.init(with: DTO(from: decoder), in: .decodingContext(at: decoder.codingPath))
     }
 }
 
-public extension CoreDataDecodable where Self: FindOrCreatable {
+extension CoreDataDecodable where Self: FindOrCreatable {
     @discardableResult
     public static func findOrCreate(for dto: DTO, in context: NSManagedObjectContext) throws -> Self {
         var object = try findOrCreate(in: context)
@@ -46,7 +46,7 @@ public extension CoreDataDecodable where Self: FindOrCreatable {
     }
 }
 
-public extension CoreDataDecodable where Self: NSManagedObject {
+extension CoreDataDecodable where Self: NSManagedObject {
     public init(with dto: DTO, in context: NSManagedObjectContext) throws {
         self.init(context: context)
         try update(from: dto)
@@ -66,15 +66,15 @@ public enum CoreDataDecodingError: Error, CustomStringConvertible {
     }
 }
 
-fileprivate extension Thread {
+extension Thread {
     private static let decodingContextThreadKey = "net.ffried.FFCoreData.DecodingContext"
-    var decodingContext: Unmanaged<NSManagedObjectContext>? {
+    fileprivate var decodingContext: Unmanaged<NSManagedObjectContext>? {
         get { return threadDictionary[Thread.decodingContextThreadKey] as? Unmanaged<NSManagedObjectContext> }
         set { threadDictionary[Thread.decodingContextThreadKey] = newValue }
     }
 }
 
-public extension NSManagedObjectContext {
+extension NSManagedObjectContext {
     private static var _decodingContext: NSManagedObjectContext? {
         get { return Thread.current.decodingContext?.takeUnretainedValue() }
         set { Thread.current.decodingContext = newValue.map(Unmanaged.passUnretained) }
@@ -104,7 +104,7 @@ public extension NSManagedObjectContext {
 }
 
 // MARK: - Foundation decoder extensions
-public extension JSONDecoder {
+extension JSONDecoder {
     /// Decodes the entity from a JSON in a given `Data` using its `DTO` type.
     ///
     /// - Parameters:
@@ -132,7 +132,7 @@ public extension JSONDecoder {
     }
 }
 
-public extension PropertyListDecoder {
+extension PropertyListDecoder {
     /// Decodes the entity from a PropertyList in a given `Data` using its `DTO` type.
     ///
     /// - Parameters:

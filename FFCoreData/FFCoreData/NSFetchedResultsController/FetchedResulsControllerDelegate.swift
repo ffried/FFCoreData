@@ -96,6 +96,8 @@ public class FetchedResultsControllerManager<Result: NSFetchRequestResult>: NSOb
             removeSubobject(at: indexPath!)
         case .move:
             moveSubobject(from: indexPath!, to: newIndexPath!)
+        @unknown default:
+            os_log("Unsupported unknown change type: %lld", log: .ffCoreData, type: .default, type.rawValue)
         }
         delegate?.controller?(controller, didChange: anObject, at: indexPath, for: type, newIndexPath: newIndexPath)
     }

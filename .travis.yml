@@ -3,7 +3,7 @@ branches:
     - master
 
 os: osx
-osx_image: xcode10
+osx_image: xcode10.2
 language: swift
 
 env:
@@ -15,6 +15,6 @@ script: ./scripts/build_xcode.sh
 jobs:
   include:
     - name: "iOS"
-      env: XCODE_DESTINATION="platform=iOS Simulator,OS=12.0,name=iPad Pro (9.7-inch)"
+      env: XCODE_DESTINATION="platform=iOS Simulator,OS=12.2,name=iPad Pro (10.5-inch)"
     - name: "macOS"
       env: XCODE_DESTINATION="platform=macOS"
