@@ -24,7 +24,8 @@ import FFFoundation
 
 public typealias KeyObjectDictionary = [String: Any]
 
-public extension NSPredicate {
+extension NSPredicate {
+    @inlinable
     public convenience init(format: String, arguments: Any...) {
         self.init(format: format, argumentArray: arguments)
     }
@@ -74,7 +75,8 @@ public protocol FindOrCreatable: Fetchable {
     static func random(upTo randomBound: Int, in context: NSManagedObjectContext) throws -> Self?
 }
 
-public extension Fetchable {
+extension Fetchable {
+    @inlinable
     public static func fetchRequest() -> NSFetchRequest<Self> {
         return NSFetchRequest(entityName: entityName)
     }
@@ -95,18 +97,20 @@ public extension Fetchable {
         return fetchRequest
     }
 
+    @inlinable
     public static func count(in context: NSManagedObjectContext) throws -> Int {
         return try context.count(for: fetchRequest())
     }
 }
 
-public extension Fetchable where Self: NSManagedObject {
+extension Fetchable where Self: NSManagedObject {
+    @inlinable
     public static var entityName: String {
         return String(class: self, removeNamespace: shouldRemoveNamespaceInEntityName)
     }
 }
 
-internal extension Fetchable {
+extension Fetchable {
     internal static func entity(in context: NSManagedObjectContext) throws -> NSEntityDescription {
         guard let entity = NSEntityDescription.entity(forEntityName: entityName, in: context) else {
             throw FindOrCreatableError.invalidEntity(entityName: entityName)
@@ -115,15 +119,18 @@ internal extension Fetchable {
     }
 }
 
-public extension FindOrCreatable {
+extension FindOrCreatable {
+    @inlinable
     public static func create(in context: NSManagedObjectContext) throws -> Self {
         return try create(in: context, applying: nil)
     }
-    
+
+    @inlinable
     public static func all(in context: NSManagedObjectContext) throws -> [Self] {
         return try find(in: context)
     }
-    
+
+    @inlinable
     public static func find(in context: NSManagedObjectContext) throws -> [Self] {
         return try find(in: context, with: nil)
     }
@@ -132,18 +139,21 @@ public extension FindOrCreatable {
         return try find(in: context, with: dictionary.asPredicate(with: .and))
     }
     
-    static func find(in context: NSManagedObjectContext, by dictionary: KeyObjectDictionary, sortedBy sortDescriptors: [NSSortDescriptor]) throws -> [Self] {
+    public static func find(in context: NSManagedObjectContext, by dictionary: KeyObjectDictionary, sortedBy sortDescriptors: [NSSortDescriptor]) throws -> [Self] {
         return try find(in: context, with: dictionary.asPredicate(with: .and), sortedBy: sortDescriptors)
     }
-    
+
+    @inlinable
     public static func find(in context: NSManagedObjectContext, with predicate: NSPredicate?) throws -> [Self] {
         return try find(in: context, with: predicate, sortedBy: nil)
     }
-    
+
+    @inlinable
     public static func find(in context: NSManagedObjectContext, with predicate: NSPredicate?, sortedBy sortDescriptors: [NSSortDescriptor]?) throws -> [Self] {
         return try context.fetch(fetchRequest(with: predicate, sortedBy: sortDescriptors))
     }
 
+    @inlinable
     public static func findFirst(in context: NSManagedObjectContext) throws -> Self? {
         return try findFirst(in: context, with: nil)
     }
@@ -152,24 +162,28 @@ public extension FindOrCreatable {
         return try findFirst(in: context, with: dictionary.asPredicate(with: .and))
     }
 
-    static func findFirst(in context: NSManagedObjectContext, by dictionary: KeyObjectDictionary, sortedBy sortDescriptors: [NSSortDescriptor]) throws -> Self? {
+    public static func findFirst(in context: NSManagedObjectContext, by dictionary: KeyObjectDictionary, sortedBy sortDescriptors: [NSSortDescriptor]) throws -> Self? {
         return try findFirst(in: context, with: dictionary.asPredicate(with: .and), sortedBy: sortDescriptors)
     }
 
+    @inlinable
     public static func findFirst(in context: NSManagedObjectContext, with predicate: NSPredicate?) throws -> Self? {
         return try findFirst(in: context, with: predicate, sortedBy: nil)
     }
 
+    @inlinable
     public static func findFirst(in context: NSManagedObjectContext, with predicate: NSPredicate?, sortedBy sortDescriptors: [NSSortDescriptor]?) throws -> Self? {
         let request = fetchRequest(with: predicate, sortedBy: sortDescriptors)
         request.fetchLimit = 1
         return try context.fetch(request).first
     }
 
+    @inlinable
     public static func findOrCreate(in context: NSManagedObjectContext) throws -> Self {
         return try findOrCreate(in: context, by: nil)
     }
 
+    @inlinable
     public static func random(in context: NSManagedObjectContext) throws -> Self? {
         return try random(upTo: count(in: context), in: context)
     }
@@ -182,7 +196,7 @@ public extension FindOrCreatable {
     }
 }
 
-public extension FindOrCreatable where Self: NSManagedObject {
+extension FindOrCreatable where Self: NSManagedObject {
     public static func create(in context: NSManagedObjectContext, applying dictionary: KeyObjectDictionary?) throws -> Self {
         let obj = self.init(entity: try entity(in: context), insertInto: context)
         dictionary?.apply(to: obj, in: context)
@@ -221,8 +235,10 @@ public extension FindOrCreatable where Self: NSManagedObject {
     }
 }
 
-internal extension NSManagedObject {
-    @nonobjc internal static var shouldRemoveNamespaceInEntityName: Bool = true
+extension NSManagedObject {
+    @usableFromInline
+    @nonobjc
+    internal static var shouldRemoveNamespaceInEntityName: Bool = true
 }
 
 public enum FindOrCreatableError: Error, Equatable, CustomStringConvertible {
@@ -236,20 +252,14 @@ public enum FindOrCreatableError: Error, Equatable, CustomStringConvertible {
     }
 }
 
-public extension NSManagedObjectContext {
-    private enum Result<T> { case value(T), error(Error) }
-
+extension NSManagedObjectContext {
     public final func sync<T>(do work: () throws -> T) rethrows -> T {
         return try {
-            var result: Result<T>!
+            var result: Result<T, Error>!
             performAndWait {
-                do { result = try .value(work()) }
-                catch { result = .error(error) }
+                result = Result(catching: work)
             }
-            switch result! {
-            case .value(let val): return val
-            case .error(let err): throw err
-            }
+            return try result.get()
         }()
     }
 

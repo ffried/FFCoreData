@@ -145,7 +145,7 @@ public struct CoreDataStack {
             _manager.reset()
         }
     }
-    private static var _manager = Lazy { CoreDataManager(configuration: CoreDataStack.configuration) }
+    private static var _manager = Lazy<CoreDataManager> { CoreDataManager(configuration: CoreDataStack.configuration) }
     private static var manager: CoreDataManager { return _manager.value }
     
     public static var mainContext: NSManagedObjectContext { return manager.managedObjectContext }
@@ -287,7 +287,7 @@ extension CoreDataStack {
     }
 }
 
-public extension CoreDataStack.Configuration.Options {
+extension CoreDataStack.Configuration.Options {
     public static var `default`: CoreDataStack.Configuration.Options { return .removeNamespacesFromEntityNames }
 
     public static let removeNamespacesFromEntityNames: CoreDataStack.Configuration.Options = .init(rawValue: 1 << 0)

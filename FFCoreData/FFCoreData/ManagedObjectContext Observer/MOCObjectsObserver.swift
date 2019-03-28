@@ -57,7 +57,7 @@ public final class MOCObjectsObserver: MOCObserver {
     }
 }
 
-public extension NSManagedObject {
+extension NSManagedObject {
     public func createMOCObjectObserver(fireInitially: Bool = false, block: @escaping MOCObserver.MOCObserverBlock) -> MOCObjectsObserver {
         if objectID.isTemporaryID {
             do {
