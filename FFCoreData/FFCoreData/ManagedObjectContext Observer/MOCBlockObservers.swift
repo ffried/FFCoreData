@@ -24,20 +24,20 @@ import class Foundation.OperationQueue
 import CoreData
 
 public final class MOCBlockObserver<Filter: MOCObserverFilter> {
-    public typealias MOCObserverBlock = (MOCBlockObserver, MOCObservedChanges) -> ()
+    public typealias Handler = (MOCBlockObserver, MOCObservedChanges) -> ()
 
     public let mode: MOCObservationMode
     public final var queue: OperationQueue
-    public final var handler: MOCObserverBlock
+    public final var handler: Handler
 
     private let filter: Filter
     private let workerQueue = OperationQueue()
     private var observers = [NSObjectProtocol]()
 
-    public init(mode: MOCObservationMode, filter: Filter, queue: OperationQueue = .current ?? .main, fireInitially: Bool, block: @escaping MOCObserverBlock) {
+    public init(mode: MOCObservationMode, filter: Filter, queue: OperationQueue = .current ?? .main, fireInitially: Bool, handler: @escaping Handler) {
         self.mode = mode
         self.filter = filter
-        self.handler = block
+        self.handler = handler
         self.queue = queue
         let observerBlock = { [weak self] (note: Notification) -> () in
             self?.managedObjectContextDidChange(notification: note)

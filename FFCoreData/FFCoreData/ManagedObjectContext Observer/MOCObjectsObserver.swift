@@ -73,8 +73,8 @@ extension NSManagedObject {
         return MOCObjectsFilter(objectIDs: [objectID])
     }
 
-    public func createMOCObjectObserver(fireInitially: Bool = false, block: @escaping MOCBlockObserver<MOCObjectsFilter>.MOCObserverBlock) -> MOCBlockObserver<MOCObjectsFilter> {
-        return MOCBlockObserver(mode: mocObservationMode, filter: mocObjectsFilter, fireInitially: fireInitially, block: block)
+    public func createMOCObjectObserver(fireInitially: Bool = false, handler: @escaping MOCBlockObserver<MOCObjectsFilter>.Handler) -> MOCBlockObserver<MOCObjectsFilter> {
+        return MOCBlockObserver(mode: mocObservationMode, filter: mocObjectsFilter, fireInitially: fireInitially, handler: handler)
     }
 
     @available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
@@ -111,9 +111,9 @@ extension Sequence where Element: NSManagedObject {
         return (MOCObservationMode(contexts: contexts), MOCObjectsFilter(objectIDs: objectIDs))
     }
 
-    public func createMOCObjectsObserver(fireInitially: Bool = false, block: @escaping MOCBlockObserver<MOCObjectsFilter>.MOCObserverBlock) -> MOCBlockObserver<MOCObjectsFilter> {
+    public func createMOCObjectsObserver(fireInitially: Bool = false, handler: @escaping MOCBlockObserver<MOCObjectsFilter>.Handler) -> MOCBlockObserver<MOCObjectsFilter> {
         let (mode, filter) = mocObservationModeAndObjectsFilter()
-        return MOCBlockObserver(mode: mode, filter: filter, fireInitially: fireInitially, block: block)
+        return MOCBlockObserver(mode: mode, filter: filter, fireInitially: fireInitially, handler: handler)
     }
 
     @available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)

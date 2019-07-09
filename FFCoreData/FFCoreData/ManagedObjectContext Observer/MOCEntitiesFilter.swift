@@ -39,8 +39,8 @@ public struct MOCEntitiesFilter: MOCObserverFilter {
 }
 
 extension Fetchable where Self: NSManagedObject {
-    public static func createMOCEntitiesObserver(with mode: MOCObservationMode = .allContexts, fireInitially: Bool = false, block: @escaping MOCBlockObserver<MOCEntitiesFilter>.MOCObserverBlock) -> MOCBlockObserver<MOCEntitiesFilter> {
-        return MOCBlockObserver(mode: mode, filter: MOCEntitiesFilter(entityNames: [entityName]), fireInitially: fireInitially, block: block)
+    public static func createMOCEntitiesObserver(with mode: MOCObservationMode = .allContexts, fireInitially: Bool = false, handler: @escaping MOCBlockObserver<MOCEntitiesFilter>.Handler) -> MOCBlockObserver<MOCEntitiesFilter> {
+        return MOCBlockObserver(mode: mode, filter: MOCEntitiesFilter(entityNames: [entityName]), fireInitially: fireInitially, handler: handler)
     }
 
     @available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
