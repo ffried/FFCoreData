@@ -138,15 +138,15 @@ fileprivate final class CoreDataManager {
     }
 }
 
-public struct CoreDataStack {
+public enum CoreDataStack {
+    @Lazy private static var manager = CoreDataManager(configuration: CoreDataStack.configuration)
+
     public static var configuration = Configuration.legacyConfiguration {
         didSet {
             NSManagedObject.shouldRemoveNamespaceInEntityName = configuration.removeNamespacesFromEntityNames
-            _manager.reset()
+            $manager.reset()
         }
     }
-    private static var _manager = Lazy<CoreDataManager> { CoreDataManager(configuration: CoreDataStack.configuration) }
-    private static var manager: CoreDataManager { return _manager.value }
     
     public static var mainContext: NSManagedObjectContext { return manager.managedObjectContext }
     

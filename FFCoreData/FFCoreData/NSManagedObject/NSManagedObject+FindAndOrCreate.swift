@@ -22,8 +22,6 @@ import Foundation
 import CoreData
 import FFFoundation
 
-public typealias KeyObjectDictionary = [String: Any]
-
 extension NSPredicate {
     @inlinable
     public convenience init(format: String, arguments: Any...) {
@@ -31,7 +29,9 @@ extension NSPredicate {
     }
 }
 
-fileprivate extension Sequence where Element == KeyObjectDictionary.Element {
+public typealias KeyObjectDictionary = [String: Any]
+
+fileprivate extension KeyObjectDictionary {
     func asPredicate(with compoundType: NSCompoundPredicate.LogicalType) -> NSCompoundPredicate {
         return NSCompoundPredicate(type: compoundType, subpredicates: map {
             NSPredicate(format: "%K == %@", arguments: $0.key, $0.value)
@@ -39,40 +39,55 @@ fileprivate extension Sequence where Element == KeyObjectDictionary.Element {
     }
     
     func apply(to object: NSObject, in context: NSManagedObjectContext) {
-        forEach { (key, value) in
-            if let id = value as? NSManagedObjectID {
-                object.setValue(context.object(with: id), forKey: key)
+        forEach {
+            if let id = $1 as? NSManagedObjectID {
+                object.setValue(context.object(with: id), forKey: $0)
             } else {
-                object.setValue(value, forKey: key)
+                object.setValue($1, forKey: $0)
             }
         }
     }
 }
 
-public protocol Fetchable: NSFetchRequestResult {
+public protocol Entity: NSObjectProtocol {
     static var entityName: String { get }
-    
+}
+
+public protocol Fetchable: Entity, NSFetchRequestResult {
     static func fetchRequest() -> NSFetchRequest<Self>
 
     static func count(in context: NSManagedObjectContext) throws -> Int
 }
 
-public protocol FindOrCreatable: Fetchable {
+public protocol Creatable: Entity {
     static func create(in context: NSManagedObjectContext, applying: KeyObjectDictionary?) throws -> Self
-    
-    static func find(in context: NSManagedObjectContext, by dictionary: KeyObjectDictionary) throws -> [Self]
-    static func find(in context: NSManagedObjectContext, by dictionary: KeyObjectDictionary, sortedBy sortDescriptors: [NSSortDescriptor]) throws -> [Self]
-    
-    static func find(in context: NSManagedObjectContext, with predicate: NSPredicate?, sortedBy sortDescriptors: [NSSortDescriptor]?) throws -> [Self]
+}
 
-    static func findFirst(in context: NSManagedObjectContext, by dictionary: KeyObjectDictionary) throws -> Self?
-    static func findFirst(in context: NSManagedObjectContext, by dictionary: KeyObjectDictionary, sortedBy sortDescriptors: [NSSortDescriptor]) throws -> Self?
+public typealias FindOrCreatable = Fetchable & Creatable
 
-    static func findFirst(in context: NSManagedObjectContext, with predicate: NSPredicate?, sortedBy sortDescriptors: [NSSortDescriptor]?) throws -> Self?
+public struct InvalidEntityError: Error, Equatable, CustomStringConvertible {
+    let entityName: String
 
-    static func findOrCreate(in context: NSManagedObjectContext, by dictionary: KeyObjectDictionary?) throws -> Self
+    public var description: String {
+        return "Invalid entity with name \"\(entityName)\""
+    }
+}
 
-    static func random(upTo randomBound: Int, in context: NSManagedObjectContext) throws -> Self?
+extension Entity {
+    internal static func entity(in context: NSManagedObjectContext) throws -> NSEntityDescription {
+        let name = entityName
+        guard let entity = NSEntityDescription.entity(forEntityName: name, in: context) else {
+            throw InvalidEntityError(entityName: name)
+        }
+        return entity
+    }
+}
+
+extension Entity where Self: NSManagedObject {
+    @inlinable
+    public static var entityName: String {
+        return String(class: self, removeNamespace: shouldRemoveNamespaceInEntityName)
+    }
 }
 
 extension Fetchable {
@@ -103,28 +118,14 @@ extension Fetchable {
     }
 }
 
-extension Fetchable where Self: NSManagedObject {
-    @inlinable
-    public static var entityName: String {
-        return String(class: self, removeNamespace: shouldRemoveNamespaceInEntityName)
-    }
-}
-
-extension Fetchable {
-    internal static func entity(in context: NSManagedObjectContext) throws -> NSEntityDescription {
-        guard let entity = NSEntityDescription.entity(forEntityName: entityName, in: context) else {
-            throw FindOrCreatableError.invalidEntity(entityName: entityName)
-        }
-        return entity
-    }
-}
-
-extension FindOrCreatable {
+extension Creatable {
     @inlinable
     public static func create(in context: NSManagedObjectContext) throws -> Self {
         return try create(in: context, applying: nil)
     }
+}
 
+extension Fetchable {
     @inlinable
     public static func all(in context: NSManagedObjectContext) throws -> [Self] {
         return try find(in: context)
@@ -173,14 +174,7 @@ extension FindOrCreatable {
 
     @inlinable
     public static func findFirst(in context: NSManagedObjectContext, with predicate: NSPredicate?, sortedBy sortDescriptors: [NSSortDescriptor]?) throws -> Self? {
-        let request = fetchRequest(with: predicate, sortedBy: sortDescriptors)
-        request.fetchLimit = 1
-        return try context.fetch(request).first
-    }
-
-    @inlinable
-    public static func findOrCreate(in context: NSManagedObjectContext) throws -> Self {
-        return try findOrCreate(in: context, by: nil)
+        return try context.fetch(fetchRequest(with: predicate, sortedBy: sortDescriptors, limitedBy: 1)).first
     }
 
     @inlinable
@@ -189,24 +183,30 @@ extension FindOrCreatable {
     }
 
     public static func random(upTo randomBound: Int, in context: NSManagedObjectContext) throws -> Self? {
-        let fr = fetchRequest()
-        fr.fetchOffset = Int.random(in: 0..<randomBound)
-        fr.fetchLimit = 1
-        return try context.fetch(fr).first
+        return try context.fetch(fetchRequest(with: nil, sortedBy: nil, offsetBy: Int.random(in: 0..<randomBound), limitedBy: 1)).first
     }
 }
 
-extension FindOrCreatable where Self: NSManagedObject {
+extension Fetchable where Self: Creatable {
+    public static func findOrCreate(in context: NSManagedObjectContext, by dictionary: KeyObjectDictionary?) throws -> Self {
+        return try findFirst(in: context, with: dictionary?.asPredicate(with: .and)) ?? create(in: context, applying: dictionary)
+    }
+
+    @inlinable
+    public static func findOrCreate(in context: NSManagedObjectContext) throws -> Self {
+        return try findOrCreate(in: context, by: nil)
+    }
+}
+
+extension Creatable where Self: NSManagedObject {
     public static func create(in context: NSManagedObjectContext, applying dictionary: KeyObjectDictionary?) throws -> Self {
         let obj = self.init(entity: try entity(in: context), insertInto: context)
         dictionary?.apply(to: obj, in: context)
         return obj
     }
+}
 
-    public static func findOrCreate(in context: NSManagedObjectContext, by dictionary: KeyObjectDictionary?) throws -> Self {
-        return try findFirst(in: context, with: dictionary?.asPredicate(with: .and)) ?? create(in: context, applying: dictionary)
-    }
-
+extension Entity where Self: NSManagedObject {
     /// Safely accessess the given KeyPath on the objects managedObjectContext.
     /// If no managedObjectContext is there, it directly accesses the property.
     public subscript<T>(safe keyPath: ReferenceWritableKeyPath<Self, T>) -> T {
@@ -239,17 +239,6 @@ extension NSManagedObject {
     @usableFromInline
     @nonobjc
     internal static var shouldRemoveNamespaceInEntityName: Bool = true
-}
-
-public enum FindOrCreatableError: Error, Equatable, CustomStringConvertible {
-    case invalidEntity(entityName: String)
-    
-    public var description: String {
-        switch self {
-        case .invalidEntity(let entityName):
-            return "Invalid entity with name \"\(entityName)\""
-        }
-    }
 }
 
 extension NSManagedObjectContext {

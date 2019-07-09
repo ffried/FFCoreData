@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0700917922D36E2700666C08 /* MOCBlockObservers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0700917822D36E2700666C08 /* MOCBlockObservers.swift */; };
+		0700917B22D373A500666C08 /* MOCChangePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0700917A22D373A500666C08 /* MOCChangePublisher.swift */; };
+		0700918122D4676E00666C08 /* NSFetchedResultsPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0700918022D4676E00666C08 /* NSFetchedResultsPublisher.swift */; };
 		0714084F1E7FF504004318C9 /* FFCoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 071408461E7FF504004318C9 /* FFCoreData.framework */; };
 		071408721E7FFDD8004318C9 /* FFCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F82FDC1DAA7ADA00DBCBAA /* FFCoreDataTests.swift */; };
 		071408751E7FFDE4004318C9 /* TestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 07F82FDF1DAA7ADA00DBCBAA /* TestModel.xcdatamodeld */; };
 		071408771E8001C1004318C9 /* FFCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = 07876A1B19D41E7000F21E7D /* FFCoreData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0747F31D210B53CF009BFDAD /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0747F31C210B53CF009BFDAD /* Logging.swift */; };
-		0762C951207BA68700F9F0A8 /* ManagedObjectContextObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762C94E207BA68700F9F0A8 /* ManagedObjectContextObserver.swift */; };
+		0762C951207BA68700F9F0A8 /* MOCObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762C94E207BA68700F9F0A8 /* MOCObserver.swift */; };
 		0762C952207BA68700F9F0A8 /* MOCObjectsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762C94F207BA68700F9F0A8 /* MOCObjectsObserver.swift */; };
-		0762C953207BA68700F9F0A8 /* MOCEntitiesObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762C950207BA68700F9F0A8 /* MOCEntitiesObserver.swift */; };
+		0762C953207BA68700F9F0A8 /* MOCEntitiesFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762C950207BA68700F9F0A8 /* MOCEntitiesFilter.swift */; };
 		0762C963207BA6EC00F9F0A8 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762C955207BA6EC00F9F0A8 /* CoreDataManager.swift */; };
 		0762C964207BA6EC00F9F0A8 /* FetchedResulsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762C957207BA6EC00F9F0A8 /* FetchedResulsControllerDelegate.swift */; };
 		0762C965207BA6EC00F9F0A8 /* CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762C95A207BA6EC00F9F0A8 /* CollectionViewDataSource.swift */; };
@@ -41,13 +44,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0700917822D36E2700666C08 /* MOCBlockObservers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOCBlockObservers.swift; sourceTree = "<group>"; };
+		0700917A22D373A500666C08 /* MOCChangePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOCChangePublisher.swift; sourceTree = "<group>"; };
+		0700918022D4676E00666C08 /* NSFetchedResultsPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSFetchedResultsPublisher.swift; sourceTree = "<group>"; };
 		071408461E7FF504004318C9 /* FFCoreData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FFCoreData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0714084E1E7FF504004318C9 /* FFCoreDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FFCoreDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		071408761E7FFEC0004318C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0747F31C210B53CF009BFDAD /* Logging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
-		0762C94E207BA68700F9F0A8 /* ManagedObjectContextObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectContextObserver.swift; sourceTree = "<group>"; };
+		0762C94E207BA68700F9F0A8 /* MOCObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOCObserver.swift; sourceTree = "<group>"; };
 		0762C94F207BA68700F9F0A8 /* MOCObjectsObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOCObjectsObserver.swift; sourceTree = "<group>"; };
-		0762C950207BA68700F9F0A8 /* MOCEntitiesObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOCEntitiesObserver.swift; sourceTree = "<group>"; };
+		0762C950207BA68700F9F0A8 /* MOCEntitiesFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOCEntitiesFilter.swift; sourceTree = "<group>"; };
 		0762C955207BA6EC00F9F0A8 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		0762C957207BA6EC00F9F0A8 /* FetchedResulsControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResulsControllerDelegate.swift; sourceTree = "<group>"; };
 		0762C95A207BA6EC00F9F0A8 /* CollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewDataSource.swift; sourceTree = "<group>"; };
@@ -89,9 +95,11 @@
 		0762C94D207BA68700F9F0A8 /* ManagedObjectContext Observer */ = {
 			isa = PBXGroup;
 			children = (
-				0762C94E207BA68700F9F0A8 /* ManagedObjectContextObserver.swift */,
-				0762C950207BA68700F9F0A8 /* MOCEntitiesObserver.swift */,
+				0700917822D36E2700666C08 /* MOCBlockObservers.swift */,
+				0700917A22D373A500666C08 /* MOCChangePublisher.swift */,
+				0762C950207BA68700F9F0A8 /* MOCEntitiesFilter.swift */,
 				0762C94F207BA68700F9F0A8 /* MOCObjectsObserver.swift */,
+				0762C94E207BA68700F9F0A8 /* MOCObserver.swift */,
 			);
 			path = "ManagedObjectContext Observer";
 			sourceTree = "<group>";
@@ -108,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				0762C957207BA6EC00F9F0A8 /* FetchedResulsControllerDelegate.swift */,
+				0700918022D4676E00666C08 /* NSFetchedResultsPublisher.swift */,
 			);
 			path = NSFetchedResultsController;
 			sourceTree = "<group>";
@@ -315,19 +324,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0762C951207BA68700F9F0A8 /* ManagedObjectContextObserver.swift in Sources */,
+				0762C951207BA68700F9F0A8 /* MOCObserver.swift in Sources */,
 				0762C965207BA6EC00F9F0A8 /* CollectionViewDataSource.swift in Sources */,
 				0762C967207BA6EC00F9F0A8 /* CollectionViewFetchedResultsControllerDelegate.swift in Sources */,
 				0747F31D210B53CF009BFDAD /* Logging.swift in Sources */,
 				0762C96A207BA6EC00F9F0A8 /* NSManagedObject+FindAndOrCreate.swift in Sources */,
 				0762C96B207BA6EC00F9F0A8 /* CoreDataDecodable.swift in Sources */,
+				0700917B22D373A500666C08 /* MOCChangePublisher.swift in Sources */,
 				0762C952207BA68700F9F0A8 /* MOCObjectsObserver.swift in Sources */,
 				0762C968207BA6EC00F9F0A8 /* TableViewFetchedResultsControllerDelegate.swift in Sources */,
+				0700917922D36E2700666C08 /* MOCBlockObservers.swift in Sources */,
 				0762C963207BA6EC00F9F0A8 /* CoreDataManager.swift in Sources */,
 				0762C969207BA6EC00F9F0A8 /* UIKitFetchedResultsControllerDelegate.swift in Sources */,
 				077C041020F8C4030074BEFA /* SwiftSupport.swift in Sources */,
-				0762C953207BA68700F9F0A8 /* MOCEntitiesObserver.swift in Sources */,
+				0762C953207BA68700F9F0A8 /* MOCEntitiesFilter.swift in Sources */,
 				0762C966207BA6EC00F9F0A8 /* TableViewDataSource.swift in Sources */,
+				0700918122D4676E00666C08 /* NSFetchedResultsPublisher.swift in Sources */,
 				0762C964207BA6EC00F9F0A8 /* FetchedResulsControllerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

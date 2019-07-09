@@ -28,24 +28,21 @@ import func os.os_log
 import func FFFoundation.os_log
 #endif
 
-public final class MOCObjectsObserver: MOCObserver {
-    public var objectIDs: [NSManagedObjectID] {
+public struct MOCObjectsFilter: MOCObserverFilter {
+    var objectIDs: [NSManagedObjectID] {
         didSet {
             precondition(!objectIDs.contains { $0.isTemporaryID },
-                   "FFCoreData: ERROR: Temporary NSManagedObjectIDs set on MOCObjectsObserver! Be sure to only use non-temporary IDs for MOCObservers!")
+                         "FFCoreData: ERROR: Temporary NSManagedObjectIDs set on MOCObjectsObserver! Be sure to only use non-temporary IDs for MOCObservers!")
         }
     }
-    
-    private final var objectIDURIs: [URL] {
-        return objectIDs.map { $0.uriRepresentation() }
-    }
-    
-    public required init(objectIDs: [NSManagedObjectID], contexts: [NSManagedObjectContext]? = nil, fireInitially: Bool = false, block: @escaping MOCObserverBlock) {
+
+    private var objectIDURIs: [URL] { return objectIDs.map { $0.uriRepresentation() } }
+
+    public init(objectIDs: [NSManagedObjectID]) {
         self.objectIDs = objectIDs
-        super.init(contexts: contexts, fireInitially: fireInitially, block: block)
     }
 
-    override func include(managedObject: NSManagedObject) -> Bool {
+    public func include(managedObject: NSManagedObject) -> Bool {
         if managedObject.objectID.isTemporaryID {
             do {
                 try managedObject.managedObjectContext?.obtainPermanentIDs(for: [managedObject])
@@ -58,15 +55,70 @@ public final class MOCObjectsObserver: MOCObserver {
 }
 
 extension NSManagedObject {
-    public func createMOCObjectObserver(fireInitially: Bool = false, block: @escaping MOCObserver.MOCObserverBlock) -> MOCObjectsObserver {
-        if objectID.isTemporaryID {
-            do {
-                try managedObjectContext?.obtainPermanentIDs(for: [self])
-            } catch {
-                os_log("Could not obtain permanent object id: %@", log: .ffCoreData, type: .error, String(describing: error))
+    fileprivate final func obtainPermanentID() {
+        guard !objectID.isTemporaryID else { return }
+        do {
+            try managedObjectContext?.obtainPermanentIDs(for: [self])
+        } catch {
+            os_log("Could not obtain permanent object id: %@", log: .ffCoreData, type: .error, String(describing: error))
+        }
+    }
+
+    private var mocObservationMode: MOCObservationMode {
+        return managedObjectContext.map { .singleContext($0) } ?? .allContexts
+    }
+
+    private var mocObjectsFilter: MOCObjectsFilter {
+        obtainPermanentID()
+        return MOCObjectsFilter(objectIDs: [objectID])
+    }
+
+    public func createMOCObjectObserver(fireInitially: Bool = false, block: @escaping MOCBlockObserver<MOCObjectsFilter>.MOCObserverBlock) -> MOCBlockObserver<MOCObjectsFilter> {
+        return MOCBlockObserver(mode: mocObservationMode, filter: mocObjectsFilter, fireInitially: fireInitially, block: block)
+    }
+
+    @available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
+    public func publishChanges() -> MOCChangePublisher<MOCObjectsFilter> {
+        return MOCChangePublisher(mode: mocObservationMode, filter: mocObjectsFilter)
+    }
+}
+
+fileprivate extension MOCObservationMode {
+    init(contexts: [NSManagedObjectContext]) {
+        if contexts.isEmpty {
+            self = .allContexts
+        } else if contexts.count == 1, let first = contexts.first {
+            self = .singleContext(first)
+        } else {
+            self = .multipleContexts(contexts)
+        }
+    }
+}
+
+extension Sequence where Element: NSManagedObject {
+    private func mocObservationModeAndObjectsFilter() -> (mode: MOCObservationMode, filter: MOCObjectsFilter) {
+        var contexts = Array<NSManagedObjectContext>()
+        contexts.reserveCapacity(underestimatedCount)
+        var objectIDs = Array<NSManagedObjectID>()
+        objectIDs.reserveCapacity(underestimatedCount)
+        for obj in self {
+            obj.obtainPermanentID()
+            objectIDs.append(obj.objectID)
+            if let moc = obj.managedObjectContext, !contexts.contains(moc) {
+                contexts.append(moc)
             }
         }
-        
-        return MOCObjectsObserver(objectIDs: [objectID], contexts: managedObjectContext.map { [$0] }, fireInitially: fireInitially, block: block)
+        return (MOCObservationMode(contexts: contexts), MOCObjectsFilter(objectIDs: objectIDs))
+    }
+
+    public func createMOCObjectsObserver(fireInitially: Bool = false, block: @escaping MOCBlockObserver<MOCObjectsFilter>.MOCObserverBlock) -> MOCBlockObserver<MOCObjectsFilter> {
+        let (mode, filter) = mocObservationModeAndObjectsFilter()
+        return MOCBlockObserver(mode: mode, filter: filter, fireInitially: fireInitially, block: block)
+    }
+
+    @available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
+    public func publishChanges() -> MOCChangePublisher<MOCObjectsFilter> {
+        let (mode, filter) = mocObservationModeAndObjectsFilter()
+        return MOCChangePublisher(mode: mode, filter: filter)
     }
 }
