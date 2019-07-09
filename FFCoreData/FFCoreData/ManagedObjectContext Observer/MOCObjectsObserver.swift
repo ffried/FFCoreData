@@ -87,8 +87,8 @@ fileprivate extension MOCObservationMode {
     init(contexts: [NSManagedObjectContext]) {
         if contexts.isEmpty {
             self = .allContexts
-        } else if contexts.count == 1, let first = contexts.first {
-            self = .singleContext(first)
+        } else if contexts.count == 1 {
+            self = .singleContext(contexts[0])
         } else {
             self = .multipleContexts(contexts)
         }
