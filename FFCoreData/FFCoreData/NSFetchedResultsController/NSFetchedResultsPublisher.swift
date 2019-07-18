@@ -47,7 +47,7 @@ extension NSFetchedResultsController {
     public static func publish(changesFor fetchRequest: NSFetchRequest<ResultType>, in context: NSManagedObjectContext) -> Publisher {
         return Publisher(fetchRequest: fetchRequest, context: context)
     }
-    */
+    // */
 }
 
 // This class could theoretically be nested, but currently this does not compile.

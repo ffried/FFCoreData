@@ -144,7 +144,7 @@ public enum CoreDataStack {
     public static var configuration = Configuration.legacyConfiguration {
         didSet {
             NSManagedObject.shouldRemoveNamespaceInEntityName = configuration.removeNamespacesFromEntityNames
-            $manager.reset()
+            _manager.reset()
         }
     }
     
