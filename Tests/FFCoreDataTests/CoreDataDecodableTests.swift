@@ -64,7 +64,7 @@ final class CoreDataDecodableTests: XCTestCase {
         let failures: Atomic<[Error?]> = Atomic(wrappedValue: Array(repeating: nil, count: parallelRuns))
         DispatchQueue.concurrentPerform(iterations: parallelRuns) { iteration in
             do {
-                try testObjects[iteration].ctx.asDecodingContext { [data = testObjects[$0].data] in
+                try testObjects[iteration].ctx.asDecodingContext { [data = testObjects[iteration].data] in
                     _ = try JSONDecoder().decode([DecodableEntity].self, from: data)
                 }
             } catch {
