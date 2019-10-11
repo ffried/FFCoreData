@@ -17,9 +17,10 @@ definitions:
     xcrun --show-sdk-path
     xcrun --sdk macosx --show-sdk-path
     xcrun momc --sdkroot "$(xcrun --sdk macosx --show-sdk-path)" \
+      --macosx-deployment-target "10.12" \
       --module "FFCoreDataTests" \
-      "./Tests/FFCoreDataTests/Models/TestModel.xcdatamodeld" \
-    "./Tests/FFCoreDataTests/Models"
+      "$(pwd)/Tests/FFCoreDataTests/Models/TestModel.xcdatamodeld" \
+    "$(pwd)/Tests/FFCoreDataTests/Models"
 
 jobs:
   include:
