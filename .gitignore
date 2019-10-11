@@ -1,3 +1,6 @@
-FFCoreData/FFCoreData.xcodeproj/project.xcworkspace/xcuserdata/florianfriedrich.xcuserdatad/UserInterfaceState.xcuserstate
-FFCoreData/FFCoreData.xcodeproj/xcuserdata/florianfriedrich.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
+.DS_Store
+/.build
+/.swiftpm
+/Packages
+/*.xcodeproj
 *.xcuserdatad
