@@ -150,7 +150,7 @@ public enum CoreDataStack {
         set { _configuration = newValue }
     }
     
-    public static var mainContext: NSManagedObjectContext { return manager.managedObjectContext }
+    public static var mainContext: NSManagedObjectContext { manager.managedObjectContext }
     
     public static func save(context: NSManagedObjectContext, rollback: Bool = true, completion: @escaping (Bool) -> () = { _ in }) {
         context.sync { manager.save(context: context, rollback: rollback, completion: completion) }
@@ -161,11 +161,11 @@ public enum CoreDataStack {
     }
     
     public static func createTemporaryMainContext() -> NSManagedObjectContext {
-        return manager.createTemporaryMainContext()
+        manager.createTemporaryMainContext()
     }
     
     public static func createTemporaryBackgroundContext() -> NSManagedObjectContext {
-        return manager.createTemporaryBackgroundContext()
+        manager.createTemporaryBackgroundContext()
     }
 
     public static func clearDataStore() throws {

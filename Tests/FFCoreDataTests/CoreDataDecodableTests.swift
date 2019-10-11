@@ -20,6 +20,7 @@
 
 import XCTest
 import CoreData
+import FFFoundation
 import FFCoreData
 
 final class CoreDataDecodableTests: XCTestCase {
@@ -60,18 +61,19 @@ final class CoreDataDecodableTests: XCTestCase {
             try (generateTestJSON(count: testDataCount),
                  CoreDataStack.createTemporaryBackgroundContext())
         }
-        var failures: [Error?] = Array(repeating: nil, count: parallelRuns)
-        DispatchQueue.concurrentPerform(iterations: parallelRuns) {
+        let failures: Atomic<[Error?]> = Atomic(wrappedValue: Array(repeating: nil, count: parallelRuns))
+        DispatchQueue.concurrentPerform(iterations: parallelRuns) { iteration in
             do {
-                try testObjects[$0].ctx.asDecodingContext { [data = testObjects[$0].data] in
+                try testObjects[iteration].ctx.asDecodingContext { [data = testObjects[$0].data] in
                     _ = try JSONDecoder().decode([DecodableEntity].self, from: data)
                 }
             } catch {
-                failures[$0] = error
+                failures.withValueVoid { $0[iteration] = error }
             }
         }
+        let allFailures = failures.wrappedValue
         for run in 0..<parallelRuns {
-            XCTAssertNil(failures[run], "Run \(run) failed!")
+            XCTAssertNil(allFailures[run], "Run \(run) failed!")
         }
         for (idx, data) in testObjects.enumerated() {
             XCTAssertEqual(try DecodableEntity.all(in: data.ctx).count, testDataCount, "Context at \(idx) did not have enough objects!")

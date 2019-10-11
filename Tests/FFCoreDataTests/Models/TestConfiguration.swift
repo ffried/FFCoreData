@@ -18,20 +18,24 @@ import Foundation
 import FFCoreData
 
 extension CoreDataStack.Configuration {
+    private static let testModelName = "TestModel"
+    private static let testSQLiteName = "TestData"
+    private static let testOptions: Options = [.default, .clearDataStoreOnSetupFailure]
+
     #if SWIFT_PACKAGE
     static let test: CoreDataStack.Configuration = {
         var modelURL = URL(fileURLWithPath: #file)
         modelURL.deleteLastPathComponent() // Models
-        modelURL.appendPathComponent("TestModel")
+        modelURL.appendPathComponent(testModelName)
         modelURL.appendPathExtension("momd")
         #if os(iOS) || os(watchOS) || os(tvOS)
-        return CoreDataStack.Configuration(modelURL: modelURL, sqliteName: "TestData")
+        return CoreDataStack.Configuration(modelURL: modelURL, sqliteName: testSQLiteName, options: testOptions)
         #else
-        return CoreDataStack.Configuration(modelURL: modelURL, applicationSupportSubfolder: "FFCoreDataTests", sqliteName: "TestData")
+        return CoreDataStack.Configuration(modelURL: modelURL, applicationSupportSubfolder: "FFCoreDataTests", sqliteName: testSQLiteName, options: testOptions)
         #endif
     }()
     #else
     private final class BundleClass {}
-    static let test = CoreDataStack.Configuration(bundle: Bundle(for: BundleClass.self), modelName: "TestModel", sqliteName: "TestData")
+    static let test = CoreDataStack.Configuration(bundle: Bundle(for: BundleClass.self), modelName: testModelName, sqliteName: testSQLiteName, options: testOptions)
     #endif
 }
