@@ -71,10 +71,12 @@ extension NSManagedObject {
         return MOCBlockObserver(mode: mocObservationMode, filter: mocObjectsFilter, fireInitially: fireInitially, handler: handler)
     }
 
+    #if canImport(Combine)
     @available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
     public func publishChanges() -> MOCChangePublisher<MOCObjectsFilter> {
         return MOCChangePublisher(mode: mocObservationMode, filter: mocObjectsFilter)
     }
+    #endif
 }
 
 fileprivate extension MOCObservationMode {
@@ -110,9 +112,11 @@ extension Sequence where Element: NSManagedObject {
         return MOCBlockObserver(mode: mode, filter: filter, fireInitially: fireInitially, handler: handler)
     }
 
+    #if canImport(Combine)
     @available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
     public func publishChanges() -> MOCChangePublisher<MOCObjectsFilter> {
         let (mode, filter) = mocObservationModeAndObjectsFilter()
         return MOCChangePublisher(mode: mode, filter: filter)
     }
+    #endif
 }

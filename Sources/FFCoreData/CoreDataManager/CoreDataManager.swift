@@ -77,11 +77,11 @@ fileprivate final class CoreDataManager {
     }
     
     func createTemporaryMainContext() -> NSManagedObjectContext {
-        return createTemporaryContext(with: .mainQueueConcurrencyType)
+        createTemporaryContext(with: .mainQueueConcurrencyType)
     }
     
     func createTemporaryBackgroundContext() -> NSManagedObjectContext {
-        return createTemporaryContext(with: .privateQueueConcurrencyType)
+        createTemporaryContext(with: .privateQueueConcurrencyType)
     }
     
     private func createTemporaryContext(with type: NSManagedObjectContextConcurrencyType) -> NSManagedObjectContext {
@@ -95,7 +95,8 @@ fileprivate final class CoreDataManager {
     func clearDataStore() throws {
         let fileManager = FileManager.default
         try fileManager.contentsOfDirectory(at: configuration.storePath, includingPropertiesForKeys: nil, options: [])
-            .filter { $0.lastPathComponent.hasPrefix(configuration.sqliteName) }
+            .lazy
+            .filter { [configuration] in $0.lastPathComponent.hasPrefix(configuration.sqliteName) }
             .forEach(fileManager.removeItem)
     }
     
@@ -146,7 +147,7 @@ public enum CoreDataStack {
         }
     }
     public static var configuration: Configuration {
-        get { return _configuration ?? .legacyConfiguration }
+        get { _configuration ?? .legacyConfiguration }
         set { _configuration = newValue }
     }
     

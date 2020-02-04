@@ -18,6 +18,7 @@
 //  limitations under the License.
 //
 
+#if canImport(Combine)
 import struct Foundation.Notification
 import class Foundation.NotificationCenter
 import Combine
@@ -49,3 +50,4 @@ public struct MOCChangePublisher<Filter: MOCObserverFilter>: Publisher {
         upstream.receive(subscriber: subscriber)
     }
 }
+#endif

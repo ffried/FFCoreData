@@ -43,8 +43,10 @@ extension Fetchable where Self: NSManagedObject {
         return MOCBlockObserver(mode: mode, filter: MOCEntitiesFilter(entityNames: [entityName]), fireInitially: fireInitially, handler: handler)
     }
 
+    #if canImport(Combine)
     @available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
     public static func publishEntityChanges(with mode: MOCObservationMode = .allContexts) -> MOCChangePublisher<MOCEntitiesFilter> {
         return MOCChangePublisher(mode: mode, filter: MOCEntitiesFilter(entityNames: [entityName]))
     }
+    #endif
 }

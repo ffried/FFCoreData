@@ -18,6 +18,7 @@
 //  limitations under the License.
 //
 
+#if canImport(Combine)
 import Combine
 import CoreData
 import FFFoundation
@@ -91,3 +92,4 @@ fileprivate final class PublisherControllerDelegate<ResultType: NSFetchRequestRe
         controller.fetchedObjects.map(send)
     }
 }
+#endif
