@@ -40,9 +40,11 @@ extension CoreDataDecodable {
 extension CoreDataDecodable where Self: FindOrCreatable {
     @discardableResult
     public static func findOrCreate(for dto: DTO, in context: NSManagedObjectContext) throws -> Self {
-        var object = try findOrCreate(in: context)
-        try object.update(from: dto)
-        return object
+        try context.asDecodingContext {
+            var object = try findOrCreate(in: context)
+            try object.update(from: dto)
+            return object
+        }
     }
 }
 
