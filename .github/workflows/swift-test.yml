@@ -34,6 +34,15 @@ jobs:
         with:
           release-version: 5.2.2
       - uses: actions/checkout@v2
+      - name: Generate model
+        run: |
+          xcrun --show-sdk-path
+          xcrun --sdk macosx --show-sdk-path
+          xcrun momc --sdkroot "$(xcrun --sdk macosx --show-sdk-path)" \
+            --macosx-deployment-target "10.12" \
+            --module "FFCoreDataTests" \
+            "$(pwd)/Tests/FFCoreDataTests/Models/TestModel.xcdatamodeld" \
+            "$(pwd)/Tests/FFCoreDataTests/Models"
       - name: Build & Test
         run: swift test -v --parallel --enable-code-coverage
       - name: Generate Coverage Files
