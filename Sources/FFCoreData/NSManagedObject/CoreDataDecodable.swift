@@ -105,9 +105,12 @@ extension NSManagedObjectContext {
     }
 }
 
+// MARK: - Foundation decoder extensions
+
 #if canImport(Combine)
 import Combine
 
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
 extension TopLevelDecoder {
     /// Decodes the entity from a given `Input` using its `DTO` type.
     ///
@@ -118,7 +121,7 @@ extension TopLevelDecoder {
     /// - Throws: Any error thrown by `Entity.findOrCreate`, `TopLevelDecoder.decode(_: from:)` or `NSManagedObjectContext.decodingContext(at:)`
     /// - Note: Only use this method inside a closure submitted to `NSManagedObject.asDecodingContext(do:)`.
     /// - SeeAlso: `TopLevelDecoder.decode(_:from:in:)`
-    public final func decode<Entity: CoreDataDecodable>(_ entity: Entity.Type, from input: Input) throws -> Entity {
+    public func decode<Entity: CoreDataDecodable>(_ entity: Entity.Type, from input: Input) throws -> Entity {
         return try .findOrCreate(for: decode(entity.DTO.self, from: input), in: .decodingContext())
     }
 
@@ -131,12 +134,12 @@ extension TopLevelDecoder {
     /// - Returns: The decoded entity.
     /// - Throws: Any error thrown by `TopLevelDecoder.decode(_:from:)`
     /// - SeeAlso: `TopLevelDecoder.decode(_:from:)`
-    public final func decode<Entity: CoreDataDecodable>(_ entity: Entity.Type, from input: Input, in context: NSManagedObjectContext) throws -> Entity {
+    public func decode<Entity: CoreDataDecodable>(_ entity: Entity.Type, from input: Input, in context: NSManagedObjectContext) throws -> Entity {
         return try context.asDecodingContext { try decode(entity, from: input) }
     }
 }
-#else
-// MARK: - Foundation decoder extensions
+#endif
+
 extension JSONDecoder {
     /// Decodes the entity from a JSON in a given `Data` using its `DTO` type.
     ///
@@ -192,4 +195,3 @@ extension PropertyListDecoder {
         return try context.asDecodingContext { try decode(entity, from: data) }
     }
 }
-#endif
