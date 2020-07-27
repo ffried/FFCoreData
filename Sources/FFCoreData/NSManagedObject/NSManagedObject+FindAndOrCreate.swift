@@ -22,30 +22,10 @@ import Foundation
 import CoreData
 import FFFoundation
 
-extension NSPredicate {
-    @inlinable
-    public convenience init(format: String, arguments: Any...) {
-        self.init(format: format, argumentArray: arguments)
-    }
-}
-
-public typealias KeyObjectDictionary = [String: Any]
-
 fileprivate extension KeyObjectDictionary {
+    @inline(__always)
     func asPredicate(with compoundType: NSCompoundPredicate.LogicalType) -> NSCompoundPredicate {
-        return NSCompoundPredicate(type: compoundType, subpredicates: map {
-            NSPredicate(format: "%K == %@", arguments: $0.key, $0.value)
-        })
-    }
-    
-    func apply(to object: NSObject, in context: NSManagedObjectContext) {
-        forEach {
-            if let id = $1 as? NSManagedObjectID {
-                object.setValue(context.object(with: id), forKey: $0)
-            } else {
-                object.setValue($1, forKey: $0)
-            }
-        }
+        return NSCompoundPredicate(type: compoundType, dictionary: self)
     }
 }
 
@@ -67,17 +47,22 @@ public typealias FindOrCreatable = Fetchable & Creatable
 
 public struct InvalidEntityError: Error, Equatable, CustomStringConvertible {
     let entityName: String
+    let entityType: Any.Type
 
     public var description: String {
-        return "Invalid entity with name \"\(entityName)\""
+        return "Invalid entity with name \"\(entityName)\" on type \(entityType)"
+    }
+
+    public static func ==(lhs: InvalidEntityError, rhs: InvalidEntityError) -> Bool {
+        return lhs.entityName == rhs.entityName && lhs.entityType == rhs.entityType
     }
 }
 
 extension Entity {
-    internal static func entity(in context: NSManagedObjectContext) throws -> NSEntityDescription {
+    internal static func entityDescription(in context: NSManagedObjectContext) throws -> NSEntityDescription {
         let name = entityName
         guard let entity = NSEntityDescription.entity(forEntityName: name, in: context) else {
-            throw InvalidEntityError(entityName: name)
+            throw InvalidEntityError(entityName: name, entityType: Self.self)
         }
         return entity
     }
@@ -97,7 +82,7 @@ extension Fetchable {
     }
 
     public static func fetchRequest(with predicate: NSPredicate?,
-                                    sortedBy sortDescriptors: [NSSortDescriptor]?,
+                                    sortedBy sortDescriptors: [NSSortDescriptor]? = nil,
                                     offsetBy offset: Int? = nil,
                                     limitedBy limit: Int? = nil) -> NSFetchRequest<Self> {
         let fetchRequest = self.fetchRequest()
@@ -113,6 +98,14 @@ extension Fetchable {
     }
 
     @inlinable
+    public static func fetchRequest(where filter: FetchableFilterExpression<Self>,
+                                    sortedBy sortDescriptors: [NSSortDescriptor]? = nil,
+                                    offsetBy offset: Int? = nil,
+                                    limitedBy limit: Int? = nil) -> NSFetchRequest<Self> {
+        return fetchRequest(with: filter.predicate, sortedBy: sortDescriptors, offsetBy: offset, limitedBy: limit)
+    }
+
+    @inlinable
     public static func count(in context: NSManagedObjectContext) throws -> Int {
         return try context.count(for: fetchRequest())
     }
@@ -122,6 +115,11 @@ extension Creatable {
     @inlinable
     public static func create(in context: NSManagedObjectContext) throws -> Self {
         return try create(in: context, applying: nil)
+    }
+
+    @inlinable
+    public static func create(in context: NSManagedObjectContext, setting dictionaryExp: KeyObjectDictionaryExpression<Self>) throws -> Self {
+        return try create(in: context, applying: dictionaryExp.dict)
     }
 }
 
@@ -150,8 +148,18 @@ extension Fetchable {
     }
 
     @inlinable
+    public static func find(in context: NSManagedObjectContext, where filter: FetchableFilterExpression<Self>) throws -> [Self] {
+        return try find(in: context, where: filter, sortedBy: nil)
+    }
+
+    @inlinable
     public static func find(in context: NSManagedObjectContext, with predicate: NSPredicate?, sortedBy sortDescriptors: [NSSortDescriptor]?) throws -> [Self] {
         return try context.fetch(fetchRequest(with: predicate, sortedBy: sortDescriptors))
+    }
+
+    @inlinable
+    public static func find(in context: NSManagedObjectContext, where filter: FetchableFilterExpression<Self>, sortedBy sortDescriptors: [NSSortDescriptor]?) throws -> [Self] {
+        return try context.fetch(fetchRequest(where: filter, sortedBy: sortDescriptors))
     }
 
     @inlinable
@@ -173,23 +181,57 @@ extension Fetchable {
     }
 
     @inlinable
+    public static func findFirst(in context: NSManagedObjectContext, where filter: FetchableFilterExpression<Self>) throws -> Self? {
+        return try findFirst(in: context, where: filter, sortedBy: nil)
+    }
+
+    @inlinable
     public static func findFirst(in context: NSManagedObjectContext, with predicate: NSPredicate?, sortedBy sortDescriptors: [NSSortDescriptor]?) throws -> Self? {
         return try context.fetch(fetchRequest(with: predicate, sortedBy: sortDescriptors, limitedBy: 1)).first
     }
 
     @inlinable
-    public static func random(in context: NSManagedObjectContext) throws -> Self? {
-        return try random(upTo: count(in: context), in: context)
+    public static func findFirst(in context: NSManagedObjectContext, where filter: FetchableFilterExpression<Self>, sortedBy sortDescriptors: [NSSortDescriptor]?) throws -> Self? {
+        return try context.fetch(fetchRequest(where: filter, sortedBy: sortDescriptors, limitedBy: 1)).first
     }
 
+    @inlinable
+    public static func random(in context: NSManagedObjectContext) throws -> Self? {
+        return try random(in: context, with: nil)
+    }
+
+    @inlinable
+    public static func random(in context: NSManagedObjectContext, with predicate: NSPredicate?) throws -> Self? {
+        return try random(upTo: count(in: context), in: context, with: predicate)
+    }
+
+    @inlinable
+    public static func random(in context: NSManagedObjectContext, where filter: FetchableFilterExpression<Self>) throws -> Self? {
+        return try random(upTo: count(in: context), in: context, where: filter)
+    }
+
+    @inlinable
     public static func random(upTo randomBound: Int, in context: NSManagedObjectContext) throws -> Self? {
-        return try context.fetch(fetchRequest(with: nil, sortedBy: nil, offsetBy: Int.random(in: 0..<randomBound), limitedBy: 1)).first
+        return try random(upTo: randomBound, in: context, with: nil)
+    }
+
+    public static func random(upTo randomBound: Int, in context: NSManagedObjectContext, with predicate: NSPredicate?) throws -> Self? {
+        return try context.fetch(fetchRequest(with: predicate, sortedBy: nil, offsetBy: Int.random(in: 0..<randomBound), limitedBy: 1)).first
+    }
+
+    public static func random(upTo randomBound: Int, in context: NSManagedObjectContext, where filter: FetchableFilterExpression<Self>) throws -> Self? {
+        return try context.fetch(fetchRequest(where: filter, sortedBy: nil, offsetBy: Int.random(in: 0..<randomBound), limitedBy: 1)).first
     }
 }
 
 extension Fetchable where Self: Creatable {
     public static func findOrCreate(in context: NSManagedObjectContext, by dictionary: KeyObjectDictionary?) throws -> Self {
         return try findFirst(in: context, with: dictionary?.asPredicate(with: .and)) ?? create(in: context, applying: dictionary)
+    }
+
+    @inlinable
+    public static func findOrCreate(in context: NSManagedObjectContext, where dictionaryExp: KeyObjectDictionaryExpression<Self>) throws -> Self {
+        return try findFirst(in: context, where: dictionaryExp.filter) ?? create(in: context, setting: dictionaryExp)
     }
 
     @inlinable
@@ -200,7 +242,7 @@ extension Fetchable where Self: Creatable {
 
 extension Creatable where Self: NSManagedObject {
     public static func create(in context: NSManagedObjectContext, applying dictionary: KeyObjectDictionary?) throws -> Self {
-        let obj = self.init(entity: try entity(in: context), insertInto: context)
+        let obj = self.init(entity: try entityDescription(in: context), insertInto: context)
         dictionary?.apply(to: obj, in: context)
         return obj
     }
