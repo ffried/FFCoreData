@@ -10,7 +10,7 @@ jobs:
   validate-linux-tests:
     runs-on: macos-latest
     steps:
-      - run: sudo xcode-select -s /Applications/Xcode_11.4.app/Contents/Developer
+      # - run: sudo xcode-select -s /Applications/Xcode_11.4.app/Contents/Developer
       - uses: actions/checkout@v2
       - name: Generate Linux Tests
         run: swift test --generate-linuxmain
@@ -26,8 +26,8 @@ jobs:
 
     runs-on: ${{matrix.os}}
     steps:
-      - run: sudo xcode-select -s /Applications/Xcode_11.4.app/Contents/Developer
-        if: runner.os == 'macOS'
+      # - run: sudo xcode-select -s /Applications/Xcode_11.4.app/Contents/Developer
+      #   if: runner.os == 'macOS'
       - name: Install Swift
         if: runner.os == 'Linux'
         uses: sersoft-gmbh/SwiftyActions@v1
@@ -71,7 +71,7 @@ jobs:
           - action: build
             destination: platform=watchOS Simulator,OS=latest,name=Apple Watch Series 5 - 44mm
     steps:
-      - run: sudo xcode-select -s /Applications/Xcode_11.4.app/Contents/Developer
+      # - run: sudo xcode-select -s /Applications/Xcode_11.4.app/Contents/Developer
       - uses: actions/checkout@v2
         with:
           submodules: 'recursive'
