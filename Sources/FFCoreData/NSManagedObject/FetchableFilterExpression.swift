@@ -61,6 +61,16 @@ public func != <Model, Value: Equatable & ReferenceConvertible>(lhs: KeyPath<Mod
     return .init(predicate: lhs != rhs)
 }
 
+//@inlinable
+//public func == <Model, Value: Equatable & ReferenceConvertible>(lhs: KeyPath<Model, Value?>, rhs: Value?) -> FetchableFilterExpression<Model> {
+//    return .init(predicate: lhs == rhs)
+//}
+//
+//@inlinable
+//public func != <Model, Value: Equatable & ReferenceConvertible>(lhs: KeyPath<Model, Value?>, rhs: Value?) -> FetchableFilterExpression<Model> {
+//    return .init(predicate: lhs != rhs)
+//}
+
 @inlinable
 public func == <Model, Value: Equatable & SignedInteger>(lhs: KeyPath<Model, Value>, rhs: Value?) -> FetchableFilterExpression<Model> {
     return .init(predicate: lhs == rhs)
@@ -101,6 +111,16 @@ public func != <Model>(lhs: KeyPath<Model, NSNumber>, rhs: NSNumber?) -> Fetchab
     return .init(predicate: lhs != rhs)
 }
 
+//@inlinable
+//public func == <Model>(lhs: KeyPath<Model, NSNumber?>, rhs: NSNumber?) -> FetchableFilterExpression<Model> {
+//    return .init(predicate: lhs == rhs)
+//}
+//
+//@inlinable
+//public func != <Model>(lhs: KeyPath<Model, NSNumber?>, rhs: NSNumber?) -> FetchableFilterExpression<Model> {
+//    return .init(predicate: lhs != rhs)
+//}
+
 // MARK: KeyPath (right)
 @inlinable
 public func == <Model>(lhs: Bool?, rhs: KeyPath<Model, Bool>) -> FetchableFilterExpression<Model> {
@@ -131,6 +151,16 @@ public func == <Model, Value: Equatable & ReferenceConvertible>(lhs: Value?, rhs
 public func != <Model, Value: Equatable & ReferenceConvertible>(lhs: Value?, rhs: KeyPath<Model, Value>) -> FetchableFilterExpression<Model> {
     return .init(predicate: lhs != rhs)
 }
+
+//@inlinable
+//public func == <Model, Value: Equatable & ReferenceConvertible>(lhs: Value?, rhs: KeyPath<Model, Value?>) -> FetchableFilterExpression<Model> {
+//    return .init(predicate: lhs == rhs)
+//}
+//
+//@inlinable
+//public func != <Model, Value: Equatable & ReferenceConvertible>(lhs: Value?, rhs: KeyPath<Model, Value?>) -> FetchableFilterExpression<Model> {
+//    return .init(predicate: lhs != rhs)
+//}
 
 @inlinable
 public func == <Model, Value: Equatable & SignedInteger>(lhs: Value?, rhs: KeyPath<Model, Value>) -> FetchableFilterExpression<Model> {
@@ -171,6 +201,16 @@ public func == <Model>(lhs: NSNumber?, rhs: KeyPath<Model, NSNumber>) -> Fetchab
 public func != <Model>(lhs: NSNumber?, rhs: KeyPath<Model, NSNumber>) -> FetchableFilterExpression<Model> {
     return .init(predicate: lhs != rhs)
 }
+
+//@inlinable
+//public func == <Model>(lhs: NSNumber?, rhs: KeyPath<Model, NSNumber?>) -> FetchableFilterExpression<Model> {
+//    return .init(predicate: lhs == rhs)
+//}
+//
+//@inlinable
+//public func != <Model>(lhs: NSNumber?, rhs: KeyPath<Model, NSNumber?>) -> FetchableFilterExpression<Model> {
+//    return .init(predicate: lhs != rhs)
+//}
 
 // MARK: - Comparable
 // MARK: KeyPath (left)

@@ -16,11 +16,15 @@ extension FFCoreDataTests {
     // to regenerate.
     static let __allTests__FFCoreDataTests = [
         ("testContextCreation", testContextCreation),
+        ("testFindObjectWithComparisonExpression", testFindObjectWithComparisonExpression),
+        ("testFindObjectWithEqualExpression", testFindObjectWithEqualExpression),
         ("testObjectCreation", testObjectCreation),
         ("testObjectCreationWithDictionary", testObjectCreationWithDictionary),
+        ("testObjectCreationWithDictionaryExpression", testObjectCreationWithDictionaryExpression),
         ("testParentStore", testParentStore),
         ("testSearchObject", testSearchObject),
         ("testSearchObjects", testSearchObjects),
+        ("testSearchObjectWithDictionaryExpression", testSearchObjectWithDictionaryExpression),
     ]
 }
 

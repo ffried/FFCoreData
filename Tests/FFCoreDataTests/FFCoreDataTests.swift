@@ -43,11 +43,23 @@ final class FFCoreDataTests: XCTestCase {
         XCTAssertNoThrow(try CoreDataStack.clearDataStore())
         super.tearDown()
     }
+
+    private func createTempObjects<UUIDs>(for uuids: UUIDs, in context: NSManagedObjectContext) throws
+        where UUIDs: Sequence, UUIDs.Element == String
+    {
+        for uuid in uuids {
+            _ = try TestEntity.findOrCreate(in: context, by: [#keyPath(TestEntity.uuid): uuid])
+        }
+    }
+
+    private func createTempObjects<UUIDs>(for uuids: UUIDs, in context: NSManagedObjectContext) throws
+        where UUIDs: Sequence, UUIDs.Element == UUID
+    {
+        try createTempObjects(for: uuids.lazy.map { $0.uuidString }, in: context)
+    }
     
     private func createTempObjects(amount count: Int, in context: NSManagedObjectContext) throws {
-        for _ in 0..<count {
-            _ = try TestEntity.findOrCreate(in: context, by: [#keyPath(TestEntity.uuid): UUID().uuidString])
-        }
+        try createTempObjects(for: (0..<count).lazy.map { _ in UUID() }, in: context)
     }
     
     func testContextCreation() {
@@ -63,10 +75,43 @@ final class FFCoreDataTests: XCTestCase {
         let obj = try TestEntity.create(in: context, applying: [#keyPath(TestEntity.uuid): uuid])
         XCTAssertEqual(obj.uuid, uuid)
     }
+
+    func testObjectCreationWithDictionaryExpression() throws {
+        let uuid = UUID().uuidString
+        let obj = try TestEntity.create(in: context, setting: \.uuid == uuid)
+        XCTAssertEqual(obj.uuid, uuid)
+    }
     
     func testSearchObject() throws {
         let obj = try TestEntity.findOrCreate(in: context, by: [#keyPath(TestEntity.uuid): testUUID])
         XCTAssertEqual(obj.uuid, testUUID)
+    }
+
+    func testSearchObjectWithDictionaryExpression() throws {
+        let obj = try TestEntity.findOrCreate(in: context, where: \.uuid == testUUID)
+        XCTAssertEqual(obj.uuid, testUUID)
+    }
+
+    func testFindObjectWithEqualExpression() throws {
+        let uuids = [UUID(), UUID()]
+        try createTempObjects(for: uuids, in: context)
+        let equalObjects = try TestEntity.find(in: context, where: \.uuid == uuids[0].uuidString)
+        let notEqualObjects = try TestEntity.find(in: context, where: \.uuid != uuids[0].uuidString)
+        XCTAssertEqual(equalObjects.count, 1)
+        XCTAssertEqual(equalObjects.first?.uuid, uuids[0].uuidString)
+        XCTAssertEqual(notEqualObjects.count, 1)
+        XCTAssertEqual(notEqualObjects.first?.uuid, uuids[1].uuidString)
+    }
+
+    func testFindObjectWithComparisonExpression() throws {
+        let uuids = ["A", "B", "C", "D"]
+        try createTempObjects(for: uuids, in: context)
+        let greaterObjects = try TestEntity.find(in: context, where: \.uuid! > uuids[1])
+        let smallerObjects = try TestEntity.find(in: context, where: \.uuid! <= uuids[1])
+        XCTAssertEqual(greaterObjects.count, 2)
+        XCTAssertEqual(Set(greaterObjects.map { $0.uuid }), Set(uuids[2...]))
+        XCTAssertEqual(smallerObjects.count, 2)
+        XCTAssertEqual(Set(smallerObjects.map { $0.uuid }), Set(uuids[..<2]))
     }
     
     func testSearchObjects() throws {
