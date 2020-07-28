@@ -10,6 +10,7 @@
 		0714084F1E7FF504004318C9 /* FFCoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 071408461E7FF504004318C9 /* FFCoreData.framework */; };
 		0722165324CF2E2B00CCFE8D /* KeyObjectDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0722165124CF2E2B00CCFE8D /* KeyObjectDictionary.swift */; };
 		0722165424CF2E2C00CCFE8D /* FetchableFilterExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0722165224CF2E2B00CCFE8D /* FetchableFilterExpression.swift */; };
+		0722165624D003D100CCFE8D /* FetchableSortExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0722165524D003D100CCFE8D /* FetchableSortExpression.swift */; };
 		0799DB45234F1CB70075314E /* CoreDataDecodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0799DB3D234F1CB70075314E /* CoreDataDecodableTests.swift */; };
 		0799DB48234F1CB70075314E /* TestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0799DB41234F1CB70075314E /* TestModel.xcdatamodeld */; };
 		0799DB4A234F1CB70075314E /* FFCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0799DB44234F1CB70075314E /* FFCoreDataTests.swift */; };
@@ -54,6 +55,7 @@
 		0714084E1E7FF504004318C9 /* FFCoreDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FFCoreDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0722165124CF2E2B00CCFE8D /* KeyObjectDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyObjectDictionary.swift; sourceTree = "<group>"; };
 		0722165224CF2E2B00CCFE8D /* FetchableFilterExpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchableFilterExpression.swift; sourceTree = "<group>"; };
+		0722165524D003D100CCFE8D /* FetchableSortExpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchableSortExpression.swift; sourceTree = "<group>"; };
 		0799DB3D234F1CB70075314E /* CoreDataDecodableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataDecodableTests.swift; sourceTree = "<group>"; };
 		0799DB42234F1CB70075314E /* TestModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModel.xcdatamodel; sourceTree = "<group>"; };
 		0799DB43234F1CB70075314E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 		0799DB4D234F1CBF0075314E /* NSManagedObject */ = {
 			isa = PBXGroup;
 			children = (
+				0722165524D003D100CCFE8D /* FetchableSortExpression.swift */,
 				0799DB4F234F1CBF0075314E /* CoreDataDecodable.swift */,
 				0722165224CF2E2B00CCFE8D /* FetchableFilterExpression.swift */,
 				0722165124CF2E2B00CCFE8D /* KeyObjectDictionary.swift */,
@@ -392,6 +395,7 @@
 				0799DB7B234F1CBF0075314E /* MOCBlockObservers.swift in Sources */,
 				0799DB6A234F1CBF0075314E /* CoreDataDecodable.swift in Sources */,
 				0799DB70234F1CBF0075314E /* CoreDataManager.swift in Sources */,
+				0722165624D003D100CCFE8D /* FetchableSortExpression.swift in Sources */,
 				0799DB74234F1CBF0075314E /* SwiftSupport.swift in Sources */,
 				0799DB69234F1CBF0075314E /* NSManagedObject+FindAndOrCreate.swift in Sources */,
 				0799DB75234F1CBF0075314E /* NSFetchedResultsPublisher.swift in Sources */,

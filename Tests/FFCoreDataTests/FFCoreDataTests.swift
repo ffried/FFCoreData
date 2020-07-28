@@ -106,12 +106,12 @@ final class FFCoreDataTests: XCTestCase {
     func testFindObjectWithComparisonExpression() throws {
         let uuids = ["A", "B", "C", "D"]
         try createTempObjects(for: uuids, in: context)
-        let greaterObjects = try TestEntity.find(in: context, where: \.uuid! > uuids[1])
-        let smallerObjects = try TestEntity.find(in: context, where: \.uuid! <= uuids[1])
+        let greaterObjects = try TestEntity.find(in: context, where: \.uuid > uuids[1], sortedBy: ^\.uuid)
+        let smallerObjects = try TestEntity.find(in: context, where: \.uuid <= uuids[1], sortedBy: ^\.uuid)
         XCTAssertEqual(greaterObjects.count, 2)
-        XCTAssertEqual(Set(greaterObjects.map { $0.uuid }), Set(uuids[2...]))
+        XCTAssertEqual(greaterObjects.map { $0.uuid }, Array(uuids[2...]))
         XCTAssertEqual(smallerObjects.count, 2)
-        XCTAssertEqual(Set(smallerObjects.map { $0.uuid }), Set(uuids[..<2]))
+        XCTAssertEqual(smallerObjects.map { $0.uuid }, Array(uuids[..<2]))
     }
     
     func testSearchObjects() throws {
