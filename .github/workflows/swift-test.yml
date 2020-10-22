@@ -17,37 +17,37 @@ jobs:
       - name: Check for git differences
         run: git diff --exit-code
 
-  test-spm:
-    strategy:
-      matrix:
-        os:
-          - macos-latest
-          # - ubuntu-20.04
+  # test-spm:
+  #   strategy:
+  #     matrix:
+  #       os:
+  #         - macos-latest
+  #         # - ubuntu-20.04
 
-    runs-on: ${{matrix.os}}
-    steps:
-      - run: sudo xcode-select -s /Applications/Xcode_12.2.app/Contents/Developer
-        if: runner.os == 'macOS'
-      - name: Install Swift
-        if: runner.os == 'Linux'
-        uses: sersoft-gmbh/SwiftyActions@v1
-        with:
-          release-version: 5.3
-          platform: ${{matrix.os}}
-      - uses: actions/checkout@v2
-      - name: Build & Test
-        run: swift test -v --parallel --enable-code-coverage
-      - name: Generate Coverage Files
-        if: runner.os == 'macOS'
-        run: xcrun llvm-cov export -format="lcov" .build/debug/*PackageTests.xctest/Contents/MacOS/*PackageTests -instr-profile .build/debug/codecov/default.profdata > coverage.lcov
-      - name: Generate Coverage Files
-        if: runner.os == 'Linux'
-        run: llvm-cov export -format="lcov" .build/debug/*PackageTests.xctest -instr-profile .build/debug/codecov/default.profdata > coverage.lcov
-      - uses: codecov/codecov-action@v1
-        with:
-          token: ${{secrets.CODECOV_TOKEN}}
-          file: coverage.lcov
-          fail_ci_if_error: true
+  #   runs-on: ${{matrix.os}}
+  #   steps:
+  #     - run: sudo xcode-select -s /Applications/Xcode_12.2.app/Contents/Developer
+  #       if: runner.os == 'macOS'
+  #     - name: Install Swift
+  #       if: runner.os == 'Linux'
+  #       uses: sersoft-gmbh/SwiftyActions@v1
+  #       with:
+  #         release-version: 5.3
+  #         platform: ${{matrix.os}}
+  #     - uses: actions/checkout@v2
+  #     - name: Build & Test
+  #       run: swift test -v --parallel --enable-code-coverage
+  #     - name: Generate Coverage Files
+  #       if: runner.os == 'macOS'
+  #       run: xcrun llvm-cov export -format="lcov" .build/debug/*PackageTests.xctest/Contents/MacOS/*PackageTests -instr-profile .build/debug/codecov/default.profdata > coverage.lcov
+  #     - name: Generate Coverage Files
+  #       if: runner.os == 'Linux'
+  #       run: llvm-cov export -format="lcov" .build/debug/*PackageTests.xctest -instr-profile .build/debug/codecov/default.profdata > coverage.lcov
+  #     - uses: codecov/codecov-action@v1
+  #       with:
+  #         token: ${{secrets.CODECOV_TOKEN}}
+  #         file: coverage.lcov
+  #         fail_ci_if_error: true
 
   test-xcode:
     runs-on: macos-latest
