@@ -34,19 +34,20 @@ public struct MOCEntitiesFilter: MOCObserverFilter {
     }
 
     public func include(managedObject: NSManagedObject) -> Bool {
-        return entityNames.contains(managedObject.entity.name ?? managedObject.entity.managedObjectClassName)
+        entityNames.contains(managedObject.entity.name ?? managedObject.entity.managedObjectClassName)
     }
 }
 
 extension Fetchable where Self: NSManagedObject {
-    public static func createMOCEntitiesObserver(with mode: MOCObservationMode = .allContexts, fireInitially: Bool = false, handler: @escaping MOCBlockObserver<MOCEntitiesFilter>.Handler) -> MOCBlockObserver<MOCEntitiesFilter> {
-        return MOCBlockObserver(mode: mode, filter: MOCEntitiesFilter(entityNames: [entityName]), fireInitially: fireInitially, handler: handler)
+    public static func createMOCEntitiesObserver(with mode: MOCObservationMode = .allContexts, fireInitially: Bool = false,
+                                                 handler: @escaping MOCBlockObserver<MOCEntitiesFilter>.Handler) -> MOCBlockObserver<MOCEntitiesFilter> {
+        MOCBlockObserver(mode: mode, filter: MOCEntitiesFilter(entityNames: [entityName]), fireInitially: fireInitially, handler: handler)
     }
 
     #if canImport(Combine)
     @available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
     public static func publishEntityChanges(with mode: MOCObservationMode = .allContexts) -> MOCChangePublisher<MOCEntitiesFilter> {
-        return MOCChangePublisher(mode: mode, filter: MOCEntitiesFilter(entityNames: [entityName]))
+        MOCChangePublisher(mode: mode, filter: MOCEntitiesFilter(entityNames: [entityName]))
     }
     #endif
 }

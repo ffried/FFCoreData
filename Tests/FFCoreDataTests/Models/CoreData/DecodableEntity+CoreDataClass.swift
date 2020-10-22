@@ -11,6 +11,7 @@ import Foundation
 import CoreData
 import FFCoreData
 
+@objc(DecodableEntity)
 public final class DecodableEntity: NSManagedObject, FindOrCreatable, CoreDataDecodable {
     public struct DTO: Codable {
         let idenfitier: String

@@ -11,6 +11,7 @@ import Foundation
 import CoreData
 import FFCoreData
 
+@objc(TestEntity)
 public final class TestEntity: NSManagedObject, FindOrCreatable {
 
 }

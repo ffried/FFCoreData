@@ -75,11 +75,11 @@ public final class TableViewDataSource<Result: NSFetchRequestResult>: NSObject, 
     // MARK: UITableViewDataSource
     @objc(numberOfSectionsInTableView:)
     public dynamic func numberOfSections(in tableView: UITableView) -> Int {
-        return fetchedResultsController?.sections?.count ?? 0
+        fetchedResultsController?.sections?.count ?? 0
     }
     
     @objc public dynamic func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return fetchedResultsController?.sections?[section].numberOfObjects ?? 0
+        fetchedResultsController?.sections?[section].numberOfObjects ?? 0
     }
     
     @objc(tableView:cellForRowAtIndexPath:)
@@ -103,12 +103,12 @@ public final class TableViewDataSource<Result: NSFetchRequestResult>: NSObject, 
     }
     
     @objc public dynamic func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        return delegate?.tableView?(tableView, titleForFooterInSection: section)
+        delegate?.tableView?(tableView, titleForFooterInSection: section)
     }
     
     @objc(sectionIndexTitlesForTableView:)
     public dynamic func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return delegate?.sectionIndexTitles?(for: tableView) ?? fetchedResultsController?.sectionIndexTitles
+        delegate?.sectionIndexTitles?(for: tableView) ?? fetchedResultsController?.sectionIndexTitles
     }
     
     @objc(tableView:sectionForSectionIndexTitle:atIndex:)
@@ -120,7 +120,7 @@ public final class TableViewDataSource<Result: NSFetchRequestResult>: NSObject, 
     
     @objc(tableView:canEditRowAtIndexPath:)
     public dynamic func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return delegate?.tableView?(tableView, canEditRowAt: indexPath) ?? true
+        delegate?.tableView?(tableView, canEditRowAt: indexPath) ?? true
     }
     
     @objc(tableView:canMoveRowAtIndexPath:)

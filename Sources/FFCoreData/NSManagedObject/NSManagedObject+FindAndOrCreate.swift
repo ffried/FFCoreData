@@ -50,11 +50,11 @@ public struct InvalidEntityError: Error, Equatable, CustomStringConvertible {
     let entityType: Any.Type
 
     public var description: String {
-        return "Invalid entity with name \"\(entityName)\" on type \(entityType)"
+        "Invalid entity with name \"\(entityName)\" on type \(entityType)"
     }
 
-    public static func ==(lhs: InvalidEntityError, rhs: InvalidEntityError) -> Bool {
-        return lhs.entityName == rhs.entityName && lhs.entityType == rhs.entityType
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        lhs.entityName == rhs.entityName && lhs.entityType == rhs.entityType
     }
 }
 
@@ -71,15 +71,13 @@ extension Entity {
 extension Entity where Self: NSManagedObject {
     @inlinable
     public static var entityName: String {
-        return String(class: self, removeNamespace: shouldRemoveNamespaceInEntityName)
+        String(class: self, removeNamespace: shouldRemoveNamespaceInEntityName)
     }
 }
 
 extension Fetchable {
     @inlinable
-    public static func fetchRequest() -> NSFetchRequest<Self> {
-        return NSFetchRequest(entityName: entityName)
-    }
+    public static func fetchRequest() -> NSFetchRequest<Self> { NSFetchRequest(entityName: entityName) }
 
     public static func fetchRequest(with predicate: NSPredicate?,
                                     sortedBy sortDescriptors: [NSSortDescriptor]? = nil,
@@ -116,49 +114,47 @@ extension Fetchable {
                                     sortedBy sortExpressions: FetchableSortExpression<Self>...,
                                     offsetBy offset: Int? = nil,
                                     limitedBy limit: Int? = nil) -> NSFetchRequest<Self> {
-        return fetchRequest(where: filter, sortedBy: sortExpressions, offsetBy: offset, limitedBy: limit)
+        fetchRequest(where: filter, sortedBy: sortExpressions, offsetBy: offset, limitedBy: limit)
     }
 
     @inlinable
     public static func count(in context: NSManagedObjectContext, with predicate: NSPredicate?) throws -> Int {
-        return try context.count(for: fetchRequest(with: predicate))
+        try context.count(for: fetchRequest(with: predicate))
     }
 
     @inlinable
     public static func count(in context: NSManagedObjectContext, where filter: FetchableFilterExpression<Self>) throws -> Int {
-        return try context.count(for: fetchRequest(where: filter))
+        try context.count(for: fetchRequest(where: filter))
     }
 
     @inlinable
     public static func count(in context: NSManagedObjectContext) throws -> Int {
         // This method is required since it is a protocol requirement which cannot be fulfilled with nil default parameters.
-        return try count(in: context, with: nil)
+        try count(in: context, with: nil)
     }
 }
 
 extension Creatable {
     @inlinable
     public static func create(in context: NSManagedObjectContext) throws -> Self {
-        return try create(in: context, applying: nil)
+        try create(in: context, applying: nil)
     }
 
     @inlinable
     public static func create(in context: NSManagedObjectContext, setting dictionaryExp: KeyObjectDictionaryExpression<Self>) throws -> Self {
-        return try create(in: context, applying: dictionaryExp.dict)
+        try create(in: context, applying: dictionaryExp.dict)
     }
 }
 
 extension Fetchable {
     @inlinable
-    public static func all(in context: NSManagedObjectContext) throws -> [Self] {
-        return try find(in: context)
-    }
+    public static func all(in context: NSManagedObjectContext) throws -> [Self] { try find(in: context) }
 
     @inlinable
     public static func find(in context: NSManagedObjectContext,
                             with predicate: NSPredicate? = nil,
                             sortedBy sortDescriptors: [NSSortDescriptor]? = nil) throws -> [Self] {
-        return try context.fetch(fetchRequest(with: predicate, sortedBy: sortDescriptors))
+        try context.fetch(fetchRequest(with: predicate, sortedBy: sortDescriptors))
     }
 
     @inlinable
@@ -167,25 +163,25 @@ extension Fetchable {
                                              sortedBy sortExpressions: SortExpressions) throws -> [Self]
         where SortExpressions: Collection, SortExpressions.Element == FetchableSortExpression<Self>
     {
-        return try context.fetch(fetchRequest(where: filter, sortedBy: sortExpressions))
+        try context.fetch(fetchRequest(where: filter, sortedBy: sortExpressions))
     }
 
     @inlinable
     public static func find(in context: NSManagedObjectContext,
                             where filter: FetchableFilterExpression<Self>,
                             sortedBy sortExpressions: FetchableSortExpression<Self>...) throws -> [Self] {
-        return try find(in: context, where: filter, sortedBy: sortExpressions)
+        try find(in: context, where: filter, sortedBy: sortExpressions)
     }
 
     public static func find(in context: NSManagedObjectContext, by dictionary: KeyObjectDictionary, sortedBy sortDescriptors: [NSSortDescriptor]? = nil) throws -> [Self] {
-        return try find(in: context, with: dictionary.asPredicate(with: .and), sortedBy: sortDescriptors)
+        try find(in: context, with: dictionary.asPredicate(with: .and), sortedBy: sortDescriptors)
     }
 
     @inlinable
     public static func findFirst(in context: NSManagedObjectContext,
                                  with predicate: NSPredicate? = nil,
                                  sortedBy sortDescriptors: [NSSortDescriptor]? = nil) throws -> Self? {
-        return try context.fetch(fetchRequest(with: predicate, sortedBy: sortDescriptors, limitedBy: 1)).first
+        try context.fetch(fetchRequest(with: predicate, sortedBy: sortDescriptors, limitedBy: 1)).first
     }
 
     @inlinable
@@ -194,47 +190,47 @@ extension Fetchable {
                                                   sortedBy sortExpressions: SortExpressions) throws -> Self?
         where SortExpressions: Collection, SortExpressions.Element == FetchableSortExpression<Self>
     {
-        return try context.fetch(fetchRequest(where: filter, sortedBy: sortExpressions, limitedBy: 1)).first
+        try context.fetch(fetchRequest(where: filter, sortedBy: sortExpressions, limitedBy: 1)).first
     }
 
     @inlinable
     public static func findFirst(in context: NSManagedObjectContext,
                                  where filter: FetchableFilterExpression<Self>,
                                  sortedBy sortExpressions: FetchableSortExpression<Self>...) throws -> Self? {
-        return try findFirst(in: context, where:  filter, sortedBy: sortExpressions)
+        try findFirst(in: context, where:  filter, sortedBy: sortExpressions)
     }
 
     public static func findFirst(in context: NSManagedObjectContext, by dictionary: KeyObjectDictionary, sortedBy sortDescriptors: [NSSortDescriptor]? = nil) throws -> Self? {
-        return try findFirst(in: context, with: dictionary.asPredicate(with: .and), sortedBy: sortDescriptors)
+        try findFirst(in: context, with: dictionary.asPredicate(with: .and), sortedBy: sortDescriptors)
     }
 
     public static func random(upTo randomBound: Int, in context: NSManagedObjectContext, with predicate: NSPredicate? = nil) throws -> Self? {
-        return try context.fetch(fetchRequest(with: predicate, offsetBy: .random(in: 0..<randomBound), limitedBy: 1)).first
+        try context.fetch(fetchRequest(with: predicate, offsetBy: .random(in: 0..<randomBound), limitedBy: 1)).first
     }
 
     public static func random(upTo randomBound: Int, in context: NSManagedObjectContext, where filter: FetchableFilterExpression<Self>) throws -> Self? {
-        return try context.fetch(fetchRequest(where: filter, offsetBy: .random(in: 0..<randomBound), limitedBy: 1)).first
+        try context.fetch(fetchRequest(where: filter, offsetBy: .random(in: 0..<randomBound), limitedBy: 1)).first
     }
 
     @inlinable
     public static func random(in context: NSManagedObjectContext, with predicate: NSPredicate? = nil) throws -> Self? {
-        return try random(upTo: count(in: context, with: predicate), in: context, with: predicate)
+        try random(upTo: count(in: context, with: predicate), in: context, with: predicate)
     }
 
     @inlinable
     public static func random(in context: NSManagedObjectContext, where filter: FetchableFilterExpression<Self>) throws -> Self? {
-        return try random(upTo: count(in: context, where: filter), in: context, where: filter)
+        try random(upTo: count(in: context, where: filter), in: context, where: filter)
     }
 }
 
 extension Fetchable where Self: Creatable {
     public static func findOrCreate(in context: NSManagedObjectContext, by dictionary: KeyObjectDictionary? = nil) throws -> Self {
-        return try findFirst(in: context, with: dictionary?.asPredicate(with: .and)) ?? create(in: context, applying: dictionary)
+        try findFirst(in: context, with: dictionary?.asPredicate(with: .and)) ?? create(in: context, applying: dictionary)
     }
 
     @inlinable
     public static func findOrCreate(in context: NSManagedObjectContext, where dictionaryExp: KeyObjectDictionaryExpression<Self>) throws -> Self {
-        return try findFirst(in: context, where: dictionaryExp.filter) ?? create(in: context, setting: dictionaryExp)
+        try findFirst(in: context, where: dictionaryExp.filter) ?? create(in: context, setting: dictionaryExp)
     }
 }
 
@@ -283,7 +279,7 @@ extension NSManagedObject {
 
 extension NSManagedObjectContext {
     public final func sync<T>(do work: () throws -> T) rethrows -> T {
-        return try {
+        try {
             var result: Result<T, Error>!
             performAndWait {
                 result = Result(catching: work)

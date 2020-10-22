@@ -10,7 +10,7 @@ jobs:
   validate-linux-tests:
     runs-on: macos-latest
     steps:
-      # - run: sudo xcode-select -s /Applications/Xcode_11.4.app/Contents/Developer
+      - run: sudo xcode-select -s /Applications/Xcode_12.1.app/Contents/Developer
       - uses: actions/checkout@v2
       - name: Generate Linux Tests
         run: swift test --generate-linuxmain
@@ -22,27 +22,19 @@ jobs:
       matrix:
         os:
           - macos-latest
-          # - ubuntu-18.04
+          # - ubuntu-20.04
 
     runs-on: ${{matrix.os}}
     steps:
-      # - run: sudo xcode-select -s /Applications/Xcode_11.4.app/Contents/Developer
-      #   if: runner.os == 'macOS'
+      - run: sudo xcode-select -s /Applications/Xcode_12.2.app/Contents/Developer
+        if: runner.os == 'macOS'
       - name: Install Swift
         if: runner.os == 'Linux'
         uses: sersoft-gmbh/SwiftyActions@v1
         with:
-          release-version: 5.2.2
+          release-version: 5.3
+          platform: ${{matrix.os}}
       - uses: actions/checkout@v2
-      - name: Generate model
-        run: |
-          xcrun --show-sdk-path
-          xcrun --sdk macosx --show-sdk-path
-          xcrun momc --sdkroot "$(xcrun --sdk macosx --show-sdk-path)" \
-            --macosx-deployment-target "10.12" \
-            --module "FFCoreDataTests" \
-            "$(pwd)/Tests/FFCoreDataTests/Models/TestModel.xcdatamodeld" \
-            "$(pwd)/Tests/FFCoreDataTests/Models"
       - name: Build & Test
         run: swift test -v --parallel --enable-code-coverage
       - name: Generate Coverage Files
@@ -64,23 +56,22 @@ jobs:
         action: [test]
         destination:
           - platform=macOS
-          - platform=iOS Simulator,OS=latest,name=iPhone 11
-          - platform=iOS Simulator,OS=latest,name=iPad Pro (9.7-inch)
+          - platform=iOS Simulator,OS=latest,name=iPhone 12 Pro
+          - platform=iOS Simulator,OS=latest,name=iPad Pro (11-inch) (2nd generation)
           - platform=tvOS Simulator,OS=latest,name=Apple TV 4K
-        include:
-          - action: build
-            destination: platform=watchOS Simulator,OS=latest,name=Apple Watch Series 5 - 44mm
+        # include:
+        #   - action: build
+        #     destination: platform=watchOS Simulator,OS=latest,name=Apple Watch Series 5 - 44mm
     steps:
-      # - run: sudo xcode-select -s /Applications/Xcode_11.4.app/Contents/Developer
+      - run: sudo xcode-select -s /Applications/Xcode_12.1.app/Contents/Developer
       - uses: actions/checkout@v2
-        with:
-          submodules: 'recursive'
       - uses: sersoft-gmbh/xcodebuild-action@v1
         with:
-          workspace: Xcode/FFCoreData.xcworkspace
+          spm-package: "./"
           scheme: FFCoreData
           destination: ${{matrix.destination}}
           action: ${{matrix.action}}
+          build-settings: -parallel-testing-enabled YES -enableCodeCoverage YES
       - uses: codecov/codecov-action@v1
         with:
           token: ${{secrets.CODECOV_TOKEN}}

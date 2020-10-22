@@ -23,22 +23,13 @@ extension CoreDataStack.Configuration {
     // We need to use random names to make sure the files do not interfere with eachother.
     private static var testSQLiteName: String { UUID().uuidString }
 
-    #if SWIFT_PACKAGE
+    private static let modelURL = Bundle.module.url(forResource: testModelName, withExtension: "momd")!
+
     static var test: CoreDataStack.Configuration {
-        var modelURL = URL(fileURLWithPath: #file)
-        modelURL.deleteLastPathComponent() // Models
-        modelURL.appendPathComponent(testModelName)
-        modelURL.appendPathExtension("momd")
         #if os(iOS) || os(watchOS) || os(tvOS)
         return CoreDataStack.Configuration(modelURL: modelURL, sqliteName: testSQLiteName, options: testOptions)
         #else
         return CoreDataStack.Configuration(modelURL: modelURL, applicationSupportSubfolder: "FFCoreDataTests", sqliteName: testSQLiteName, options: testOptions)
         #endif
     }
-    #else
-    private final class BundleClass {}
-    static var test: CoreDataStack.Configuration {
-        CoreDataStack.Configuration(bundle: Bundle(for: BundleClass.self), modelName: testModelName, sqliteName: testSQLiteName, options: testOptions)
-    }
-    #endif
 }

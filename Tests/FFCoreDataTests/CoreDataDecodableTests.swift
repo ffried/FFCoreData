@@ -61,7 +61,7 @@ final class CoreDataDecodableTests: XCTestCase {
             try (generateTestJSON(count: testDataCount),
                  CoreDataStack.createTemporaryBackgroundContext())
         }
-        let failures: Atomic<[Error?]> = Atomic(wrappedValue: Array(repeating: nil, count: parallelRuns))
+        let failures = Synchronized<[Error?]>(wrappedValue: Array(repeating: nil, count: parallelRuns))
         DispatchQueue.concurrentPerform(iterations: parallelRuns) { iteration in
             do {
                 try testObjects[iteration].ctx.asDecodingContext { [data = testObjects[iteration].data] in

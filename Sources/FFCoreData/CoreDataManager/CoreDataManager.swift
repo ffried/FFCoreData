@@ -136,6 +136,7 @@ fileprivate final class CoreDataManager {
     }
 }
 
+@frozen
 public enum CoreDataStack {
     @Lazy private static var manager = CoreDataManager(configuration: configuration)
 
@@ -172,6 +173,10 @@ public enum CoreDataStack {
     public static func clearDataStore() throws {
         try manager.clearDataStore()
     }
+
+    public static func closeConnections() {
+        _manager.reset()
+    }
 }
 
 extension CoreDataStack {
@@ -204,7 +209,9 @@ extension CoreDataStack {
         #endif
 
         public let options: Options
+        @inlinable
         public var removeNamespacesFromEntityNames: Bool { options.contains(.removeNamespacesFromEntityNames) }
+        @inlinable
         public var clearDataStoreOnSetupFailure: Bool { options.contains(.clearDataStoreOnSetupFailure) }
 
         private static func url(for searchPathDirectory: FileManager.SearchPathDirectory, subDirectoryName: String? = nil) -> URL {
@@ -224,7 +231,7 @@ extension CoreDataStack {
         public static let appDataDirectoryURL: URL = url(for: .documentDirectory)
         #elseif os(macOS)
         public static func appDataDirectoryURL(withSubfolderName subfolderName: String) -> URL {
-            return url(for: .applicationSupportDirectory, subDirectoryName: subfolderName)
+            url(for: .applicationSupportDirectory, subDirectoryName: subfolderName)
         }
         #endif
         
@@ -324,7 +331,7 @@ extension CoreDataStack {
 }
 
 extension CoreDataStack.Configuration.Options {
-    public static var `default`: CoreDataStack.Configuration.Options { return .removeNamespacesFromEntityNames }
+    public static var `default`: CoreDataStack.Configuration.Options { .removeNamespacesFromEntityNames }
 
     public static let removeNamespacesFromEntityNames: CoreDataStack.Configuration.Options = .init(rawValue: 1 << 0)
     public static let clearDataStoreOnSetupFailure: CoreDataStack.Configuration.Options = .init(rawValue: 1 << 1)

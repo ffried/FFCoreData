@@ -31,12 +31,12 @@ import func FFFoundation.os_log
 public struct MOCObjectsFilter: MOCObserverFilter {
     var objectIDs: [NSManagedObjectID] {
         didSet {
-            precondition(!objectIDs.contains { $0.isTemporaryID },
+            precondition(!objectIDs.contains(where: \.isTemporaryID),
                          "FFCoreData: ERROR: Temporary NSManagedObjectIDs set on MOCObjectsObserver! Be sure to only use non-temporary IDs for MOCObservers!")
         }
     }
 
-    private var objectIDURIs: [URL] { return objectIDs.map { $0.uriRepresentation() } }
+    private var objectIDURIs: [URL] { objectIDs.map { $0.uriRepresentation() } }
 
     public init(objectIDs: [NSManagedObjectID]) {
         self.objectIDs = objectIDs
@@ -67,14 +67,15 @@ extension NSManagedObject {
         return MOCObjectsFilter(objectIDs: [objectID])
     }
 
-    public func createMOCObjectObserver(fireInitially: Bool = false, handler: @escaping MOCBlockObserver<MOCObjectsFilter>.Handler) -> MOCBlockObserver<MOCObjectsFilter> {
-        return MOCBlockObserver(mode: mocObservationMode, filter: mocObjectsFilter, fireInitially: fireInitially, handler: handler)
+    public func createMOCObjectObserver(fireInitially: Bool = false,
+                                        handler: @escaping MOCBlockObserver<MOCObjectsFilter>.Handler) -> MOCBlockObserver<MOCObjectsFilter> {
+        MOCBlockObserver(mode: mocObservationMode, filter: mocObjectsFilter, fireInitially: fireInitially, handler: handler)
     }
 
     #if canImport(Combine)
     @available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
     public func publishChanges() -> MOCChangePublisher<MOCObjectsFilter> {
-        return MOCChangePublisher(mode: mocObservationMode, filter: mocObjectsFilter)
+        MOCChangePublisher(mode: mocObservationMode, filter: mocObjectsFilter)
     }
     #endif
 }

@@ -48,6 +48,13 @@ extension CoreDataDecodable where Self: FindOrCreatable {
     }
 }
 
+extension CoreDataDecodable where Self: NSManagedObject, Self: Entity {
+    public init(with dto: DTO, in context: NSManagedObjectContext) throws {
+        try self.init(entity: Self.entityDescription(in: context), insertInto: context)
+        try update(from: dto)
+    }
+}
+
 extension CoreDataDecodable where Self: NSManagedObject {
     public init(with dto: DTO, in context: NSManagedObjectContext) throws {
         self.init(context: context)
@@ -71,14 +78,14 @@ public enum CoreDataDecodingError: Error, CustomStringConvertible {
 extension Thread {
     private static let decodingContextThreadKey = "net.ffried.FFCoreData.DecodingContext"
     fileprivate var decodingContext: Unmanaged<NSManagedObjectContext>? {
-        get { return threadDictionary[Thread.decodingContextThreadKey] as? Unmanaged<NSManagedObjectContext> }
+        get { threadDictionary[Thread.decodingContextThreadKey] as? Unmanaged<NSManagedObjectContext> }
         set { threadDictionary[Thread.decodingContextThreadKey] = newValue }
     }
 }
 
 extension NSManagedObjectContext {
     private static var _decodingContext: NSManagedObjectContext? {
-        get { return Thread.current.decodingContext?.takeUnretainedValue() }
+        get { Thread.current.decodingContext?.takeUnretainedValue() }
         set { Thread.current.decodingContext = newValue.map(Unmanaged.passUnretained) }
     }
 
@@ -101,7 +108,7 @@ extension NSManagedObjectContext {
     public final func asDecodingContext<T>(do work: () throws -> T) rethrows -> T {
         NSManagedObjectContext._decodingContext = self
         defer { NSManagedObjectContext._decodingContext = nil }
-        return try sync { try work() }
+        return try sync(do: work)
     }
 }
 
@@ -122,7 +129,7 @@ extension TopLevelDecoder {
     /// - Note: Only use this method inside a closure submitted to `NSManagedObject.asDecodingContext(do:)`.
     /// - SeeAlso: `TopLevelDecoder.decode(_:from:in:)`
     public func decode<Entity: CoreDataDecodable>(_ entity: Entity.Type, from input: Input) throws -> Entity {
-        return try .findOrCreate(for: decode(entity.DTO.self, from: input), in: .decodingContext())
+        try .findOrCreate(for: decode(entity.DTO.self, from: input), in: .decodingContext())
     }
 
     /// Decodes the entity from a given `Input` using its `DTO` type inside a given `NSManagedObjectContext`.
@@ -135,7 +142,7 @@ extension TopLevelDecoder {
     /// - Throws: Any error thrown by `TopLevelDecoder.decode(_:from:)`
     /// - SeeAlso: `TopLevelDecoder.decode(_:from:)`
     public func decode<Entity: CoreDataDecodable>(_ entity: Entity.Type, from input: Input, in context: NSManagedObjectContext) throws -> Entity {
-        return try context.asDecodingContext { try decode(entity, from: input) }
+        try context.asDecodingContext { try decode(entity, from: input) }
     }
 }
 #endif
@@ -151,7 +158,7 @@ extension JSONDecoder {
     /// - Note: Only use this method inside a closure submitted to `NSManagedObject.asDecodingContext(do:)`.
     /// - SeeAlso: `JSONDecoder.decode(_:from:in:)`
     public final func decode<Entity: CoreDataDecodable>(_ entity: Entity.Type, from data: Data) throws -> Entity {
-        return try .findOrCreate(for: decode(entity.DTO.self, from: data), in: .decodingContext())
+        try .findOrCreate(for: decode(entity.DTO.self, from: data), in: .decodingContext())
     }
 
     /// Decodes the entity from a JSON in a given `Data` using its `DTO` type inside a given `NSManagedObjectContext`.
@@ -164,7 +171,7 @@ extension JSONDecoder {
     /// - Throws: Any error thrown by `JSONDecoder.decode(_:from:)`
     /// - SeeAlso: `JSONDecoder.decode(_:from:)`
     public final func decode<Entity: CoreDataDecodable>(_ entity: Entity.Type, from data: Data, in context: NSManagedObjectContext) throws -> Entity {
-        return try context.asDecodingContext { try decode(entity, from: data) }
+        try context.asDecodingContext { try decode(entity, from: data) }
     }
 }
 
@@ -179,7 +186,7 @@ extension PropertyListDecoder {
     /// - Note: Only use this method inside a closure submitted to `NSManagedObject.asDecodingContext(do:)`.
     /// - SeeAlso: `PropertyListDecoder.decode(_:from:in:)`
     public final func decode<Entity: CoreDataDecodable>(_ entity: Entity.Type, from data: Data) throws -> Entity {
-        return try .findOrCreate(for: decode(entity.DTO.self, from: data), in: .decodingContext())
+        try .findOrCreate(for: decode(entity.DTO.self, from: data), in: .decodingContext())
     }
 
     /// Decodes the entity from a PropertyList in a given `Data` using its `DTO` type inside a given `NSManagedObjectContext`.
@@ -192,6 +199,6 @@ extension PropertyListDecoder {
     /// - Throws: Any error thrown by `PropertyListDecoder.decode(_:from:)`
     /// - SeeAlso: `PropertyListDecoder.decode(_:from:)`
     public final func decode<Entity: CoreDataDecodable>(_ entity: Entity.Type, from data: Data, in context: NSManagedObjectContext) throws -> Entity {
-        return try context.asDecodingContext { try decode(entity, from: data) }
+        try context.asDecodingContext { try decode(entity, from: data) }
     }
 }

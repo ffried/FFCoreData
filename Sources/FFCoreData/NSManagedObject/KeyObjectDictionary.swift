@@ -74,20 +74,20 @@ fileprivate extension AnyKeyPath {
 }
 
 public func == <Model, Value: Equatable>(lhs: KeyPath<Model, Value>, rhs: Value) -> KeyObjectDictionaryExpression<Model> {
-    return .init(dict: [lhs.keyObjectDictionaryKey: rhs])
+    .init(dict: [lhs.keyObjectDictionaryKey: rhs])
 }
 
 @inlinable
 public func != <Model>(lhs: KeyPath<Model, Bool>, rhs: Bool) -> KeyObjectDictionaryExpression<Model> {
-    return lhs == !rhs
+    lhs == !rhs
 }
 
 @inlinable
 public func != <Model>(lhs: KeyPath<Model, Bool?>, rhs: Bool?) -> KeyObjectDictionaryExpression<Model> {
-    return lhs == rhs.map(!)
+    lhs == rhs.map(!)
 }
 
 @inlinable
 public func && <Model>(lhs: KeyObjectDictionaryExpression<Model>, rhs: KeyObjectDictionaryExpression<Model>) -> KeyObjectDictionaryExpression<Model> {
-    return .init(dict: lhs.dict.merging(rhs.dict, uniquingKeysWith: { $1 }))
+    .init(dict: lhs.dict.merging(rhs.dict, uniquingKeysWith: { $1 }))
 }

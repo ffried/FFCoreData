@@ -33,777 +33,777 @@ public struct FetchableFilterExpression<Model: Fetchable> {
 // MARK: KeyPath (left)
 @inlinable
 public func == <Model>(lhs: KeyPath<Model, Bool>, rhs: Bool?) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs == rhs)
+    .init(predicate: lhs == rhs)
 }
 
 @inlinable
 public func != <Model>(lhs: KeyPath<Model, Bool>, rhs: Bool?) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs != rhs)
+    .init(predicate: lhs != rhs)
 }
 
 @inlinable
 public func == <Model>(lhs: KeyPath<Model, Bool?>, rhs: Bool?) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) == \(rhs)"))
+    .init(predicate: .init("\(lhs) == \(rhs)"))
 }
 
 @inlinable
 public func != <Model>(lhs: KeyPath<Model, Bool?>, rhs: Bool?) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) != \(rhs)"))
+    .init(predicate: .init("\(lhs) != \(rhs)"))
 }
 
 @inlinable
 public func == <Model, Value: Equatable>(lhs: KeyPath<Model, Value>, rhs: Value?) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs == rhs)
+    .init(predicate: lhs == rhs)
 }
 
 @inlinable
 public func != <Model, Value: Equatable>(lhs: KeyPath<Model, Value>, rhs: Value?) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs != rhs)
+    .init(predicate: lhs != rhs)
 }
 
 @inlinable
 public func == <Model, Value: Equatable & ReferenceConvertible>(lhs: KeyPath<Model, Value>, rhs: Value?) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs == rhs)
+    .init(predicate: lhs == rhs)
 }
 
 @inlinable
 public func != <Model, Value: Equatable & ReferenceConvertible>(lhs: KeyPath<Model, Value>, rhs: Value?) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs != rhs)
+    .init(predicate: lhs != rhs)
 }
 
 @inlinable
 public func == <Model, Value: Equatable & ReferenceConvertible>(lhs: KeyPath<Model, Value?>, rhs: Value?) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) == \(rhs)"))
+    .init(predicate: .init("\(lhs) == \(rhs)"))
 }
 
 @inlinable
 public func != <Model, Value: Equatable & ReferenceConvertible>(lhs: KeyPath<Model, Value?>, rhs: Value?) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) != \(rhs)"))
+    .init(predicate: .init("\(lhs) != \(rhs)"))
 }
 
 @inlinable
 public func == <Model, Value: Equatable & SignedInteger>(lhs: KeyPath<Model, Value>, rhs: Value?) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs == rhs)
+    .init(predicate: lhs == rhs)
 }
 
 @inlinable
 public func != <Model, Value: Equatable & SignedInteger>(lhs: KeyPath<Model, Value>, rhs: Value?) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs != rhs)
+    .init(predicate: lhs != rhs)
 }
 
 @inlinable
 public func == <Model, Value: Equatable & SignedInteger>(lhs: KeyPath<Model, Value?>, rhs: Value?) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) == \(rhs)"))
+    .init(predicate: .init("\(lhs) == \(rhs)"))
 }
 
 @inlinable
 public func != <Model, Value: Equatable & SignedInteger>(lhs: KeyPath<Model, Value?>, rhs: Value?) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) != \(rhs)"))
+    .init(predicate: .init("\(lhs) != \(rhs)"))
 }
 
 @inlinable
 public func == <Model, Value: Equatable & UnsignedInteger>(lhs: KeyPath<Model, Value>, rhs: Value?) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs == rhs)
+    .init(predicate: lhs == rhs)
 }
 
 @inlinable
 public func != <Model, Value: Equatable & UnsignedInteger>(lhs: KeyPath<Model, Value>, rhs: Value?) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs != rhs)
+    .init(predicate: lhs != rhs)
 }
 
 @inlinable
 public func == <Model, Value: Equatable & UnsignedInteger>(lhs: KeyPath<Model, Value?>, rhs: Value?) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) == \(rhs)"))
+    .init(predicate: .init("\(lhs) == \(rhs)"))
 }
 
 @inlinable
 public func != <Model, Value: Equatable & UnsignedInteger>(lhs: KeyPath<Model, Value?>, rhs: Value?) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) != \(rhs)"))
+    .init(predicate: .init("\(lhs) != \(rhs)"))
 }
 
 @inlinable
 public func == <Model, Value: Equatable & FloatingPoint>(lhs: KeyPath<Model, Value>, rhs: Value?) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs == rhs)
+    .init(predicate: lhs == rhs)
 }
 
 @inlinable
 public func != <Model, Value: Equatable & FloatingPoint>(lhs: KeyPath<Model, Value>, rhs: Value?) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs != rhs)
+    .init(predicate: lhs != rhs)
 }
 
 @inlinable
 public func == <Model, Value: Equatable & FloatingPoint>(lhs: KeyPath<Model, Value?>, rhs: Value?) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) == \(rhs)"))
+    .init(predicate: .init("\(lhs) == \(rhs)"))
 }
 
 @inlinable
 public func != <Model, Value: Equatable & FloatingPoint>(lhs: KeyPath<Model, Value?>, rhs: Value?) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) != \(rhs)"))
+    .init(predicate: .init("\(lhs) != \(rhs)"))
 }
 
 @inlinable
 public func == <Model>(lhs: KeyPath<Model, NSNumber>, rhs: NSNumber?) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs == rhs)
+    .init(predicate: lhs == rhs)
 }
 
 @inlinable
 public func != <Model>(lhs: KeyPath<Model, NSNumber>, rhs: NSNumber?) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs != rhs)
+    .init(predicate: lhs != rhs)
 }
 
 @inlinable
 public func == <Model>(lhs: KeyPath<Model, NSNumber?>, rhs: NSNumber?) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) == \(rhs)"))
+    .init(predicate: .init("\(lhs) == \(rhs)"))
 }
 
 @inlinable
 public func != <Model>(lhs: KeyPath<Model, NSNumber?>, rhs: NSNumber?) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) != \(rhs)"))
+    .init(predicate: .init("\(lhs) != \(rhs)"))
 }
 
 // MARK: KeyPath (right)
 @inlinable
 public func == <Model>(lhs: Bool?, rhs: KeyPath<Model, Bool>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs == rhs)
+    .init(predicate: lhs == rhs)
 }
 
 @inlinable
 public func != <Model>(lhs: Bool?, rhs: KeyPath<Model, Bool>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs != rhs)
+    .init(predicate: lhs != rhs)
 }
 
 @inlinable
 public func == <Model>(lhs: Bool?, rhs: KeyPath<Model, Bool?>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) == \(rhs)"))
+    .init(predicate: .init("\(lhs) == \(rhs)"))
 }
 
 @inlinable
 public func != <Model>(lhs: Bool?, rhs: KeyPath<Model, Bool?>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) != \(rhs)"))
+    .init(predicate: .init("\(lhs) != \(rhs)"))
 }
 
 @inlinable
 public func == <Model, Value: Equatable>(lhs: Value?, rhs: KeyPath<Model, Value>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs == rhs)
+    .init(predicate: lhs == rhs)
 }
 
 @inlinable
 public func != <Model, Value: Equatable>(lhs: Value?, rhs: KeyPath<Model, Value>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs != rhs)
+    .init(predicate: lhs != rhs)
 }
 
 @inlinable
 public func == <Model, Value: Equatable>(lhs: Value?, rhs: KeyPath<Model, Value?>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) == \(rhs)"))
+    .init(predicate: .init("\(lhs) == \(rhs)"))
 }
 
 @inlinable
 public func != <Model, Value: Equatable>(lhs: Value?, rhs: KeyPath<Model, Value?>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) != \(rhs)"))
+    .init(predicate: .init("\(lhs) != \(rhs)"))
 }
 
 @inlinable
 public func == <Model, Value: Equatable & ReferenceConvertible>(lhs: Value?, rhs: KeyPath<Model, Value>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs == rhs)
+    .init(predicate: lhs == rhs)
 }
 
 @inlinable
 public func != <Model, Value: Equatable & ReferenceConvertible>(lhs: Value?, rhs: KeyPath<Model, Value>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs != rhs)
+    .init(predicate: lhs != rhs)
 }
 
 @inlinable
 public func == <Model, Value: Equatable & ReferenceConvertible>(lhs: Value?, rhs: KeyPath<Model, Value?>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) == \(rhs)"))
+    .init(predicate: .init("\(lhs) == \(rhs)"))
 }
 
 @inlinable
 public func != <Model, Value: Equatable & ReferenceConvertible>(lhs: Value?, rhs: KeyPath<Model, Value?>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) != \(rhs)"))
+    .init(predicate: .init("\(lhs) != \(rhs)"))
 }
 
 @inlinable
 public func == <Model, Value: Equatable & SignedInteger>(lhs: Value?, rhs: KeyPath<Model, Value>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs == rhs)
+    .init(predicate: lhs == rhs)
 }
 
 @inlinable
 public func != <Model, Value: Equatable & SignedInteger>(lhs: Value?, rhs: KeyPath<Model, Value>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs != rhs)
+    .init(predicate: lhs != rhs)
 }
 
 @inlinable
 public func == <Model, Value: Equatable & SignedInteger>(lhs: Value?, rhs: KeyPath<Model, Value?>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) == \(rhs)"))
+    .init(predicate: .init("\(lhs) == \(rhs)"))
 }
 
 @inlinable
 public func != <Model, Value: Equatable & SignedInteger>(lhs: Value?, rhs: KeyPath<Model, Value?>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) != \(rhs)"))
+    .init(predicate: .init("\(lhs) != \(rhs)"))
 }
 
 @inlinable
 public func == <Model, Value: Equatable & UnsignedInteger>(lhs: Value?, rhs: KeyPath<Model, Value>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs == rhs)
+    .init(predicate: lhs == rhs)
 }
 
 @inlinable
 public func != <Model, Value: Equatable & UnsignedInteger>(lhs: Value?, rhs: KeyPath<Model, Value>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs != rhs)
+    .init(predicate: lhs != rhs)
 }
 
 @inlinable
 public func == <Model, Value: Equatable & UnsignedInteger>(lhs: Value?, rhs: KeyPath<Model, Value?>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) == \(rhs)"))
+    .init(predicate: .init("\(lhs) == \(rhs)"))
 }
 
 @inlinable
 public func != <Model, Value: Equatable & UnsignedInteger>(lhs: Value?, rhs: KeyPath<Model, Value?>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) != \(rhs)"))
+    .init(predicate: .init("\(lhs) != \(rhs)"))
 }
 
 @inlinable
 public func == <Model, Value: Equatable & FloatingPoint>(lhs: Value?, rhs: KeyPath<Model, Value>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs == rhs)
+    .init(predicate: lhs == rhs)
 }
 
 @inlinable
 public func != <Model, Value: Equatable & FloatingPoint>(lhs: Value?, rhs: KeyPath<Model, Value>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs != rhs)
+    .init(predicate: lhs != rhs)
 }
 
 @inlinable
 public func == <Model, Value: Equatable & FloatingPoint>(lhs: Value?, rhs: KeyPath<Model, Value?>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) == \(rhs)"))
+    .init(predicate: .init("\(lhs) == \(rhs)"))
 }
 
 @inlinable
 public func != <Model, Value: Equatable & FloatingPoint>(lhs: Value?, rhs: KeyPath<Model, Value?>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) != \(rhs)"))
+    .init(predicate: .init("\(lhs) != \(rhs)"))
 }
 
 @inlinable
 public func == <Model>(lhs: NSNumber?, rhs: KeyPath<Model, NSNumber>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs == rhs)
+    .init(predicate: lhs == rhs)
 }
 
 @inlinable
 public func != <Model>(lhs: NSNumber?, rhs: KeyPath<Model, NSNumber>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs != rhs)
+    .init(predicate: lhs != rhs)
 }
 
 @inlinable
 public func == <Model>(lhs: NSNumber?, rhs: KeyPath<Model, NSNumber?>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) == \(rhs)"))
+    .init(predicate: .init("\(lhs) == \(rhs)"))
 }
 
 @inlinable
 public func != <Model>(lhs: NSNumber?, rhs: KeyPath<Model, NSNumber?>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) != \(rhs)"))
+    .init(predicate: .init("\(lhs) != \(rhs)"))
 }
 
 // MARK: - Comparable
 // MARK: KeyPath (left)
 @inlinable
 public func < <Model, Value: Comparable>(lhs: KeyPath<Model, Value>, rhs: Value) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs < rhs)
+    .init(predicate: lhs < rhs)
 }
 
 @inlinable
 public func > <Model, Value: Comparable>(lhs: KeyPath<Model, Value>, rhs: Value) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs > rhs)
+    .init(predicate: lhs > rhs)
 }
 
 @inlinable
 public func <= <Model, Value: Comparable>(lhs: KeyPath<Model, Value>, rhs: Value) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs <= rhs)
+    .init(predicate: lhs <= rhs)
 }
 
 @inlinable
 public func >= <Model, Value: Comparable>(lhs: KeyPath<Model, Value>, rhs: Value) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs >= rhs)
+    .init(predicate: lhs >= rhs)
 }
 
 @inlinable
 public func < <Model, Value: Comparable>(lhs: KeyPath<Model, Value?>, rhs: Value) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) < \(rhs)"))
+    .init(predicate: .init("\(lhs) < \(rhs)"))
 }
 
 @inlinable
 public func > <Model, Value: Comparable>(lhs: KeyPath<Model, Value?>, rhs: Value) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) > \(rhs)"))
+    .init(predicate: .init("\(lhs) > \(rhs)"))
 }
 
 @inlinable
 public func <= <Model, Value: Comparable>(lhs: KeyPath<Model, Value?>, rhs: Value) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) <= \(rhs)"))
+    .init(predicate: .init("\(lhs) <= \(rhs)"))
 }
 
 @inlinable
 public func >= <Model, Value: Comparable>(lhs: KeyPath<Model, Value?>, rhs: Value) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) >= \(rhs)"))
+    .init(predicate: .init("\(lhs) >= \(rhs)"))
 }
 
 @inlinable
 public func < <Model, Value: Comparable & ReferenceConvertible>(lhs: KeyPath<Model, Value>, rhs: Value) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs < rhs)
+    .init(predicate: lhs < rhs)
 }
 
 @inlinable
 public func > <Model, Value: Comparable & ReferenceConvertible>(lhs: KeyPath<Model, Value>, rhs: Value) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs > rhs)
+    .init(predicate: lhs > rhs)
 }
 
 @inlinable
 public func <= <Model, Value: Comparable & ReferenceConvertible>(lhs: KeyPath<Model, Value>, rhs: Value) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs <= rhs)
+    .init(predicate: lhs <= rhs)
 }
 
 @inlinable
 public func >= <Model, Value: Comparable & ReferenceConvertible>(lhs: KeyPath<Model, Value>, rhs: Value) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs >= rhs)
+    .init(predicate: lhs >= rhs)
 }
 
 @inlinable
 public func < <Model, Value: Comparable & ReferenceConvertible>(lhs: KeyPath<Model, Value?>, rhs: Value) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) < \(rhs)"))
+    .init(predicate: .init("\(lhs) < \(rhs)"))
 }
 
 @inlinable
 public func > <Model, Value: Comparable & ReferenceConvertible>(lhs: KeyPath<Model, Value?>, rhs: Value) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) > \(rhs)"))
+    .init(predicate: .init("\(lhs) > \(rhs)"))
 }
 
 @inlinable
 public func <= <Model, Value: Comparable & ReferenceConvertible>(lhs: KeyPath<Model, Value?>, rhs: Value) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) <= \(rhs)"))
+    .init(predicate: .init("\(lhs) <= \(rhs)"))
 }
 
 @inlinable
 public func >= <Model, Value: Comparable & ReferenceConvertible>(lhs: KeyPath<Model, Value?>, rhs: Value) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) >= \(rhs)"))
+    .init(predicate: .init("\(lhs) >= \(rhs)"))
 }
 
 @inlinable
 public func < <Model, Value: Comparable & SignedInteger>(lhs: KeyPath<Model, Value>, rhs: Value) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs < rhs)
+    .init(predicate: lhs < rhs)
 }
 
 @inlinable
 public func > <Model, Value: Comparable & SignedInteger>(lhs: KeyPath<Model, Value>, rhs: Value) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs > rhs)
+    .init(predicate: lhs > rhs)
 }
 
 @inlinable
 public func <= <Model, Value: Comparable & SignedInteger>(lhs: KeyPath<Model, Value>, rhs: Value) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs <= rhs)
+    .init(predicate: lhs <= rhs)
 }
 
 @inlinable
 public func >= <Model, Value: Comparable & SignedInteger>(lhs: KeyPath<Model, Value>, rhs: Value) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs >= rhs)
+    .init(predicate: lhs >= rhs)
 }
 
 @inlinable
 public func < <Model, Value: Comparable & SignedInteger>(lhs: KeyPath<Model, Value?>, rhs: Value) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) < \(rhs)"))
+    .init(predicate: .init("\(lhs) < \(rhs)"))
 }
 
 @inlinable
 public func > <Model, Value: Comparable & SignedInteger>(lhs: KeyPath<Model, Value?>, rhs: Value) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) > \(rhs)"))
+    .init(predicate: .init("\(lhs) > \(rhs)"))
 }
 
 @inlinable
 public func <= <Model, Value: Comparable & SignedInteger>(lhs: KeyPath<Model, Value?>, rhs: Value) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) <= \(rhs)"))
+    .init(predicate: .init("\(lhs) <= \(rhs)"))
 }
 
 @inlinable
 public func >= <Model, Value: Comparable & SignedInteger>(lhs: KeyPath<Model, Value?>, rhs: Value) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) >= \(rhs)"))
+    .init(predicate: .init("\(lhs) >= \(rhs)"))
 }
 
 @inlinable
 public func < <Model, Value: Comparable & UnsignedInteger>(lhs: KeyPath<Model, Value>, rhs: Value) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs < rhs)
+    .init(predicate: lhs < rhs)
 }
 
 @inlinable
 public func > <Model, Value: Comparable & UnsignedInteger>(lhs: KeyPath<Model, Value>, rhs: Value) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs > rhs)
+    .init(predicate: lhs > rhs)
 }
 
 @inlinable
 public func <= <Model, Value: Comparable & UnsignedInteger>(lhs: KeyPath<Model, Value>, rhs: Value) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs <= rhs)
+    .init(predicate: lhs <= rhs)
 }
 
 @inlinable
 public func >= <Model, Value: Comparable & UnsignedInteger>(lhs: KeyPath<Model, Value>, rhs: Value) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs >= rhs)
+    .init(predicate: lhs >= rhs)
 }
 
 @inlinable
 public func < <Model, Value: Comparable & UnsignedInteger>(lhs: KeyPath<Model, Value?>, rhs: Value) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) < \(rhs)"))
+    .init(predicate: .init("\(lhs) < \(rhs)"))
 }
 
 @inlinable
 public func > <Model, Value: Comparable & UnsignedInteger>(lhs: KeyPath<Model, Value?>, rhs: Value) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) > \(rhs)"))
+    .init(predicate: .init("\(lhs) > \(rhs)"))
 }
 
 @inlinable
 public func <= <Model, Value: Comparable & UnsignedInteger>(lhs: KeyPath<Model, Value?>, rhs: Value) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) <= \(rhs)"))
+    .init(predicate: .init("\(lhs) <= \(rhs)"))
 }
 
 @inlinable
 public func >= <Model, Value: Comparable & UnsignedInteger>(lhs: KeyPath<Model, Value?>, rhs: Value) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) >= \(rhs)"))
+    .init(predicate: .init("\(lhs) >= \(rhs)"))
 }
 
 @inlinable
 public func < <Model, Value: Comparable & FloatingPoint>(lhs: KeyPath<Model, Value>, rhs: Value) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs < rhs)
+    .init(predicate: lhs < rhs)
 }
 
 @inlinable
 public func > <Model, Value: Comparable & FloatingPoint>(lhs: KeyPath<Model, Value>, rhs: Value) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs > rhs)
+    .init(predicate: lhs > rhs)
 }
 
 @inlinable
 public func <= <Model, Value: Comparable & FloatingPoint>(lhs: KeyPath<Model, Value>, rhs: Value) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs <= rhs)
+    .init(predicate: lhs <= rhs)
 }
 
 @inlinable
 public func >= <Model, Value: Comparable & FloatingPoint>(lhs: KeyPath<Model, Value>, rhs: Value) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs >= rhs)
+    .init(predicate: lhs >= rhs)
 }
 
 @inlinable
 public func < <Model, Value: Comparable & FloatingPoint>(lhs: KeyPath<Model, Value?>, rhs: Value) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) < \(rhs)"))
+    .init(predicate: .init("\(lhs) < \(rhs)"))
 }
 
 @inlinable
 public func > <Model, Value: Comparable & FloatingPoint>(lhs: KeyPath<Model, Value?>, rhs: Value) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) > \(rhs)"))
+    .init(predicate: .init("\(lhs) > \(rhs)"))
 }
 
 @inlinable
 public func <= <Model, Value: Comparable & FloatingPoint>(lhs: KeyPath<Model, Value?>, rhs: Value) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) <= \(rhs)"))
+    .init(predicate: .init("\(lhs) <= \(rhs)"))
 }
 
 @inlinable
 public func >= <Model, Value: Comparable & FloatingPoint>(lhs: KeyPath<Model, Value?>, rhs: Value) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) >= \(rhs)"))
+    .init(predicate: .init("\(lhs) >= \(rhs)"))
 }
 
 @inlinable
 public func < <Model>(lhs: KeyPath<Model, NSNumber>, rhs: NSNumber) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs < rhs)
+    .init(predicate: lhs < rhs)
 }
 
 @inlinable
 public func > <Model>(lhs: KeyPath<Model, NSNumber>, rhs: NSNumber) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs > rhs)
+    .init(predicate: lhs > rhs)
 }
 
 @inlinable
 public func <= <Model>(lhs: KeyPath<Model, NSNumber>, rhs: NSNumber) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs <= rhs)
+    .init(predicate: lhs <= rhs)
 }
 
 @inlinable
 public func >= <Model>(lhs: KeyPath<Model, NSNumber>, rhs: NSNumber) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs >= rhs)
+    .init(predicate: lhs >= rhs)
 }
 
 @inlinable
 public func < <Model>(lhs: KeyPath<Model, NSNumber?>, rhs: NSNumber) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) < \(rhs)"))
+    .init(predicate: .init("\(lhs) < \(rhs)"))
 }
 
 @inlinable
 public func > <Model>(lhs: KeyPath<Model, NSNumber?>, rhs: NSNumber) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) > \(rhs)"))
+    .init(predicate: .init("\(lhs) > \(rhs)"))
 }
 
 @inlinable
 public func <= <Model>(lhs: KeyPath<Model, NSNumber?>, rhs: NSNumber) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) <= \(rhs)"))
+    .init(predicate: .init("\(lhs) <= \(rhs)"))
 }
 
 @inlinable
 public func >= <Model>(lhs: KeyPath<Model, NSNumber?>, rhs: NSNumber) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) >= \(rhs)"))
+    .init(predicate: .init("\(lhs) >= \(rhs)"))
 }
 
 // MARK: KeyPath (right)
 @inlinable
 public func < <Model, Value: Comparable>(lhs: Value, rhs: KeyPath<Model, Value>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs < rhs)
+    .init(predicate: lhs < rhs)
 }
 
 @inlinable
 public func > <Model, Value: Comparable>(lhs: Value, rhs: KeyPath<Model, Value>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs > rhs)
+    .init(predicate: lhs > rhs)
 }
 
 @inlinable
 public func <= <Model, Value: Comparable>(lhs: Value, rhs: KeyPath<Model, Value>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs <= rhs)
+    .init(predicate: lhs <= rhs)
 }
 
 @inlinable
 public func >= <Model, Value: Comparable>(lhs: Value, rhs: KeyPath<Model, Value>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs >= rhs)
+    .init(predicate: lhs >= rhs)
 }
 
 @inlinable
 public func < <Model, Value: Comparable>(lhs: Value, rhs: KeyPath<Model, Value?>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) < \(rhs)"))
+    .init(predicate: .init("\(lhs) < \(rhs)"))
 }
 
 @inlinable
 public func > <Model, Value: Comparable>(lhs: Value, rhs: KeyPath<Model, Value?>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) > \(rhs)"))
+    .init(predicate: .init("\(lhs) > \(rhs)"))
 }
 
 @inlinable
 public func <= <Model, Value: Comparable>(lhs: Value, rhs: KeyPath<Model, Value?>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) <= \(rhs)"))
+    .init(predicate: .init("\(lhs) <= \(rhs)"))
 }
 
 @inlinable
 public func >= <Model, Value: Comparable>(lhs: Value, rhs: KeyPath<Model, Value?>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) >= \(rhs)"))
+    .init(predicate: .init("\(lhs) >= \(rhs)"))
 }
 
 @inlinable
 public func < <Model, Value: Comparable & ReferenceConvertible>(lhs: Value, rhs: KeyPath<Model, Value>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs < rhs)
+    .init(predicate: lhs < rhs)
 }
 
 @inlinable
 public func > <Model, Value: Comparable & ReferenceConvertible>(lhs: Value, rhs: KeyPath<Model, Value>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs > rhs)
+    .init(predicate: lhs > rhs)
 }
 
 @inlinable
 public func <= <Model, Value: Comparable & ReferenceConvertible>(lhs: Value, rhs: KeyPath<Model, Value>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs <= rhs)
+    .init(predicate: lhs <= rhs)
 }
 
 @inlinable
 public func >= <Model, Value: Comparable & ReferenceConvertible>(lhs: Value, rhs: KeyPath<Model, Value>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs >= rhs)
+    .init(predicate: lhs >= rhs)
 }
 
 @inlinable
 public func < <Model, Value: Comparable & ReferenceConvertible>(lhs: Value, rhs: KeyPath<Model, Value?>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) < \(rhs)"))
+    .init(predicate: .init("\(lhs) < \(rhs)"))
 }
 
 @inlinable
 public func > <Model, Value: Comparable & ReferenceConvertible>(lhs: Value, rhs: KeyPath<Model, Value?>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) > \(rhs)"))
+    .init(predicate: .init("\(lhs) > \(rhs)"))
 }
 
 @inlinable
 public func <= <Model, Value: Comparable & ReferenceConvertible>(lhs: Value, rhs: KeyPath<Model, Value?>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) <= \(rhs)"))
+    .init(predicate: .init("\(lhs) <= \(rhs)"))
 }
 
 @inlinable
 public func >= <Model, Value: Comparable & ReferenceConvertible>(lhs: Value, rhs: KeyPath<Model, Value?>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) >= \(rhs)"))
+    .init(predicate: .init("\(lhs) >= \(rhs)"))
 }
 
 @inlinable
 public func < <Model, Value: Comparable & SignedInteger>(lhs: Value, rhs: KeyPath<Model, Value>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs < rhs)
+    .init(predicate: lhs < rhs)
 }
 
 @inlinable
 public func > <Model, Value: Comparable & SignedInteger>(lhs: Value, rhs: KeyPath<Model, Value>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs > rhs)
+    .init(predicate: lhs > rhs)
 }
 
 @inlinable
 public func <= <Model, Value: Comparable & SignedInteger>(lhs: Value, rhs: KeyPath<Model, Value>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs <= rhs)
+    .init(predicate: lhs <= rhs)
 }
 
 @inlinable
 public func >= <Model, Value: Comparable & SignedInteger>(lhs: Value, rhs: KeyPath<Model, Value>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs >= rhs)
+    .init(predicate: lhs >= rhs)
 }
 
 @inlinable
 public func < <Model, Value: Comparable & SignedInteger>(lhs: Value, rhs: KeyPath<Model, Value?>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) < \(rhs)"))
+    .init(predicate: .init("\(lhs) < \(rhs)"))
 }
 
 @inlinable
 public func > <Model, Value: Comparable & SignedInteger>(lhs: Value, rhs: KeyPath<Model, Value?>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) > \(rhs)"))
+    .init(predicate: .init("\(lhs) > \(rhs)"))
 }
 
 @inlinable
 public func <= <Model, Value: Comparable & SignedInteger>(lhs: Value, rhs: KeyPath<Model, Value?>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) <= \(rhs)"))
+    .init(predicate: .init("\(lhs) <= \(rhs)"))
 }
 
 @inlinable
 public func >= <Model, Value: Comparable & SignedInteger>(lhs: Value, rhs: KeyPath<Model, Value?>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) >= \(rhs)"))
+    .init(predicate: .init("\(lhs) >= \(rhs)"))
 }
 
 @inlinable
 public func < <Model, Value: Comparable & UnsignedInteger>(lhs: Value, rhs: KeyPath<Model, Value>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs < rhs)
+    .init(predicate: lhs < rhs)
 }
 
 @inlinable
 public func > <Model, Value: Comparable & UnsignedInteger>(lhs: Value, rhs: KeyPath<Model, Value>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs > rhs)
+    .init(predicate: lhs > rhs)
 }
 
 @inlinable
 public func <= <Model, Value: Comparable & UnsignedInteger>(lhs: Value, rhs: KeyPath<Model, Value>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs <= rhs)
+    .init(predicate: lhs <= rhs)
 }
 
 @inlinable
 public func >= <Model, Value: Comparable & UnsignedInteger>(lhs: Value, rhs: KeyPath<Model, Value>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs >= rhs)
+    .init(predicate: lhs >= rhs)
 }
 
 @inlinable
 public func < <Model, Value: Comparable & UnsignedInteger>(lhs: Value, rhs: KeyPath<Model, Value?>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) < \(rhs)"))
+    .init(predicate: .init("\(lhs) < \(rhs)"))
 }
 
 @inlinable
 public func > <Model, Value: Comparable & UnsignedInteger>(lhs: Value, rhs: KeyPath<Model, Value?>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) > \(rhs)"))
+    .init(predicate: .init("\(lhs) > \(rhs)"))
 }
 
 @inlinable
 public func <= <Model, Value: Comparable & UnsignedInteger>(lhs: Value, rhs: KeyPath<Model, Value?>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) <= \(rhs)"))
+    .init(predicate: .init("\(lhs) <= \(rhs)"))
 }
 
 @inlinable
 public func >= <Model, Value: Comparable & UnsignedInteger>(lhs: Value, rhs: KeyPath<Model, Value?>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) >= \(rhs)"))
+    .init(predicate: .init("\(lhs) >= \(rhs)"))
 }
 
 @inlinable
 public func < <Model, Value: Comparable & FloatingPoint>(lhs: Value, rhs: KeyPath<Model, Value>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs < rhs)
+    .init(predicate: lhs < rhs)
 }
 
 @inlinable
 public func > <Model, Value: Comparable & FloatingPoint>(lhs: Value, rhs: KeyPath<Model, Value>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs > rhs)
+    .init(predicate: lhs > rhs)
 }
 
 @inlinable
 public func <= <Model, Value: Comparable & FloatingPoint>(lhs: Value, rhs: KeyPath<Model, Value>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs <= rhs)
+    .init(predicate: lhs <= rhs)
 }
 
 @inlinable
 public func >= <Model, Value: Comparable & FloatingPoint>(lhs: Value, rhs: KeyPath<Model, Value>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs >= rhs)
+    .init(predicate: lhs >= rhs)
 }
 
 @inlinable
 public func < <Model, Value: Comparable & FloatingPoint>(lhs: Value, rhs: KeyPath<Model, Value?>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) < \(rhs)"))
+    .init(predicate: .init("\(lhs) < \(rhs)"))
 }
 
 @inlinable
 public func > <Model, Value: Comparable & FloatingPoint>(lhs: Value, rhs: KeyPath<Model, Value?>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) > \(rhs)"))
+    .init(predicate: .init("\(lhs) > \(rhs)"))
 }
 
 @inlinable
 public func <= <Model, Value: Comparable & FloatingPoint>(lhs: Value, rhs: KeyPath<Model, Value?>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) <= \(rhs)"))
+    .init(predicate: .init("\(lhs) <= \(rhs)"))
 }
 
 @inlinable
 public func >= <Model, Value: Comparable & FloatingPoint>(lhs: Value, rhs: KeyPath<Model, Value?>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) >= \(rhs)"))
+    .init(predicate: .init("\(lhs) >= \(rhs)"))
 }
 
 @inlinable
 public func < <Model>(lhs: NSNumber, rhs: KeyPath<Model, NSNumber>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs < rhs)
+    .init(predicate: lhs < rhs)
 }
 
 @inlinable
 public func > <Model>(lhs: NSNumber, rhs: KeyPath<Model, NSNumber>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs > rhs)
+    .init(predicate: lhs > rhs)
 }
 
 @inlinable
 public func <= <Model>(lhs: NSNumber, rhs: KeyPath<Model, NSNumber>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs <= rhs)
+    .init(predicate: lhs <= rhs)
 }
 
 @inlinable
 public func >= <Model>(lhs: NSNumber, rhs: KeyPath<Model, NSNumber>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs >= rhs)
+    .init(predicate: lhs >= rhs)
 }
 
 @inlinable
 public func < <Model>(lhs: NSNumber, rhs: KeyPath<Model, NSNumber?>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) < \(rhs)"))
+    .init(predicate: .init("\(lhs) < \(rhs)"))
 }
 
 @inlinable
 public func > <Model>(lhs: NSNumber, rhs: KeyPath<Model, NSNumber?>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) > \(rhs)"))
+    .init(predicate: .init("\(lhs) > \(rhs)"))
 }
 
 @inlinable
 public func <= <Model>(lhs: NSNumber, rhs: KeyPath<Model, NSNumber?>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) <= \(rhs)"))
+    .init(predicate: .init("\(lhs) <= \(rhs)"))
 }
 
 @inlinable
 public func >= <Model>(lhs: NSNumber, rhs: KeyPath<Model, NSNumber?>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: .init("\(lhs) >= \(rhs)"))
+    .init(predicate: .init("\(lhs) >= \(rhs)"))
 }
 
 // MARK: - Negation
 @inlinable
-public prefix func ! <Model>(lhs: KeyPath<Model, Bool>) -> FetchableFilterExpression<Model> { return lhs != true }
+public prefix func ! <Model>(lhs: KeyPath<Model, Bool>) -> FetchableFilterExpression<Model> { lhs != true }
 
 @inlinable
-public prefix func ! <Model>(lhs: KeyPath<Model, Bool?>) -> FetchableFilterExpression<Model> { return lhs != true }
+public prefix func ! <Model>(lhs: KeyPath<Model, Bool?>) -> FetchableFilterExpression<Model> { lhs != true }
 
 @inlinable
 public prefix func ! <Model>(lhs: FetchableFilterExpression<Model>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: !lhs.predicate)
+    .init(predicate: !lhs.predicate)
 }
 
 // MARK: - Combination
 @inlinable
 public func && <Model>(lhs: FetchableFilterExpression<Model>, rhs: FetchableFilterExpression<Model>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs.predicate && rhs.predicate)
+    .init(predicate: lhs.predicate && rhs.predicate)
 }
 
 @inlinable
 public func || <Model>(lhs: FetchableFilterExpression<Model>, rhs: FetchableFilterExpression<Model>) -> FetchableFilterExpression<Model> {
-    return .init(predicate: lhs.predicate || rhs.predicate)
+    .init(predicate: lhs.predicate || rhs.predicate)
 }

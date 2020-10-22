@@ -70,11 +70,11 @@ public final class CollectionViewDataSource<Result: NSFetchRequestResult>: NSObj
     // MARK: - UICollectionViewDataSource
     @objc(numberOfSectionsInCollectionView:)
     public dynamic func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return fetchedResultsController?.sections?.count ?? 0
+        fetchedResultsController?.sections?.count ?? 0
     }
     
     @objc public dynamic func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return fetchedResultsController?.sections?[section].numberOfObjects ?? 0
+        fetchedResultsController?.sections?[section].numberOfObjects ?? 0
     }
     
     @objc(collectionView:cellForItemAtIndexPath:)
@@ -88,7 +88,7 @@ public final class CollectionViewDataSource<Result: NSFetchRequestResult>: NSObj
     
     @objc(collectionView:viewForSupplementaryElementOfKind:atIndexPath:)
     public dynamic func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        return delegate!.collectionView!(collectionView, viewForSupplementaryElementOfKind: kind, at: indexPath)
+        delegate!.collectionView!(collectionView, viewForSupplementaryElementOfKind: kind, at: indexPath)
     }
     
     @available(iOS 9.0, *)

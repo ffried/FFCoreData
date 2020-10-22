@@ -58,7 +58,7 @@ fileprivate final class PublisherControllerDelegate<ResultType: NSFetchRequestRe
     let controller: NSFetchedResultsController<ResultType>
     let subject = PassthroughSubject<Array<ResultType>, Error>()
 
-    @Atomic
+    @Synchronized
     private var didFetch = false
 
     init(fetchRequest: NSFetchRequest<ResultType>, context: NSManagedObjectContext) {
