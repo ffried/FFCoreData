@@ -12,6 +12,12 @@ jobs:
     steps:
       - run: sudo xcode-select -s /Applications/Xcode_12.1.app/Contents/Developer
       - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          path: .build
+          key: ${{runner.os}}-spm-${{hashFiles('**/Package.resolved')}}
+          restore-keys: |
+            ${{runner.os}}-spm-
       - name: Generate Linux Tests
         run: swift test --generate-linuxmain
       - name: Check for git differences
@@ -35,6 +41,12 @@ jobs:
   #         release-version: 5.3
   #         platform: ${{matrix.os}}
   #     - uses: actions/checkout@v2
+  #     - uses: actions/cache@v2
+  #       with:
+  #         path: .build
+  #         key: ${{runner.os}}-spm-${{hashFiles('**/Package.resolved')}}
+  #         restore-keys: |
+  #           ${{runner.os}}-spm-
   #     - name: Build & Test
   #       run: swift test -v --parallel --enable-code-coverage
   #     - name: Generate Coverage Files
