@@ -17,7 +17,7 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-        .package(url: "https://github.com/ffried/FFFoundation.git", from: "8.1.0"),
+        .package(url: "https://github.com/ffried/FFFoundation.git", from: "9.0.0"),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
