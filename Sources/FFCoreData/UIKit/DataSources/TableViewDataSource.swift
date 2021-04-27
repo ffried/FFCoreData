@@ -33,7 +33,7 @@ import class UIKit.UITableViewCell
 import protocol CoreData.NSFetchRequestResult
 import class CoreData.NSFetchedResultsController
 
-@objc public protocol TableViewDataSourceDelegate: class, NSObjectProtocol {
+@objc public protocol TableViewDataSourceDelegate: NSObjectProtocol {
     func tableView(_ tableView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> String
     func tableView(_ tableView: UITableView, configure cell: UITableViewCell, forRowAt indexPath: IndexPath, with object: NSFetchRequestResult?)
     

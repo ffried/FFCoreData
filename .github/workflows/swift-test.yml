@@ -10,7 +10,9 @@ jobs:
   validate-linux-tests:
     runs-on: macos-latest
     steps:
-      - run: sudo xcode-select -s /Applications/Xcode_12.1.app/Contents/Developer
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: ^12.4
       - uses: actions/checkout@v2
       - uses: actions/cache@v2
         with:
@@ -32,13 +34,15 @@ jobs:
 
   #   runs-on: ${{matrix.os}}
   #   steps:
-  #     - run: sudo xcode-select -s /Applications/Xcode_12.2.app/Contents/Developer
-  #       if: runner.os == 'macOS'
+  #     - if: runner.os == 'macOS'
+  #       uses: maxim-lobanov/setup-xcode@v1
+  #       with:
+  #         xcode-version: ^12.4
   #     - name: Install Swift
   #       if: runner.os == 'Linux'
   #       uses: sersoft-gmbh/SwiftyActions@v1
   #       with:
-  #         release-version: 5.3
+  #         release-version: 5.4
   #         platform: ${{matrix.os}}
   #     - uses: actions/checkout@v2
   #     - uses: actions/cache@v2
@@ -75,7 +79,9 @@ jobs:
         #   - action: build
         #     destination: platform=watchOS Simulator,OS=latest,name=Apple Watch Series 5 - 44mm
     steps:
-      - run: sudo xcode-select -s /Applications/Xcode_12.1.app/Contents/Developer
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: ^12.4
       - uses: actions/checkout@v2
       - uses: sersoft-gmbh/xcodebuild-action@v1
         with:

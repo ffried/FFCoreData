@@ -30,7 +30,7 @@ import class UIKit.UICollectionReusableView
 import protocol CoreData.NSFetchRequestResult
 import class CoreData.NSFetchedResultsController
 
-@objc public protocol CollectionViewDataSourceDelegate: class, NSObjectProtocol {
+@objc public protocol CollectionViewDataSourceDelegate: NSObjectProtocol {
     func collectionView(_ collectionView: UICollectionView, cellIdentifierForItemAt: IndexPath) -> String
     func collectionView(_ collectionView: UICollectionView, configure cell: UICollectionViewCell, forItemAt indexPath: IndexPath, with: NSFetchRequestResult?)
     
