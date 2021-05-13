@@ -82,6 +82,10 @@ extension CoreDataStack.Configuration {
         guard let folder = Bundle.module.url(forResource: testModelName, withExtension: "xcdatamodeld") else {
             fatalError("Could not find \(testModelName).xcdatamodeld in \(Bundle.module.bundlePath)")
         }
+        let modelURL = folder.deletingLastPathComponent()
+            .appendingPathExtension(testModelName)
+            .appendingPathExtension("momd")
+        if FileManager.default.fileExists(at: modelURL) { return modelURL }
         do {
             let sdkPath = try Process.xcrun(arguments: ["--sdk", "macosx", "--show-sdk-path"]).stdout
             _ = try Process.xcrun(arguments: ["momc",
@@ -89,14 +93,14 @@ extension CoreDataStack.Configuration {
                                               "--macosx-deployment-target", "10.12",
                                               "--module", "FFCoreDataTests",
                                               folder.path,
-                                              folder.deletingLastPathComponent().path,
+                                              modelURL.deletingLastPathComponent().path,
             ])
         } catch {
             fatalError("Could not compile model: \(error)")
         }
-        if let url = Bundle.module.url(forResource: testModelName, withExtension: "momd") {
-            return url
-        }
+        if let url = Bundle.module.url(forResource: testModelName, withExtension: "momd") { return url }
+        // Bundle sometimes caches resource lookup results.
+        if FileManager.default.fileExists(at: modelURL) { return modelURL }
         fatalError("Model compilation seems to have failed. Could not find \(testModelName).momd in \(Bundle.module.bundlePath)")
         #endif
     }()
