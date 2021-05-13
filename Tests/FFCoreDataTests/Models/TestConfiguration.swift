@@ -85,7 +85,7 @@ extension CoreDataStack.Configuration {
         let modelURL = folder.deletingLastPathComponent()
             .appendingPathComponent(testModelName)
             .appendingPathExtension("momd")
-        if FileManager.default.fileExists(atPath: modelURL.path) { return modelURL }
+        try? FileManager.default.removeItem(at: modelURL)
         do {
             let sdkPath = try Process.xcrun(arguments: ["--sdk", "macosx", "--show-sdk-path"]).stdout
             _ = try Process.xcrun(arguments: [

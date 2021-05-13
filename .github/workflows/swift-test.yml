@@ -10,11 +10,11 @@ jobs:
   test-spm:
     strategy:
       matrix:
-        os:
-          - macos-latest
-          # - ubuntu-20.04
+        os: [ macos-latest ]
+        swift-version: [ 5.4 ]
 
     runs-on: ${{matrix.os}}
+
     steps:
       - if: runner.os == 'macOS'
         uses: maxim-lobanov/setup-xcode@v1
@@ -24,15 +24,15 @@ jobs:
         if: runner.os == 'Linux'
         uses: sersoft-gmbh/SwiftyActions@v1
         with:
-          release-version: 5.4
+          release-version: ${{matrix.swift-version}}
           platform: ${{matrix.os}}
       - uses: actions/checkout@v2
-      - uses: actions/cache@v2
+      - uses: actions/cache@v2.1.5
         with:
           path: .build
-          key: ${{runner.os}}-spm-${{hashFiles('**/Package.resolved')}}
+          key: ${{runner.os}}-${{github.repository}}-spm-${{matrix.swift-version}}-${{hashFiles('**/Package.resolved')}}
           restore-keys: |
-            ${{runner.os}}-spm-
+            ${{runner.os}}-${{github.repository}}-spm-${{matrix.swift-version}}-
       - name: Build & Test
         run: swift test -v --parallel --enable-code-coverage
       - name: Generate Coverage Files
@@ -51,7 +51,7 @@ jobs:
     runs-on: macos-latest
     strategy:
       matrix:
-        action: [test]
+        action: [ test ]
         destination:
           - platform=macOS
           - platform=iOS Simulator,OS=latest,name=iPhone 12 Pro

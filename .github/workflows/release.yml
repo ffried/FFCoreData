@@ -16,12 +16,6 @@ jobs:
       - uses: dawidd6/action-get-tag@v1
         id: get-tag
       - uses: actions/checkout@v2
-      - uses: actions/cache@v2
-        with:
-          path: .build
-          key: ${{runner.os}}-spm-${{hashFiles('**/Package.resolved')}}
-          restore-keys: |
-            ${{runner.os}}-spm-
       - uses: sersoft-gmbh/swifty-docs-action@v1
         with:
           module-version: ${{steps.get-tag.outputs.tag}}
