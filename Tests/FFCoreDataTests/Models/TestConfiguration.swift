@@ -83,17 +83,18 @@ extension CoreDataStack.Configuration {
             fatalError("Could not find \(testModelName).xcdatamodeld in \(Bundle.module.bundlePath)")
         }
         let modelURL = folder.deletingLastPathComponent()
-            .appendingPathExtension(testModelName)
+            .appendingPathComponent(testModelName)
             .appendingPathExtension("momd")
         if FileManager.default.fileExists(at: modelURL) { return modelURL }
         do {
             let sdkPath = try Process.xcrun(arguments: ["--sdk", "macosx", "--show-sdk-path"]).stdout
-            _ = try Process.xcrun(arguments: ["momc",
-                                              "--sdkroot", sdkPath,
-                                              "--macosx-deployment-target", "10.12",
-                                              "--module", "FFCoreDataTests",
-                                              folder.path,
-                                              modelURL.deletingLastPathComponent().path,
+            _ = try Process.xcrun(arguments: [
+                "momc",
+                "--sdkroot", sdkPath,
+                "--macosx-deployment-target", "10.12",
+                "--module", "FFCoreDataTests",
+                folder.path,
+                modelURL.deletingLastPathComponent().path,
             ])
         } catch {
             fatalError("Could not compile model: \(error)")
