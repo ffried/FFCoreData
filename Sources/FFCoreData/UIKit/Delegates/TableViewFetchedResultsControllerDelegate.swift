@@ -30,69 +30,69 @@ public final class TableViewFetchedResultsControllerManager<Result: NSFetchReque
     public private(set) weak var tableView: UITableView?
 
     public var animation: UITableView.RowAnimation = .automatic
-    
+
     public required init(fetchedResultsController: Controller, tableView: UITableView, delegate: Delegate? = nil) {
         self.tableView = tableView
         super.init(fetchedResultsController: fetchedResultsController, delegate: delegate)
     }
-    
+
     // MARK: - Begin / End Updates
     override func beginUpdates() {
         super.beginUpdates()
         tableView?.beginUpdates()
         reapplySelection()
     }
-    
+
     override func endUpdates() {
         super.endUpdates()
         tableView?.endUpdates()
     }
-    
+
     // MARK: - Selection
     override func select(indexPaths: Set<IndexPath>) {
         super.select(indexPaths: indexPaths)
         indexPaths.forEach { tableView?.selectRow(at: $0, animated: false, scrollPosition: .none) }
     }
-    
+
     // MARK: - Sections
     override func insertSection(at index: Int) {
         super.insertSection(at: index)
         tableView?.insertSections(IndexSet(integer: index), with: animation)
     }
-    
+
     override func updateSection(at index: Int) {
         super.updateSection(at: index)
         tableView?.reloadSections(IndexSet(integer: index), with: animation)
     }
-    
+
     override func removeSection(at index: Int) {
         super.removeSection(at: index)
         tableView?.deleteSections(IndexSet(integer: index), with: animation)
     }
-    
+
     override func moveSection(from oldIndex: Int, to newIndex: Int) {
         super.moveSection(from: oldIndex, to: newIndex)
         tableView?.moveSection(oldIndex, toSection: newIndex)
     }
-    
+
     // MARK: - Rows
     override func insertSubobject(at indexPath: IndexPath) {
         super.insertSubobject(at: indexPath)
         tableView?.insertRows(at: [indexPath], with: animation)
     }
-    
+
     override func updateSubobject(at indexPath: IndexPath) {
         super.updateSubobject(at: indexPath)
         let selected = tableView?.indexPathsForSelectedRows?.contains(indexPath)
         tableView?.reloadRows(at: [indexPath], with: animation)
         if let s = selected, s { selectedIndexPaths.insert(indexPath) }
     }
-    
+
     override func removeSubobject(at indexPath: IndexPath) {
         super.removeSubobject(at: indexPath)
         tableView?.deleteRows(at: [indexPath], with: animation)
     }
-    
+
     override func moveSubobject(from oldIndexPath: IndexPath, to newIndexPath: IndexPath) {
         super.moveSubobject(from: oldIndexPath, to: newIndexPath)
         tableView?.moveRow(at: oldIndexPath, to: newIndexPath)

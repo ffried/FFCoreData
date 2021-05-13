@@ -33,7 +33,7 @@ import class CoreData.NSFetchedResultsController
 @objc public protocol CollectionViewDataSourceDelegate: NSObjectProtocol {
     func collectionView(_ collectionView: UICollectionView, cellIdentifierForItemAt: IndexPath) -> String
     func collectionView(_ collectionView: UICollectionView, configure cell: UICollectionViewCell, forItemAt indexPath: IndexPath, with: NSFetchRequestResult?)
-    
+
     // See UICollectionViewDataSource
     @objc(collectionView:viewForSupplementaryElementOfKind:atIndexPath:)
     optional func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView
@@ -48,9 +48,9 @@ import class CoreData.NSFetchedResultsController
 public final class CollectionViewDataSource<Result: NSFetchRequestResult>: NSObject, UICollectionViewDataSource {
     public private(set) weak var collectionView: UICollectionView?
     public private(set) weak var fetchedResultsController: NSFetchedResultsController<Result>?
-    
+
     public weak var delegate: CollectionViewDataSourceDelegate?
-    
+
     public required init(collectionView: UICollectionView, controller: NSFetchedResultsController<Result>, delegate: CollectionViewDataSourceDelegate? = nil) {
         self.fetchedResultsController = controller
         self.collectionView = collectionView
@@ -58,7 +58,7 @@ public final class CollectionViewDataSource<Result: NSFetchRequestResult>: NSObj
         super.init()
         self.collectionView?.dataSource = self
     }
-    
+
     @objc public override func responds(to aSelector: Selector) -> Bool {
         let selectorToCheck = #selector(CollectionViewDataSourceDelegate.collectionView(_:viewForSupplementaryElementOfKind:at:))
         if selectorToCheck == aSelector {
@@ -66,17 +66,17 @@ public final class CollectionViewDataSource<Result: NSFetchRequestResult>: NSObj
         }
         return super.responds(to: aSelector)
     }
-    
+
     // MARK: - UICollectionViewDataSource
     @objc(numberOfSectionsInCollectionView:)
     public dynamic func numberOfSections(in collectionView: UICollectionView) -> Int {
         fetchedResultsController?.sections?.count ?? 0
     }
-    
+
     @objc public dynamic func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         fetchedResultsController?.sections?[section].numberOfObjects ?? 0
     }
-    
+
     @objc(collectionView:cellForItemAtIndexPath:)
     public dynamic func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let identifier = delegate?.collectionView(collectionView, cellIdentifierForItemAt: indexPath) ?? "Cell"
@@ -85,19 +85,19 @@ public final class CollectionViewDataSource<Result: NSFetchRequestResult>: NSObj
         delegate?.collectionView(collectionView, configure: cell, forItemAt: indexPath, with: object)
         return cell
     }
-    
+
     @objc(collectionView:viewForSupplementaryElementOfKind:atIndexPath:)
     public dynamic func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         delegate!.collectionView!(collectionView, viewForSupplementaryElementOfKind: kind, at: indexPath)
     }
-    
+
     @available(iOS 9.0, *)
     @objc(collectionView:canMoveItemAtIndexPath:)
     public dynamic func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
         let delegateResponds = delegate?.responds(to: #selector(CollectionViewDataSourceDelegate.collectionView(_:moveItemAt:to:)))
         return delegate?.collectionView?(collectionView, canMoveItemAt: indexPath) ?? delegateResponds ?? false
     }
-    
+
     @available(iOS 9.0, *)
     @objc(collectionView:moveItemAtIndexPath:toIndexPath:)
     public dynamic func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {

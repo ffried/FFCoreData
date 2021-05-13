@@ -27,7 +27,7 @@ import os
 
 fileprivate final class CoreDataManager {
     private lazy var managedObjectModel = NSManagedObjectModel(contentsOf: configuration.modelURL)!
-    
+
     private lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)
         let url = configuration.databaseURL
@@ -57,33 +57,33 @@ fileprivate final class CoreDataManager {
         }
         return coordinator
     }()
-    
+
     private lazy var backgroundSavingContext: NSManagedObjectContext = {
         let ctx = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
         ctx.persistentStoreCoordinator = persistentStoreCoordinator
         ctx.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
         return ctx
     }()
-    
+
     private(set) lazy var managedObjectContext: NSManagedObjectContext = {
         let ctx = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
         ctx.parent = backgroundSavingContext
         return ctx
     }()
-    
+
     let configuration: CoreDataStack.Configuration
     init(configuration: CoreDataStack.Configuration) {
         self.configuration = configuration
     }
-    
+
     func createTemporaryMainContext() -> NSManagedObjectContext {
         createTemporaryContext(with: .mainQueueConcurrencyType)
     }
-    
+
     func createTemporaryBackgroundContext() -> NSManagedObjectContext {
         createTemporaryContext(with: .privateQueueConcurrencyType)
     }
-    
+
     private func createTemporaryContext(with type: NSManagedObjectContextConcurrencyType) -> NSManagedObjectContext {
         let tempCtx = NSManagedObjectContext(concurrencyType: type)
         tempCtx.parent = managedObjectContext
@@ -91,7 +91,7 @@ fileprivate final class CoreDataManager {
         tempCtx.undoManager = nil
         return tempCtx
     }
-    
+
     func clearDataStore() throws {
         let fileManager = FileManager.default
         try fileManager.contentsOfDirectory(at: configuration.storePath, includingPropertiesForKeys: nil, options: [])
@@ -99,7 +99,7 @@ fileprivate final class CoreDataManager {
             .filter { [configuration] in $0.lastPathComponent.hasPrefix(configuration.sqliteName) }
             .forEach(fileManager.removeItem)
     }
-    
+
     func save(context ctx: NSManagedObjectContext, rollback: Bool, completion: @escaping (Bool) -> Void) {
         guard ctx.hasChanges else {
             return completion(true)
@@ -120,7 +120,7 @@ fileprivate final class CoreDataManager {
             result = false
             if rollback { ctx.rollback() }
         }
-        
+
         if let parentContext = ctx.parent, result != false {
             parentContext.perform {
                 self.save(context: parentContext, rollback: rollback, completion: { success in
@@ -151,9 +151,9 @@ public enum CoreDataStack {
         get { _configuration ?? .legacyConfiguration }
         set { _configuration = newValue }
     }
-    
+
     public static var mainContext: NSManagedObjectContext { manager.managedObjectContext }
-    
+
     public static func save(context: NSManagedObjectContext, rollback: Bool = true, completion: @escaping (Bool) -> () = { _ in }) {
         context.sync { manager.save(context: context, rollback: rollback, completion: completion) }
     }
@@ -161,11 +161,11 @@ public enum CoreDataStack {
     public static func saveMainContext(rollback: Bool = true, completion: @escaping (Bool) -> () = { _ in }) {
         save(context: mainContext, rollback: rollback, completion: completion)
     }
-    
+
     public static func createTemporaryMainContext() -> NSManagedObjectContext {
         manager.createTemporaryMainContext()
     }
-    
+
     public static func createTemporaryBackgroundContext() -> NSManagedObjectContext {
         manager.createTemporaryBackgroundContext()
     }
@@ -183,7 +183,7 @@ extension CoreDataStack {
     public struct Configuration {
         private static let infoDictionarySQLiteNameKey = "FFCDDataManagerSQLiteName"
         private static let infoDictionaryModelNameKey = "FFCDDataManagerModelName"
-        
+
         fileprivate static let legacyConfiguration: Configuration = {
             let bundle = Bundle.main
             let modelName = bundle.infoDictionary?[Configuration.infoDictionaryModelNameKey] as? String
@@ -193,10 +193,12 @@ extension CoreDataStack {
 
         public struct Options: OptionSet {
             public typealias RawValue = UInt
+
             public let rawValue: RawValue
+
             public init(rawValue: RawValue) { self.rawValue = rawValue }
         }
-        
+
         public let modelURL: URL
         public let sqliteName: String
         public let storePath: URL
@@ -234,11 +236,11 @@ extension CoreDataStack {
             url(for: .applicationSupportDirectory, subDirectoryName: subfolderName)
         }
         #endif
-        
+
         private static let infoDictionaryTargetDisplayNameKey = "CFBundleDisplayName"
         private static let infoDictionaryTargetNameKey = String(kCFBundleNameKey)
         private static let defaultTargetName = "UNKNOWN_TARGET_NAME"
-        
+
         private init(modelURL: URL,
                      sqliteName: String,
                      storePath: URL?,
@@ -275,7 +277,7 @@ extension CoreDataStack {
                       appSupportFolderName: appSupportFolderName ?? bundle.bundleIdentifier ?? targetName(from: bundle),
                       options: options)
         }
-        
+
         #if os(iOS) || os(watchOS) || os(tvOS)
         public init(bundle: Bundle,
                     storePath: URL? = nil,

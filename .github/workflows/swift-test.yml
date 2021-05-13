@@ -7,12 +7,25 @@ on:
     branches: [ master ]
 
 jobs:
-  validate-linux-tests:
-    runs-on: macos-latest
+  test-spm:
+    strategy:
+      matrix:
+        os:
+          - macos-latest
+          # - ubuntu-20.04
+
+    runs-on: ${{matrix.os}}
     steps:
-      - uses: maxim-lobanov/setup-xcode@v1
+      - if: runner.os == 'macOS'
+        uses: maxim-lobanov/setup-xcode@v1
         with:
           xcode-version: ^12.4
+      - name: Install Swift
+        if: runner.os == 'Linux'
+        uses: sersoft-gmbh/SwiftyActions@v1
+        with:
+          release-version: 5.4
+          platform: ${{matrix.os}}
       - uses: actions/checkout@v2
       - uses: actions/cache@v2
         with:
@@ -20,50 +33,19 @@ jobs:
           key: ${{runner.os}}-spm-${{hashFiles('**/Package.resolved')}}
           restore-keys: |
             ${{runner.os}}-spm-
-      - name: Generate Linux Tests
-        run: swift test --generate-linuxmain
-      - name: Check for git differences
-        run: git diff --exit-code
-
-  # test-spm:
-  #   strategy:
-  #     matrix:
-  #       os:
-  #         - macos-latest
-  #         # - ubuntu-20.04
-
-  #   runs-on: ${{matrix.os}}
-  #   steps:
-  #     - if: runner.os == 'macOS'
-  #       uses: maxim-lobanov/setup-xcode@v1
-  #       with:
-  #         xcode-version: ^12.4
-  #     - name: Install Swift
-  #       if: runner.os == 'Linux'
-  #       uses: sersoft-gmbh/SwiftyActions@v1
-  #       with:
-  #         release-version: 5.4
-  #         platform: ${{matrix.os}}
-  #     - uses: actions/checkout@v2
-  #     - uses: actions/cache@v2
-  #       with:
-  #         path: .build
-  #         key: ${{runner.os}}-spm-${{hashFiles('**/Package.resolved')}}
-  #         restore-keys: |
-  #           ${{runner.os}}-spm-
-  #     - name: Build & Test
-  #       run: swift test -v --parallel --enable-code-coverage
-  #     - name: Generate Coverage Files
-  #       if: runner.os == 'macOS'
-  #       run: xcrun llvm-cov export -format="lcov" .build/debug/*PackageTests.xctest/Contents/MacOS/*PackageTests -instr-profile .build/debug/codecov/default.profdata > coverage.lcov
-  #     - name: Generate Coverage Files
-  #       if: runner.os == 'Linux'
-  #       run: llvm-cov export -format="lcov" .build/debug/*PackageTests.xctest -instr-profile .build/debug/codecov/default.profdata > coverage.lcov
-  #     - uses: codecov/codecov-action@v1
-  #       with:
-  #         token: ${{secrets.CODECOV_TOKEN}}
-  #         file: coverage.lcov
-  #         fail_ci_if_error: true
+      - name: Build & Test
+        run: swift test -v --parallel --enable-code-coverage
+      - name: Generate Coverage Files
+        if: runner.os == 'macOS'
+        run: xcrun llvm-cov export -format="lcov" .build/debug/*PackageTests.xctest/Contents/MacOS/*PackageTests -instr-profile .build/debug/codecov/default.profdata > coverage.lcov
+      - name: Generate Coverage Files
+        if: runner.os == 'Linux'
+        run: llvm-cov export -format="lcov" .build/debug/*PackageTests.xctest -instr-profile .build/debug/codecov/default.profdata > coverage.lcov
+      - uses: codecov/codecov-action@v1
+        with:
+          token: ${{secrets.CODECOV_TOKEN}}
+          file: coverage.lcov
+          fail_ci_if_error: true
 
   test-xcode:
     runs-on: macos-latest
@@ -89,7 +71,8 @@ jobs:
           scheme: FFCoreData
           destination: ${{matrix.destination}}
           action: ${{matrix.action}}
-          build-settings: -parallel-testing-enabled YES -enableCodeCoverage YES
+          parallel-testing-enabled: true
+          enable-code-coverage: true
       - uses: codecov/codecov-action@v1
         with:
           token: ${{secrets.CODECOV_TOKEN}}

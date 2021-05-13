@@ -24,15 +24,15 @@ import protocol CoreData.NSFetchRequestResult
 
 public class UIKitFetchedResultsControllerManager<Result: NSFetchRequestResult>: FetchedResultsControllerManager<Result> {
     public final var preserveSelection = true
-    
+
     internal final var selectedIndexPaths = Set<IndexPath>()
-    
+
     internal final func reapplySelection() {
         let indexPaths = selectedIndexPaths
         selectedIndexPaths.removeAll()
         if preserveSelection { select(indexPaths: indexPaths) }
     }
-    
+
     internal func select(indexPaths: Set<IndexPath>) {}
 }
 #endif

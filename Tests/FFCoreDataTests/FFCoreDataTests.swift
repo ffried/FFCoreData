@@ -24,17 +24,16 @@ import FFFoundation
 import FFCoreData
 
 final class FFCoreDataTests: XCTestCase {
-
     var context: NSManagedObjectContext!
     let testUUID = "c1b45162-12b4-11e5-8a0d-10ddb1c330b4"
-    
+
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
         CoreDataStack.configuration = .test
         context = CoreDataStack.mainContext
     }
-    
+
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         context = nil
@@ -55,21 +54,21 @@ final class FFCoreDataTests: XCTestCase {
     private func createTempObjects<UUIDs>(for uuids: UUIDs, in context: NSManagedObjectContext) throws
         where UUIDs: Sequence, UUIDs.Element == UUID
     {
-        try createTempObjects(for: uuids.lazy.map { $0.uuidString }, in: context)
+        try createTempObjects(for: uuids.lazy.map(\.uuidString), in: context)
     }
-    
+
     private func createTempObjects(amount count: Int, in context: NSManagedObjectContext) throws {
         try createTempObjects(for: (0..<count).lazy.map { _ in UUID() }, in: context)
     }
-    
+
     func testContextCreation() {
         XCTAssertNotNil(context)
     }
-    
+
     func testObjectCreation() {
         XCTAssertNoThrow(try TestEntity.create(in: context))
     }
-    
+
     func testObjectCreationWithDictionary() throws {
         let uuid = UUID().uuidString
         let obj = try TestEntity.create(in: context, applying: [#keyPath(TestEntity.uuid): uuid])
@@ -81,7 +80,7 @@ final class FFCoreDataTests: XCTestCase {
         let obj = try TestEntity.create(in: context, setting: \.uuid == uuid)
         XCTAssertEqual(obj.uuid, uuid)
     }
-    
+
     func testSearchObject() throws {
         let obj = try TestEntity.findOrCreate(in: context, by: [#keyPath(TestEntity.uuid): testUUID])
         XCTAssertEqual(obj.uuid, testUUID)
@@ -109,18 +108,18 @@ final class FFCoreDataTests: XCTestCase {
         let greaterObjects = try TestEntity.find(in: context, where: \.uuid > uuids[1], sortedBy: ^\.uuid)
         let smallerObjects = try TestEntity.find(in: context, where: \.uuid <= uuids[1], sortedBy: ^\.uuid)
         XCTAssertEqual(greaterObjects.count, 2)
-        XCTAssertEqual(greaterObjects.map { $0.uuid }, Array(uuids[2...]))
+        XCTAssertEqual(greaterObjects.map(\.uuid), Array(uuids[2...]))
         XCTAssertEqual(smallerObjects.count, 2)
-        XCTAssertEqual(smallerObjects.map { $0.uuid }, Array(uuids[..<2]))
+        XCTAssertEqual(smallerObjects.map(\.uuid), Array(uuids[..<2]))
     }
-    
+
     func testSearchObjects() throws {
         let count = 100
         try createTempObjects(amount: count, in: context)
         let objects = try TestEntity.all(in: context)
         XCTAssertEqual(objects.count, count)
     }
-    
+
     func testParentStore() throws {
         let tempCtx = CoreDataStack.createTemporaryBackgroundContext()
         let count = 100
