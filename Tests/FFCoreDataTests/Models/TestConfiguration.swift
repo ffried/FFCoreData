@@ -85,7 +85,7 @@ extension CoreDataStack.Configuration {
         let modelURL = folder.deletingLastPathComponent()
             .appendingPathComponent(testModelName)
             .appendingPathExtension("momd")
-        if FileManager.default.fileExists(at: modelURL) { return modelURL }
+        if FileManager.default.fileExists(atPath: modelURL.path) { return modelURL }
         do {
             let sdkPath = try Process.xcrun(arguments: ["--sdk", "macosx", "--show-sdk-path"]).stdout
             _ = try Process.xcrun(arguments: [
@@ -101,7 +101,7 @@ extension CoreDataStack.Configuration {
         }
         if let url = Bundle.module.url(forResource: testModelName, withExtension: "momd") { return url }
         // Bundle sometimes caches resource lookup results.
-        if FileManager.default.fileExists(at: modelURL) { return modelURL }
+        if FileManager.default.fileExists(atPath: modelURL.path) { return modelURL }
         fatalError("Model compilation seems to have failed. Could not find \(testModelName).momd in \(Bundle.module.bundlePath)")
         #endif
     }()
