@@ -27,7 +27,7 @@ jobs:
           release-version: ${{matrix.swift-version}}
           platform: ${{matrix.os}}
       - uses: actions/checkout@v2
-      - uses: actions/cache@v2.1.5
+      - uses: actions/cache@v2.1.6
         with:
           path: .build
           key: ${{runner.os}}-${{github.repository}}-spm-${{matrix.swift-version}}-${{hashFiles('**/Package.resolved')}}
