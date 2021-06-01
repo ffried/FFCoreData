@@ -79,23 +79,29 @@ extension CoreDataStack.Configuration {
         #if Xcode
         fatalError("Could not find \(testModelName).momd in \(Bundle.module.bundlePath)")
         #else
-        guard let folder = Bundle.module.url(forResource: testModelName, withExtension: "xcdatamodeld") else {
+        guard let xcModelURL = Bundle.module.url(forResource: testModelName, withExtension: "xcdatamodeld") else {
             fatalError("Could not find \(testModelName).xcdatamodeld in \(Bundle.module.bundlePath)")
         }
-        let modelURL = folder.deletingLastPathComponent()
-            .appendingPathComponent(testModelName)
-            .appendingPathExtension("momd")
-        try? FileManager.default.removeItem(at: modelURL)
+        let baseFolderURL = xcModelURL.deletingLastPathComponent()
+        let compilationFolder = baseFolderURL.appendingPathComponent(UUID().uuidString)
+        let compiledModelURL = compilationFolder.appendingPathComponent(testModelName).appendingPathExtension("momd")
+        let finalModelURL = baseFolderURL.appendingPathComponent(testModelName).appendingPathExtension("momd")
         do {
             let sdkPath = try Process.xcrun(arguments: ["--sdk", "macosx", "--show-sdk-path"]).stdout
+            try FileManager.default.createDirectoryIfNeeded(at: compilationFolder)
+            defer { try? FileManager.default.removeItem(at: compilationFolder) }
             _ = try Process.xcrun(arguments: [
                 "momc",
                 "--sdkroot", sdkPath,
                 "--macosx-deployment-target", "10.12",
                 "--module", "FFCoreDataTests",
-                folder.path,
-                modelURL.deletingLastPathComponent().path,
+                xcModelURL.path,
+                compilationFolder.path,
             ])
+            do { try FileManager.default.moveItem(at: compiledModelURL, to: finalModelURL) }
+            // Catch errors where the destination file already exists (e.g. by a concurrent compilation)
+            catch CocoaError.fileWriteFileExists {}
+            catch let error as NSError where error.domain == NSCocoaErrorDomain && error.code == CocoaError.Code.fileWriteFileExists.rawValue {}
         } catch {
             fatalError("Could not compile model: \(error)")
         }
