@@ -20,7 +20,7 @@ jobs:
         with:
           module-version: ${{steps.get-tag.outputs.tag}}
           output: docs
-      - uses: crazy-max/ghaction-github-pages@v2.4.1
+      - uses: crazy-max/ghaction-github-pages@v2.5.0
         with:
           build_dir: docs
         env:
