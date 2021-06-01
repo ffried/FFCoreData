@@ -107,7 +107,7 @@ extension CoreDataStack.Configuration {
         }
         if let url = Bundle.module.url(forResource: testModelName, withExtension: "momd") { return url }
         // Bundle sometimes caches resource lookup results.
-        if FileManager.default.fileExists(atPath: modelURL.path) { return modelURL }
+        if FileManager.default.fileExists(atPath: finalModelURL.path) { return finalModelURL }
         fatalError("Model compilation seems to have failed. Could not find \(testModelName).momd in \(Bundle.module.bundlePath)")
         #endif
     }()
