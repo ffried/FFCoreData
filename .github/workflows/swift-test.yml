@@ -10,7 +10,7 @@ jobs:
   test-spm:
     strategy:
       matrix:
-        os: [ macos-11 ]
+        os: [ macos-latest ]
         swift-version: [ 5.4 ]
 
     runs-on: ${{matrix.os}}
@@ -52,7 +52,7 @@ jobs:
           fail_ci_if_error: true
 
   test-xcode:
-    runs-on: macos-11
+    runs-on: macos-latest
     strategy:
       matrix:
         action: [ test ]
