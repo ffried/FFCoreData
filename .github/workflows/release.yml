@@ -8,15 +8,24 @@ on:
 
 jobs:
   publish-docs:
-    runs-on: macos-latest
+    runs-on: macos-11
     steps:
-      - uses: maxim-lobanov/setup-xcode@v1
+      - uses: maxim-lobanov/setup-xcode@v1.2.3
         with:
           xcode-version: ^12.4
-      - uses: dawidd6/action-get-tag@v1
+      - uses: dawidd6/action-get-tag@v1.0.0
         id: get-tag
-      - uses: actions/checkout@v2
-      - uses: sersoft-gmbh/swifty-docs-action@v1
+      - name: Read Swift Version
+        id: swift-version
+        uses: sersoft-gmbh/swift-version-action@v1
+      - uses: actions/checkout@v2.3.4
+      - uses: actions/cache@v2.1.6
+        with:
+          path: .build
+          key: ${{runner.os}}-${{github.repository}}-spm-${{steps.swift-version.outputs.version}}-${{hashFiles('**/Package.resolved')}}
+          restore-keys: |
+            ${{runner.os}}-${{github.repository}}-spm-${{steps.swift-version.outputs.version}}-
+      - uses: sersoft-gmbh/swifty-docs-action@v1.2
         with:
           module-version: ${{steps.get-tag.outputs.tag}}
           output: docs
