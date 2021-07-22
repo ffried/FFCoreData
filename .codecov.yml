@@ -4,4 +4,6 @@ coverage:
   precision: 2
 
 ignore:
+  - ".build"
+  - ".swiftpm"
   - "Tests"
