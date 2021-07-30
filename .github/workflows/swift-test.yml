@@ -22,33 +22,35 @@ jobs:
           xcode-version: ^12.4
       - name: Install Swift
         if: runner.os == 'Linux'
-        uses: sersoft-gmbh/SwiftyActions@v1.3
+        uses: sersoft-gmbh/swifty-linux-action@v1.3.0
         with:
           release-version: ${{matrix.swift-version}}
           platform: ${{matrix.os}}
           github-token: ${{secrets.GITHUB_TOKEN}}
+      - name: Read OS Version
+        uses: sersoft-gmbh/os-version-action@v1.0.0
+        id: os-version
       - name: Read Swift Version
+        uses: sersoft-gmbh/swift-version-action@v1.0.0
         id: swift-version
-        uses: sersoft-gmbh/swift-version-action@v1
       - uses: actions/checkout@v2.3.4
       - uses: actions/cache@v2.1.6
         with:
           path: .build
-          key: ${{runner.os}}-${{github.repository}}-spm-${{steps.swift-version.outputs.version}}-${{hashFiles('**/Package.resolved')}}
+          key: ${{runner.os}}-${{steps.os-version.outputs.version}}-${{github.repository}}-spm-${{steps.swift-version.outputs.version}}-${{hashFiles('**/Package.resolved')}}
           restore-keys: |
-            ${{runner.os}}-${{github.repository}}-spm-${{steps.swift-version.outputs.version}}-
+            ${{runner.os}}-${{steps.os-version.outputs.version}}-${{github.repository}}-spm-${{steps.swift-version.outputs.version}}-
       - name: Build & Test
         run: swift test -v --parallel --enable-code-coverage
       - name: Generate Coverage Files
-        if: runner.os == 'macOS'
-        run: xcrun llvm-cov export -format="lcov" .build/debug/*PackageTests.xctest/Contents/MacOS/*PackageTests -instr-profile .build/debug/codecov/default.profdata > coverage.lcov
-      - name: Generate Coverage Files
-        if: runner.os == 'Linux'
-        run: llvm-cov export -format="lcov" .build/debug/*PackageTests.xctest -instr-profile .build/debug/codecov/default.profdata > coverage.lcov
+        uses: sersoft-gmbh/swift-coverage-action@v2.0.0
+        id: coverage-files
+        with:
+          format: lcov
       - uses: codecov/codecov-action@v2.0.2
         with:
           token: ${{secrets.CODECOV_TOKEN}}
-          files: coverage.lcov
+          files: ${{join(fromJSON(steps.coverage-files.outputs.files), ',')}}
           fail_ci_if_error: true
 
   test-xcode:
@@ -70,20 +72,22 @@ jobs:
         with:
           xcode-version: ^12.4
       - uses: actions/checkout@v2.3.4
-      - uses: sersoft-gmbh/xcodebuild-action@v1.6
+      - uses: sersoft-gmbh/xcodebuild-action@v1.6.0
         with:
-          spm-package: "./"
+          spm-package: './'
           scheme: FFCoreData
           destination: ${{matrix.destination}}
           action: ${{matrix.action}}
           parallel-testing-enabled: true
           enable-code-coverage: true
-      - uses: sersoft-gmbh/xcode-coverage-action@v1.0.0
-        id: xcode-cov
+      - uses: sersoft-gmbh/swift-coverage-action@v2.0.0
+        id: coverage-files
         if: matrix.action == 'test'
+        with:
+          format: lcov
       - uses: codecov/codecov-action@v2.0.2
         with:
           token: ${{secrets.CODECOV_TOKEN}}
-          files: ${{join(fromJSON(steps.xcode-cov.outputs.files), ',')}}
+          files: ${{join(fromJSON(steps.coverage-files.outputs.files), ',')}}
           fail_ci_if_error: true
         if: matrix.action == 'test'
