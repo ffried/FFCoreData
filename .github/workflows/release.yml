@@ -42,7 +42,7 @@ jobs:
       - name: Read Swift Version
         uses: sersoft-gmbh/swift-version-action@v1.0.0
         id: swift-version
-      - uses: actions/checkout@v2.3.4
+      - uses: actions/checkout@v2.3.5
       - uses: actions/cache@v2.1.6
         with:
           path: .build
