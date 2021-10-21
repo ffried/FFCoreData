@@ -17,7 +17,7 @@ jobs:
         id: latest-release
         with:
           github_token: ${{secrets.GITHUB_TOKEN}}
-      - uses: dawidd6/action-get-tag@v1.0.0
+      - uses: dawidd6/action-get-tag@v1.1.0
         id: get-tag
       - id: compare-tags
         run: |
