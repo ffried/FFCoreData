@@ -53,7 +53,7 @@ jobs:
         with:
           module-version: ${{needs.check-release.outputs.tag}}
           output: docs
-      - uses: crazy-max/ghaction-github-pages@v2.5.0
+      - uses: crazy-max/ghaction-github-pages@v2.6.0
         with:
           build_dir: docs
         env:
