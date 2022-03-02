@@ -33,7 +33,7 @@ jobs:
       - name: Read Swift Version
         uses: sersoft-gmbh/swift-version-action@v1.0.1
         id: swift-version
-      - uses: actions/checkout@v2.4.0
+      - uses: actions/checkout@v3
       - uses: actions/cache@v2.1.7
         with:
           path: .build
@@ -71,7 +71,7 @@ jobs:
       - uses: maxim-lobanov/setup-xcode@v1.4.1
         with:
           xcode-version: ^12.4
-      - uses: actions/checkout@v2.4.0
+      - uses: actions/checkout@v3
       - uses: sersoft-gmbh/xcodebuild-action@v1.8.0
         with:
           spm-package: './'
