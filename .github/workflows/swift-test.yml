@@ -47,7 +47,7 @@ jobs:
         id: coverage-files
         with:
           format: lcov
-      - uses: codecov/codecov-action@v2.1.0
+      - uses: codecov/codecov-action@v3
         with:
           token: ${{secrets.CODECOV_TOKEN}}
           files: ${{join(fromJSON(steps.coverage-files.outputs.files), ',')}}
@@ -85,7 +85,7 @@ jobs:
         if: matrix.action == 'test'
         with:
           format: lcov
-      - uses: codecov/codecov-action@v2.1.0
+      - uses: codecov/codecov-action@v3
         with:
           token: ${{secrets.CODECOV_TOKEN}}
           files: ${{join(fromJSON(steps.coverage-files.outputs.files), ',')}}
