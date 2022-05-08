@@ -8,8 +8,8 @@
   "defaultImplementationsSections" : [
     {
       "identifiers" : [
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodable\/init(with:in:)-8ocab",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodable\/init(with:in:)-9yesq"
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodable\/init(with:in:)-9yesq",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodable\/init(with:in:)-8ocab"
       ],
       "title" : "CoreDataDecodable Implementations"
     }
