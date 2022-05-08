@@ -102,6 +102,9 @@ extension CoreDataStack.Configuration {
             // Catch errors where the destination file already exists (e.g. by a concurrent compilation)
             catch CocoaError.fileWriteFileExists {}
             catch let error as NSError where error.domain == NSCocoaErrorDomain && error.code == CocoaError.Code.fileWriteFileExists.rawValue {}
+            // Catch errors where the destination directory file already exists (e.g. by a concurrent compilation)
+            catch POSIXError.ENOTEMPTY {}
+            catch let error as NSError where error.domain == NSPOSIXErrorDomain && error.code == POSIXErrorCode.ENOTEMPTY.rawValue {}
         } catch {
             fatalError("Could not compile model: \(error)")
         }
