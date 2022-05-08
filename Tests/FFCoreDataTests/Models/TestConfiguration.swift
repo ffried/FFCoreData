@@ -44,7 +44,7 @@ fileprivate extension Process {
         }
     }
 
-    static func run(executablePath: String, arguments: [String]) throws -> Output {
+    static func run(executablePath: String, arguments: Array<String>) throws -> Output {
         let (stdout, stderr) = (Pipe(), Pipe())
         let p = Process()
         p.executableURL = URL(fileURLWithPath: executablePath)
@@ -60,7 +60,7 @@ fileprivate extension Process {
         return output
     }
 
-    static func xcrun(arguments: [String]) throws -> Output {
+    static func xcrun(arguments: Array<String>) throws -> Output {
         try run(executablePath: "/usr/bin/xcrun", arguments: arguments)
     }
 }
@@ -100,14 +100,14 @@ extension CoreDataStack.Configuration {
             ])
             do { try FileManager.default.moveItem(at: compiledModelURL, to: finalModelURL) }
             // Catch errors where the destination file already exists (e.g. by a concurrent compilation)
-            catch CocoaError.fileWriteFileExists {}
-            catch let error as NSError where error.domain == NSCocoaErrorDomain && error.code == CocoaError.Code.fileWriteFileExists.rawValue {}
+            catch let cocoaError as CocoaError where cocoaError.code == .fileWriteFileExists {}
+            catch let nsError as NSError where nsError.domain == NSCocoaErrorDomain && nsError.code == CocoaError.Code.fileWriteFileExists.rawValue {}
             // Catch errors where the destination directory file already exists (e.g. by a concurrent compilation)
-            catch let error as CocoaError where error == .fileWriteUnknown {
-                switch error.underlying {
-                case POSIXError.ENOTEMPTY: break
-                case let error as NSError where error.domain == NSPOSIXErrorDomain && error.code == POSIXErrorCode.ENOTEMPTY.rawValue: break
-                default: throw error
+            catch let cocoaError as CocoaError where cocoaError.code == .fileWriteUnknown {
+                switch cocoaError.underlying {
+                case let posixError as POSIXError where posixError.code == .ENOTEMPTY: break
+                case let nsError as NSError where nsError.domain == NSPOSIXErrorDomain && nsError.code == POSIXErrorCode.ENOTEMPTY.rawValue: break
+                default: throw cocoaError
                 }
             }
         } catch {
