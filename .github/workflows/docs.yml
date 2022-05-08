@@ -1,0 +1,232 @@
+name: Publish Documentation
+
+on:
+  release:
+    types:
+      - published
+      - edited
+  push:
+    branches: [ master ]
+
+jobs:
+  release-context:
+    runs-on: ubuntu-latest
+    outputs:
+      version-name: ${{github.ref_name}}
+      is-latest: ${{steps.compare-tags.output.is-latest}}
+    steps:
+      - uses: joutvhu/get-release@v1.0.1
+        id: latest-release
+        with:
+          latest: true
+          throwing: false
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - name: Compare tags
+        id: compare-tags
+        run: |
+          if [ '${{github.ref_type}}' == 'tag' ] && [ '${{steps.latest-release.outputs.tag_name}}' == '${{github.ref_name}}' ]; then
+            echo "::set-output name=is-latest::true"
+          else
+            echo "::set-output name=is-latest::false"
+          fi
+
+  spm-context:
+    runs-on: ubuntu-latest
+    outputs:
+      package-dump: ${{steps.dump-package.outputs.package-dump}}
+    steps:
+      - uses: swift-actions/setup-swift@v1.15.0
+        id: swift-setup
+        with:
+          swift-version: '5.6'
+      - name: Read OS Version
+        uses: sersoft-gmbh/os-version-action@v1.0.0
+        id: os-version
+      - uses: actions/checkout@v3.0.2
+      # We don't use a cache here, because SPM doesn't resolve dependencies when dumping packages.
+      - name: Dump package
+        id: dump-package
+        # We need to escape newlines: https://github.community/t/set-output-truncates-multiline-strings/16852/5
+        run: |
+          package_dump="$(swift package dump-package)"
+          package_dump="${package_dump//'%'/'%25'}"
+          package_dump="${package_dump//$'\n'/'%0A'}"
+          package_dump="${package_dump//$'\r'/'%0D'}"
+          echo "::set-output name=package-dump::${package_dump}"
+
+  generate-docs:
+    needs:
+      - release-context
+      - spm-context
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        target: ${{fromJson(needs.spm-context.outputs.package-dump).products.*.targets.*}}
+    steps:
+      - uses: swift-actions/setup-swift@v1.15.0
+        id: swift-setup
+        with:
+          swift-version: '5.6'
+      - name: Read OS Version
+        uses: sersoft-gmbh/os-version-action@v1.0.0
+        id: os-version
+      - uses: actions/checkout@v3.0.2
+      - uses: actions/cache@v3.0.2
+        with:
+          path: .build
+          key: ${{runner.os}}-${{steps.os-version.outputs.version}}-${{github.repository}}-spm-${{steps.swift-setup.outputs.version}}-${{hashFiles('**/Package.resolved')}}
+          restore-keys: |
+            ${{runner.os}}-${{steps.os-version.outputs.version}}-${{github.repository}}-spm-${{steps.swift-setup.outputs.version}}-
+      - uses: sersoft-gmbh/swifty-docs-action@v2.0.1
+        env:
+          ENABLE_DOCC_SUPPORT: '1'
+          DOCC_JSON_PRETTYPRINT: 'YES'
+        with:
+          package-version: ${{needs.release-context.outputs.version-name}}
+          targets: ${{matrix.target}}
+          enable-inherited-docs: true
+          enable-index-building: false
+          transform-for-static-hosting: true
+          hosting-base-path: ${{github.event.repository.name}}/${{needs.release-context.outputs.version-name}}
+          output: ${{matrix.target}}-docs
+      - name: Package docs
+        run: tar -cvf '${{matrix.target}}-docs.tar' '${{matrix.target}}-docs'
+      - uses: actions/upload-artifact@v3
+        with:
+          name: ${{matrix.target}}-docs
+          path: ${{matrix.target}}-docs.tar
+
+  publish-docs:
+    needs:
+      - release-context
+      - spm-context
+      - generate-docs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3.0.2
+        with:
+          ref: gh-pages
+          path: repository
+      - uses: actions/download-artifact@v3
+        with:
+          path: artifacts
+      - name: Extract tars
+        run: find artifacts -name '*.tar' -execdir tar -xvf '{}' --strip-components 1 \; -delete
+      - name: Merge documentations
+        env:
+          TARGETS: ${{join(fromJson(needs.spm-context.outputs.package-dump).products.*.targets.*, ' ')}}
+          DOCS_BASE_DIR: repository/${{needs.release-context.outputs.version-name}}
+        run: |
+          rm -rf "${DOCS_BASE_DIR}"
+          is_first=1
+          for target in $TARGETS; do
+            if [ $is_first -eq 1 ]; then
+              echo "Copying initial documentation for ${target}"
+              cp -R "artifacts/${target}-docs" "${DOCS_BASE_DIR}"
+              is_first=0
+            else
+              echo "Merging documentation for ${target}"
+              cp -R "artifacts/${target}-docs/data/documentation/"* "${DOCS_BASE_DIR}/data/documentation/"
+              cp -R "artifacts/${target}-docs/documentation/"* "${DOCS_BASE_DIR}/documentation/"
+            fi
+          done
+          echo "Deleting non-mergable metadata.json"
+          rm -f "${DOCS_BASE_DIR}/metadata.json"
+      - name: Create version index
+        working-directory: repository
+        env:
+          TARGET_DOCS_DIR: ${{needs.release-context.outputs.version-name}}/documentation
+          INDEX_FILE: ${{needs.release-context.outputs.version-name}}/index.html
+          BASE_URL: 'https://${{github.repository_owner}}.github.io/${{github.event.repository.name}}/${{needs.release-context.outputs.version-name}}/documentation'
+        run: |
+          target_count=0
+          target_list=""
+          single_target_name=""
+          for target in $(ls "${TARGET_DOCS_DIR}"); do
+            if [ -d "${TARGET_DOCS_DIR}/${target}" ]; then
+              single_target_name="${target}"
+              target_count=$((target_count+1))
+              target_list="${target_list}<li><a href=\"${BASE_URL}/${target}\"><code>${target}</code> Documentation</a></li>"
+            fi
+          done
+          if [ ${target_count} -gt 1 ]; then
+          echo "Found ${target_count} targets. Generating list..."
+          cat > "${INDEX_FILE}" <<EOF
+          <!DOCTYPE html>
+          <html>
+             <head>
+                <title>${{github.event.repository.name}} Documentation</title>
+             </head>
+             <body>
+                <ul>
+                  ${target_list}
+                </ul>
+             </body>
+          </html>
+          EOF
+          else
+          echo "Found one target. Generating redirect file to target ${single_target_name}"
+          cat > "${INDEX_FILE}" <<EOF
+          <!DOCTYPE html>
+          <html>
+             <head>
+                <title>${{github.event.repository.name}} Documentation</title>
+                <meta http-equiv="refresh" content="0; url=${BASE_URL}/${single_target_name}" />
+             </head>
+             <body>
+                <p>Redirecting...</p>
+             </body>
+          </html>
+          EOF
+          fi
+      - name: Create root index
+        working-directory: repository
+        env:
+          REDIRECT_URL: 'https://${{github.repository_owner}}.github.io/${{github.event.repository.name}}/latest'
+        run: |
+          cat > 'index.html' <<EOF
+          <!DOCTYPE html>
+          <html>
+             <head>
+                <title>${{github.event.repository.name}} Documentation</title>
+                <meta http-equiv="refresh" content="0; url=${REDIRECT_URL}" />
+             </head>
+             <body>
+                <p>Redirecting...</p>
+             </body>
+          </html>
+          EOF
+      - name: Create latest symlink
+        if: ${{needs.release-context.outputs.is-latest}}
+        working-directory: repository
+        run: |
+          rm -f 'latest'
+          ln -s '${{needs.release-context.outputs.version-name}}' 'latest'
+      - name: Determine changes
+        id: check-changes
+        working-directory: repository
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "::set-output name=has-changes::true"
+          else
+            echo "::set-output name=has-changes::false"
+          fi
+      - uses: crazy-max/ghaction-github-pages@v2.6.0
+        if: ${{steps.check-changes.outputs.has-changes}}
+        with:
+          keep_history: true
+          build_dir: repository
+          commit_message: Deploy documentation for '${{needs.release-context.outputs.version-name}}'
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+  cleanup:
+    needs:
+      - generate-docs
+      - publish-docs
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cleanup Artifacts
+        uses: joutvhu/delete-artifact@v1

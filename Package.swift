@@ -1,7 +1,8 @@
-// swift-tools-version:5.4
+// swift-tools-version:5.6
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
+import Foundation
 
 let package = Package(
     name: "FFCoreData",
@@ -33,3 +34,7 @@ let package = Package(
             resources: [.process("Models/TestModel.xcdatamodeld")]),
     ]
 )
+
+if ProcessInfo.processInfo.environment["ENABLE_DOCC_SUPPORT"] == "1" {
+    package.dependencies.append(.package(url: "https://github.com/apple/swift-docc-plugin", from: "1.0.0"))
+}

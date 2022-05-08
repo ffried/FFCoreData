@@ -28,7 +28,7 @@ extension NSPredicate {
     }
 }
 
-public typealias KeyObjectDictionary = [String: Any]
+public typealias KeyObjectDictionary = Dictionary<String, Any>
 
 internal extension NSCompoundPredicate {
     @usableFromInline

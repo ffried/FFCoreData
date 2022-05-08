@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         os: [ macos-latest ]
-        swift-version: [ 5.4 ]
+        swift-version: [ 5.5, 5.6 ]
 
     runs-on: ${{matrix.os}}
 
@@ -19,7 +19,7 @@ jobs:
       - if: runner.os == 'macOS'
         uses: maxim-lobanov/setup-xcode@v1.4.1
         with:
-          xcode-version: ^12.4
+          xcode-version: ^13.0
       - name: Install Swift
         if: runner.os == 'Linux'
         uses: sersoft-gmbh/swifty-linux-action@v1.3.0
@@ -40,6 +40,9 @@ jobs:
           key: ${{runner.os}}-${{steps.os-version.outputs.version}}-${{github.repository}}-spm-${{steps.swift-version.outputs.version}}-${{hashFiles('**/Package.resolved')}}
           restore-keys: |
             ${{runner.os}}-${{steps.os-version.outputs.version}}-${{github.repository}}-spm-${{steps.swift-version.outputs.version}}-
+      - name: Workaround Package.resolved format issues
+        if: ${{ startsWith(steps.swift-version.outputs.version, '5.5') }}
+        run: rm -rf Package.resolved
       - name: Build & Test
         run: swift test -v --parallel --enable-code-coverage
       - name: Generate Coverage Files
@@ -70,8 +73,14 @@ jobs:
     steps:
       - uses: maxim-lobanov/setup-xcode@v1.4.1
         with:
-          xcode-version: ^12.4
+          xcode-version: ^13.0
+      - name: Read Swift Version
+        uses: sersoft-gmbh/swift-version-action@v1.0.1
+        id: swift-version
       - uses: actions/checkout@v3
+      - name: Workaround Package.resolved format issues
+        if: ${{ startsWith(steps.swift-version.outputs.version, '5.5') }}
+        run: rm -rf Package.resolved
       - uses: sersoft-gmbh/xcodebuild-action@v1.8.0
         with:
           spm-package: './'

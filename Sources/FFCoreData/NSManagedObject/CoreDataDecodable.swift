@@ -63,10 +63,9 @@ extension CoreDataDecodable where Self: NSManagedObject {
 }
 
 /// Errors thrown during the process of decoding CoreData entities.
-///
-/// - missingContext: Thrown if a managed object context was missing during the decoding.
 public enum CoreDataDecodingError: Error, CustomStringConvertible {
-    case missingContext(codingPath: [CodingKey])
+    /// Thrown if a managed object context was missing during the decoding.
+    case missingContext(codingPath: Array<CodingKey>)
 
     public var description: String {
         switch self {
@@ -90,17 +89,15 @@ extension NSManagedObjectContext {
     }
 
     /// Returns the current decoding context. Throws if no context is registered as decoding context.
-    ///
     /// - Parameter codingPath: The coding path for which to request the decoding context. Only used for debugging purposes.
     /// - Returns: The current decoding context.
-    /// - Throws: `CoreDataDecodingError.missingContext`
-    public static func decodingContext(at codingPath: [CodingKey] = []) throws -> NSManagedObjectContext {
+    /// - Throws: ``CoreDataDecodingError/missingContext``
+    public static func decodingContext(at codingPath: Array<CodingKey> = []) throws -> NSManagedObjectContext {
         if let context = _decodingContext { return context }
         throw CoreDataDecodingError.missingContext(codingPath: codingPath)
     }
 
     /// Sets the current managed object context as decoding context.
-    ///
     /// - Parameter work: The work to perform with the receiver as decoding context.
     /// - Returns: Any value returned by `work`
     /// - Throws: Any error thrown by `work`.
