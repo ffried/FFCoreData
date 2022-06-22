@@ -48,8 +48,6 @@ jobs:
       - name: Generate Coverage Files
         uses: sersoft-gmbh/swift-coverage-action@v3.0.0
         id: coverage-files
-        with:
-          format: lcov
       - uses: codecov/codecov-action@v3
         with:
           token: ${{secrets.CODECOV_TOKEN}}
@@ -92,8 +90,6 @@ jobs:
       - uses: sersoft-gmbh/swift-coverage-action@v3.0.0
         id: coverage-files
         if: matrix.action == 'test'
-        with:
-          format: lcov
       - uses: codecov/codecov-action@v3
         with:
           token: ${{secrets.CODECOV_TOKEN}}
