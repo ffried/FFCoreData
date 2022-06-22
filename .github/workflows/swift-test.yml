@@ -81,7 +81,7 @@ jobs:
       - name: Workaround Package.resolved format issues
         if: ${{ startsWith(steps.swift-version.outputs.version, '5.5') }}
         run: rm -rf Package.resolved
-      - uses: sersoft-gmbh/xcodebuild-action@v1.8.0
+      - uses: sersoft-gmbh/xcodebuild-action@v2.0.0
         with:
           spm-package: './'
           scheme: FFCoreData
