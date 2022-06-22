@@ -31,7 +31,7 @@ jobs:
         uses: sersoft-gmbh/os-version-action@v1.0.0
         id: os-version
       - name: Read Swift Version
-        uses: sersoft-gmbh/swift-version-action@v1.0.1
+        uses: sersoft-gmbh/swift-version-action@v2.0.0
         id: swift-version
       - uses: actions/checkout@v3
       - uses: actions/cache@v3.0.4
@@ -75,7 +75,7 @@ jobs:
         with:
           xcode-version: ^13.0
       - name: Read Swift Version
-        uses: sersoft-gmbh/swift-version-action@v1.0.1
+        uses: sersoft-gmbh/swift-version-action@v2.0.0
         id: swift-version
       - uses: actions/checkout@v3
       - name: Workaround Package.resolved format issues
