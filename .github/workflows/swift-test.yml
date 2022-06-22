@@ -46,7 +46,7 @@ jobs:
       - name: Build & Test
         run: swift test -v --parallel --enable-code-coverage
       - name: Generate Coverage Files
-        uses: sersoft-gmbh/swift-coverage-action@v2.0.1
+        uses: sersoft-gmbh/swift-coverage-action@v3.0.0
         id: coverage-files
         with:
           format: lcov
@@ -89,7 +89,7 @@ jobs:
           action: ${{matrix.action}}
           parallel-testing-enabled: true
           enable-code-coverage: true
-      - uses: sersoft-gmbh/swift-coverage-action@v2.0.1
+      - uses: sersoft-gmbh/swift-coverage-action@v3.0.0
         id: coverage-files
         if: matrix.action == 'test'
         with:
