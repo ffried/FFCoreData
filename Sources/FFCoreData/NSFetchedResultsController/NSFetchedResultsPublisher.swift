@@ -62,7 +62,10 @@ fileprivate final class PublisherControllerDelegate<ResultType: NSFetchRequestRe
     private var didFetch = false
 
     init(fetchRequest: NSFetchRequest<ResultType>, context: NSManagedObjectContext) {
-        self.controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        self.controller = NSFetchedResultsController(fetchRequest: fetchRequest,
+                                                     managedObjectContext: context,
+                                                     sectionNameKeyPath: nil,
+                                                     cacheName: nil)
         super.init()
     }
 
@@ -84,7 +87,7 @@ fileprivate final class PublisherControllerDelegate<ResultType: NSFetchRequestRe
         fetch()
     }
 
-    private func send(from objects: [NSFetchRequestResult]) {
+    private func send(from objects: Array<NSFetchRequestResult>) {
         (objects as? [ResultType]).map(subject.send)
     }
 
