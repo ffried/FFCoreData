@@ -276,20 +276,3 @@ extension NSManagedObject {
     @nonobjc
     internal static var shouldRemoveNamespaceInEntityName: Bool = true
 }
-
-extension NSManagedObjectContext {
-    public final func sync<T>(do work: () throws -> T) rethrows -> T {
-        try {
-            var result: Result<T, Error>!
-            performAndWait {
-                result = Result(catching: work)
-            }
-            return try result.get()
-        }()
-    }
-
-    @inlinable
-    public final func async(do work: @escaping () -> ()) {
-        perform(work)
-    }
-}

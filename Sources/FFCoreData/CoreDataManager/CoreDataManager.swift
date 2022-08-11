@@ -100,40 +100,58 @@ fileprivate final class CoreDataManager {
             .forEach(fileManager.removeItem)
     }
 
-    func save(context ctx: NSManagedObjectContext, rollback: Bool, completion: @escaping (Bool) -> Void) {
-        guard ctx.hasChanges else {
-            return completion(true)
-        }
-        var result = true
+    private func _saveContext(_ context: NSManagedObjectContext, rollback: Bool) -> Bool {
+        guard context.hasChanges else { return true }
         do {
-            try ctx.save()
-            switch ctx {
+            try context.save()
+            switch context {
             case managedObjectContext:
                 os_log("Main NSManagedObjectContext saved successfully!", log: .ffCoreData, type: .debug)
             case backgroundSavingContext:
                 os_log("Background NSManagedObjectContext saved successfully!", log: .ffCoreData, type: .debug)
             default:
-                os_log("NSManagedObjectContext %@ saved successfully!", log: .ffCoreData, type: .debug, ctx)
+                os_log("NSManagedObjectContext %@ saved successfully!", log: .ffCoreData, type: .debug, context)
             }
+            return true
         } catch {
             os_log("Unresolved error while saving NSManagedObjectContext!%@", log: .ffCoreData, type: .error, rollback ? " Rolling back..." : "")
-            result = false
-            if rollback { ctx.rollback() }
-        }
-
-        if let parentContext = ctx.parent, result != false {
-            parentContext.perform {
-                self.save(context: parentContext, rollback: rollback, completion: { success in
-                    if !success && rollback {
-                        ctx.rollback()
-                    }
-                    completion(success)
-                })
+            if rollback {
+                context.rollback()
             }
-        } else {
-            completion(result)
+            return false
         }
     }
+
+    func saveContext(_ context: NSManagedObjectContext, rollback: Bool, completion: @escaping (Bool) -> Void) {
+        context.perform {
+            guard self._saveContext(context, rollback: rollback) else { return completion(false) }
+            guard let parent = context.parent else { return completion(true) }
+            self.saveContext(parent, rollback: rollback, completion: {
+                if !$0 && rollback {
+                    context.perform {
+                        context.rollback()
+                        completion(false)
+                    }
+                } else {
+                    completion(true)
+                }
+            })
+        }
+    }
+
+    #if canImport(_Concurrency)
+    @discardableResult
+    @available(macOS 12, iOS 15, tvOS 15, watchOS 8, *)
+    func saveContext(_ context: NSManagedObjectContext, rollback: Bool) async -> Bool {
+        guard await context.run({ self._saveContext($0, rollback: rollback) }) else { return false }
+        guard let parent = context.parent else { return true }
+        let success = await self.saveContext(parent, rollback: rollback)
+        if !success && rollback {
+            await context.run { $0.rollback() }
+        }
+        return success
+    }
+#endif
 }
 
 @frozen
@@ -155,12 +173,26 @@ public enum CoreDataStack {
     public static var mainContext: NSManagedObjectContext { manager.managedObjectContext }
 
     public static func save(context: NSManagedObjectContext, rollback: Bool = true, completion: @escaping (Bool) -> () = { _ in }) {
-        context.sync { manager.save(context: context, rollback: rollback, completion: completion) }
+        manager.saveContext(context, rollback: rollback, completion: completion)
     }
 
     public static func saveMainContext(rollback: Bool = true, completion: @escaping (Bool) -> () = { _ in }) {
         save(context: mainContext, rollback: rollback, completion: completion)
     }
+
+#if canImport(_Concurrency)
+    @discardableResult
+    @available(macOS 12, iOS 15, tvOS 15, watchOS 8, *)
+    public static func saveContext(_ context: NSManagedObjectContext, rollback: Bool = true) async -> Bool {
+        await manager.saveContext(context, rollback: rollback)
+    }
+
+    @discardableResult
+    @available(macOS 12, iOS 15, tvOS 15, watchOS 8, *)
+    public static func saveMainContext(rollback: Bool = true) async -> Bool {
+        await saveContext(mainContext, rollback: rollback)
+    }
+#endif
 
     public static func createTemporaryMainContext() -> NSManagedObjectContext {
         manager.createTemporaryMainContext()
