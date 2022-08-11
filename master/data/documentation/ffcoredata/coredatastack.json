@@ -107,6 +107,8 @@
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/createTemporaryBackgroundContext()",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/createTemporaryMainContext()",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/save(context:rollback:completion:)",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/saveContext(_:rollback:)",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/saveMainContext(rollback:)",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/saveMainContext(rollback:completion:)"
       ],
       "title" : "Type Methods"
@@ -541,6 +543,149 @@
   "title" : "save(context:rollback:completion:)",
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/coredatastack\/save(context:rollback:completion:)"
+},
+"doc://FFCoreData/documentation/FFCoreData/CoreDataStack/saveContext(_:rollback:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "saveContext"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:objc(cs)NSManagedObjectContext",
+      "text" : "NSManagedObjectContext"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "rollback"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "async"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/saveContext(_:rollback:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "saveContext(_:rollback:)",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/coredatastack\/savecontext(_:rollback:)"
+},
+"doc://FFCoreData/documentation/FFCoreData/CoreDataStack/saveMainContext(rollback:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "saveMainContext"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "rollback"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "async"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/saveMainContext(rollback:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "saveMainContext(rollback:)",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/coredatastack\/savemaincontext(rollback:)"
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreDataStack/saveMainContext(rollback:completion:)": {
   "abstract" : [
