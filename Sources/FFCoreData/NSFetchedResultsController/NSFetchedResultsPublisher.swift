@@ -88,7 +88,7 @@ fileprivate final class PublisherControllerDelegate<ResultType: NSFetchRequestRe
     }
 
     private func send(from objects: Array<NSFetchRequestResult>) {
-        (objects as? [ResultType]).map(subject.send)
+        (objects as? Array<ResultType>).map(subject.send)
     }
 
     @objc dynamic func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
