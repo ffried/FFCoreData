@@ -42,13 +42,13 @@ public enum MOCObservationMode {
 }
 
 public struct MOCObservedChanges {
-    public private(set) var inserted: [NSManagedObjectID] = []
-    public private(set) var updated: [NSManagedObjectID] = []
-    public private(set) var deleted: [NSManagedObjectID] = []
+    public private(set) var inserted: Array<NSManagedObjectID> = []
+    public private(set) var updated: Array<NSManagedObjectID> = []
+    public private(set) var deleted: Array<NSManagedObjectID> = []
 }
 
 extension MOCObservedChanges {
-    fileprivate init(readingFrom changes: [AnyHashable: Any], filteringWith filter: (NSManagedObject) throws -> Bool) rethrows {
+    fileprivate init(readingFrom changes: Dictionary<AnyHashable, Any>, filteringWith filter: (NSManagedObject) throws -> Bool) rethrows {
         try changes.map(keysToKeyPaths: [(NSInsertedObjectsKey, \.inserted), (NSUpdatedObjectsKey, \.updated), (NSDeletedObjectsKey, \.deleted)],
                         to: &self,
                         transformingValuesTo: Set<NSManagedObject>.self,

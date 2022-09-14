@@ -213,13 +213,10 @@ public enum CoreDataStack {
 
 extension CoreDataStack {
     public struct Configuration {
-        private static let infoDictionarySQLiteNameKey = "FFCDDataManagerSQLiteName"
-        private static let infoDictionaryModelNameKey = "FFCDDataManagerModelName"
-
         fileprivate static let legacyConfiguration: Configuration = {
             let bundle = Bundle.main
-            let modelName = bundle.infoDictionary?[Configuration.infoDictionaryModelNameKey] as? String
-            let sqliteName = bundle.infoDictionary?[Configuration.infoDictionarySQLiteNameKey] as? String
+            let modelName = bundle.infoDictionary?["FFCDDataManagerModelName"] as? String
+            let sqliteName = bundle.infoDictionary?["FFCDDataManagerSQLiteName"] as? String
             return Configuration(bundle: bundle, modelName: modelName, sqliteName: sqliteName)
         }()
 
@@ -367,6 +364,6 @@ extension CoreDataStack {
 extension CoreDataStack.Configuration.Options {
     public static var `default`: CoreDataStack.Configuration.Options { .removeNamespacesFromEntityNames }
 
-    public static let removeNamespacesFromEntityNames: CoreDataStack.Configuration.Options = .init(rawValue: 1 << 0)
-    public static let clearDataStoreOnSetupFailure: CoreDataStack.Configuration.Options = .init(rawValue: 1 << 1)
+    public static let removeNamespacesFromEntityNames = CoreDataStack.Configuration.Options(rawValue: 1 << 0)
+    public static let clearDataStoreOnSetupFailure = CoreDataStack.Configuration.Options(rawValue: 1 << 1)
 }

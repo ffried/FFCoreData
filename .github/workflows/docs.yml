@@ -39,7 +39,7 @@ jobs:
       - uses: swift-actions/setup-swift@v1.17.0
         id: swift-setup
         with:
-          swift-version: '5.6'
+          swift-version: '5.7'
       - name: Read OS Version
         uses: sersoft-gmbh/os-version-action@v2.0.0
         id: os-version
@@ -59,7 +59,7 @@ jobs:
     needs:
       - release-context
       - spm-context
-    runs-on: macos-latest
+    runs-on: macos-12
     strategy:
       matrix:
         target: ${{fromJson(needs.spm-context.outputs.package-dump).products.*.targets.*}}
@@ -67,7 +67,7 @@ jobs:
       - uses: swift-actions/setup-swift@v1.17.0
         id: swift-setup
         with:
-          swift-version: '5.6'
+          swift-version: '5.7'
       - name: Read OS Version
         uses: sersoft-gmbh/os-version-action@v2.0.0
         id: os-version

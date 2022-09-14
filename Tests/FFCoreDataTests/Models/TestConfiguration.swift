@@ -28,7 +28,7 @@ fileprivate extension Pipe {
         }
         return data.map { String(decoding: $0, as: UTF8.self) }?
             .trimmingCharacters(in: .whitespacesAndNewlines)
-            ?? ""
+        ?? ""
     }
 }
 
@@ -76,9 +76,9 @@ extension CoreDataStack.Configuration {
         if let resURL = Bundle.module.url(forResource: testModelName, withExtension: "momd") {
             return resURL
         }
-        #if Xcode
+#if Xcode
         fatalError("Could not find \(testModelName).momd in \(Bundle.module.bundlePath)")
-        #else
+#else
         guard let xcModelURL = Bundle.module.url(forResource: testModelName, withExtension: "xcdatamodeld") else {
             fatalError("Could not find \(testModelName).xcdatamodeld in \(Bundle.module.bundlePath)")
         }
@@ -90,10 +90,16 @@ extension CoreDataStack.Configuration {
             let sdkPath = try Process.xcrun(arguments: ["--sdk", "macosx", "--show-sdk-path"]).stdout
             try FileManager.default.createDirectoryIfNeeded(at: compilationFolder)
             defer { try? FileManager.default.removeItem(at: compilationFolder) }
+            let deploymentTarget: String
+#if compiler(>=5.7)
+            deploymentTarget = "10.13"
+#else
+            deploymentTarget = "10.12"
+#endif
             _ = try Process.xcrun(arguments: [
                 "momc",
                 "--sdkroot", sdkPath,
-                "--macosx-deployment-target", "10.12",
+                "--macosx-deployment-target", deploymentTarget,
                 "--module", "FFCoreDataTests",
                 xcModelURL.path,
                 compilationFolder.path,
@@ -117,14 +123,19 @@ extension CoreDataStack.Configuration {
         // Bundle sometimes caches resource lookup results.
         if FileManager.default.fileExists(atPath: finalModelURL.path) { return finalModelURL }
         fatalError("Model compilation seems to have failed. Could not find \(testModelName).momd in \(Bundle.module.bundlePath)")
-        #endif
+#endif
     }()
 
     static var test: CoreDataStack.Configuration {
-        #if os(iOS) || os(watchOS) || os(tvOS)
-        return CoreDataStack.Configuration(modelURL: modelURL, sqliteName: testSQLiteName, options: testOptions)
-        #else
-        return CoreDataStack.Configuration(modelURL: modelURL, applicationSupportSubfolder: "FFCoreDataTests", sqliteName: testSQLiteName, options: testOptions)
-        #endif
+#if os(iOS) || os(watchOS) || os(tvOS)
+        return CoreDataStack.Configuration(modelURL: modelURL,
+                                           sqliteName: testSQLiteName,
+                                           options: testOptions)
+#else
+        return CoreDataStack.Configuration(modelURL: modelURL,
+                                           applicationSupportSubfolder: "FFCoreDataTests",
+                                           sqliteName: testSQLiteName,
+                                           options: testOptions)
+#endif
     }
 }

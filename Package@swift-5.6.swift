@@ -1,4 +1,4 @@
-// swift-tools-version:5.7
+// swift-tools-version:5.6
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -7,15 +7,14 @@ import Foundation
 let package = Package(
     name: "FFCoreData",
     platforms: [
-        .iOS(.v11),
-        .macOS(.v10_13),
+        .iOS(.v10),
+        .macOS(.v10_12),
         .watchOS(.v4),
-        .tvOS(.v11),
+        .tvOS(.v10),
     ],
     products: [
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
-        .library(name: "FFCoreData",
-                 targets: ["FFCoreData"]),
+        .library(name: "FFCoreData", targets: ["FFCoreData"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.

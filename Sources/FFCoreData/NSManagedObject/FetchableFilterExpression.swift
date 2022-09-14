@@ -26,7 +26,9 @@ public struct FetchableFilterExpression<Model: Fetchable> {
     let predicate: NSPredicate
 
     @usableFromInline
-    init(predicate: NSPredicate) { self.predicate = predicate }
+    init(predicate: NSPredicate) {
+        self.predicate = predicate
+    }
 }
 
 // MARK: - Equatable

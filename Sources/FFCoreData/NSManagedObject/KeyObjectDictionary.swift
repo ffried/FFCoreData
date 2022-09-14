@@ -56,7 +56,9 @@ public struct KeyObjectDictionaryExpression<Model: Entity> {
     let dict: KeyObjectDictionary
 
     @usableFromInline
-    init(dict: KeyObjectDictionary) { self.dict = dict }
+    init(dict: KeyObjectDictionary) {
+        self.dict = dict
+    }
 }
 
 extension KeyObjectDictionaryExpression where Model: Fetchable {

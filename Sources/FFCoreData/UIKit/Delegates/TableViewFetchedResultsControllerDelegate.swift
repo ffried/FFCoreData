@@ -85,7 +85,7 @@ public final class TableViewFetchedResultsControllerManager<Result: NSFetchReque
         super.updateSubobject(at: indexPath)
         let selected = tableView?.indexPathsForSelectedRows?.contains(indexPath)
         tableView?.reloadRows(at: [indexPath], with: animation)
-        if let s = selected, s { selectedIndexPaths.insert(indexPath) }
+        if selected == true { selectedIndexPaths.insert(indexPath) }
     }
 
     override func removeSubobject(at indexPath: IndexPath) {

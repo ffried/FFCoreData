@@ -34,7 +34,6 @@ import func FFFoundation.os_log
 @objc public protocol FetchedResultsControllerManagerDelegate: NSFetchedResultsControllerDelegate {}
 
 public class FetchedResultsControllerManager<Result: NSFetchRequestResult>: NSObject, NSFetchedResultsControllerDelegate {
-
     public typealias Controller = NSFetchedResultsController<Result>
     public typealias Delegate = FetchedResultsControllerManagerDelegate
 
@@ -81,7 +80,11 @@ public class FetchedResultsControllerManager<Result: NSFetchRequestResult>: NSOb
     }
 
     @objc(controller:didChangeObject:atIndexPath:forChangeType:newIndexPath:)
-    public dynamic func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+    public dynamic func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
+                                   didChange anObject: Any,
+                                   at indexPath: IndexPath?,
+                                   for type: NSFetchedResultsChangeType,
+                                   newIndexPath: IndexPath?) {
         switch type {
         case .insert: insertSubobject(at: newIndexPath!)
         case .update: updateSubobject(at: indexPath!)
@@ -97,7 +100,8 @@ public class FetchedResultsControllerManager<Result: NSFetchRequestResult>: NSOb
         delegate?.controllerDidChangeContent?(controller)
     }
 
-    @objc public dynamic func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, sectionIndexTitleForSectionName sectionName: String) -> String? {
+    @objc public dynamic func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
+                                         sectionIndexTitleForSectionName sectionName: String) -> String? {
         delegate?.controller?(controller, sectionIndexTitleForSectionName: sectionName) ?? controller.sectionIndexTitle(forSectionName: sectionName)
     }
 }

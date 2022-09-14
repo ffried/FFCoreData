@@ -48,7 +48,9 @@ public final class MOCBlockObserver<Filter: MOCObserverFilter> {
                 notificationCenter.addObserver(forName: .NSManagedObjectContextObjectsDidChange, object: $0, queue: workerQueue, using: observerBlock)
             }
         } else {
-            observers = [notificationCenter.addObserver(forName: .NSManagedObjectContextObjectsDidChange, object: nil, queue: workerQueue, using: observerBlock)]
+            observers = [
+                notificationCenter.addObserver(forName: .NSManagedObjectContextObjectsDidChange, object: nil, queue: workerQueue, using: observerBlock)
+            ]
         }
         if fireInitially {
             fire(with: .init())

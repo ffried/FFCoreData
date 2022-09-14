@@ -26,7 +26,9 @@ public struct FetchableSortExpression<Model: Fetchable> {
     let sortDescriptor: NSSortDescriptor
 
     @usableFromInline
-    init(sortDescriptor: NSSortDescriptor) { self.sortDescriptor = sortDescriptor }
+    init(sortDescriptor: NSSortDescriptor) {
+        self.sortDescriptor = sortDescriptor
+    }
 }
 
 public prefix func ^ <Model, Value: Comparable>(rhs: KeyPath<Model, Value>) -> FetchableSortExpression<Model> {

@@ -29,16 +29,18 @@ import func FFFoundation.os_log
 #endif
 
 public struct MOCObjectsFilter: MOCObserverFilter {
-    var objectIDs: [NSManagedObjectID] {
+    var objectIDs: Array<NSManagedObjectID> {
         didSet {
             precondition(!objectIDs.contains(where: \.isTemporaryID),
                          "FFCoreData: ERROR: Temporary NSManagedObjectIDs set on MOCObjectsObserver! Be sure to only use non-temporary IDs for MOCObservers!")
         }
     }
 
-    private var objectIDURIs: [URL] { objectIDs.map { $0.uriRepresentation() } }
+    private var objectIDURIs: Array<URL> {
+        objectIDs.map { $0.uriRepresentation() }
+    }
 
-    public init(objectIDs: [NSManagedObjectID]) {
+    public init(objectIDs: Array<NSManagedObjectID>) {
         self.objectIDs = objectIDs
     }
 

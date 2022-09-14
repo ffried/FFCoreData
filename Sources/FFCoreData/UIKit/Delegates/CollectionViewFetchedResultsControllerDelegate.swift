@@ -81,7 +81,7 @@ public final class CollectionViewFetchedResultsControllerManager<Result: NSFetch
         super.updateSubobject(at: indexPath)
         let selected = collectionView?.indexPathsForSelectedItems?.contains(indexPath)
         collectionView?.reloadItems(at: [indexPath])
-        if let s = selected, s { selectedIndexPaths.insert(indexPath) }
+        if selected == true { selectedIndexPaths.insert(indexPath) }
     }
 
     override func removeSubobject(at indexPath: IndexPath) {

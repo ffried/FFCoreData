@@ -10,8 +10,25 @@ jobs:
   test-spm:
     strategy:
       matrix:
-        os: [ macos-latest ]
-        swift-version: [ 5.5, 5.6 ]
+        os: [ macos-11 ]
+        swift-version: [ '' ]
+        xcode-version: [ '^13.0' ]
+        include:
+          - os: macos-12
+            swift-version: ''
+            xcode-version: '^14.0'
+          # - os: ubuntu-20.04
+          #   swift-version: 5.5
+          #   xcode-version: ''
+          # - os: ubuntu-20.04
+          #   swift-version: 5.6
+          #   xcode-version: ''
+          # - os: ubuntu-20.04
+          #   swift-version: 5.7
+          #   xcode-version: ''
+          # - os: ubuntu-22.04
+          #   swift-version: 5.7
+          #   xcode-version: ''
 
     runs-on: ${{matrix.os}}
 
@@ -19,7 +36,7 @@ jobs:
       - if: runner.os == 'macOS'
         uses: maxim-lobanov/setup-xcode@v1.4.1
         with:
-          xcode-version: ^13.0
+          xcode-version: ${{matrix.xcode-version}}
       - name: Install Swift
         if: runner.os == 'Linux'
         uses: sersoft-gmbh/swifty-linux-action@v2.1.0
@@ -55,44 +72,35 @@ jobs:
           fail_ci_if_error: true
 
   test-xcode:
-    runs-on: macos-latest
+    runs-on: macos-12
     strategy:
       matrix:
-        action: [ test ]
         destination:
           - platform=macOS
-          - platform=iOS Simulator,OS=latest,name=iPhone 12 Pro
-          - platform=iOS Simulator,OS=latest,name=iPad Pro (11-inch) (2nd generation)
-          - platform=tvOS Simulator,OS=latest,name=Apple TV 4K
-        # Watch currently doesn't work because there's no XCTest on watchOS
-        # include:
-        #   - action: build
-        #     destination: platform=watchOS Simulator,OS=latest,name=Apple Watch Series 6 - 44mm
+          - platform=iOS Simulator,OS=latest,name=iPhone 13 Pro
+          - platform=iOS Simulator,OS=latest,name=iPad Pro (11-inch) (3rd generation)
+          - platform=tvOS Simulator,OS=latest,name=Apple TV 4K (2nd generation)
+          - platform=watchOS Simulator,OS=latest,name=Apple Watch Series 7 (45mm)
     steps:
       - uses: maxim-lobanov/setup-xcode@v1.4.1
         with:
-          xcode-version: ^13.0
+          xcode-version: ^14.0
       - name: Read Swift Version
         uses: sersoft-gmbh/swift-version-action@v2.0.0
         id: swift-version
       - uses: actions/checkout@v3
-      - name: Workaround Package.resolved format issues
-        if: ${{ startsWith(steps.swift-version.outputs.version, '5.5') }}
-        run: rm -rf Package.resolved
       - uses: sersoft-gmbh/xcodebuild-action@v2.0.0
         with:
           spm-package: './'
           scheme: FFCoreData
           destination: ${{matrix.destination}}
-          action: ${{matrix.action}}
+          action: test
           parallel-testing-enabled: true
           enable-code-coverage: true
       - uses: sersoft-gmbh/swift-coverage-action@v3.0.0
         id: coverage-files
-        if: matrix.action == 'test'
       - uses: codecov/codecov-action@v3
         with:
           token: ${{secrets.CODECOV_TOKEN}}
           files: ${{join(fromJSON(steps.coverage-files.outputs.files), ',')}}
           fail_ci_if_error: true
-        if: matrix.action == 'test'

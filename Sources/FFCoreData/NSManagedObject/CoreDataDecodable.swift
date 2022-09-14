@@ -20,6 +20,18 @@
 
 import CoreData
 
+#if compiler(>=5.7)
+public protocol CoreDataDecodable<DTO>: Decodable {
+    associatedtype DTO: Decodable
+
+    @discardableResult
+    static func findOrCreate(for dto: DTO, in context: NSManagedObjectContext) throws -> Self
+
+    init(with dto: DTO, in context: NSManagedObjectContext) throws
+
+    mutating func update(from dto: DTO) throws
+}
+#else
 public protocol CoreDataDecodable: Decodable {
     associatedtype DTO: Decodable
 
@@ -30,6 +42,7 @@ public protocol CoreDataDecodable: Decodable {
 
     mutating func update(from dto: DTO) throws
 }
+#endif
 
 extension CoreDataDecodable {
     public init(from decoder: Decoder) throws {
@@ -76,6 +89,7 @@ public enum CoreDataDecodingError: Error, CustomStringConvertible {
 
 extension Thread {
     private static let decodingContextThreadKey = "net.ffried.FFCoreData.DecodingContext"
+
     fileprivate var decodingContext: Unmanaged<NSManagedObjectContext>? {
         get { threadDictionary[Thread.decodingContextThreadKey] as? Unmanaged<NSManagedObjectContext> }
         set { threadDictionary[Thread.decodingContextThreadKey] = newValue }

@@ -23,13 +23,13 @@ import class CoreData.NSManagedObject
 import class CoreData.NSManagedObjectContext
 
 public struct MOCEntitiesFilter: MOCObserverFilter {
-    public var entityNames: [String]
+    public var entityNames: Array<String>
 
-    public init(entityNames: [String]) {
+    public init(entityNames: Array<String>) {
         self.entityNames = entityNames
     }
 
-    public init(entities: [NSEntityDescription]) {
+    public init(entities: Array<NSEntityDescription>) {
         self.init(entityNames: entities.map { $0.name ?? $0.managedObjectClassName })
     }
 
