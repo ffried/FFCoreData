@@ -1,10 +1,4 @@
 {
-  "abstract" : [
-    {
-      "text" : "No overview available.",
-      "type" : "text"
-    }
-  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -114,7 +108,7 @@
   "relationshipsSections" : [
     {
       "identifiers" : [
-
+        "doc:\/\/FFCoreData\/objc(cs)NSObject"
       ],
       "kind" : "relationships",
       "title" : "Inherits From",
@@ -137,19 +131,13 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
 
   ],
   "topicSections" : [
-    {
-      "identifiers" : [
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/FetchedResultsControllerManager\/init()"
-      ],
-      "title" : "Initializers"
-    },
     {
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/FetchedResultsControllerManager\/delegate-swift.property",
@@ -792,26 +780,10 @@
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/fetchedresultscontrollermanager\/fetchedresultscontroller"
 },
-"doc://FFCoreData/documentation/FFCoreData/FetchedResultsControllerManager/init()": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "identifier",
-      "text" : "init"
-    },
-    {
-      "kind" : "text",
-      "text" : "()"
-    }
-  ],
-  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/FetchedResultsControllerManager\/init()",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "init()",
-  "type" : "topic",
-  "url" : "\/documentation\/ffcoredata\/fetchedresultscontrollermanager\/init()"
+"doc://FFCoreData/objc(cs)NSObject": {
+  "identifier" : "doc:\/\/FFCoreData\/objc(cs)NSObject",
+  "title" : "ObjectiveC.NSObject",
+  "type" : "unresolvable"
 },
 "doc://FFCoreData/objc(pl)NSFetchedResultsControllerDelegate": {
   "identifier" : "doc:\/\/FFCoreData\/objc(pl)NSFetchedResultsControllerDelegate",

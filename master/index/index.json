@@ -1,0 +1,2517 @@
+{
+  "interfaceLanguages" : {
+    "swift" : [
+      {
+        "children" : [
+          {
+            "title" : "Classes",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/fetchedresultscontrollermanager\/delegate-swift.property",
+                "title" : "var delegate: FetchedResultsControllerManager<Result>.Delegate?",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/fetchedresultscontrollermanager\/fetchedresultscontroller",
+                "title" : "var fetchedResultsController: FetchedResultsControllerManager<Result>.Controller?",
+                "type" : "property"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/fetchedresultscontrollermanager\/controller(_:didchange:at:for:newindexpath:)",
+                "title" : "func controller(NSFetchedResultsController<NSFetchRequestResult>, didChange: Any, at: IndexPath?, for: NSFetchedResultsChangeType, newIndexPath: IndexPath?)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/fetchedresultscontrollermanager\/controller(_:didchange:atsectionindex:for:)",
+                "title" : "func controller(NSFetchedResultsController<NSFetchRequestResult>, didChange: NSFetchedResultsSectionInfo, atSectionIndex: Int, for: NSFetchedResultsChangeType)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/fetchedresultscontrollermanager\/controller(_:sectionindextitleforsectionname:)",
+                "title" : "func controller(NSFetchedResultsController<NSFetchRequestResult>, sectionIndexTitleForSectionName: String) -> String?",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/fetchedresultscontrollermanager\/controllerdidchangecontent(_:)",
+                "title" : "func controllerDidChangeContent(NSFetchedResultsController<NSFetchRequestResult>)",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/fetchedresultscontrollermanager\/controllerwillchangecontent(_:)",
+                "title" : "func controllerWillChangeContent(NSFetchedResultsController<NSFetchRequestResult>)",
+                "type" : "method"
+              },
+              {
+                "title" : "Type Aliases",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/fetchedresultscontrollermanager\/controller",
+                "title" : "FetchedResultsControllerManager.Controller",
+                "type" : "typealias"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/fetchedresultscontrollermanager\/delegate-swift.typealias",
+                "title" : "FetchedResultsControllerManager.Delegate",
+                "type" : "typealias"
+              }
+            ],
+            "path" : "\/documentation\/ffcoredata\/fetchedresultscontrollermanager",
+            "title" : "FetchedResultsControllerManager",
+            "type" : "class"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/mocblockobserver\/init(mode:filter:queue:fireinitially:handler:)",
+                "title" : "init(mode: MOCObservationMode, filter: Filter, queue: OperationQueue, fireInitially: Bool, handler: MOCBlockObserver<Filter>.Handler)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/mocblockobserver\/handler-swift.property",
+                "title" : "var handler: MOCBlockObserver<Filter>.Handler",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/mocblockobserver\/mode",
+                "title" : "let mode: MOCObservationMode",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/mocblockobserver\/queue",
+                "title" : "var queue: OperationQueue",
+                "type" : "property"
+              },
+              {
+                "title" : "Type Aliases",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/mocblockobserver\/handler-swift.typealias",
+                "title" : "MOCBlockObserver.Handler",
+                "type" : "typealias"
+              }
+            ],
+            "path" : "\/documentation\/ffcoredata\/mocblockobserver",
+            "title" : "MOCBlockObserver",
+            "type" : "class"
+          },
+          {
+            "title" : "Protocols",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Associated Types",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/coredatadecodable\/dto",
+                "title" : "DTO",
+                "type" : "associatedtype"
+              },
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "path" : "\/documentation\/ffcoredata\/coredatadecodable\/init(with:in:)-9yesq",
+                        "title" : "init(with: Self.DTO, in: NSManagedObjectContext) throws",
+                        "type" : "init"
+                      },
+                      {
+                        "path" : "\/documentation\/ffcoredata\/coredatadecodable\/init(with:in:)-8ocab",
+                        "title" : "init(with: Self.DTO, in: NSManagedObjectContext) throws",
+                        "type" : "init"
+                      }
+                    ],
+                    "title" : "CoreDataDecodable Implementations",
+                    "type" : "groupMarker"
+                  }
+                ],
+                "path" : "\/documentation\/ffcoredata\/coredatadecodable\/init(with:in:)-1fpa7",
+                "title" : "init(with: Self.DTO, in: NSManagedObjectContext) throws",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/coredatadecodable\/update(from:)",
+                "title" : "func update(from: Self.DTO) throws",
+                "type" : "method"
+              },
+              {
+                "title" : "Type Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "path" : "\/documentation\/ffcoredata\/coredatadecodable\/findorcreate(for:in:)-57mf5",
+                        "title" : "static func findOrCreate(for: Self.DTO, in: NSManagedObjectContext) throws -> Self",
+                        "type" : "method"
+                      }
+                    ],
+                    "title" : "CoreDataDecodable Implementations",
+                    "type" : "groupMarker"
+                  }
+                ],
+                "path" : "\/documentation\/ffcoredata\/coredatadecodable\/findorcreate(for:in:)-7jp13",
+                "title" : "static func findOrCreate(for: Self.DTO, in: NSManagedObjectContext) throws -> Self",
+                "type" : "method"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Initializers",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/coredatadecodable\/init(from:)",
+                    "title" : "init(from: Decoder) throws",
+                    "type" : "init"
+                  }
+                ],
+                "path" : "\/documentation\/ffcoredata\/coredatadecodable\/decodable-implementations",
+                "title" : "Decodable Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/ffcoredata\/coredatadecodable",
+            "title" : "CoreDataDecodable",
+            "type" : "protocol"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Type Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/creatable\/create(in:)",
+                "title" : "static func create(in: NSManagedObjectContext) throws -> Self",
+                "type" : "method"
+              },
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "path" : "\/documentation\/ffcoredata\/creatable\/create(in:applying:)-1vda2",
+                        "title" : "static func create(in: NSManagedObjectContext, applying: KeyObjectDictionary?) throws -> Self",
+                        "type" : "method"
+                      }
+                    ],
+                    "title" : "Creatable Implementations",
+                    "type" : "groupMarker"
+                  }
+                ],
+                "path" : "\/documentation\/ffcoredata\/creatable\/create(in:applying:)-11cx9",
+                "title" : "static func create(in: NSManagedObjectContext, applying: KeyObjectDictionary?) throws -> Self",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/creatable\/create(in:setting:)",
+                "title" : "static func create(in: NSManagedObjectContext, setting: KeyObjectDictionaryExpression<Self>) throws -> Self",
+                "type" : "method"
+              }
+            ],
+            "path" : "\/documentation\/ffcoredata\/creatable",
+            "title" : "Creatable",
+            "type" : "protocol"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Subscripts",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/entity\/subscript(safe:)-2f0lc",
+                "title" : "subscript<T>(safe _: KeyPath<Self, T>) -> T",
+                "type" : "subscript"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/entity\/subscript(safe:)-5s9ux",
+                "title" : "subscript<T>(safe _: ReferenceWritableKeyPath<Self, T>) -> T",
+                "type" : "subscript"
+              },
+              {
+                "title" : "Type Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "path" : "\/documentation\/ffcoredata\/entity\/entityname-ixyk",
+                        "title" : "static var entityName: String",
+                        "type" : "property"
+                      }
+                    ],
+                    "title" : "Entity Implementations",
+                    "type" : "groupMarker"
+                  }
+                ],
+                "path" : "\/documentation\/ffcoredata\/entity\/entityname-940zb",
+                "title" : "static var entityName: String",
+                "type" : "property"
+              }
+            ],
+            "path" : "\/documentation\/ffcoredata\/entity",
+            "title" : "Entity",
+            "type" : "protocol"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Type Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/fetchable\/all(in:)",
+                "title" : "static func all(in: NSManagedObjectContext) throws -> Array<Self>",
+                "type" : "method"
+              },
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "path" : "\/documentation\/ffcoredata\/fetchable\/count(in:)-8wozz",
+                        "title" : "static func count(in: NSManagedObjectContext) throws -> Int",
+                        "type" : "method"
+                      }
+                    ],
+                    "title" : "Fetchable Implementations",
+                    "type" : "groupMarker"
+                  }
+                ],
+                "path" : "\/documentation\/ffcoredata\/fetchable\/count(in:)-44pui",
+                "title" : "static func count(in: NSManagedObjectContext) throws -> Int",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/fetchable\/count(in:where:)",
+                "title" : "static func count(in: NSManagedObjectContext, where: FetchableFilterExpression<Self>) throws -> Int",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/fetchable\/count(in:with:)",
+                "title" : "static func count(in: NSManagedObjectContext, with: NSPredicate?) throws -> Int",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/fetchable\/createmocentitiesobserver(with:fireinitially:handler:)",
+                "title" : "static func createMOCEntitiesObserver(with: MOCObservationMode, fireInitially: Bool, handler: MOCBlockObserver<MOCEntitiesFilter>.Handler) -> MOCBlockObserver<MOCEntitiesFilter>",
+                "type" : "method"
+              },
+              {
+                "children" : [
+                  {
+                    "children" : [
+                      {
+                        "path" : "\/documentation\/ffcoredata\/fetchable\/fetchrequest()-7yyxo",
+                        "title" : "static func fetchRequest() -> NSFetchRequest<Self>",
+                        "type" : "method"
+                      }
+                    ],
+                    "title" : "Fetchable Implementations",
+                    "type" : "groupMarker"
+                  }
+                ],
+                "path" : "\/documentation\/ffcoredata\/fetchable\/fetchrequest()-4bd8t",
+                "title" : "static func fetchRequest() -> NSFetchRequest<Self>",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/fetchable\/fetchrequest(where:sortedby:offsetby:limitedby:)-1ljei",
+                "title" : "static func fetchRequest<SortExpressions>(where: FetchableFilterExpression<Self>, sortedBy: SortExpressions, offsetBy: Int?, limitedBy: Int?) -> NSFetchRequest<Self>",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/fetchable\/fetchrequest(where:sortedby:offsetby:limitedby:)-2710n",
+                "title" : "static func fetchRequest(where: FetchableFilterExpression<Self>, sortedBy: FetchableSortExpression<Self>..., offsetBy: Int?, limitedBy: Int?) -> NSFetchRequest<Self>",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/fetchable\/fetchrequest(with:sortedby:offsetby:limitedby:)",
+                "title" : "static func fetchRequest(with: NSPredicate?, sortedBy: Array<NSSortDescriptor>?, offsetBy: Int?, limitedBy: Int?) -> NSFetchRequest<Self>",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/fetchable\/find(in:by:sortedby:)",
+                "title" : "static func find(in: NSManagedObjectContext, by: KeyObjectDictionary, sortedBy: Array<NSSortDescriptor>?) throws -> Array<Self>",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/fetchable\/find(in:where:sortedby:)-2pq20",
+                "title" : "static func find<SortExpressions>(in: NSManagedObjectContext, where: FetchableFilterExpression<Self>, sortedBy: SortExpressions) throws -> Array<Self>",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/fetchable\/find(in:where:sortedby:)-9i9j5",
+                "title" : "static func find(in: NSManagedObjectContext, where: FetchableFilterExpression<Self>, sortedBy: FetchableSortExpression<Self>...) throws -> Array<Self>",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/fetchable\/find(in:with:sortedby:)",
+                "title" : "static func find(in: NSManagedObjectContext, with: NSPredicate?, sortedBy: Array<NSSortDescriptor>?) throws -> Array<Self>",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/fetchable\/findfirst(in:by:sortedby:)",
+                "title" : "static func findFirst(in: NSManagedObjectContext, by: KeyObjectDictionary, sortedBy: Array<NSSortDescriptor>?) throws -> Self?",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/fetchable\/findfirst(in:where:sortedby:)-7lbyo",
+                "title" : "static func findFirst(in: NSManagedObjectContext, where: FetchableFilterExpression<Self>, sortedBy: FetchableSortExpression<Self>...) throws -> Self?",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/fetchable\/findfirst(in:where:sortedby:)-9pmfl",
+                "title" : "static func findFirst<SortExpressions>(in: NSManagedObjectContext, where: FetchableFilterExpression<Self>, sortedBy: SortExpressions) throws -> Self?",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/fetchable\/findfirst(in:with:sortedby:)",
+                "title" : "static func findFirst(in: NSManagedObjectContext, with: NSPredicate?, sortedBy: Array<NSSortDescriptor>?) throws -> Self?",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/fetchable\/findorcreate(in:by:)",
+                "title" : "static func findOrCreate(in: NSManagedObjectContext, by: KeyObjectDictionary?) throws -> Self",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/fetchable\/findorcreate(in:where:)",
+                "title" : "static func findOrCreate(in: NSManagedObjectContext, where: KeyObjectDictionaryExpression<Self>) throws -> Self",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/fetchable\/publishentitychanges(with:)",
+                "title" : "static func publishEntityChanges(with: MOCObservationMode) -> MOCChangePublisher<MOCEntitiesFilter>",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/fetchable\/random(in:where:)",
+                "title" : "static func random(in: NSManagedObjectContext, where: FetchableFilterExpression<Self>) throws -> Self?",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/fetchable\/random(in:with:)",
+                "title" : "static func random(in: NSManagedObjectContext, with: NSPredicate?) throws -> Self?",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/fetchable\/random(upto:in:where:)",
+                "title" : "static func random(upTo: Int, in: NSManagedObjectContext, where: FetchableFilterExpression<Self>) throws -> Self?",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/fetchable\/random(upto:in:with:)",
+                "title" : "static func random(upTo: Int, in: NSManagedObjectContext, with: NSPredicate?) throws -> Self?",
+                "type" : "method"
+              }
+            ],
+            "path" : "\/documentation\/ffcoredata\/fetchable",
+            "title" : "Fetchable",
+            "type" : "protocol"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/fetchedresultscontrollermanagerdelegate",
+            "title" : "FetchedResultsControllerManagerDelegate",
+            "type" : "protocol"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/mocobserverfilter\/include(managedobject:)",
+                "title" : "func include(managedObject: NSManagedObject) -> Bool",
+                "type" : "method"
+              }
+            ],
+            "path" : "\/documentation\/ffcoredata\/mocobserverfilter",
+            "title" : "MOCObserverFilter",
+            "type" : "protocol"
+          },
+          {
+            "title" : "Structures",
+            "type" : "groupMarker"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/fetchablefilterexpression",
+            "title" : "FetchableFilterExpression",
+            "type" : "struct"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/fetchablesortexpression",
+            "title" : "FetchableSortExpression",
+            "type" : "struct"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Operators",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/invalidentityerror\/==(_:_:)",
+                "title" : "static func == (InvalidEntityError, InvalidEntityError) -> Bool",
+                "type" : "op"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/invalidentityerror\/description",
+                "title" : "var description: String",
+                "type" : "property"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/invalidentityerror\/!=(_:_:)",
+                    "title" : "static func != (Self, Self) -> Bool",
+                    "type" : "op"
+                  }
+                ],
+                "path" : "\/documentation\/ffcoredata\/invalidentityerror\/equatable-implementations",
+                "title" : "Equatable Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/invalidentityerror\/localizeddescription",
+                    "title" : "var localizedDescription: String",
+                    "type" : "property"
+                  }
+                ],
+                "path" : "\/documentation\/ffcoredata\/invalidentityerror\/error-implementations",
+                "title" : "Error Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/ffcoredata\/invalidentityerror",
+            "title" : "InvalidEntityError",
+            "type" : "struct"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/keyobjectdictionaryexpression",
+            "title" : "KeyObjectDictionaryExpression",
+            "type" : "struct"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/init(mode:filter:)",
+                "title" : "init(mode: MOCObservationMode, filter: Filter)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/filter",
+                "title" : "let filter: Filter",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/mode",
+                "title" : "let mode: MOCObservationMode",
+                "type" : "property"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/receive(subscriber:)",
+                "title" : "func receive<S>(subscriber: S)",
+                "type" : "method"
+              },
+              {
+                "title" : "Type Aliases",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/failure",
+                "title" : "MOCChangePublisher.Failure",
+                "type" : "typealias"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/output",
+                "title" : "MOCChangePublisher.Output",
+                "type" : "typealias"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/values-477jl",
+                    "title" : "var values: AsyncPublisher<Self>",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/values-9xdtu",
+                    "title" : "var values: AsyncThrowingPublisher<Self>",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/allsatisfy(_:)",
+                    "title" : "func allSatisfy((Self.Output) -> Bool) -> Publishers.AllSatisfy<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/append(_:)",
+                    "title" : "func append(Self.Output...) -> Publishers.Concatenate<Self, Publishers.Sequence<[Self.Output], Self.Failure>>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/assertnofailure(_:file:line:)",
+                    "title" : "func assertNoFailure(String, file: StaticString, line: UInt) -> Publishers.AssertNoFailure<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/assign(to:)",
+                    "title" : "func assign(to: inout Published<Self.Output>.Publisher)",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/assign(to:on:)",
+                    "title" : "func assign<Root>(to: ReferenceWritableKeyPath<Root, Self.Output>, on: Root) -> AnyCancellable",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/breakpoint(receivesubscription:receiveoutput:receivecompletion:)",
+                    "title" : "func breakpoint(receiveSubscription: ((Subscription) -> Bool)?, receiveOutput: ((Self.Output) -> Bool)?, receiveCompletion: ((Subscribers.Completion<Self.Failure>) -> Bool)?) -> Publishers.Breakpoint<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/breakpointonerror()",
+                    "title" : "func breakpointOnError() -> Publishers.Breakpoint<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/buffer(size:prefetch:whenfull:)",
+                    "title" : "func buffer(size: Int, prefetch: Publishers.PrefetchStrategy, whenFull: Publishers.BufferingStrategy<Self.Failure>) -> Publishers.Buffer<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/catch(_:)",
+                    "title" : "func `catch`<P>((Self.Failure) -> P) -> Publishers.Catch<Self, P>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/collect()",
+                    "title" : "func collect() -> Publishers.Collect<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/collect(_:)",
+                    "title" : "func collect(Int) -> Publishers.CollectByCount<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/collect(_:options:)",
+                    "title" : "func collect<S>(Publishers.TimeGroupingStrategy<S>, options: S.SchedulerOptions?) -> Publishers.CollectByTime<Self, S>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/combinelatest(_:)",
+                    "title" : "func combineLatest<P>(P) -> Publishers.CombineLatest<Self, P>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/combinelatest(_:_:)-4gedl",
+                    "title" : "func combineLatest<P, T>(P, (Self.Output, P.Output) -> T) -> Publishers.Map<Publishers.CombineLatest<Self, P>, T>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/combinelatest(_:_:)-7cxw6",
+                    "title" : "func combineLatest<P, Q>(P, Q) -> Publishers.CombineLatest3<Self, P, Q>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/combinelatest(_:_:_:)-3gf6u",
+                    "title" : "func combineLatest<P, Q, T>(P, Q, (Self.Output, P.Output, Q.Output) -> T) -> Publishers.Map<Publishers.CombineLatest3<Self, P, Q>, T>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/combinelatest(_:_:_:)-rxc3",
+                    "title" : "func combineLatest<P, Q, R>(P, Q, R) -> Publishers.CombineLatest4<Self, P, Q, R>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/combinelatest(_:_:_:_:)",
+                    "title" : "func combineLatest<P, Q, R, T>(P, Q, R, (Self.Output, P.Output, Q.Output, R.Output) -> T) -> Publishers.Map<Publishers.CombineLatest4<Self, P, Q, R>, T>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/compactmap(_:)",
+                    "title" : "func compactMap<T>((Self.Output) -> T?) -> Publishers.CompactMap<Self, T>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/contains(where:)",
+                    "title" : "func contains(where: (Self.Output) -> Bool) -> Publishers.ContainsWhere<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/count()",
+                    "title" : "func count() -> Publishers.Count<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/debounce(for:scheduler:options:)",
+                    "title" : "func debounce<S>(for: S.SchedulerTimeType.Stride, scheduler: S, options: S.SchedulerOptions?) -> Publishers.Debounce<Self, S>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/decode(type:decoder:)",
+                    "title" : "func decode<Item, Coder>(type: Item.Type, decoder: Coder) -> Publishers.Decode<Self, Item, Coder>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/delay(for:tolerance:scheduler:options:)",
+                    "title" : "func delay<S>(for: S.SchedulerTimeType.Stride, tolerance: S.SchedulerTimeType.Stride?, scheduler: S, options: S.SchedulerOptions?) -> Publishers.Delay<Self, S>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/drop(untiloutputfrom:)",
+                    "title" : "func drop<P>(untilOutputFrom: P) -> Publishers.DropUntilOutput<Self, P>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/drop(while:)",
+                    "title" : "func drop(while: (Self.Output) -> Bool) -> Publishers.DropWhile<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/dropfirst(_:)",
+                    "title" : "func dropFirst(Int) -> Publishers.Drop<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/erasetoanypublisher()",
+                    "title" : "func eraseToAnyPublisher() -> AnyPublisher<Self.Output, Self.Failure>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/filter(_:)",
+                    "title" : "func filter((Self.Output) -> Bool) -> Publishers.Filter<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/first()",
+                    "title" : "func first() -> Publishers.First<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/first(where:)",
+                    "title" : "func first(where: (Self.Output) -> Bool) -> Publishers.FirstWhere<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/flatmap(maxpublishers:_:)-431ip",
+                    "title" : "func flatMap<T, P>(maxPublishers: Subscribers.Demand, (Self.Output) -> P) -> Publishers.FlatMap<P, Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/flatmap(maxpublishers:_:)-4d1hm",
+                    "title" : "func flatMap<P>(maxPublishers: Subscribers.Demand, (Self.Output) -> P) -> Publishers.FlatMap<P, Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/flatmap(maxpublishers:_:)-5id9g",
+                    "title" : "func flatMap<P>(maxPublishers: Subscribers.Demand, (Self.Output) -> P) -> Publishers.FlatMap<Publishers.SetFailureType<P, Self.Failure>, Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/flatmap(maxpublishers:_:)-9w4gt",
+                    "title" : "func flatMap<P>(maxPublishers: Subscribers.Demand, (Self.Output) -> P) -> Publishers.FlatMap<P, Publishers.SetFailureType<Self, P.Failure>>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/handleevents(receivesubscription:receiveoutput:receivecompletion:receivecancel:receiverequest:)",
+                    "title" : "func handleEvents(receiveSubscription: ((Subscription) -> Void)?, receiveOutput: ((Self.Output) -> Void)?, receiveCompletion: ((Subscribers.Completion<Self.Failure>) -> Void)?, receiveCancel: (() -> Void)?, receiveRequest: ((Subscribers.Demand) -> Void)?) -> Publishers.HandleEvents<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/ignoreoutput()",
+                    "title" : "func ignoreOutput() -> Publishers.IgnoreOutput<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/last()",
+                    "title" : "func last() -> Publishers.Last<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/last(where:)",
+                    "title" : "func last(where: (Self.Output) -> Bool) -> Publishers.LastWhere<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/makeconnectable()",
+                    "title" : "func makeConnectable() -> Publishers.MakeConnectable<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/map(_:)-236lw",
+                    "title" : "func map<T>(KeyPath<Self.Output, T>) -> Publishers.MapKeyPath<Self, T>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/map(_:)-5lozj",
+                    "title" : "func map<T>((Self.Output) -> T) -> Publishers.Map<Self, T>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/map(_:_:)",
+                    "title" : "func map<T0, T1>(KeyPath<Self.Output, T0>, KeyPath<Self.Output, T1>) -> Publishers.MapKeyPath2<Self, T0, T1>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/map(_:_:_:)",
+                    "title" : "func map<T0, T1, T2>(KeyPath<Self.Output, T0>, KeyPath<Self.Output, T1>, KeyPath<Self.Output, T2>) -> Publishers.MapKeyPath3<Self, T0, T1, T2>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/maperror(_:)",
+                    "title" : "func mapError<E>((Self.Failure) -> E) -> Publishers.MapError<Self, E>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/max(by:)",
+                    "title" : "func max(by: (Self.Output, Self.Output) -> Bool) -> Publishers.Comparison<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/measureinterval(using:options:)",
+                    "title" : "func measureInterval<S>(using: S, options: S.SchedulerOptions?) -> Publishers.MeasureInterval<Self, S>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/merge(with:)",
+                    "title" : "func merge(with: Self) -> Publishers.MergeMany<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/merge(with:_:)",
+                    "title" : "func merge<B, C>(with: B, C) -> Publishers.Merge3<Self, B, C>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/merge(with:_:_:)",
+                    "title" : "func merge<B, C, D>(with: B, C, D) -> Publishers.Merge4<Self, B, C, D>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/merge(with:_:_:_:)",
+                    "title" : "func merge<B, C, D, E>(with: B, C, D, E) -> Publishers.Merge5<Self, B, C, D, E>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/merge(with:_:_:_:_:)",
+                    "title" : "func merge<B, C, D, E, F>(with: B, C, D, E, F) -> Publishers.Merge6<Self, B, C, D, E, F>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/merge(with:_:_:_:_:_:)",
+                    "title" : "func merge<B, C, D, E, F, G>(with: B, C, D, E, F, G) -> Publishers.Merge7<Self, B, C, D, E, F, G>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/merge(with:_:_:_:_:_:_:)",
+                    "title" : "func merge<B, C, D, E, F, G, H>(with: B, C, D, E, F, G, H) -> Publishers.Merge8<Self, B, C, D, E, F, G, H>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/min(by:)",
+                    "title" : "func min(by: (Self.Output, Self.Output) -> Bool) -> Publishers.Comparison<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/multicast(_:)",
+                    "title" : "func multicast<S>(() -> S) -> Publishers.Multicast<Self, S>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/multicast(subject:)",
+                    "title" : "func multicast<S>(subject: S) -> Publishers.Multicast<Self, S>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/output(at:)",
+                    "title" : "func output(at: Int) -> Publishers.Output<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/output(in:)",
+                    "title" : "func output<R>(in: R) -> Publishers.Output<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/prefix(_:)",
+                    "title" : "func prefix(Int) -> Publishers.Output<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/prefix(untiloutputfrom:)",
+                    "title" : "func prefix<P>(untilOutputFrom: P) -> Publishers.PrefixUntilOutput<Self, P>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/prefix(while:)",
+                    "title" : "func prefix(while: (Self.Output) -> Bool) -> Publishers.PrefixWhile<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/prepend(_:)",
+                    "title" : "func prepend(Self.Output...) -> Publishers.Concatenate<Publishers.Sequence<[Self.Output], Self.Failure>, Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/print(_:to:)",
+                    "title" : "func print(String, to: TextOutputStream?) -> Publishers.Print<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/receive(on:options:)",
+                    "title" : "func receive<S>(on: S, options: S.SchedulerOptions?) -> Publishers.ReceiveOn<Self, S>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/reduce(_:_:)",
+                    "title" : "func reduce<T>(T, (T, Self.Output) -> T) -> Publishers.Reduce<Self, T>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/removeduplicates(by:)",
+                    "title" : "func removeDuplicates(by: (Self.Output, Self.Output) -> Bool) -> Publishers.RemoveDuplicates<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/replaceempty(with:)",
+                    "title" : "func replaceEmpty(with: Self.Output) -> Publishers.ReplaceEmpty<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/replaceerror(with:)",
+                    "title" : "func replaceError(with: Self.Output) -> Publishers.ReplaceError<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/replacenil(with:)",
+                    "title" : "func replaceNil<T>(with: T) -> Publishers.Map<Self, T>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/retry(_:)",
+                    "title" : "func retry(Int) -> Publishers.Retry<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/scan(_:_:)",
+                    "title" : "func scan<T>(T, (T, Self.Output) -> T) -> Publishers.Scan<Self, T>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/setfailuretype(to:)",
+                    "title" : "func setFailureType<E>(to: E.Type) -> Publishers.SetFailureType<Self, E>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/share()",
+                    "title" : "func share() -> Publishers.Share<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/sink(receivecompletion:receivevalue:)",
+                    "title" : "func sink(receiveCompletion: ((Subscribers.Completion<Self.Failure>) -> Void), receiveValue: ((Self.Output) -> Void)) -> AnyCancellable",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/sink(receivevalue:)",
+                    "title" : "func sink(receiveValue: ((Self.Output) -> Void)) -> AnyCancellable",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/subscribe(_:)-2tvzs",
+                    "title" : "func subscribe<S>(S)",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/subscribe(_:)-589bs",
+                    "title" : "func subscribe<S>(S) -> AnyCancellable",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/subscribe(on:options:)",
+                    "title" : "func subscribe<S>(on: S, options: S.SchedulerOptions?) -> Publishers.SubscribeOn<Self, S>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/throttle(for:scheduler:latest:)",
+                    "title" : "func throttle<S>(for: S.SchedulerTimeType.Stride, scheduler: S, latest: Bool) -> Publishers.Throttle<Self, S>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/timeout(_:scheduler:options:customerror:)",
+                    "title" : "func timeout<S>(S.SchedulerTimeType.Stride, scheduler: S, options: S.SchedulerOptions?, customError: (() -> Self.Failure)?) -> Publishers.Timeout<Self, S>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/tryallsatisfy(_:)",
+                    "title" : "func tryAllSatisfy((Self.Output) throws -> Bool) -> Publishers.TryAllSatisfy<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/trycatch(_:)",
+                    "title" : "func tryCatch<P>((Self.Failure) throws -> P) -> Publishers.TryCatch<Self, P>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/trycompactmap(_:)",
+                    "title" : "func tryCompactMap<T>((Self.Output) throws -> T?) -> Publishers.TryCompactMap<Self, T>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/trycontains(where:)",
+                    "title" : "func tryContains(where: (Self.Output) throws -> Bool) -> Publishers.TryContainsWhere<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/trydrop(while:)",
+                    "title" : "func tryDrop(while: (Self.Output) throws -> Bool) -> Publishers.TryDropWhile<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/tryfilter(_:)",
+                    "title" : "func tryFilter((Self.Output) throws -> Bool) -> Publishers.TryFilter<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/tryfirst(where:)",
+                    "title" : "func tryFirst(where: (Self.Output) throws -> Bool) -> Publishers.TryFirstWhere<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/trylast(where:)",
+                    "title" : "func tryLast(where: (Self.Output) throws -> Bool) -> Publishers.TryLastWhere<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/trymap(_:)",
+                    "title" : "func tryMap<T>((Self.Output) throws -> T) -> Publishers.TryMap<Self, T>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/trymax(by:)",
+                    "title" : "func tryMax(by: (Self.Output, Self.Output) throws -> Bool) -> Publishers.TryComparison<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/trymin(by:)",
+                    "title" : "func tryMin(by: (Self.Output, Self.Output) throws -> Bool) -> Publishers.TryComparison<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/tryprefix(while:)",
+                    "title" : "func tryPrefix(while: (Self.Output) throws -> Bool) -> Publishers.TryPrefixWhile<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/tryreduce(_:_:)",
+                    "title" : "func tryReduce<T>(T, (T, Self.Output) throws -> T) -> Publishers.TryReduce<Self, T>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/tryremoveduplicates(by:)",
+                    "title" : "func tryRemoveDuplicates(by: (Self.Output, Self.Output) throws -> Bool) -> Publishers.TryRemoveDuplicates<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/tryscan(_:_:)",
+                    "title" : "func tryScan<T>(T, (T, Self.Output) throws -> T) -> Publishers.TryScan<Self, T>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/zip(_:)",
+                    "title" : "func zip<P>(P) -> Publishers.Zip<Self, P>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/zip(_:_:)-1gkme",
+                    "title" : "func zip<P, T>(P, (Self.Output, P.Output) -> T) -> Publishers.Map<Publishers.Zip<Self, P>, T>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/zip(_:_:)-2xftt",
+                    "title" : "func zip<P, Q>(P, Q) -> Publishers.Zip3<Self, P, Q>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/zip(_:_:_:)-3w2tz",
+                    "title" : "func zip<P, Q, T>(P, Q, (Self.Output, P.Output, Q.Output) -> T) -> Publishers.Map<Publishers.Zip3<Self, P, Q>, T>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/zip(_:_:_:)-8ejoj",
+                    "title" : "func zip<P, Q, R>(P, Q, R) -> Publishers.Zip4<Self, P, Q, R>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/zip(_:_:_:_:)",
+                    "title" : "func zip<P, Q, R, T>(P, Q, R, (Self.Output, P.Output, Q.Output, R.Output) -> T) -> Publishers.Map<Publishers.Zip4<Self, P, Q, R>, T>",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/publisher-implementations",
+                "title" : "Publisher Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/ffcoredata\/mocchangepublisher",
+            "title" : "MOCChangePublisher",
+            "type" : "struct"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/mocentitiesfilter\/init(entities:)",
+                "title" : "init(entities: Array<NSEntityDescription>)",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/mocentitiesfilter\/init(entitynames:)",
+                "title" : "init(entityNames: Array<String>)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/mocentitiesfilter\/entitynames",
+                "title" : "var entityNames: Array<String>",
+                "type" : "property"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/mocentitiesfilter\/include(managedobject:)",
+                "title" : "func include(managedObject: NSManagedObject) -> Bool",
+                "type" : "method"
+              }
+            ],
+            "path" : "\/documentation\/ffcoredata\/mocentitiesfilter",
+            "title" : "MOCEntitiesFilter",
+            "type" : "struct"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/mocobjectsfilter\/init(objectids:)",
+                "title" : "init(objectIDs: Array<NSManagedObjectID>)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/mocobjectsfilter\/include(managedobject:)",
+                "title" : "func include(managedObject: NSManagedObject) -> Bool",
+                "type" : "method"
+              }
+            ],
+            "path" : "\/documentation\/ffcoredata\/mocobjectsfilter",
+            "title" : "MOCObjectsFilter",
+            "type" : "struct"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/mocobservedchanges\/deleted",
+                "title" : "var deleted: Array<NSManagedObjectID>",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/mocobservedchanges\/inserted",
+                "title" : "var inserted: Array<NSManagedObjectID>",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/mocobservedchanges\/updated",
+                "title" : "var updated: Array<NSManagedObjectID>",
+                "type" : "property"
+              }
+            ],
+            "path" : "\/documentation\/ffcoredata\/mocobservedchanges",
+            "title" : "MOCObservedChanges",
+            "type" : "struct"
+          },
+          {
+            "title" : "Operators",
+            "type" : "groupMarker"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/!(_:)-7g654",
+            "title" : "func ! <Model>(KeyPath<Model, Bool>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/!(_:)-7sv4z",
+            "title" : "func ! <Model>(FetchableFilterExpression<Model>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/!(_:)-y6ni",
+            "title" : "func ! <Model>(KeyPath<Model, Bool?>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/!=(_:_:)-12uig",
+            "title" : "func != <Model>(KeyPath<Model, Bool>, Bool?) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/!=(_:_:)-1fjvc",
+            "title" : "func != <Model, Value>(Value?, KeyPath<Model, Value?>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/!=(_:_:)-1khhp",
+            "title" : "func != <Model, Value>(KeyPath<Model, Value>, Value?) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/!=(_:_:)-1ttak",
+            "title" : "func != <Model>(KeyPath<Model, Bool?>, Bool?) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/!=(_:_:)-20mg0",
+            "title" : "func != <Model>(KeyPath<Model, NSNumber>, NSNumber?) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/!=(_:_:)-22za8",
+            "title" : "func != <Model>(KeyPath<Model, Bool?>, Bool?) -> KeyObjectDictionaryExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/!=(_:_:)-2d2rk",
+            "title" : "func != <Model>(KeyPath<Model, NSNumber?>, NSNumber?) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/!=(_:_:)-2rjb4",
+            "title" : "func != <Model, Value>(KeyPath<Model, Value?>, Value?) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/!=(_:_:)-359dg",
+            "title" : "func != <Model>(Bool?, KeyPath<Model, Bool>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/!=(_:_:)-35i69",
+            "title" : "func != <Model, Value>(KeyPath<Model, Value?>, Value?) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/!=(_:_:)-3vk08",
+            "title" : "func != <Model>(NSNumber?, KeyPath<Model, NSNumber?>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/!=(_:_:)-3wzoq",
+            "title" : "func != <Model, Value>(KeyPath<Model, Value>, Value?) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/!=(_:_:)-3yg5s",
+            "title" : "func != <Model, Value>(Value?, KeyPath<Model, Value?>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/!=(_:_:)-427oq",
+            "title" : "func != <Model, Value>(Value?, KeyPath<Model, Value>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/!=(_:_:)-4cfzk",
+            "title" : "func != <Model, Value>(Value?, KeyPath<Model, Value?>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/!=(_:_:)-4q4s9",
+            "title" : "func != <Model>(NSNumber?, KeyPath<Model, NSNumber>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/!=(_:_:)-4qmzv",
+            "title" : "func != <Model, Value>(Value?, KeyPath<Model, Value>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/!=(_:_:)-51scb",
+            "title" : "func != <Model, Value>(Value?, KeyPath<Model, Value?>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/!=(_:_:)-53rgy",
+            "title" : "func != <Model, Value>(KeyPath<Model, Value>, Value?) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/!=(_:_:)-53uq6",
+            "title" : "func != <Model, Value>(Value?, KeyPath<Model, Value?>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/!=(_:_:)-57zv7",
+            "title" : "func != <Model, Value>(Value?, KeyPath<Model, Value>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/!=(_:_:)-65j78",
+            "title" : "func != <Model, Value>(KeyPath<Model, Value?>, Value?) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/!=(_:_:)-6i25y",
+            "title" : "func != <Model>(KeyPath<Model, Bool>, Bool) -> KeyObjectDictionaryExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/!=(_:_:)-6i5e4",
+            "title" : "func != <Model, Value>(KeyPath<Model, Value>, Value?) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/!=(_:_:)-6lxqt",
+            "title" : "func != <Model, Value>(KeyPath<Model, Value?>, Value?) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/!=(_:_:)-80pnn",
+            "title" : "func != <Model, Value>(Value?, KeyPath<Model, Value>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/!=(_:_:)-9a8v",
+            "title" : "func != <Model, Value>(Value?, KeyPath<Model, Value>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/!=(_:_:)-9ga60",
+            "title" : "func != <Model, Value>(KeyPath<Model, Value>, Value?) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/!=(_:_:)-w4o4",
+            "title" : "func != <Model>(Bool?, KeyPath<Model, Bool?>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/!_(_:)-5v1wo",
+            "title" : "func !^ <Model, Value>(KeyPath<Model, Value>) -> FetchableSortExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/!_(_:)-eldi",
+            "title" : "func !^ <Model, Value>(KeyPath<Model, Value?>) -> FetchableSortExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/&&(_:_:)-82w6q",
+            "title" : "func && <Model>(FetchableFilterExpression<Model>, FetchableFilterExpression<Model>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/&&(_:_:)-97kym",
+            "title" : "func && <Model>(KeyObjectDictionaryExpression<Model>, KeyObjectDictionaryExpression<Model>) -> KeyObjectDictionaryExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/==(_:_:)-1h5um",
+            "title" : "func == <Model, Value>(Value?, KeyPath<Model, Value?>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/==(_:_:)-1sj0o",
+            "title" : "func == <Model>(NSNumber?, KeyPath<Model, NSNumber?>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/==(_:_:)-1u1yx",
+            "title" : "func == <Model, Value>(Value?, KeyPath<Model, Value?>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/==(_:_:)-1v0g4",
+            "title" : "func == <Model>(Bool?, KeyPath<Model, Bool>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/==(_:_:)-1vo5p",
+            "title" : "func == <Model>(KeyPath<Model, NSNumber?>, NSNumber?) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/==(_:_:)-2ia8j",
+            "title" : "func == <Model, Value>(KeyPath<Model, Value>, Value?) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/==(_:_:)-2zj70",
+            "title" : "func == <Model, Value>(KeyPath<Model, Value>, Value?) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/==(_:_:)-384r6",
+            "title" : "func == <Model, Value>(KeyPath<Model, Value>, Value?) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/==(_:_:)-40pbr",
+            "title" : "func == <Model, Value>(Value?, KeyPath<Model, Value>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/==(_:_:)-40t3z",
+            "title" : "func == <Model, Value>(KeyPath<Model, Value>, Value?) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/==(_:_:)-488lu",
+            "title" : "func == <Model, Value>(Value?, KeyPath<Model, Value?>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/==(_:_:)-4s9h1",
+            "title" : "func == <Model, Value>(KeyPath<Model, Value?>, Value?) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/==(_:_:)-4wxfm",
+            "title" : "func == <Model, Value>(KeyPath<Model, Value?>, Value?) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/==(_:_:)-5132",
+            "title" : "func == <Model, Value>(Value?, KeyPath<Model, Value>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/==(_:_:)-54mq",
+            "title" : "func == <Model, Value>(Value?, KeyPath<Model, Value>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/==(_:_:)-5amr9",
+            "title" : "func == <Model, Value>(KeyPath<Model, Value>, Value) -> KeyObjectDictionaryExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/==(_:_:)-5cleo",
+            "title" : "func == <Model>(KeyPath<Model, Bool>, Bool?) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/==(_:_:)-5kqzn",
+            "title" : "func == <Model, Value>(KeyPath<Model, Value>, Value?) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/==(_:_:)-5wq7z",
+            "title" : "func == <Model>(KeyPath<Model, NSNumber>, NSNumber?) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/==(_:_:)-6u8xk",
+            "title" : "func == <Model, Value>(KeyPath<Model, Value?>, Value?) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/==(_:_:)-6wqor",
+            "title" : "func == <Model, Value>(Value?, KeyPath<Model, Value>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/==(_:_:)-7i94i",
+            "title" : "func == <Model, Value>(Value?, KeyPath<Model, Value?>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/==(_:_:)-7wjrj",
+            "title" : "func == <Model>(NSNumber?, KeyPath<Model, NSNumber>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/==(_:_:)-8527g",
+            "title" : "func == <Model>(KeyPath<Model, Bool?>, Bool?) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/==(_:_:)-8snrr",
+            "title" : "func == <Model, Value>(KeyPath<Model, Value?>, Value?) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/==(_:_:)-9ajvm",
+            "title" : "func == <Model, Value>(Value?, KeyPath<Model, Value?>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/==(_:_:)-9tnj7",
+            "title" : "func == <Model, Value>(Value?, KeyPath<Model, Value>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/==(_:_:)-9wl9u",
+            "title" : "func == <Model>(Bool?, KeyPath<Model, Bool?>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:)-65yo6",
+            "title" : "func ^ <Model, Value>(KeyPath<Model, Value>) -> FetchableSortExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:)-75n83",
+            "title" : "func ^ <Model, Value>(KeyPath<Model, Value?>) -> FetchableSortExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-11m0h",
+            "title" : "func > <Model, Value>(Value, KeyPath<Model, Value>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-11ur8",
+            "title" : "func < <Model, Value>(Value, KeyPath<Model, Value?>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-16lm",
+            "title" : "func > <Model, Value>(Value, KeyPath<Model, Value>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-1d622",
+            "title" : "func > <Model>(NSNumber, KeyPath<Model, NSNumber?>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-1ffbx",
+            "title" : "func < <Model, Value>(KeyPath<Model, Value>, Value) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-1fy3b",
+            "title" : "func < <Model>(NSNumber, KeyPath<Model, NSNumber>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-1i350",
+            "title" : "func < <Model, Value>(Value, KeyPath<Model, Value>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-2exvv",
+            "title" : "func > <Model, Value>(Value, KeyPath<Model, Value?>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-2grhl",
+            "title" : "func > <Model, Value>(Value, KeyPath<Model, Value>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-2m2nr",
+            "title" : "func > <Model, Value>(KeyPath<Model, Value?>, Value) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-2qhz4",
+            "title" : "func < <Model, Value>(Value, KeyPath<Model, Value?>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-2u3av",
+            "title" : "func > <Model>(NSNumber, KeyPath<Model, NSNumber>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-2whc3",
+            "title" : "func < <Model>(KeyPath<Model, NSNumber?>, NSNumber) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-300tc",
+            "title" : "func > <Model, Value>(Value, KeyPath<Model, Value>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-3em3a",
+            "title" : "func < <Model, Value>(KeyPath<Model, Value?>, Value) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-3quos",
+            "title" : "func < <Model>(NSNumber, KeyPath<Model, NSNumber?>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-3vje6",
+            "title" : "func > <Model>(KeyPath<Model, NSNumber>, NSNumber) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-3w3g6",
+            "title" : "func < <Model, Value>(KeyPath<Model, Value>, Value) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-43034",
+            "title" : "func < <Model, Value>(KeyPath<Model, Value?>, Value) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-4he85",
+            "title" : "func < <Model, Value>(KeyPath<Model, Value?>, Value) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-4p4zf",
+            "title" : "func > <Model, Value>(Value, KeyPath<Model, Value?>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-4wec4",
+            "title" : "func > <Model, Value>(KeyPath<Model, Value?>, Value) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-4ztxs",
+            "title" : "func < <Model, Value>(Value, KeyPath<Model, Value?>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-55mrk",
+            "title" : "func > <Model, Value>(KeyPath<Model, Value>, Value) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-59ni0",
+            "title" : "func < <Model, Value>(Value, KeyPath<Model, Value?>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-5ibsz",
+            "title" : "func > <Model, Value>(Value, KeyPath<Model, Value>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-5sph5",
+            "title" : "func < <Model, Value>(KeyPath<Model, Value>, Value) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-6dv1p",
+            "title" : "func < <Model>(KeyPath<Model, NSNumber>, NSNumber) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-6jujs",
+            "title" : "func < <Model, Value>(Value, KeyPath<Model, Value?>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-6khpl",
+            "title" : "func < <Model, Value>(KeyPath<Model, Value>, Value) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-6ue2w",
+            "title" : "func > <Model>(KeyPath<Model, NSNumber?>, NSNumber) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-6xng8",
+            "title" : "func < <Model, Value>(KeyPath<Model, Value>, Value) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-7h36j",
+            "title" : "func > <Model, Value>(KeyPath<Model, Value>, Value) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-7hf8w",
+            "title" : "func < <Model, Value>(KeyPath<Model, Value?>, Value) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-7hq4t",
+            "title" : "func < <Model, Value>(Value, KeyPath<Model, Value>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-87o59",
+            "title" : "func < <Model, Value>(Value, KeyPath<Model, Value>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-893k4",
+            "title" : "func > <Model, Value>(KeyPath<Model, Value?>, Value) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-8awkv",
+            "title" : "func > <Model, Value>(Value, KeyPath<Model, Value?>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-8ef1u",
+            "title" : "func > <Model, Value>(KeyPath<Model, Value>, Value) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-9suqo",
+            "title" : "func > <Model, Value>(Value, KeyPath<Model, Value?>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-9uwrl",
+            "title" : "func > <Model, Value>(KeyPath<Model, Value?>, Value) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-9vo1p",
+            "title" : "func < <Model, Value>(KeyPath<Model, Value?>, Value) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-dzts",
+            "title" : "func > <Model, Value>(KeyPath<Model, Value>, Value) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-jm43",
+            "title" : "func < <Model, Value>(Value, KeyPath<Model, Value>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-pgtu",
+            "title" : "func > <Model, Value>(KeyPath<Model, Value>, Value) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-psn7",
+            "title" : "func > <Model, Value>(Value, KeyPath<Model, Value?>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-w3",
+            "title" : "func > <Model, Value>(KeyPath<Model, Value?>, Value) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_(_:_:)-wk38",
+            "title" : "func < <Model, Value>(Value, KeyPath<Model, Value>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-15gr4",
+            "title" : "func <= <Model>(NSNumber, KeyPath<Model, NSNumber?>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-19vv8",
+            "title" : "func >= <Model>(NSNumber, KeyPath<Model, NSNumber?>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-1ejxo",
+            "title" : "func <= <Model, Value>(KeyPath<Model, Value?>, Value) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-1sokr",
+            "title" : "func >= <Model, Value>(KeyPath<Model, Value>, Value) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-2h3t1",
+            "title" : "func <= <Model, Value>(Value, KeyPath<Model, Value?>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-2izur",
+            "title" : "func <= <Model, Value>(KeyPath<Model, Value?>, Value) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-2qxib",
+            "title" : "func >= <Model, Value>(KeyPath<Model, Value?>, Value) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-2xsfu",
+            "title" : "func >= <Model, Value>(KeyPath<Model, Value?>, Value) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-3fcq",
+            "title" : "func >= <Model, Value>(KeyPath<Model, Value>, Value) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-3i43n",
+            "title" : "func <= <Model>(NSNumber, KeyPath<Model, NSNumber>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-3p76r",
+            "title" : "func <= <Model, Value>(KeyPath<Model, Value?>, Value) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-42bc1",
+            "title" : "func <= <Model, Value>(KeyPath<Model, Value>, Value) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-42zou",
+            "title" : "func >= <Model, Value>(Value, KeyPath<Model, Value>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-480f",
+            "title" : "func >= <Model, Value>(Value, KeyPath<Model, Value>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-4fc4n",
+            "title" : "func <= <Model, Value>(KeyPath<Model, Value>, Value) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-4k5v7",
+            "title" : "func <= <Model, Value>(KeyPath<Model, Value>, Value) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-4kg2m",
+            "title" : "func >= <Model, Value>(Value, KeyPath<Model, Value>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-4nmh8",
+            "title" : "func <= <Model, Value>(Value, KeyPath<Model, Value>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-4tq3d",
+            "title" : "func <= <Model, Value>(KeyPath<Model, Value>, Value) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-4wn7e",
+            "title" : "func >= <Model, Value>(Value, KeyPath<Model, Value?>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-50n09",
+            "title" : "func >= <Model>(KeyPath<Model, NSNumber>, NSNumber) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-5mx9n",
+            "title" : "func <= <Model, Value>(Value, KeyPath<Model, Value>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-6si17",
+            "title" : "func <= <Model, Value>(Value, KeyPath<Model, Value?>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-6ub0n",
+            "title" : "func >= <Model, Value>(KeyPath<Model, Value?>, Value) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-7drgd",
+            "title" : "func >= <Model, Value>(Value, KeyPath<Model, Value?>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-7ulq4",
+            "title" : "func >= <Model>(NSNumber, KeyPath<Model, NSNumber>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-80ucf",
+            "title" : "func >= <Model, Value>(KeyPath<Model, Value>, Value) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-85d4h",
+            "title" : "func <= <Model, Value>(KeyPath<Model, Value?>, Value) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-86y6o",
+            "title" : "func >= <Model, Value>(Value, KeyPath<Model, Value?>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-8g9ss",
+            "title" : "func >= <Model>(KeyPath<Model, NSNumber?>, NSNumber) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-8h674",
+            "title" : "func <= <Model, Value>(Value, KeyPath<Model, Value?>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-8ioc7",
+            "title" : "func >= <Model, Value>(KeyPath<Model, Value?>, Value) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-8itnz",
+            "title" : "func <= <Model>(KeyPath<Model, NSNumber?>, NSNumber) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-8jvnb",
+            "title" : "func <= <Model, Value>(Value, KeyPath<Model, Value>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-8q6dx",
+            "title" : "func >= <Model, Value>(Value, KeyPath<Model, Value>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-8udht",
+            "title" : "func >= <Model, Value>(KeyPath<Model, Value?>, Value) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-8zkpk",
+            "title" : "func >= <Model, Value>(Value, KeyPath<Model, Value?>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-96onw",
+            "title" : "func <= <Model, Value>(Value, KeyPath<Model, Value?>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-97c6b",
+            "title" : "func <= <Model, Value>(KeyPath<Model, Value>, Value) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-9p3m2",
+            "title" : "func <= <Model>(KeyPath<Model, NSNumber>, NSNumber) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-9wmus",
+            "title" : "func >= <Model, Value>(KeyPath<Model, Value>, Value) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-bhk2",
+            "title" : "func >= <Model, Value>(KeyPath<Model, Value>, Value) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-fhox",
+            "title" : "func >= <Model, Value>(Value, KeyPath<Model, Value>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-fl3c",
+            "title" : "func <= <Model, Value>(Value, KeyPath<Model, Value>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-gywf",
+            "title" : "func >= <Model, Value>(Value, KeyPath<Model, Value?>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-h825",
+            "title" : "func <= <Model, Value>(KeyPath<Model, Value?>, Value) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-pn7c",
+            "title" : "func <= <Model, Value>(Value, KeyPath<Model, Value>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/_=(_:_:)-rex1",
+            "title" : "func <= <Model, Value>(Value, KeyPath<Model, Value?>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/__(_:_:)",
+            "title" : "func || <Model>(FetchableFilterExpression<Model>, FetchableFilterExpression<Model>) -> FetchableFilterExpression<Model>",
+            "type" : "op"
+          },
+          {
+            "title" : "Type Aliases",
+            "type" : "groupMarker"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/findorcreatable",
+            "title" : "FindOrCreatable",
+            "type" : "typealias"
+          },
+          {
+            "path" : "\/documentation\/ffcoredata\/keyobjectdictionary",
+            "title" : "KeyObjectDictionary",
+            "type" : "typealias"
+          },
+          {
+            "title" : "Enumerations",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Enumeration Cases",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/coredatadecodingerror\/missingcontext(codingpath:)",
+                "title" : "case missingContext(codingPath: Array<CodingKey>)",
+                "type" : "case"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/coredatadecodingerror\/description",
+                "title" : "var description: String",
+                "type" : "property"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/coredatadecodingerror\/localizeddescription",
+                    "title" : "var localizedDescription: String",
+                    "type" : "property"
+                  }
+                ],
+                "path" : "\/documentation\/ffcoredata\/coredatadecodingerror\/error-implementations",
+                "title" : "Error Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/ffcoredata\/coredatadecodingerror",
+            "title" : "CoreDataDecodingError",
+            "type" : "enum"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Structures",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Structures",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "children" : [
+                      {
+                        "title" : "Initializers",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/options-swift.struct\/init(rawvalue:)",
+                        "title" : "init(rawValue: CoreDataStack.Configuration.Options.RawValue)",
+                        "type" : "init"
+                      },
+                      {
+                        "title" : "Instance Properties",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/options-swift.struct\/rawvalue-swift.property",
+                        "title" : "let rawValue: CoreDataStack.Configuration.Options.RawValue",
+                        "type" : "property"
+                      },
+                      {
+                        "title" : "Type Aliases",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/options-swift.struct\/rawvalue-swift.typealias",
+                        "title" : "CoreDataStack.Configuration.Options.RawValue",
+                        "type" : "typealias"
+                      },
+                      {
+                        "title" : "Type Properties",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/options-swift.struct\/cleardatastoreonsetupfailure",
+                        "title" : "static let clearDataStoreOnSetupFailure: CoreDataStack.Configuration.Options",
+                        "type" : "property"
+                      },
+                      {
+                        "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/options-swift.struct\/default",
+                        "title" : "static var `default`: CoreDataStack.Configuration.Options",
+                        "type" : "property"
+                      },
+                      {
+                        "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/options-swift.struct\/removenamespacesfromentitynames",
+                        "title" : "static let removeNamespacesFromEntityNames: CoreDataStack.Configuration.Options",
+                        "type" : "property"
+                      },
+                      {
+                        "title" : "Default Implementations",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "children" : [
+                          {
+                            "title" : "Operators",
+                            "type" : "groupMarker"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/options-swift.struct\/!=(_:_:)",
+                            "title" : "static func != (Self, Self) -> Bool",
+                            "type" : "op"
+                          }
+                        ],
+                        "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/options-swift.struct\/equatable-implementations",
+                        "title" : "Equatable Implementations",
+                        "type" : "symbol"
+                      },
+                      {
+                        "children" : [
+                          {
+                            "title" : "Initializers",
+                            "type" : "groupMarker"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/options-swift.struct\/init()",
+                            "title" : "init()",
+                            "type" : "init"
+                          },
+                          {
+                            "title" : "Instance Methods",
+                            "type" : "groupMarker"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/options-swift.struct\/contains(_:)",
+                            "title" : "func contains(Self) -> Bool",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/options-swift.struct\/formintersection(_:)",
+                            "title" : "func formIntersection(Self)",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/options-swift.struct\/formsymmetricdifference(_:)",
+                            "title" : "func formSymmetricDifference(Self)",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/options-swift.struct\/formunion(_:)",
+                            "title" : "func formUnion(Self)",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/options-swift.struct\/insert(_:)",
+                            "title" : "func insert(Self.Element) -> (inserted: Bool, memberAfterInsert: Self.Element)",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/options-swift.struct\/intersection(_:)",
+                            "title" : "func intersection(Self) -> Self",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/options-swift.struct\/remove(_:)",
+                            "title" : "func remove(Self.Element) -> Self.Element?",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/options-swift.struct\/symmetricdifference(_:)",
+                            "title" : "func symmetricDifference(Self) -> Self",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/options-swift.struct\/union(_:)",
+                            "title" : "func union(Self) -> Self",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/options-swift.struct\/update(with:)",
+                            "title" : "func update(with: Self.Element) -> Self.Element?",
+                            "type" : "method"
+                          }
+                        ],
+                        "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/options-swift.struct\/optionset-implementations",
+                        "title" : "OptionSet Implementations",
+                        "type" : "symbol"
+                      },
+                      {
+                        "children" : [
+                          {
+                            "title" : "Initializers",
+                            "type" : "groupMarker"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/options-swift.struct\/init(_:)",
+                            "title" : "init<S>(S)",
+                            "type" : "init"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/options-swift.struct\/init(arrayliteral:)",
+                            "title" : "init(arrayLiteral: Self.Element...)",
+                            "type" : "init"
+                          },
+                          {
+                            "title" : "Instance Properties",
+                            "type" : "groupMarker"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/options-swift.struct\/isempty",
+                            "title" : "var isEmpty: Bool",
+                            "type" : "property"
+                          },
+                          {
+                            "title" : "Instance Methods",
+                            "type" : "groupMarker"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/options-swift.struct\/isdisjoint(with:)",
+                            "title" : "func isDisjoint(with: Self) -> Bool",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/options-swift.struct\/isstrictsubset(of:)",
+                            "title" : "func isStrictSubset(of: Self) -> Bool",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/options-swift.struct\/isstrictsuperset(of:)",
+                            "title" : "func isStrictSuperset(of: Self) -> Bool",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/options-swift.struct\/issubset(of:)",
+                            "title" : "func isSubset(of: Self) -> Bool",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/options-swift.struct\/issuperset(of:)",
+                            "title" : "func isSuperset(of: Self) -> Bool",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/options-swift.struct\/subtract(_:)",
+                            "title" : "func subtract(Self)",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/options-swift.struct\/subtracting(_:)",
+                            "title" : "func subtracting(Self) -> Self",
+                            "type" : "method"
+                          }
+                        ],
+                        "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/options-swift.struct\/setalgebra-implementations",
+                        "title" : "SetAlgebra Implementations",
+                        "type" : "symbol"
+                      }
+                    ],
+                    "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/options-swift.struct",
+                    "title" : "CoreDataStack.Configuration.Options",
+                    "type" : "struct"
+                  },
+                  {
+                    "title" : "Initializers",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/init(bundle:applicationsupportsubfolder:storepath:modelname:sqlitename:options:)",
+                    "title" : "init(bundle: Bundle, applicationSupportSubfolder: String?, storePath: URL?, modelName: String?, sqliteName: String?, options: CoreDataStack.Configuration.Options)",
+                    "type" : "init"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/init(modelurl:applicationsupportsubfolder:storepath:sqlitename:options:)",
+                    "title" : "init(modelURL: URL, applicationSupportSubfolder: String, storePath: URL?, sqliteName: String, options: CoreDataStack.Configuration.Options)",
+                    "type" : "init"
+                  },
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/applicationsupportsubfoldername",
+                    "title" : "let applicationSupportSubfolderName: String",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/cleardatastoreonsetupfailure",
+                    "title" : "var clearDataStoreOnSetupFailure: Bool",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/databaseurl",
+                    "title" : "var databaseURL: URL",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/modelurl",
+                    "title" : "let modelURL: URL",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/options-swift.property",
+                    "title" : "let options: CoreDataStack.Configuration.Options",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/removenamespacesfromentitynames",
+                    "title" : "var removeNamespacesFromEntityNames: Bool",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/sqlitename",
+                    "title" : "let sqliteName: String",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/storepath",
+                    "title" : "let storePath: URL",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Type Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/appdatadirectoryurl(withsubfoldername:)",
+                    "title" : "static func appDataDirectoryURL(withSubfolderName: String) -> URL",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct",
+                "title" : "CoreDataStack.Configuration",
+                "type" : "struct"
+              },
+              {
+                "title" : "Type Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.type.property",
+                "title" : "static var configuration: CoreDataStack.Configuration",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/coredatastack\/maincontext",
+                "title" : "static var mainContext: NSManagedObjectContext",
+                "type" : "property"
+              },
+              {
+                "title" : "Type Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/coredatastack\/cleardatastore()",
+                "title" : "static func clearDataStore() throws",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/coredatastack\/closeconnections()",
+                "title" : "static func closeConnections()",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/coredatastack\/createtemporarybackgroundcontext()",
+                "title" : "static func createTemporaryBackgroundContext() -> NSManagedObjectContext",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/coredatastack\/createtemporarymaincontext()",
+                "title" : "static func createTemporaryMainContext() -> NSManagedObjectContext",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/coredatastack\/save(context:rollback:completion:)",
+                "title" : "static func save(context: NSManagedObjectContext, rollback: Bool, completion: (Bool) -> ())",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/coredatastack\/savecontext(_:rollback:)",
+                "title" : "static func saveContext(NSManagedObjectContext, rollback: Bool) async -> Bool",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/coredatastack\/savemaincontext(rollback:)",
+                "title" : "static func saveMainContext(rollback: Bool) async -> Bool",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/coredatastack\/savemaincontext(rollback:completion:)",
+                "title" : "static func saveMainContext(rollback: Bool, completion: (Bool) -> ())",
+                "type" : "method"
+              }
+            ],
+            "path" : "\/documentation\/ffcoredata\/coredatastack",
+            "title" : "CoreDataStack",
+            "type" : "enum"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Enumeration Cases",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/mocobservationmode\/allcontexts",
+                "title" : "case allContexts",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/mocobservationmode\/multiplecontexts(_:)",
+                "title" : "case multipleContexts(Array<NSManagedObjectContext>)",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/mocobservationmode\/singlecontext(_:)",
+                "title" : "case singleContext(NSManagedObjectContext)",
+                "type" : "case"
+              }
+            ],
+            "path" : "\/documentation\/ffcoredata\/mocobservationmode",
+            "title" : "MOCObservationMode",
+            "type" : "enum"
+          }
+        ],
+        "path" : "\/documentation\/ffcoredata",
+        "title" : "FFCoreData",
+        "type" : "module"
+      }
+    ]
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 1,
+    "patch" : 0
+  }
+}

@@ -1,7 +1,39 @@
 {
   "abstract" : [
     {
-      "text" : "Subscribes to an additional publisher and invokes a closure upon receiving output from either publisher.",
+      "text" : "cancellable = pub1",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : ".combineLatest(pub2) { (first, second) in",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "return first * second",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "}",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : ".sink { print(“Result: ($0).”) }",
       "type" : "text"
     }
   ],
@@ -474,39 +506,6 @@
       "kind" : "content"
     },
     {
-      "kind" : "parameters",
-      "parameters" : [
-        {
-          "content" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "Another publisher to combine with this one.",
-                  "type" : "text"
-                }
-              ],
-              "type" : "paragraph"
-            }
-          ],
-          "name" : "other"
-        },
-        {
-          "content" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "A closure that receives the most-recent value from each publisher and returns a new value to publish.",
-                  "type" : "text"
-                }
-              ],
-              "type" : "paragraph"
-            }
-          ],
-          "name" : "transform"
-        }
-      ]
-    },
-    {
       "content" : [
         {
           "anchor" : "discussion",
@@ -517,109 +516,115 @@
         {
           "inlineContent" : [
             {
-              "text" : "Use ",
+              "text" : "pub1.send(1)",
               "type" : "text"
             },
             {
-              "code" : "combineLatest<P,T>(_:)",
-              "type" : "codeVoice"
+              "text" : " ",
+              "type" : "text"
             },
             {
-              "text" : " to combine the current and one additional publisher and transform them using a closure you specify to publish a new value to the downstream.",
+              "text" : "pub1.send(2)",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "pub2.send(2)",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "pub1.send(9)",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "pub1.send(3)",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "pub2.send(12)",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "pub1.send(13)",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "\/\/",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "\/\/ Prints:",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "\/\/Result: 4.    (pub1 latest = 2, pub2 latest = 2)",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "\/\/Result: 18.   (pub1 latest = 9, pub2 latest = 2)",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "\/\/Result: 6.    (pub1 latest = 3, pub2 latest = 2)",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "\/\/Result: 36.   (pub1 latest = 3, pub2 latest = 12)",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "\/\/Result: 156.  (pub1 latest = 13, pub2 latest = 12)",
               "type" : "text"
             }
           ],
           "type" : "paragraph"
-        },
-        {
-          "content" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "The combined publisher doesn’t produce elements until each of its upstream publishers publishes at least one element.",
-                  "type" : "text"
-                }
-              ],
-              "type" : "paragraph"
-            }
-          ],
-          "style" : "tip",
-          "type" : "aside"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "The combined publisher passes through any requests to ",
-              "type" : "text"
-            },
-            {
-              "inlineContent" : [
-                {
-                  "text" : "all",
-                  "type" : "text"
-                }
-              ],
-              "type" : "emphasis"
-            },
-            {
-              "text" : " upstream publishers. However, it still obeys the demand-fulfilling rule of only sending the request amount downstream. If the demand isn’t ",
-              "type" : "text"
-            },
-            {
-              "code" : ".unlimited",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : ", it drops values from upstream publishers. It implements this by using a buffer size of 1 for each upstream, and holds the most-recent value in each buffer.",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "In the example below, ",
-              "type" : "text"
-            },
-            {
-              "code" : "combineLatest()",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : " receives the most-recent values published by the two publishers, it multiplies them together, and republishes the result:",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        },
-        {
-          "code" : [
-            "let pub1 = PassthroughSubject<Int, Never>()",
-            "let pub2 = PassthroughSubject<Int, Never>()",
-            "cancellable = pub1",
-            "    .combineLatest(pub2) { (first, second) in",
-            "        return first * second",
-            "    }",
-            "    .sink { print(\"Result: \\($0).\") }",
-            "",
-            "pub1.send(1)",
-            "pub1.send(2)",
-            "pub2.send(2)",
-            "pub1.send(9)",
-            "pub1.send(3)",
-            "pub2.send(12)",
-            "pub1.send(13)",
-            "\/\/",
-            "\/\/ Prints:",
-            "\/\/Result: 4.    (pub1 latest = 2, pub2 latest = 2)",
-            "\/\/Result: 18.   (pub1 latest = 9, pub2 latest = 2)",
-            "\/\/Result: 6.    (pub1 latest = 3, pub2 latest = 2)",
-            "\/\/Result: 36.   (pub1 latest = 3, pub2 latest = 12)",
-            "\/\/Result: 156.  (pub1 latest = 13, pub2 latest = 12)"
-          ],
-          "syntax" : null,
-          "type" : "codeListing"
         },
         {
           "inlineContent" : [
@@ -637,6 +642,37 @@
             }
           ],
           "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "other: Another publisher to combine with this one.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "transform: A closure that receives the most-recent value from each publisher and returns a new value to publish.",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
         }
       ],
       "kind" : "content"
@@ -644,7 +680,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -720,7 +756,39 @@
 "doc://FFCoreData/documentation/FFCoreData/MOCChangePublisher/combineLatest(_:_:)-4gedl": {
   "abstract" : [
     {
-      "text" : "Subscribes to an additional publisher and invokes a closure upon receiving output from either publisher.",
+      "text" : "cancellable = pub1",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : ".combineLatest(pub2) { (first, second) in",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "return first * second",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "}",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : ".sink { print(“Result: ($0).”) }",
       "type" : "text"
     }
   ],

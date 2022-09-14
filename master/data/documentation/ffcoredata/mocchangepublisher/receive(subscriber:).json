@@ -1,10 +1,4 @@
 {
-  "abstract" : [
-    {
-      "text" : "No overview available.",
-      "type" : "text"
-    }
-  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -195,28 +189,9 @@
               "text" : " == "
             },
             {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher",
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10FFCoreData18MOCChangePublisherV",
-              "text" : "MOCChangePublisher"
-            },
-            {
-              "kind" : "text",
-              "text" : "<"
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Filter"
-            },
-            {
-              "kind" : "text",
-              "text" : ">."
-            },
-            {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/Failure",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10FFCoreData18MOCChangePublisherV7Failurea",
-              "text" : "Failure"
+              "preciseIdentifier" : "s:s5NeverO",
+              "text" : "Never"
             },
             {
               "kind" : "text",
@@ -239,28 +214,10 @@
               "text" : " == "
             },
             {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher",
+              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCObservedChanges",
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10FFCoreData18MOCChangePublisherV",
-              "text" : "MOCChangePublisher"
-            },
-            {
-              "kind" : "text",
-              "text" : "<"
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Filter"
-            },
-            {
-              "kind" : "text",
-              "text" : ">."
-            },
-            {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/Output",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10FFCoreData18MOCChangePublisherV6Outputa",
-              "text" : "Output"
+              "preciseIdentifier" : "s:10FFCoreData18MOCObservedChangesV",
+              "text" : "MOCObservedChanges"
             }
           ]
         }
@@ -270,7 +227,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -332,68 +289,6 @@
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/mocchangepublisher"
 },
-"doc://FFCoreData/documentation/FFCoreData/MOCChangePublisher/Failure": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "typealias"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "Failure"
-    }
-  ],
-  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/Failure",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "Failure"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "MOCChangePublisher.Failure",
-  "type" : "topic",
-  "url" : "\/documentation\/ffcoredata\/mocchangepublisher\/failure"
-},
-"doc://FFCoreData/documentation/FFCoreData/MOCChangePublisher/Output": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "typealias"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "Output"
-    }
-  ],
-  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/Output",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "Output"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "MOCChangePublisher.Output",
-  "type" : "topic",
-  "url" : "\/documentation\/ffcoredata\/mocchangepublisher\/output"
-},
 "doc://FFCoreData/documentation/FFCoreData/MOCChangePublisher/receive(subscriber:)": {
   "abstract" : [
 
@@ -446,6 +341,37 @@
   "title" : "receive(subscriber:)",
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/mocchangepublisher\/receive(subscriber:)"
+},
+"doc://FFCoreData/documentation/FFCoreData/MOCObservedChanges": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "MOCObservedChanges"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCObservedChanges",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "MOCObservedChanges"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "MOCObservedChanges",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/mocobservedchanges"
 }
 }
 }

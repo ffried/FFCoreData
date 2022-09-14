@@ -1,10 +1,4 @@
 {
-  "abstract" : [
-    {
-      "text" : "No overview available.",
-      "type" : "text"
-    }
-  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -29,7 +23,7 @@
   },
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
@@ -1566,7 +1560,39 @@
 "doc://FFCoreData/documentation/FFCoreData/MOCChangePublisher/combineLatest(_:_:)-4gedl": {
   "abstract" : [
     {
-      "text" : "Subscribes to an additional publisher and invokes a closure upon receiving output from either publisher.",
+      "text" : "cancellable = pub1",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : ".combineLatest(pub2) { (first, second) in",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "return first * second",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "}",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : ".sink { print(“Result: ($0).”) }",
       "type" : "text"
     }
   ],

@@ -1,15 +1,9 @@
 {
-  "abstract" : [
-    {
-      "text" : "No overview available.",
-      "type" : "text"
-    }
-  ],
   "defaultImplementationsSections" : [
     {
       "identifiers" : [
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodable\/init(with:in:)-8ocab",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodable\/init(with:in:)-9yesq"
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodable\/init(with:in:)-9yesq",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodable\/init(with:in:)-8ocab"
       ],
       "title" : "CoreDataDecodable Implementations"
     }
@@ -183,7 +177,7 @@
   ],
   "schemaVersion" : {
     "major" : 0,
-    "minor" : 2,
+    "minor" : 3,
     "patch" : 0
   },
   "sections" : [
