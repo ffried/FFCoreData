@@ -50,7 +50,7 @@ jobs:
       - name: Read Swift Version
         uses: sersoft-gmbh/swift-version-action@v2.0.0
         id: swift-version
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3.1.0
       - uses: actions/cache@v3.0.10
         with:
           path: .build
@@ -88,7 +88,7 @@ jobs:
       - name: Read Swift Version
         uses: sersoft-gmbh/swift-version-action@v2.0.0
         id: swift-version
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3.1.0
       - uses: sersoft-gmbh/xcodebuild-action@v2.0.0
         with:
           spm-package: './'
