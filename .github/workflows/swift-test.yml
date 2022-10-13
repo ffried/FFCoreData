@@ -51,7 +51,7 @@ jobs:
         uses: sersoft-gmbh/swift-version-action@v2.0.0
         id: swift-version
       - uses: actions/checkout@v3.1.0
-      - uses: actions/cache@v3.0.10
+      - uses: actions/cache@v3.0.11
         with:
           path: .build
           key: ${{runner.os}}-${{steps.os-version.outputs.version}}-${{github.repository}}-spm-${{steps.swift-version.outputs.version}}-${{hashFiles('**/Package.resolved')}}
