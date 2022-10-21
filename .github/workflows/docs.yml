@@ -15,7 +15,7 @@ jobs:
       version-name: ${{github.ref_name}}
       is-latest: ${{steps.compare-tags.output.is-latest}}
     steps:
-      - uses: joutvhu/get-release@v1.0.1
+      - uses: joutvhu/get-release@v1.0.2
         id: latest-release
         with:
           latest: true
