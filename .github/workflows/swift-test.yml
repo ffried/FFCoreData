@@ -48,7 +48,7 @@ jobs:
         uses: sersoft-gmbh/os-version-action@v2.0.0
         id: os-version
       - name: Read Swift Version
-        uses: sersoft-gmbh/swift-version-action@v2.0.0
+        uses: sersoft-gmbh/swift-version-action@v2.0.1
         id: swift-version
       - uses: actions/checkout@v3.1.0
       - uses: actions/cache@v3.0.11
@@ -86,7 +86,7 @@ jobs:
         with:
           xcode-version: ^14.0
       - name: Read Swift Version
-        uses: sersoft-gmbh/swift-version-action@v2.0.0
+        uses: sersoft-gmbh/swift-version-action@v2.0.1
         id: swift-version
       - uses: actions/checkout@v3.1.0
       - uses: sersoft-gmbh/xcodebuild-action@v2.0.0
