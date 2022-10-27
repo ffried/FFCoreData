@@ -12,8 +12,8 @@ jobs:
   release-context:
     runs-on: ubuntu-latest
     outputs:
-      version-name: ${{github.ref_name}}
-      is-latest: ${{steps.compare-tags.output.is-latest}}
+      version-name: ${{ github.ref_name }}
+      is-latest: ${{ steps.compare-tags.output.is-latest }}
     steps:
       - uses: joutvhu/get-release@v1.0.2
         id: latest-release
@@ -21,11 +21,15 @@ jobs:
           latest: true
           throwing: false
         env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Compare tags
         id: compare-tags
+        env:
+          REF_TYPE: ${{ github.ref_type }}
+          REF_NAME: ${{ github.ref_name }}
+          LATEST_TAG: ${{ steps.latest-release.outputs.tag_name }}
         run: |
-          if [ '${{github.ref_type}}' == 'tag' ] && [ '${{steps.latest-release.outputs.tag_name}}' == '${{github.ref_name}}' ]; then
+          if [ "${REF_TYPE}" == 'tag' ] && [ "${REF_NAME}" == "${LATEST_TAG}" ]; then
             echo 'is-latest=true' >> "${GITHUB_OUTPUT}"
           else
             echo 'is-latest=false' >> "${GITHUB_OUTPUT}"
@@ -34,15 +38,11 @@ jobs:
   spm-context:
     runs-on: ubuntu-latest
     outputs:
-      package-dump: ${{steps.dump-package.outputs.package-dump}}
+      package-dump: ${{ steps.dump-package.outputs.package-dump }}
     steps:
       - uses: swift-actions/setup-swift@v1.18.0
-        id: swift-setup
         with:
           swift-version: '5.7'
-      - name: Read OS Version
-        uses: sersoft-gmbh/os-version-action@v2.0.1
-        id: os-version
       - uses: actions/checkout@v3.1.0
       # We don't use a cache here, because SPM doesn't resolve dependencies when dumping packages.
       - name: Dump package
@@ -60,7 +60,7 @@ jobs:
     runs-on: macos-12
     strategy:
       matrix:
-        target: ${{fromJson(needs.spm-context.outputs.package-dump).products.*.targets.*}}
+        target: ${{ fromJson(needs.spm-context.outputs.package-dump).products.*.targets.* }}
     steps:
       - uses: swift-actions/setup-swift@v1.18.0
         id: swift-setup
@@ -73,27 +73,29 @@ jobs:
       - uses: actions/cache@v3.0.11
         with:
           path: .build
-          key: ${{runner.os}}-${{steps.os-version.outputs.version}}-${{github.repository}}-spm-${{steps.swift-setup.outputs.version}}-${{hashFiles('**/Package.resolved')}}
+          key: ${{ runner.os }}-${{ steps.os-version.outputs.version }}-spm-${{ steps.swift-setup.outputs.version }}-${{ hashFiles('**/Package.resolved') }}
           restore-keys: |
-            ${{runner.os}}-${{steps.os-version.outputs.version}}-${{github.repository}}-spm-${{steps.swift-setup.outputs.version}}-
+            ${{ runner.os }}-${{ steps.os-version.outputs.version }}-spm-${{ steps.swift-setup.outputs.version }}-
       - uses: sersoft-gmbh/swifty-docs-action@v2.0.3
         env:
           ENABLE_DOCC_SUPPORT: '1'
           DOCC_JSON_PRETTYPRINT: 'YES'
         with:
-          package-version: ${{needs.release-context.outputs.version-name}}
-          targets: ${{matrix.target}}
+          package-version: ${{ needs.release-context.outputs.version-name }}
+          targets: ${{ matrix.target }}
           enable-inherited-docs: true
           enable-index-building: false
           transform-for-static-hosting: true
-          hosting-base-path: ${{github.event.repository.name}}/${{needs.release-context.outputs.version-name}}
-          output: ${{matrix.target}}-docs
+          hosting-base-path: ${{ github.event.repository.name }}/${{ needs.release-context.outputs.version-name }}
+          output: ${{ matrix.target }}-docs
       - name: Package docs
-        run: tar -cvf '${{matrix.target}}-docs.tar' '${{matrix.target}}-docs'
+        env:
+          TARGET: ${{ matrix.target }}
+        run: tar -cvf "${TARGET}-docs.tar" "${TARGET}-docs"
       - uses: actions/upload-artifact@v3
         with:
-          name: ${{matrix.target}}-docs
-          path: ${{matrix.target}}-docs.tar
+          name: ${{ matrix.target }}-docs
+          path: ${{ matrix.target }}-docs.tar
 
   publish-docs:
     needs:
@@ -113,8 +115,8 @@ jobs:
         run: find artifacts -name '*.tar' -execdir tar -xvf '{}' --strip-components 1 \; -delete
       - name: Merge documentations
         env:
-          TARGETS: ${{join(fromJson(needs.spm-context.outputs.package-dump).products.*.targets.*, ' ')}}
-          DOCS_BASE_DIR: repository/${{needs.release-context.outputs.version-name}}
+          TARGETS: ${{ join(fromJson(needs.spm-context.outputs.package-dump).products.*.targets.*, ' ') }}
+          DOCS_BASE_DIR: repository/${{ needs.release-context.outputs.version-name }}
         run: |
           rm -rf "${DOCS_BASE_DIR}"
           is_first=1
@@ -134,9 +136,10 @@ jobs:
       - name: Create version index
         working-directory: repository
         env:
-          TARGET_DOCS_DIR: ${{needs.release-context.outputs.version-name}}/documentation
-          INDEX_FILE: ${{needs.release-context.outputs.version-name}}/index.html
-          BASE_URL: 'https://${{github.repository_owner}}.github.io/${{github.event.repository.name}}/${{needs.release-context.outputs.version-name}}/documentation'
+          TARGET_DOCS_DIR: ${{ needs.release-context.outputs.version-name }}/documentation
+          INDEX_FILE: ${{ needs.release-context.outputs.version-name }}/index.html
+          BASE_URL: 'https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/${{ needs.release-context.outputs.version-name }}/documentation'
+          REPO_NAME: ${{ github.event.repository.name }}
         run: |
           target_count=0
           target_list=""
@@ -154,7 +157,7 @@ jobs:
           <!DOCTYPE html>
           <html>
              <head>
-                <title>${{github.event.repository.name}} Documentation</title>
+                <title>${REPO_NAME} Documentation</title>
              </head>
              <body>
                 <ul>
@@ -169,7 +172,7 @@ jobs:
           <!DOCTYPE html>
           <html>
              <head>
-                <title>${{github.event.repository.name}} Documentation</title>
+                <title>${REPO_NAME} Documentation</title>
                 <meta http-equiv="refresh" content="0; url=${BASE_URL}/${single_target_name}" />
              </head>
              <body>
@@ -181,13 +184,14 @@ jobs:
       - name: Create root index
         working-directory: repository
         env:
-          REDIRECT_URL: 'https://${{github.repository_owner}}.github.io/${{github.event.repository.name}}/latest'
+          REDIRECT_URL: 'https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/latest'
+          REPO_NAME: ${{ github.event.repository.name }}
         run: |
           cat > 'index.html' <<EOF
           <!DOCTYPE html>
           <html>
              <head>
-                <title>${{github.event.repository.name}} Documentation</title>
+                <title>${REPO_NAME} Documentation</title>
                 <meta http-equiv="refresh" content="0; url=${REDIRECT_URL}" />
              </head>
              <body>
@@ -196,11 +200,13 @@ jobs:
           </html>
           EOF
       - name: Create latest symlink
-        if: ${{needs.release-context.outputs.is-latest}}
+        if: ${{ needs.release-context.outputs.is-latest }}
         working-directory: repository
+        env:
+          VERSION_NAME: ${{ needs.release-context.outputs.version-name }}
         run: |
           rm -f 'latest'
-          ln -s '${{needs.release-context.outputs.version-name}}' 'latest'
+          ln -s "${VERSION_NAME}" 'latest'
       - name: Determine changes
         id: check-changes
         working-directory: repository
@@ -211,19 +217,19 @@ jobs:
             echo 'has-changes=false' >> "${GITHUB_OUTPUT}"
           fi
       - uses: crazy-max/ghaction-github-pages@v3.1.0
-        if: ${{steps.check-changes.outputs.has-changes}}
+        if: ${{ steps.check-changes.outputs.has-changes }}
         with:
           keep_history: true
           build_dir: repository
-          commit_message: Deploy documentation for '${{needs.release-context.outputs.version-name}}'
+          commit_message: Deploy documentation for '${{ needs.release-context.outputs.version-name }}'
         env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   cleanup:
     needs:
       - generate-docs
       - publish-docs
-    if: always()
+    if: ${{ always() }}
     runs-on: ubuntu-latest
     steps:
       - name: Cleanup Artifacts

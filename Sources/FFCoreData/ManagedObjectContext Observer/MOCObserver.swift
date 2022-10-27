@@ -42,14 +42,18 @@ public enum MOCObservationMode {
 }
 
 public struct MOCObservedChanges {
-    public private(set) var inserted: Array<NSManagedObjectID> = []
-    public private(set) var updated: Array<NSManagedObjectID> = []
-    public private(set) var deleted: Array<NSManagedObjectID> = []
+    public private(set) var inserted = Array<NSManagedObjectID>()
+    public private(set) var updated = Array<NSManagedObjectID>()
+    public private(set) var deleted = Array<NSManagedObjectID>()
 }
 
 extension MOCObservedChanges {
     fileprivate init(readingFrom changes: Dictionary<AnyHashable, Any>, filteringWith filter: (NSManagedObject) throws -> Bool) rethrows {
-        try changes.map(keysToKeyPaths: [(NSInsertedObjectsKey, \.inserted), (NSUpdatedObjectsKey, \.updated), (NSDeletedObjectsKey, \.deleted)],
+        try changes.map(keysToKeyPaths: [
+            (NSInsertedObjectsKey, \.inserted),
+            (NSUpdatedObjectsKey, \.updated),
+            (NSDeletedObjectsKey, \.deleted),
+        ],
                         to: &self,
                         transformingValuesTo: Set<NSManagedObject>.self,
                         with: { try $0.filter(filter).map { $0.objectID } })
@@ -63,7 +67,7 @@ extension MOCObservedChanges {
 }
 
 fileprivate extension Dictionary {
-    func map<Input, Output, Object>(keysToKeyPaths: [(key: Key, keyPath: WritableKeyPath<Object, Output>)],
+    func map<Input, Output, Object>(keysToKeyPaths: Array<(key: Key, keyPath: WritableKeyPath<Object, Output>)>,
                                     to object: inout Object,
                                     transformingValuesTo input: Input.Type = Input.self,
                                     with transformClosure: (Input) throws -> Output) rethrows {

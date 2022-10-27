@@ -37,8 +37,7 @@ extension NSManagedObjectContext {
     }
 }
 
-#if canImport(_Concurrency)
-@available(macOS 12, iOS 15, tvOS 15, watchOS 8, *)
+@available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
 extension NSManagedObjectContext {
     public final func run<T>(_ work: @escaping (NSManagedObjectContext) throws -> T) async rethrows -> T {
         try await {
@@ -54,4 +53,3 @@ extension NSManagedObjectContext {
         try await run { _ in try work() }
     }
 }
-#endif

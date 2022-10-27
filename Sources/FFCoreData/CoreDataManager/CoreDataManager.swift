@@ -42,7 +42,8 @@ fileprivate final class CoreDataManager {
                 os_log("Failed to add persistent store with error: %@", log: .ffCoreData, type: .fault, String(describing: error))
                 fatalError("FFCoreData: Failed to add persistent store with error: \(error)")
             }
-            os_log("Failed to add persistent store with error: %@\nTrying to delete the data store now!", log: .ffCoreData, type: .error, String(describing: error))
+            os_log("Failed to add persistent store with error: %@\nTrying to delete the data store now!",
+                   log: .ffCoreData, type: .error, String(describing: error))
             do {
                 try clearDataStore()
             } catch {
@@ -139,9 +140,8 @@ fileprivate final class CoreDataManager {
         }
     }
 
-    #if canImport(_Concurrency)
     @discardableResult
-    @available(macOS 12, iOS 15, tvOS 15, watchOS 8, *)
+    @available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
     func saveContext(_ context: NSManagedObjectContext, rollback: Bool) async -> Bool {
         guard await context.run({ self._saveContext($0, rollback: rollback) }) else { return false }
         guard let parent = context.parent else { return true }
@@ -151,7 +151,6 @@ fileprivate final class CoreDataManager {
         }
         return success
     }
-#endif
 }
 
 @frozen
@@ -180,19 +179,17 @@ public enum CoreDataStack {
         save(context: mainContext, rollback: rollback, completion: completion)
     }
 
-#if canImport(_Concurrency)
     @discardableResult
-    @available(macOS 12, iOS 15, tvOS 15, watchOS 8, *)
+    @available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
     public static func saveContext(_ context: NSManagedObjectContext, rollback: Bool = true) async -> Bool {
         await manager.saveContext(context, rollback: rollback)
     }
 
     @discardableResult
-    @available(macOS 12, iOS 15, tvOS 15, watchOS 8, *)
+    @available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
     public static func saveMainContext(rollback: Bool = true) async -> Bool {
         await saveContext(mainContext, rollback: rollback)
     }
-#endif
 
     public static func createTemporaryMainContext() -> NSManagedObjectContext {
         manager.createTemporaryMainContext()
@@ -235,9 +232,9 @@ extension CoreDataStack {
         private var sqliteStoreName: String { sqliteName + ".sqlite" }
         public var databaseURL: URL { storePath.appendingPathComponent(sqliteStoreName) }
 
-        #if os(macOS)
+#if os(macOS)
         public let applicationSupportSubfolderName: String
-        #endif
+#endif
 
         public let options: Options
         @inlinable
@@ -258,13 +255,13 @@ extension CoreDataStack {
             }
             return dataDirectory
         }
-        #if os(iOS) || os(watchOS) || os(tvOS)
+#if os(iOS) || os(watchOS) || os(tvOS)
         public static let appDataDirectoryURL: URL = url(for: .documentDirectory)
-        #elseif os(macOS)
+#elseif os(macOS)
         public static func appDataDirectoryURL(withSubfolderName subfolderName: String) -> URL {
             url(for: .applicationSupportDirectory, subDirectoryName: subfolderName)
         }
-        #endif
+#endif
 
         private static let infoDictionaryTargetDisplayNameKey = "CFBundleDisplayName"
         private static let infoDictionaryTargetNameKey = String(kCFBundleNameKey)
@@ -279,13 +276,13 @@ extension CoreDataStack {
             self.sqliteName = sqliteName
             self.options = options
 
-            #if os(iOS) || os(watchOS) || os(tvOS)
-                self.storePath = storePath ?? Configuration.appDataDirectoryURL
-            #elseif os(macOS)
-                let folderName = appSupportFolderName()
-                self.applicationSupportSubfolderName = folderName
-                self.storePath = storePath ?? Configuration.appDataDirectoryURL(withSubfolderName: folderName)
-            #endif
+#if os(iOS) || os(watchOS) || os(tvOS)
+            self.storePath = storePath ?? Configuration.appDataDirectoryURL
+#elseif os(macOS)
+            let folderName = appSupportFolderName()
+            self.applicationSupportSubfolderName = folderName
+            self.storePath = storePath ?? Configuration.appDataDirectoryURL(withSubfolderName: folderName)
+#endif
         }
 
         private init(bundle: Bundle,
@@ -307,7 +304,7 @@ extension CoreDataStack {
                       options: options)
         }
 
-        #if os(iOS) || os(watchOS) || os(tvOS)
+#if os(iOS) || os(watchOS) || os(tvOS)
         public init(bundle: Bundle,
                     storePath: URL? = nil,
                     modelName: String? = nil,
@@ -331,7 +328,7 @@ extension CoreDataStack {
                       appSupportFolderName: "",
                       options: options)
         }
-        #elseif os(macOS)
+#elseif os(macOS)
         public init(bundle: Bundle,
                     applicationSupportSubfolder: String? = nil,
                     storePath: URL? = nil,
@@ -357,7 +354,7 @@ extension CoreDataStack {
                       appSupportFolderName: applicationSupportSubfolder,
                       options: options)
         }
-        #endif
+#endif
     }
 }
 

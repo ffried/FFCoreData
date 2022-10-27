@@ -61,12 +61,17 @@ extension NSManagedObject {
     }
 
     private var mocObservationMode: MOCObservationMode {
-        return managedObjectContext.map { .singleContext($0) } ?? .allContexts
+        managedObjectContext.map { .singleContext($0) } ?? .allContexts
     }
 
     private var mocObjectsFilter: MOCObjectsFilter {
         obtainPermanentID()
         return MOCObjectsFilter(objectIDs: [objectID])
+    }
+
+    @available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
+    public var changes: MOCChanges<MOCObjectsFilter> {
+        MOCChanges(mode: mocObservationMode, filter: mocObjectsFilter)
     }
 
     public func createMOCObjectObserver(fireInitially: Bool = false,
@@ -83,7 +88,7 @@ extension NSManagedObject {
 }
 
 fileprivate extension MOCObservationMode {
-    init(contexts: [NSManagedObjectContext]) {
+    init(contexts: Array<NSManagedObjectContext>) {
         if contexts.isEmpty {
             self = .allContexts
         } else if contexts.count == 1 {

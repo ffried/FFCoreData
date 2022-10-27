@@ -46,9 +46,9 @@ final class CoreDataDecodableTests: XCTestCase {
     private func generateTestJSON(count: Int) throws -> Data {
         let dtos = (1...count).map {
             DecodableEntity.DTO(idenfitier: "ID_\($0)",
-                name: Bool.random() ? nil : "Test_\($0)",
-                isTested: .random(),
-                counter: .random(in: 0..<Int32($0)))
+                                name: Bool.random() ? nil : "Test_\($0)",
+                                isTested: .random(),
+                                counter: .random(in: 0..<Int32($0)))
         }
         return try JSONEncoder().encode(dtos)
     }
@@ -61,11 +61,11 @@ final class CoreDataDecodableTests: XCTestCase {
             try (generateTestJSON(count: testDataCount),
                  CoreDataStack.createTemporaryBackgroundContext())
         }
-        let failures = Synchronized<[Error?]>(wrappedValue: Array(repeating: nil, count: parallelRuns))
+        let failures = Synchronized<Array<Error?>>(wrappedValue: Array(repeating: nil, count: parallelRuns))
         DispatchQueue.concurrentPerform(iterations: parallelRuns) { iteration in
             do {
                 try testObjects[iteration].ctx.asDecodingContext { [data = testObjects[iteration].data] in
-                    _ = try JSONDecoder().decode([DecodableEntity].self, from: data)
+                    _ = try JSONDecoder().decode(Array<DecodableEntity>.self, from: data)
                 }
             } catch {
                 failures.withValueVoid { $0[iteration] = error }

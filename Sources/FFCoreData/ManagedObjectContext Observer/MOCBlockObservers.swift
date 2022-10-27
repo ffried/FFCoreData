@@ -27,14 +27,18 @@ public final class MOCBlockObserver<Filter: MOCObserverFilter> {
     public typealias Handler = (MOCBlockObserver, MOCObservedChanges) -> ()
 
     public let mode: MOCObservationMode
-    public final var queue: OperationQueue
-    public final var handler: Handler
+    public var queue: OperationQueue
+    public var handler: Handler
 
     private let filter: Filter
     private let workerQueue = OperationQueue()
-    private var observers = [NSObjectProtocol]()
+    private var observers = Array<NSObjectProtocol>()
 
-    public init(mode: MOCObservationMode, filter: Filter, queue: OperationQueue = .current ?? .main, fireInitially: Bool, handler: @escaping Handler) {
+    public init(mode: MOCObservationMode,
+                filter: Filter,
+                queue: OperationQueue = .current ?? .main,
+                fireInitially: Bool,
+                handler: @escaping Handler) {
         self.mode = mode
         self.filter = filter
         self.handler = handler

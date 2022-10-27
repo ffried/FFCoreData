@@ -46,7 +46,7 @@ public struct MOCChangePublisher<Filter: MOCObserverFilter>: Publisher {
         upstream = publisher.compactMap { MOCObservedChanges(notification: $0, filter: filter) }
     }
 
-    public func receive<S>(subscriber: S) where S : Subscriber, Failure == S.Failure, Output == S.Input {
+    public func receive<S>(subscriber: S) where S: Subscriber, Failure == S.Failure, Output == S.Input {
         upstream.receive(subscriber: subscriber)
     }
 }
