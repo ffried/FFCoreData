@@ -115,6 +115,7 @@
     {
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/all(in:)",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/changes(with:)",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/count(in:)-44pui",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/count(in:where:)",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/count(in:with:)",
@@ -307,6 +308,110 @@
   "title" : "all(in:)",
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/fetchable\/all(in:)"
+},
+"doc://FFCoreData/documentation/FFCoreData/Fetchable/changes(with:)": {
+  "abstract" : [
+
+  ],
+  "conformance" : {
+    "availabilityPrefix" : [
+      {
+        "text" : "Available when",
+        "type" : "text"
+      }
+    ],
+    "conformancePrefix" : [
+      {
+        "text" : "Conforms when",
+        "type" : "text"
+      }
+    ],
+    "constraints" : [
+      {
+        "code" : "Self",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : " inherits ",
+        "type" : "text"
+      },
+      {
+        "code" : "NSManagedObject",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : ".",
+        "type" : "text"
+      }
+    ]
+  },
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "changes"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "with"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData18MOCObservationModeO",
+      "text" : "MOCObservationMode"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData10MOCChangesV",
+      "text" : "MOCChanges"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData17MOCEntitiesFilterV",
+      "text" : "MOCEntitiesFilter"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/changes(with:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "changes(with:)",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/fetchable\/changes(with:)"
 },
 "doc://FFCoreData/documentation/FFCoreData/Fetchable/count(in:)-44pui": {
   "abstract" : [

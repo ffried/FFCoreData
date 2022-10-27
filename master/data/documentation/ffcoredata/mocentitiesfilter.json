@@ -75,7 +75,8 @@
   "relationshipsSections" : [
     {
       "identifiers" : [
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCObserverFilter"
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCObserverFilter",
+        "doc:\/\/FFCoreData\/s8SendableP"
       ],
       "kind" : "relationships",
       "title" : "Conforms To",
@@ -389,6 +390,11 @@
   "title" : "MOCObserverFilter",
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/mocobserverfilter"
+},
+"doc://FFCoreData/s8SendableP": {
+  "identifier" : "doc:\/\/FFCoreData\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
 }
 }
 }

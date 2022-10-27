@@ -57,6 +57,7 @@
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/InvalidEntityError",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/KeyObjectDictionaryExpression",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCEntitiesFilter",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCObjectsFilter",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCObservedChanges"
@@ -6914,6 +6915,37 @@
   "title" : "MOCChangePublisher",
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/mocchangepublisher"
+},
+"doc://FFCoreData/documentation/FFCoreData/MOCChanges": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "MOCChanges"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "MOCChanges"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "MOCChanges",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/mocchanges"
 },
 "doc://FFCoreData/documentation/FFCoreData/MOCEntitiesFilter": {
   "abstract" : [

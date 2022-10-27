@@ -139,12 +139,12 @@
                   {
                     "children" : [
                       {
-                        "path" : "\/documentation\/ffcoredata\/coredatadecodable\/init(with:in:)-8ocab",
+                        "path" : "\/documentation\/ffcoredata\/coredatadecodable\/init(with:in:)-9yesq",
                         "title" : "init(with: Self.DTO, in: NSManagedObjectContext) throws",
                         "type" : "init"
                       },
                       {
-                        "path" : "\/documentation\/ffcoredata\/coredatadecodable\/init(with:in:)-9yesq",
+                        "path" : "\/documentation\/ffcoredata\/coredatadecodable\/init(with:in:)-8ocab",
                         "title" : "init(with: Self.DTO, in: NSManagedObjectContext) throws",
                         "type" : "init"
                       }
@@ -304,6 +304,11 @@
               {
                 "path" : "\/documentation\/ffcoredata\/fetchable\/all(in:)",
                 "title" : "static func all(in: NSManagedObjectContext) throws -> Array<Self>",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/fetchable\/changes(with:)",
+                "title" : "static func changes(with: MOCObservationMode) -> MOCChanges<MOCEntitiesFilter>",
                 "type" : "method"
               },
               {
@@ -1148,6 +1153,188 @@
           {
             "children" : [
               {
+                "title" : "Structures",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchanges\/asynciterator\/next()",
+                    "title" : "func next() async -> MOCChanges<Filter>.AsyncIterator.Element?",
+                    "type" : "method"
+                  },
+                  {
+                    "title" : "Type Aliases",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchanges\/asynciterator\/element",
+                    "title" : "MOCChanges.AsyncIterator.Element",
+                    "type" : "typealias"
+                  }
+                ],
+                "path" : "\/documentation\/ffcoredata\/mocchanges\/asynciterator",
+                "title" : "MOCChanges.AsyncIterator",
+                "type" : "struct"
+              },
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/mocchanges\/init(mode:filter:)",
+                "title" : "init(mode: MOCObservationMode, filter: Filter)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/mocchanges\/filter",
+                "title" : "let filter: Filter",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/mocchanges\/mode",
+                "title" : "let mode: MOCObservationMode",
+                "type" : "property"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/mocchanges\/makeasynciterator()",
+                "title" : "func makeAsyncIterator() -> MOCChanges<Filter>.AsyncIterator",
+                "type" : "method"
+              },
+              {
+                "title" : "Type Aliases",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/ffcoredata\/mocchanges\/element",
+                "title" : "MOCChanges.Element",
+                "type" : "typealias"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchanges\/allsatisfy(_:)",
+                    "title" : "func allSatisfy((Self.Element) async throws -> Bool) async rethrows -> Bool",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchanges\/compactmap(_:)-2552h",
+                    "title" : "func compactMap<ElementOfResult>((Self.Element) async -> ElementOfResult?) -> AsyncCompactMapSequence<Self, ElementOfResult>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchanges\/compactmap(_:)-74cql",
+                    "title" : "func compactMap<ElementOfResult>((Self.Element) async throws -> ElementOfResult?) -> AsyncThrowingCompactMapSequence<Self, ElementOfResult>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchanges\/contains(where:)",
+                    "title" : "func contains(where: (Self.Element) async throws -> Bool) async rethrows -> Bool",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchanges\/drop(while:)",
+                    "title" : "func drop(while: (Self.Element) async -> Bool) -> AsyncDropWhileSequence<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchanges\/dropfirst(_:)",
+                    "title" : "func dropFirst(Int) -> AsyncDropFirstSequence<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchanges\/filter(_:)",
+                    "title" : "func filter((Self.Element) async -> Bool) -> AsyncFilterSequence<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchanges\/first(where:)",
+                    "title" : "func first(where: (Self.Element) async throws -> Bool) async rethrows -> Self.Element?",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchanges\/flatmap(_:)-17shr",
+                    "title" : "func flatMap<SegmentOfResult>((Self.Element) async -> SegmentOfResult) -> AsyncFlatMapSequence<Self, SegmentOfResult>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchanges\/flatmap(_:)-7c4yq",
+                    "title" : "func flatMap<SegmentOfResult>((Self.Element) async throws -> SegmentOfResult) -> AsyncThrowingFlatMapSequence<Self, SegmentOfResult>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchanges\/map(_:)-7tw5a",
+                    "title" : "func map<Transformed>((Self.Element) async -> Transformed) -> AsyncMapSequence<Self, Transformed>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchanges\/map(_:)-8tyy4",
+                    "title" : "func map<Transformed>((Self.Element) async throws -> Transformed) -> AsyncThrowingMapSequence<Self, Transformed>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchanges\/max(by:)",
+                    "title" : "func max(by: (Self.Element, Self.Element) async throws -> Bool) async rethrows -> Self.Element?",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchanges\/min(by:)",
+                    "title" : "func min(by: (Self.Element, Self.Element) async throws -> Bool) async rethrows -> Self.Element?",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchanges\/prefix(_:)",
+                    "title" : "func prefix(Int) -> AsyncPrefixSequence<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchanges\/prefix(while:)",
+                    "title" : "func prefix(while: (Self.Element) async -> Bool) rethrows -> AsyncPrefixWhileSequence<Self>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchanges\/reduce(_:_:)",
+                    "title" : "func reduce<Result>(Result, (Result, Self.Element) async throws -> Result) async rethrows -> Result",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/mocchanges\/reduce(into:_:)",
+                    "title" : "func reduce<Result>(into: Result, (inout Result, Self.Element) async throws -> Void) async rethrows -> Result",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/ffcoredata\/mocchanges\/asyncsequence-implementations",
+                "title" : "AsyncSequence Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/ffcoredata\/mocchanges",
+            "title" : "MOCChanges",
+            "type" : "struct"
+          },
+          {
+            "children" : [
+              {
                 "title" : "Initializers",
                 "type" : "groupMarker"
               },
@@ -1217,17 +1404,17 @@
               },
               {
                 "path" : "\/documentation\/ffcoredata\/mocobservedchanges\/deleted",
-                "title" : "var deleted: Array<NSManagedObjectID>",
+                "title" : "var deleted: [NSManagedObjectID]",
                 "type" : "property"
               },
               {
                 "path" : "\/documentation\/ffcoredata\/mocobservedchanges\/inserted",
-                "title" : "var inserted: Array<NSManagedObjectID>",
+                "title" : "var inserted: [NSManagedObjectID]",
                 "type" : "property"
               },
               {
                 "path" : "\/documentation\/ffcoredata\/mocobservedchanges\/updated",
-                "title" : "var updated: Array<NSManagedObjectID>",
+                "title" : "var updated: [NSManagedObjectID]",
                 "type" : "property"
               }
             ],
