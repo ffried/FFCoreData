@@ -462,7 +462,7 @@
             "let containsDivisibleByThree = await Counter(howHigh: 10)",
             "    .contains { $0 % 3 == 0 }",
             "print(containsDivisibleByThree)",
-            "\/\/ Prints: true"
+            "\/\/ Prints \"true\""
           ],
           "syntax" : null,
           "type" : "codeListing"

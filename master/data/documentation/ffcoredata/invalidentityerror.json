@@ -109,6 +109,7 @@
     {
       "generated" : true,
       "identifiers" : [
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/InvalidEntityError\/CustomStringConvertible-Implementations",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/InvalidEntityError\/Equatable-Implementations",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/InvalidEntityError\/Error-Implementations"
       ],
@@ -239,6 +240,17 @@
   "title" : "==(_:_:)",
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/invalidentityerror\/==(_:_:)"
+},
+"doc://FFCoreData/documentation/FFCoreData/InvalidEntityError/CustomStringConvertible-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/InvalidEntityError\/CustomStringConvertible-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "CustomStringConvertible Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/invalidentityerror\/customstringconvertible-implementations"
 },
 "doc://FFCoreData/documentation/FFCoreData/InvalidEntityError/Equatable-Implementations": {
   "abstract" : [

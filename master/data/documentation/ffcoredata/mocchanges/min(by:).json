@@ -791,7 +791,7 @@
             "let min = await RankCounter()",
             "    .min { $0.rawValue < $1.rawValue }",
             "print(min ?? \"none\")",
-            "\/\/ Prints: ace"
+            "\/\/ Prints \"ace\""
           ],
           "syntax" : null,
           "type" : "codeListing"

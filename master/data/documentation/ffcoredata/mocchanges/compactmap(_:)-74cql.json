@@ -173,6 +173,14 @@
           ],
           "tokens" : [
             {
+              "kind" : "attribute",
+              "text" : "@preconcurrency"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
               "kind" : "keyword",
               "text" : "func"
             },
@@ -617,7 +625,7 @@
         },
         {
           "code" : [
-            "let romanNumeralDict: [Int : String] =",
+            "let romanNumeralDict: [Int: String] =",
             "    [1: \"I\", 2: \"II\", 3: \"III\", 5: \"V\"]",
             "",
             "do {",
@@ -629,12 +637,12 @@
             "            return romanNumeralDict[value]",
             "        }",
             "    for try await numeral in stream {",
-            "        print(\"\\(numeral) \", terminator: \" \")",
+            "        print(numeral, terminator: \" \")",
             "    }",
             "} catch {",
             "    print(\"Error: \\(error)\")",
             "}",
-            "\/\/ Prints: I  II  III  Error: MyError()"
+            "\/\/ Prints \"I II III Error: MyError()\""
           ],
           "syntax" : null,
           "type" : "codeListing"

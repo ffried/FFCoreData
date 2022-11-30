@@ -791,7 +791,7 @@
             "let max = await RankCounter()",
             "    .max { $0.rawValue < $1.rawValue }",
             "print(max ?? \"none\")",
-            "\/\/ Prints: king"
+            "\/\/ Prints \"king\""
           ],
           "syntax" : null,
           "type" : "codeListing"

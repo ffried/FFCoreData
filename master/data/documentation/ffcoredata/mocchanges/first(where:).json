@@ -467,7 +467,7 @@
             "let divisibleBy2And3 = await Counter(howHigh: 10)",
             "    .first { $0 % 2 == 0 && $0 % 3 == 0 }",
             "print(divisibleBy2And3 ?? \"none\")",
-            "\/\/ Prints: 6"
+            "\/\/ Prints \"6\""
           ],
           "syntax" : null,
           "type" : "codeListing"

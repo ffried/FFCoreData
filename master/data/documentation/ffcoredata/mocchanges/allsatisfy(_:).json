@@ -9,7 +9,7 @@
       "type" : "text"
     },
     {
-      "text" : "asynchronous sequence satisfies the given predicate.",
+      "text" : "asynchronous sequence satisfy the given predicate.",
       "type" : "text"
     }
   ],
@@ -425,7 +425,7 @@
             "let allLessThanTen = await Counter(howHigh: 10)",
             "    .allSatisfy { $0 < 10 }",
             "print(allLessThanTen)",
-            "\/\/ Prints: false"
+            "\/\/ Prints \"false\""
           ],
           "syntax" : null,
           "type" : "codeListing"
@@ -562,7 +562,7 @@
       "type" : "text"
     },
     {
-      "text" : "asynchronous sequence satisfies the given predicate.",
+      "text" : "asynchronous sequence satisfy the given predicate.",
       "type" : "text"
     }
   ],

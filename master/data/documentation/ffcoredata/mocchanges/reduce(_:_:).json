@@ -595,7 +595,7 @@
             "        $0 + $1",
             "    }",
             "print(sum)",
-            "\/\/ Prints: 10"
+            "\/\/ Prints \"10\""
           ],
           "syntax" : null,
           "type" : "codeListing"
