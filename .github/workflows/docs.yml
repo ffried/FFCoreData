@@ -43,7 +43,7 @@ jobs:
       - uses: swift-actions/setup-swift@v1.21.0
         with:
           swift-version: '5.7'
-      - uses: actions/checkout@v3.2.0
+      - uses: actions/checkout@v3.3.0
       # We don't use a cache here, because SPM doesn't resolve dependencies when dumping packages.
       - name: Dump package
         id: dump-package
@@ -69,7 +69,7 @@ jobs:
       - name: Read OS Version
         uses: sersoft-gmbh/os-version-action@v2.0.1
         id: os-version
-      - uses: actions/checkout@v3.2.0
+      - uses: actions/checkout@v3.3.0
       - uses: actions/cache@v3.2.2
         with:
           path: .build
@@ -104,7 +104,7 @@ jobs:
       - generate-docs
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3.2.0
+      - uses: actions/checkout@v3.3.0
         with:
           ref: gh-pages
           path: repository
