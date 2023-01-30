@@ -337,15 +337,15 @@
               "type" : "codeVoice"
             },
             {
-              "text" : " checks to see if the divisor provided by the publisher is zero, and throws a ",
+              "text" : " checks to see if the element provided by the publisher is zero, and throws a ",
               "type" : "text"
             },
             {
-              "code" : "DivisionByZeroError",
+              "code" : "ZeroError",
               "type" : "codeVoice"
             },
             {
-              "text" : " and then terminates the publisher with the thrown error:",
+              "text" : " before terminating the publisher with the thrown error. Otherwise, it republishes the element only if it’s even:",
               "type" : "text"
             }
           ],
@@ -353,13 +353,13 @@
         },
         {
           "code" : [
-            "struct DivisionByZeroError: Error {}",
+            "struct ZeroError: Error {}",
             "",
             "let numbers: [Int] = [1, 2, 3, 4, 0, 5]",
             "cancellable = numbers.publisher",
             "    .tryFilter{",
             "        if $0 == 0 {",
-            "            throw DivisionByZeroError()",
+            "            throw ZeroError()",
             "        } else {",
             "            return $0 % 2 == 0",
             "        }",

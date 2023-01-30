@@ -10990,7 +10990,10 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/MOCChangePublisher/values-477jl": {
   "abstract" : [
-
+    {
+      "text" : "The elements produced by the publisher, as an asynchronous sequence.",
+      "type" : "text"
+    }
   ],
   "conformance" : {
     "availabilityPrefix" : [
@@ -11068,7 +11071,10 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/MOCChangePublisher/values-9xdtu": {
   "abstract" : [
-
+    {
+      "text" : "The elements produced by the publisher, as a throwing asynchronous sequence.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {

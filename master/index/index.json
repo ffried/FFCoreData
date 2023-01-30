@@ -519,22 +519,6 @@
               {
                 "children" : [
                   {
-                    "title" : "Instance Properties",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "path" : "\/documentation\/ffcoredata\/invalidentityerror\/halfwidthcornerquoted",
-                    "title" : "var halfWidthCornerQuoted: String",
-                    "type" : "property"
-                  }
-                ],
-                "path" : "\/documentation\/ffcoredata\/invalidentityerror\/customstringconvertible-implementations",
-                "title" : "CustomStringConvertible Implementations",
-                "type" : "symbol"
-              },
-              {
-                "children" : [
-                  {
                     "title" : "Operators",
                     "type" : "groupMarker"
                   },
@@ -2298,22 +2282,6 @@
               {
                 "title" : "Default Implementations",
                 "type" : "groupMarker"
-              },
-              {
-                "children" : [
-                  {
-                    "title" : "Instance Properties",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "path" : "\/documentation\/ffcoredata\/coredatadecodingerror\/halfwidthcornerquoted",
-                    "title" : "var halfWidthCornerQuoted: String",
-                    "type" : "property"
-                  }
-                ],
-                "path" : "\/documentation\/ffcoredata\/coredatadecodingerror\/customstringconvertible-implementations",
-                "title" : "CustomStringConvertible Implementations",
-                "type" : "symbol"
               },
               {
                 "children" : [
