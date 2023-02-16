@@ -40,7 +40,7 @@ jobs:
     outputs:
       package-dump: ${{ steps.dump-package.outputs.package-dump }}
     steps:
-      - uses: swift-actions/setup-swift@v1.21.0
+      - uses: swift-actions/setup-swift@v1.22.0
         with:
           swift-version: '5.7'
       - uses: actions/checkout@v3.3.0
@@ -62,7 +62,7 @@ jobs:
       matrix:
         target: ${{ fromJson(needs.spm-context.outputs.package-dump).products.*.targets.* }}
     steps:
-      - uses: swift-actions/setup-swift@v1.21.0
+      - uses: swift-actions/setup-swift@v1.22.0
         id: swift-setup
         with:
           swift-version: '5.7'
