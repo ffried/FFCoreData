@@ -48,7 +48,7 @@ jobs:
         uses: sersoft-gmbh/swift-version-action@v2.0.1
         id: swift-version
       - uses: actions/checkout@v3.3.0
-      - uses: actions/cache@v3.2.5
+      - uses: actions/cache@v3.2.6
         with:
           path: .build
           key: ${{ runner.os }}-${{ steps.os-version.outputs.version }}-spm-${{ steps.swift-version.outputs.version }}-${{ hashFiles('**/Package.resolved') }}
@@ -104,7 +104,7 @@ jobs:
           echo "xcode=${DESTINATION}" >> "${GITHUB_OUTPUT}"
       - uses: actions/checkout@v3.3.0
       # PIF ISSUES: https://github.com/apple/swift-package-manager/issues/5767
-      - uses: actions/cache@v3.2.5
+      - uses: actions/cache@v3.2.6
         with:
           path: .build
           key: ${{ runner.os }}-${{ steps.os-version.outputs.version }}-spm-${{ steps.swift-version.outputs.version }}-${{ hashFiles('**/Package.resolved') }}
@@ -121,7 +121,7 @@ jobs:
             ATTEMPT=$((ATTEMPT + 1))
           done
       # END PIF ISSUES
-      - uses: actions/cache@v3.2.5
+      - uses: actions/cache@v3.2.6
         with:
           path: .derived-data
           key: ${{ runner.os }}-${{ steps.os-version.outputs.version }}-xcode-${{ steps.swift-version.outputs.version }}-${{ matrix.platform }}-${{ hashFiles('**/Package.resolved') }}
