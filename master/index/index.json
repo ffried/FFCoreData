@@ -139,12 +139,12 @@
                   {
                     "children" : [
                       {
-                        "path" : "\/documentation\/ffcoredata\/coredatadecodable\/init(with:in:)-8ocab",
+                        "path" : "\/documentation\/ffcoredata\/coredatadecodable\/init(with:in:)-9yesq",
                         "title" : "init(with: Self.DTO, in: NSManagedObjectContext) throws",
                         "type" : "init"
                       },
                       {
-                        "path" : "\/documentation\/ffcoredata\/coredatadecodable\/init(with:in:)-9yesq",
+                        "path" : "\/documentation\/ffcoredata\/coredatadecodable\/init(with:in:)-8ocab",
                         "title" : "init(with: Self.DTO, in: NSManagedObjectContext) throws",
                         "type" : "init"
                       }
