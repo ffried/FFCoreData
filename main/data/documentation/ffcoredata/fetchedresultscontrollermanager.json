@@ -1,0 +1,814 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/FetchedResultsControllerManager"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:10FFCoreData31FetchedResultsControllerManagerC",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "class"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "FetchedResultsControllerManager"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "FFCoreData"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "FetchedResultsControllerManager"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Class",
+    "symbolKind" : "class",
+    "title" : "FetchedResultsControllerManager"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "class"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "FetchedResultsControllerManager"
+            },
+            {
+              "kind" : "text",
+              "text" : "<"
+            },
+            {
+              "kind" : "genericParameter",
+              "text" : "Result"
+            },
+            {
+              "kind" : "text",
+              "text" : "> "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "where"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "Result"
+            },
+            {
+              "kind" : "text",
+              "text" : " : "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "c:objc(pl)NSFetchRequestResult",
+              "text" : "NSFetchRequestResult"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/FFCoreData\/objc(cs)NSObject"
+      ],
+      "kind" : "relationships",
+      "title" : "Inherits From",
+      "type" : "inheritsFrom"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/FFCoreData\/objc(pl)NSFetchedResultsControllerDelegate",
+        "doc:\/\/FFCoreData\/objc(pl)NSObject",
+        "doc:\/\/FFCoreData\/s7CVarArgP",
+        "doc:\/\/FFCoreData\/s28CustomDebugStringConvertibleP",
+        "doc:\/\/FFCoreData\/s23CustomStringConvertibleP",
+        "doc:\/\/FFCoreData\/SQ",
+        "doc:\/\/FFCoreData\/SH"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/FetchedResultsControllerManager\/delegate-swift.property",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/FetchedResultsControllerManager\/fetchedResultsController"
+      ],
+      "title" : "Instance Properties"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/FetchedResultsControllerManager\/controller(_:didChange:at:for:newIndexPath:)",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/FetchedResultsControllerManager\/controller(_:didChange:atSectionIndex:for:)",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/FetchedResultsControllerManager\/controller(_:sectionIndexTitleForSectionName:)",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/FetchedResultsControllerManager\/controllerDidChangeContent(_:)",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/FetchedResultsControllerManager\/controllerWillChangeContent(_:)"
+      ],
+      "title" : "Instance Methods"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/FetchedResultsControllerManager\/Controller",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/FetchedResultsControllerManager\/Delegate-swift.typealias"
+      ],
+      "title" : "Type Aliases"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/ffcoredata\/fetchedresultscontrollermanager"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://FFCoreData/SH": {
+  "identifier" : "doc:\/\/FFCoreData\/SH",
+  "title" : "Swift.Hashable",
+  "type" : "unresolvable"
+},
+"doc://FFCoreData/SQ": {
+  "identifier" : "doc:\/\/FFCoreData\/SQ",
+  "title" : "Swift.Equatable",
+  "type" : "unresolvable"
+},
+"doc://FFCoreData/documentation/FFCoreData": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "FFCoreData",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata"
+},
+"doc://FFCoreData/documentation/FFCoreData/FetchedResultsControllerManager": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "FetchedResultsControllerManager"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/FetchedResultsControllerManager",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "FetchedResultsControllerManager"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "FetchedResultsControllerManager",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/fetchedresultscontrollermanager"
+},
+"doc://FFCoreData/documentation/FFCoreData/FetchedResultsControllerManager/Controller": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Controller"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/FetchedResultsControllerManager\/Controller",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Controller"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "FetchedResultsControllerManager.Controller",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/fetchedresultscontrollermanager\/controller"
+},
+"doc://FFCoreData/documentation/FFCoreData/FetchedResultsControllerManager/Delegate-swift.typealias": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Delegate"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/FetchedResultsControllerManager\/Delegate-swift.typealias",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Delegate"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "FetchedResultsControllerManager.Delegate",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/fetchedresultscontrollermanager\/delegate-swift.typealias"
+},
+"doc://FFCoreData/documentation/FFCoreData/FetchedResultsControllerManager/controller(_:didChange:at:for:newIndexPath:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "controller"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:objc(cs)NSFetchedResultsController",
+      "text" : "NSFetchedResultsController"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:objc(pl)NSFetchRequestResult",
+      "text" : "NSFetchRequestResult"
+    },
+    {
+      "kind" : "text",
+      "text" : ">, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "didChange"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "Any"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "at"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation9IndexPathV",
+      "text" : "IndexPath"
+    },
+    {
+      "kind" : "text",
+      "text" : "?, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "for"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:@E@NSFetchedResultsChangeType",
+      "text" : "NSFetchedResultsChangeType"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "newIndexPath"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation9IndexPathV",
+      "text" : "IndexPath"
+    },
+    {
+      "kind" : "text",
+      "text" : "?)"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/FetchedResultsControllerManager\/controller(_:didChange:at:for:newIndexPath:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "controller(_:didChange:at:for:newIndexPath:)",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/fetchedresultscontrollermanager\/controller(_:didchange:at:for:newindexpath:)"
+},
+"doc://FFCoreData/documentation/FFCoreData/FetchedResultsControllerManager/controller(_:didChange:atSectionIndex:for:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "controller"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:objc(cs)NSFetchedResultsController",
+      "text" : "NSFetchedResultsController"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:objc(pl)NSFetchRequestResult",
+      "text" : "NSFetchRequestResult"
+    },
+    {
+      "kind" : "text",
+      "text" : ">, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "didChange"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:objc(pl)NSFetchedResultsSectionInfo",
+      "text" : "NSFetchedResultsSectionInfo"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "atSectionIndex"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "for"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:@E@NSFetchedResultsChangeType",
+      "text" : "NSFetchedResultsChangeType"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/FetchedResultsControllerManager\/controller(_:didChange:atSectionIndex:for:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "controller(_:didChange:atSectionIndex:for:)",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/fetchedresultscontrollermanager\/controller(_:didchange:atsectionindex:for:)"
+},
+"doc://FFCoreData/documentation/FFCoreData/FetchedResultsControllerManager/controller(_:sectionIndexTitleForSectionName:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "controller"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:objc(cs)NSFetchedResultsController",
+      "text" : "NSFetchedResultsController"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:objc(pl)NSFetchRequestResult",
+      "text" : "NSFetchRequestResult"
+    },
+    {
+      "kind" : "text",
+      "text" : ">, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "sectionIndexTitleForSectionName"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/FetchedResultsControllerManager\/controller(_:sectionIndexTitleForSectionName:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "controller(_:sectionIndexTitleForSectionName:)",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/fetchedresultscontrollermanager\/controller(_:sectionindextitleforsectionname:)"
+},
+"doc://FFCoreData/documentation/FFCoreData/FetchedResultsControllerManager/controllerDidChangeContent(_:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "controllerDidChangeContent"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:objc(cs)NSFetchedResultsController",
+      "text" : "NSFetchedResultsController"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:objc(pl)NSFetchRequestResult",
+      "text" : "NSFetchRequestResult"
+    },
+    {
+      "kind" : "text",
+      "text" : ">)"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/FetchedResultsControllerManager\/controllerDidChangeContent(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "controllerDidChangeContent(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/fetchedresultscontrollermanager\/controllerdidchangecontent(_:)"
+},
+"doc://FFCoreData/documentation/FFCoreData/FetchedResultsControllerManager/controllerWillChangeContent(_:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "controllerWillChangeContent"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:objc(cs)NSFetchedResultsController",
+      "text" : "NSFetchedResultsController"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:objc(pl)NSFetchRequestResult",
+      "text" : "NSFetchRequestResult"
+    },
+    {
+      "kind" : "text",
+      "text" : ">)"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/FetchedResultsControllerManager\/controllerWillChangeContent(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "controllerWillChangeContent(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/fetchedresultscontrollermanager\/controllerwillchangecontent(_:)"
+},
+"doc://FFCoreData/documentation/FFCoreData/FetchedResultsControllerManager/delegate-swift.property": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "delegate"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData31FetchedResultsControllerManagerC",
+      "text" : "FetchedResultsControllerManager"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Result"
+    },
+    {
+      "kind" : "text",
+      "text" : ">."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData31FetchedResultsControllerManagerC8Delegatea",
+      "text" : "Delegate"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/FetchedResultsControllerManager\/delegate-swift.property",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "delegate",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/fetchedresultscontrollermanager\/delegate-swift.property"
+},
+"doc://FFCoreData/documentation/FFCoreData/FetchedResultsControllerManager/fetchedResultsController": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "fetchedResultsController"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData31FetchedResultsControllerManagerC",
+      "text" : "FetchedResultsControllerManager"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Result"
+    },
+    {
+      "kind" : "text",
+      "text" : ">."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData31FetchedResultsControllerManagerC0E0a",
+      "text" : "Controller"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/FetchedResultsControllerManager\/fetchedResultsController",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "fetchedResultsController",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/fetchedresultscontrollermanager\/fetchedresultscontroller"
+},
+"doc://FFCoreData/objc(cs)NSObject": {
+  "identifier" : "doc:\/\/FFCoreData\/objc(cs)NSObject",
+  "title" : "ObjectiveC.NSObject",
+  "type" : "unresolvable"
+},
+"doc://FFCoreData/objc(pl)NSFetchedResultsControllerDelegate": {
+  "identifier" : "doc:\/\/FFCoreData\/objc(pl)NSFetchedResultsControllerDelegate",
+  "title" : "CoreData.NSFetchedResultsControllerDelegate",
+  "type" : "unresolvable"
+},
+"doc://FFCoreData/objc(pl)NSObject": {
+  "identifier" : "doc:\/\/FFCoreData\/objc(pl)NSObject",
+  "title" : "ObjectiveC.NSObjectProtocol",
+  "type" : "unresolvable"
+},
+"doc://FFCoreData/s23CustomStringConvertibleP": {
+  "identifier" : "doc:\/\/FFCoreData\/s23CustomStringConvertibleP",
+  "title" : "Swift.CustomStringConvertible",
+  "type" : "unresolvable"
+},
+"doc://FFCoreData/s28CustomDebugStringConvertibleP": {
+  "identifier" : "doc:\/\/FFCoreData\/s28CustomDebugStringConvertibleP",
+  "title" : "Swift.CustomDebugStringConvertible",
+  "type" : "unresolvable"
+},
+"doc://FFCoreData/s7CVarArgP": {
+  "identifier" : "doc:\/\/FFCoreData\/s7CVarArgP",
+  "title" : "Swift.CVarArg",
+  "type" : "unresolvable"
+}
+}
+}
