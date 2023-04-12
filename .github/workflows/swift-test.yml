@@ -2,9 +2,9 @@ name: Tests
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   test-spm:
@@ -31,24 +31,24 @@ jobs:
 
     steps:
       - if: ${{ runner.os == 'macOS' }}
-        uses: maxim-lobanov/setup-xcode@v1.5.1
+        uses: maxim-lobanov/setup-xcode@v1
         with:
           xcode-version: ${{ matrix.xcode-version }}
       - name: Install Swift
         if: ${{ runner.os == 'Linux' }}
-        uses: sersoft-gmbh/swifty-linux-action@v2.1.1
+        uses: sersoft-gmbh/swifty-linux-action@v2
         with:
           release-version: ${{ matrix.swift-version }}
           platform: ${{ matrix.os }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Read OS Version
-        uses: sersoft-gmbh/os-version-action@v2.0.1
+        uses: sersoft-gmbh/os-version-action@v2
         id: os-version
       - name: Read Swift Version
-        uses: sersoft-gmbh/swift-version-action@v2.0.1
+        uses: sersoft-gmbh/swift-version-action@v2
         id: swift-version
-      - uses: actions/checkout@v3.5.0
-      - uses: actions/cache@v3.3.1
+      - uses: actions/checkout@v3
+      - uses: actions/cache@v3
         with:
           path: .build
           key: ${{ runner.os }}-${{ steps.os-version.outputs.version }}-spm-${{ steps.swift-version.outputs.version }}-${{ hashFiles('**/Package.resolved') }}
@@ -57,9 +57,9 @@ jobs:
       - name: Build & Test
         run: swift test -v --parallel --enable-code-coverage
       - name: Generate Coverage Files
-        uses: sersoft-gmbh/swift-coverage-action@v3.0.1
+        uses: sersoft-gmbh/swift-coverage-action@v3
         id: coverage-files
-      - uses: codecov/codecov-action@v3.1.1
+      - uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: ${{ join(fromJSON(steps.coverage-files.outputs.files), ',') }}
@@ -78,14 +78,14 @@ jobs:
     env:
       XCODE_SCHEME: FFCoreData
     steps:
-      - uses: maxim-lobanov/setup-xcode@v1.5.1
+      - uses: maxim-lobanov/setup-xcode@v1
         with:
           xcode-version: ^14.1
       - name: Read OS Version
-        uses: sersoft-gmbh/os-version-action@v2.0.1
+        uses: sersoft-gmbh/os-version-action@v2
         id: os-version
       - name: Read Swift Version
-        uses: sersoft-gmbh/swift-version-action@v2.0.1
+        uses: sersoft-gmbh/swift-version-action@v2
         id: swift-version
       - name: Select destination
         id: destination
@@ -102,9 +102,9 @@ jobs:
             *) echo "::error title=Unknown platform!::Unknown platform: ${PLATFORM}" && exit 1;;
           esac
           echo "xcode=${DESTINATION}" >> "${GITHUB_OUTPUT}"
-      - uses: actions/checkout@v3.5.0
+      - uses: actions/checkout@v3
       # PIF ISSUES: https://github.com/apple/swift-package-manager/issues/5767
-      - uses: actions/cache@v3.3.1
+      - uses: actions/cache@v3
         with:
           path: .build
           key: ${{ runner.os }}-${{ steps.os-version.outputs.version }}-spm-${{ steps.swift-version.outputs.version }}-${{ hashFiles('**/Package.resolved') }}
@@ -121,13 +121,13 @@ jobs:
             ATTEMPT=$((ATTEMPT + 1))
           done
       # END PIF ISSUES
-      - uses: actions/cache@v3.3.1
+      - uses: actions/cache@v3
         with:
           path: .derived-data
           key: ${{ runner.os }}-${{ steps.os-version.outputs.version }}-xcode-${{ steps.swift-version.outputs.version }}-${{ matrix.platform }}-${{ hashFiles('**/Package.resolved') }}
           restore-keys: |
             ${{ runner.os }}-${{ steps.os-version.outputs.version }}-xcode-${{ steps.swift-version.outputs.version }}-${{ matrix.platform }}-
-      - uses: sersoft-gmbh/xcodebuild-action@v2.0.1
+      - uses: sersoft-gmbh/xcodebuild-action@v2
         with:
           spm-package: './'
           scheme: ${{ env.XCODE_SCHEME }}
@@ -136,14 +136,14 @@ jobs:
           parallel-testing-enabled: ${{ matrix.platform != 'watchOS' }}
           enable-code-coverage: true
           derived-data-path: .derived-data
-      - uses: sersoft-gmbh/swift-coverage-action@v3.0.1
+      - uses: sersoft-gmbh/swift-coverage-action@v3
         id: coverage-files
         with:
           search-paths: |
             ./.build
             ./.derived-data
             $HOME/Library/Developer/Xcode/DerivedData
-      - uses: codecov/codecov-action@v3.1.1
+      - uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: ${{ join(fromJSON(steps.coverage-files.outputs.files), ',') }}

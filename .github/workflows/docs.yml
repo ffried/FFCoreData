@@ -6,16 +6,16 @@ on:
       - published
       - edited
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   release-context:
     runs-on: ubuntu-latest
     outputs:
       version-name: ${{ github.ref_name }}
-      is-latest: ${{ steps.compare-tags.output.is-latest }}
+      is-latest: ${{ steps.compare-tags.outputs.is-latest }}
     steps:
-      - uses: joutvhu/get-release@v1.0.2
+      - uses: joutvhu/get-release@v1
         id: latest-release
         with:
           latest: true
@@ -43,7 +43,7 @@ jobs:
       - uses: swift-actions/setup-swift@v1.22.0
         with:
           swift-version: '5.7'
-      - uses: actions/checkout@v3.5.0
+      - uses: actions/checkout@v3
       # We don't use a cache here, because SPM doesn't resolve dependencies when dumping packages.
       - name: Dump package
         id: dump-package
@@ -67,16 +67,16 @@ jobs:
         with:
           swift-version: '5.7'
       - name: Read OS Version
-        uses: sersoft-gmbh/os-version-action@v2.0.1
+        uses: sersoft-gmbh/os-version-action@v2
         id: os-version
-      - uses: actions/checkout@v3.5.0
-      - uses: actions/cache@v3.3.1
+      - uses: actions/checkout@v3
+      - uses: actions/cache@v3
         with:
           path: .build
           key: ${{ runner.os }}-${{ steps.os-version.outputs.version }}-spm-${{ steps.swift-setup.outputs.version }}-${{ hashFiles('**/Package.resolved') }}
           restore-keys: |
             ${{ runner.os }}-${{ steps.os-version.outputs.version }}-spm-${{ steps.swift-setup.outputs.version }}-
-      - uses: sersoft-gmbh/swifty-docs-action@v2.0.3
+      - uses: sersoft-gmbh/swifty-docs-action@v2
         env:
           ENABLE_DOCC_SUPPORT: '1'
           DOCC_JSON_PRETTYPRINT: 'YES'
@@ -104,7 +104,7 @@ jobs:
       - generate-docs
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3.5.0
+      - uses: actions/checkout@v3
         with:
           ref: gh-pages
           path: repository
@@ -216,7 +216,7 @@ jobs:
           else
             echo 'has-changes=false' >> "${GITHUB_OUTPUT}"
           fi
-      - uses: crazy-max/ghaction-github-pages@v3.1.0
+      - uses: crazy-max/ghaction-github-pages@v3
         if: ${{ steps.check-changes.outputs.has-changes }}
         with:
           keep_history: true
