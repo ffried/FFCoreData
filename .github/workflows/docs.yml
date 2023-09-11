@@ -216,7 +216,7 @@ jobs:
           else
             echo 'has-changes=false' >> "${GITHUB_OUTPUT}"
           fi
-      - uses: crazy-max/ghaction-github-pages@v3
+      - uses: crazy-max/ghaction-github-pages@v4
         if: ${{ steps.check-changes.outputs.has-changes }}
         with:
           keep_history: true
