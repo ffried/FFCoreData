@@ -127,7 +127,7 @@ jobs:
           key: ${{ runner.os }}-${{ steps.os-version.outputs.version }}-xcode-${{ steps.swift-version.outputs.version }}-${{ matrix.platform }}-${{ hashFiles('**/Package.resolved') }}
           restore-keys: |
             ${{ runner.os }}-${{ steps.os-version.outputs.version }}-xcode-${{ steps.swift-version.outputs.version }}-${{ matrix.platform }}-
-      - uses: sersoft-gmbh/xcodebuild-action@v2
+      - uses: sersoft-gmbh/xcodebuild-action@v3
         with:
           spm-package: './'
           scheme: ${{ env.XCODE_SCHEME }}
