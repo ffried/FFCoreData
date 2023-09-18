@@ -36,7 +36,7 @@ jobs:
           xcode-version: ${{ matrix.xcode-version }}
       - name: Install Swift
         if: ${{ runner.os == 'Linux' }}
-        uses: sersoft-gmbh/swifty-linux-action@v2
+        uses: sersoft-gmbh/swifty-linux-action@v3
         with:
           release-version: ${{ matrix.swift-version }}
           platform: ${{ matrix.os }}
