@@ -42,7 +42,7 @@ jobs:
           platform: ${{ matrix.os }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Read OS Version
-        uses: sersoft-gmbh/os-version-action@v2
+        uses: sersoft-gmbh/os-version-action@v3
         id: os-version
       - name: Read Swift Version
         uses: sersoft-gmbh/swift-version-action@v2
@@ -82,7 +82,7 @@ jobs:
         with:
           xcode-version: ^14.1
       - name: Read OS Version
-        uses: sersoft-gmbh/os-version-action@v2
+        uses: sersoft-gmbh/os-version-action@v3
         id: os-version
       - name: Read Swift Version
         uses: sersoft-gmbh/swift-version-action@v2
