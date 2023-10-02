@@ -38,9 +38,9 @@ public class FetchedResultsControllerManager<Result: NSFetchRequestResult>: NSOb
     public typealias Delegate = FetchedResultsControllerManagerDelegate
 
     public private(set) final weak var fetchedResultsController: Controller?
-    public final weak var delegate: Delegate?
+    public final weak var delegate: (any Delegate)?
 
-    internal init(fetchedResultsController: Controller, delegate: Delegate?) {
+    internal init(fetchedResultsController: Controller, delegate: (any Delegate)?) {
         self.fetchedResultsController = fetchedResultsController
         self.delegate = delegate
         super.init()
@@ -63,13 +63,16 @@ public class FetchedResultsControllerManager<Result: NSFetchRequestResult>: NSOb
     internal func endUpdates() {}
 
     // MARK: - NSFetchedResultsControllerDelegate
-    @objc public dynamic func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+    @objc public dynamic func controllerWillChangeContent(_ controller: NSFetchedResultsController<any NSFetchRequestResult>) {
         delegate?.controllerWillChangeContent?(controller)
         beginUpdates()
     }
 
     @objc(controller:didChangeSection:atIndex:forChangeType:)
-    public dynamic func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
+    public dynamic func controller(_ controller: NSFetchedResultsController<any NSFetchRequestResult>,
+                                   didChange sectionInfo: any NSFetchedResultsSectionInfo,
+                                   atSectionIndex sectionIndex: Int,
+                                   for type: NSFetchedResultsChangeType) {
         switch type {
         case .insert: insertSection(at: sectionIndex)
         case .update: updateSection(at: sectionIndex)
@@ -80,7 +83,7 @@ public class FetchedResultsControllerManager<Result: NSFetchRequestResult>: NSOb
     }
 
     @objc(controller:didChangeObject:atIndexPath:forChangeType:newIndexPath:)
-    public dynamic func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
+    public dynamic func controller(_ controller: NSFetchedResultsController<any NSFetchRequestResult>,
                                    didChange anObject: Any,
                                    at indexPath: IndexPath?,
                                    for type: NSFetchedResultsChangeType,
@@ -95,12 +98,12 @@ public class FetchedResultsControllerManager<Result: NSFetchRequestResult>: NSOb
         delegate?.controller?(controller, didChange: anObject, at: indexPath, for: type, newIndexPath: newIndexPath)
     }
 
-    @objc public dynamic func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+    @objc public dynamic func controllerDidChangeContent(_ controller: NSFetchedResultsController<any NSFetchRequestResult>) {
         endUpdates()
         delegate?.controllerDidChangeContent?(controller)
     }
 
-    @objc public dynamic func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
+    @objc public dynamic func controller(_ controller: NSFetchedResultsController<any NSFetchRequestResult>,
                                          sectionIndexTitleForSectionName sectionName: String) -> String? {
         delegate?.controller?(controller, sectionIndexTitleForSectionName: sectionName) ?? controller.sectionIndexTitle(forSectionName: sectionName)
     }

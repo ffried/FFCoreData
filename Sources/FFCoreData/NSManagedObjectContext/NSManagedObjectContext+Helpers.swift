@@ -23,7 +23,7 @@ import CoreData
 extension NSManagedObjectContext {
     public final func sync<T>(do work: () throws -> T) rethrows -> T {
         try {
-            var result: Result<T, Error>!
+            var result: Result<T, any Error>!
             performAndWait {
                 result = Result(catching: work)
             }

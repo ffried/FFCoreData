@@ -27,7 +27,7 @@ import FFFoundation
 extension NSFetchedResultsController {
     public struct Publisher: Combine.Publisher {
         public typealias Output = Array<ResultType>
-        public typealias Failure = Error
+        public typealias Failure = any Error
 
         private let delegate: PublisherControllerDelegate<ResultType>
 
@@ -56,7 +56,7 @@ extension NSFetchedResultsController {
 @available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
 fileprivate final class PublisherControllerDelegate<ResultType: NSFetchRequestResult>: NSObject, NSFetchedResultsControllerDelegate {
     let controller: NSFetchedResultsController<ResultType>
-    let subject = PassthroughSubject<Array<ResultType>, Error>()
+    let subject = PassthroughSubject<Array<ResultType>, any Error>()
 
     @Synchronized
     private var didFetch = false
@@ -87,11 +87,11 @@ fileprivate final class PublisherControllerDelegate<ResultType: NSFetchRequestRe
         fetch()
     }
 
-    private func send(from objects: Array<NSFetchRequestResult>) {
+    private func send(from objects: Array<any NSFetchRequestResult>) {
         (objects as? Array<ResultType>).map(subject.send)
     }
 
-    @objc dynamic func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+    @objc dynamic func controllerDidChangeContent(_ controller: NSFetchedResultsController<any NSFetchRequestResult>) {
         controller.fetchedObjects.map(send)
     }
 }

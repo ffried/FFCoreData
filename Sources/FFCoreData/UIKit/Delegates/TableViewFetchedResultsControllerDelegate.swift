@@ -31,7 +31,7 @@ public final class TableViewFetchedResultsControllerManager<Result: NSFetchReque
 
     public var animation: UITableView.RowAnimation = .automatic
 
-    public required init(fetchedResultsController: Controller, tableView: UITableView, delegate: Delegate? = nil) {
+    public required init(fetchedResultsController: Controller, tableView: UITableView, delegate: (any Delegate)? = nil) {
         self.tableView = tableView
         super.init(fetchedResultsController: fetchedResultsController, delegate: delegate)
     }

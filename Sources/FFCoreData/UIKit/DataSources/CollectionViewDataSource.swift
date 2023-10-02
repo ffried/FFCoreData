@@ -32,7 +32,10 @@ import class CoreData.NSFetchedResultsController
 
 @objc public protocol CollectionViewDataSourceDelegate: NSObjectProtocol {
     func collectionView(_ collectionView: UICollectionView, cellIdentifierForItemAt: IndexPath) -> String
-    func collectionView(_ collectionView: UICollectionView, configure cell: UICollectionViewCell, forItemAt indexPath: IndexPath, with: NSFetchRequestResult?)
+    func collectionView(_ collectionView: UICollectionView,
+                        configure cell: UICollectionViewCell,
+                        forItemAt indexPath: IndexPath,
+                        with: (any NSFetchRequestResult)?)
 
     // See UICollectionViewDataSource
     @objc(collectionView:viewForSupplementaryElementOfKind:atIndexPath:)
@@ -49,9 +52,11 @@ public final class CollectionViewDataSource<Result: NSFetchRequestResult>: NSObj
     public private(set) weak var collectionView: UICollectionView?
     public private(set) weak var fetchedResultsController: NSFetchedResultsController<Result>?
 
-    public weak var delegate: CollectionViewDataSourceDelegate?
+    public weak var delegate: (any CollectionViewDataSourceDelegate)?
 
-    public required init(collectionView: UICollectionView, controller: NSFetchedResultsController<Result>, delegate: CollectionViewDataSourceDelegate? = nil) {
+    public required init(collectionView: UICollectionView,
+                         controller: NSFetchedResultsController<Result>,
+                         delegate: (any CollectionViewDataSourceDelegate)? = nil) {
         self.fetchedResultsController = controller
         self.collectionView = collectionView
         self.delegate = delegate
@@ -60,7 +65,7 @@ public final class CollectionViewDataSource<Result: NSFetchRequestResult>: NSObj
     }
 
     @objc public override func responds(to aSelector: Selector) -> Bool {
-        let selectorToCheck = #selector(CollectionViewDataSourceDelegate.collectionView(_:viewForSupplementaryElementOfKind:at:))
+        let selectorToCheck = #selector((any CollectionViewDataSourceDelegate).collectionView(_:viewForSupplementaryElementOfKind:at:))
         if selectorToCheck == aSelector {
             return delegate?.responds(to: aSelector) ?? false
         }
@@ -94,7 +99,7 @@ public final class CollectionViewDataSource<Result: NSFetchRequestResult>: NSObj
     @available(iOS 9.0, *)
     @objc(collectionView:canMoveItemAtIndexPath:)
     public dynamic func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
-        let delegateResponds = delegate?.responds(to: #selector(CollectionViewDataSourceDelegate.collectionView(_:moveItemAt:to:)))
+        let delegateResponds = delegate?.responds(to: #selector((any CollectionViewDataSourceDelegate).collectionView(_:moveItemAt:to:)))
         return delegate?.collectionView?(collectionView, canMoveItemAt: indexPath) ?? delegateResponds ?? false
     }
 

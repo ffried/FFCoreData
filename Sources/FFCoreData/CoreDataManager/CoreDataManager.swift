@@ -155,7 +155,8 @@ fileprivate final class CoreDataManager {
 
 @frozen
 public enum CoreDataStack {
-    @Lazy private static var manager = CoreDataManager(configuration: configuration)
+    @Lazy 
+    private static var manager = CoreDataManager(configuration: configuration)
 
     private static var _configuration: Configuration? {
         didSet {

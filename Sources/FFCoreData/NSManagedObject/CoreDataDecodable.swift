@@ -20,7 +20,6 @@
 
 import CoreData
 
-#if compiler(>=5.7)
 public protocol CoreDataDecodable<DTO>: Decodable {
     associatedtype DTO: Decodable
 
@@ -31,21 +30,9 @@ public protocol CoreDataDecodable<DTO>: Decodable {
 
     mutating func update(from dto: DTO) throws
 }
-#else
-public protocol CoreDataDecodable: Decodable {
-    associatedtype DTO: Decodable
-
-    @discardableResult
-    static func findOrCreate(for dto: DTO, in context: NSManagedObjectContext) throws -> Self
-
-    init(with dto: DTO, in context: NSManagedObjectContext) throws
-
-    mutating func update(from dto: DTO) throws
-}
-#endif
 
 extension CoreDataDecodable {
-    public init(from decoder: Decoder) throws {
+    public init(from decoder: any Decoder) throws {
         try self.init(with: DTO(from: decoder), in: .decodingContext(at: decoder.codingPath))
     }
 }
@@ -78,7 +65,7 @@ extension CoreDataDecodable where Self: NSManagedObject {
 /// Errors thrown during the process of decoding CoreData entities.
 public enum CoreDataDecodingError: Error, CustomStringConvertible {
     /// Thrown if a managed object context was missing during the decoding.
-    case missingContext(codingPath: Array<CodingKey>)
+    case missingContext(codingPath: Array<any CodingKey>)
 
     public var description: String {
         switch self {
@@ -106,7 +93,7 @@ extension NSManagedObjectContext {
     /// - Parameter codingPath: The coding path for which to request the decoding context. Only used for debugging purposes.
     /// - Returns: The current decoding context.
     /// - Throws: ``CoreDataDecodingError/missingContext``
-    public static func decodingContext(at codingPath: Array<CodingKey> = []) throws -> NSManagedObjectContext {
+    public static func decodingContext(at codingPath: Array<any CodingKey> = []) throws -> NSManagedObjectContext {
         if let context = _decodingContext { return context }
         throw CoreDataDecodingError.missingContext(codingPath: codingPath)
     }

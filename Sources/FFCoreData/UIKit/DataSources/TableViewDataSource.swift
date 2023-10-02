@@ -35,7 +35,10 @@ import class CoreData.NSFetchedResultsController
 
 @objc public protocol TableViewDataSourceDelegate: NSObjectProtocol {
     func tableView(_ tableView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> String
-    func tableView(_ tableView: UITableView, configure cell: UITableViewCell, forRowAt indexPath: IndexPath, with object: NSFetchRequestResult?)
+    func tableView(_ tableView: UITableView, 
+                   configure cell: UITableViewCell,
+                   forRowAt indexPath: IndexPath,
+                   with object: (any NSFetchRequestResult)?)
 
     // See UITableViewDataSource
 
@@ -62,9 +65,11 @@ public final class TableViewDataSource<Result: NSFetchRequestResult>: NSObject, 
     public private(set) weak var tableView: UITableView?
     public private(set) weak var fetchedResultsController: NSFetchedResultsController<Result>?
 
-    public weak var delegate: TableViewDataSourceDelegate?
+    public weak var delegate: (any TableViewDataSourceDelegate)?
 
-    public required init(tableView: UITableView, controller: NSFetchedResultsController<Result>, delegate: TableViewDataSourceDelegate) {
+    public required init(tableView: UITableView, 
+                         controller: NSFetchedResultsController<Result>,
+                         delegate: any TableViewDataSourceDelegate) {
         self.fetchedResultsController = controller
         self.tableView = tableView
         self.delegate = delegate
@@ -92,7 +97,7 @@ public final class TableViewDataSource<Result: NSFetchRequestResult>: NSObject, 
     }
 
     @objc public dynamic func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let selectorToCheck = #selector(TableViewDataSourceDelegate.tableView(_:titleForHeaderInSection:))
+        let selectorToCheck = #selector((any TableViewDataSourceDelegate).tableView(_:titleForHeaderInSection:))
         if let delegate = delegate, delegate.responds(to: selectorToCheck) {
             return delegate.tableView?(tableView, titleForHeaderInSection: section)
         }
@@ -125,7 +130,7 @@ public final class TableViewDataSource<Result: NSFetchRequestResult>: NSObject, 
 
     @objc(tableView:canMoveRowAtIndexPath:)
     public dynamic func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        let selectorToCheck = #selector(TableViewDataSourceDelegate.tableView(_:moveRowAt:to:))
+        let selectorToCheck = #selector((any TableViewDataSourceDelegate).tableView(_:moveRowAt:to:))
         return delegate?.tableView?(tableView, canMoveRowAt: indexPath) ?? delegate?.responds(to: selectorToCheck) ?? false
     }
 

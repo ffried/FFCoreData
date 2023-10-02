@@ -32,7 +32,7 @@ public final class MOCBlockObserver<Filter: MOCObserverFilter> {
 
     private let filter: Filter
     private let workerQueue = OperationQueue()
-    private var observers = Array<NSObjectProtocol>()
+    private var observers = Array<any NSObjectProtocol>()
 
     public init(mode: MOCObservationMode,
                 filter: Filter,
