@@ -76,7 +76,10 @@
     ],
     "modules" : [
       {
-        "name" : "FFCoreData"
+        "name" : "FFCoreData",
+        "relatedModules" : [
+          "_Concurrency"
+        ]
       }
     ],
     "platforms" : [
@@ -189,38 +192,6 @@
       "kind" : "declarations"
     },
     {
-      "content" : [
-        {
-          "anchor" : "return-value",
-          "level" : 2,
-          "text" : "Return Value",
-          "type" : "heading"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "An asynchronous sequence that drops the first ",
-              "type" : "text"
-            },
-            {
-              "code" : "count",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "elements from the base sequence.",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        }
-      ],
-      "kind" : "content"
-    },
-    {
       "kind" : "parameters",
       "parameters" : [
         {
@@ -254,6 +225,38 @@
           "name" : "count"
         }
       ]
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "return-value",
+          "level" : 2,
+          "text" : "Return Value",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "An asynchronous sequence that drops the first ",
+              "type" : "text"
+            },
+            {
+              "code" : "count",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "elements from the base sequence.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
     },
     {
       "content" : [
@@ -399,7 +402,7 @@
             "for await number in Counter(howHigh: 10).dropFirst(3) {",
             "    print(number, terminator: \" \")",
             "}",
-            "\/\/ Prints \"4 5 6 7 8 9 10\""
+            "\/\/ Prints \"4 5 6 7 8 9 10 \""
           ],
           "syntax" : null,
           "type" : "codeListing"

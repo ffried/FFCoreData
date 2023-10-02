@@ -132,7 +132,10 @@
     ],
     "modules" : [
       {
-        "name" : "FFCoreData"
+        "name" : "FFCoreData",
+        "relatedModules" : [
+          "Combine"
+        ]
       }
     ],
     "platforms" : [
@@ -325,26 +328,6 @@
       "kind" : "declarations"
     },
     {
-      "content" : [
-        {
-          "anchor" : "return-value",
-          "level" : 2,
-          "text" : "Return Value",
-          "type" : "heading"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "A publisher that transforms elements by applying a closure that receives its previous return value and the next element from the upstream publisher.",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        }
-      ],
-      "kind" : "content"
-    },
-    {
       "kind" : "parameters",
       "parameters" : [
         {
@@ -384,6 +367,26 @@
           "name" : "nextPartialResult"
         }
       ]
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "return-value",
+          "level" : 2,
+          "text" : "Return Value",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A publisher that transforms elements by applying a closure that receives its previous return value and the next element from the upstream publisher.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
     },
     {
       "content" : [

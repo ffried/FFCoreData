@@ -92,7 +92,10 @@
     ],
     "modules" : [
       {
-        "name" : "FFCoreData"
+        "name" : "FFCoreData",
+        "relatedModules" : [
+          "Combine"
+        ]
       }
     ],
     "platforms" : [
@@ -267,6 +270,25 @@
       "kind" : "declarations"
     },
     {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "A range that indicates which elements to publish.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "range"
+        }
+      ]
+    },
+    {
       "content" : [
         {
           "anchor" : "return-value",
@@ -285,25 +307,6 @@
         }
       ],
       "kind" : "content"
-    },
-    {
-      "kind" : "parameters",
-      "parameters" : [
-        {
-          "content" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "A range that indicates which elements to publish.",
-                  "type" : "text"
-                }
-              ],
-              "type" : "paragraph"
-            }
-          ],
-          "name" : "range"
-        }
-      ]
     },
     {
       "content" : [

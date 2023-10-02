@@ -132,7 +132,10 @@
     ],
     "modules" : [
       {
-        "name" : "FFCoreData"
+        "name" : "FFCoreData",
+        "relatedModules" : [
+          "Combine"
+        ]
       }
     ],
     "platforms" : [
@@ -333,26 +336,6 @@
       "kind" : "declarations"
     },
     {
-      "content" : [
-        {
-          "anchor" : "return-value",
-          "level" : 2,
-          "text" : "Return Value",
-          "type" : "heading"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "A publisher that applies the closure to all received elements and produces an accumulated value when the upstream publisher finishes.",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        }
-      ],
-      "kind" : "content"
-    },
-    {
       "kind" : "parameters",
       "parameters" : [
         {
@@ -384,6 +367,26 @@
           "name" : "nextPartialResult"
         }
       ]
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "return-value",
+          "level" : 2,
+          "text" : "Return Value",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A publisher that applies the closure to all received elements and produces an accumulated value when the upstream publisher finishes.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
     },
     {
       "content" : [

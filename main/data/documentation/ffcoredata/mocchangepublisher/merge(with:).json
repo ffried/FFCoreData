@@ -84,7 +84,10 @@
     ],
     "modules" : [
       {
-        "name" : "FFCoreData"
+        "name" : "FFCoreData",
+        "relatedModules" : [
+          "Combine"
+        ]
       }
     ],
     "platforms" : [
@@ -205,6 +208,25 @@
       "kind" : "declarations"
     },
     {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Another publisher of this publisher’s type.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "other"
+        }
+      ]
+    },
+    {
       "content" : [
         {
           "anchor" : "return-value",
@@ -223,25 +245,6 @@
         }
       ],
       "kind" : "content"
-    },
-    {
-      "kind" : "parameters",
-      "parameters" : [
-        {
-          "content" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "Another publisher of this publisher’s type.",
-                  "type" : "text"
-                }
-              ],
-              "type" : "paragraph"
-            }
-          ],
-          "name" : "other"
-        }
-      ]
     }
   ],
   "schemaVersion" : {

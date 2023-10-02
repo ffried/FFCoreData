@@ -246,6 +246,15 @@
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCObservationMode"
       ],
       "title" : "Enumerations"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Combine",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Foundation",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Swift"
+      ],
+      "title" : "Extended Modules"
     }
   ],
   "variants" : [
@@ -6417,6 +6426,28 @@
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/==(_:_:)-9wl9u"
 },
+"doc://FFCoreData/documentation/FFCoreData/Combine": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Combine",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Combine",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/combine"
+},
+"doc://FFCoreData/documentation/FFCoreData/CoreData": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "CoreData",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/coredata"
+},
 "doc://FFCoreData/documentation/FFCoreData/CoreDataDecodable": {
   "abstract" : [
 
@@ -6761,6 +6792,17 @@
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/findorcreatable"
 },
+"doc://FFCoreData/documentation/FFCoreData/Foundation": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Foundation",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Foundation",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/foundation"
+},
 "doc://FFCoreData/documentation/FFCoreData/InvalidEntityError": {
   "abstract" : [
 
@@ -7101,6 +7143,17 @@
   "title" : "MOCObserverFilter",
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/mocobserverfilter"
+},
+"doc://FFCoreData/documentation/FFCoreData/Swift": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Swift",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "Swift",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/swift"
 },
 "doc://FFCoreData/documentation/FFCoreData/_(_:)-65yo6": {
   "abstract" : [

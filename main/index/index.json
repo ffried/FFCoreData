@@ -15,7 +15,7 @@
               },
               {
                 "path" : "\/documentation\/ffcoredata\/fetchedresultscontrollermanager\/delegate-swift.property",
-                "title" : "var delegate: FetchedResultsControllerManager<Result>.Delegate?",
+                "title" : "var delegate: (FetchedResultsControllerManager<Result>.Delegate)?",
                 "type" : "property"
               },
               {
@@ -139,12 +139,12 @@
                   {
                     "children" : [
                       {
-                        "path" : "\/documentation\/ffcoredata\/coredatadecodable\/init(with:in:)-8ocab",
+                        "path" : "\/documentation\/ffcoredata\/coredatadecodable\/init(with:in:)-9yesq",
                         "title" : "init(with: Self.DTO, in: NSManagedObjectContext) throws",
                         "type" : "init"
                       },
                       {
-                        "path" : "\/documentation\/ffcoredata\/coredatadecodable\/init(with:in:)-9yesq",
+                        "path" : "\/documentation\/ffcoredata\/coredatadecodable\/init(with:in:)-8ocab",
                         "title" : "init(with: Self.DTO, in: NSManagedObjectContext) throws",
                         "type" : "init"
                       }
@@ -519,22 +519,6 @@
               {
                 "children" : [
                   {
-                    "title" : "Instance Properties",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "path" : "\/documentation\/ffcoredata\/invalidentityerror\/halfwidthcornerquoted",
-                    "title" : "var halfWidthCornerQuoted: String",
-                    "type" : "property"
-                  }
-                ],
-                "path" : "\/documentation\/ffcoredata\/invalidentityerror\/customstringconvertible-implementations",
-                "title" : "CustomStringConvertible Implementations",
-                "type" : "symbol"
-              },
-              {
-                "children" : [
-                  {
                     "title" : "Operators",
                     "type" : "groupMarker"
                   },
@@ -633,13 +617,8 @@
                     "type" : "groupMarker"
                   },
                   {
-                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/values-477jl",
+                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/values",
                     "title" : "var values: AsyncPublisher<Self>",
-                    "type" : "property"
-                  },
-                  {
-                    "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/values-9xdtu",
-                    "title" : "var values: AsyncThrowingPublisher<Self>",
                     "type" : "property"
                   },
                   {
@@ -963,7 +942,7 @@
                   },
                   {
                     "path" : "\/documentation\/ffcoredata\/mocchangepublisher\/print(_:to:)",
-                    "title" : "func print(String, to: TextOutputStream?) -> Publishers.Print<Self>",
+                    "title" : "func print(String, to: (TextOutputStream)?) -> Publishers.Print<Self>",
                     "type" : "method"
                   },
                   {
@@ -2306,22 +2285,6 @@
                     "type" : "groupMarker"
                   },
                   {
-                    "path" : "\/documentation\/ffcoredata\/coredatadecodingerror\/halfwidthcornerquoted",
-                    "title" : "var halfWidthCornerQuoted: String",
-                    "type" : "property"
-                  }
-                ],
-                "path" : "\/documentation\/ffcoredata\/coredatadecodingerror\/customstringconvertible-implementations",
-                "title" : "CustomStringConvertible Implementations",
-                "type" : "symbol"
-              },
-              {
-                "children" : [
-                  {
-                    "title" : "Instance Properties",
-                    "type" : "groupMarker"
-                  },
-                  {
                     "path" : "\/documentation\/ffcoredata\/coredatadecodingerror\/localizeddescription",
                     "title" : "var localizedDescription: String",
                     "type" : "property"
@@ -2720,6 +2683,807 @@
             "path" : "\/documentation\/ffcoredata\/mocobservationmode",
             "title" : "MOCObservationMode",
             "type" : "enum"
+          },
+          {
+            "title" : "Extended Modules",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Extended Protocols",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/combine\/topleveldecoder\/decode(_:from:)",
+                    "title" : "func decode<Entity>(Entity.Type, from: Self.Input) throws -> Entity",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/combine\/topleveldecoder\/decode(_:from:in:)",
+                    "title" : "func decode<Entity>(Entity.Type, from: Self.Input, in: NSManagedObjectContext) throws -> Entity",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/ffcoredata\/combine\/topleveldecoder",
+                "title" : "TopLevelDecoder",
+                "type" : "extension"
+              }
+            ],
+            "path" : "\/documentation\/ffcoredata\/combine",
+            "title" : "Combine",
+            "type" : "extension"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Extended Classes",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Structures",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "children" : [
+                      {
+                        "title" : "Initializers",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/init(fetchrequest:context:)",
+                        "title" : "init(fetchRequest: NSFetchRequest<ResultType>, context: NSManagedObjectContext)",
+                        "type" : "init"
+                      },
+                      {
+                        "title" : "Instance Properties",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/context",
+                        "title" : "var context: NSManagedObjectContext",
+                        "type" : "property"
+                      },
+                      {
+                        "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/fetchrequest",
+                        "title" : "var fetchRequest: NSFetchRequest<ResultType>",
+                        "type" : "property"
+                      },
+                      {
+                        "title" : "Instance Methods",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/receive(subscriber:)",
+                        "title" : "func receive<S>(subscriber: S)",
+                        "type" : "method"
+                      },
+                      {
+                        "title" : "Type Aliases",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/failure",
+                        "title" : "NSFetchedResultsController.Publisher.Failure",
+                        "type" : "typealias"
+                      },
+                      {
+                        "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/output",
+                        "title" : "NSFetchedResultsController.Publisher.Output",
+                        "type" : "typealias"
+                      },
+                      {
+                        "title" : "Default Implementations",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "children" : [
+                          {
+                            "title" : "Instance Properties",
+                            "type" : "groupMarker"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/values",
+                            "title" : "var values: AsyncThrowingPublisher<Self>",
+                            "type" : "property"
+                          },
+                          {
+                            "title" : "Instance Methods",
+                            "type" : "groupMarker"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/allsatisfy(_:)",
+                            "title" : "func allSatisfy((Self.Output) -> Bool) -> Publishers.AllSatisfy<Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/append(_:)",
+                            "title" : "func append(Self.Output...) -> Publishers.Concatenate<Self, Publishers.Sequence<[Self.Output], Self.Failure>>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/assertnofailure(_:file:line:)",
+                            "title" : "func assertNoFailure(String, file: StaticString, line: UInt) -> Publishers.AssertNoFailure<Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/breakpoint(receivesubscription:receiveoutput:receivecompletion:)",
+                            "title" : "func breakpoint(receiveSubscription: ((Subscription) -> Bool)?, receiveOutput: ((Self.Output) -> Bool)?, receiveCompletion: ((Subscribers.Completion<Self.Failure>) -> Bool)?) -> Publishers.Breakpoint<Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/breakpointonerror()",
+                            "title" : "func breakpointOnError() -> Publishers.Breakpoint<Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/buffer(size:prefetch:whenfull:)",
+                            "title" : "func buffer(size: Int, prefetch: Publishers.PrefetchStrategy, whenFull: Publishers.BufferingStrategy<Self.Failure>) -> Publishers.Buffer<Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/catch(_:)",
+                            "title" : "func `catch`<P>((Self.Failure) -> P) -> Publishers.Catch<Self, P>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/collect()",
+                            "title" : "func collect() -> Publishers.Collect<Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/collect(_:)",
+                            "title" : "func collect(Int) -> Publishers.CollectByCount<Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/collect(_:options:)",
+                            "title" : "func collect<S>(Publishers.TimeGroupingStrategy<S>, options: S.SchedulerOptions?) -> Publishers.CollectByTime<Self, S>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/combinelatest(_:)",
+                            "title" : "func combineLatest<P>(P) -> Publishers.CombineLatest<Self, P>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/combinelatest(_:_:)-4vf18",
+                            "title" : "func combineLatest<P, Q>(P, Q) -> Publishers.CombineLatest3<Self, P, Q>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/combinelatest(_:_:)-6fuaq",
+                            "title" : "func combineLatest<P, T>(P, (Self.Output, P.Output) -> T) -> Publishers.Map<Publishers.CombineLatest<Self, P>, T>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/combinelatest(_:_:_:)-31p0o",
+                            "title" : "func combineLatest<P, Q, T>(P, Q, (Self.Output, P.Output, Q.Output) -> T) -> Publishers.Map<Publishers.CombineLatest3<Self, P, Q>, T>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/combinelatest(_:_:_:)-4h8ob",
+                            "title" : "func combineLatest<P, Q, R>(P, Q, R) -> Publishers.CombineLatest4<Self, P, Q, R>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/combinelatest(_:_:_:_:)",
+                            "title" : "func combineLatest<P, Q, R, T>(P, Q, R, (Self.Output, P.Output, Q.Output, R.Output) -> T) -> Publishers.Map<Publishers.CombineLatest4<Self, P, Q, R>, T>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/compactmap(_:)",
+                            "title" : "func compactMap<T>((Self.Output) -> T?) -> Publishers.CompactMap<Self, T>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/contains(_:)",
+                            "title" : "func contains(Self.Output) -> Publishers.Contains<Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/contains(where:)",
+                            "title" : "func contains(where: (Self.Output) -> Bool) -> Publishers.ContainsWhere<Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/count()",
+                            "title" : "func count() -> Publishers.Count<Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/debounce(for:scheduler:options:)",
+                            "title" : "func debounce<S>(for: S.SchedulerTimeType.Stride, scheduler: S, options: S.SchedulerOptions?) -> Publishers.Debounce<Self, S>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/decode(type:decoder:)",
+                            "title" : "func decode<Item, Coder>(type: Item.Type, decoder: Coder) -> Publishers.Decode<Self, Item, Coder>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/delay(for:tolerance:scheduler:options:)",
+                            "title" : "func delay<S>(for: S.SchedulerTimeType.Stride, tolerance: S.SchedulerTimeType.Stride?, scheduler: S, options: S.SchedulerOptions?) -> Publishers.Delay<Self, S>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/drop(untiloutputfrom:)",
+                            "title" : "func drop<P>(untilOutputFrom: P) -> Publishers.DropUntilOutput<Self, P>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/drop(while:)",
+                            "title" : "func drop(while: (Self.Output) -> Bool) -> Publishers.DropWhile<Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/dropfirst(_:)",
+                            "title" : "func dropFirst(Int) -> Publishers.Drop<Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/encode(encoder:)",
+                            "title" : "func encode<Coder>(encoder: Coder) -> Publishers.Encode<Self, Coder>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/erasetoanypublisher()",
+                            "title" : "func eraseToAnyPublisher() -> AnyPublisher<Self.Output, Self.Failure>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/filter(_:)",
+                            "title" : "func filter((Self.Output) -> Bool) -> Publishers.Filter<Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/first()",
+                            "title" : "func first() -> Publishers.First<Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/first(where:)",
+                            "title" : "func first(where: (Self.Output) -> Bool) -> Publishers.FirstWhere<Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/flatmap(maxpublishers:_:)-3lk3",
+                            "title" : "func flatMap<P>(maxPublishers: Subscribers.Demand, (Self.Output) -> P) -> Publishers.FlatMap<Publishers.SetFailureType<P, Self.Failure>, Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/flatmap(maxpublishers:_:)-6d2ep",
+                            "title" : "func flatMap<T, P>(maxPublishers: Subscribers.Demand, (Self.Output) -> P) -> Publishers.FlatMap<P, Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/handleevents(receivesubscription:receiveoutput:receivecompletion:receivecancel:receiverequest:)",
+                            "title" : "func handleEvents(receiveSubscription: ((Subscription) -> Void)?, receiveOutput: ((Self.Output) -> Void)?, receiveCompletion: ((Subscribers.Completion<Self.Failure>) -> Void)?, receiveCancel: (() -> Void)?, receiveRequest: ((Subscribers.Demand) -> Void)?) -> Publishers.HandleEvents<Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/ignoreoutput()",
+                            "title" : "func ignoreOutput() -> Publishers.IgnoreOutput<Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/last()",
+                            "title" : "func last() -> Publishers.Last<Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/last(where:)",
+                            "title" : "func last(where: (Self.Output) -> Bool) -> Publishers.LastWhere<Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/map(_:)-40ugz",
+                            "title" : "func map<T>(KeyPath<Self.Output, T>) -> Publishers.MapKeyPath<Self, T>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/map(_:)-7wks7",
+                            "title" : "func map<T>((Self.Output) -> T) -> Publishers.Map<Self, T>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/map(_:_:)",
+                            "title" : "func map<T0, T1>(KeyPath<Self.Output, T0>, KeyPath<Self.Output, T1>) -> Publishers.MapKeyPath2<Self, T0, T1>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/map(_:_:_:)",
+                            "title" : "func map<T0, T1, T2>(KeyPath<Self.Output, T0>, KeyPath<Self.Output, T1>, KeyPath<Self.Output, T2>) -> Publishers.MapKeyPath3<Self, T0, T1, T2>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/maperror(_:)",
+                            "title" : "func mapError<E>((Self.Failure) -> E) -> Publishers.MapError<Self, E>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/max(by:)",
+                            "title" : "func max(by: (Self.Output, Self.Output) -> Bool) -> Publishers.Comparison<Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/measureinterval(using:options:)",
+                            "title" : "func measureInterval<S>(using: S, options: S.SchedulerOptions?) -> Publishers.MeasureInterval<Self, S>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/merge(with:)",
+                            "title" : "func merge(with: Self) -> Publishers.MergeMany<Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/merge(with:_:)",
+                            "title" : "func merge<B, C>(with: B, C) -> Publishers.Merge3<Self, B, C>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/merge(with:_:_:)",
+                            "title" : "func merge<B, C, D>(with: B, C, D) -> Publishers.Merge4<Self, B, C, D>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/merge(with:_:_:_:)",
+                            "title" : "func merge<B, C, D, E>(with: B, C, D, E) -> Publishers.Merge5<Self, B, C, D, E>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/merge(with:_:_:_:_:)",
+                            "title" : "func merge<B, C, D, E, F>(with: B, C, D, E, F) -> Publishers.Merge6<Self, B, C, D, E, F>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/merge(with:_:_:_:_:_:)",
+                            "title" : "func merge<B, C, D, E, F, G>(with: B, C, D, E, F, G) -> Publishers.Merge7<Self, B, C, D, E, F, G>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/merge(with:_:_:_:_:_:_:)",
+                            "title" : "func merge<B, C, D, E, F, G, H>(with: B, C, D, E, F, G, H) -> Publishers.Merge8<Self, B, C, D, E, F, G, H>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/min(by:)",
+                            "title" : "func min(by: (Self.Output, Self.Output) -> Bool) -> Publishers.Comparison<Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/multicast(_:)",
+                            "title" : "func multicast<S>(() -> S) -> Publishers.Multicast<Self, S>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/multicast(subject:)",
+                            "title" : "func multicast<S>(subject: S) -> Publishers.Multicast<Self, S>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/output(at:)",
+                            "title" : "func output(at: Int) -> Publishers.Output<Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/output(in:)",
+                            "title" : "func output<R>(in: R) -> Publishers.Output<Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/prefix(_:)",
+                            "title" : "func prefix(Int) -> Publishers.Output<Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/prefix(untiloutputfrom:)",
+                            "title" : "func prefix<P>(untilOutputFrom: P) -> Publishers.PrefixUntilOutput<Self, P>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/prefix(while:)",
+                            "title" : "func prefix(while: (Self.Output) -> Bool) -> Publishers.PrefixWhile<Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/prepend(_:)",
+                            "title" : "func prepend(Self.Output...) -> Publishers.Concatenate<Publishers.Sequence<[Self.Output], Self.Failure>, Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/print(_:to:)",
+                            "title" : "func print(String, to: (TextOutputStream)?) -> Publishers.Print<Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/receive(on:options:)",
+                            "title" : "func receive<S>(on: S, options: S.SchedulerOptions?) -> Publishers.ReceiveOn<Self, S>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/reduce(_:_:)",
+                            "title" : "func reduce<T>(T, (T, Self.Output) -> T) -> Publishers.Reduce<Self, T>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/removeduplicates()",
+                            "title" : "func removeDuplicates() -> Publishers.RemoveDuplicates<Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/removeduplicates(by:)",
+                            "title" : "func removeDuplicates(by: (Self.Output, Self.Output) -> Bool) -> Publishers.RemoveDuplicates<Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/replaceempty(with:)",
+                            "title" : "func replaceEmpty(with: Self.Output) -> Publishers.ReplaceEmpty<Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/replaceerror(with:)",
+                            "title" : "func replaceError(with: Self.Output) -> Publishers.ReplaceError<Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/replacenil(with:)",
+                            "title" : "func replaceNil<T>(with: T) -> Publishers.Map<Self, T>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/retry(_:)",
+                            "title" : "func retry(Int) -> Publishers.Retry<Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/scan(_:_:)",
+                            "title" : "func scan<T>(T, (T, Self.Output) -> T) -> Publishers.Scan<Self, T>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/share()",
+                            "title" : "func share() -> Publishers.Share<Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/sink(receivecompletion:receivevalue:)",
+                            "title" : "func sink(receiveCompletion: ((Subscribers.Completion<Self.Failure>) -> Void), receiveValue: ((Self.Output) -> Void)) -> AnyCancellable",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/subscribe(_:)-9l699",
+                            "title" : "func subscribe<S>(S)",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/subscribe(_:)-9z69a",
+                            "title" : "func subscribe<S>(S) -> AnyCancellable",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/subscribe(on:options:)",
+                            "title" : "func subscribe<S>(on: S, options: S.SchedulerOptions?) -> Publishers.SubscribeOn<Self, S>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/throttle(for:scheduler:latest:)",
+                            "title" : "func throttle<S>(for: S.SchedulerTimeType.Stride, scheduler: S, latest: Bool) -> Publishers.Throttle<Self, S>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/timeout(_:scheduler:options:customerror:)",
+                            "title" : "func timeout<S>(S.SchedulerTimeType.Stride, scheduler: S, options: S.SchedulerOptions?, customError: (() -> Self.Failure)?) -> Publishers.Timeout<Self, S>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/tryallsatisfy(_:)",
+                            "title" : "func tryAllSatisfy((Self.Output) throws -> Bool) -> Publishers.TryAllSatisfy<Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/trycatch(_:)",
+                            "title" : "func tryCatch<P>((Self.Failure) throws -> P) -> Publishers.TryCatch<Self, P>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/trycompactmap(_:)",
+                            "title" : "func tryCompactMap<T>((Self.Output) throws -> T?) -> Publishers.TryCompactMap<Self, T>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/trycontains(where:)",
+                            "title" : "func tryContains(where: (Self.Output) throws -> Bool) -> Publishers.TryContainsWhere<Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/trydrop(while:)",
+                            "title" : "func tryDrop(while: (Self.Output) throws -> Bool) -> Publishers.TryDropWhile<Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/tryfilter(_:)",
+                            "title" : "func tryFilter((Self.Output) throws -> Bool) -> Publishers.TryFilter<Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/tryfirst(where:)",
+                            "title" : "func tryFirst(where: (Self.Output) throws -> Bool) -> Publishers.TryFirstWhere<Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/trylast(where:)",
+                            "title" : "func tryLast(where: (Self.Output) throws -> Bool) -> Publishers.TryLastWhere<Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/trymap(_:)",
+                            "title" : "func tryMap<T>((Self.Output) throws -> T) -> Publishers.TryMap<Self, T>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/trymax(by:)",
+                            "title" : "func tryMax(by: (Self.Output, Self.Output) throws -> Bool) -> Publishers.TryComparison<Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/trymin(by:)",
+                            "title" : "func tryMin(by: (Self.Output, Self.Output) throws -> Bool) -> Publishers.TryComparison<Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/tryprefix(while:)",
+                            "title" : "func tryPrefix(while: (Self.Output) throws -> Bool) -> Publishers.TryPrefixWhile<Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/tryreduce(_:_:)",
+                            "title" : "func tryReduce<T>(T, (T, Self.Output) throws -> T) -> Publishers.TryReduce<Self, T>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/tryremoveduplicates(by:)",
+                            "title" : "func tryRemoveDuplicates(by: (Self.Output, Self.Output) throws -> Bool) -> Publishers.TryRemoveDuplicates<Self>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/tryscan(_:_:)",
+                            "title" : "func tryScan<T>(T, (T, Self.Output) throws -> T) -> Publishers.TryScan<Self, T>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/zip(_:)",
+                            "title" : "func zip<P>(P) -> Publishers.Zip<Self, P>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/zip(_:_:)-496ls",
+                            "title" : "func zip<P, T>(P, (Self.Output, P.Output) -> T) -> Publishers.Map<Publishers.Zip<Self, P>, T>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/zip(_:_:)-66et9",
+                            "title" : "func zip<P, Q>(P, Q) -> Publishers.Zip3<Self, P, Q>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/zip(_:_:_:)-3hdh",
+                            "title" : "func zip<P, Q, T>(P, Q, (Self.Output, P.Output, Q.Output) -> T) -> Publishers.Map<Publishers.Zip3<Self, P, Q>, T>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/zip(_:_:_:)-9toq3",
+                            "title" : "func zip<P, Q, R>(P, Q, R) -> Publishers.Zip4<Self, P, Q, R>",
+                            "type" : "method"
+                          },
+                          {
+                            "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/zip(_:_:_:_:)",
+                            "title" : "func zip<P, Q, R, T>(P, Q, R, (Self.Output, P.Output, Q.Output, R.Output) -> T) -> Publishers.Map<Publishers.Zip4<Self, P, Q, R>, T>",
+                            "type" : "method"
+                          }
+                        ],
+                        "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/publisher-implementations",
+                        "title" : "Publisher Implementations",
+                        "type" : "symbol"
+                      }
+                    ],
+                    "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher",
+                    "title" : "NSFetchedResultsController.Publisher",
+                    "type" : "struct"
+                  }
+                ],
+                "path" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller",
+                "title" : "NSFetchedResultsController",
+                "type" : "extension"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/coredata\/nsmanagedobject\/changes",
+                    "title" : "var changes: MOCChanges<MOCObjectsFilter>",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/coredata\/nsmanagedobject\/createmocobjectobserver(fireinitially:handler:)",
+                    "title" : "func createMOCObjectObserver(fireInitially: Bool, handler: MOCBlockObserver<MOCObjectsFilter>.Handler) -> MOCBlockObserver<MOCObjectsFilter>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/coredata\/nsmanagedobject\/publishchanges()",
+                    "title" : "func publishChanges() -> MOCChangePublisher<MOCObjectsFilter>",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/ffcoredata\/coredata\/nsmanagedobject",
+                "title" : "NSManagedObject",
+                "type" : "extension"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/coredata\/nsmanagedobjectcontext\/asdecodingcontext(do:)",
+                    "title" : "func asDecodingContext<T>(do: () throws -> T) rethrows -> T",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/coredata\/nsmanagedobjectcontext\/async(do:)",
+                    "title" : "func async(do: () -> ())",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/coredata\/nsmanagedobjectcontext\/run(_:)-1ufj4",
+                    "title" : "func run<T>(() throws -> T) async rethrows -> T",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/coredata\/nsmanagedobjectcontext\/run(_:)-5676b",
+                    "title" : "func run<T>((NSManagedObjectContext) throws -> T) async rethrows -> T",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/coredata\/nsmanagedobjectcontext\/sync(do:)",
+                    "title" : "func sync<T>(do: () throws -> T) rethrows -> T",
+                    "type" : "method"
+                  },
+                  {
+                    "title" : "Type Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/coredata\/nsmanagedobjectcontext\/decodingcontext(at:)",
+                    "title" : "static func decodingContext(at: Array<CodingKey>) throws -> NSManagedObjectContext",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/ffcoredata\/coredata\/nsmanagedobjectcontext",
+                "title" : "NSManagedObjectContext",
+                "type" : "extension"
+              }
+            ],
+            "path" : "\/documentation\/ffcoredata\/coredata",
+            "title" : "CoreData",
+            "type" : "extension"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Extended Classes",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/foundation\/jsondecoder\/decode(_:from:)",
+                    "title" : "func decode<Entity>(Entity.Type, from: Data) throws -> Entity",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/foundation\/jsondecoder\/decode(_:from:in:)",
+                    "title" : "func decode<Entity>(Entity.Type, from: Data, in: NSManagedObjectContext) throws -> Entity",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/ffcoredata\/foundation\/jsondecoder",
+                "title" : "JSONDecoder",
+                "type" : "extension"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Initializers",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/foundation\/nspredicate\/init(format:arguments:)",
+                    "title" : "convenience init(format: String, arguments: Any...)",
+                    "type" : "init"
+                  }
+                ],
+                "path" : "\/documentation\/ffcoredata\/foundation\/nspredicate",
+                "title" : "NSPredicate",
+                "type" : "extension"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/foundation\/propertylistdecoder\/decode(_:from:)",
+                    "title" : "func decode<Entity>(Entity.Type, from: Data) throws -> Entity",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/foundation\/propertylistdecoder\/decode(_:from:in:)",
+                    "title" : "func decode<Entity>(Entity.Type, from: Data, in: NSManagedObjectContext) throws -> Entity",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/ffcoredata\/foundation\/propertylistdecoder",
+                "title" : "PropertyListDecoder",
+                "type" : "extension"
+              }
+            ],
+            "path" : "\/documentation\/ffcoredata\/foundation",
+            "title" : "Foundation",
+            "type" : "extension"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Extended Protocols",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/swift\/sequence\/createmocobjectsobserver(fireinitially:handler:)",
+                    "title" : "func createMOCObjectsObserver(fireInitially: Bool, handler: MOCBlockObserver<MOCObjectsFilter>.Handler) -> MOCBlockObserver<MOCObjectsFilter>",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/ffcoredata\/swift\/sequence\/publishchanges()",
+                    "title" : "func publishChanges() -> MOCChangePublisher<MOCObjectsFilter>",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/ffcoredata\/swift\/sequence",
+                "title" : "Sequence",
+                "type" : "extension"
+              }
+            ],
+            "path" : "\/documentation\/ffcoredata\/swift",
+            "title" : "Swift",
+            "type" : "extension"
           }
         ],
         "path" : "\/documentation\/ffcoredata",
@@ -2731,6 +3495,6 @@
   "schemaVersion" : {
     "major" : 0,
     "minor" : 1,
-    "patch" : 0
+    "patch" : 1
   }
 }

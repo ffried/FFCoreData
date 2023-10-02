@@ -124,7 +124,10 @@
     ],
     "modules" : [
       {
-        "name" : "FFCoreData"
+        "name" : "FFCoreData",
+        "relatedModules" : [
+          "Combine"
+        ]
       }
     ],
     "platforms" : [
@@ -317,34 +320,6 @@
       "kind" : "declarations"
     },
     {
-      "content" : [
-        {
-          "anchor" : "return-value",
-          "level" : 2,
-          "text" : "Return Value",
-          "type" : "heading"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "A publisher that applies the closure to all received elements and produces an accumulated value when the upstream publisher finishes. If ",
-              "type" : "text"
-            },
-            {
-              "code" : "Publisher\/reduce(_:_:)",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : " receives an error from the upstream publisher, the operator delivers it to the downstream subscriber, the publisher terminates and publishes no value.",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        }
-      ],
-      "kind" : "content"
-    },
-    {
       "kind" : "parameters",
       "parameters" : [
         {
@@ -376,6 +351,34 @@
           "name" : "nextPartialResult"
         }
       ]
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "return-value",
+          "level" : 2,
+          "text" : "Return Value",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A publisher that applies the closure to all received elements and produces an accumulated value when the upstream publisher finishes. If ",
+              "type" : "text"
+            },
+            {
+              "code" : "Publisher\/reduce(_:_:)",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " receives an error from the upstream publisher, the operator delivers it to the downstream subscriber, the publisher terminates and publishes no value.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
     },
     {
       "content" : [

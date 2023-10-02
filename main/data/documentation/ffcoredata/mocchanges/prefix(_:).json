@@ -76,7 +76,10 @@
     ],
     "modules" : [
       {
-        "name" : "FFCoreData"
+        "name" : "FFCoreData",
+        "relatedModules" : [
+          "_Concurrency"
+        ]
       }
     ],
     "platforms" : [
@@ -189,6 +192,37 @@
       "kind" : "declarations"
     },
     {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The maximum number of elements to return. The value of",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "count",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " must be greater than or equal to zero.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "count"
+        }
+      ]
+    },
+    {
       "content" : [
         {
           "anchor" : "return-value",
@@ -223,37 +257,6 @@
         }
       ],
       "kind" : "content"
-    },
-    {
-      "kind" : "parameters",
-      "parameters" : [
-        {
-          "content" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "The maximum number of elements to return. The value of",
-                  "type" : "text"
-                },
-                {
-                  "text" : " ",
-                  "type" : "text"
-                },
-                {
-                  "code" : "count",
-                  "type" : "codeVoice"
-                },
-                {
-                  "text" : " must be greater than or equal to zero.",
-                  "type" : "text"
-                }
-              ],
-              "type" : "paragraph"
-            }
-          ],
-          "name" : "count"
-        }
-      ]
     },
     {
       "content" : [
@@ -354,7 +357,7 @@
             "for await number in Counter(howHigh: 10).prefix(6) {",
             "    print(number, terminator: \" \")",
             "}",
-            "\/\/ Prints \"1 2 3 4 5 6\""
+            "\/\/ Prints \"1 2 3 4 5 6 \""
           ],
           "syntax" : null,
           "type" : "codeListing"

@@ -144,7 +144,10 @@
     ],
     "modules" : [
       {
-        "name" : "FFCoreData"
+        "name" : "FFCoreData",
+        "relatedModules" : [
+          "Combine"
+        ]
       }
     ],
     "platforms" : [
@@ -301,42 +304,6 @@
       "kind" : "declarations"
     },
     {
-      "content" : [
-        {
-          "anchor" : "return-value",
-          "level" : 2,
-          "text" : "Return Value",
-          "type" : "heading"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "An ",
-              "type" : "text"
-            },
-            {
-              "code" : "AnyCancellable",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : " instance. Call ",
-              "type" : "text"
-            },
-            {
-              "code" : "Cancellable\/cancel()",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : " on this instance when you no longer want the publisher to automatically assign the property. Deinitializing this instance will also cancel automatic assignment.",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        }
-      ],
-      "kind" : "content"
-    },
-    {
       "kind" : "parameters",
       "parameters" : [
         {
@@ -390,6 +357,42 @@
           "name" : "object"
         }
       ]
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "return-value",
+          "level" : 2,
+          "text" : "Return Value",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "An ",
+              "type" : "text"
+            },
+            {
+              "code" : "AnyCancellable",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " instance. Call ",
+              "type" : "text"
+            },
+            {
+              "code" : "Cancellable\/cancel()",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " on this instance when you no longer want the publisher to automatically assign the property. Deinitializing this instance will also cancel automatic assignment.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
     },
     {
       "content" : [

@@ -123,7 +123,10 @@
     ],
     "modules" : [
       {
-        "name" : "FFCoreData"
+        "name" : "FFCoreData",
+        "relatedModules" : [
+          "_Concurrency"
+        ]
       }
     ],
     "platforms" : [
@@ -299,6 +302,57 @@
       "kind" : "declarations"
     },
     {
+      "kind" : "parameters",
+      "parameters" : [
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "An error-throwing mapping closure. ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "transform",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "accepts an element of this sequence as its parameter and returns a",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "transformed value of the same or of a different type. If ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "transform",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "throws an error, the sequence ends.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "transform"
+        }
+      ]
+    },
+    {
       "content" : [
         {
           "anchor" : "return-value",
@@ -365,57 +419,6 @@
         }
       ],
       "kind" : "content"
-    },
-    {
-      "kind" : "parameters",
-      "parameters" : [
-        {
-          "content" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "An error-throwing mapping closure. ",
-                  "type" : "text"
-                },
-                {
-                  "code" : "transform",
-                  "type" : "codeVoice"
-                },
-                {
-                  "text" : " ",
-                  "type" : "text"
-                },
-                {
-                  "text" : "accepts an element of this sequence as its parameter and returns a",
-                  "type" : "text"
-                },
-                {
-                  "text" : " ",
-                  "type" : "text"
-                },
-                {
-                  "text" : "transformed value of the same or of a different type. If ",
-                  "type" : "text"
-                },
-                {
-                  "code" : "transform",
-                  "type" : "codeVoice"
-                },
-                {
-                  "text" : " ",
-                  "type" : "text"
-                },
-                {
-                  "text" : "throws an error, the sequence ends.",
-                  "type" : "text"
-                }
-              ],
-              "type" : "paragraph"
-            }
-          ],
-          "name" : "transform"
-        }
-      ]
     },
     {
       "content" : [
@@ -642,7 +645,7 @@
             "} catch {",
             "    print(\"Error: \\(error)\")",
             "}",
-            "\/\/ Prints \"I II III Error: MyError()\""
+            "\/\/ Prints \"I II III Error: MyError() \""
           ],
           "syntax" : null,
           "type" : "codeListing"

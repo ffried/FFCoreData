@@ -246,7 +246,10 @@
     ],
     "modules" : [
       {
-        "name" : "FFCoreData"
+        "name" : "FFCoreData",
+        "relatedModules" : [
+          "Combine"
+        ]
       }
     ],
     "platforms" : [
@@ -744,34 +747,6 @@
       "kind" : "declarations"
     },
     {
-      "content" : [
-        {
-          "anchor" : "return-value",
-          "level" : 2,
-          "text" : "Return Value",
-          "type" : "heading"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "A publisher that uses the ",
-              "type" : "text"
-            },
-            {
-              "code" : "transform",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : " closure to emit new elements, produced by combining the most recent value from four upstream publishers.",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        }
-      ],
-      "kind" : "content"
-    },
-    {
       "kind" : "parameters",
       "parameters" : [
         {
@@ -831,6 +806,34 @@
           "name" : "transform"
         }
       ]
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "return-value",
+          "level" : 2,
+          "text" : "Return Value",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "A publisher that uses the ",
+              "type" : "text"
+            },
+            {
+              "code" : "transform",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " closure to emit new elements, produced by combining the most recent value from four upstream publishers.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
     },
     {
       "content" : [

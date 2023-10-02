@@ -123,7 +123,10 @@
     ],
     "modules" : [
       {
-        "name" : "FFCoreData"
+        "name" : "FFCoreData",
+        "relatedModules" : [
+          "_Concurrency"
+        ]
       }
     ],
     "platforms" : [
@@ -299,42 +302,6 @@
       "kind" : "declarations"
     },
     {
-      "content" : [
-        {
-          "anchor" : "return-value",
-          "level" : 2,
-          "text" : "Return Value",
-          "type" : "heading"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "An asynchronous sequence that contains, in order, the elements",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "produced by the ",
-              "type" : "text"
-            },
-            {
-              "code" : "transform",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : " closure.",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        }
-      ],
-      "kind" : "content"
-    },
-    {
       "kind" : "parameters",
       "parameters" : [
         {
@@ -392,6 +359,42 @@
           "name" : "transform"
         }
       ]
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "return-value",
+          "level" : 2,
+          "text" : "Return Value",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "An asynchronous sequence that contains, in order, the elements",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "produced by the ",
+              "type" : "text"
+            },
+            {
+              "code" : "transform",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " closure.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
     },
     {
       "content" : [
@@ -626,7 +629,7 @@
             "} catch {",
             "    print(\"Error: \\(error)\")",
             "}",
-            "\/\/ Prints \"I II III Error: MyError()\""
+            "\/\/ Prints \"I II III Error: MyError() \""
           ],
           "syntax" : null,
           "type" : "codeListing"
