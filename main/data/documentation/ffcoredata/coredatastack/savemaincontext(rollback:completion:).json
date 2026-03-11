@@ -13,7 +13,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:10FFCoreData04CoreB5StackO15saveMainContext8rollback10completionySb_ySbctFZ",
+    "externalID" : "s:10FFCoreData04CoreB5StackO15saveMainContext8rollback10completionySb_ySbYbctFZ",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -79,6 +79,10 @@
         "name" : "FFCoreData"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "CoreDataManager.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/CoreDataManager\/CoreDataManager.swift#L211"
+    },
     "role" : "symbol",
     "roleHeading" : "Type Method",
     "symbolKind" : "method",
@@ -145,12 +149,12 @@
               "text" : ": "
             },
             {
-              "kind" : "keyword",
-              "text" : "@escaping"
+              "kind" : "attribute",
+              "text" : "@escaping "
             },
             {
               "kind" : "text",
-              "text" : " ("
+              "text" : "("
             },
             {
               "kind" : "typeIdentifier",

@@ -17,8 +17,7 @@
     "paths" : [
       [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/AsyncSequence-Implementations"
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges"
       ]
     ]
   },
@@ -97,6 +96,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:Sci7ElementQa",
         "text" : "Element"
       },
       {
@@ -293,6 +293,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:Sci7ElementQa",
               "text" : "Element"
             },
             {
@@ -403,7 +404,7 @@
             {
               "inlineContent" : [
                 {
-                  "text" : "A closure that combines an accumulating value and",
+                  "text" : "A closure that combines an accumulating",
                   "type" : "text"
                 },
                 {
@@ -411,7 +412,7 @@
                   "type" : "text"
                 },
                 {
-                  "text" : "an element of the asynchronous sequence into a new accumulating value,",
+                  "text" : "value and an element of the asynchronous sequence into a new",
                   "type" : "text"
                 },
                 {
@@ -419,7 +420,11 @@
                   "type" : "text"
                 },
                 {
-                  "text" : "for use in the next call of the ",
+                  "text" : "accumulating value, for use in the next call of the",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
                   "type" : "text"
                 },
                 {
@@ -427,22 +432,14 @@
                   "type" : "codeVoice"
                 },
                 {
-                  "text" : " closure or",
-                  "type" : "text"
-                },
-                {
-                  "text" : " ",
-                  "type" : "text"
-                },
-                {
-                  "text" : "returned to the caller.",
+                  "text" : " closure or returned to the caller.",
                   "type" : "text"
                 }
               ],
               "type" : "paragraph"
             }
           ],
-          "name" : "nextPartialResult"
+          "name" : "updateAccumulatingResult"
         }
       ]
     },
@@ -530,11 +527,11 @@
               "type" : "text"
             },
             {
-              "code" : "nextPartialResult",
+              "code" : "updateAccumulatingResult",
               "type" : "codeVoice"
             },
             {
-              "text" : " closure executes sequentially with an accumulating",
+              "text" : " closure executes sequentially with an",
               "type" : "text"
             },
             {
@@ -542,7 +539,7 @@
               "type" : "text"
             },
             {
-              "text" : "value initialized to ",
+              "text" : "accumulating value initialized to ",
               "type" : "text"
             },
             {
@@ -550,7 +547,15 @@
               "type" : "codeVoice"
             },
             {
-              "text" : " and each element of the sequence.",
+              "text" : " and each element of the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "sequence.",
               "type" : "text"
             }
           ],
@@ -665,17 +670,6 @@
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/mocchanges"
 },
-"doc://FFCoreData/documentation/FFCoreData/MOCChanges/AsyncSequence-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/AsyncSequence-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "AsyncSequence Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/ffcoredata\/mocchanges\/asyncsequence-implementations"
-},
 "doc://FFCoreData/documentation/FFCoreData/MOCChanges/reduce(into:_:)": {
   "abstract" : [
     {
@@ -758,6 +752,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sci7ElementQa",
       "text" : "Element"
     },
     {

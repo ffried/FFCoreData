@@ -3,8 +3,7 @@
     "paths" : [
       [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodable",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodable\/findOrCreate(for:in:)-7jp13"
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodable"
       ]
     ]
   },
@@ -99,6 +98,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:10FFCoreData04CoreB9DecodableP3DTOQa",
         "text" : "DTO"
       },
       {
@@ -140,6 +140,10 @@
         "name" : "FFCoreData"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "CoreDataDecodable.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObject\/CoreDataDecodable.swift#L46"
+    },
     "role" : "symbol",
     "roleHeading" : "Type Method",
     "symbolKind" : "method",
@@ -213,7 +217,9 @@
               "text" : "."
             },
             {
+              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodable\/DTO",
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10FFCoreData04CoreB9DecodableP3DTOQa",
               "text" : "DTO"
             },
             {
@@ -327,6 +333,50 @@
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/coredatadecodable"
 },
+"doc://FFCoreData/documentation/FFCoreData/CoreDataDecodable/DTO": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "associatedtype"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "DTO"
+    },
+    {
+      "kind" : "text",
+      "text" : " : "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Se",
+      "text" : "Decodable"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s8SendableP",
+      "text" : "Sendable"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodable\/DTO",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "DTO",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/coredatadecodable\/dto"
+},
 "doc://FFCoreData/documentation/FFCoreData/CoreDataDecodable/findOrCreate(for:in:)-57mf5": {
   "abstract" : [
 
@@ -414,6 +464,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData04CoreB9DecodableP3DTOQa",
       "text" : "DTO"
     },
     {
@@ -456,98 +507,6 @@
   "title" : "findOrCreate(for:in:)",
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/coredatadecodable\/findorcreate(for:in:)-57mf5"
-},
-"doc://FFCoreData/documentation/FFCoreData/CoreDataDecodable/findOrCreate(for:in:)-7jp13": {
-  "abstract" : [
-
-  ],
-  "defaultImplementations" : 1,
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "findOrCreate"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "for"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "DTO"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "in"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "c:objc(cs)NSManagedObjectContext",
-      "text" : "NSManagedObjectContext"
-    },
-    {
-      "kind" : "text",
-      "text" : ") "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "throws"
-    },
-    {
-      "kind" : "text",
-      "text" : " -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Self"
-    }
-  ],
-  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodable\/findOrCreate(for:in:)-7jp13",
-  "kind" : "symbol",
-  "required" : true,
-  "role" : "symbol",
-  "title" : "findOrCreate(for:in:)",
-  "type" : "topic",
-  "url" : "\/documentation\/ffcoredata\/coredatadecodable\/findorcreate(for:in:)-7jp13"
 }
 }
 }

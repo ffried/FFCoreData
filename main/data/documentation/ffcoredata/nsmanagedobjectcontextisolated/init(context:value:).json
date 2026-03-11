@@ -1,0 +1,251 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/NSManagedObjectContextIsolated"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/NSManagedObjectContextIsolated\/init(context:value:)"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:10FFCoreData30NSManagedObjectContextIsolatedV7context5valueACyxGSo0cdE0C_xtcfc",
+    "fragments" : [
+      {
+        "kind" : "identifier",
+        "text" : "init"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "context"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "c:objc(cs)NSManagedObjectContext",
+        "text" : "NSManagedObjectContext"
+      },
+      {
+        "kind" : "text",
+        "text" : ", "
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "value"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "text" : "Value"
+      },
+      {
+        "kind" : "text",
+        "text" : ")"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "FFCoreData"
+      }
+    ],
+    "remoteSource" : {
+      "fileName" : "NSManagedObjectContextIsolated.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObjectContext\/NSManagedObjectContextIsolated.swift#L127"
+    },
+    "role" : "symbol",
+    "roleHeading" : "Initializer",
+    "symbolKind" : "init",
+    "title" : "init(context:value:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "init"
+            },
+            {
+              "kind" : "text",
+              "text" : "("
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "context"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "c:objc(cs)NSManagedObjectContext",
+              "text" : "NSManagedObjectContext"
+            },
+            {
+              "kind" : "text",
+              "text" : ", "
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "value"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "Value"
+            },
+            {
+              "kind" : "text",
+              "text" : ")"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/ffcoredata\/nsmanagedobjectcontextisolated\/init(context:value:)"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://FFCoreData/documentation/FFCoreData": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "FFCoreData",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata"
+},
+"doc://FFCoreData/documentation/FFCoreData/NSManagedObjectContextIsolated": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NSManagedObjectContextIsolated"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/NSManagedObjectContextIsolated",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NSManagedObjectContextIsolated"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NSManagedObjectContextIsolated",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/nsmanagedobjectcontextisolated"
+},
+"doc://FFCoreData/documentation/FFCoreData/NSManagedObjectContextIsolated/init(context:value:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "context"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:objc(cs)NSManagedObjectContext",
+      "text" : "NSManagedObjectContext"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "value"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/NSManagedObjectContextIsolated\/init(context:value:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(context:value:)",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/nsmanagedobjectcontextisolated\/init(context:value:)"
+}
+}
+}

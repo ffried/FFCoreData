@@ -1,0 +1,925 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/NSManagedObjectContextIsolated"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/NSManagedObjectContextIsolated\/Blocking"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingV",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "struct"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "Blocking"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "FFCoreData"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "Blocking"
+      }
+    ],
+    "remoteSource" : {
+      "fileName" : "NSManagedObjectContextIsolated.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObjectContext\/NSManagedObjectContextIsolated.swift#L35"
+    },
+    "role" : "symbol",
+    "roleHeading" : "Structure",
+    "symbolKind" : "struct",
+    "title" : "NSManagedObjectContextIsolated.Blocking"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "attribute",
+              "text" : "@dynamicMemberLookup"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "struct"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "Blocking"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/FFCoreData\/s8SendableP",
+        "doc:\/\/FFCoreData\/s16SendableMetatypeP"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/NSManagedObjectContextIsolated\/Blocking\/saveContext(rollback:completion:)",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/NSManagedObjectContextIsolated\/Blocking\/set(_:for:)-3oc4p",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/NSManagedObjectContextIsolated\/Blocking\/set(_:for:)-94bq6",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/NSManagedObjectContextIsolated\/Blocking\/withMutableValue(do:)",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/NSManagedObjectContextIsolated\/Blocking\/withValue(do:)"
+      ],
+      "title" : "Instance Methods"
+    },
+    {
+      "anchor" : "Subscripts",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/NSManagedObjectContextIsolated\/Blocking\/subscript(dynamicMember:)-2aweh",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/NSManagedObjectContextIsolated\/Blocking\/subscript(dynamicMember:)-7o4hn",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/NSManagedObjectContextIsolated\/Blocking\/subscript(dynamicMember:)-7ok2b"
+      ],
+      "title" : "Subscripts"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/ffcoredata\/nsmanagedobjectcontextisolated\/blocking"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://FFCoreData/documentation/FFCoreData": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "FFCoreData",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata"
+},
+"doc://FFCoreData/documentation/FFCoreData/NSManagedObjectContextIsolated": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NSManagedObjectContextIsolated"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/NSManagedObjectContextIsolated",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NSManagedObjectContextIsolated"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NSManagedObjectContextIsolated",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/nsmanagedobjectcontextisolated"
+},
+"doc://FFCoreData/documentation/FFCoreData/NSManagedObjectContextIsolated/Blocking": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Blocking"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/NSManagedObjectContextIsolated\/Blocking",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Blocking"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NSManagedObjectContextIsolated.Blocking",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/nsmanagedobjectcontextisolated\/blocking"
+},
+"doc://FFCoreData/documentation/FFCoreData/NSManagedObjectContextIsolated/Blocking/saveContext(rollback:completion:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "saveContext"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "rollback"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "completion"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> ())"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/NSManagedObjectContextIsolated\/Blocking\/saveContext(rollback:completion:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "saveContext(rollback:completion:)",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/nsmanagedobjectcontextisolated\/blocking\/savecontext(rollback:completion:)"
+},
+"doc://FFCoreData/documentation/FFCoreData/NSManagedObjectContextIsolated/Blocking/set(_:for:)-3oc4p": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "set"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "keyword",
+      "text" : "sending"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "for"
+    },
+    {
+      "kind" : "text",
+      "text" : ": any "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s8SendableP",
+      "text" : "Sendable"
+    },
+    {
+      "kind" : "text",
+      "text" : " & "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s24ReferenceWritableKeyPathC",
+      "text" : "ReferenceWritableKeyPath"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ">)"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/NSManagedObjectContextIsolated\/Blocking\/set(_:for:)-3oc4p",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "set(_:for:)",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/nsmanagedobjectcontextisolated\/blocking\/set(_:for:)-3oc4p"
+},
+"doc://FFCoreData/documentation/FFCoreData/NSManagedObjectContextIsolated/Blocking/set(_:for:)-94bq6": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "set"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "for"
+    },
+    {
+      "kind" : "text",
+      "text" : ": any "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s8SendableP",
+      "text" : "Sendable"
+    },
+    {
+      "kind" : "text",
+      "text" : " & "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s24ReferenceWritableKeyPathC",
+      "text" : "ReferenceWritableKeyPath"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ">)"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/NSManagedObjectContextIsolated\/Blocking\/set(_:for:)-94bq6",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "set(_:for:)",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/nsmanagedobjectcontextisolated\/blocking\/set(_:for:)-94bq6"
+},
+"doc://FFCoreData/documentation/FFCoreData/NSManagedObjectContextIsolated/Blocking/subscript(dynamicMember:)-2aweh": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "subscript"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "dynamicMember"
+    },
+    {
+      "kind" : "text",
+      "text" : " _: any "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s8SendableP",
+      "text" : "Sendable"
+    },
+    {
+      "kind" : "text",
+      "text" : " & "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s7KeyPathC",
+      "text" : "KeyPath"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ">) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "T"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/NSManagedObjectContextIsolated\/Blocking\/subscript(dynamicMember:)-2aweh",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "subscript(dynamicMember:)",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/nsmanagedobjectcontextisolated\/blocking\/subscript(dynamicmember:)-2aweh"
+},
+"doc://FFCoreData/documentation/FFCoreData/NSManagedObjectContextIsolated/Blocking/subscript(dynamicMember:)-7o4hn": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "subscript"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "dynamicMember"
+    },
+    {
+      "kind" : "text",
+      "text" : " _: any "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s8SendableP",
+      "text" : "Sendable"
+    },
+    {
+      "kind" : "text",
+      "text" : " & "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s24ReferenceWritableKeyPathC",
+      "text" : "ReferenceWritableKeyPath"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ">) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "T"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/NSManagedObjectContextIsolated\/Blocking\/subscript(dynamicMember:)-7o4hn",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "subscript(dynamicMember:)",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/nsmanagedobjectcontextisolated\/blocking\/subscript(dynamicmember:)-7o4hn"
+},
+"doc://FFCoreData/documentation/FFCoreData/NSManagedObjectContextIsolated/Blocking/subscript(dynamicMember:)-7ok2b": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "subscript"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "dynamicMember"
+    },
+    {
+      "kind" : "text",
+      "text" : " _: any "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s8SendableP",
+      "text" : "Sendable"
+    },
+    {
+      "kind" : "text",
+      "text" : " & "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s24ReferenceWritableKeyPathC",
+      "text" : "ReferenceWritableKeyPath"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ">) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "T"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/NSManagedObjectContextIsolated\/Blocking\/subscript(dynamicMember:)-7ok2b",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "subscript(dynamicMember:)",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/nsmanagedobjectcontextisolated\/blocking\/subscript(dynamicmember:)-7ok2b"
+},
+"doc://FFCoreData/documentation/FFCoreData/NSManagedObjectContextIsolated/Blocking/withMutableValue(do:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "withMutableValue"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "F"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "do"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ("
+    },
+    {
+      "kind" : "keyword",
+      "text" : "inout"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "F"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "sending "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "F"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> sending "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "T"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/NSManagedObjectContextIsolated\/Blocking\/withMutableValue(do:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "withMutableValue(do:)",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/nsmanagedobjectcontextisolated\/blocking\/withmutablevalue(do:)"
+},
+"doc://FFCoreData/documentation/FFCoreData/NSManagedObjectContextIsolated/Blocking/withValue(do:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "withValue"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "F"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "do"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "F"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "sending "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "F"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> sending "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "T"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/NSManagedObjectContextIsolated\/Blocking\/withValue(do:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "withValue(do:)",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/nsmanagedobjectcontextisolated\/blocking\/withvalue(do:)"
+},
+"doc://FFCoreData/s16SendableMetatypeP": {
+  "identifier" : "doc:\/\/FFCoreData\/s16SendableMetatypeP",
+  "title" : "Swift.SendableMetatype",
+  "type" : "unresolvable"
+},
+"doc://FFCoreData/s8SendableP": {
+  "identifier" : "doc:\/\/FFCoreData\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
+}
+}
+}

@@ -42,6 +42,10 @@
         "name" : "FFCoreData"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "NSManagedObject+FindAndOrCreate.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObject\/NSManagedObject+FindAndOrCreate.swift#L52"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Property",
     "symbolKind" : "property",

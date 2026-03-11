@@ -33,6 +33,8 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Extended-Protocols",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Swift\/Sequence"
       ],

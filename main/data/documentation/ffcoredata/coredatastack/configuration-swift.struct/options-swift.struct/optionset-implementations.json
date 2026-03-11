@@ -21,6 +21,7 @@
       }
     ],
     "role" : "collectionGroup",
+    "roleHeading" : "API Collection",
     "title" : "OptionSet Implementations"
   },
   "schemaVersion" : {
@@ -33,6 +34,7 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct\/Options-swift.struct\/init()"
@@ -40,6 +42,7 @@
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Methods",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct\/Options-swift.struct\/contains(_:)",
@@ -613,6 +616,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s10SetAlgebraP7ElementQa",
       "text" : "Element"
     },
     {
@@ -646,6 +650,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s10SetAlgebraP7ElementQa",
       "text" : "Element"
     },
     {
@@ -778,6 +783,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s10SetAlgebraP7ElementQa",
       "text" : "Element"
     },
     {
@@ -794,6 +800,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s10SetAlgebraP7ElementQa",
       "text" : "Element"
     },
     {
@@ -986,6 +993,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s10SetAlgebraP7ElementQa",
       "text" : "Element"
     },
     {
@@ -1002,6 +1010,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s10SetAlgebraP7ElementQa",
       "text" : "Element"
     },
     {

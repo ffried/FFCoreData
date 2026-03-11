@@ -38,6 +38,10 @@
         "text" : "MOCBlockObserver"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "MOCBlockObservers.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/ManagedObjectContext%20Observer\/MOCBlockObservers.swift#L25"
+    },
     "role" : "symbol",
     "roleHeading" : "Class",
     "symbolKind" : "class",
@@ -124,12 +128,16 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCBlockObserver\/init(mode:filter:queue:fireInitially:handler:)"
       ],
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCBlockObserver\/handler-swift.property",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCBlockObserver\/mode",
@@ -138,6 +146,8 @@
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Type-Aliases",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCBlockObserver\/Handler-swift.typealias"
       ],

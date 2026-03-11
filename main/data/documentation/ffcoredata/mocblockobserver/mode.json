@@ -42,6 +42,10 @@
         "name" : "FFCoreData"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "MOCBlockObservers.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/ManagedObjectContext%20Observer\/MOCBlockObservers.swift#L28"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Property",
     "symbolKind" : "property",

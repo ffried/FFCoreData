@@ -45,7 +45,7 @@
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "Combine",
-    "externalID" : "s:7Combine15TopLevelDecoderP10FFCoreDataE6decode_4from2inqd__qd__m_5InputQzSo22NSManagedObjectContextCtKAD04CoreF9DecodableRd__lF",
+    "externalID" : "s:7Combine15TopLevelDecoderP10FFCoreDataE6decode_4from2inqd__qd__m_5InputQzSo22NSManagedObjectContextCtKs8SendableRzAD04CoreF9DecodableRd__sAlIRQlF",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -97,6 +97,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7Combine15TopLevelDecoderP5InputQa",
         "text" : "Input"
       },
       {
@@ -171,6 +172,10 @@
         "unavailable" : false
       }
     ],
+    "remoteSource" : {
+      "fileName" : "CoreDataDecodable.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObject\/CoreDataDecodable.swift#L161"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Method",
     "symbolKind" : "method",
@@ -261,6 +266,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Combine15TopLevelDecoderP5InputQa",
               "text" : "Input"
             },
             {
@@ -318,6 +324,23 @@
             },
             {
               "kind" : "typeIdentifier",
+              "text" : "Self"
+            },
+            {
+              "kind" : "text",
+              "text" : " : "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:s8SendableP",
+              "text" : "Sendable"
+            },
+            {
+              "kind" : "text",
+              "text" : ", "
+            },
+            {
+              "kind" : "typeIdentifier",
               "text" : "Entity"
             },
             {
@@ -329,6 +352,32 @@
               "kind" : "typeIdentifier",
               "preciseIdentifier" : "s:10FFCoreData04CoreB9DecodableP",
               "text" : "CoreDataDecodable"
+            },
+            {
+              "kind" : "text",
+              "text" : ", "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "Self"
+            },
+            {
+              "kind" : "text",
+              "text" : "."
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Combine15TopLevelDecoderP5InputQa",
+              "text" : "Input"
+            },
+            {
+              "kind" : "text",
+              "text" : " : "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:s8SendableP",
+              "text" : "Sendable"
             }
           ]
         }
@@ -612,6 +661,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine15TopLevelDecoderP5InputQa",
       "text" : "Input"
     },
     {

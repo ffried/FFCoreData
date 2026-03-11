@@ -19,6 +19,7 @@
       }
     ],
     "role" : "collectionGroup",
+    "roleHeading" : "API Collection",
     "title" : "Error Implementations"
   },
   "schemaVersion" : {
@@ -31,6 +32,7 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Instance-Properties",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/InvalidEntityError\/localizedDescription"

@@ -61,6 +61,10 @@
         "name" : "FFCoreData"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "CoreDataManager.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/CoreDataManager\/CoreDataManager.swift#L285"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Property",
     "symbolKind" : "property",

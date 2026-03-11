@@ -3,8 +3,7 @@
     "paths" : [
       [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodable",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodable\/init(with:in:)-1fpa7"
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodable"
       ]
     ]
   },
@@ -75,6 +74,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:10FFCoreData04CoreB9DecodableP3DTOQa",
         "text" : "DTO"
       },
       {
@@ -108,6 +108,10 @@
         "name" : "FFCoreData"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "CoreDataDecodable.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObject\/CoreDataDecodable.swift#L63"
+    },
     "role" : "symbol",
     "roleHeading" : "Initializer",
     "symbolKind" : "init",
@@ -157,7 +161,9 @@
               "text" : "."
             },
             {
+              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodable\/DTO",
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10FFCoreData04CoreB9DecodableP3DTOQa",
               "text" : "DTO"
             },
             {
@@ -263,73 +269,49 @@
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/coredatadecodable"
 },
-"doc://FFCoreData/documentation/FFCoreData/CoreDataDecodable/init(with:in:)-1fpa7": {
+"doc://FFCoreData/documentation/FFCoreData/CoreDataDecodable/DTO": {
   "abstract" : [
 
   ],
-  "defaultImplementations" : 2,
   "fragments" : [
     {
+      "kind" : "keyword",
+      "text" : "associatedtype"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
       "kind" : "identifier",
-      "text" : "init"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "with"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "text" : "DTO"
+    },
+    {
+      "kind" : "text",
+      "text" : " : "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Se",
+      "text" : "Decodable"
     },
     {
       "kind" : "text",
       "text" : ", "
     },
     {
-      "kind" : "externalParam",
-      "text" : "in"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "c:objc(cs)NSManagedObjectContext",
-      "text" : "NSManagedObjectContext"
-    },
-    {
-      "kind" : "text",
-      "text" : ") "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "throws"
+      "preciseIdentifier" : "s:s8SendableP",
+      "text" : "Sendable"
     }
   ],
-  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodable\/init(with:in:)-1fpa7",
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodable\/DTO",
   "kind" : "symbol",
   "required" : true,
   "role" : "symbol",
-  "title" : "init(with:in:)",
+  "title" : "DTO",
   "type" : "topic",
-  "url" : "\/documentation\/ffcoredata\/coredatadecodable\/init(with:in:)-1fpa7"
+  "url" : "\/documentation\/ffcoredata\/coredatadecodable\/dto"
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreDataDecodable/init(with:in:)-8ocab": {
   "abstract" : [
@@ -394,6 +376,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData04CoreB9DecodableP3DTOQa",
       "text" : "DTO"
     },
     {

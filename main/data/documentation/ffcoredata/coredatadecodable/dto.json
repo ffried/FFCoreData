@@ -35,6 +35,15 @@
         "kind" : "typeIdentifier",
         "preciseIdentifier" : "s:Se",
         "text" : "Decodable"
+      },
+      {
+        "kind" : "text",
+        "text" : ", "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:s8SendableP",
+        "text" : "Sendable"
       }
     ],
     "modules" : [
@@ -42,6 +51,10 @@
         "name" : "FFCoreData"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "CoreDataDecodable.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObject\/CoreDataDecodable.swift#L28"
+    },
     "required" : true,
     "role" : "symbol",
     "roleHeading" : "Associated Type",
@@ -79,6 +92,15 @@
               "kind" : "typeIdentifier",
               "preciseIdentifier" : "s:Se",
               "text" : "Decodable"
+            },
+            {
+              "kind" : "text",
+              "text" : ", "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:s8SendableP",
+              "text" : "Sendable"
             }
           ]
         }
@@ -175,6 +197,15 @@
       "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:Se",
       "text" : "Decodable"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s8SendableP",
+      "text" : "Sendable"
     }
   ],
   "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodable\/DTO",

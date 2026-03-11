@@ -69,6 +69,10 @@
         "unavailable" : false
       }
     ],
+    "remoteSource" : {
+      "fileName" : "MOCChangePublisher.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/ManagedObjectContext%20Observer\/MOCChangePublisher.swift#L28"
+    },
     "role" : "symbol",
     "roleHeading" : "Type Alias",
     "symbolKind" : "typealias",

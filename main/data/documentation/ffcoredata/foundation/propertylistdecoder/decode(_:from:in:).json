@@ -134,6 +134,10 @@
         ]
       }
     ],
+    "remoteSource" : {
+      "fileName" : "CoreDataDecodable.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObject\/CoreDataDecodable.swift#L220"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Method",
     "symbolKind" : "method",

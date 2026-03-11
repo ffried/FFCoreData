@@ -11,8 +11,7 @@
         "doc:\/\/FFCoreData\/documentation\/FFCoreData",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSFetchedResultsController",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSFetchedResultsController\/Publisher",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSFetchedResultsController\/Publisher\/Publisher-Implementations"
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSFetchedResultsController\/Publisher"
       ]
     ]
   },
@@ -67,6 +66,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7Combine9SchedulerP0B8TimeTypeQa",
         "text" : "SchedulerTimeType"
       },
       {
@@ -75,6 +75,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:Sx6StrideQa",
         "text" : "Stride"
       },
       {
@@ -253,6 +254,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Combine9SchedulerP0B8TimeTypeQa",
               "text" : "SchedulerTimeType"
             },
             {
@@ -261,6 +263,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:Sx6StrideQa",
               "text" : "Stride"
             },
             {
@@ -653,17 +656,6 @@
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher"
 },
-"doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/Publisher-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSFetchedResultsController\/Publisher\/Publisher-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Publisher Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/publisher-implementations"
-},
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/throttle(for:scheduler:latest:)": {
   "abstract" : [
     {
@@ -714,6 +706,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9SchedulerP0B8TimeTypeQa",
       "text" : "SchedulerTimeType"
     },
     {
@@ -722,6 +715,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sx6StrideQa",
       "text" : "Stride"
     },
     {

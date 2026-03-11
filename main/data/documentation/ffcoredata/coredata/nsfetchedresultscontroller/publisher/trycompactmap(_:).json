@@ -11,8 +11,7 @@
         "doc:\/\/FFCoreData\/documentation\/FFCoreData",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSFetchedResultsController",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSFetchedResultsController\/Publisher",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSFetchedResultsController\/Publisher\/Publisher-Implementations"
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSFetchedResultsController\/Publisher"
       ]
     ]
   },
@@ -59,6 +58,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
         "text" : "Output"
       },
       {
@@ -211,12 +211,12 @@
               "text" : ": "
             },
             {
-              "kind" : "keyword",
-              "text" : "@escaping"
+              "kind" : "attribute",
+              "text" : "@escaping "
             },
             {
               "kind" : "text",
-              "text" : " ("
+              "text" : "("
             },
             {
               "kind" : "typeIdentifier",
@@ -228,6 +228,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
               "text" : "Output"
             },
             {
@@ -670,17 +671,6 @@
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/failure"
 },
-"doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/Publisher-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSFetchedResultsController\/Publisher\/Publisher-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Publisher Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/publisher-implementations"
-},
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/tryCompactMap(_:)": {
   "abstract" : [
     {
@@ -723,6 +713,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {

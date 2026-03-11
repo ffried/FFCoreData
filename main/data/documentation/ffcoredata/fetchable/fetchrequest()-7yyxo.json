@@ -3,8 +3,7 @@
     "paths" : [
       [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/fetchRequest()-4bd8t"
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable"
       ]
     ]
   },
@@ -64,6 +63,10 @@
         "name" : "FFCoreData"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "NSManagedObject+FindAndOrCreate.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObject\/NSManagedObject+FindAndOrCreate.swift#L80"
+    },
     "role" : "symbol",
     "roleHeading" : "Type Method",
     "symbolKind" : "method",
@@ -190,62 +193,6 @@
   "title" : "Fetchable",
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/fetchable"
-},
-"doc://FFCoreData/documentation/FFCoreData/Fetchable/fetchRequest()-4bd8t": {
-  "abstract" : [
-
-  ],
-  "defaultImplementations" : 1,
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "fetchRequest"
-    },
-    {
-      "kind" : "text",
-      "text" : "() -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "c:objc(cs)NSFetchRequest",
-      "text" : "NSFetchRequest"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : ">"
-    }
-  ],
-  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/fetchRequest()-4bd8t",
-  "kind" : "symbol",
-  "required" : true,
-  "role" : "symbol",
-  "title" : "fetchRequest()",
-  "type" : "topic",
-  "url" : "\/documentation\/ffcoredata\/fetchable\/fetchrequest()-4bd8t"
 },
 "doc://FFCoreData/documentation/FFCoreData/Fetchable/fetchRequest()-7yyxo": {
   "abstract" : [

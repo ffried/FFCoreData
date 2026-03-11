@@ -59,6 +59,10 @@
         "name" : "FFCoreData"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "MOCObjectsObserver.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/ManagedObjectContext%20Observer\/MOCObjectsObserver.swift#L45"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Method",
     "symbolKind" : "method",

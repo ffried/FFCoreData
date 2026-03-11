@@ -9,8 +9,7 @@
     "paths" : [
       [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/Publisher-Implementations"
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher"
       ]
     ]
   },
@@ -65,6 +64,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7Combine9SchedulerP0B8TimeTypeQa",
         "text" : "SchedulerTimeType"
       },
       {
@@ -73,6 +73,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:Sx6StrideQa",
         "text" : "Stride"
       },
       {
@@ -251,6 +252,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Combine9SchedulerP0B8TimeTypeQa",
               "text" : "SchedulerTimeType"
             },
             {
@@ -259,6 +261,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:Sx6StrideQa",
               "text" : "Stride"
             },
             {
@@ -574,17 +577,6 @@
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/mocchangepublisher"
 },
-"doc://FFCoreData/documentation/FFCoreData/MOCChangePublisher/Publisher-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/Publisher-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Publisher Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/ffcoredata\/mocchangepublisher\/publisher-implementations"
-},
 "doc://FFCoreData/documentation/FFCoreData/MOCChangePublisher/throttle(for:scheduler:latest:)": {
   "abstract" : [
     {
@@ -635,6 +627,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9SchedulerP0B8TimeTypeQa",
       "text" : "SchedulerTimeType"
     },
     {
@@ -643,6 +636,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sx6StrideQa",
       "text" : "Stride"
     },
     {

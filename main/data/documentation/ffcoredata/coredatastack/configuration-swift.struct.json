@@ -40,6 +40,10 @@
         "text" : "Configuration"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "CoreDataManager.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/CoreDataManager\/CoreDataManager.swift#L258"
+    },
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
@@ -74,6 +78,17 @@
       "kind" : "declarations"
     }
   ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/FFCoreData\/s8SendableP",
+        "doc:\/\/FFCoreData\/s16SendableMetatypeP"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
   "schemaVersion" : {
     "major" : 0,
     "minor" : 3,
@@ -84,12 +99,16 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Structures",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct\/Options-swift.struct"
       ],
       "title" : "Structures"
     },
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct\/init(bundle:applicationSupportSubfolder:storePath:modelName:sqliteName:options:)",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct\/init(modelURL:applicationSupportSubfolder:storePath:sqliteName:options:)"
@@ -97,6 +116,8 @@
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct\/applicationSupportSubfolderName",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct\/clearDataStoreOnSetupFailure",
@@ -110,6 +131,8 @@
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Type-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct\/appDataDirectoryURL(withSubfolderName:)"
       ],
@@ -847,6 +870,16 @@
   "title" : "storePath",
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/storepath"
+},
+"doc://FFCoreData/s16SendableMetatypeP": {
+  "identifier" : "doc:\/\/FFCoreData\/s16SendableMetatypeP",
+  "title" : "Swift.SendableMetatype",
+  "type" : "unresolvable"
+},
+"doc://FFCoreData/s8SendableP": {
+  "identifier" : "doc:\/\/FFCoreData\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
 }
 }
 }

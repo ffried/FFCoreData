@@ -49,6 +49,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:10FFCoreData04CoreB9DecodableP3DTOQa",
         "text" : "DTO"
       },
       {
@@ -65,6 +66,10 @@
         "name" : "FFCoreData"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "CoreDataDecodable.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObject\/CoreDataDecodable.swift#L35"
+    },
     "required" : true,
     "role" : "symbol",
     "roleHeading" : "Instance Method",
@@ -131,7 +136,9 @@
               "text" : "."
             },
             {
+              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodable\/DTO",
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10FFCoreData04CoreB9DecodableP3DTOQa",
               "text" : "DTO"
             },
             {
@@ -212,6 +219,50 @@
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/coredatadecodable"
 },
+"doc://FFCoreData/documentation/FFCoreData/CoreDataDecodable/DTO": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "associatedtype"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "DTO"
+    },
+    {
+      "kind" : "text",
+      "text" : " : "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Se",
+      "text" : "Decodable"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s8SendableP",
+      "text" : "Sendable"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodable\/DTO",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "DTO",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/coredatadecodable\/dto"
+},
 "doc://FFCoreData/documentation/FFCoreData/CoreDataDecodable/update(from:)": {
   "abstract" : [
 
@@ -251,6 +302,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData04CoreB9DecodableP3DTOQa",
       "text" : "DTO"
     },
     {

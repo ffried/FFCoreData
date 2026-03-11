@@ -38,6 +38,10 @@
         "text" : "Creatable"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "NSManagedObject+FindAndOrCreate.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObject\/NSManagedObject+FindAndOrCreate.swift#L42"
+    },
     "role" : "symbol",
     "roleHeading" : "Protocol",
     "symbolKind" : "protocol",
@@ -103,9 +107,11 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Type-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Creatable\/create(in:)",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Creatable\/create(in:applying:)-11cx9",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Creatable\/create(in:applying:)",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Creatable\/create(in:setting:)"
       ],
       "title" : "Type Methods"
@@ -233,7 +239,7 @@
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/creatable\/create(in:)"
 },
-"doc://FFCoreData/documentation/FFCoreData/Creatable/create(in:applying:)-11cx9": {
+"doc://FFCoreData/documentation/FFCoreData/Creatable/create(in:applying:)": {
   "abstract" : [
 
   ],
@@ -310,13 +316,13 @@
       "text" : "Self"
     }
   ],
-  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Creatable\/create(in:applying:)-11cx9",
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Creatable\/create(in:applying:)",
   "kind" : "symbol",
   "required" : true,
   "role" : "symbol",
   "title" : "create(in:applying:)",
   "type" : "topic",
-  "url" : "\/documentation\/ffcoredata\/creatable\/create(in:applying:)-11cx9"
+  "url" : "\/documentation\/ffcoredata\/creatable\/create(in:applying:)"
 },
 "doc://FFCoreData/documentation/FFCoreData/Creatable/create(in:setting:)": {
   "abstract" : [

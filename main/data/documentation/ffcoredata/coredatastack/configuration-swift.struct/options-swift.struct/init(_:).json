@@ -11,8 +11,7 @@
         "doc:\/\/FFCoreData\/documentation\/FFCoreData",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct\/Options-swift.struct",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct\/Options-swift.struct\/SetAlgebra-Implementations"
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct\/Options-swift.struct"
       ]
     ]
   },
@@ -149,6 +148,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:s10SetAlgebraP7ElementQa",
               "text" : "Element"
             },
             {
@@ -165,6 +165,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:ST7ElementQa",
               "text" : "Element"
             }
           ]
@@ -354,17 +355,6 @@
   "title" : "CoreDataStack.Configuration.Options",
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/options-swift.struct"
-},
-"doc://FFCoreData/documentation/FFCoreData/CoreDataStack/Configuration-swift.struct/Options-swift.struct/SetAlgebra-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct\/Options-swift.struct\/SetAlgebra-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "SetAlgebra Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/options-swift.struct\/setalgebra-implementations"
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreDataStack/Configuration-swift.struct/Options-swift.struct/init(_:)": {
   "abstract" : [

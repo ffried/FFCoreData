@@ -19,6 +19,7 @@
       }
     ],
     "role" : "collectionGroup",
+    "roleHeading" : "API Collection",
     "title" : "AsyncSequence Implementations"
   },
   "schemaVersion" : {
@@ -31,6 +32,7 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Instance-Methods",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/allSatisfy(_:)",
@@ -41,8 +43,10 @@
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/dropFirst(_:)",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/filter(_:)",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/first(where:)",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/flatMap(_:)-17shr",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/flatMap(_:)-2t6zh",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/flatMap(_:)-7c4yq",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/flatMap(_:)-7nccj",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/flatMap(_:)-9hdqm",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/map(_:)-7tw5a",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/map(_:)-8tyy4",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/max(by:)",
@@ -153,6 +157,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sci7ElementQa",
       "text" : "Element"
     },
     {
@@ -271,6 +276,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sci7ElementQa",
       "text" : "Element"
     },
     {
@@ -376,6 +382,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sci7ElementQa",
       "text" : "Element"
     },
     {
@@ -489,6 +496,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sci7ElementQa",
       "text" : "Element"
     },
     {
@@ -599,6 +607,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sci7ElementQa",
       "text" : "Element"
     },
     {
@@ -755,6 +764,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sci7ElementQa",
       "text" : "Element"
     },
     {
@@ -853,6 +863,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sci7ElementQa",
       "text" : "Element"
     },
     {
@@ -910,6 +921,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sci7ElementQa",
       "text" : "Element"
     },
     {
@@ -924,7 +936,7 @@
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/mocchanges\/first(where:)"
 },
-"doc://FFCoreData/documentation/FFCoreData/MOCChanges/flatMap(_:)-17shr": {
+"doc://FFCoreData/documentation/FFCoreData/MOCChanges/flatMap(_:)-2t6zh": {
   "abstract" : [
     {
       "text" : "Creates an asynchronous sequence that concatenates the results of calling",
@@ -974,6 +986,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sci7ElementQa",
       "text" : "Element"
     },
     {
@@ -1022,12 +1035,12 @@
       "text" : ">"
     }
   ],
-  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/flatMap(_:)-17shr",
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/flatMap(_:)-2t6zh",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "flatMap(_:)",
   "type" : "topic",
-  "url" : "\/documentation\/ffcoredata\/mocchanges\/flatmap(_:)-17shr"
+  "url" : "\/documentation\/ffcoredata\/mocchanges\/flatmap(_:)-2t6zh"
 },
 "doc://FFCoreData/documentation/FFCoreData/MOCChanges/flatMap(_:)-7c4yq": {
   "abstract" : [
@@ -1087,6 +1100,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sci7ElementQa",
       "text" : "Element"
     },
     {
@@ -1150,6 +1164,218 @@
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/mocchanges\/flatmap(_:)-7c4yq"
 },
+"doc://FFCoreData/documentation/FFCoreData/MOCChanges/flatMap(_:)-7nccj": {
+  "abstract" : [
+    {
+      "text" : "Creates an asynchronous sequence that concatenates the results of calling",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "the given transformation with each element of this sequence.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "flatMap"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "SegmentOfResult"
+    },
+    {
+      "kind" : "text",
+      "text" : ">(("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sci7ElementQa",
+      "text" : "Element"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "async"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "SegmentOfResult"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12_Concurrency20AsyncFlatMapSequenceV",
+      "text" : "AsyncFlatMapSequence"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "SegmentOfResult"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/flatMap(_:)-7nccj",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "flatMap(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/mocchanges\/flatmap(_:)-7nccj"
+},
+"doc://FFCoreData/documentation/FFCoreData/MOCChanges/flatMap(_:)-9hdqm": {
+  "abstract" : [
+    {
+      "text" : "Creates an asynchronous sequence that concatenates the results of calling",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "the given transformation with each element of this sequence.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "flatMap"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "SegmentOfResult"
+    },
+    {
+      "kind" : "text",
+      "text" : ">(("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sci7ElementQa",
+      "text" : "Element"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "async"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "SegmentOfResult"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12_Concurrency20AsyncFlatMapSequenceV",
+      "text" : "AsyncFlatMapSequence"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "SegmentOfResult"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/flatMap(_:)-9hdqm",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "flatMap(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/mocchanges\/flatmap(_:)-9hdqm"
+},
 "doc://FFCoreData/documentation/FFCoreData/MOCChanges/map(_:)-7tw5a": {
   "abstract" : [
     {
@@ -1200,6 +1426,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sci7ElementQa",
       "text" : "Element"
     },
     {
@@ -1305,6 +1532,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sci7ElementQa",
       "text" : "Element"
     },
     {
@@ -1418,6 +1646,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sci7ElementQa",
       "text" : "Element"
     },
     {
@@ -1434,6 +1663,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sci7ElementQa",
       "text" : "Element"
     },
     {
@@ -1491,6 +1721,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sci7ElementQa",
       "text" : "Element"
     },
     {
@@ -1555,6 +1786,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sci7ElementQa",
       "text" : "Element"
     },
     {
@@ -1571,6 +1803,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sci7ElementQa",
       "text" : "Element"
     },
     {
@@ -1628,6 +1861,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sci7ElementQa",
       "text" : "Element"
     },
     {
@@ -1758,6 +1992,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sci7ElementQa",
       "text" : "Element"
     },
     {
@@ -1880,6 +2115,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sci7ElementQa",
       "text" : "Element"
     },
     {
@@ -2020,6 +2256,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sci7ElementQa",
       "text" : "Element"
     },
     {

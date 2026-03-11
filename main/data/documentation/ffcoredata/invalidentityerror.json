@@ -38,6 +38,10 @@
         "text" : "InvalidEntityError"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "NSManagedObject+FindAndOrCreate.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObject\/NSManagedObject+FindAndOrCreate.swift#L48"
+    },
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
@@ -78,7 +82,8 @@
         "doc:\/\/FFCoreData\/s23CustomStringConvertibleP",
         "doc:\/\/FFCoreData\/SQ",
         "doc:\/\/FFCoreData\/s5ErrorP",
-        "doc:\/\/FFCoreData\/s8SendableP"
+        "doc:\/\/FFCoreData\/s8SendableP",
+        "doc:\/\/FFCoreData\/s16SendableMetatypeP"
       ],
       "kind" : "relationships",
       "title" : "Conforms To",
@@ -95,18 +100,23 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Operators",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/InvalidEntityError\/==(_:_:)"
       ],
       "title" : "Operators"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/InvalidEntityError\/description"
       ],
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Default-Implementations",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/InvalidEntityError\/Equatable-Implementations",
@@ -295,6 +305,11 @@
   "title" : "description",
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/invalidentityerror\/description"
+},
+"doc://FFCoreData/s16SendableMetatypeP": {
+  "identifier" : "doc:\/\/FFCoreData\/s16SendableMetatypeP",
+  "title" : "Swift.SendableMetatype",
+  "type" : "unresolvable"
 },
 "doc://FFCoreData/s23CustomStringConvertibleP": {
   "identifier" : "doc:\/\/FFCoreData\/s23CustomStringConvertibleP",

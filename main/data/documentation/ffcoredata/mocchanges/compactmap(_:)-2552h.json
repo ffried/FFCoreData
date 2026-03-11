@@ -25,8 +25,7 @@
     "paths" : [
       [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/AsyncSequence-Implementations"
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges"
       ]
     ]
   },
@@ -73,6 +72,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:Sci7ElementQa",
         "text" : "Element"
       },
       {
@@ -224,12 +224,12 @@
               "text" : ": "
             },
             {
-              "kind" : "keyword",
-              "text" : "@escaping"
+              "kind" : "attribute",
+              "text" : "@escaping "
             },
             {
               "kind" : "text",
-              "text" : " ("
+              "text" : "("
             },
             {
               "kind" : "typeIdentifier",
@@ -241,6 +241,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:Sci7ElementQa",
               "text" : "Element"
             },
             {
@@ -645,17 +646,6 @@
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/mocchanges"
 },
-"doc://FFCoreData/documentation/FFCoreData/MOCChanges/AsyncSequence-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/AsyncSequence-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "AsyncSequence Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/ffcoredata\/mocchanges\/asyncsequence-implementations"
-},
 "doc://FFCoreData/documentation/FFCoreData/MOCChanges/compactMap(_:)-2552h": {
   "abstract" : [
     {
@@ -714,6 +704,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sci7ElementQa",
       "text" : "Element"
     },
     {

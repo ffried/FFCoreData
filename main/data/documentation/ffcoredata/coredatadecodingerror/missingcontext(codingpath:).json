@@ -52,7 +52,7 @@
       },
       {
         "kind" : "text",
-        "text" : "<"
+        "text" : "<any "
       },
       {
         "kind" : "typeIdentifier",
@@ -69,6 +69,10 @@
         "name" : "FFCoreData"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "CoreDataDecodable.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObject\/CoreDataDecodable.swift#L72"
+    },
     "role" : "symbol",
     "roleHeading" : "Case",
     "symbolKind" : "case",
@@ -116,7 +120,7 @@
             },
             {
               "kind" : "text",
-              "text" : "<"
+              "text" : "<any "
             },
             {
               "kind" : "typeIdentifier",
@@ -239,7 +243,7 @@
     },
     {
       "kind" : "text",
-      "text" : "<"
+      "text" : "<any "
     },
     {
       "kind" : "typeIdentifier",

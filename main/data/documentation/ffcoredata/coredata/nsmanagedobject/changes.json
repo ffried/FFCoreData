@@ -90,6 +90,10 @@
         "unavailable" : false
       }
     ],
+    "remoteSource" : {
+      "fileName" : "MOCObjectsObserver.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/ManagedObjectContext%20Observer\/MOCObjectsObserver.swift#L83"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Property",
     "symbolKind" : "property",

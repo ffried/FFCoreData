@@ -38,15 +38,7 @@
       },
       {
         "kind" : "text",
-        "text" : "<"
-      },
-      {
-        "kind" : "genericParameter",
-        "text" : "SortExpressions"
-      },
-      {
-        "kind" : "text",
-        "text" : ">("
+        "text" : "("
       },
       {
         "kind" : "externalParam",
@@ -99,12 +91,38 @@
         "text" : ": "
       },
       {
-        "kind" : "typeIdentifier",
-        "text" : "SortExpressions"
+        "kind" : "keyword",
+        "text" : "some"
       },
       {
         "kind" : "text",
-        "text" : ") "
+        "text" : " "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:Sl",
+        "text" : "Collection"
+      },
+      {
+        "kind" : "text",
+        "text" : "<"
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:10FFCoreData23FetchableSortExpressionV",
+        "text" : "FetchableSortExpression"
+      },
+      {
+        "kind" : "text",
+        "text" : "<"
+      },
+      {
+        "kind" : "typeIdentifier",
+        "text" : "Self"
+      },
+      {
+        "kind" : "text",
+        "text" : ">>) "
       },
       {
         "kind" : "keyword",
@@ -137,6 +155,10 @@
         "name" : "FFCoreData"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "NSManagedObject+FindAndOrCreate.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObject\/NSManagedObject+FindAndOrCreate.swift#L184"
+    },
     "role" : "symbol",
     "roleHeading" : "Type Method",
     "symbolKind" : "method",
@@ -175,15 +197,7 @@
             },
             {
               "kind" : "text",
-              "text" : "<"
-            },
-            {
-              "kind" : "genericParameter",
-              "text" : "SortExpressions"
-            },
-            {
-              "kind" : "text",
-              "text" : ">("
+              "text" : "("
             },
             {
               "kind" : "externalParam",
@@ -261,12 +275,39 @@
               "text" : ": "
             },
             {
-              "kind" : "typeIdentifier",
-              "text" : "SortExpressions"
+              "kind" : "keyword",
+              "text" : "some"
             },
             {
               "kind" : "text",
-              "text" : ") "
+              "text" : " "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:Sl",
+              "text" : "Collection"
+            },
+            {
+              "kind" : "text",
+              "text" : "<"
+            },
+            {
+              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/FetchableSortExpression",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10FFCoreData23FetchableSortExpressionV",
+              "text" : "FetchableSortExpression"
+            },
+            {
+              "kind" : "text",
+              "text" : "<"
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "Self"
+            },
+            {
+              "kind" : "text",
+              "text" : ">>) "
             },
             {
               "kind" : "keyword",
@@ -280,65 +321,6 @@
               "kind" : "typeIdentifier",
               "preciseIdentifier" : "s:Sa",
               "text" : "Array"
-            },
-            {
-              "kind" : "text",
-              "text" : "<"
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Self"
-            },
-            {
-              "kind" : "text",
-              "text" : "> "
-            },
-            {
-              "kind" : "keyword",
-              "text" : "where"
-            },
-            {
-              "kind" : "text",
-              "text" : " "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "SortExpressions"
-            },
-            {
-              "kind" : "text",
-              "text" : " : "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:Sl",
-              "text" : "Collection"
-            },
-            {
-              "kind" : "text",
-              "text" : ", "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "SortExpressions"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Element"
-            },
-            {
-              "kind" : "text",
-              "text" : " == "
-            },
-            {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/FetchableSortExpression",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10FFCoreData23FetchableSortExpressionV",
-              "text" : "FetchableSortExpression"
             },
             {
               "kind" : "text",
@@ -449,15 +431,7 @@
     },
     {
       "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "genericParameter",
-      "text" : "SortExpressions"
-    },
-    {
-      "kind" : "text",
-      "text" : ">("
+      "text" : "("
     },
     {
       "kind" : "externalParam",
@@ -510,12 +484,38 @@
       "text" : ": "
     },
     {
-      "kind" : "typeIdentifier",
-      "text" : "SortExpressions"
+      "kind" : "keyword",
+      "text" : "some"
     },
     {
       "kind" : "text",
-      "text" : ") "
+      "text" : " "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sl",
+      "text" : "Collection"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData23FetchableSortExpressionV",
+      "text" : "FetchableSortExpression"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : ">>) "
     },
     {
       "kind" : "keyword",

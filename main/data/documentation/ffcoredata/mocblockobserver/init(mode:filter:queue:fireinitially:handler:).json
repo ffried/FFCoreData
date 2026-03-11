@@ -130,6 +130,10 @@
         "name" : "FFCoreData"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "MOCBlockObservers.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/ManagedObjectContext%20Observer\/MOCBlockObservers.swift#L36"
+    },
     "role" : "symbol",
     "roleHeading" : "Initializer",
     "symbolKind" : "init",
@@ -231,12 +235,8 @@
               "text" : ": "
             },
             {
-              "kind" : "keyword",
-              "text" : "@escaping"
-            },
-            {
-              "kind" : "text",
-              "text" : " "
+              "kind" : "attribute",
+              "text" : "@escaping "
             },
             {
               "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCBlockObserver",

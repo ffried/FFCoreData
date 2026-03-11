@@ -106,6 +106,10 @@
         "unavailable" : false
       }
     ],
+    "remoteSource" : {
+      "fileName" : "NSFetchedResultsPublisher.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSFetchedResultsController\/NSFetchedResultsPublisher.swift#L28"
+    },
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
@@ -160,12 +164,16 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSFetchedResultsController\/Publisher\/init(fetchRequest:context:)"
       ],
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSFetchedResultsController\/Publisher\/context",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSFetchedResultsController\/Publisher\/fetchRequest"
@@ -173,12 +181,16 @@
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSFetchedResultsController\/Publisher\/receive(subscriber:)"
       ],
       "title" : "Instance Methods"
     },
     {
+      "anchor" : "Type-Aliases",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSFetchedResultsController\/Publisher\/Failure",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSFetchedResultsController\/Publisher\/Output"
@@ -186,6 +198,7 @@
       "title" : "Type Aliases"
     },
     {
+      "anchor" : "Default-Implementations",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSFetchedResultsController\/Publisher\/Publisher-Implementations"

@@ -91,6 +91,10 @@
         "unavailable" : false
       }
     ],
+    "remoteSource" : {
+      "fileName" : "MOCChangePublisher.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/ManagedObjectContext%20Observer\/MOCChangePublisher.swift#L48"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Method",
     "symbolKind" : "method",
@@ -182,6 +186,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Combine10SubscriberP7FailureQa",
               "text" : "Failure"
             },
             {
@@ -207,6 +212,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Combine10SubscriberP5InputQa",
               "text" : "Input"
             },
             {

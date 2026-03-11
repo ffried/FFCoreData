@@ -89,6 +89,8 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Foundation\/PropertyListDecoder\/decode(_:from:)",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Foundation\/PropertyListDecoder\/decode(_:from:in:)"

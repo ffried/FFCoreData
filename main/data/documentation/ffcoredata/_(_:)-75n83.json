@@ -98,6 +98,10 @@
         "name" : "FFCoreData"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "FetchableSortExpression.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObject\/FetchableSortExpression.swift#L46"
+    },
     "role" : "symbol",
     "roleHeading" : "Operator",
     "symbolKind" : "op",

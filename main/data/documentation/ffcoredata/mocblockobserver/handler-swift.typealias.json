@@ -39,6 +39,10 @@
         "text" : "Handler"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "MOCBlockObservers.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/ManagedObjectContext%20Observer\/MOCBlockObservers.swift#L26"
+    },
     "role" : "symbol",
     "roleHeading" : "Type Alias",
     "symbolKind" : "typealias",

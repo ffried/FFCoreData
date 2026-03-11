@@ -68,6 +68,10 @@
         "unavailable" : false
       }
     ],
+    "remoteSource" : {
+      "fileName" : "MOCChangePublisher.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/ManagedObjectContext%20Observer\/MOCChangePublisher.swift#L27"
+    },
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
@@ -156,12 +160,16 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/init(mode:filter:)"
       ],
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/filter",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/mode"
@@ -169,12 +177,16 @@
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/receive(subscriber:)"
       ],
       "title" : "Instance Methods"
     },
     {
+      "anchor" : "Type-Aliases",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/Failure",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/Output"
@@ -182,6 +194,7 @@
       "title" : "Type Aliases"
     },
     {
+      "anchor" : "Default-Implementations",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/Publisher-Implementations"

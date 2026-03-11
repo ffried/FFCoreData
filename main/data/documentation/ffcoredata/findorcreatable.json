@@ -38,6 +38,10 @@
         "text" : "FindOrCreatable"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "NSManagedObject+FindAndOrCreate.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObject\/NSManagedObject+FindAndOrCreate.swift#L46"
+    },
     "role" : "symbol",
     "roleHeading" : "Type Alias",
     "symbolKind" : "typealias",

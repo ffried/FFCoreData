@@ -38,6 +38,10 @@
         "text" : "KeyObjectDictionary"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "KeyObjectDictionary.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObject\/KeyObjectDictionary.swift#L31"
+    },
     "role" : "symbol",
     "roleHeading" : "Type Alias",
     "symbolKind" : "typealias",

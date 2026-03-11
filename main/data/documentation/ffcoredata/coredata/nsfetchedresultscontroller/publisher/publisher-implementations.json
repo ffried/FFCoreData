@@ -21,6 +21,7 @@
       }
     ],
     "role" : "collectionGroup",
+    "roleHeading" : "API Collection",
     "title" : "Publisher Implementations"
   },
   "schemaVersion" : {
@@ -33,6 +34,7 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Instance-Properties",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSFetchedResultsController\/Publisher\/values"
@@ -40,6 +42,7 @@
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Instance-Methods",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSFetchedResultsController\/Publisher\/allSatisfy(_:)",
@@ -309,6 +312,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -392,6 +396,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -452,6 +457,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -468,6 +474,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP7FailureQa",
       "text" : "Failure"
     },
     {
@@ -613,7 +620,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": (("
+      "text" : ": ((any "
     },
     {
       "kind" : "typeIdentifier",
@@ -651,6 +658,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -702,6 +710,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP7FailureQa",
       "text" : "Failure"
     },
     {
@@ -912,6 +921,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP7FailureQa",
       "text" : "Failure"
     },
     {
@@ -994,6 +1004,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP7FailureQa",
       "text" : "Failure"
     },
     {
@@ -1251,6 +1262,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9SchedulerP0B7OptionsQa",
       "text" : "SchedulerOptions"
     },
     {
@@ -1545,6 +1557,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -1561,6 +1574,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -1717,6 +1731,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -1733,6 +1748,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -1749,6 +1765,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -2059,6 +2076,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -2075,6 +2093,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -2091,6 +2110,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -2107,6 +2127,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -2247,6 +2268,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -2369,6 +2391,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -2451,6 +2474,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -2608,6 +2632,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9SchedulerP0B8TimeTypeQa",
       "text" : "SchedulerTimeType"
     },
     {
@@ -2616,6 +2641,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sx6StrideQa",
       "text" : "Stride"
     },
     {
@@ -2656,6 +2682,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9SchedulerP0B7OptionsQa",
       "text" : "SchedulerOptions"
     },
     {
@@ -2876,6 +2903,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9SchedulerP0B8TimeTypeQa",
       "text" : "SchedulerTimeType"
     },
     {
@@ -2884,6 +2912,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sx6StrideQa",
       "text" : "Stride"
     },
     {
@@ -2908,6 +2937,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9SchedulerP0B8TimeTypeQa",
       "text" : "SchedulerTimeType"
     },
     {
@@ -2916,6 +2946,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sx6StrideQa",
       "text" : "Stride"
     },
     {
@@ -2956,6 +2987,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9SchedulerP0B7OptionsQa",
       "text" : "SchedulerOptions"
     },
     {
@@ -3136,6 +3168,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -3417,6 +3450,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -3433,6 +3467,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP7FailureQa",
       "text" : "Failure"
     },
     {
@@ -3481,6 +3516,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -3630,6 +3666,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -3747,6 +3784,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -3815,6 +3853,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP7FailureQa",
       "text" : "Failure"
     },
     {
@@ -3913,6 +3952,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -3999,7 +4039,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": (("
+      "text" : ": ((any "
     },
     {
       "kind" : "typeIdentifier",
@@ -4037,6 +4077,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -4088,6 +4129,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP7FailureQa",
       "text" : "Failure"
     },
     {
@@ -4347,6 +4389,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -4447,6 +4490,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -4545,6 +4589,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -4660,6 +4705,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -4693,6 +4739,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -4824,6 +4871,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -4857,6 +4905,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -4890,6 +4939,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -5004,6 +5054,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP7FailureQa",
       "text" : "Failure"
     },
     {
@@ -5102,6 +5153,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -5118,6 +5170,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -5233,6 +5286,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9SchedulerP0B7OptionsQa",
       "text" : "SchedulerOptions"
     },
     {
@@ -6441,6 +6495,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -6457,6 +6512,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -7034,6 +7090,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -7117,6 +7174,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -7169,6 +7227,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -7185,6 +7244,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP7FailureQa",
       "text" : "Failure"
     },
     {
@@ -7246,7 +7306,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": ("
+      "text" : ": (any "
     },
     {
       "kind" : "typeIdentifier",
@@ -7357,6 +7417,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9SchedulerP0B7OptionsQa",
       "text" : "SchedulerOptions"
     },
     {
@@ -7463,6 +7524,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -7651,6 +7713,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -7667,6 +7730,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -7758,6 +7822,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -7840,6 +7905,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -8103,6 +8169,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -8247,7 +8314,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": (("
+      "text" : ": ("
     },
     {
       "kind" : "typeIdentifier",
@@ -8277,6 +8344,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP7FailureQa",
       "text" : "Failure"
     },
     {
@@ -8290,7 +8358,7 @@
     },
     {
       "kind" : "text",
-      "text" : "), "
+      "text" : ", "
     },
     {
       "kind" : "externalParam",
@@ -8298,7 +8366,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": (("
+      "text" : ": ("
     },
     {
       "kind" : "typeIdentifier",
@@ -8310,6 +8378,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -8323,7 +8392,7 @@
     },
     {
       "kind" : "text",
-      "text" : ")) -> "
+      "text" : ") -> "
     },
     {
       "kind" : "typeIdentifier",
@@ -8505,6 +8574,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9SchedulerP0B7OptionsQa",
       "text" : "SchedulerOptions"
     },
     {
@@ -8603,6 +8673,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9SchedulerP0B8TimeTypeQa",
       "text" : "SchedulerTimeType"
     },
     {
@@ -8611,6 +8682,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sx6StrideQa",
       "text" : "Stride"
     },
     {
@@ -8734,6 +8806,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9SchedulerP0B8TimeTypeQa",
       "text" : "SchedulerTimeType"
     },
     {
@@ -8742,6 +8815,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sx6StrideQa",
       "text" : "Stride"
     },
     {
@@ -8782,6 +8856,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9SchedulerP0B7OptionsQa",
       "text" : "SchedulerOptions"
     },
     {
@@ -8806,6 +8881,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP7FailureQa",
       "text" : "Failure"
     },
     {
@@ -8888,6 +8964,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -8987,6 +9064,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP7FailureQa",
       "text" : "Failure"
     },
     {
@@ -9093,6 +9171,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -9199,6 +9278,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -9298,6 +9378,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -9389,6 +9470,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -9488,6 +9570,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -9587,6 +9670,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -9686,6 +9770,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -9792,6 +9877,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -9808,6 +9894,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -9907,6 +9994,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -9923,6 +10011,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -10022,6 +10111,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -10137,6 +10227,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -10243,6 +10334,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -10259,6 +10351,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -10374,6 +10467,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -10627,6 +10721,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -10643,6 +10738,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -10905,6 +11001,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -10921,6 +11018,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -10937,6 +11035,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -11247,6 +11346,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -11263,6 +11363,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -11279,6 +11380,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -11295,6 +11397,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {

@@ -86,6 +86,10 @@
         "unavailable" : false
       }
     ],
+    "remoteSource" : {
+      "fileName" : "NSFetchedResultsPublisher.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSFetchedResultsController\/NSFetchedResultsPublisher.swift#L34"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Property",
     "symbolKind" : "property",

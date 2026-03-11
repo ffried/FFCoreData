@@ -1,4 +1,15 @@
 {
+  "deprecationSummary" : [
+    {
+      "inlineContent" : [
+        {
+          "text" : "Use NSManagedObjectContextIsolated instead",
+          "type" : "text"
+        }
+      ],
+      "type" : "paragraph"
+    }
+  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -70,7 +81,16 @@
       },
       {
         "kind" : "text",
-        "text" : " _: "
+        "text" : " _: any "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:s8SendableP",
+        "text" : "Sendable"
+      },
+      {
+        "kind" : "text",
+        "text" : " & "
       },
       {
         "kind" : "typeIdentifier",
@@ -107,6 +127,18 @@
         "name" : "FFCoreData"
       }
     ],
+    "platforms" : [
+      {
+        "beta" : false,
+        "deprecated" : true,
+        "message" : "Use NSManagedObjectContextIsolated instead",
+        "unavailable" : false
+      }
+    ],
+    "remoteSource" : {
+      "fileName" : "NSManagedObject+FindAndOrCreate.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObject\/NSManagedObject+FindAndOrCreate.swift#L325"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Subscript",
     "symbolKind" : "subscript",
@@ -123,6 +155,14 @@
             "macOS"
           ],
           "tokens" : [
+            {
+              "kind" : "attribute",
+              "text" : "@preconcurrency"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
             {
               "kind" : "keyword",
               "text" : "subscript"
@@ -153,7 +193,16 @@
             },
             {
               "kind" : "text",
-              "text" : ": "
+              "text" : ": any "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:s8SendableP",
+              "text" : "Sendable"
+            },
+            {
+              "kind" : "text",
+              "text" : " & "
             },
             {
               "kind" : "typeIdentifier",
@@ -302,6 +351,7 @@
       }
     ]
   },
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -325,7 +375,16 @@
     },
     {
       "kind" : "text",
-      "text" : " _: "
+      "text" : " _: any "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s8SendableP",
+      "text" : "Sendable"
+    },
+    {
+      "kind" : "text",
+      "text" : " & "
     },
     {
       "kind" : "typeIdentifier",

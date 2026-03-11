@@ -89,12 +89,16 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSManagedObject\/changes"
       ],
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSManagedObject\/createMOCObjectObserver(fireInitially:handler:)",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSManagedObject\/publishChanges()"

@@ -21,6 +21,7 @@
       }
     ],
     "role" : "collectionGroup",
+    "roleHeading" : "API Collection",
     "title" : "Equatable Implementations"
   },
   "schemaVersion" : {
@@ -33,6 +34,7 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Operators",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct\/Options-swift.struct\/!=(_:_:)"
@@ -160,7 +162,10 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreDataStack/Configuration-swift.struct/Options-swift.struct/!=(_:_:)": {
   "abstract" : [
-
+    {
+      "text" : "Returns a Boolean value indicating whether two values are not equal.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {

@@ -38,6 +38,10 @@
         "text" : "Entity"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "NSManagedObject+FindAndOrCreate.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObject\/NSManagedObject+FindAndOrCreate.swift#L32"
+    },
     "role" : "symbol",
     "roleHeading" : "Protocol",
     "symbolKind" : "protocol",
@@ -110,6 +114,16 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Entity\/isolatedOnContext()"
+      ],
+      "title" : "Instance Methods"
+    },
+    {
+      "anchor" : "Subscripts",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Entity\/subscript(safe:)-2f0lc",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Entity\/subscript(safe:)-5s9ux"
@@ -117,8 +131,10 @@
       "title" : "Subscripts"
     },
     {
+      "anchor" : "Type-Properties",
+      "generated" : true,
       "identifiers" : [
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Entity\/entityName-940zb"
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Entity\/entityName"
       ],
       "title" : "Type Properties"
     }
@@ -210,7 +226,7 @@
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/entity"
 },
-"doc://FFCoreData/documentation/FFCoreData/Entity/entityName-940zb": {
+"doc://FFCoreData/documentation/FFCoreData/Entity/entityName": {
   "abstract" : [
 
   ],
@@ -246,15 +262,15 @@
       "text" : "String"
     }
   ],
-  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Entity\/entityName-940zb",
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Entity\/entityName",
   "kind" : "symbol",
   "required" : true,
   "role" : "symbol",
   "title" : "entityName",
   "type" : "topic",
-  "url" : "\/documentation\/ffcoredata\/entity\/entityname-940zb"
+  "url" : "\/documentation\/ffcoredata\/entity\/entityname"
 },
-"doc://FFCoreData/documentation/FFCoreData/Entity/subscript(safe:)-2f0lc": {
+"doc://FFCoreData/documentation/FFCoreData/Entity/isolatedOnContext()": {
   "abstract" : [
 
   ],
@@ -293,6 +309,85 @@
   "fragments" : [
     {
       "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "isolatedOnContext"
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV",
+      "text" : "NSManagedObjectContextIsolated"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Entity\/isolatedOnContext()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "isolatedOnContext()",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/entity\/isolatedoncontext()"
+},
+"doc://FFCoreData/documentation/FFCoreData/Entity/subscript(safe:)-2f0lc": {
+  "abstract" : [
+
+  ],
+  "conformance" : {
+    "availabilityPrefix" : [
+      {
+        "text" : "Available when",
+        "type" : "text"
+      }
+    ],
+    "conformancePrefix" : [
+      {
+        "text" : "Conforms when",
+        "type" : "text"
+      }
+    ],
+    "constraints" : [
+      {
+        "code" : "Self",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : " inherits ",
+        "type" : "text"
+      },
+      {
+        "code" : "NSManagedObject",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : ".",
+        "type" : "text"
+      }
+    ]
+  },
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
       "text" : "subscript"
     },
     {
@@ -313,7 +408,16 @@
     },
     {
       "kind" : "text",
-      "text" : " _: "
+      "text" : " _: any "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s8SendableP",
+      "text" : "Sendable"
+    },
+    {
+      "kind" : "text",
+      "text" : " & "
     },
     {
       "kind" : "typeIdentifier",
@@ -399,6 +503,7 @@
       }
     ]
   },
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",
@@ -422,7 +527,16 @@
     },
     {
       "kind" : "text",
-      "text" : " _: "
+      "text" : " _: any "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s8SendableP",
+      "text" : "Sendable"
+    },
+    {
+      "kind" : "text",
+      "text" : " & "
     },
     {
       "kind" : "typeIdentifier",

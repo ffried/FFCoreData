@@ -69,6 +69,10 @@
         "unavailable" : false
       }
     ],
+    "remoteSource" : {
+      "fileName" : "MOCChanges.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/ManagedObjectContext%20Observer\/MOCChanges.swift#L32"
+    },
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
@@ -123,16 +127,30 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/AsyncIterator\/next()"
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/AsyncIterator\/next()",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/AsyncIterator\/next(isolation:)"
       ],
       "title" : "Instance Methods"
     },
     {
+      "anchor" : "Type-Aliases",
+      "generated" : true,
       "identifiers" : [
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/AsyncIterator\/Element"
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/AsyncIterator\/Element",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/AsyncIterator\/Failure"
       ],
       "title" : "Type Aliases"
+    },
+    {
+      "anchor" : "Default-Implementations",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/AsyncIterator\/AsyncIteratorProtocol-Implementations"
+      ],
+      "title" : "Default Implementations"
     }
   ],
   "variants" : [
@@ -227,6 +245,17 @@
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/mocchanges\/asynciterator"
 },
+"doc://FFCoreData/documentation/FFCoreData/MOCChanges/AsyncIterator/AsyncIteratorProtocol-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/AsyncIterator\/AsyncIteratorProtocol-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "AsyncIteratorProtocol Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/mocchanges\/asynciterator\/asynciteratorprotocol-implementations"
+},
 "doc://FFCoreData/documentation/FFCoreData/MOCChanges/AsyncIterator/Element": {
   "abstract" : [
 
@@ -257,6 +286,37 @@
   "title" : "MOCChanges.AsyncIterator.Element",
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/mocchanges\/asynciterator\/element"
+},
+"doc://FFCoreData/documentation/FFCoreData/MOCChanges/AsyncIterator/Failure": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Failure"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/AsyncIterator\/Failure",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Failure"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "MOCChanges.AsyncIterator.Failure",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/mocchanges\/asynciterator\/failure"
 },
 "doc://FFCoreData/documentation/FFCoreData/MOCChanges/AsyncIterator/next()": {
   "abstract" : [
@@ -329,6 +389,146 @@
   "title" : "next()",
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/mocchanges\/asynciterator\/next()"
+},
+"doc://FFCoreData/documentation/FFCoreData/MOCChanges/AsyncIterator/next(isolation:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "next"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "isolation"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "isolated"
+    },
+    {
+      "kind" : "text",
+      "text" : " (any "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:ScA",
+      "text" : "Actor"
+    },
+    {
+      "kind" : "text",
+      "text" : ")?) "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "async"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData10MOCChangesV",
+      "text" : "MOCChanges"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Filter"
+    },
+    {
+      "kind" : "text",
+      "text" : ">."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData10MOCChangesV13AsyncIteratorV",
+      "text" : "AsyncIterator"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData10MOCChangesV13AsyncIteratorV7Failurea",
+      "text" : "Failure"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData10MOCChangesV",
+      "text" : "MOCChanges"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Filter"
+    },
+    {
+      "kind" : "text",
+      "text" : ">."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData10MOCChangesV13AsyncIteratorV",
+      "text" : "AsyncIterator"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData10MOCChangesV13AsyncIteratorV7Elementa",
+      "text" : "Element"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/AsyncIterator\/next(isolation:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "next(isolation:)",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/mocchanges\/asynciterator\/next(isolation:)"
 }
 }
 }

@@ -38,6 +38,10 @@
         "text" : "MOCObservedChanges"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "MOCObserver.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/ManagedObjectContext%20Observer\/MOCObserver.swift#L44"
+    },
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
@@ -72,6 +76,17 @@
       "kind" : "declarations"
     }
   ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/FFCoreData\/s8SendableP",
+        "doc:\/\/FFCoreData\/s16SendableMetatypeP"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
   "schemaVersion" : {
     "major" : 0,
     "minor" : 3,
@@ -82,6 +97,8 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCObservedChanges\/deleted",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCObservedChanges\/inserted",
@@ -259,6 +276,16 @@
   "title" : "updated",
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/mocobservedchanges\/updated"
+},
+"doc://FFCoreData/s16SendableMetatypeP": {
+  "identifier" : "doc:\/\/FFCoreData\/s16SendableMetatypeP",
+  "title" : "Swift.SendableMetatype",
+  "type" : "unresolvable"
+},
+"doc://FFCoreData/s8SendableP": {
+  "identifier" : "doc:\/\/FFCoreData\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
 }
 }
 }

@@ -9,8 +9,7 @@
     "paths" : [
       [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/Publisher-Implementations"
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher"
       ]
     ]
   },
@@ -431,6 +430,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Combine9PublisherP7FailureQa",
               "text" : "Failure"
             },
             {
@@ -447,6 +447,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Combine9PublisherP7FailureQa",
               "text" : "Failure"
             },
             {
@@ -463,6 +464,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
               "text" : "Output"
             },
             {
@@ -479,6 +481,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
               "text" : "Output"
             },
             {
@@ -495,6 +498,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Combine9PublisherP7FailureQa",
               "text" : "Failure"
             },
             {
@@ -511,6 +515,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Combine9PublisherP7FailureQa",
               "text" : "Failure"
             },
             {
@@ -527,6 +532,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
               "text" : "Output"
             },
             {
@@ -543,6 +549,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
               "text" : "Output"
             },
             {
@@ -559,6 +566,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Combine9PublisherP7FailureQa",
               "text" : "Failure"
             },
             {
@@ -575,6 +583,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Combine9PublisherP7FailureQa",
               "text" : "Failure"
             },
             {
@@ -591,6 +600,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
               "text" : "Output"
             },
             {
@@ -607,6 +617,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
               "text" : "Output"
             }
           ]
@@ -856,17 +867,6 @@
   "title" : "MOCChangePublisher",
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/mocchangepublisher"
-},
-"doc://FFCoreData/documentation/FFCoreData/MOCChangePublisher/Publisher-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/Publisher-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Publisher Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/ffcoredata\/mocchangepublisher\/publisher-implementations"
 },
 "doc://FFCoreData/documentation/FFCoreData/MOCChangePublisher/merge(with:_:_:)": {
   "abstract" : [

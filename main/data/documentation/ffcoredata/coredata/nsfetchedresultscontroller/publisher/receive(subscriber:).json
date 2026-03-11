@@ -93,6 +93,10 @@
         "unavailable" : false
       }
     ],
+    "remoteSource" : {
+      "fileName" : "NSFetchedResultsPublisher.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSFetchedResultsController\/NSFetchedResultsPublisher.swift#L41"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Method",
     "symbolKind" : "method",
@@ -184,11 +188,12 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Combine10SubscriberP7FailureQa",
               "text" : "Failure"
             },
             {
               "kind" : "text",
-              "text" : " == "
+              "text" : " == any "
             },
             {
               "kind" : "typeIdentifier",
@@ -209,6 +214,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Combine10SubscriberP5InputQa",
               "text" : "Input"
             },
             {

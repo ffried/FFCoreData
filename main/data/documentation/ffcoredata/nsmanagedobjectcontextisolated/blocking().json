@@ -1,0 +1,275 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/NSManagedObjectContextIsolated"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/NSManagedObjectContextIsolated\/blocking()"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8blockingAC8BlockingVyx_GyF",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "blocking"
+      },
+      {
+        "kind" : "text",
+        "text" : "() -> "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV",
+        "text" : "NSManagedObjectContextIsolated"
+      },
+      {
+        "kind" : "text",
+        "text" : "<"
+      },
+      {
+        "kind" : "typeIdentifier",
+        "text" : "Value"
+      },
+      {
+        "kind" : "text",
+        "text" : ">."
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingV",
+        "text" : "Blocking"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "FFCoreData"
+      }
+    ],
+    "remoteSource" : {
+      "fileName" : "NSManagedObjectContextIsolated.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObjectContext\/NSManagedObjectContextIsolated.swift#L133"
+    },
+    "role" : "symbol",
+    "roleHeading" : "Instance Method",
+    "symbolKind" : "method",
+    "title" : "blocking()"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "func"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "blocking"
+            },
+            {
+              "kind" : "text",
+              "text" : "() -> "
+            },
+            {
+              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/NSManagedObjectContextIsolated",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV",
+              "text" : "NSManagedObjectContextIsolated"
+            },
+            {
+              "kind" : "text",
+              "text" : "<"
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "Value"
+            },
+            {
+              "kind" : "text",
+              "text" : ">."
+            },
+            {
+              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/NSManagedObjectContextIsolated\/Blocking",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingV",
+              "text" : "Blocking"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/ffcoredata\/nsmanagedobjectcontextisolated\/blocking()"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://FFCoreData/documentation/FFCoreData": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "FFCoreData",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata"
+},
+"doc://FFCoreData/documentation/FFCoreData/NSManagedObjectContextIsolated": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NSManagedObjectContextIsolated"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/NSManagedObjectContextIsolated",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NSManagedObjectContextIsolated"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NSManagedObjectContextIsolated",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/nsmanagedobjectcontextisolated"
+},
+"doc://FFCoreData/documentation/FFCoreData/NSManagedObjectContextIsolated/Blocking": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Blocking"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/NSManagedObjectContextIsolated\/Blocking",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Blocking"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NSManagedObjectContextIsolated.Blocking",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/nsmanagedobjectcontextisolated\/blocking"
+},
+"doc://FFCoreData/documentation/FFCoreData/NSManagedObjectContextIsolated/blocking()": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "blocking"
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV",
+      "text" : "NSManagedObjectContextIsolated"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Value"
+    },
+    {
+      "kind" : "text",
+      "text" : ">."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingV",
+      "text" : "Blocking"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/NSManagedObjectContextIsolated\/blocking()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "blocking()",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/nsmanagedobjectcontextisolated\/blocking()"
+}
+}
+}

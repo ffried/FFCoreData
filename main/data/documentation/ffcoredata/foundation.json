@@ -33,6 +33,8 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Extended-Classes",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Foundation\/JSONDecoder",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Foundation\/NSPredicate",

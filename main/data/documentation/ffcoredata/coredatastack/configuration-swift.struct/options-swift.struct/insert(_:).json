@@ -11,8 +11,7 @@
         "doc:\/\/FFCoreData\/documentation\/FFCoreData",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct\/Options-swift.struct",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct\/Options-swift.struct\/OptionSet-Implementations"
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct\/Options-swift.struct"
       ]
     ]
   },
@@ -83,6 +82,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:s10SetAlgebraP7ElementQa",
         "text" : "Element"
       },
       {
@@ -116,6 +116,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:s10SetAlgebraP7ElementQa",
         "text" : "Element"
       },
       {
@@ -205,6 +206,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:s10SetAlgebraP7ElementQa",
               "text" : "Element"
             },
             {
@@ -238,6 +240,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:s10SetAlgebraP7ElementQa",
               "text" : "Element"
             },
             {
@@ -573,17 +576,6 @@
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/options-swift.struct"
 },
-"doc://FFCoreData/documentation/FFCoreData/CoreDataStack/Configuration-swift.struct/Options-swift.struct/OptionSet-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct\/Options-swift.struct\/OptionSet-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "OptionSet Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/options-swift.struct\/optionset-implementations"
-},
 "doc://FFCoreData/documentation/FFCoreData/CoreDataStack/Configuration-swift.struct/Options-swift.struct/insert(_:)": {
   "abstract" : [
     {
@@ -650,6 +642,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s10SetAlgebraP7ElementQa",
       "text" : "Element"
     },
     {
@@ -683,6 +676,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s10SetAlgebraP7ElementQa",
       "text" : "Element"
     },
     {

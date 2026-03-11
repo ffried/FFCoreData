@@ -89,6 +89,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7Combine15TopLevelDecoderP5InputQa",
         "text" : "Input"
       },
       {
@@ -146,6 +147,10 @@
         "unavailable" : false
       }
     ],
+    "remoteSource" : {
+      "fileName" : "CoreDataDecodable.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObject\/CoreDataDecodable.swift#L148"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Method",
     "symbolKind" : "method",
@@ -236,6 +241,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Combine15TopLevelDecoderP5InputQa",
               "text" : "Input"
             },
             {
@@ -580,6 +586,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine15TopLevelDecoderP5InputQa",
       "text" : "Input"
     },
     {

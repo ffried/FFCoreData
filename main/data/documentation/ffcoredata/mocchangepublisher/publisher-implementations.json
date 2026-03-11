@@ -19,6 +19,7 @@
       }
     ],
     "role" : "collectionGroup",
+    "roleHeading" : "API Collection",
     "title" : "Publisher Implementations"
   },
   "schemaVersion" : {
@@ -31,17 +32,22 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Instance-Properties",
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/values"
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/values-477jl",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/values-9xdtu"
       ],
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Instance-Methods",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/allSatisfy(_:)",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/append(_:)",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/append(_:)-2r3db",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/append(_:)-4i7eb",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/append(_:)-6z5ok",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/assertNoFailure(_:file:line:)",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/assign(to:)",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/assign(to:on:)",
@@ -87,7 +93,8 @@
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/mapError(_:)",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/max(by:)",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/measureInterval(using:options:)",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/merge(with:)",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/merge(with:)-64ev8",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/merge(with:)-f8rr",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/merge(with:_:)",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/merge(with:_:_:)",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/merge(with:_:_:_:)",
@@ -102,7 +109,9 @@
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/prefix(_:)",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/prefix(untilOutputFrom:)",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/prefix(while:)",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/prepend(_:)",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/prepend(_:)-24ru",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/prepend(_:)-79yjm",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/prepend(_:)-8452f",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/print(_:to:)",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/receive(on:options:)",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/reduce(_:_:)",
@@ -236,6 +245,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -285,7 +295,89 @@
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/mocchangepublisher\/allsatisfy(_:)"
 },
-"doc://FFCoreData/documentation/FFCoreData/MOCChangePublisher/append(_:)": {
+"doc://FFCoreData/documentation/FFCoreData/MOCChangePublisher/append(_:)-2r3db": {
+  "abstract" : [
+    {
+      "text" : "Appends the output of this publisher with the elements emitted by the given publisher.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "append"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "P"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "P"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine10PublishersO",
+      "text" : "Publishers"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine10PublishersO11ConcatenateV",
+      "text" : "Concatenate"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "P"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/append(_:)-2r3db",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "append(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/mocchangepublisher\/append(_:)-2r3db"
+},
+"doc://FFCoreData/documentation/FFCoreData/MOCChangePublisher/append(_:)-4i7eb": {
   "abstract" : [
     {
       "text" : "Appends a publisher’s output with the specified elements.",
@@ -319,6 +411,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -379,6 +472,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -395,6 +489,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP7FailureQa",
       "text" : "Failure"
     },
     {
@@ -402,12 +497,129 @@
       "text" : ">>"
     }
   ],
-  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/append(_:)",
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/append(_:)-4i7eb",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "append(_:)",
   "type" : "topic",
-  "url" : "\/documentation\/ffcoredata\/mocchangepublisher\/append(_:)"
+  "url" : "\/documentation\/ffcoredata\/mocchangepublisher\/append(_:)-4i7eb"
+},
+"doc://FFCoreData/documentation/FFCoreData/MOCChangePublisher/append(_:)-6z5ok": {
+  "abstract" : [
+    {
+      "text" : "Appends a publisher’s output with the specified sequence.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "append"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "S"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "S"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine10PublishersO",
+      "text" : "Publishers"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine10PublishersO11ConcatenateV",
+      "text" : "Concatenate"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine10PublishersO",
+      "text" : "Publishers"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine10PublishersO8SequenceV",
+      "text" : "Sequence"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "S"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP7FailureQa",
+      "text" : "Failure"
+    },
+    {
+      "kind" : "text",
+      "text" : ">>"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/append(_:)-6z5ok",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "append(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/mocchangepublisher\/append(_:)-6z5ok"
 },
 "doc://FFCoreData/documentation/FFCoreData/MOCChangePublisher/assertNoFailure(_:file:line:)": {
   "abstract" : [
@@ -601,6 +813,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -723,6 +936,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -788,7 +1002,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": (("
+      "text" : ": ((any "
     },
     {
       "kind" : "typeIdentifier",
@@ -826,6 +1040,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -877,6 +1092,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP7FailureQa",
       "text" : "Failure"
     },
     {
@@ -1087,6 +1303,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP7FailureQa",
       "text" : "Failure"
     },
     {
@@ -1169,6 +1386,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP7FailureQa",
       "text" : "Failure"
     },
     {
@@ -1426,6 +1644,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9SchedulerP0B7OptionsQa",
       "text" : "SchedulerOptions"
     },
     {
@@ -1614,6 +1833,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -1630,6 +1850,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -1892,6 +2113,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -1908,6 +2130,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -1924,6 +2147,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -2234,6 +2458,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -2250,6 +2475,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -2266,6 +2492,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -2282,6 +2509,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -2422,6 +2650,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -2520,6 +2749,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -2677,6 +2907,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9SchedulerP0B8TimeTypeQa",
       "text" : "SchedulerTimeType"
     },
     {
@@ -2685,6 +2916,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sx6StrideQa",
       "text" : "Stride"
     },
     {
@@ -2725,6 +2957,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9SchedulerP0B7OptionsQa",
       "text" : "SchedulerOptions"
     },
     {
@@ -2945,6 +3178,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9SchedulerP0B8TimeTypeQa",
       "text" : "SchedulerTimeType"
     },
     {
@@ -2953,6 +3187,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sx6StrideQa",
       "text" : "Stride"
     },
     {
@@ -2977,6 +3212,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9SchedulerP0B8TimeTypeQa",
       "text" : "SchedulerTimeType"
     },
     {
@@ -2985,6 +3221,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sx6StrideQa",
       "text" : "Stride"
     },
     {
@@ -3025,6 +3262,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9SchedulerP0B7OptionsQa",
       "text" : "SchedulerOptions"
     },
     {
@@ -3205,6 +3443,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -3364,6 +3603,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -3380,6 +3620,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP7FailureQa",
       "text" : "Failure"
     },
     {
@@ -3428,6 +3669,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -3577,6 +3819,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -3702,6 +3945,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -3858,6 +4102,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -3982,6 +4227,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -4050,6 +4296,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP7FailureQa",
       "text" : "Failure"
     },
     {
@@ -4172,6 +4419,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -4248,6 +4496,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP7FailureQa",
       "text" : "Failure"
     },
     {
@@ -4292,7 +4541,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": (("
+      "text" : ": ((any "
     },
     {
       "kind" : "typeIdentifier",
@@ -4330,6 +4579,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -4381,6 +4631,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP7FailureQa",
       "text" : "Failure"
     },
     {
@@ -4640,6 +4891,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -4830,6 +5082,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -4928,6 +5181,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -5043,6 +5297,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -5076,6 +5331,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -5207,6 +5463,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -5240,6 +5497,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -5273,6 +5531,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -5387,6 +5646,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP7FailureQa",
       "text" : "Failure"
     },
     {
@@ -5485,6 +5745,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -5501,6 +5762,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -5616,6 +5878,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9SchedulerP0B7OptionsQa",
       "text" : "SchedulerOptions"
     },
     {
@@ -5664,7 +5927,7 @@
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/mocchangepublisher\/measureinterval(using:options:)"
 },
-"doc://FFCoreData/documentation/FFCoreData/MOCChangePublisher/merge(with:)": {
+"doc://FFCoreData/documentation/FFCoreData/MOCChangePublisher/merge(with:)-64ev8": {
   "abstract" : [
     {
       "text" : "Combines elements from this publisher with those from another publisher of the same type, delivering an interleaved sequence of elements.",
@@ -5731,12 +5994,102 @@
       "text" : ">"
     }
   ],
-  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/merge(with:)",
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/merge(with:)-64ev8",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "merge(with:)",
   "type" : "topic",
-  "url" : "\/documentation\/ffcoredata\/mocchangepublisher\/merge(with:)"
+  "url" : "\/documentation\/ffcoredata\/mocchangepublisher\/merge(with:)-64ev8"
+},
+"doc://FFCoreData/documentation/FFCoreData/MOCChangePublisher/merge(with:)-f8rr": {
+  "abstract" : [
+    {
+      "text" : "Combines elements from this publisher with those from another publisher, delivering an interleaved sequence of elements.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "merge"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "P"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "with"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "P"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine10PublishersO",
+      "text" : "Publishers"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine10PublishersO5MergeV",
+      "text" : "Merge"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "P"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/merge(with:)-f8rr",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "merge(with:)",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/mocchangepublisher\/merge(with:)-f8rr"
 },
 "doc://FFCoreData/documentation/FFCoreData/MOCChangePublisher/merge(with:_:)": {
   "abstract" : [
@@ -6824,6 +7177,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -6840,6 +7194,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -7417,6 +7772,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -7466,7 +7822,7 @@
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/mocchangepublisher\/prefix(while:)"
 },
-"doc://FFCoreData/documentation/FFCoreData/MOCChangePublisher/prepend(_:)": {
+"doc://FFCoreData/documentation/FFCoreData/MOCChangePublisher/prepend(_:)-24ru": {
   "abstract" : [
     {
       "text" : "Prefixes a publisher’s output with the specified values.",
@@ -7500,6 +7856,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -7552,6 +7909,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -7568,6 +7926,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP7FailureQa",
       "text" : "Failure"
     },
     {
@@ -7583,12 +7942,211 @@
       "text" : ">"
     }
   ],
-  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/prepend(_:)",
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/prepend(_:)-24ru",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "prepend(_:)",
   "type" : "topic",
-  "url" : "\/documentation\/ffcoredata\/mocchangepublisher\/prepend(_:)"
+  "url" : "\/documentation\/ffcoredata\/mocchangepublisher\/prepend(_:)-24ru"
+},
+"doc://FFCoreData/documentation/FFCoreData/MOCChangePublisher/prepend(_:)-79yjm": {
+  "abstract" : [
+    {
+      "text" : "Prefixes a publisher’s output with the specified sequence.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "prepend"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "S"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "S"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine10PublishersO",
+      "text" : "Publishers"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine10PublishersO11ConcatenateV",
+      "text" : "Concatenate"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine10PublishersO",
+      "text" : "Publishers"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine10PublishersO8SequenceV",
+      "text" : "Sequence"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "S"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP7FailureQa",
+      "text" : "Failure"
+    },
+    {
+      "kind" : "text",
+      "text" : ">, "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/prepend(_:)-79yjm",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "prepend(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/mocchangepublisher\/prepend(_:)-79yjm"
+},
+"doc://FFCoreData/documentation/FFCoreData/MOCChangePublisher/prepend(_:)-8452f": {
+  "abstract" : [
+    {
+      "text" : "Prefixes the output of this publisher with the elements emitted by the given publisher.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "prepend"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "P"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "P"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine10PublishersO",
+      "text" : "Publishers"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine10PublishersO11ConcatenateV",
+      "text" : "Concatenate"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "P"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/prepend(_:)-8452f",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "prepend(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/mocchangepublisher\/prepend(_:)-8452f"
 },
 "doc://FFCoreData/documentation/FFCoreData/MOCChangePublisher/print(_:to:)": {
   "abstract" : [
@@ -7629,7 +8187,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": ("
+      "text" : ": (any "
     },
     {
       "kind" : "typeIdentifier",
@@ -7740,6 +8298,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9SchedulerP0B7OptionsQa",
       "text" : "SchedulerOptions"
     },
     {
@@ -7846,6 +8405,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -7944,6 +8504,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -7960,6 +8521,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -8051,6 +8613,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -8133,6 +8696,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -8396,6 +8960,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -8662,7 +9227,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": (("
+      "text" : ": ("
     },
     {
       "kind" : "typeIdentifier",
@@ -8692,6 +9257,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP7FailureQa",
       "text" : "Failure"
     },
     {
@@ -8705,7 +9271,7 @@
     },
     {
       "kind" : "text",
-      "text" : "), "
+      "text" : ", "
     },
     {
       "kind" : "externalParam",
@@ -8713,7 +9279,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": (("
+      "text" : ": ("
     },
     {
       "kind" : "typeIdentifier",
@@ -8725,6 +9291,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -8738,7 +9305,7 @@
     },
     {
       "kind" : "text",
-      "text" : ")) -> "
+      "text" : ") -> "
     },
     {
       "kind" : "typeIdentifier",
@@ -8815,7 +9382,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": (("
+      "text" : ": ("
     },
     {
       "kind" : "typeIdentifier",
@@ -8827,6 +9394,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -8840,7 +9408,7 @@
     },
     {
       "kind" : "text",
-      "text" : ")) -> "
+      "text" : ") -> "
     },
     {
       "kind" : "typeIdentifier",
@@ -9022,6 +9590,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9SchedulerP0B7OptionsQa",
       "text" : "SchedulerOptions"
     },
     {
@@ -9120,6 +9689,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9SchedulerP0B8TimeTypeQa",
       "text" : "SchedulerTimeType"
     },
     {
@@ -9128,6 +9698,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sx6StrideQa",
       "text" : "Stride"
     },
     {
@@ -9251,6 +9822,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9SchedulerP0B8TimeTypeQa",
       "text" : "SchedulerTimeType"
     },
     {
@@ -9259,6 +9831,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sx6StrideQa",
       "text" : "Stride"
     },
     {
@@ -9299,6 +9872,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9SchedulerP0B7OptionsQa",
       "text" : "SchedulerOptions"
     },
     {
@@ -9323,6 +9897,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP7FailureQa",
       "text" : "Failure"
     },
     {
@@ -9405,6 +9980,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -9504,6 +10080,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP7FailureQa",
       "text" : "Failure"
     },
     {
@@ -9610,6 +10187,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -9716,6 +10294,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -9815,6 +10394,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -9906,6 +10486,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -10005,6 +10586,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -10104,6 +10686,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -10203,6 +10786,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -10309,6 +10893,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -10325,6 +10910,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -10424,6 +11010,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -10440,6 +11027,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -10539,6 +11127,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -10654,6 +11243,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -10760,6 +11350,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -10776,6 +11367,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -10891,6 +11483,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -10955,7 +11548,7 @@
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/mocchangepublisher\/tryscan(_:_:)"
 },
-"doc://FFCoreData/documentation/FFCoreData/MOCChangePublisher/values": {
+"doc://FFCoreData/documentation/FFCoreData/MOCChangePublisher/values-477jl": {
   "abstract" : [
     {
       "text" : "The elements produced by the publisher, as an asynchronous sequence.",
@@ -11029,12 +11622,61 @@
       "text" : ">"
     }
   ],
-  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/values",
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/values-477jl",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "values",
   "type" : "topic",
-  "url" : "\/documentation\/ffcoredata\/mocchangepublisher\/values"
+  "url" : "\/documentation\/ffcoredata\/mocchangepublisher\/values-477jl"
+},
+"doc://FFCoreData/documentation/FFCoreData/MOCChangePublisher/values-9xdtu": {
+  "abstract" : [
+    {
+      "text" : "The elements produced by the publisher, as a throwing asynchronous sequence.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "values"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine22AsyncThrowingPublisherV",
+      "text" : "AsyncThrowingPublisher"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChangePublisher\/values-9xdtu",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "values",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/mocchangepublisher\/values-9xdtu"
 },
 "doc://FFCoreData/documentation/FFCoreData/MOCChangePublisher/zip(_:)": {
   "abstract" : [
@@ -11176,6 +11818,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -11192,6 +11835,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -11454,6 +12098,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -11470,6 +12115,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -11486,6 +12132,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -11796,6 +12443,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -11812,6 +12460,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -11828,6 +12477,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {
@@ -11844,6 +12494,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
       "text" : "Output"
     },
     {

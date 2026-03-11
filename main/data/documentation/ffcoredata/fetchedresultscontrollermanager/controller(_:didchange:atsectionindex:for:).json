@@ -38,7 +38,7 @@
       },
       {
         "kind" : "text",
-        "text" : "<"
+        "text" : "<any "
       },
       {
         "kind" : "typeIdentifier",
@@ -55,7 +55,7 @@
       },
       {
         "kind" : "text",
-        "text" : ": "
+        "text" : ": any "
       },
       {
         "kind" : "typeIdentifier",
@@ -106,6 +106,10 @@
         "name" : "FFCoreData"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "FetchedResulsControllerDelegate.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSFetchedResultsController\/FetchedResulsControllerDelegate.swift#L73"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Method",
     "symbolKind" : "method",
@@ -122,6 +126,19 @@
             "macOS"
           ],
           "tokens" : [
+            {
+              "kind" : "attribute",
+              "text" : "@"
+            },
+            {
+              "kind" : "attribute",
+              "preciseIdentifier" : "s:ScM",
+              "text" : "MainActor"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
             {
               "kind" : "attribute",
               "text" : "@objc"
@@ -177,7 +194,7 @@
             },
             {
               "kind" : "text",
-              "text" : "<"
+              "text" : "<any "
             },
             {
               "kind" : "typeIdentifier",
@@ -202,7 +219,7 @@
             },
             {
               "kind" : "text",
-              "text" : ": "
+              "text" : ": any "
             },
             {
               "kind" : "typeIdentifier",
@@ -361,7 +378,7 @@
     },
     {
       "kind" : "text",
-      "text" : "<"
+      "text" : "<any "
     },
     {
       "kind" : "typeIdentifier",
@@ -378,7 +395,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": "
+      "text" : ": any "
     },
     {
       "kind" : "typeIdentifier",

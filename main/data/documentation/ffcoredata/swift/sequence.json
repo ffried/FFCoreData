@@ -89,6 +89,8 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Swift\/Sequence\/createMOCObjectsObserver(fireInitially:handler:)",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Swift\/Sequence\/publishChanges()"

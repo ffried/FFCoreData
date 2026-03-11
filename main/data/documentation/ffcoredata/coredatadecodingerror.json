@@ -44,6 +44,10 @@
         "text" : "CoreDataDecodingError"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "CoreDataDecodable.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObject\/CoreDataDecodable.swift#L70"
+    },
     "role" : "symbol",
     "roleHeading" : "Enumeration",
     "symbolKind" : "enum",
@@ -83,7 +87,8 @@
       "identifiers" : [
         "doc:\/\/FFCoreData\/s23CustomStringConvertibleP",
         "doc:\/\/FFCoreData\/s5ErrorP",
-        "doc:\/\/FFCoreData\/s8SendableP"
+        "doc:\/\/FFCoreData\/s8SendableP",
+        "doc:\/\/FFCoreData\/s16SendableMetatypeP"
       ],
       "kind" : "relationships",
       "title" : "Conforms To",
@@ -100,18 +105,23 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Enumeration-Cases",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodingError\/missingContext(codingPath:)"
       ],
       "title" : "Enumeration Cases"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodingError\/description"
       ],
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Default-Implementations",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodingError\/Error-Implementations"
@@ -262,7 +272,7 @@
     },
     {
       "kind" : "text",
-      "text" : "<"
+      "text" : "<any "
     },
     {
       "kind" : "typeIdentifier",
@@ -280,6 +290,11 @@
   "title" : "CoreDataDecodingError.missingContext(codingPath:)",
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/coredatadecodingerror\/missingcontext(codingpath:)"
+},
+"doc://FFCoreData/s16SendableMetatypeP": {
+  "identifier" : "doc:\/\/FFCoreData\/s16SendableMetatypeP",
+  "title" : "Swift.SendableMetatype",
+  "type" : "unresolvable"
 },
 "doc://FFCoreData/s23CustomStringConvertibleP": {
   "identifier" : "doc:\/\/FFCoreData\/s23CustomStringConvertibleP",

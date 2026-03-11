@@ -38,6 +38,10 @@
         "text" : "MOCObserverFilter"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "MOCObserver.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/ManagedObjectContext%20Observer\/MOCObserver.swift#L24"
+    },
     "role" : "symbol",
     "roleHeading" : "Protocol",
     "symbolKind" : "protocol",
@@ -65,6 +69,15 @@
             {
               "kind" : "identifier",
               "text" : "MOCObserverFilter"
+            },
+            {
+              "kind" : "text",
+              "text" : " : "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:s8SendableP",
+              "text" : "Sendable"
             }
           ]
         }
@@ -73,6 +86,15 @@
     }
   ],
   "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/FFCoreData\/s8SendableP",
+        "doc:\/\/FFCoreData\/s16SendableMetatypeP"
+      ],
+      "kind" : "relationships",
+      "title" : "Inherits From",
+      "type" : "inheritsFrom"
+    },
     {
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCEntitiesFilter",
@@ -93,6 +115,8 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCObserverFilter\/include(managedObject:)"
       ],
@@ -268,6 +292,16 @@
   "title" : "include(managedObject:)",
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/mocobserverfilter\/include(managedobject:)"
+},
+"doc://FFCoreData/s16SendableMetatypeP": {
+  "identifier" : "doc:\/\/FFCoreData\/s16SendableMetatypeP",
+  "title" : "Swift.SendableMetatype",
+  "type" : "unresolvable"
+},
+"doc://FFCoreData/s8SendableP": {
+  "identifier" : "doc:\/\/FFCoreData\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
 }
 }
 }

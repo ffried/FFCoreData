@@ -89,6 +89,8 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Foundation\/NSPredicate\/init(format:arguments:)"
       ],

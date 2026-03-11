@@ -38,6 +38,10 @@
         "text" : "KeyObjectDictionaryExpression"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "KeyObjectDictionary.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObject\/KeyObjectDictionary.swift#L55"
+    },
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
@@ -54,6 +58,14 @@
             "macOS"
           ],
           "tokens" : [
+            {
+              "kind" : "attribute",
+              "text" : "@frozen"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
             {
               "kind" : "keyword",
               "text" : "struct"

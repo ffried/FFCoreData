@@ -39,6 +39,10 @@
         "text" : "Controller"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "FetchedResulsControllerDelegate.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSFetchedResultsController\/FetchedResulsControllerDelegate.swift#L34"
+    },
     "role" : "symbol",
     "roleHeading" : "Type Alias",
     "symbolKind" : "typealias",

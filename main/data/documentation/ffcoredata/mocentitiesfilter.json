@@ -38,6 +38,10 @@
         "text" : "MOCEntitiesFilter"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "MOCEntitiesFilter.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/ManagedObjectContext%20Observer\/MOCEntitiesFilter.swift#L23"
+    },
     "role" : "symbol",
     "roleHeading" : "Structure",
     "symbolKind" : "struct",
@@ -76,7 +80,8 @@
     {
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCObserverFilter",
-        "doc:\/\/FFCoreData\/s8SendableP"
+        "doc:\/\/FFCoreData\/s8SendableP",
+        "doc:\/\/FFCoreData\/s16SendableMetatypeP"
       ],
       "kind" : "relationships",
       "title" : "Conforms To",
@@ -93,6 +98,8 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCEntitiesFilter\/init(entities:)",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCEntitiesFilter\/init(entityNames:)"
@@ -100,12 +107,16 @@
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCEntitiesFilter\/entityNames"
       ],
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCEntitiesFilter\/include(managedObject:)"
       ],
@@ -390,6 +401,11 @@
   "title" : "MOCObserverFilter",
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/mocobserverfilter"
+},
+"doc://FFCoreData/s16SendableMetatypeP": {
+  "identifier" : "doc:\/\/FFCoreData\/s16SendableMetatypeP",
+  "title" : "Swift.SendableMetatype",
+  "type" : "unresolvable"
 },
 "doc://FFCoreData/s8SendableP": {
   "identifier" : "doc:\/\/FFCoreData\/s8SendableP",

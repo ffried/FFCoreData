@@ -89,8 +89,9 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Combine\/TopLevelDecoder\/decode(_:from:)",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Combine\/TopLevelDecoder\/decode(_:from:in:)"
       ],
       "title" : "Instance Methods"
@@ -163,106 +164,6 @@
   "title" : "TopLevelDecoder",
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/combine\/topleveldecoder"
-},
-"doc://FFCoreData/documentation/FFCoreData/Combine/TopLevelDecoder/decode(_:from:)": {
-  "abstract" : [
-    {
-      "text" : "Decodes the entity from a given ",
-      "type" : "text"
-    },
-    {
-      "code" : "Input",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " using its ",
-      "type" : "text"
-    },
-    {
-      "code" : "DTO",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " type.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "decode"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "genericParameter",
-      "text" : "Entity"
-    },
-    {
-      "kind" : "text",
-      "text" : ">("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Entity"
-    },
-    {
-      "kind" : "text",
-      "text" : ".Type, "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "from"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Input"
-    },
-    {
-      "kind" : "text",
-      "text" : ") "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "throws"
-    },
-    {
-      "kind" : "text",
-      "text" : " -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Entity"
-    }
-  ],
-  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Combine\/TopLevelDecoder\/decode(_:from:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "decode(_:from:)",
-  "type" : "topic",
-  "url" : "\/documentation\/ffcoredata\/combine\/topleveldecoder\/decode(_:from:)"
 },
 "doc://FFCoreData/documentation/FFCoreData/Combine/TopLevelDecoder/decode(_:from:in:)": {
   "abstract" : [
@@ -346,6 +247,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine15TopLevelDecoderP5InputQa",
       "text" : "Input"
     },
     {

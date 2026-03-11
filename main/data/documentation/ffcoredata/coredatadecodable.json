@@ -38,6 +38,10 @@
         "text" : "CoreDataDecodable"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "CoreDataDecodable.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObject\/CoreDataDecodable.swift#L27"
+    },
     "role" : "symbol",
     "roleHeading" : "Protocol",
     "symbolKind" : "protocol",
@@ -71,7 +75,9 @@
               "text" : "<"
             },
             {
+              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodable\/DTO",
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10FFCoreData04CoreB9DecodableP3DTOQa",
               "text" : "DTO"
             },
             {
@@ -82,6 +88,15 @@
               "kind" : "typeIdentifier",
               "preciseIdentifier" : "s:Se",
               "text" : "Decodable"
+            },
+            {
+              "kind" : "text",
+              "text" : ", "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:s16SendableMetatypeP",
+              "text" : "SendableMetatype"
             }
           ]
         }
@@ -92,7 +107,8 @@
   "relationshipsSections" : [
     {
       "identifiers" : [
-        "doc:\/\/FFCoreData\/Se"
+        "doc:\/\/FFCoreData\/Se",
+        "doc:\/\/FFCoreData\/s16SendableMetatypeP"
       ],
       "kind" : "relationships",
       "title" : "Inherits From",
@@ -109,30 +125,39 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Associated-Types",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodable\/DTO"
       ],
       "title" : "Associated Types"
     },
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodable\/init(with:in:)-1fpa7"
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodable\/init(with:in:)"
       ],
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodable\/update(from:)"
       ],
       "title" : "Instance Methods"
     },
     {
+      "anchor" : "Type-Methods",
+      "generated" : true,
       "identifiers" : [
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodable\/findOrCreate(for:in:)-7jp13"
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodable\/findOrCreate(for:in:)"
       ],
       "title" : "Type Methods"
     },
     {
+      "anchor" : "Default-Implementations",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodable\/Decodable-Implementations"
@@ -226,6 +251,15 @@
       "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:Se",
       "text" : "Decodable"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s8SendableP",
+      "text" : "Sendable"
     }
   ],
   "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodable\/DTO",
@@ -247,7 +281,7 @@
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/coredatadecodable\/decodable-implementations"
 },
-"doc://FFCoreData/documentation/FFCoreData/CoreDataDecodable/findOrCreate(for:in:)-7jp13": {
+"doc://FFCoreData/documentation/FFCoreData/CoreDataDecodable/findOrCreate(for:in:)": {
   "abstract" : [
 
   ],
@@ -295,6 +329,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData04CoreB9DecodableP3DTOQa",
       "text" : "DTO"
     },
     {
@@ -331,15 +366,15 @@
       "text" : "Self"
     }
   ],
-  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodable\/findOrCreate(for:in:)-7jp13",
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodable\/findOrCreate(for:in:)",
   "kind" : "symbol",
   "required" : true,
   "role" : "symbol",
   "title" : "findOrCreate(for:in:)",
   "type" : "topic",
-  "url" : "\/documentation\/ffcoredata\/coredatadecodable\/findorcreate(for:in:)-7jp13"
+  "url" : "\/documentation\/ffcoredata\/coredatadecodable\/findorcreate(for:in:)"
 },
-"doc://FFCoreData/documentation/FFCoreData/CoreDataDecodable/init(with:in:)-1fpa7": {
+"doc://FFCoreData/documentation/FFCoreData/CoreDataDecodable/init(with:in:)": {
   "abstract" : [
 
   ],
@@ -371,6 +406,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData04CoreB9DecodableP3DTOQa",
       "text" : "DTO"
     },
     {
@@ -399,13 +435,13 @@
       "text" : "throws"
     }
   ],
-  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodable\/init(with:in:)-1fpa7",
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodable\/init(with:in:)",
   "kind" : "symbol",
   "required" : true,
   "role" : "symbol",
   "title" : "init(with:in:)",
   "type" : "topic",
-  "url" : "\/documentation\/ffcoredata\/coredatadecodable\/init(with:in:)-1fpa7"
+  "url" : "\/documentation\/ffcoredata\/coredatadecodable\/init(with:in:)"
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreDataDecodable/update(from:)": {
   "abstract" : [
@@ -446,6 +482,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData04CoreB9DecodableP3DTOQa",
       "text" : "DTO"
     },
     {
@@ -464,6 +501,11 @@
   "title" : "update(from:)",
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/coredatadecodable\/update(from:)"
+},
+"doc://FFCoreData/s16SendableMetatypeP": {
+  "identifier" : "doc:\/\/FFCoreData\/s16SendableMetatypeP",
+  "title" : "Swift.SendableMetatype",
+  "type" : "unresolvable"
 }
 }
 }

@@ -100,6 +100,10 @@
         "name" : "FFCoreData"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "KeyObjectDictionary.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObject\/KeyObjectDictionary.swift#L84"
+    },
     "role" : "symbol",
     "roleHeading" : "Operator",
     "symbolKind" : "op",

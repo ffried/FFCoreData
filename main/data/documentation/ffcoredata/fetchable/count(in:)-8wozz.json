@@ -3,8 +3,7 @@
     "paths" : [
       [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/count(in:)-44pui"
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable"
       ]
     ]
   },
@@ -77,6 +76,10 @@
         "name" : "FFCoreData"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "NSManagedObject+FindAndOrCreate.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObject\/NSManagedObject+FindAndOrCreate.swift#L143"
+    },
     "role" : "symbol",
     "roleHeading" : "Type Method",
     "symbolKind" : "method",
@@ -224,75 +227,6 @@
   "title" : "Fetchable",
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/fetchable"
-},
-"doc://FFCoreData/documentation/FFCoreData/Fetchable/count(in:)-44pui": {
-  "abstract" : [
-
-  ],
-  "defaultImplementations" : 1,
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "count"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "in"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "c:objc(cs)NSManagedObjectContext",
-      "text" : "NSManagedObjectContext"
-    },
-    {
-      "kind" : "text",
-      "text" : ") "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "throws"
-    },
-    {
-      "kind" : "text",
-      "text" : " -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:Si",
-      "text" : "Int"
-    }
-  ],
-  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/count(in:)-44pui",
-  "kind" : "symbol",
-  "required" : true,
-  "role" : "symbol",
-  "title" : "count(in:)",
-  "type" : "topic",
-  "url" : "\/documentation\/ffcoredata\/fetchable\/count(in:)-44pui"
 },
 "doc://FFCoreData/documentation/FFCoreData/Fetchable/count(in:)-8wozz": {
   "abstract" : [

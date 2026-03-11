@@ -9,8 +9,7 @@
     "paths" : [
       [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/InvalidEntityError",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/InvalidEntityError\/Error-Implementations"
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/InvalidEntityError"
       ]
     ]
   },
@@ -201,17 +200,6 @@
   "title" : "InvalidEntityError",
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/invalidentityerror"
-},
-"doc://FFCoreData/documentation/FFCoreData/InvalidEntityError/Error-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/InvalidEntityError\/Error-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Error Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/ffcoredata\/invalidentityerror\/error-implementations"
 },
 "doc://FFCoreData/documentation/FFCoreData/InvalidEntityError/localizedDescription": {
   "abstract" : [

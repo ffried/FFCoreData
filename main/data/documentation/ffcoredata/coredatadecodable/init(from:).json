@@ -3,8 +3,7 @@
     "paths" : [
       [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodable",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodable\/Decodable-Implementations"
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodable"
       ]
     ]
   },
@@ -31,7 +30,7 @@
       },
       {
         "kind" : "text",
-        "text" : ": "
+        "text" : ": any "
       },
       {
         "kind" : "typeIdentifier",
@@ -52,6 +51,10 @@
         "name" : "FFCoreData"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "CoreDataDecodable.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObject\/CoreDataDecodable.swift#L39"
+    },
     "role" : "symbol",
     "roleHeading" : "Initializer",
     "symbolKind" : "init",
@@ -90,7 +93,7 @@
             },
             {
               "kind" : "text",
-              "text" : ": "
+              "text" : ": any "
             },
             {
               "kind" : "typeIdentifier",
@@ -175,17 +178,6 @@
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/coredatadecodable"
 },
-"doc://FFCoreData/documentation/FFCoreData/CoreDataDecodable/Decodable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodable\/Decodable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Decodable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/ffcoredata\/coredatadecodable\/decodable-implementations"
-},
 "doc://FFCoreData/documentation/FFCoreData/CoreDataDecodable/init(from:)": {
   "abstract" : [
 
@@ -205,7 +197,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": "
+      "text" : ": any "
     },
     {
       "kind" : "typeIdentifier",

@@ -112,6 +112,10 @@
         ]
       }
     ],
+    "remoteSource" : {
+      "fileName" : "MOCObjectsObserver.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/ManagedObjectContext%20Observer\/MOCObjectsObserver.swift#L87"
+    },
     "role" : "symbol",
     "roleHeading" : "Instance Method",
     "symbolKind" : "method",
@@ -170,12 +174,8 @@
               "text" : ": "
             },
             {
-              "kind" : "keyword",
-              "text" : "@escaping"
-            },
-            {
-              "kind" : "text",
-              "text" : " "
+              "kind" : "attribute",
+              "text" : "@escaping "
             },
             {
               "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCBlockObserver",

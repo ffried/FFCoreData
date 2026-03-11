@@ -9,8 +9,7 @@
     "paths" : [
       [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodingError",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodingError\/Error-Implementations"
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodingError"
       ]
     ]
   },
@@ -204,17 +203,6 @@
   "title" : "CoreDataDecodingError",
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/coredatadecodingerror"
-},
-"doc://FFCoreData/documentation/FFCoreData/CoreDataDecodingError/Error-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodingError\/Error-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Error Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/ffcoredata\/coredatadecodingerror\/error-implementations"
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreDataDecodingError/localizedDescription": {
   "abstract" : [

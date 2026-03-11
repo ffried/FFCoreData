@@ -38,6 +38,10 @@
         "text" : "FetchedResultsControllerManager"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "FetchedResulsControllerDelegate.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSFetchedResultsController\/FetchedResulsControllerDelegate.swift#L33"
+    },
     "role" : "symbol",
     "roleHeading" : "Class",
     "symbolKind" : "class",
@@ -54,6 +58,19 @@
             "macOS"
           ],
           "tokens" : [
+            {
+              "kind" : "attribute",
+              "text" : "@"
+            },
+            {
+              "kind" : "attribute",
+              "preciseIdentifier" : "s:ScM",
+              "text" : "MainActor"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
             {
               "kind" : "keyword",
               "text" : "class"
@@ -122,7 +139,9 @@
         "doc:\/\/FFCoreData\/s28CustomDebugStringConvertibleP",
         "doc:\/\/FFCoreData\/s23CustomStringConvertibleP",
         "doc:\/\/FFCoreData\/SQ",
-        "doc:\/\/FFCoreData\/SH"
+        "doc:\/\/FFCoreData\/SH",
+        "doc:\/\/FFCoreData\/s8SendableP",
+        "doc:\/\/FFCoreData\/s16SendableMetatypeP"
       ],
       "kind" : "relationships",
       "title" : "Conforms To",
@@ -139,6 +158,8 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/FetchedResultsControllerManager\/delegate-swift.property",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/FetchedResultsControllerManager\/fetchedResultsController"
@@ -146,6 +167,8 @@
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/FetchedResultsControllerManager\/controller(_:didChange:at:for:newIndexPath:)",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/FetchedResultsControllerManager\/controller(_:didChange:atSectionIndex:for:)",
@@ -156,6 +179,8 @@
       "title" : "Instance Methods"
     },
     {
+      "anchor" : "Type-Aliases",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/FetchedResultsControllerManager\/Controller",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/FetchedResultsControllerManager\/Delegate-swift.typealias"
@@ -319,7 +344,7 @@
     },
     {
       "kind" : "text",
-      "text" : "<"
+      "text" : "<any "
     },
     {
       "kind" : "typeIdentifier",
@@ -433,7 +458,7 @@
     },
     {
       "kind" : "text",
-      "text" : "<"
+      "text" : "<any "
     },
     {
       "kind" : "typeIdentifier",
@@ -450,7 +475,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": "
+      "text" : ": any "
     },
     {
       "kind" : "typeIdentifier",
@@ -531,7 +556,7 @@
     },
     {
       "kind" : "text",
-      "text" : "<"
+      "text" : "<any "
     },
     {
       "kind" : "typeIdentifier",
@@ -604,7 +629,7 @@
     },
     {
       "kind" : "text",
-      "text" : "<"
+      "text" : "<any "
     },
     {
       "kind" : "typeIdentifier",
@@ -651,7 +676,7 @@
     },
     {
       "kind" : "text",
-      "text" : "<"
+      "text" : "<any "
     },
     {
       "kind" : "typeIdentifier",
@@ -689,7 +714,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": ("
+      "text" : ": (any "
     },
     {
       "kind" : "typeIdentifier",
@@ -795,6 +820,11 @@
   "title" : "ObjectiveC.NSObjectProtocol",
   "type" : "unresolvable"
 },
+"doc://FFCoreData/s16SendableMetatypeP": {
+  "identifier" : "doc:\/\/FFCoreData\/s16SendableMetatypeP",
+  "title" : "Swift.SendableMetatype",
+  "type" : "unresolvable"
+},
 "doc://FFCoreData/s23CustomStringConvertibleP": {
   "identifier" : "doc:\/\/FFCoreData\/s23CustomStringConvertibleP",
   "title" : "Swift.CustomStringConvertible",
@@ -808,6 +838,11 @@
 "doc://FFCoreData/s7CVarArgP": {
   "identifier" : "doc:\/\/FFCoreData\/s7CVarArgP",
   "title" : "Swift.CVarArg",
+  "type" : "unresolvable"
+},
+"doc://FFCoreData/s8SendableP": {
+  "identifier" : "doc:\/\/FFCoreData\/s8SendableP",
+  "title" : "Swift.Sendable",
   "type" : "unresolvable"
 }
 }

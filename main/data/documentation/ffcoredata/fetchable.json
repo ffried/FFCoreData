@@ -38,6 +38,10 @@
         "text" : "Fetchable"
       }
     ],
+    "remoteSource" : {
+      "fileName" : "NSManagedObject+FindAndOrCreate.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObject\/NSManagedObject+FindAndOrCreate.swift#L36"
+    },
     "role" : "symbol",
     "roleHeading" : "Protocol",
     "symbolKind" : "protocol",
@@ -113,25 +117,30 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Type-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/all(in:)",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/changes(with:)",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/count(in:)-44pui",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/count(in:)",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/count(in:where:)",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/count(in:with:)",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/createMOCEntitiesObserver(with:fireInitially:handler:)",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/fetchRequest()-4bd8t",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/fetchRequest()",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/fetchRequest(where:sortedBy:offsetBy:limitedBy:)-1ljei",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/fetchRequest(where:sortedBy:offsetBy:limitedBy:)-2710n",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/fetchRequest(with:sortedBy:offsetBy:limitedBy:)",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/fetchRequest(with:sortedBy:offsetBy:limitedBy:)-3dsdd",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/fetchRequest(with:sortedBy:offsetBy:limitedBy:)-5c420",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/find(in:by:sortedBy:)",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/find(in:where:sortedBy:)-2pq20",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/find(in:where:sortedBy:)-9i9j5",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/find(in:with:sortedBy:)",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/find(in:with:sortedBy:)-522g3",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/find(in:with:sortedBy:)-8ihoi",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/findFirst(in:by:sortedBy:)",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/findFirst(in:where:sortedBy:)-7lbyo",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/findFirst(in:where:sortedBy:)-9pmfl",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/findFirst(in:with:sortedBy:)",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/findFirst(in:with:sortedBy:)-3chbc",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/findFirst(in:with:sortedBy:)-5abv9",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/findOrCreate(in:by:)",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/findOrCreate(in:where:)",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/publishEntityChanges(with:)",
@@ -413,7 +422,7 @@
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/fetchable\/changes(with:)"
 },
-"doc://FFCoreData/documentation/FFCoreData/Fetchable/count(in:)-44pui": {
+"doc://FFCoreData/documentation/FFCoreData/Fetchable/count(in:)": {
   "abstract" : [
 
   ],
@@ -474,13 +483,13 @@
       "text" : "Int"
     }
   ],
-  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/count(in:)-44pui",
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/count(in:)",
   "kind" : "symbol",
   "required" : true,
   "role" : "symbol",
   "title" : "count(in:)",
   "type" : "topic",
-  "url" : "\/documentation\/ffcoredata\/fetchable\/count(in:)-44pui"
+  "url" : "\/documentation\/ffcoredata\/fetchable\/count(in:)"
 },
 "doc://FFCoreData/documentation/FFCoreData/Fetchable/count(in:where:)": {
   "abstract" : [
@@ -814,7 +823,7 @@
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/fetchable\/createmocentitiesobserver(with:fireinitially:handler:)"
 },
-"doc://FFCoreData/documentation/FFCoreData/Fetchable/fetchRequest()-4bd8t": {
+"doc://FFCoreData/documentation/FFCoreData/Fetchable/fetchRequest()": {
   "abstract" : [
 
   ],
@@ -862,13 +871,13 @@
       "text" : ">"
     }
   ],
-  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/fetchRequest()-4bd8t",
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/fetchRequest()",
   "kind" : "symbol",
   "required" : true,
   "role" : "symbol",
   "title" : "fetchRequest()",
   "type" : "topic",
-  "url" : "\/documentation\/ffcoredata\/fetchable\/fetchrequest()-4bd8t"
+  "url" : "\/documentation\/ffcoredata\/fetchable\/fetchrequest()"
 },
 "doc://FFCoreData/documentation/FFCoreData/Fetchable/fetchRequest(where:sortedBy:offsetBy:limitedBy:)-1ljei": {
   "abstract" : [
@@ -897,15 +906,7 @@
     },
     {
       "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "genericParameter",
-      "text" : "SortExpressions"
-    },
-    {
-      "kind" : "text",
-      "text" : ">("
+      "text" : "("
     },
     {
       "kind" : "externalParam",
@@ -941,12 +942,38 @@
       "text" : ": "
     },
     {
-      "kind" : "typeIdentifier",
-      "text" : "SortExpressions"
+      "kind" : "keyword",
+      "text" : "some"
     },
     {
       "kind" : "text",
-      "text" : ", "
+      "text" : " "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sl",
+      "text" : "Collection"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData23FetchableSortExpressionV",
+      "text" : "FetchableSortExpression"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : ">>, "
     },
     {
       "kind" : "externalParam",
@@ -1145,7 +1172,7 @@
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/fetchable\/fetchrequest(where:sortedby:offsetby:limitedby:)-2710n"
 },
-"doc://FFCoreData/documentation/FFCoreData/Fetchable/fetchRequest(with:sortedBy:offsetBy:limitedBy:)": {
+"doc://FFCoreData/documentation/FFCoreData/Fetchable/fetchRequest(with:sortedBy:offsetBy:limitedBy:)-3dsdd": {
   "abstract" : [
 
   ],
@@ -1269,12 +1296,151 @@
       "text" : ">"
     }
   ],
-  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/fetchRequest(with:sortedBy:offsetBy:limitedBy:)",
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/fetchRequest(with:sortedBy:offsetBy:limitedBy:)-3dsdd",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "fetchRequest(with:sortedBy:offsetBy:limitedBy:)",
   "type" : "topic",
-  "url" : "\/documentation\/ffcoredata\/fetchable\/fetchrequest(with:sortedby:offsetby:limitedby:)"
+  "url" : "\/documentation\/ffcoredata\/fetchable\/fetchrequest(with:sortedby:offsetby:limitedby:)-3dsdd"
+},
+"doc://FFCoreData/documentation/FFCoreData/Fetchable/fetchRequest(with:sortedBy:offsetBy:limitedBy:)-5c420": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "fetchRequest"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "with"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:objc(cs)NSPredicate",
+      "text" : "NSPredicate"
+    },
+    {
+      "kind" : "text",
+      "text" : "?, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "sortedBy"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sa",
+      "text" : "Array"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation14SortDescriptorV",
+      "text" : "SortDescriptor"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : ">>?, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "offsetBy"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : "?, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "limitedBy"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : "?) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:objc(cs)NSFetchRequest",
+      "text" : "NSFetchRequest"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/fetchRequest(with:sortedBy:offsetBy:limitedBy:)-5c420",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "fetchRequest(with:sortedBy:offsetBy:limitedBy:)",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/fetchable\/fetchrequest(with:sortedby:offsetby:limitedby:)-5c420"
 },
 "doc://FFCoreData/documentation/FFCoreData/Fetchable/find(in:by:sortedBy:)": {
   "abstract" : [
@@ -1425,15 +1591,7 @@
     },
     {
       "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "genericParameter",
-      "text" : "SortExpressions"
-    },
-    {
-      "kind" : "text",
-      "text" : ">("
+      "text" : "("
     },
     {
       "kind" : "externalParam",
@@ -1486,12 +1644,38 @@
       "text" : ": "
     },
     {
-      "kind" : "typeIdentifier",
-      "text" : "SortExpressions"
+      "kind" : "keyword",
+      "text" : "some"
     },
     {
       "kind" : "text",
-      "text" : ") "
+      "text" : " "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sl",
+      "text" : "Collection"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData23FetchableSortExpressionV",
+      "text" : "FetchableSortExpression"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : ">>) "
     },
     {
       "kind" : "keyword",
@@ -1655,7 +1839,137 @@
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/fetchable\/find(in:where:sortedby:)-9i9j5"
 },
-"doc://FFCoreData/documentation/FFCoreData/Fetchable/find(in:with:sortedBy:)": {
+"doc://FFCoreData/documentation/FFCoreData/Fetchable/find(in:with:sortedBy:)-522g3": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "find"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "in"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:objc(cs)NSManagedObjectContext",
+      "text" : "NSManagedObjectContext"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "with"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:objc(cs)NSPredicate",
+      "text" : "NSPredicate"
+    },
+    {
+      "kind" : "text",
+      "text" : "?, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "sortedBy"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sa",
+      "text" : "Array"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation14SortDescriptorV",
+      "text" : "SortDescriptor"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : ">>?) "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sa",
+      "text" : "Array"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/find(in:with:sortedBy:)-522g3",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "find(in:with:sortedBy:)",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/fetchable\/find(in:with:sortedby:)-522g3"
+},
+"doc://FFCoreData/documentation/FFCoreData/Fetchable/find(in:with:sortedBy:)-8ihoi": {
   "abstract" : [
 
   ],
@@ -1770,12 +2084,12 @@
       "text" : ">"
     }
   ],
-  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/find(in:with:sortedBy:)",
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/find(in:with:sortedBy:)-8ihoi",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "find(in:with:sortedBy:)",
   "type" : "topic",
-  "url" : "\/documentation\/ffcoredata\/fetchable\/find(in:with:sortedby:)"
+  "url" : "\/documentation\/ffcoredata\/fetchable\/find(in:with:sortedby:)-8ihoi"
 },
 "doc://FFCoreData/documentation/FFCoreData/Fetchable/findFirst(in:by:sortedBy:)": {
   "abstract" : [
@@ -2037,15 +2351,7 @@
     },
     {
       "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "genericParameter",
-      "text" : "SortExpressions"
-    },
-    {
-      "kind" : "text",
-      "text" : ">("
+      "text" : "("
     },
     {
       "kind" : "externalParam",
@@ -2098,12 +2404,38 @@
       "text" : ": "
     },
     {
-      "kind" : "typeIdentifier",
-      "text" : "SortExpressions"
+      "kind" : "keyword",
+      "text" : "some"
     },
     {
       "kind" : "text",
-      "text" : ") "
+      "text" : " "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sl",
+      "text" : "Collection"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData23FetchableSortExpressionV",
+      "text" : "FetchableSortExpression"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : ">>) "
     },
     {
       "kind" : "keyword",
@@ -2129,7 +2461,7 @@
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/fetchable\/findfirst(in:where:sortedby:)-9pmfl"
 },
-"doc://FFCoreData/documentation/FFCoreData/Fetchable/findFirst(in:with:sortedBy:)": {
+"doc://FFCoreData/documentation/FFCoreData/Fetchable/findFirst(in:with:sortedBy:)-3chbc": {
   "abstract" : [
 
   ],
@@ -2235,12 +2567,133 @@
       "text" : "?"
     }
   ],
-  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/findFirst(in:with:sortedBy:)",
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/findFirst(in:with:sortedBy:)-3chbc",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "findFirst(in:with:sortedBy:)",
   "type" : "topic",
-  "url" : "\/documentation\/ffcoredata\/fetchable\/findfirst(in:with:sortedby:)"
+  "url" : "\/documentation\/ffcoredata\/fetchable\/findfirst(in:with:sortedby:)-3chbc"
+},
+"doc://FFCoreData/documentation/FFCoreData/Fetchable/findFirst(in:with:sortedBy:)-5abv9": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "findFirst"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "in"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:objc(cs)NSManagedObjectContext",
+      "text" : "NSManagedObjectContext"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "with"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "c:objc(cs)NSPredicate",
+      "text" : "NSPredicate"
+    },
+    {
+      "kind" : "text",
+      "text" : "?, "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "sortedBy"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sa",
+      "text" : "Array"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation14SortDescriptorV",
+      "text" : "SortDescriptor"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : ">>?) "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable\/findFirst(in:with:sortedBy:)-5abv9",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "findFirst(in:with:sortedBy:)",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/fetchable\/findfirst(in:with:sortedby:)-5abv9"
 },
 "doc://FFCoreData/documentation/FFCoreData/Fetchable/findOrCreate(in:by:)": {
   "abstract" : [
