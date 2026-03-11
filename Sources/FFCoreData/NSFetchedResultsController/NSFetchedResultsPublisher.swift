@@ -43,13 +43,6 @@ extension NSFetchedResultsController {
             delegate.fetchIfNeeded()
         }
     }
-
-    /*
-    // TODO: Re-enable once it compiles.
-    public static func publish(changesFor fetchRequest: NSFetchRequest<ResultType>, in context: NSManagedObjectContext) -> Publisher {
-        return Publisher(fetchRequest: fetchRequest, context: context)
-    }
-    // */
 }
 
 // This class could theoretically be nested, but currently this does not compile.
@@ -62,11 +55,16 @@ fileprivate final class PublisherControllerDelegate<ResultType: NSFetchRequestRe
     private var didFetch = false
 
     init(fetchRequest: NSFetchRequest<ResultType>, context: NSManagedObjectContext) {
-        self.controller = NSFetchedResultsController(fetchRequest: fetchRequest,
-                                                     managedObjectContext: context,
-                                                     sectionNameKeyPath: nil,
-                                                     cacheName: nil)
+        controller = NSFetchedResultsController(fetchRequest: fetchRequest,
+                                                managedObjectContext: context,
+                                                sectionNameKeyPath: nil,
+                                                cacheName: nil)
         super.init()
+#if compiler(>=6.2)
+        unsafe controller.delegate = self
+#else
+        controller.delegate = self
+#endif
     }
 
     func fetch() {
@@ -79,11 +77,7 @@ fileprivate final class PublisherControllerDelegate<ResultType: NSFetchRequestRe
     }
 
     func fetchIfNeeded() {
-        guard !didFetch else { return }
-        guard !_didFetch.withValue(do: { currentVal in
-            defer { currentVal = true }
-            return currentVal
-        }) else { return }
+        guard !didFetch && !_didFetch.exchange(with: true) else { return }
         fetch()
     }
 
