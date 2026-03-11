@@ -29,6 +29,7 @@ import func FFFoundation.os_log
 @MainActor
 @objc public protocol FetchedResultsControllerManagerDelegate: NSFetchedResultsControllerDelegate {}
 
+#if compiler(>=6.2)
 @MainActor
 public class FetchedResultsControllerManager<Result: NSFetchRequestResult>: NSObject, @MainActor NSFetchedResultsControllerDelegate {
     public typealias Controller = NSFetchedResultsController<Result>
@@ -41,11 +42,7 @@ public class FetchedResultsControllerManager<Result: NSFetchRequestResult>: NSOb
         self.fetchedResultsController = fetchedResultsController
         self.delegate = delegate
         super.init()
-#if compiler(>=6.2)
         unsafe self.fetchedResultsController?.delegate = self
-#else
-        self.fetchedResultsController?.delegate = self
-#endif
     }
 
     // MARK: - Internal functions
@@ -78,12 +75,7 @@ public class FetchedResultsControllerManager<Result: NSFetchRequestResult>: NSOb
         case .insert: insertSection(at: sectionIndex)
         case .update: updateSection(at: sectionIndex)
         case .delete: removeSection(at: sectionIndex)
-        default:
-#if compiler(>=6.2)
-            unsafe os_log("Unsupported change type: %lld", log: .ffCoreData, type: .default, type.rawValue)
-#else
-            os_log("Unsupported change type: %lld", log: .ffCoreData, type: .default, type.rawValue)
-#endif
+        default: unsafe os_log("Unsupported change type: %lld", log: .ffCoreData, type: .default, type.rawValue)
         }
         delegate?.controller?(controller, didChange: sectionInfo, atSectionIndex: sectionIndex, for: type)
     }
@@ -99,12 +91,7 @@ public class FetchedResultsControllerManager<Result: NSFetchRequestResult>: NSOb
         case .update: updateSubobject(at: indexPath!)
         case .delete: removeSubobject(at: indexPath!)
         case .move: moveSubobject(from: indexPath!, to: newIndexPath!)
-        @unknown default:
-#if compiler(>=6.2)
-            unsafe os_log("Unsupported unknown change type: %lld", log: .ffCoreData, type: .default, type.rawValue)
-#else
-            os_log("Unsupported unknown change type: %lld", log: .ffCoreData, type: .default, type.rawValue)
-#endif
+        @unknown default: unsafe os_log("Unsupported unknown change type: %lld", log: .ffCoreData, type: .default, type.rawValue)
         }
         delegate?.controller?(controller, didChange: anObject, at: indexPath, for: type, newIndexPath: newIndexPath)
     }
@@ -116,6 +103,96 @@ public class FetchedResultsControllerManager<Result: NSFetchRequestResult>: NSOb
 
     @objc public dynamic func controller(_ controller: NSFetchedResultsController<any NSFetchRequestResult>,
                                          sectionIndexTitleForSectionName sectionName: String) -> String? {
-        delegate?.controller?(controller, sectionIndexTitleForSectionName: sectionName) ?? controller.sectionIndexTitle(forSectionName: sectionName)
+        delegate?.controller?(controller, sectionIndexTitleForSectionName: sectionName)
+        ?? controller.sectionIndexTitle(forSectionName: sectionName)
     }
 }
+#else
+@MainActor
+public class FetchedResultsControllerManager<Result: NSFetchRequestResult>: NSObject, NSFetchedResultsControllerDelegate {
+    public typealias Controller = NSFetchedResultsController<Result>
+    public typealias Delegate = FetchedResultsControllerManagerDelegate
+
+    public private(set) final weak var fetchedResultsController: Controller?
+    public final weak var delegate: (any Delegate)?
+
+    internal init(fetchedResultsController: Controller, delegate: (any Delegate)?) {
+        self.fetchedResultsController = fetchedResultsController
+        self.delegate = delegate
+        super.init()
+        self.fetchedResultsController?.delegate = self
+    }
+
+    // MARK: - Internal functions
+    internal func beginUpdates() {}
+
+    internal func insertSection(at index: Int) {}
+    internal func removeSection(at index: Int) {}
+    internal func updateSection(at index: Int) {}
+    internal func moveSection(from oldIndex: Int, to newIndex: Int) {}
+
+    internal func insertSubobject(at indexPath: IndexPath) {}
+    internal func removeSubobject(at indexPath: IndexPath) {}
+    internal func updateSubobject(at indexPath: IndexPath) {}
+    internal func moveSubobject(from oldIndexPath: IndexPath, to newIndexPath: IndexPath) {}
+
+    internal func endUpdates() {}
+
+    // MARK: - NSFetchedResultsControllerDelegate
+    @objc public dynamic nonisolated func controllerWillChangeContent(_ controller: NSFetchedResultsController<any NSFetchRequestResult>) {
+        MainActor.assumeIsolated {
+            delegate?.controllerWillChangeContent?(controller)
+            beginUpdates()
+        }
+    }
+
+    @objc(controller:didChangeSection:atIndex:forChangeType:)
+    public dynamic nonisolated func controller(_ controller: NSFetchedResultsController<any NSFetchRequestResult>,
+                                               didChange sectionInfo: any NSFetchedResultsSectionInfo,
+                                               atSectionIndex sectionIndex: Int,
+                                               for type: NSFetchedResultsChangeType) {
+        MainActor.assumeIsolated {
+            switch type {
+            case .insert: insertSection(at: sectionIndex)
+            case .update: updateSection(at: sectionIndex)
+            case .delete: removeSection(at: sectionIndex)
+            default: os_log("Unsupported change type: %lld", log: .ffCoreData, type: .default, type.rawValue)
+            }
+            delegate?.controller?(controller, didChange: sectionInfo, atSectionIndex: sectionIndex, for: type)
+        }
+    }
+
+    @objc(controller:didChangeObject:atIndexPath:forChangeType:newIndexPath:)
+    public dynamic nonisolated func controller(_ controller: NSFetchedResultsController<any NSFetchRequestResult>,
+                                               didChange anObject: Any,
+                                               at indexPath: IndexPath?,
+                                               for type: NSFetchedResultsChangeType,
+                                               newIndexPath: IndexPath?) {
+        MainActor.assumeIsolated {
+            switch type {
+            case .insert: insertSubobject(at: newIndexPath!)
+            case .update: updateSubobject(at: indexPath!)
+            case .delete: removeSubobject(at: indexPath!)
+            case .move: moveSubobject(from: indexPath!, to: newIndexPath!)
+            @unknown default: os_log("Unsupported unknown change type: %lld", log: .ffCoreData, type: .default, type.rawValue)
+            }
+            delegate?.controller?(controller, didChange: anObject, at: indexPath, for: type, newIndexPath: newIndexPath)
+        }
+    }
+
+    @objc public dynamic nonisolated func controllerDidChangeContent(_ controller: NSFetchedResultsController<any NSFetchRequestResult>) {
+        MainActor.assumeIsolated {
+            endUpdates()
+            delegate?.controllerDidChangeContent?(controller)
+        }
+    }
+
+    @objc public dynamic nonisolated func controller(_ controller: NSFetchedResultsController<any NSFetchRequestResult>,
+                                                     sectionIndexTitleForSectionName sectionName: String) -> String? {
+        MainActor.assumeIsolated {
+            delegate?.controller?(controller, sectionIndexTitleForSectionName: sectionName)
+            ?? controller.sectionIndexTitle(forSectionName: sectionName)
+        }
+    }
+}
+#endif
