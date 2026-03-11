@@ -25,11 +25,11 @@ public import FFFoundation
 fileprivate extension KeyObjectDictionary {
     @inline(__always)
     func asPredicate(with compoundType: NSCompoundPredicate.LogicalType) -> NSCompoundPredicate {
-        return NSCompoundPredicate(type: compoundType, dictionary: self)
+        NSCompoundPredicate(type: compoundType, dictionary: self)
     }
 }
 
-public protocol Entity: NSObjectProtocol {
+public protocol Entity: NSObjectProtocol, SendableMetatype {
     static var entityName: String { get }
 }
 
@@ -47,7 +47,7 @@ public typealias FindOrCreatable = Fetchable & Creatable
 
 public struct InvalidEntityError: Error, Equatable, CustomStringConvertible {
     let entityName: String
-    let entityType: Any.Type
+    let entityType: any Entity.Type
 
     public var description: String {
         "Invalid entity with name \"\(entityName)\" on type \(entityType)"
@@ -61,9 +61,8 @@ public struct InvalidEntityError: Error, Equatable, CustomStringConvertible {
 extension Entity {
     internal static func entityDescription(in context: NSManagedObjectContext) throws -> NSEntityDescription {
         let name = entityName
-        guard let entity = NSEntityDescription.entity(forEntityName: name, in: context) else {
-            throw InvalidEntityError(entityName: name, entityType: Self.self)
-        }
+        guard let entity = NSEntityDescription.entity(forEntityName: name, in: context)
+        else { throw InvalidEntityError(entityName: name, entityType: Self.self) }
         return entity
     }
 }
@@ -280,6 +279,8 @@ extension Creatable where Self: NSManagedObject {
 }
 
 extension Entity where Self: NSManagedObject {
+    /// Returns an NSManagedObjectContextIsolated instance for this object to e.g. safely pass it across actor boundaries.
+    /// Note that the NSManagedObject needs to have an managed object context or this will crash.
     public func isolatedOnContext() -> NSManagedObjectContextIsolated<Self> {
 #if compiler(>=6.2)
         NSManagedObjectContextIsolated(context: unsafe managedObjectContext!, value: self)
