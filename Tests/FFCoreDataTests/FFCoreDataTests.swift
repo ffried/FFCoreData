@@ -23,7 +23,7 @@ import CoreData
 import FFFoundation
 import FFCoreData
 
-@Suite
+@Suite(.serialized)
 final class FFCoreDataTests {
     let context: NSManagedObjectContext
     let testUUID = "c1b45162-12b4-11e5-8a0d-10ddb1c330b4"

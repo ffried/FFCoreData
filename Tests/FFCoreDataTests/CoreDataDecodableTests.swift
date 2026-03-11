@@ -23,7 +23,7 @@ import CoreData
 import FFFoundation
 import FFCoreData
 
-@Suite
+@Suite(.serialized)
 final class CoreDataDecodableTests {
     init() {
         CoreDataStack.configuration = .test
