@@ -113,7 +113,7 @@ public class FetchedResultsControllerManager<Result: NSFetchRequestResult>: NSOb
     public typealias Delegate = FetchedResultsControllerManagerDelegate
 
     public private(set) final weak var fetchedResultsController: Controller?
-    public final nonisolated weak var delegate: (any Delegate)?
+    public final nonisolated(unsafe) weak var delegate: (any Delegate)?
 
     internal init(fetchedResultsController: Controller, delegate: (any Delegate)?) {
         self.fetchedResultsController = fetchedResultsController
