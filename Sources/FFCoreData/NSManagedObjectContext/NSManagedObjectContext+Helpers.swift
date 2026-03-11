@@ -20,6 +20,10 @@
 
 public import CoreData
 
+#if compiler(<6.2)
+extension NSManagedObjectContext: @retroactive @unchecked Sendable {}
+#endif
+
 @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
 extension NSManagedObjectContext {
     internal final nonisolated func performAndWaitWithTypedThrows<T, F>(
@@ -44,20 +48,16 @@ extension NSManagedObjectContext {
     }
 }
 
-#if compiler(<6.2)
-extension NSManagedObjectContext: @retroactive @unchecked Sendable {}
-#endif
-
 #if compiler(>=6.2)
 @safe
-fileprivate final class UnsafeSending<V>: @unchecked Sendable {
+fileprivate final class UnsafeLaterInitialized<V>: @unchecked Sendable {
     private let ptr: UnsafeMutablePointer<V>
 
     init() {
         unsafe ptr = .allocate(capacity: 1)
     }
 
-    func set(_ value: V) {
+    func initialize(with value: V) {
         unsafe ptr.initialize(to: value)
     }
 
@@ -70,14 +70,14 @@ fileprivate final class UnsafeSending<V>: @unchecked Sendable {
     }
 }
 #else
-fileprivate final class UnsafeSending<V>: @unchecked Sendable {
+fileprivate final class UnsafeLaterInitialized<V>: @unchecked Sendable {
     private let ptr: UnsafeMutablePointer<V>
 
     init() {
         ptr = .allocate(capacity: 1)
     }
 
-    func set(_ value: V) {
+    func initialize(with value: V) {
         ptr.initialize(to: value)
     }
 
@@ -98,9 +98,9 @@ extension NSManagedObjectContext {
     @available(tvOS, deprecated: 15, message: "Use performAndWait", renamed: "performAndWait")
     @available(watchOS, deprecated: 8, message: "Use performAndWait", renamed: "performAndWait")
     public nonisolated final func sync<T, F>(do work: @Sendable () throws(F) -> sending T) throws(F) -> sending T {
-        let result = UnsafeSending<Result<T, F>>()
+        let result = UnsafeLaterInitialized<Result<T, F>>()
         performAndWait {
-            result.set(Result(catching: work))
+            result.initialize(with: Result(catching: work))
         }
         return try result.get().get()
     }
