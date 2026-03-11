@@ -91,7 +91,7 @@ extension CoreDataStack.Configuration {
             try FileManager.default.createDirectoryIfNeeded(at: compilationFolder)
             defer { try? FileManager.default.removeItem(at: compilationFolder) }
             let deploymentTarget: String
-            deploymentTarget = "10.13"
+            deploymentTarget = "10.15"
             _ = try Process.xcrun(arguments: [
                 "momc",
                 "--sdkroot", sdkPath,

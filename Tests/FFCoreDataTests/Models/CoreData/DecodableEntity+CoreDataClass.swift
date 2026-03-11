@@ -8,12 +8,12 @@
 //
 
 import Foundation
-import CoreData
-import FFCoreData
+public import CoreData
+public import FFCoreData
 
 @objc(DecodableEntity)
 public final class DecodableEntity: NSManagedObject, FindOrCreatable, CoreDataDecodable {
-    public struct DTO: Codable {
+    public struct DTO: Sendable, Codable {
         let idenfitier: String
         let name: String?
         let isTested: Bool

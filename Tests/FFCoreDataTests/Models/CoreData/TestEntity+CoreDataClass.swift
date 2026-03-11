@@ -8,8 +8,8 @@
 //
 
 import Foundation
-import CoreData
-import FFCoreData
+public import CoreData
+public import FFCoreData
 
 @objc(TestEntity)
 public final class TestEntity: NSManagedObject, FindOrCreatable {

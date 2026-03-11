@@ -18,29 +18,24 @@
 //  limitations under the License.
 //
 
-import XCTest
+import Testing
 import CoreData
 import FFFoundation
 import FFCoreData
 
-final class CoreDataDecodableTests: XCTestCase {
-
-    var context: NSManagedObjectContext!
-
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+@Suite
+final class CoreDataDecodableTests {
+    init() {
         CoreDataStack.configuration = .test
-        context = CoreDataStack.mainContext
     }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        context = nil
-        // Resets the manager
-        CoreDataStack.configuration = CoreDataStack.configuration
-        XCTAssertNoThrow(try CoreDataStack.clearDataStore())
-        super.tearDown()
+    deinit {
+        CoreDataStack.closeConnections()
+        do {
+            try CoreDataStack.clearDataStore()
+        } catch {
+            Issue.record(error)
+        }
     }
 
     private func generateTestJSON(count: Int) throws -> Data {
@@ -53,7 +48,9 @@ final class CoreDataDecodableTests: XCTestCase {
         return try JSONEncoder().encode(dtos)
     }
 
-    func testConcurrentDecoding() throws {
+    @Test
+    @available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+    func concurrentDecoding() async throws {
         let parallelRuns = 50
         let testDataCount = 10_000
 
@@ -61,22 +58,20 @@ final class CoreDataDecodableTests: XCTestCase {
             try (generateTestJSON(count: testDataCount),
                  CoreDataStack.createTemporaryBackgroundContext())
         }
-        let failures = Synchronized<Array<(any Error)?>>(wrappedValue: Array(repeating: nil, count: parallelRuns))
-        DispatchQueue.concurrentPerform(iterations: parallelRuns) { iteration in
-            do {
-                try testObjects[iteration].ctx.asDecodingContext { [data = testObjects[iteration].data] in
-                    _ = try JSONDecoder().decode(Array<DecodableEntity>.self, from: data)
+        try await withThrowingDiscardingTaskGroup { taskGroup in
+            for (data, ctx) in testObjects {
+                let added = taskGroup.addTaskUnlessCancelled {
+                    try ctx.asDecodingContext {
+                        _ = try JSONDecoder().decode(Array<DecodableEntity>.self, from: data)
+                    }
                 }
-            } catch {
-                failures.withValueVoid { $0[iteration] = error }
+                if !added {
+                    try Task.checkCancellation()
+                }
             }
         }
-        let allFailures = failures.wrappedValue
-        for run in 0..<parallelRuns {
-            XCTAssertNil(allFailures[run], "Run \(run) failed!")
-        }
-        for (idx, data) in testObjects.enumerated() {
-            XCTAssertEqual(try DecodableEntity.all(in: data.ctx).count, testDataCount, "Context at \(idx) did not have enough objects!")
+        for context in testObjects.lazy.map(\.ctx) {
+            #expect(try DecodableEntity.all(in: context).count == testDataCount)
         }
     }
 }
