@@ -18,10 +18,14 @@
 //  limitations under the License.
 //
 
-import CoreData
+public import CoreData
 
-public protocol CoreDataDecodable<DTO>: Decodable {
-    associatedtype DTO: Decodable
+#if compiler(<6.2)
+public typealias SendableMetatype = Any
+#endif
+
+public protocol CoreDataDecodable<DTO>: Decodable, SendableMetatype {
+    associatedtype DTO: Sendable, Decodable
 
     @discardableResult
     static func findOrCreate(for dto: DTO, in context: NSManagedObjectContext) throws -> Self
@@ -77,17 +81,31 @@ public enum CoreDataDecodingError: Error, CustomStringConvertible {
 extension Thread {
     private static let decodingContextThreadKey = "net.ffried.FFCoreData.DecodingContext"
 
+#if compiler(>=6.2)
+    fileprivate var decodingContext: Unmanaged<NSManagedObjectContext>? {
+        get { unsafe threadDictionary[Thread.decodingContextThreadKey] as? Unmanaged<NSManagedObjectContext> }
+        set { unsafe threadDictionary[Thread.decodingContextThreadKey] = newValue }
+    }
+#else
     fileprivate var decodingContext: Unmanaged<NSManagedObjectContext>? {
         get { threadDictionary[Thread.decodingContextThreadKey] as? Unmanaged<NSManagedObjectContext> }
         set { threadDictionary[Thread.decodingContextThreadKey] = newValue }
     }
+#endif
 }
 
 extension NSManagedObjectContext {
+#if compiler(>=6.2)
+    private static var _decodingContext: NSManagedObjectContext? {
+        get { unsafe Thread.current.decodingContext?.takeUnretainedValue() }
+        set { unsafe Thread.current.decodingContext = newValue.map(Unmanaged.passUnretained) }
+    }
+#else
     private static var _decodingContext: NSManagedObjectContext? {
         get { Thread.current.decodingContext?.takeUnretainedValue() }
         set { Thread.current.decodingContext = newValue.map(Unmanaged.passUnretained) }
     }
+#endif
 
     /// Returns the current decoding context. Throws if no context is registered as decoding context.
     /// - Parameter codingPath: The coding path for which to request the decoding context. Only used for debugging purposes.
@@ -103,7 +121,8 @@ extension NSManagedObjectContext {
     /// - Returns: Any value returned by `work`
     /// - Throws: Any error thrown by `work`.
     /// - Note: The context is only registered as valid decoding context for the during the execution of `work`.
-    public final func asDecodingContext<T>(do work: () throws -> T) rethrows -> T {
+    @preconcurrency
+    public final func asDecodingContext<T>(do work: @Sendable () throws -> sending T) rethrows -> sending T {
         NSManagedObjectContext._decodingContext = self
         defer { NSManagedObjectContext._decodingContext = nil }
         return try sync(do: work)
@@ -113,7 +132,7 @@ extension NSManagedObjectContext {
 // MARK: - Foundation decoder extensions
 
 #if canImport(Combine)
-import Combine
+public import Combine
 
 @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
 extension TopLevelDecoder {
@@ -139,7 +158,9 @@ extension TopLevelDecoder {
     /// - Returns: The decoded entity.
     /// - Throws: Any error thrown by `TopLevelDecoder.decode(_:from:)`
     /// - SeeAlso: `TopLevelDecoder.decode(_:from:)`
-    public func decode<Entity: CoreDataDecodable>(_ entity: Entity.Type, from input: Input, in context: NSManagedObjectContext) throws -> Entity {
+    public func decode<Entity: CoreDataDecodable>(_ entity: Entity.Type, from input: Input, in context: NSManagedObjectContext) throws -> Entity
+    where Self: Sendable, Input: Sendable
+    {
         try context.asDecodingContext { try decode(entity, from: input) }
     }
 }

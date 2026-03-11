@@ -19,8 +19,7 @@
 //
 
 #if canImport(UIKit)
-import struct Foundation.IndexPath
-import protocol CoreData.NSFetchRequestResult
+public import CoreData
 
 public class UIKitFetchedResultsControllerManager<Result: NSFetchRequestResult>: FetchedResultsControllerManager<Result> {
     public final var preserveSelection = true

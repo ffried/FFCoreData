@@ -19,17 +19,11 @@
 //
 
 #if canImport(UIKit) && !os(watchOS)
-import protocol Foundation.NSObjectProtocol
-import struct Foundation.Selector
-import class Foundation.NSObject
-import struct Foundation.IndexPath
-import protocol UIKit.UICollectionViewDataSource
-import class UIKit.UICollectionView
-import class UIKit.UICollectionViewCell
-import class UIKit.UICollectionReusableView
-import protocol CoreData.NSFetchRequestResult
-import class CoreData.NSFetchedResultsController
+public import Foundation
+public import UIKit
+public import CoreData
 
+@MainActor
 @objc public protocol CollectionViewDataSourceDelegate: NSObjectProtocol {
     func collectionView(_ collectionView: UICollectionView, cellIdentifierForItemAt: IndexPath) -> String
     func collectionView(_ collectionView: UICollectionView,
@@ -38,22 +32,35 @@ import class CoreData.NSFetchedResultsController
                         with: (any NSFetchRequestResult)?)
 
     // See UICollectionViewDataSource
+
     @objc(collectionView:viewForSupplementaryElementOfKind:atIndexPath:)
-    optional func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView
+    optional func collectionView(_ collectionView: UICollectionView,
+                                 viewForSupplementaryElementOfKind kind: String,
+                                 at indexPath: IndexPath) -> UICollectionReusableView
     @available(iOS 9.0, *)
     @objc(collectionView:canMoveItemAtIndexPath:)
     optional func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool
     @available(iOS 9.0, *)
     @objc(collectionView:moveItemAtIndexPath:toIndexPath:)
-    optional func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath)
+    optional func collectionView(_ collectionView: UICollectionView,
+                                 moveItemAt sourceIndexPath: IndexPath,
+                                 to destinationIndexPath: IndexPath)
+
+    @available(iOS 14.0, *)
+    @objc(indexTitlesForCollectionView:)
+    optional func indexTitles(for collectionView: UICollectionView) -> [String]?
+    @available(iOS 14.0, *)
+    @objc(collectionView:indexPathForIndexTitle:atIndex:)
+    optional func collectionView(_ collectionView: UICollectionView, indexPathForIndexTitle title: String, at index: Int) -> IndexPath
 }
 
+@MainActor
 public final class CollectionViewDataSource<Result: NSFetchRequestResult>: NSObject, UICollectionViewDataSource {
     public private(set) weak var collectionView: UICollectionView?
     public private(set) weak var fetchedResultsController: NSFetchedResultsController<Result>?
-
+    
     public weak var delegate: (any CollectionViewDataSourceDelegate)?
-
+    
     public required init(collectionView: UICollectionView,
                          controller: NSFetchedResultsController<Result>,
                          delegate: (any CollectionViewDataSourceDelegate)? = nil) {
@@ -63,25 +70,27 @@ public final class CollectionViewDataSource<Result: NSFetchRequestResult>: NSObj
         super.init()
         self.collectionView?.dataSource = self
     }
-
+    
     @objc public override func responds(to aSelector: Selector) -> Bool {
         let selectorToCheck = #selector((any CollectionViewDataSourceDelegate).collectionView(_:viewForSupplementaryElementOfKind:at:))
         if selectorToCheck == aSelector {
-            return delegate?.responds(to: aSelector) ?? false
+            return MainActor.assumeIsolated {
+                delegate?.responds(to: aSelector) ?? false
+            }
         }
         return super.responds(to: aSelector)
     }
-
+    
     // MARK: - UICollectionViewDataSource
     @objc(numberOfSectionsInCollectionView:)
     public dynamic func numberOfSections(in collectionView: UICollectionView) -> Int {
         fetchedResultsController?.sections?.count ?? 0
     }
-
+    
     @objc public dynamic func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         fetchedResultsController?.sections?[section].numberOfObjects ?? 0
     }
-
+    
     @objc(collectionView:cellForItemAtIndexPath:)
     public dynamic func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let identifier = delegate?.collectionView(collectionView, cellIdentifierForItemAt: indexPath) ?? "Cell"
@@ -90,23 +99,47 @@ public final class CollectionViewDataSource<Result: NSFetchRequestResult>: NSObj
         delegate?.collectionView(collectionView, configure: cell, forItemAt: indexPath, with: object)
         return cell
     }
-
+    
     @objc(collectionView:viewForSupplementaryElementOfKind:atIndexPath:)
-    public dynamic func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        delegate!.collectionView!(collectionView, viewForSupplementaryElementOfKind: kind, at: indexPath)
+    public dynamic func collectionView(_ collectionView: UICollectionView,
+                                       viewForSupplementaryElementOfKind kind: String,
+                                       at indexPath: IndexPath) -> UICollectionReusableView {
+        delegate?.collectionView?(collectionView, viewForSupplementaryElementOfKind: kind, at: indexPath) ?? UICollectionReusableView()
     }
-
+    
     @available(iOS 9.0, *)
     @objc(collectionView:canMoveItemAtIndexPath:)
     public dynamic func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
-        let delegateResponds = delegate?.responds(to: #selector((any CollectionViewDataSourceDelegate).collectionView(_:moveItemAt:to:)))
-        return delegate?.collectionView?(collectionView, canMoveItemAt: indexPath) ?? delegateResponds ?? false
+        delegate?.collectionView?(collectionView, canMoveItemAt: indexPath)
+        ?? delegate?.responds(to: #selector((any CollectionViewDataSourceDelegate).collectionView(_:moveItemAt:to:)))
+        ?? false
     }
-
+    
     @available(iOS 9.0, *)
     @objc(collectionView:moveItemAtIndexPath:toIndexPath:)
-    public dynamic func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+    public dynamic func collectionView(_ collectionView: UICollectionView,
+                                       moveItemAt sourceIndexPath: IndexPath,
+                                       to destinationIndexPath: IndexPath) {
         delegate?.collectionView?(collectionView, moveItemAt: sourceIndexPath, to: destinationIndexPath)
+    }
+    
+    @available(iOS 14.0, *)
+    @objc(indexTitlesForCollectionView:)
+    public dynamic func indexTitles(for collectionView: UICollectionView) -> [String]? {
+        if let delegate, delegate.responds(to: #selector((any CollectionViewDataSourceDelegate).indexTitles(for:))) {
+            return delegate.indexTitles?(for: collectionView)
+        }
+        return fetchedResultsController?.sectionIndexTitles
+    }
+
+    @available(iOS 14.0, *)
+    @objc(collectionView:indexPathForIndexTitle:atIndex:)
+    public dynamic func collectionView(_ collectionView: UICollectionView,
+                                       indexPathForIndexTitle title: String,
+                                       at index: Int) -> IndexPath {
+        delegate?.collectionView?(collectionView, indexPathForIndexTitle: title, at: index)
+        ?? fetchedResultsController.flatMap { $0.section(forSectionIndexTitle: title, at: index) }.map { IndexPath(index: $0) }
+        ?? IndexPath()
     }
 }
 #endif

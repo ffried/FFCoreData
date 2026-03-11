@@ -17,7 +17,7 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 
-import Foundation
+public import Foundation
 import CoreData
 import FFFoundation
 
@@ -51,6 +51,7 @@ internal extension KeyObjectDictionary {
     }
 }
 
+@frozen
 public struct KeyObjectDictionaryExpression<Model: Entity> {
     @usableFromInline
     let dict: KeyObjectDictionary

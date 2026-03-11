@@ -18,38 +18,122 @@
 //  limitations under the License.
 //
 
-import CoreData
+public import CoreData
+
+@available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+extension NSManagedObjectContext {
+    internal final nonisolated func performAndWaitWithTypedThrows<T, F>(
+        _ work: @Sendable () throws(F) -> sending T
+    ) throws(F) -> sending T {
+        do {
+            return try performAndWait { try work() }
+        } catch {
+            throw error as! F
+        }
+    }
+
+    internal final nonisolated func performWithTypedThrows<T, F>(
+        schedule: sending NSManagedObjectContext.ScheduledTaskType = .immediate,
+        _ work: @Sendable @escaping () throws(F) -> sending T
+    ) async throws(F) -> sending T {
+        do {
+            return try await perform(schedule: schedule) { try work() }
+        } catch {
+            throw error as! F
+        }
+    }
+}
+
+#if compiler(>=6.2)
+@safe
+fileprivate final class UnsafeSending<V>: @unchecked Sendable {
+    private let ptr: UnsafeMutablePointer<V>
+
+    init() {
+        unsafe ptr = .allocate(capacity: 1)
+    }
+
+    func set(_ value: V) {
+        unsafe ptr.initialize(to: value)
+    }
+
+    /*consuming*/ func get() -> V {
+        unsafe ptr.move()
+    }
+
+    deinit {
+        unsafe ptr.deallocate()
+    }
+}
+#else
+fileprivate final class UnsafeSending<V>: @unchecked Sendable {
+    private let ptr: UnsafeMutablePointer<V>
+
+    init() {
+        ptr = .allocate(capacity: 1)
+    }
+
+    func set(_ value: V) {
+        ptr.initialize(to: value)
+    }
+
+    func get() -> V {
+        ptr.move()
+    }
+
+    deinit {
+        ptr.deallocate()
+    }
+}
+#endif
 
 extension NSManagedObjectContext {
-    public final func sync<T>(do work: () throws -> T) rethrows -> T {
-        try {
-            var result: Result<T, any Error>!
-            performAndWait {
-                result = Result(catching: work)
-            }
-            return try result.get()
-        }()
+    @preconcurrency
+    @available(macOS, deprecated: 12, message: "Use performAndWait", renamed: "performAndWait")
+    @available(iOS, deprecated: 15, message: "Use performAndWait", renamed: "performAndWait")
+    @available(tvOS, deprecated: 15, message: "Use performAndWait", renamed: "performAndWait")
+    @available(watchOS, deprecated: 8, message: "Use performAndWait", renamed: "performAndWait")
+    public nonisolated final func sync<T, F>(do work: @Sendable () throws(F) -> sending T) throws(F) -> sending T {
+        let result = UnsafeSending<Result<T, F>>()
+        performAndWait {
+            result.set(Result(catching: work))
+        }
+        return try result.get().get()
     }
 
     @inlinable
-    public final func async(do work: @escaping () -> ()) {
+    @preconcurrency
+    @available(*, deprecated, renamed: "perform")
+    public nonisolated final func async(do work: @escaping @Sendable () -> ()) {
         perform(work)
     }
 }
 
-@available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
+@available(macOS, introduced: 10.15, deprecated: 12, message: "Use perform")
+@available(iOS, introduced: 13, deprecated: 15, message: "Use perform")
+@available(tvOS, introduced: 13, deprecated: 15, message: "Use perform")
+@available(watchOS, introduced: 6, deprecated: 8, message: "Use perform")
 extension NSManagedObjectContext {
-    public final func run<T>(_ work: @escaping (NSManagedObjectContext) throws -> T) async rethrows -> T {
-        try await {
-            try await withUnsafeContinuation { (continuation: UnsafeContinuation<Result<T, Error>, Never>) in
-                perform {
-                    continuation.resume(returning: .init(catching: { try work(self) }))
-                }
-            }.get()
-        }()
+    @preconcurrency
+    public nonisolated final func run<T, F>(_ work: @escaping @Sendable (NSManagedObjectContext) throws(F) -> sending T) async throws(F) -> sending T {
+#if compiler(>=6.2)
+        unsafe try await withUnsafeContinuation { (continuation: UnsafeContinuation<Result<T, F>, Never>) in
+            perform {
+                unsafe continuation.resume(returning: .init(catching: { () throws(F) -> T in try work(self) }))
+            }
+        }.get()
+#else
+        try await withUnsafeContinuation { (continuation: UnsafeContinuation<Result<T, F>, Never>) in
+            perform {
+                continuation.resume(returning: .init(catching: { () throws(F) -> T in try work(self) }))
+            }
+        }.get()
+#endif
     }
 
-    public final func run<T>(_ work: @escaping () throws -> T) async rethrows -> T {
-        try await run { _ in try work() }
+    @inlinable
+    @preconcurrency
+    public nonisolated final func run<T, F>(_ work: @escaping @Sendable () throws(F) -> sending T) async throws(F) -> sending T {
+        try await run { (_) throws(F) -> T in try work() }
     }
 }

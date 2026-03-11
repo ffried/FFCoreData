@@ -18,57 +18,74 @@
 //  limitations under the License.
 //
 
-import struct Foundation.Notification
-import class Foundation.NotificationCenter
+import Foundation
 import CoreData
 
 @available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
 public struct MOCChanges<Filter: MOCObserverFilter>: AsyncSequence {
     public typealias Element = AsyncIterator.Element
 
+    private struct SendableNotificationRegistration: @unchecked Sendable {
+        let observer: any NSObjectProtocol
+    }
+
     public struct AsyncIterator: AsyncIteratorProtocol {
         public typealias Element = MOCObservedChanges
+        public typealias Failure = Never
 
-        var upstream: AsyncCompactMapSequence<AsyncStream<Notification>, MOCObservedChanges>.AsyncIterator
+        private(set) var upstream: AsyncStream<MOCObservedChanges>.AsyncIterator
 
         public mutating func next() async -> Element? {
             await upstream.next()
+        }
+
+        @available(macOS 15.0, iOS 18.0, watchOS 11.0, tvOS 18.0, visionOS 2.0, *)
+        public mutating func next(isolation actor: isolated (any Actor)?) async throws(Failure) -> Element? {
+            await upstream.next(isolation: actor)
         }
     }
 
     public let mode: MOCObservationMode
     public let filter: Filter
-    private let upstream: AsyncCompactMapSequence<AsyncStream<Notification>, MOCObservedChanges>
+    private let upstream: AsyncStream<MOCObservedChanges>
 
     public init(mode: MOCObservationMode, filter: Filter) {
         self.mode = mode
         self.filter = filter
 
-        let stream: AsyncStream<Notification>
+        let notificationCenter = NotificationCenter.default
         if let contexts = mode.nonEmptyContexts {
-            stream = .init { continuation in
+            upstream = .init { continuation in
                 let observers = contexts.map {
-                    NotificationCenter.default.addObserver(forName: .NSManagedObjectContextObjectsDidChange,
-                                                           object: $0,
-                                                           queue: nil) { note in continuation.yield(note) }
+                    SendableNotificationRegistration(observer: notificationCenter.addObserver(forName: .NSManagedObjectContextObjectsDidChange,
+                                                                                              object: $0,
+                                                                                              queue: nil) {
+                        guard let changes = MOCObservedChanges(notification: $0, filter: filter) else { return }
+                        continuation.yield(changes)
+                    })
                 }
                 continuation.onTermination = { _ in
                     observers.forEach {
-                        NotificationCenter.default.removeObserver($0)
+                        NotificationCenter.default.removeObserver($0.observer)
                     }
                 }
             }
         } else {
-            stream = .init { continuation in
-                let observer = NotificationCenter.default.addObserver(forName: .NSManagedObjectContextObjectsDidChange,
-                                                                      object: nil,
-                                                                      queue: nil) { note in continuation.yield(note) }
+            upstream = .init { continuation in
+                let observer = SendableNotificationRegistration(
+                    observer: notificationCenter.addObserver(forName: .NSManagedObjectContextObjectsDidChange,
+                                                             object: nil,
+                                                             queue: nil) {
+                                                                 guard let changes = MOCObservedChanges(notification: $0, filter: filter)
+                                                                 else { return }
+                                                                 continuation.yield(changes)
+                                                             }
+                )
                 continuation.onTermination = { _ in
-                    NotificationCenter.default.removeObserver(observer)
+                    NotificationCenter.default.removeObserver(observer.observer)
                 }
             }
         }
-        self.upstream = stream.compactMap { MOCObservedChanges(notification: $0, filter: filter) }
     }
 
     public func makeAsyncIterator() -> AsyncIterator {

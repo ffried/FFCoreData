@@ -18,9 +18,10 @@
 //  limitations under the License.
 //
 
-import Foundation
-import FFFoundation
+public import Foundation
+public import FFFoundation
 
+@frozen
 public struct FetchableSortExpression<Model: Fetchable> {
     @usableFromInline
     let sortDescriptor: NSSortDescriptor
@@ -31,18 +32,22 @@ public struct FetchableSortExpression<Model: Fetchable> {
     }
 }
 
+@inlinable
 public prefix func ^ <Model, Value: Comparable>(rhs: KeyPath<Model, Value>) -> FetchableSortExpression<Model> {
     .init(sortDescriptor: ^rhs)
 }
 
+@inlinable
 public prefix func !^ <Model, Value: Comparable>(rhs: KeyPath<Model, Value>) -> FetchableSortExpression<Model> {
     .init(sortDescriptor: !^rhs)
 }
 
+@inlinable
 public prefix func ^ <Model, Value: Comparable>(rhs: KeyPath<Model, Value?>) -> FetchableSortExpression<Model> {
     .init(sortDescriptor: .init(keyPath: rhs, ascending: true))
 }
 
+@inlinable
 public prefix func !^ <Model, Value: Comparable>(rhs: KeyPath<Model, Value?>) -> FetchableSortExpression<Model> {
     .init(sortDescriptor: .init(keyPath: rhs, ascending: false))
 }

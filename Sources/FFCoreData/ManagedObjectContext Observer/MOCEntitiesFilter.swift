@@ -18,11 +18,9 @@
 //  limitations under the License.
 //
 
-import class CoreData.NSEntityDescription
-import class CoreData.NSManagedObject
-import class CoreData.NSManagedObjectContext
+public import CoreData
 
-public struct MOCEntitiesFilter: MOCObserverFilter, Sendable {
+public struct MOCEntitiesFilter: MOCObserverFilter {
     public var entityNames: Array<String>
 
     public init(entityNames: Array<String>) {
@@ -44,12 +42,12 @@ extension Fetchable where Self: NSManagedObject {
         .init(mode: mode, filter: MOCEntitiesFilter(entityNames: [entityName]), fireInitially: fireInitially, handler: handler)
     }
 
-    #if canImport(Combine)
+#if canImport(Combine)
     @available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
     public static func publishEntityChanges(with mode: MOCObservationMode = .allContexts) -> MOCChangePublisher<MOCEntitiesFilter> {
         .init(mode: mode, filter: MOCEntitiesFilter(entityNames: [entityName]))
     }
-    #endif
+#endif
 
     @available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
     public static func changes(with mode: MOCObservationMode = .allContexts) -> MOCChanges<MOCEntitiesFilter> {

@@ -18,9 +18,10 @@
 //  limitations under the License.
 //
 
-import Foundation
-import FFFoundation
+public import Foundation
+public import FFFoundation
 
+@frozen
 public struct FetchableFilterExpression<Model: Fetchable> {
     @usableFromInline
     let predicate: NSPredicate

@@ -18,22 +18,19 @@
 //  limitations under the License.
 //
 
-import class Foundation.NSObject
-import struct Foundation.IndexPath
-import protocol CoreData.NSFetchRequestResult
-import protocol CoreData.NSFetchedResultsControllerDelegate
-import protocol CoreData.NSFetchedResultsSectionInfo
-import enum CoreData.NSFetchedResultsChangeType
-import class CoreData.NSFetchedResultsController
+public import Foundation
+public import CoreData
 #if canImport(os)
 import func os.os_log
 #else
 import func FFFoundation.os_log
 #endif
 
+@MainActor
 @objc public protocol FetchedResultsControllerManagerDelegate: NSFetchedResultsControllerDelegate {}
 
-public class FetchedResultsControllerManager<Result: NSFetchRequestResult>: NSObject, NSFetchedResultsControllerDelegate {
+@MainActor
+public class FetchedResultsControllerManager<Result: NSFetchRequestResult>: NSObject, @MainActor NSFetchedResultsControllerDelegate {
     public typealias Controller = NSFetchedResultsController<Result>
     public typealias Delegate = FetchedResultsControllerManagerDelegate
 
@@ -44,7 +41,11 @@ public class FetchedResultsControllerManager<Result: NSFetchRequestResult>: NSOb
         self.fetchedResultsController = fetchedResultsController
         self.delegate = delegate
         super.init()
+#if compiler(>=6.2)
+        unsafe self.fetchedResultsController?.delegate = self
+#else
         self.fetchedResultsController?.delegate = self
+#endif
     }
 
     // MARK: - Internal functions
@@ -77,7 +78,12 @@ public class FetchedResultsControllerManager<Result: NSFetchRequestResult>: NSOb
         case .insert: insertSection(at: sectionIndex)
         case .update: updateSection(at: sectionIndex)
         case .delete: removeSection(at: sectionIndex)
-        default: os_log("Unsupported change type: %lld", log: .ffCoreData, type: .default, type.rawValue)
+        default:
+#if compiler(>=6.2)
+            unsafe os_log("Unsupported change type: %lld", log: .ffCoreData, type: .default, type.rawValue)
+#else
+            os_log("Unsupported change type: %lld", log: .ffCoreData, type: .default, type.rawValue)
+#endif
         }
         delegate?.controller?(controller, didChange: sectionInfo, atSectionIndex: sectionIndex, for: type)
     }
@@ -93,7 +99,12 @@ public class FetchedResultsControllerManager<Result: NSFetchRequestResult>: NSOb
         case .update: updateSubobject(at: indexPath!)
         case .delete: removeSubobject(at: indexPath!)
         case .move: moveSubobject(from: indexPath!, to: newIndexPath!)
-        @unknown default: os_log("Unsupported unknown change type: %lld", log: .ffCoreData, type: .default, type.rawValue)
+        @unknown default:
+#if compiler(>=6.2)
+            unsafe os_log("Unsupported unknown change type: %lld", log: .ffCoreData, type: .default, type.rawValue)
+#else
+            os_log("Unsupported unknown change type: %lld", log: .ffCoreData, type: .default, type.rawValue)
+#endif
         }
         delegate?.controller?(controller, didChange: anObject, at: indexPath, for: type, newIndexPath: newIndexPath)
     }

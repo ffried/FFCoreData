@@ -18,11 +18,10 @@
 //  limitations under the License.
 //
 
-import struct Foundation.Notification
-import class Foundation.NotificationCenter
-import class Foundation.OperationQueue
-import CoreData
+import Foundation
+public import CoreData
 
+@available(*, noasync, message: "Use MOCChanges instead")
 public final class MOCBlockObserver<Filter: MOCObserverFilter> {
     public typealias Handler = (MOCBlockObserver, MOCObservedChanges) -> ()
 
@@ -43,9 +42,15 @@ public final class MOCBlockObserver<Filter: MOCObserverFilter> {
         self.filter = filter
         self.handler = handler
         self.queue = queue
-        let observerBlock = { [weak self] (note: Notification) -> () in
+#if compiler(>=6.2)
+        let observerBlock = unsafe unsafeBitCast({ [weak self] (note: Notification) -> () in
             self?.managedObjectContextDidChange(notification: note)
-        }
+        }, to: (@Sendable (Notification) -> ()).self)
+#else
+        let observerBlock = unsafeBitCast({ [weak self] (note: Notification) -> () in
+            self?.managedObjectContextDidChange(notification: note)
+        }, to: (@Sendable (Notification) -> ()).self)
+#endif
         let notificationCenter = NotificationCenter.default
         if let contexts = mode.nonEmptyContexts {
             observers = contexts.map {
@@ -67,6 +72,14 @@ public final class MOCBlockObserver<Filter: MOCObserverFilter> {
     }
 
     private func fire(with changes: MOCObservedChanges) {
-        queue.addOperation { self.handler(self, changes) }
+#if compiler(>=6.2)
+        let block = unsafe unsafeBitCast({ self.handler(self, changes) }, to: (@Sendable () -> ()).self)
+#else
+        let block = unsafeBitCast({ self.handler(self, changes) }, to: (@Sendable () -> ()).self)
+#endif
+        queue.addOperation(block)
     }
 }
+
+@available(*, unavailable)
+extension MOCBlockObserver: Sendable {}

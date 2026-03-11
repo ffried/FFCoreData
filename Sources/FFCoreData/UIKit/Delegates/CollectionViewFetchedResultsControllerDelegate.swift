@@ -19,11 +19,9 @@
 //
 
 #if canImport(UIKit) && !os(watchOS)
-import struct Foundation.IndexSet
-import struct Foundation.IndexPath
-import protocol CoreData.NSFetchRequestResult
-import class CoreData.NSFetchedResultsController
-import class UIKit.UICollectionView
+import Foundation
+public import UIKit
+public import CoreData
 
 public final class CollectionViewFetchedResultsControllerManager<Result: NSFetchRequestResult>: UIKitFetchedResultsControllerManager<Result> {
 

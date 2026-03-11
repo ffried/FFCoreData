@@ -18,10 +18,8 @@
 //  limitations under the License.
 //
 
-import struct Foundation.URL
-import class CoreData.NSManagedObjectID
-import class CoreData.NSManagedObject
-import class CoreData.NSManagedObjectContext
+import Foundation
+public import CoreData
 #if canImport(os)
 import func os.os_log
 #else
@@ -52,16 +50,28 @@ public struct MOCObjectsFilter: MOCObserverFilter {
 
 extension NSManagedObject {
     fileprivate final func obtainPermanentID() {
-        guard !objectID.isTemporaryID else { return }
+        guard objectID.isTemporaryID else { return }
+#if compiler(>=6.2)
+        do {
+            try unsafe managedObjectContext?.obtainPermanentIDs(for: [self])
+        } catch {
+            unsafe os_log("Could not obtain permanent object id: %@", log: .ffCoreData, type: .error, String(describing: error))
+        }
+#else
         do {
             try managedObjectContext?.obtainPermanentIDs(for: [self])
         } catch {
             os_log("Could not obtain permanent object id: %@", log: .ffCoreData, type: .error, String(describing: error))
         }
+#endif
     }
 
     private var mocObservationMode: MOCObservationMode {
+#if compiler(>=6.2)
+        unsafe managedObjectContext.map { .singleContext($0) } ?? .allContexts
+#else
         managedObjectContext.map { .singleContext($0) } ?? .allContexts
+#endif
     }
 
     private var mocObjectsFilter: MOCObjectsFilter {
@@ -79,12 +89,12 @@ extension NSManagedObject {
         MOCBlockObserver(mode: mocObservationMode, filter: mocObjectsFilter, fireInitially: fireInitially, handler: handler)
     }
 
-    #if canImport(Combine)
+#if canImport(Combine)
     @available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
     public func publishChanges() -> MOCChangePublisher<MOCObjectsFilter> {
         MOCChangePublisher(mode: mocObservationMode, filter: mocObjectsFilter)
     }
-    #endif
+#endif
 }
 
 fileprivate extension MOCObservationMode {
@@ -108,9 +118,15 @@ extension Sequence where Element: NSManagedObject {
         for obj in self {
             obj.obtainPermanentID()
             objectIDs.append(obj.objectID)
+#if compiler(>=6.2)
+            if let moc = unsafe obj.managedObjectContext, !contexts.contains(moc) {
+                contexts.append(moc)
+            }
+#else
             if let moc = obj.managedObjectContext, !contexts.contains(moc) {
                 contexts.append(moc)
             }
+#endif
         }
         return (MOCObservationMode(contexts: contexts), MOCObjectsFilter(objectIDs: objectIDs))
     }
@@ -120,11 +136,11 @@ extension Sequence where Element: NSManagedObject {
         return MOCBlockObserver(mode: mode, filter: filter, fireInitially: fireInitially, handler: handler)
     }
 
-    #if canImport(Combine)
+#if canImport(Combine)
     @available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
     public func publishChanges() -> MOCChangePublisher<MOCObjectsFilter> {
         let (mode, filter) = mocObservationModeAndObjectsFilter()
         return MOCChangePublisher(mode: mode, filter: filter)
     }
-    #endif
+#endif
 }

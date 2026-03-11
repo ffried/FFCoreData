@@ -22,17 +22,11 @@
 #if canImport(ObjectiveC)
 import ObjectiveC
 #endif
-import protocol Foundation.NSObjectProtocol
-import class Foundation.NSObject
-import struct Foundation.IndexPath
-import let Foundation.NSNotFound
-import enum UIKit.UITableViewCellEditingStyle
-import protocol UIKit.UITableViewDataSource
-import class UIKit.UITableView
-import class UIKit.UITableViewCell
-import protocol CoreData.NSFetchRequestResult
-import class CoreData.NSFetchedResultsController
+public import Foundation
+public import UIKit
+public import CoreData
 
+@MainActor
 @objc public protocol TableViewDataSourceDelegate: NSObjectProtocol {
     func tableView(_ tableView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> String
     func tableView(_ tableView: UITableView, 
@@ -61,6 +55,7 @@ import class CoreData.NSFetchedResultsController
     optional func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath)
 }
 
+@MainActor
 public final class TableViewDataSource<Result: NSFetchRequestResult>: NSObject, UITableViewDataSource {
     public private(set) weak var tableView: UITableView?
     public private(set) weak var fetchedResultsController: NSFetchedResultsController<Result>?
@@ -97,8 +92,7 @@ public final class TableViewDataSource<Result: NSFetchRequestResult>: NSObject, 
     }
 
     @objc public dynamic func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let selectorToCheck = #selector((any TableViewDataSourceDelegate).tableView(_:titleForHeaderInSection:))
-        if let delegate = delegate, delegate.responds(to: selectorToCheck) {
+        if let delegate, delegate.responds(to: #selector((any TableViewDataSourceDelegate).tableView(_:titleForHeaderInSection:))) {
             return delegate.tableView?(tableView, titleForHeaderInSection: section)
         }
         if let count = fetchedResultsController?.sections?.count, count > 0 {
@@ -113,7 +107,11 @@ public final class TableViewDataSource<Result: NSFetchRequestResult>: NSObject, 
 
     @objc(sectionIndexTitlesForTableView:)
     public dynamic func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        delegate?.sectionIndexTitles?(for: tableView) ?? fetchedResultsController?.sectionIndexTitles
+        // Allow the delegate to return nil!
+        if let delegate, delegate.responds(to: #selector((any TableViewDataSourceDelegate).sectionIndexTitles(for:))) {
+            return delegate.sectionIndexTitles?(for: tableView)
+        }
+        return fetchedResultsController?.sectionIndexTitles
     }
 
     @objc(tableView:sectionForSectionIndexTitle:atIndex:)
@@ -130,8 +128,9 @@ public final class TableViewDataSource<Result: NSFetchRequestResult>: NSObject, 
 
     @objc(tableView:canMoveRowAtIndexPath:)
     public dynamic func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        let selectorToCheck = #selector((any TableViewDataSourceDelegate).tableView(_:moveRowAt:to:))
-        return delegate?.tableView?(tableView, canMoveRowAt: indexPath) ?? delegate?.responds(to: selectorToCheck) ?? false
+        delegate?.tableView?(tableView, canMoveRowAt: indexPath)
+        ?? delegate?.responds(to: #selector((any TableViewDataSourceDelegate).tableView(_:moveRowAt:to:)))
+        ?? false
     }
 
     @objc(tableView:commitEditingStyle:forRowAtIndexPath:)

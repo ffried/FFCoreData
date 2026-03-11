@@ -18,14 +18,14 @@
 //  limitations under the License.
 //
 
-import struct Foundation.Notification
-import CoreData
+import Foundation
+public import CoreData
 
-public protocol MOCObserverFilter {
+public protocol MOCObserverFilter: Sendable {
     func include(managedObject: NSManagedObject) -> Bool
 }
 
-public enum MOCObservationMode {
+public enum MOCObservationMode: Sendable {
     case allContexts
     case singleContext(NSManagedObjectContext)
     case multipleContexts(Array<NSManagedObjectContext>)
@@ -41,7 +41,7 @@ public enum MOCObservationMode {
     }
 }
 
-public struct MOCObservedChanges {
+public struct MOCObservedChanges: Sendable {
     public private(set) var inserted = Array<NSManagedObjectID>()
     public private(set) var updated = Array<NSManagedObjectID>()
     public private(set) var deleted = Array<NSManagedObjectID>()

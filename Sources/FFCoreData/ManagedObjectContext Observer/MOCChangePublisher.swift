@@ -19,9 +19,8 @@
 //
 
 #if canImport(Combine)
-import struct Foundation.Notification
-import class Foundation.NotificationCenter
-import Combine
+import Foundation
+public import Combine
 import CoreData
 
 @available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)

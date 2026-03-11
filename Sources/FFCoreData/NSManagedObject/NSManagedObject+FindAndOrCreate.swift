@@ -18,9 +18,9 @@
 //  limitations under the License.
 //
 
-import Foundation
-import CoreData
-import FFFoundation
+public import Foundation
+public import CoreData
+public import FFFoundation
 
 fileprivate extension KeyObjectDictionary {
     @inline(__always)
@@ -71,7 +71,7 @@ extension Entity {
 extension Entity where Self: NSManagedObject {
     @inlinable
     public static var entityName: String {
-        String(class: self, removeNamespace: shouldRemoveNamespaceInEntityName)
+        String(class: self, removeNamespace: shouldRemoveNamespaceInEntityName.wrappedValue)
     }
 }
 
@@ -86,21 +86,33 @@ extension Fetchable {
         let fetchRequest = self.fetchRequest()
         fetchRequest.predicate = predicate
         fetchRequest.sortDescriptors = sortDescriptors
-        if let limit = limit {
+        if let limit {
             fetchRequest.fetchLimit = limit
         }
-        if let offset = offset {
+        if let offset {
             fetchRequest.fetchOffset = offset
         }
         return fetchRequest
     }
 
     @inlinable
-    public static func fetchRequest<SortExpressions>(where filter: FetchableFilterExpression<Self>,
-                                                     sortedBy sortExpressions: SortExpressions,
-                                                     offsetBy offset: Int? = nil,
-                                                     limitedBy limit: Int? = nil) -> NSFetchRequest<Self>
-    where SortExpressions: Collection, SortExpressions.Element == FetchableSortExpression<Self>
+    @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
+    public static func fetchRequest(with predicate: NSPredicate?,
+                                    sortedBy sortDescriptors: Array<SortDescriptor<Self>>? = nil,
+                                    offsetBy offset: Int? = nil,
+                                    limitedBy limit: Int? = nil) -> NSFetchRequest<Self> {
+        fetchRequest(with: predicate,
+                     sortedBy: sortDescriptors?.map { NSSortDescriptor($0) },
+                     offsetBy: offset,
+                     limitedBy: limit)
+    }
+
+
+    @inlinable
+    public static func fetchRequest(where filter: FetchableFilterExpression<Self>,
+                                    sortedBy sortExpressions: some Collection<FetchableSortExpression<Self>>,
+                                    offsetBy offset: Int? = nil,
+                                    limitedBy limit: Int? = nil) -> NSFetchRequest<Self>
     {
         let sortDescriptors = sortExpressions.map { $0.sortDescriptor }
         return fetchRequest(with: filter.predicate,
@@ -161,10 +173,17 @@ extension Fetchable {
     }
 
     @inlinable
-    public static func find<SortExpressions>(in context: NSManagedObjectContext,
-                                             where filter: FetchableFilterExpression<Self>,
-                                             sortedBy sortExpressions: SortExpressions) throws -> Array<Self>
-    where SortExpressions: Collection, SortExpressions.Element == FetchableSortExpression<Self>
+    @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
+    public static func find(in context: NSManagedObjectContext,
+                            with predicate: NSPredicate? = nil,
+                            sortedBy sortDescriptors: Array<SortDescriptor<Self>>? = nil) throws -> Array<Self> {
+        try find(in: context, with: predicate, sortedBy: sortDescriptors?.map { NSSortDescriptor($0) })
+    }
+
+    @inlinable
+    public static func find(in context: NSManagedObjectContext,
+                            where filter: FetchableFilterExpression<Self>,
+                            sortedBy sortExpressions: some Collection<FetchableSortExpression<Self>>) throws -> Array<Self>
     {
         try context.fetch(fetchRequest(where: filter, sortedBy: sortExpressions))
     }
@@ -190,10 +209,17 @@ extension Fetchable {
     }
 
     @inlinable
-    public static func findFirst<SortExpressions>(in context: NSManagedObjectContext,
-                                                  where filter: FetchableFilterExpression<Self>,
-                                                  sortedBy sortExpressions: SortExpressions) throws -> Self?
-    where SortExpressions: Collection, SortExpressions.Element == FetchableSortExpression<Self>
+    @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
+    public static func findFirst(in context: NSManagedObjectContext,
+                                 with predicate: NSPredicate? = nil,
+                                 sortedBy sortDescriptors: Array<SortDescriptor<Self>>? = nil) throws -> Self? {
+        try findFirst(in: context, with: predicate, sortedBy: sortDescriptors?.map { NSSortDescriptor($0) })
+    }
+
+    @inlinable
+    public static func findFirst(in context: NSManagedObjectContext,
+                                 where filter: FetchableFilterExpression<Self>,
+                                 sortedBy sortExpressions: some Collection<FetchableSortExpression<Self>>) throws -> Self?
     {
         try context.fetch(fetchRequest(where: filter, sortedBy: sortExpressions, limitedBy: 1)).first
     }
@@ -254,30 +280,53 @@ extension Creatable where Self: NSManagedObject {
 }
 
 extension Entity where Self: NSManagedObject {
+    public func isolatedOnContext() -> NSManagedObjectContextIsolated<Self> {
+#if compiler(>=6.2)
+        NSManagedObjectContextIsolated(context: unsafe managedObjectContext!, value: self)
+#else
+        NSManagedObjectContextIsolated(context: managedObjectContext!, value: self)
+#endif
+    }
+}
+
+@available(*, deprecated, message: "Use NSManagedObjectContextIsolated instead")
+extension Entity where Self: NSManagedObject {
+    private var hasContext: Bool {
+#if compiler(>=6.2)
+        unsafe managedObjectContext != nil
+#else
+        managedObjectContext != nil
+#endif
+    }
+
     /// Safely accessess the given KeyPath on the objects managedObjectContext.
     /// If no managedObjectContext is there, it directly accesses the property.
-    public subscript<T>(safe keyPath: ReferenceWritableKeyPath<Self, T>) -> T {
+    @preconcurrency
+    @available(*, noasync)
+    public subscript<T>(safe keyPath: any Sendable & ReferenceWritableKeyPath<Self, T>) -> T {
         get {
-            if let moc = managedObjectContext {
-                return moc.sync { self[keyPath: keyPath] }
+            if hasContext {
+                isolatedOnContext().blocking()[dynamicMember: keyPath]
             } else {
-                return self[keyPath: keyPath]
+                self[keyPath: keyPath]
             }
         }
         set {
-            if let moc = managedObjectContext {
-                moc.sync { self[keyPath: keyPath] = newValue }
+            if hasContext {
+                isolatedOnContext().blocking()[dynamicMember: keyPath] = newValue
             } else {
                 self[keyPath: keyPath] = newValue
             }
         }
     }
 
-    public subscript<T>(safe keyPath: KeyPath<Self, T>) -> T {
-        if let moc = managedObjectContext {
-            return moc.sync { self[keyPath: keyPath] }
+    @preconcurrency
+    @available(*, noasync)
+    public subscript<T>(safe keyPath: any Sendable & KeyPath<Self, T>) -> T {
+        if hasContext {
+            isolatedOnContext().blocking()[dynamicMember: keyPath]
         } else {
-            return self[keyPath: keyPath]
+            self[keyPath: keyPath]
         }
     }
 }
@@ -285,5 +334,5 @@ extension Entity where Self: NSManagedObject {
 extension NSManagedObject {
     @usableFromInline
     @nonobjc
-    internal static var shouldRemoveNamespaceInEntityName = true
+    internal static let shouldRemoveNamespaceInEntityName = Synchronized<Bool>(false)
 }
