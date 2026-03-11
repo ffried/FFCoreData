@@ -20,7 +20,7 @@
 
 public import CoreData
 
-private struct UnsafeSending<T>: @unchecked Sendable {
+private struct UnsafeSending<T: ~Copyable>: @unchecked Sendable, ~Copyable {
     let value: T
 
     init(_ value: consuming T) {
@@ -28,11 +28,13 @@ private struct UnsafeSending<T>: @unchecked Sendable {
     }
 }
 
+extension UnsafeSending: Copyable where T: Copyable {}
+
 @dynamicMemberLookup
-public struct NSManagedObjectContextIsolated<Value>: @unchecked Sendable {
+public struct NSManagedObjectContextIsolated<Value: ~Copyable>: @unchecked Sendable, ~Copyable {
     @dynamicMemberLookup
     @available(*, noasync)
-    public struct Blocking: @unchecked Sendable {
+    public struct Blocking: @unchecked Sendable, ~Copyable {
         let context: NSManagedObjectContext
         var value: Value
 
@@ -89,7 +91,7 @@ public struct NSManagedObjectContextIsolated<Value>: @unchecked Sendable {
             self[dynamicMember: member] = newValue
         }
 
-        public func withValue<T, F>(do work: @Sendable (Value) throws(F) -> sending T) throws(F) -> sending T {
+        public func withValue<T, F>(do work: @Sendable (borrowing Value) throws(F) -> sending T) throws(F) -> sending T {
             if #available(macOS 12, iOS 15, tvOS 15, watchOS 8, *) {
                 try context.performAndWaitWithTypedThrows { () throws(F) -> sending T in try work(value) }
             } else {
@@ -97,7 +99,9 @@ public struct NSManagedObjectContextIsolated<Value>: @unchecked Sendable {
             }
         }
 
-        public mutating func withMutableValue<T, F>(do work: @Sendable (inout Value) throws(F) -> sending T) throws(F) -> sending T {
+        public mutating func withMutableValue<T, F>(do work: @Sendable (inout Value) throws(F) -> sending T) throws(F) -> sending T
+        where Value: Copyable
+        {
             let (newSelf, result): (Self, T)
             if #available(macOS 12, iOS 15, tvOS 15, watchOS 8, *) {
                 (newSelf, result) = try context.performAndWaitWithTypedThrows { [self] () throws(F) -> sending (Self, T) in
@@ -124,13 +128,13 @@ public struct NSManagedObjectContextIsolated<Value>: @unchecked Sendable {
     let context: NSManagedObjectContext
     var value: Value
 
-    public init(context: NSManagedObjectContext, value: Value) {
+    public init(context: NSManagedObjectContext, value: consuming Value) {
         self.context = context
         self.value = value
     }
 
     @available(*, noasync)
-    public func blocking() -> Blocking {
+    public consuming func blocking() -> Blocking {
         .init(context: context, value: value)
     }
 
@@ -142,7 +146,7 @@ public struct NSManagedObjectContextIsolated<Value>: @unchecked Sendable {
     }
 
     @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
-    public func set<T>(_ newValue: sending T, for member: any Sendable & ReferenceWritableKeyPath<Value, T>) async {
+    public func set<T>(_ newValue: consuming sending T, for member: any Sendable & ReferenceWritableKeyPath<Value, T>) async {
         await context.perform { [sendableNewValue = UnsafeSending(newValue)] in
             value[keyPath: member] = sendableNewValue.value
         }
@@ -156,12 +160,16 @@ public struct NSManagedObjectContextIsolated<Value>: @unchecked Sendable {
     }
 
     @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
-    public func perform<T, F>(do work: @escaping @Sendable (Value) throws(F) -> sending T) async throws(F) -> sending T {
+    public func perform<T, F>(do work: @escaping @Sendable (borrowing Value) throws(F) -> sending T) async throws(F) -> sending T
+    where Value: Copyable
+    {
         try await context.performWithTypedThrows { () throws(F) -> sending T in try work(value) }
     }
 
     @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
-    public mutating func performMutating<T, F>(do work: @escaping @Sendable (inout Value) throws(F) -> sending T) async throws(F) -> sending T {
+    public mutating func performMutating<T, F>(do work: @escaping @Sendable (inout Value) throws(F) -> sending T) async throws(F) -> sending T
+    where Value: Copyable
+    {
         let (newSelf, result) = try await context.performWithTypedThrows { [self] () throws(F) -> sending (Self, T) in
             var newSelf = self
             let result = try work(&newSelf.value)
@@ -177,3 +185,6 @@ public struct NSManagedObjectContextIsolated<Value>: @unchecked Sendable {
         await CoreDataStack.saveContext(context, rollback: rollback)
     }
 }
+
+extension NSManagedObjectContextIsolated: Copyable where Value: Copyable {}
+extension NSManagedObjectContextIsolated.Blocking: Copyable where Value: Copyable {}
