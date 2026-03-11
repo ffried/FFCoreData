@@ -183,7 +183,7 @@ public enum CoreDataStack {
     public static var configuration: Configuration {
         get { _storage.wrappedValue?.configuration ?? .legacyConfiguration }
         set {
-            NSManagedObject.shouldRemoveNamespaceInEntityName.exchange(with: configuration.removeNamespacesFromEntityNames)
+            NSManagedObject.shouldRemoveNamespaceInEntityName.exchange(with: newValue.removeNamespacesFromEntityNames)
             _storage.withValueVoid {
                 guard $0?.configuration != newValue else { return }
                 $0 = .init(configuration: newValue)
