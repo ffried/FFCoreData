@@ -40,7 +40,7 @@
     ],
     "remoteSource" : {
       "fileName" : "FetchedResulsControllerDelegate.swift",
-      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSFetchedResultsController\/FetchedResulsControllerDelegate.swift#L30"
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSFetchedResultsController\/FetchedResulsControllerDelegate.swift#L29"
     },
     "role" : "symbol",
     "roleHeading" : "Protocol",
@@ -58,19 +58,6 @@
             "macOS"
           ],
           "tokens" : [
-            {
-              "kind" : "attribute",
-              "text" : "@"
-            },
-            {
-              "kind" : "attribute",
-              "preciseIdentifier" : "s:ScM",
-              "text" : "MainActor"
-            },
-            {
-              "kind" : "text",
-              "text" : " "
-            },
             {
               "kind" : "attribute",
               "text" : "@objc"
