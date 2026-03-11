@@ -88,7 +88,7 @@ extension CoreDataStack.Configuration {
         let finalModelURL = baseFolderURL.appendingPathComponent(testModelName).appendingPathExtension("momd")
         do {
             let sdkPath = try Process.xcrun(arguments: ["--sdk", "macosx", "--show-sdk-path"]).stdout
-            try FileManager.default.createDirectoryIfNeeded(at: compilationFolder)
+            try FileManager.default.createDirectory(at: compilationFolder, withIntermediateDirectories: true, attributes: nil)
             defer { try? FileManager.default.removeItem(at: compilationFolder) }
             let deploymentTarget: String
             deploymentTarget = "10.15"

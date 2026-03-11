@@ -184,7 +184,10 @@ public enum CoreDataStack {
         get { _storage.wrappedValue?.configuration ?? .legacyConfiguration }
         set {
             NSManagedObject.shouldRemoveNamespaceInEntityName.exchange(with: configuration.removeNamespacesFromEntityNames)
-            _storage.exchange(with: .init(configuration: newValue))
+            _storage.withValueVoid {
+                guard $0?.configuration != newValue else { return }
+                $0 = .init(configuration: newValue)
+            }
         }
     }
 
@@ -255,7 +258,7 @@ public enum CoreDataStack {
 }
 
 extension CoreDataStack {
-    public struct Configuration: Sendable {
+    public struct Configuration: Equatable, Sendable {
         fileprivate static let legacyConfiguration: Configuration = {
             let bundle = Bundle.main
             let modelName = bundle.infoDictionary?["FFCDDataManagerModelName"] as? String
