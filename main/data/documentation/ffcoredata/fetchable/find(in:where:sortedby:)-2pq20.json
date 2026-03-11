@@ -157,7 +157,7 @@
     ],
     "remoteSource" : {
       "fileName" : "NSManagedObject+FindAndOrCreate.swift",
-      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObject\/NSManagedObject+FindAndOrCreate.swift#L184"
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObject\/NSManagedObject+FindAndOrCreate.swift#L183"
     },
     "role" : "symbol",
     "roleHeading" : "Type Method",

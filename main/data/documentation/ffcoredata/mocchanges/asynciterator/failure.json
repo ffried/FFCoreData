@@ -72,7 +72,7 @@
     ],
     "remoteSource" : {
       "fileName" : "MOCChanges.swift",
-      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/ManagedObjectContext%20Observer\/MOCChanges.swift#L34"
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/ManagedObjectContext%20Observer\/MOCChanges.swift#L35"
     },
     "role" : "symbol",
     "roleHeading" : "Type Alias",

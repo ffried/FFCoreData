@@ -13,7 +13,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8blockingAC8BlockingVyx_GyF",
+    "externalID" : "s:10FFCoreData30NSManagedObjectContextIsolatedVAARi_zrlE8blockingAcARi_zrlE8BlockingVyx_GyF",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -50,7 +50,7 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingV",
+        "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedVAARi_zrlE8BlockingV",
         "text" : "Blocking"
       }
     ],
@@ -61,7 +61,7 @@
     ],
     "remoteSource" : {
       "fileName" : "NSManagedObjectContextIsolated.swift",
-      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObjectContext\/NSManagedObjectContextIsolated.swift#L133"
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObjectContext\/NSManagedObjectContextIsolated.swift#L137"
     },
     "role" : "symbol",
     "roleHeading" : "Instance Method",
@@ -79,6 +79,14 @@
             "macOS"
           ],
           "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "consuming"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
             {
               "kind" : "keyword",
               "text" : "func"
@@ -116,7 +124,7 @@
             {
               "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/NSManagedObjectContextIsolated\/Blocking",
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingV",
+              "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedVAARi_zrlE8BlockingV",
               "text" : "Blocking"
             }
           ]
@@ -260,7 +268,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingV",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedVAARi_zrlE8BlockingV",
       "text" : "Blocking"
     }
   ],

@@ -78,6 +78,15 @@
               "kind" : "typeIdentifier",
               "preciseIdentifier" : "c:objc(pl)NSObject",
               "text" : "NSObjectProtocol"
+            },
+            {
+              "kind" : "text",
+              "text" : ", "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:s16SendableMetatypeP",
+              "text" : "SendableMetatype"
             }
           ]
         }
@@ -88,7 +97,8 @@
   "relationshipsSections" : [
     {
       "identifiers" : [
-        "doc:\/\/FFCoreData\/objc(pl)NSObject"
+        "doc:\/\/FFCoreData\/objc(pl)NSObject",
+        "doc:\/\/FFCoreData\/s16SendableMetatypeP"
       ],
       "kind" : "relationships",
       "title" : "Inherits From",
@@ -272,7 +282,18 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/Entity/isolatedOnContext()": {
   "abstract" : [
-
+    {
+      "text" : "Returns an NSManagedObjectContextIsolated instance for this object to e.g. safely pass it across actor boundaries.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "Note that the NSManagedObject needs to have an managed object context or this will crash.",
+      "type" : "text"
+    }
   ],
   "conformance" : {
     "availabilityPrefix" : [
@@ -609,6 +630,11 @@
 "doc://FFCoreData/objc(pl)NSObject": {
   "identifier" : "doc:\/\/FFCoreData\/objc(pl)NSObject",
   "title" : "ObjectiveC.NSObjectProtocol",
+  "type" : "unresolvable"
+},
+"doc://FFCoreData/s16SendableMetatypeP": {
+  "identifier" : "doc:\/\/FFCoreData\/s16SendableMetatypeP",
+  "title" : "Swift.SendableMetatype",
   "type" : "unresolvable"
 }
 }

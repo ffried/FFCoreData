@@ -1,4 +1,18 @@
 {
+  "abstract" : [
+    {
+      "text" : "Returns an NSManagedObjectContextIsolated instance for this object to e.g. safely pass it across actor boundaries.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "Note that the NSManagedObject needs to have an managed object context or this will crash.",
+      "type" : "text"
+    }
+  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -89,7 +103,7 @@
     ],
     "remoteSource" : {
       "fileName" : "NSManagedObject+FindAndOrCreate.swift",
-      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObject\/NSManagedObject+FindAndOrCreate.swift#L283"
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObject\/NSManagedObject+FindAndOrCreate.swift#L284"
     },
     "role" : "symbol",
     "roleHeading" : "Instance Method",
@@ -213,7 +227,18 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/Entity/isolatedOnContext()": {
   "abstract" : [
-
+    {
+      "text" : "Returns an NSManagedObjectContextIsolated instance for this object to e.g. safely pass it across actor boundaries.",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "Note that the NSManagedObject needs to have an managed object context or this will crash.",
+      "type" : "text"
+    }
   ],
   "conformance" : {
     "availabilityPrefix" : [

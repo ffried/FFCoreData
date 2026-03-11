@@ -14,7 +14,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingV9withValue2doqd__qd__xYbqd_0_YKYTXE_tqd_0_YKs5ErrorRd_0_r0_lF",
+    "externalID" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingVAARi_zrlE9withValue2doqd__qd__xYbqd_0_YKYTXE_tqd_0_YKs5ErrorRd_0_r0_lF",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -55,6 +55,14 @@
       {
         "kind" : "text",
         "text" : ": ("
+      },
+      {
+        "kind" : "keyword",
+        "text" : "borrowing"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
       },
       {
         "kind" : "typeIdentifier",
@@ -120,7 +128,7 @@
     ],
     "remoteSource" : {
       "fileName" : "NSManagedObjectContextIsolated.swift",
-      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObjectContext\/NSManagedObjectContextIsolated.swift#L92"
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObjectContext\/NSManagedObjectContextIsolated.swift#L94"
     },
     "role" : "symbol",
     "roleHeading" : "Instance Method",
@@ -185,6 +193,14 @@
             {
               "kind" : "text",
               "text" : ": ("
+            },
+            {
+              "kind" : "keyword",
+              "text" : "borrowing"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
             },
             {
               "kind" : "typeIdentifier",
@@ -412,6 +428,14 @@
     {
       "kind" : "text",
       "text" : ": ("
+    },
+    {
+      "kind" : "keyword",
+      "text" : "borrowing"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",

@@ -196,7 +196,8 @@
       "anchor" : "Type-Aliases",
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/Element"
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/Element",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/Failure"
       ],
       "title" : "Type Aliases"
     },
@@ -342,6 +343,37 @@
   "title" : "MOCChanges.Element",
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/mocchanges\/element"
+},
+"doc://FFCoreData/documentation/FFCoreData/MOCChanges/Failure": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Failure"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/Failure",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Failure"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "MOCChanges.Failure",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/mocchanges\/failure"
 },
 "doc://FFCoreData/documentation/FFCoreData/MOCChanges/filter": {
   "abstract" : [

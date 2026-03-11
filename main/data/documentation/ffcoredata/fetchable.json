@@ -100,7 +100,8 @@
       "identifiers" : [
         "doc:\/\/FFCoreData\/objc(pl)NSFetchRequestResult",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Entity",
-        "doc:\/\/FFCoreData\/objc(pl)NSObject"
+        "doc:\/\/FFCoreData\/objc(pl)NSObject",
+        "doc:\/\/FFCoreData\/s16SendableMetatypeP"
       ],
       "kind" : "relationships",
       "title" : "Inherits From",
@@ -3443,6 +3444,11 @@
 "doc://FFCoreData/objc(pl)NSObject": {
   "identifier" : "doc:\/\/FFCoreData\/objc(pl)NSObject",
   "title" : "ObjectiveC.NSObjectProtocol",
+  "type" : "unresolvable"
+},
+"doc://FFCoreData/s16SendableMetatypeP": {
+  "identifier" : "doc:\/\/FFCoreData\/s16SendableMetatypeP",
+  "title" : "Swift.SendableMetatype",
   "type" : "unresolvable"
 }
 }

@@ -13,7 +13,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:10FFCoreData30NSManagedObjectContextIsolatedV04saveE08rollbackS2b_tYaF",
+    "externalID" : "s:10FFCoreData30NSManagedObjectContextIsolatedVAARi_zrlE04saveE08rollbackS2b_tYaF",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -99,7 +99,7 @@
     ],
     "remoteSource" : {
       "fileName" : "NSManagedObjectContextIsolated.swift",
-      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObjectContext\/NSManagedObjectContextIsolated.swift#L176"
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObjectContext\/NSManagedObjectContextIsolated.swift#L184"
     },
     "role" : "symbol",
     "roleHeading" : "Instance Method",

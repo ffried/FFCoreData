@@ -3,18 +3,17 @@
     "paths" : [
       [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/AsyncIterator"
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges"
       ]
     ]
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/AsyncIterator\/Element"
+    "url" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/Failure"
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:10FFCoreData10MOCChangesV13AsyncIteratorV7Elementa",
+    "externalID" : "s:10FFCoreData10MOCChangesV7Failurea",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -26,7 +25,7 @@
       },
       {
         "kind" : "identifier",
-        "text" : "Element"
+        "text" : "Failure"
       }
     ],
     "modules" : [
@@ -37,7 +36,7 @@
     "navigatorTitle" : [
       {
         "kind" : "identifier",
-        "text" : "Element"
+        "text" : "Failure"
       }
     ],
     "platforms" : [
@@ -72,12 +71,12 @@
     ],
     "remoteSource" : {
       "fileName" : "MOCChanges.swift",
-      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/ManagedObjectContext%20Observer\/MOCChanges.swift#L34"
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/ManagedObjectContext%20Observer\/MOCChanges.swift#L27"
     },
     "role" : "symbol",
     "roleHeading" : "Type Alias",
     "symbolKind" : "typealias",
-    "title" : "MOCChanges.AsyncIterator.Element"
+    "title" : "MOCChanges.Failure"
   },
   "primaryContentSections" : [
     {
@@ -100,17 +99,45 @@
             },
             {
               "kind" : "identifier",
-              "text" : "Element"
+              "text" : "Failure"
             },
             {
               "kind" : "text",
               "text" : " = "
             },
             {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCObservedChanges",
+              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges",
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10FFCoreData18MOCObservedChangesV",
-              "text" : "MOCObservedChanges"
+              "preciseIdentifier" : "s:10FFCoreData10MOCChangesV",
+              "text" : "MOCChanges"
+            },
+            {
+              "kind" : "text",
+              "text" : "<"
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "Filter"
+            },
+            {
+              "kind" : "text",
+              "text" : ">."
+            },
+            {
+              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/AsyncIterator",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10FFCoreData10MOCChangesV13AsyncIteratorV",
+              "text" : "AsyncIterator"
+            },
+            {
+              "kind" : "text",
+              "text" : "."
+            },
+            {
+              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/AsyncIterator\/Failure",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10FFCoreData10MOCChangesV13AsyncIteratorV7Failurea",
+              "text" : "Failure"
             }
           ]
         }
@@ -129,7 +156,7 @@
   "variants" : [
     {
       "paths" : [
-        "\/documentation\/ffcoredata\/mocchanges\/asynciterator\/element"
+        "\/documentation\/ffcoredata\/mocchanges\/failure"
       ],
       "traits" : [
         {
@@ -213,7 +240,7 @@
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/mocchanges\/asynciterator"
 },
-"doc://FFCoreData/documentation/FFCoreData/MOCChanges/AsyncIterator/Element": {
+"doc://FFCoreData/documentation/FFCoreData/MOCChanges/AsyncIterator/Failure": {
   "abstract" : [
 
   ],
@@ -228,30 +255,30 @@
     },
     {
       "kind" : "identifier",
-      "text" : "Element"
+      "text" : "Failure"
     }
   ],
-  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/AsyncIterator\/Element",
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/AsyncIterator\/Failure",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
       "kind" : "identifier",
-      "text" : "Element"
+      "text" : "Failure"
     }
   ],
   "role" : "symbol",
-  "title" : "MOCChanges.AsyncIterator.Element",
+  "title" : "MOCChanges.AsyncIterator.Failure",
   "type" : "topic",
-  "url" : "\/documentation\/ffcoredata\/mocchanges\/asynciterator\/element"
+  "url" : "\/documentation\/ffcoredata\/mocchanges\/asynciterator\/failure"
 },
-"doc://FFCoreData/documentation/FFCoreData/MOCObservedChanges": {
+"doc://FFCoreData/documentation/FFCoreData/MOCChanges/Failure": {
   "abstract" : [
 
   ],
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "struct"
+      "text" : "typealias"
     },
     {
       "kind" : "text",
@@ -259,21 +286,21 @@
     },
     {
       "kind" : "identifier",
-      "text" : "MOCObservedChanges"
+      "text" : "Failure"
     }
   ],
-  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCObservedChanges",
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/Failure",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
       "kind" : "identifier",
-      "text" : "MOCObservedChanges"
+      "text" : "Failure"
     }
   ],
   "role" : "symbol",
-  "title" : "MOCObservedChanges",
+  "title" : "MOCChanges.Failure",
   "type" : "topic",
-  "url" : "\/documentation\/ffcoredata\/mocobservedchanges"
+  "url" : "\/documentation\/ffcoredata\/mocchanges\/failure"
 }
 }
 }

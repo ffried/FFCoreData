@@ -13,7 +13,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingV",
+    "externalID" : "s:10FFCoreData30NSManagedObjectContextIsolatedVAARi_zrlE8BlockingV",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -41,7 +41,7 @@
     ],
     "remoteSource" : {
       "fileName" : "NSManagedObjectContextIsolated.swift",
-      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObjectContext\/NSManagedObjectContextIsolated.swift#L35"
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObjectContext\/NSManagedObjectContextIsolated.swift#L37"
     },
     "role" : "symbol",
     "roleHeading" : "Structure",
@@ -88,6 +88,7 @@
   "relationshipsSections" : [
     {
       "identifiers" : [
+        "doc:\/\/FFCoreData\/s8CopyableP",
         "doc:\/\/FFCoreData\/s8SendableP",
         "doc:\/\/FFCoreData\/s16SendableMetatypeP"
       ],
@@ -848,6 +849,14 @@
       "text" : ": ("
     },
     {
+      "kind" : "keyword",
+      "text" : "borrowing"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
       "kind" : "typeIdentifier",
       "text" : "Value"
     },
@@ -914,6 +923,11 @@
 "doc://FFCoreData/s16SendableMetatypeP": {
   "identifier" : "doc:\/\/FFCoreData\/s16SendableMetatypeP",
   "title" : "Swift.SendableMetatype",
+  "type" : "unresolvable"
+},
+"doc://FFCoreData/s8CopyableP": {
+  "identifier" : "doc:\/\/FFCoreData\/s8CopyableP",
+  "title" : "Swift.Copyable",
   "type" : "unresolvable"
 },
 "doc://FFCoreData/s8SendableP": {
