@@ -44,6 +44,10 @@ extension NSManagedObjectContext {
     }
 }
 
+#if compiler(<6.2)
+extension NSManagedObjectContext: @retroactive @unchecked Sendable {}
+#endif
+
 #if compiler(>=6.2)
 @safe
 fileprivate final class UnsafeSending<V>: @unchecked Sendable {

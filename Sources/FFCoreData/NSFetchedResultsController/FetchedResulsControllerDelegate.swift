@@ -26,7 +26,6 @@ import func os.os_log
 import func FFFoundation.os_log
 #endif
 
-@MainActor
 @objc public protocol FetchedResultsControllerManagerDelegate: NSFetchedResultsControllerDelegate {}
 
 #if compiler(>=6.2)
@@ -114,7 +113,7 @@ public class FetchedResultsControllerManager<Result: NSFetchRequestResult>: NSOb
     public typealias Delegate = FetchedResultsControllerManagerDelegate
 
     public private(set) final weak var fetchedResultsController: Controller?
-    public final weak var delegate: (any Delegate)?
+    public final nonisolated weak var delegate: (any Delegate)?
 
     internal init(fetchedResultsController: Controller, delegate: (any Delegate)?) {
         self.fetchedResultsController = fetchedResultsController
@@ -140,8 +139,8 @@ public class FetchedResultsControllerManager<Result: NSFetchRequestResult>: NSOb
 
     // MARK: - NSFetchedResultsControllerDelegate
     @objc public dynamic nonisolated func controllerWillChangeContent(_ controller: NSFetchedResultsController<any NSFetchRequestResult>) {
+        delegate?.controllerWillChangeContent?(controller)
         MainActor.assumeIsolated {
-            delegate?.controllerWillChangeContent?(controller)
             beginUpdates()
         }
     }
@@ -158,8 +157,8 @@ public class FetchedResultsControllerManager<Result: NSFetchRequestResult>: NSOb
             case .delete: removeSection(at: sectionIndex)
             default: os_log("Unsupported change type: %lld", log: .ffCoreData, type: .default, type.rawValue)
             }
-            delegate?.controller?(controller, didChange: sectionInfo, atSectionIndex: sectionIndex, for: type)
         }
+        delegate?.controller?(controller, didChange: sectionInfo, atSectionIndex: sectionIndex, for: type)
     }
 
     @objc(controller:didChangeObject:atIndexPath:forChangeType:newIndexPath:)
@@ -176,23 +175,21 @@ public class FetchedResultsControllerManager<Result: NSFetchRequestResult>: NSOb
             case .move: moveSubobject(from: indexPath!, to: newIndexPath!)
             @unknown default: os_log("Unsupported unknown change type: %lld", log: .ffCoreData, type: .default, type.rawValue)
             }
-            delegate?.controller?(controller, didChange: anObject, at: indexPath, for: type, newIndexPath: newIndexPath)
         }
+        delegate?.controller?(controller, didChange: anObject, at: indexPath, for: type, newIndexPath: newIndexPath)
     }
 
     @objc public dynamic nonisolated func controllerDidChangeContent(_ controller: NSFetchedResultsController<any NSFetchRequestResult>) {
         MainActor.assumeIsolated {
             endUpdates()
-            delegate?.controllerDidChangeContent?(controller)
         }
+        delegate?.controllerDidChangeContent?(controller)
     }
 
     @objc public dynamic nonisolated func controller(_ controller: NSFetchedResultsController<any NSFetchRequestResult>,
                                                      sectionIndexTitleForSectionName sectionName: String) -> String? {
-        MainActor.assumeIsolated {
-            delegate?.controller?(controller, sectionIndexTitleForSectionName: sectionName)
-            ?? controller.sectionIndexTitle(forSectionName: sectionName)
-        }
+        delegate?.controller?(controller, sectionIndexTitleForSectionName: sectionName)
+        ?? controller.sectionIndexTitle(forSectionName: sectionName)
     }
 }
 #endif
