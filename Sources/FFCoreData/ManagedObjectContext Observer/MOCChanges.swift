@@ -24,6 +24,7 @@ import CoreData
 @available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
 public struct MOCChanges<Filter: MOCObserverFilter>: AsyncSequence {
     public typealias Element = AsyncIterator.Element
+    public typealias Failure = AsyncIterator.Failure
 
     private struct SendableNotificationRegistration: @unchecked Sendable {
         let observer: any NSObjectProtocol
@@ -60,29 +61,28 @@ public struct MOCChanges<Filter: MOCObserverFilter>: AsyncSequence {
                     SendableNotificationRegistration(observer: notificationCenter.addObserver(forName: .NSManagedObjectContextObjectsDidChange,
                                                                                               object: $0,
                                                                                               queue: nil) {
-                        guard let changes = MOCObservedChanges(notification: $0, filter: filter) else { return }
+                        guard let changes = MOCObservedChanges(notification: $0, filter: filter)
+                        else { return }
                         continuation.yield(changes)
                     })
                 }
                 continuation.onTermination = { _ in
                     observers.forEach {
-                        NotificationCenter.default.removeObserver($0.observer)
+                        notificationCenter.removeObserver($0.observer)
                     }
                 }
             }
         } else {
             upstream = .init { continuation in
                 let observer = SendableNotificationRegistration(
-                    observer: notificationCenter.addObserver(forName: .NSManagedObjectContextObjectsDidChange,
-                                                             object: nil,
-                                                             queue: nil) {
-                                                                 guard let changes = MOCObservedChanges(notification: $0, filter: filter)
-                                                                 else { return }
-                                                                 continuation.yield(changes)
-                                                             }
+                    observer: notificationCenter.addObserver(forName: .NSManagedObjectContextObjectsDidChange, object: nil, queue: nil) {
+                        guard let changes = MOCObservedChanges(notification: $0, filter: filter)
+                        else { return }
+                        continuation.yield(changes)
+                    }
                 )
                 continuation.onTermination = { _ in
-                    NotificationCenter.default.removeObserver(observer.observer)
+                    notificationCenter.removeObserver(observer.observer)
                 }
             }
         }
