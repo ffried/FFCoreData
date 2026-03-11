@@ -10,86 +10,19 @@
   },
   "identifier" : {
     "interfaceLanguage" : "swift",
-    "url" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct\/sqliteName"
+    "url" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct\/Equatable-Implementations"
   },
-  "kind" : "symbol",
+  "kind" : "article",
   "metadata" : {
-    "externalID" : "s:10FFCoreData04CoreB5StackO13ConfigurationV10sqliteNameSSvp",
-    "fragments" : [
-      {
-        "kind" : "keyword",
-        "text" : "let"
-      },
-      {
-        "kind" : "text",
-        "text" : " "
-      },
-      {
-        "kind" : "identifier",
-        "text" : "sqliteName"
-      },
-      {
-        "kind" : "text",
-        "text" : ": "
-      },
-      {
-        "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:SS",
-        "text" : "String"
-      }
-    ],
     "modules" : [
       {
         "name" : "FFCoreData"
       }
     ],
-    "remoteSource" : {
-      "fileName" : "CoreDataManager.swift",
-      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/CoreDataManager\/CoreDataManager.swift#L278"
-    },
-    "role" : "symbol",
-    "roleHeading" : "Instance Property",
-    "symbolKind" : "property",
-    "title" : "sqliteName"
+    "role" : "collectionGroup",
+    "roleHeading" : "API Collection",
+    "title" : "Equatable Implementations"
   },
-  "primaryContentSections" : [
-    {
-      "declarations" : [
-        {
-          "languages" : [
-            "swift"
-          ],
-          "platforms" : [
-            "macOS"
-          ],
-          "tokens" : [
-            {
-              "kind" : "keyword",
-              "text" : "let"
-            },
-            {
-              "kind" : "text",
-              "text" : " "
-            },
-            {
-              "kind" : "identifier",
-              "text" : "sqliteName"
-            },
-            {
-              "kind" : "text",
-              "text" : ": "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:SS",
-              "text" : "String"
-            }
-          ]
-        }
-      ],
-      "kind" : "declarations"
-    }
-  ],
   "schemaVersion" : {
     "major" : 0,
     "minor" : 3,
@@ -98,10 +31,20 @@
   "sections" : [
 
   ],
+  "topicSections" : [
+    {
+      "anchor" : "Operators",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct\/!=(_:_:)"
+      ],
+      "title" : "Operators"
+    }
+  ],
   "variants" : [
     {
       "paths" : [
-        "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/sqlitename"
+        "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/equatable-implementations"
       ],
       "traits" : [
         {
@@ -185,14 +128,25 @@
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct"
 },
-"doc://FFCoreData/documentation/FFCoreData/CoreDataStack/Configuration-swift.struct/sqliteName": {
+"doc://FFCoreData/documentation/FFCoreData/CoreDataStack/Configuration-swift.struct/!=(_:_:)": {
   "abstract" : [
-
+    {
+      "text" : "Returns a Boolean value indicating whether two values are not equal.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "let"
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
     },
     {
       "kind" : "text",
@@ -200,24 +154,44 @@
     },
     {
       "kind" : "identifier",
-      "text" : "sqliteName"
+      "text" : "!="
     },
     {
       "kind" : "text",
-      "text" : ": "
+      "text" : " "
+    },
+    {
+      "kind" : "text",
+      "text" : "("
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:SS",
-      "text" : "String"
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
     }
   ],
-  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct\/sqliteName",
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct\/!=(_:_:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "sqliteName",
+  "title" : "!=(_:_:)",
   "type" : "topic",
-  "url" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/sqlitename"
+  "url" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/!=(_:_:)"
 }
 }
 }
