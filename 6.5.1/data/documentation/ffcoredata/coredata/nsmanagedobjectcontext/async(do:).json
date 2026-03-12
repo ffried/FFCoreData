@@ -1,0 +1,266 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSManagedObjectContext"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSManagedObjectContext\/async(do:)"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "extendedModule" : "CoreData",
+    "externalID" : "s:So22NSManagedObjectContextC10FFCoreDataE5async2doyyyc_tF",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "async"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "do"
+      },
+      {
+        "kind" : "text",
+        "text" : ": () -> ())"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "FFCoreData",
+        "relatedModules" : [
+          "CoreData"
+        ]
+      }
+    ],
+    "platforms" : [
+      {
+        "beta" : false,
+        "deprecated" : true,
+        "renamed" : "perform",
+        "unavailable" : false
+      }
+    ],
+    "remoteSource" : {
+      "fileName" : "NSManagedObjectContext+Helpers.swift",
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/tags\/6.5.1\/Sources\/FFCoreData\/NSManagedObjectContext\/NSManagedObjectContext+Helpers.swift#L111"
+    },
+    "role" : "symbol",
+    "roleHeading" : "Instance Method",
+    "symbolKind" : "method",
+    "title" : "async(do:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "attribute",
+              "text" : "@preconcurrency"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "attribute",
+              "text" : "nonisolated"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "final"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "func"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "async"
+            },
+            {
+              "kind" : "text",
+              "text" : "("
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "do"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "internalParam",
+              "text" : "work"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "attribute",
+              "text" : "@escaping "
+            },
+            {
+              "kind" : "text",
+              "text" : "() -> ())"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/ffcoredata\/coredata\/nsmanagedobjectcontext\/async(do:)"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://FFCoreData/documentation/FFCoreData": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "FFCoreData",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata"
+},
+"doc://FFCoreData/documentation/FFCoreData/CoreData": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "CoreData",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/coredata"
+},
+"doc://FFCoreData/documentation/FFCoreData/CoreData/NSManagedObjectContext": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "extension"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "preciseIdentifier" : "c:objc(cs)NSManagedObjectContext",
+      "text" : "NSManagedObjectContext"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSManagedObjectContext",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NSManagedObjectContext"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NSManagedObjectContext",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/coredata\/nsmanagedobjectcontext"
+},
+"doc://FFCoreData/documentation/FFCoreData/CoreData/NSManagedObjectContext/async(do:)": {
+  "abstract" : [
+
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "async"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "do"
+    },
+    {
+      "kind" : "text",
+      "text" : ": () -> ())"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSManagedObjectContext\/async(do:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "async(do:)",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/coredata\/nsmanagedobjectcontext\/async(do:)"
+}
+}
+}
