@@ -138,12 +138,21 @@ public struct NSManagedObjectContextIsolated<Value: ~Copyable>: @unchecked Senda
         .init(context: context, value: value)
     }
 
+#if compiler(>=6.3) // A bug in the compiler prevents using `sending` on subscripts
     @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
     public subscript<T>(dynamicMember memberPath: any Sendable & KeyPath<Value, T>) -> sending T {
         get async {
             await context.perform { value[keyPath: memberPath] }
         }
     }
+#else
+    @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+    public subscript<T>(dynamicMember memberPath: any Sendable & KeyPath<Value, T>) -> T {
+        get async {
+            await context.perform { value[keyPath: memberPath] }
+        }
+    }
+#endif
 
     @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
     public func set<T>(_ newValue: consuming sending T, for member: any Sendable & ReferenceWritableKeyPath<Value, T>) async {
