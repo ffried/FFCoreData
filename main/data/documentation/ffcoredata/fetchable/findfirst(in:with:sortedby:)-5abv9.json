@@ -294,7 +294,7 @@
             },
             {
               "kind" : "text",
-              "text" : ">>? = nil) "
+              "text" : ">>?) "
             },
             {
               "kind" : "keyword",
