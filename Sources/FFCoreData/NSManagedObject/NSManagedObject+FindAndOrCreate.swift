@@ -97,7 +97,7 @@ extension Fetchable {
     @inlinable
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     public static func fetchRequest(with predicate: NSPredicate?,
-                                    sortedBy sortDescriptors: Array<SortDescriptor<Self>>? = nil,
+                                    sortedBy sortDescriptors: Array<SortDescriptor<Self>>?,
                                     offsetBy offset: Int? = nil,
                                     limitedBy limit: Int? = nil) -> NSFetchRequest<Self> {
         fetchRequest(with: predicate,
@@ -175,7 +175,7 @@ extension Fetchable {
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     public static func find(in context: NSManagedObjectContext,
                             with predicate: NSPredicate? = nil,
-                            sortedBy sortDescriptors: Array<SortDescriptor<Self>>? = nil) throws -> Array<Self> {
+                            sortedBy sortDescriptors: Array<SortDescriptor<Self>>?) throws -> Array<Self> {
         try find(in: context, with: predicate, sortedBy: sortDescriptors?.map { NSSortDescriptor($0) })
     }
 
@@ -211,7 +211,7 @@ extension Fetchable {
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     public static func findFirst(in context: NSManagedObjectContext,
                                  with predicate: NSPredicate? = nil,
-                                 sortedBy sortDescriptors: Array<SortDescriptor<Self>>? = nil) throws -> Self? {
+                                 sortedBy sortDescriptors: Array<SortDescriptor<Self>>?) throws -> Self? {
         try findFirst(in: context, with: predicate, sortedBy: sortDescriptors?.map { NSSortDescriptor($0) })
     }
 
