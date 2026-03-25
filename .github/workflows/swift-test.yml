@@ -47,7 +47,7 @@ jobs:
           - iPadOS
           - tvOS
           - watchOS
-        swift-version-offset: [0, 1, 2, 3]
+        swift-version-offset: [0, 1, 2]
     uses: sersoft-gmbh/oss-common-actions/.github/workflows/swift-test-xcode.yml@main
     with:
       xcode-scheme: ${{ needs.variables.outputs.xcode-scheme }}
