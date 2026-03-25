@@ -18,14 +18,17 @@
 //  limitations under the License.
 //
 
-#if canImport(UIKit) && !os(watchOS)
+#if compiler(>=6.0) && canImport(UIKit) && !os(watchOS)
 import Foundation
 public import UIKit
 public import CoreData
 
 public final class CollectionViewFetchedResultsControllerManager<Result: NSFetchRequestResult>: UIKitFetchedResultsControllerManager<Result> {
-
+#if compiler(>=6.3)
+    public weak let collectionView: UICollectionView?
+#else
     public private(set) weak var collectionView: UICollectionView?
+#endif
 
     public required init(fetchedResultsController: Controller, collectionView: UICollectionView, delegate: (any Delegate)? = nil) {
         self.collectionView = collectionView

@@ -12,7 +12,7 @@ permissions:
 jobs:
   variables:
     outputs:
-      max-supported-swift-version: "6.2"
+      max-supported-swift-version: "6.3"
       xcode-scheme: FFCoreData
       xcode-platform-version: latest
       fail-if-codecov-fails: "true"
@@ -25,7 +25,7 @@ jobs:
     strategy:
       matrix:
         os: [macOS]
-        swift-version-offset: [0, 1, 2]
+        swift-version-offset: [0, 1, 2, 3]
     uses: sersoft-gmbh/oss-common-actions/.github/workflows/swift-test-spm.yml@main
     with:
       os: ${{ matrix.os }}
@@ -45,7 +45,7 @@ jobs:
           - iPadOS
           - tvOS
           - watchOS
-        swift-version-offset: [0, 1, 2]
+        swift-version-offset: [0, 1, 2, 3]
     uses: sersoft-gmbh/oss-common-actions/.github/workflows/swift-test-xcode.yml@main
     with:
       xcode-scheme: ${{ needs.variables.outputs.xcode-scheme }}

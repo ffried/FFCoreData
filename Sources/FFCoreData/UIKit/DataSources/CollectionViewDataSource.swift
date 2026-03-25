@@ -56,9 +56,14 @@ public import CoreData
 
 @MainActor
 public final class CollectionViewDataSource<Result: NSFetchRequestResult>: NSObject, UICollectionViewDataSource {
+#if compiler(>=6.3)
+    public weak let collectionView: UICollectionView?
+    public weak let fetchedResultsController: NSFetchedResultsController<Result>?
+#else
     public private(set) weak var collectionView: UICollectionView?
     public private(set) weak var fetchedResultsController: NSFetchedResultsController<Result>?
-    
+#endif
+
     public weak var delegate: (any CollectionViewDataSourceDelegate)?
     
     public required init(collectionView: UICollectionView,

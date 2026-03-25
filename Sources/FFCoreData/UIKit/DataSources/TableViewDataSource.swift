@@ -18,7 +18,7 @@
 //  limitations under the License.
 //
 
-#if canImport(UIKit) && !os(watchOS)
+#if compiler(>=6.0) && canImport(UIKit) && !os(watchOS)
 #if canImport(ObjectiveC)
 import ObjectiveC
 #endif
@@ -57,8 +57,13 @@ public import CoreData
 
 @MainActor
 public final class TableViewDataSource<Result: NSFetchRequestResult>: NSObject, UITableViewDataSource {
+#if compiler(>=6.3)
+    public weak let tableView: UITableView?
+    public weak let fetchedResultsController: NSFetchedResultsController<Result>?
+#else
     public private(set) weak var tableView: UITableView?
     public private(set) weak var fetchedResultsController: NSFetchedResultsController<Result>?
+#endif
 
     public weak var delegate: (any TableViewDataSourceDelegate)?
 

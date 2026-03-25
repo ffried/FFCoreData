@@ -138,7 +138,10 @@ public struct NSManagedObjectContextIsolated<Value: ~Copyable>: @unchecked Senda
         .init(context: context, value: value)
     }
 
-#if compiler(>=6.3) // A bug in the compiler prevents using `sending` on subscripts
+    // A bug in the compiler prevents using `sending` on subscripts
+    // https://github.com/swiftlang/swift/issues/86606
+    // https://github.com/swiftlang/swift/issues/86614
+#if compiler(>=6.4)
     @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
     public subscript<T>(dynamicMember memberPath: any Sendable & KeyPath<Value, T>) -> sending T {
         get async {

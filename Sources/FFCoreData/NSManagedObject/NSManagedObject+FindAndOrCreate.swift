@@ -23,10 +23,17 @@ public import CoreData
 public import FFFoundation
 
 fileprivate extension KeyObjectDictionary {
+#if compiler(>=6.3)
+    @inline(always)
+    func asPredicate(with compoundType: NSCompoundPredicate.LogicalType) -> NSCompoundPredicate {
+        NSCompoundPredicate(type: compoundType, dictionary: self)
+    }
+#else
     @inline(__always)
     func asPredicate(with compoundType: NSCompoundPredicate.LogicalType) -> NSCompoundPredicate {
         NSCompoundPredicate(type: compoundType, dictionary: self)
     }
+#endif
 }
 
 public protocol Entity: NSObjectProtocol, SendableMetatype {

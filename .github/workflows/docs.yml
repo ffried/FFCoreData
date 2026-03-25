@@ -20,7 +20,7 @@ jobs:
     uses: sersoft-gmbh/oss-common-actions/.github/workflows/swift-generate-and-publish-docs.yml@main
     with:
       os: macOS
-      swift-version: "6.2"
+      swift-version: "6.2" # 6.3 not yet supported due to missing xcode
       organisation: ${{ github.repository_owner }}
       repository: ${{ github.event.repository.name }}
       pages-branch: gh-pages

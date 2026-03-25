@@ -34,7 +34,11 @@ public class FetchedResultsControllerManager<Result: NSFetchRequestResult>: NSOb
     public typealias Controller = NSFetchedResultsController<Result>
     public typealias Delegate = FetchedResultsControllerManagerDelegate
 
+#if compiler(>=6.3)
+    public final weak let fetchedResultsController: Controller?
+#else
     public private(set) final weak var fetchedResultsController: Controller?
+#endif
     public final weak var delegate: (any Delegate)?
 
     internal init(fetchedResultsController: Controller, delegate: (any Delegate)?) {

@@ -18,13 +18,17 @@
 //  limitations under the License.
 //
 
-#if canImport(UIKit) && !os(watchOS)
+#if compiler(>=6.0) && canImport(UIKit) && !os(watchOS)
 import Foundation
 public import UIKit
 public import CoreData
 
 public final class TableViewFetchedResultsControllerManager<Result: NSFetchRequestResult>: UIKitFetchedResultsControllerManager<Result> {
+#if compiler(>=6.3)
+    public weak let tableView: UITableView?
+#else
     public private(set) weak var tableView: UITableView?
+#endif
 
     public var animation: UITableView.RowAnimation = .automatic
 
