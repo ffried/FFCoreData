@@ -1,13 +1,13 @@
 {
-  "originHash" : "1066eae82139ccb75d777050ab8888b7572365900384f865290d4bdc98926624",
+  "originHash" : "618b6ad2259a7931ded65cef7bf5c398dfae973accce6256b2565216c3882f20",
   "pins" : [
     {
       "identity" : "fffoundation",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ffried/FFFoundation.git",
       "state" : {
-        "revision" : "0a3b018cc866fe869ed8f385e96e138380646d82",
-        "version" : "9.7.0"
+        "revision" : "ff2c8aa6644bcc4a70ec7156a5f49cfacc95601c",
+        "version" : "9.8.0"
       }
     },
     {

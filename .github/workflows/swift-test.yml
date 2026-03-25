@@ -26,7 +26,7 @@ jobs:
     strategy:
       matrix:
         os: [macOS]
-        swift-version-offset: [0, 1, 2, 3]
+        swift-version-offset: [0, 1, 2]
     uses: sersoft-gmbh/oss-common-actions/.github/workflows/swift-test-spm.yml@main
     with:
       os: ${{ matrix.os }}
