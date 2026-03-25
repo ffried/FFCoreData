@@ -26,7 +26,6 @@ import FFCoreData
 @Suite(.serialized)
 final class FFCoreDataTests {
     let context: NSManagedObjectContext
-    let testUUID = "c1b45162-12b4-11e5-8a0d-10ddb1c330b4"
     
     init() {
         CoreDataStack.configuration = .test
@@ -77,12 +76,14 @@ final class FFCoreDataTests {
 
     @Test
     func searchObject() throws {
+        let testUUID = "c1b45162-12b4-11e5-8a0d-10ddb1c330b4"
         let obj = try TestEntity.findOrCreate(in: context, by: [#keyPath(TestEntity.uuid): testUUID])
         #expect(obj.uuid == testUUID)
     }
 
     @Test
     func searchObjectWithDictionaryExpression() throws {
+        let testUUID = "c1b45162-12b4-11e5-8a0d-10ddb1c330b4"
         let obj = try TestEntity.findOrCreate(in: context, where: \.uuid == testUUID)
         #expect(obj.uuid == testUUID)
     }
