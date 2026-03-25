@@ -16,6 +16,7 @@ jobs:
       xcode-scheme: FFCoreData
       xcode-platform-version: latest
       fail-if-codecov-fails: "true"
+      no-parallel: "true"
     runs-on: ubuntu-latest
     steps:
       - run: exit 0
@@ -31,6 +32,7 @@ jobs:
       os: ${{ matrix.os }}
       max-swift-version: ${{ needs.variables.outputs.max-supported-swift-version }}
       swift-version-offset: ${{ matrix.swift-version-offset }}
+      no-parallel: ${{ fromJson(needs.variables.no-parallel) }}
       fail-if-codecov-fails: ${{ fromJson(needs.variables.outputs.fail-if-codecov-fails) }}
     secrets:
       CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
@@ -53,6 +55,7 @@ jobs:
       swift-version-offset: ${{ matrix.swift-version-offset }}
       platform: ${{ matrix.platform }}
       platform-version: ${{ needs.variables.outputs.xcode-platform-version }}
+      no-parallel: ${{ fromJson(needs.variables.no-parallel) }}
       fail-if-codecov-fails: ${{ fromJson(needs.variables.outputs.fail-if-codecov-fails) }}
     secrets:
       CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
