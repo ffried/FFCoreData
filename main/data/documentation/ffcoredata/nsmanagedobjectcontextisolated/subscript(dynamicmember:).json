@@ -115,7 +115,7 @@
     ],
     "remoteSource" : {
       "fileName" : "NSManagedObjectContextIsolated.swift",
-      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObjectContext\/NSManagedObjectContextIsolated.swift#L150"
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObjectContext\/NSManagedObjectContextIsolated.swift#L153"
     },
     "role" : "symbol",
     "roleHeading" : "Instance Subscript",
