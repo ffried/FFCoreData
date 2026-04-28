@@ -1,5 +1,5 @@
 {
-  "originHash" : "618b6ad2259a7931ded65cef7bf5c398dfae973accce6256b2565216c3882f20",
+  "originHash" : "1066eae82139ccb75d777050ab8888b7572365900384f865290d4bdc98926624",
   "pins" : [
     {
       "identity" : "fffoundation",
@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/swiftlang/swift-docc-plugin",
       "state" : {
-        "revision" : "e977f65879f82b375a044c8837597f690c067da6",
-        "version" : "1.4.6"
+        "revision" : "647c708be89f834fa6a6d4945442793a77ddf5b6",
+        "version" : "1.5.0"
       }
     },
     {
