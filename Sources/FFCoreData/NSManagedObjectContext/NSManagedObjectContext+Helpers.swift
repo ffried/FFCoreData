@@ -35,8 +35,14 @@ fileprivate struct NonCopyableWrapper<T: ~Copyable> {
     }
 
     consuming func consume() -> T {
+#if compiler(>=6.3)
         defer { unsafe valuePtr.deallocate() }
         return unsafe valuePtr.move()
+#else
+        let value = unsafe valuePtr.move()
+        unsafe valuePtr.deallocate()
+        return value
+#endif
     }
 }
 #else
