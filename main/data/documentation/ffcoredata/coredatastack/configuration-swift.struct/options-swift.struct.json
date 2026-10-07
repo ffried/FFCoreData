@@ -42,7 +42,7 @@
     ],
     "remoteSource" : {
       "fileName" : "CoreDataManager.swift",
-      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/CoreDataManager\/CoreDataManager.swift#L269"
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/CoreDataManager\/CoreDataManager.swift#L273"
     },
     "role" : "symbol",
     "roleHeading" : "Structure",
@@ -143,6 +143,7 @@
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct\/Options-swift.struct\/Equatable-Implementations",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct\/Options-swift.struct\/OptionSet-Implementations",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct\/Options-swift.struct\/RawRepresentable-Implementations",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct\/Options-swift.struct\/SetAlgebra-Implementations"
       ],
       "title" : "Default Implementations"
@@ -297,6 +298,17 @@
   "title" : "OptionSet Implementations",
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/options-swift.struct\/optionset-implementations"
+},
+"doc://FFCoreData/documentation/FFCoreData/CoreDataStack/Configuration-swift.struct/Options-swift.struct/RawRepresentable-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct\/Options-swift.struct\/RawRepresentable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "RawRepresentable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/options-swift.struct\/rawrepresentable-implementations"
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreDataStack/Configuration-swift.struct/Options-swift.struct/RawValue-swift.typealias": {
   "abstract" : [
@@ -483,33 +495,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10FFCoreData04CoreB5StackO",
-      "text" : "CoreDataStack"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10FFCoreData04CoreB5StackO13ConfigurationV",
-      "text" : "Configuration"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10FFCoreData04CoreB5StackO13ConfigurationV7OptionsV",
-      "text" : "Options"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:10FFCoreData04CoreB5StackO13ConfigurationV7OptionsV8RawValuea",
       "text" : "RawValue"
     },
@@ -545,33 +530,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10FFCoreData04CoreB5StackO",
-      "text" : "CoreDataStack"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10FFCoreData04CoreB5StackO13ConfigurationV",
-      "text" : "Configuration"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10FFCoreData04CoreB5StackO13ConfigurationV7OptionsV",
-      "text" : "Options"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

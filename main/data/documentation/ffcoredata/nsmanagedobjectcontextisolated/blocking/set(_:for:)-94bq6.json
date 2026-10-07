@@ -42,6 +42,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingV3set_3foryqd___s8Sendable_s24ReferenceWritableKeyPathCyxqd__GXctsAHRd__lF1TL_qd__mfp",
         "text" : "T"
       },
       {
@@ -54,7 +55,15 @@
       },
       {
         "kind" : "text",
-        "text" : ": any "
+        "text" : ": "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "any"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
       },
       {
         "kind" : "typeIdentifier",
@@ -76,6 +85,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedVAARi_zrlE5Valuexmfp",
         "text" : "Value"
       },
       {
@@ -84,6 +94,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingV3set_3foryqd___s8Sendable_s24ReferenceWritableKeyPathCyxqd__GXctsAHRd__lF1TL_qd__mfp",
         "text" : "T"
       },
       {
@@ -158,6 +169,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingV3set_3foryqd___s8Sendable_s24ReferenceWritableKeyPathCyxqd__GXctsAHRd__lF1TL_qd__mfp",
               "text" : "T"
             },
             {
@@ -178,7 +190,15 @@
             },
             {
               "kind" : "text",
-              "text" : ": any "
+              "text" : ": "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "any"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
             },
             {
               "kind" : "typeIdentifier",
@@ -200,6 +220,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedVAARi_zrlE5Valuexmfp",
               "text" : "Value"
             },
             {
@@ -208,6 +229,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingV3set_3foryqd___s8Sendable_s24ReferenceWritableKeyPathCyxqd__GXctsAHRd__lF1TL_qd__mfp",
               "text" : "T"
             },
             {
@@ -367,6 +389,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingV3set_3foryqd___s8Sendable_s24ReferenceWritableKeyPathCyxqd__GXctsAHRd__lF1TL_qd__mfp",
       "text" : "T"
     },
     {
@@ -379,7 +402,15 @@
     },
     {
       "kind" : "text",
-      "text" : ": any "
+      "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -401,6 +432,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedVAARi_zrlE5Valuexmfp",
       "text" : "Value"
     },
     {
@@ -409,6 +441,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingV3set_3foryqd___s8Sendable_s24ReferenceWritableKeyPathCyxqd__GXctsAHRd__lF1TL_qd__mfp",
       "text" : "T"
     },
     {

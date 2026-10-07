@@ -58,14 +58,6 @@
       },
       {
         "kind" : "typeIdentifier",
-        "text" : "Self"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
-      },
-      {
-        "kind" : "typeIdentifier",
         "preciseIdentifier" : "s:10FFCoreData04CoreB9DecodableP3DTOQa",
         "text" : "DTO"
       },
@@ -176,14 +168,6 @@
             {
               "kind" : "text",
               "text" : ": "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Self"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
             },
             {
               "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodable\/DTO",
@@ -386,14 +370,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:10FFCoreData04CoreB9DecodableP3DTOQa",
       "text" : "DTO"
     },
@@ -515,14 +491,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

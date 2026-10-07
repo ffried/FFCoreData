@@ -280,10 +280,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/allSatisfy(_:)": {
   "abstract" : [
-    {
-      "text" : "Publishes a single Boolean value that indicates whether all received elements pass a given predicate.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -364,10 +361,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/append(_:)": {
   "abstract" : [
-    {
-      "text" : "Appends a publisher’s output with the specified elements.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -491,10 +485,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/assertNoFailure(_:file:line:)": {
   "abstract" : [
-    {
-      "text" : "Raises a fatal error when its upstream publisher fails, and otherwise republishes all received input.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -592,10 +583,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/breakpoint(receiveSubscription:receiveOutput:receiveCompletion:)": {
   "abstract" : [
-    {
-      "text" : "Raises a debugger signal when a provided closure needs to stop the process in the debugger.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -762,10 +750,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/breakpointOnError()": {
   "abstract" : [
-    {
-      "text" : "Raises a debugger signal upon receiving a failure.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -820,10 +805,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/buffer(size:prefetch:whenFull:)": {
   "abstract" : [
-    {
-      "text" : "Buffers elements received from an upstream publisher.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -964,10 +946,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/catch(_:)": {
   "abstract" : [
-    {
-      "text" : "Handles errors from an upstream publisher by replacing it with another publisher.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -1063,10 +1042,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/collect()": {
   "abstract" : [
-    {
-      "text" : "Collects all received elements, and emits a single array of the collection when the upstream publisher finishes.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -1121,10 +1097,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/collect(_:)": {
   "abstract" : [
-    {
-      "text" : "Collects up to the specified number of elements, and then emits a single array of the collection.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -1188,10 +1161,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/collect(_:options:)": {
   "abstract" : [
-    {
-      "text" : "Collects elements by a given time-grouping strategy, and emits a single array of the collection.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -1313,10 +1283,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/combineLatest(_:)": {
   "abstract" : [
-    {
-      "text" : "Subscribes to an additional publisher and publishes a tuple upon receiving output from either publisher.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -1395,10 +1362,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/combineLatest(_:_:)-4vf18": {
   "abstract" : [
-    {
-      "text" : "Subscribes to two additional publishers and publishes a tuple upon receiving output from any of the publishers.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -1501,10 +1465,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/combineLatest(_:_:)-6fuaq": {
   "abstract" : [
-    {
-      "text" : "Subscribes to an additional publisher and invokes a closure upon receiving output from either publisher.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -1659,10 +1620,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/combineLatest(_:_:_:)-31p0o": {
   "abstract" : [
-    {
-      "text" : "Subscribes to two additional publishers and invokes a closure upon receiving output from any of the publishers.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -1858,10 +1816,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/combineLatest(_:_:_:)-4h8ob": {
   "abstract" : [
-    {
-      "text" : "Subscribes to three additional publishers and publishes a tuple upon receiving output from any of the publishers.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -1988,10 +1943,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/combineLatest(_:_:_:_:)": {
   "abstract" : [
-    {
-      "text" : "Subscribes to three additional publishers and invokes a closure upon receiving output from any of the publishers.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -2228,10 +2180,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/compactMap(_:)": {
   "abstract" : [
-    {
-      "text" : "Calls a closure with each received element and publishes any returned optional that has a value.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -2327,10 +2276,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/contains(_:)": {
   "abstract" : [
-    {
-      "text" : "Publishes a Boolean value upon receiving an element equal to the argument.",
-      "type" : "text"
-    }
+
   ],
   "conformance" : {
     "availabilityPrefix" : [
@@ -2434,10 +2380,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/contains(where:)": {
   "abstract" : [
-    {
-      "text" : "Publishes a Boolean value upon receiving an element that satisfies the predicate closure.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -2526,10 +2469,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/count()": {
   "abstract" : [
-    {
-      "text" : "Publishes the number of elements received from the upstream publisher.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -2584,10 +2524,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/debounce(for:scheduler:options:)": {
   "abstract" : [
-    {
-      "text" : "Publishes elements only after a specified time interval elapses between events.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -2733,10 +2670,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/decode(type:decoder:)": {
   "abstract" : [
-    {
-      "text" : "Decodes the output from the upstream using a specified decoder.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -2855,10 +2789,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/delay(for:tolerance:scheduler:options:)": {
   "abstract" : [
-    {
-      "text" : "Delays delivery of all output to the downstream receiver by a specified amount of time on a particular scheduler.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -3038,10 +2969,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/drop(untilOutputFrom:)": {
   "abstract" : [
-    {
-      "text" : "Ignores elements from the upstream publisher until it receives an element from a second publisher.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -3128,10 +3056,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/drop(while:)": {
   "abstract" : [
-    {
-      "text" : "Omits elements from the upstream publisher until a given closure returns false, before republishing all remaining elements.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -3220,10 +3145,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/dropFirst(_:)": {
   "abstract" : [
-    {
-      "text" : "Omits the specified number of elements before republishing subsequent elements.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -3287,10 +3209,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/encode(encoder:)": {
   "abstract" : [
-    {
-      "text" : "Encodes the output from upstream using a specified encoder.",
-      "type" : "text"
-    }
+
   ],
   "conformance" : {
     "availabilityPrefix" : [
@@ -3409,10 +3328,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/eraseToAnyPublisher()": {
   "abstract" : [
-    {
-      "text" : "Wraps this publisher with a type eraser.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -3484,10 +3400,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/filter(_:)": {
   "abstract" : [
-    {
-      "text" : "Republishes all elements that match a provided closure.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -3568,10 +3481,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/first()": {
   "abstract" : [
-    {
-      "text" : "Publishes the first element of a stream, then finishes.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -3626,10 +3536,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/first(where:)": {
   "abstract" : [
-    {
-      "text" : "Publishes the first element of a stream to satisfy a predicate closure, then finishes normally.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -3718,10 +3625,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/flatMap(maxPublishers:_:)-3lk3": {
   "abstract" : [
-    {
-      "text" : "Transforms all elements from an upstream publisher into a new publisher up to a maximum number of publishers you specify.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -3878,10 +3782,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/flatMap(maxPublishers:_:)-6d2ep": {
   "abstract" : [
-    {
-      "text" : "Transforms all elements from an upstream publisher into a new publisher up to a maximum number of publishers you specify.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -4011,10 +3912,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/handleEvents(receiveSubscription:receiveOutput:receiveCompletion:receiveCancel:receiveRequest:)": {
   "abstract" : [
-    {
-      "text" : "Performs the specified closures when publisher events occur.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -4233,10 +4131,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/ignoreOutput()": {
   "abstract" : [
-    {
-      "text" : "Ignores all upstream elements, but passes along the upstream publisher’s completion state (finished or failed).",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -4291,10 +4186,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/last()": {
   "abstract" : [
-    {
-      "text" : "Publishes the last element of a stream, after the stream finishes.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -4349,10 +4241,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/last(where:)": {
   "abstract" : [
-    {
-      "text" : "Publishes the last element of a stream that satisfies a predicate closure, after upstream finishes.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -4441,10 +4330,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/map(_:)-40ugz": {
   "abstract" : [
-    {
-      "text" : "Publishes the value of a key path.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -4549,10 +4435,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/map(_:)-7wks7": {
   "abstract" : [
-    {
-      "text" : "Transforms all elements from the upstream publisher with a provided closure.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -4648,10 +4531,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/map(_:_:)": {
   "abstract" : [
-    {
-      "text" : "Publishes the values of two key paths as a tuple.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -4806,10 +4686,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/map(_:_:_:)": {
   "abstract" : [
-    {
-      "text" : "Publishes the values of three key paths as a tuple.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -5014,10 +4891,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/mapError(_:)": {
   "abstract" : [
-    {
-      "text" : "Converts any failure from the upstream publisher into a new error.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -5113,10 +4987,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/max(by:)": {
   "abstract" : [
-    {
-      "text" : "Publishes the maximum value received from the upstream publisher, using the provided ordering closure.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -5222,10 +5093,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/measureInterval(using:options:)": {
   "abstract" : [
-    {
-      "text" : "Measures and emits the time interval between events received from an upstream publisher.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -5337,10 +5205,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/merge(with:)": {
   "abstract" : [
-    {
-      "text" : "Combines elements from this publisher with those from another publisher of the same type, delivering an interleaved sequence of elements.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -5411,10 +5276,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/merge(with:_:)": {
   "abstract" : [
-    {
-      "text" : "Combines elements from this publisher with those from two other publishers, delivering an interleaved sequence of elements.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -5525,10 +5387,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/merge(with:_:_:)": {
   "abstract" : [
-    {
-      "text" : "Combines elements from this publisher with those from three other publishers, delivering an interleaved sequence of elements.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -5663,10 +5522,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/merge(with:_:_:_:)": {
   "abstract" : [
-    {
-      "text" : "Combines elements from this publisher with those from four other publishers, delivering an interleaved sequence of elements.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -5825,10 +5681,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/merge(with:_:_:_:_:)": {
   "abstract" : [
-    {
-      "text" : "Combines elements from this publisher with those from five other publishers, delivering an interleaved sequence of elements.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -6011,10 +5864,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/merge(with:_:_:_:_:_:)": {
   "abstract" : [
-    {
-      "text" : "Combines elements from this publisher with those from six other publishers, delivering an interleaved sequence of elements.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -6221,10 +6071,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/merge(with:_:_:_:_:_:_:)": {
   "abstract" : [
-    {
-      "text" : "Combines elements from this publisher with those from seven other publishers, delivering an interleaved sequence of elements.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -6455,10 +6302,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/min(by:)": {
   "abstract" : [
-    {
-      "text" : "Publishes the minimum value received from the upstream publisher, after it finishes.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -6564,10 +6408,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/multicast(_:)": {
   "abstract" : [
-    {
-      "text" : "Applies a closure to create a subject that delivers elements to subscribers.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -6646,10 +6487,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/multicast(subject:)": {
   "abstract" : [
-    {
-      "text" : "Provides a subject to deliver elements to multiple subscribers.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -6736,10 +6574,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/output(at:)": {
   "abstract" : [
-    {
-      "text" : "Publishes a specific element, indicated by its index in the sequence of published elements.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -6811,10 +6646,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/output(in:)": {
   "abstract" : [
-    {
-      "text" : "Publishes elements specified by their range in the sequence of published elements.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -6893,10 +6725,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/prefix(_:)": {
   "abstract" : [
-    {
-      "text" : "Republishes elements up to the specified maximum count.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -6960,10 +6789,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/prefix(untilOutputFrom:)": {
   "abstract" : [
-    {
-      "text" : "Republishes elements until another publisher emits an element.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -7050,10 +6876,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/prefix(while:)": {
   "abstract" : [
-    {
-      "text" : "Republishes elements while a predicate closure indicates publishing should continue.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -7142,10 +6965,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/prepend(_:)": {
   "abstract" : [
-    {
-      "text" : "Prefixes a publisher’s output with the specified values.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -7269,10 +7089,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/print(_:to:)": {
   "abstract" : [
-    {
-      "text" : "Prints log messages for all publishing events.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -7353,10 +7170,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/receive(on:options:)": {
   "abstract" : [
-    {
-      "text" : "Specifies the scheduler on which to receive elements from the publisher.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -7468,10 +7282,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/reduce(_:_:)": {
   "abstract" : [
-    {
-      "text" : "Applies a closure that collects each element of a stream and publishes a final result upon completion.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -7583,10 +7394,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/removeDuplicates()": {
   "abstract" : [
-    {
-      "text" : "Publishes only elements that don’t match the previous element.",
-      "type" : "text"
-    }
+
   ],
   "conformance" : {
     "availabilityPrefix" : [
@@ -7673,10 +7481,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/removeDuplicates(by:)": {
   "abstract" : [
-    {
-      "text" : "Publishes only elements that don’t match the previous element, as evaluated by a provided closure.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -7782,10 +7587,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/replaceEmpty(with:)": {
   "abstract" : [
-    {
-      "text" : "Replaces an empty stream with the provided element.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -7865,10 +7667,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/replaceError(with:)": {
   "abstract" : [
-    {
-      "text" : "Replaces any errors in the stream with the provided element.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -7948,10 +7747,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/replaceNil(with:)": {
   "abstract" : [
-    {
-      "text" : "Replaces nil elements in the stream with the provided element.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -8038,10 +7834,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/retry(_:)": {
   "abstract" : [
-    {
-      "text" : "Attempts to recreate a failed subscription with the upstream publisher up to the number of times you specify.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -8105,18 +7898,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/scan(_:_:)": {
   "abstract" : [
-    {
-      "text" : "Transforms elements from the upstream publisher by providing the current",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "element to a closure along with the last value returned by the closure.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -8228,10 +8010,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/share()": {
   "abstract" : [
-    {
-      "text" : "Shares the output of an upstream publisher with multiple subscribers.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -8286,10 +8065,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/sink(receiveCompletion:receiveValue:)": {
   "abstract" : [
-    {
-      "text" : "Attaches a subscriber with closure-based behavior.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -8409,10 +8185,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/subscribe(_:)-9l699": {
   "abstract" : [
-    {
-      "text" : "Attaches the specified subscriber to this publisher.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -8457,10 +8230,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/subscribe(_:)-9z69a": {
   "abstract" : [
-    {
-      "text" : "Attaches the specified subject to this publisher.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -8510,10 +8280,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/subscribe(on:options:)": {
   "abstract" : [
-    {
-      "text" : "Specifies the scheduler on which to perform subscribe, cancel, and request operations.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -8625,10 +8392,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/throttle(for:scheduler:latest:)": {
   "abstract" : [
-    {
-      "text" : "Publishes either the most-recent or first element published by the upstream publisher in the specified time interval.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -8766,10 +8530,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/timeout(_:scheduler:options:customError:)": {
   "abstract" : [
-    {
-      "text" : "Terminates publishing if the upstream publisher exceeds the specified time interval without producing an element.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -8932,10 +8693,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/tryAllSatisfy(_:)": {
   "abstract" : [
-    {
-      "text" : "Publishes a single Boolean value that indicates whether all received elements pass a given error-throwing predicate.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -9024,10 +8782,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/tryCatch(_:)": {
   "abstract" : [
-    {
-      "text" : "Handles errors from an upstream publisher by either replacing it with another publisher or throwing a new error.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -9131,10 +8886,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/tryCompactMap(_:)": {
   "abstract" : [
-    {
-      "text" : "Calls an error-throwing closure with each received element and publishes any returned optional that has a value.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -9238,10 +8990,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/tryContains(where:)": {
   "abstract" : [
-    {
-      "text" : "Publishes a Boolean value upon receiving an element that satisfies the throwing predicate closure.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -9338,10 +9087,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/tryDrop(while:)": {
   "abstract" : [
-    {
-      "text" : "Omits elements from the upstream publisher until an error-throwing closure returns false, before republishing all remaining elements.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -9438,10 +9184,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/tryFilter(_:)": {
   "abstract" : [
-    {
-      "text" : "Republishes all elements that match a provided error-throwing closure.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -9530,10 +9273,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/tryFirst(where:)": {
   "abstract" : [
-    {
-      "text" : "Publishes the first element of a stream to satisfy a throwing predicate closure, then finishes normally.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -9630,10 +9370,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/tryLast(where:)": {
   "abstract" : [
-    {
-      "text" : "Publishes the last element of a stream that satisfies an error-throwing predicate closure, after the stream finishes.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -9730,10 +9467,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/tryMap(_:)": {
   "abstract" : [
-    {
-      "text" : "Transforms all elements from the upstream publisher with a provided error-throwing closure.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -9837,10 +9571,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/tryMax(by:)": {
   "abstract" : [
-    {
-      "text" : "Publishes the maximum value received from the upstream publisher, using the provided error-throwing closure to order the items.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -9954,10 +9685,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/tryMin(by:)": {
   "abstract" : [
-    {
-      "text" : "Publishes the minimum value received from the upstream publisher, using the provided error-throwing closure to order the items.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -10071,10 +9799,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/tryPrefix(while:)": {
   "abstract" : [
-    {
-      "text" : "Republishes elements while an error-throwing predicate closure indicates publishing should continue.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -10171,10 +9896,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/tryReduce(_:_:)": {
   "abstract" : [
-    {
-      "text" : "Applies an error-throwing closure that collects each element of a stream and publishes a final result upon completion.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -10294,10 +10016,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/tryRemoveDuplicates(by:)": {
   "abstract" : [
-    {
-      "text" : "Publishes only elements that don’t match the previous element, as evaluated by a provided error-throwing closure.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -10411,10 +10130,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/tryScan(_:_:)": {
   "abstract" : [
-    {
-      "text" : "Transforms elements from the upstream publisher by providing the current element to an error-throwing closure along with the last value returned by the closure.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -10534,10 +10250,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/values": {
   "abstract" : [
-    {
-      "text" : "The elements produced by the publisher, as a throwing asynchronous sequence.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -10583,10 +10296,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/zip(_:)": {
   "abstract" : [
-    {
-      "text" : "Combines elements from another publisher and deliver pairs of elements as tuples.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -10665,10 +10375,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/zip(_:_:)-496ls": {
   "abstract" : [
-    {
-      "text" : "Combines elements from another publisher and delivers a transformed output.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -10823,10 +10530,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/zip(_:_:)-66et9": {
   "abstract" : [
-    {
-      "text" : "Combines elements from two other publishers and delivers groups of elements as tuples.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -10929,10 +10633,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/zip(_:_:_:)-3hdh": {
   "abstract" : [
-    {
-      "text" : "Combines elements from two other publishers and delivers a transformed output.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -11128,10 +10829,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/zip(_:_:_:)-9toq3": {
   "abstract" : [
-    {
-      "text" : "Combines elements from three other publishers and delivers groups of elements as tuples.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -11258,10 +10956,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/zip(_:_:_:_:)": {
   "abstract" : [
-    {
-      "text" : "Combines elements from three other publishers and delivers a transformed output.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {

@@ -111,6 +111,18 @@
               "kind" : "typeIdentifier",
               "preciseIdentifier" : "s:10FFCoreData17MOCObserverFilterP",
               "text" : "MOCObserverFilter"
+            },
+            {
+              "kind" : "text",
+              "text" : ", "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "Filter"
+            },
+            {
+              "kind" : "text",
+              "text" : " : ~Copyable"
             }
           ]
         }
@@ -264,24 +276,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10FFCoreData16MOCBlockObserverC",
-      "text" : "MOCBlockObserver"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Filter"
-    },
-    {
-      "kind" : "text",
-      "text" : ">."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10FFCoreData16MOCBlockObserverC7Handlera",
+      "preciseIdentifier" : "s:10FFCoreData16MOCBlockObserverCAARi_zrlE7Handlera",
       "text" : "Handler"
     }
   ],
@@ -331,7 +326,16 @@
       "text" : ": "
     },
     {
+      "kind" : "keyword",
+      "text" : "consuming"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData16MOCBlockObserverCAARi_zrlE6Filterxmfp",
       "text" : "Filter"
     },
     {
@@ -382,24 +386,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10FFCoreData16MOCBlockObserverC",
-      "text" : "MOCBlockObserver"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Filter"
-    },
-    {
-      "kind" : "text",
-      "text" : ">."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10FFCoreData16MOCBlockObserverC7Handlera",
+      "preciseIdentifier" : "s:10FFCoreData16MOCBlockObserverCAARi_zrlE7Handlera",
       "text" : "Handler"
     },
     {

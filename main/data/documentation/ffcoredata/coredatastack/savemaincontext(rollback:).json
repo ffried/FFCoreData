@@ -86,6 +86,20 @@
       {
         "beta" : false,
         "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "iPadOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "Mac Catalyst",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
         "introducedAt" : "10.15",
         "name" : "macOS",
         "unavailable" : false
@@ -107,7 +121,7 @@
     ],
     "remoteSource" : {
       "fileName" : "CoreDataManager.swift",
-      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/CoreDataManager\/CoreDataManager.swift#L236"
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/CoreDataManager\/CoreDataManager.swift#L240"
     },
     "role" : "symbol",
     "roleHeading" : "Type Method",

@@ -1,10 +1,4 @@
 {
-  "abstract" : [
-    {
-      "text" : "Attaches the specified subscriber to this publisher.",
-      "type" : "text"
-    }
-  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -71,6 +65,20 @@
         "deprecated" : false,
         "introducedAt" : "13.0",
         "name" : "iOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "iPadOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "Mac Catalyst",
         "unavailable" : false
       },
       {
@@ -252,106 +260,6 @@
         }
       ],
       "kind" : "declarations"
-    },
-    {
-      "kind" : "parameters",
-      "parameters" : [
-        {
-          "content" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "The subscriber to attach to this publisher. After attaching, the subscriber can start to receive values.",
-                  "type" : "text"
-                }
-              ],
-              "type" : "paragraph"
-            }
-          ],
-          "name" : "subscriber"
-        }
-      ]
-    },
-    {
-      "content" : [
-        {
-          "anchor" : "discussion",
-          "level" : 2,
-          "text" : "Discussion",
-          "type" : "heading"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "Always call this function instead of ",
-              "type" : "text"
-            },
-            {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSFetchedResultsController\/Publisher\/receive(subscriber:)",
-              "isActive" : true,
-              "type" : "reference"
-            },
-            {
-              "text" : ".",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "Adopters of ",
-              "type" : "text"
-            },
-            {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSFetchedResultsController\/Publisher",
-              "isActive" : true,
-              "type" : "reference"
-            },
-            {
-              "text" : " must implement ",
-              "type" : "text"
-            },
-            {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSFetchedResultsController\/Publisher\/receive(subscriber:)",
-              "isActive" : true,
-              "type" : "reference"
-            },
-            {
-              "text" : ". The implementation of ",
-              "type" : "text"
-            },
-            {
-              "code" : "Publisher\/subscribe(_:)-4u8kn",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : " provided by ",
-              "type" : "text"
-            },
-            {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSFetchedResultsController\/Publisher",
-              "isActive" : true,
-              "type" : "reference"
-            },
-            {
-              "text" : " calls through to ",
-              "type" : "text"
-            },
-            {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSFetchedResultsController\/Publisher\/receive(subscriber:)",
-              "isActive" : true,
-              "type" : "reference"
-            },
-            {
-              "text" : ".",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        }
-      ],
-      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -493,65 +401,9 @@
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher"
 },
-"doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/receive(subscriber:)": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "receive"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "genericParameter",
-      "text" : "S"
-    },
-    {
-      "kind" : "text",
-      "text" : ">("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "subscriber"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "S"
-    },
-    {
-      "kind" : "text",
-      "text" : ")"
-    }
-  ],
-  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSFetchedResultsController\/Publisher\/receive(subscriber:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "receive(subscriber:)",
-  "type" : "topic",
-  "url" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/receive(subscriber:)"
-},
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/subscribe(_:)-9l699": {
   "abstract" : [
-    {
-      "text" : "Attaches the specified subscriber to this publisher.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {

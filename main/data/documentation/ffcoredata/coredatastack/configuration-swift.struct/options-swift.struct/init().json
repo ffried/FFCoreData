@@ -1,10 +1,4 @@
 {
-  "abstract" : [
-    {
-      "text" : "Creates an empty option set.",
-      "type" : "text"
-    }
-  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -101,26 +95,6 @@
         }
       ],
       "kind" : "declarations"
-    },
-    {
-      "content" : [
-        {
-          "anchor" : "discussion",
-          "level" : 2,
-          "text" : "Discussion",
-          "type" : "heading"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "This initializer creates an option set with a raw value of zero.",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        }
-      ],
-      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -251,10 +225,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreDataStack/Configuration-swift.struct/Options-swift.struct/init()": {
   "abstract" : [
-    {
-      "text" : "Creates an empty option set.",
-      "type" : "text"
-    }
+
   ],
   "conformance" : {
     "availabilityPrefix" : [

@@ -54,7 +54,15 @@
       },
       {
         "kind" : "text",
-        "text" : ": ("
+        "text" : ": "
+      },
+      {
+        "kind" : "attribute",
+        "text" : "@Sendable"
+      },
+      {
+        "kind" : "text",
+        "text" : " ("
       },
       {
         "kind" : "keyword",
@@ -66,6 +74,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedVAARi_zrlE5Valuexmfp",
         "text" : "Value"
       },
       {
@@ -82,6 +91,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingV16withMutableValue2doqd__qd__xzYbqd_0_YKYTXE_tqd_0_YKs5ErrorRd_0_r0_lF1FL_qd_0_mfp",
         "text" : "F"
       },
       {
@@ -90,10 +100,15 @@
       },
       {
         "kind" : "keyword",
-        "text" : "sending "
+        "text" : "sending"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingV16withMutableValue2doqd__qd__xzYbqd_0_YKYTXE_tqd_0_YKs5ErrorRd_0_r0_lF1TL_qd__mfp",
         "text" : "T"
       },
       {
@@ -110,6 +125,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingV16withMutableValue2doqd__qd__xzYbqd_0_YKYTXE_tqd_0_YKs5ErrorRd_0_r0_lF1FL_qd_0_mfp",
         "text" : "F"
       },
       {
@@ -118,6 +134,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingV16withMutableValue2doqd__qd__xzYbqd_0_YKYTXE_tqd_0_YKs5ErrorRd_0_r0_lF1TL_qd__mfp",
         "text" : "T"
       }
     ],
@@ -200,7 +217,15 @@
             },
             {
               "kind" : "text",
-              "text" : ": ("
+              "text" : ": "
+            },
+            {
+              "kind" : "attribute",
+              "text" : "@Sendable"
+            },
+            {
+              "kind" : "text",
+              "text" : " ("
             },
             {
               "kind" : "keyword",
@@ -212,6 +237,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedVAARi_zrlE5Valuexmfp",
               "text" : "Value"
             },
             {
@@ -228,6 +254,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingV16withMutableValue2doqd__qd__xzYbqd_0_YKYTXE_tqd_0_YKs5ErrorRd_0_r0_lF1FL_qd_0_mfp",
               "text" : "F"
             },
             {
@@ -236,10 +263,15 @@
             },
             {
               "kind" : "keyword",
-              "text" : "sending "
+              "text" : "sending"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingV16withMutableValue2doqd__qd__xzYbqd_0_YKYTXE_tqd_0_YKs5ErrorRd_0_r0_lF1TL_qd__mfp",
               "text" : "T"
             },
             {
@@ -256,6 +288,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingV16withMutableValue2doqd__qd__xzYbqd_0_YKYTXE_tqd_0_YKs5ErrorRd_0_r0_lF1FL_qd_0_mfp",
               "text" : "F"
             },
             {
@@ -264,6 +297,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingV16withMutableValue2doqd__qd__xzYbqd_0_YKYTXE_tqd_0_YKs5ErrorRd_0_r0_lF1TL_qd__mfp",
               "text" : "T"
             },
             {
@@ -435,7 +469,15 @@
     },
     {
       "kind" : "text",
-      "text" : ": ("
+      "text" : ": "
+    },
+    {
+      "kind" : "attribute",
+      "text" : "@Sendable"
+    },
+    {
+      "kind" : "text",
+      "text" : " ("
     },
     {
       "kind" : "keyword",
@@ -447,6 +489,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedVAARi_zrlE5Valuexmfp",
       "text" : "Value"
     },
     {
@@ -463,6 +506,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingV16withMutableValue2doqd__qd__xzYbqd_0_YKYTXE_tqd_0_YKs5ErrorRd_0_r0_lF1FL_qd_0_mfp",
       "text" : "F"
     },
     {
@@ -471,10 +515,15 @@
     },
     {
       "kind" : "keyword",
-      "text" : "sending "
+      "text" : "sending"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingV16withMutableValue2doqd__qd__xzYbqd_0_YKYTXE_tqd_0_YKs5ErrorRd_0_r0_lF1TL_qd__mfp",
       "text" : "T"
     },
     {
@@ -491,6 +540,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingV16withMutableValue2doqd__qd__xzYbqd_0_YKYTXE_tqd_0_YKs5ErrorRd_0_r0_lF1FL_qd_0_mfp",
       "text" : "F"
     },
     {
@@ -499,6 +549,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingV16withMutableValue2doqd__qd__xzYbqd_0_YKYTXE_tqd_0_YKs5ErrorRd_0_r0_lF1TL_qd__mfp",
       "text" : "T"
     }
   ],

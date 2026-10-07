@@ -1,10 +1,4 @@
 {
-  "abstract" : [
-    {
-      "text" : "Encodes the output from upstream using a specified encoder.",
-      "type" : "text"
-    }
-  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -150,6 +144,20 @@
       {
         "beta" : false,
         "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "iPadOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "Mac Catalyst",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
         "introducedAt" : "10.15",
         "name" : "macOS",
         "unavailable" : false
@@ -284,196 +292,6 @@
         }
       ],
       "kind" : "declarations"
-    },
-    {
-      "kind" : "parameters",
-      "parameters" : [
-        {
-          "content" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "An encoder that implements the ",
-                  "type" : "text"
-                },
-                {
-                  "code" : "TopLevelEncoder",
-                  "type" : "codeVoice"
-                },
-                {
-                  "text" : " protocol.",
-                  "type" : "text"
-                }
-              ],
-              "type" : "paragraph"
-            }
-          ],
-          "name" : "encoder"
-        }
-      ]
-    },
-    {
-      "content" : [
-        {
-          "anchor" : "return-value",
-          "level" : 2,
-          "text" : "Return Value",
-          "type" : "heading"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "A publisher that encodes received elements using a specified encoder, and publishes the resulting data.",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        }
-      ],
-      "kind" : "content"
-    },
-    {
-      "content" : [
-        {
-          "anchor" : "discussion",
-          "level" : 2,
-          "text" : "Discussion",
-          "type" : "heading"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "Use ",
-              "type" : "text"
-            },
-            {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSFetchedResultsController\/Publisher\/encode(encoder:)",
-              "isActive" : true,
-              "type" : "reference"
-            },
-            {
-              "text" : " with a ",
-              "type" : "text"
-            },
-            {
-              "text" : "doc:\/\/com.apple.documentation\/documentation\/Foundation\/JSONDecoder",
-              "type" : "text"
-            },
-            {
-              "text" : " (or a ",
-              "type" : "text"
-            },
-            {
-              "text" : "doc:\/\/com.apple.documentation\/documentation\/Foundation\/PropertyListDecoder",
-              "type" : "text"
-            },
-            {
-              "text" : " for property lists) to encode an ",
-              "type" : "text"
-            },
-            {
-              "text" : "doc:\/\/com.apple.documentation\/documentation\/Swift\/Encodable",
-              "type" : "text"
-            },
-            {
-              "text" : " struct into ",
-              "type" : "text"
-            },
-            {
-              "text" : "doc:\/\/com.apple.documentation\/documentation\/Foundation\/Data",
-              "type" : "text"
-            },
-            {
-              "text" : " that could be used to make a JSON string (or written to disk as a binary plist in the case of property lists).",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "In this example, a ",
-              "type" : "text"
-            },
-            {
-              "code" : "PassthroughSubject",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : " publishes an ",
-              "type" : "text"
-            },
-            {
-              "code" : "Article",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : ". The ",
-              "type" : "text"
-            },
-            {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSFetchedResultsController\/Publisher\/encode(encoder:)",
-              "isActive" : true,
-              "type" : "reference"
-            },
-            {
-              "text" : " operator encodes the properties of the ",
-              "type" : "text"
-            },
-            {
-              "code" : "Article",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : " struct into a new JSON string according to the ",
-              "type" : "text"
-            },
-            {
-              "text" : "doc:\/\/com.apple.documentation\/documentation\/Swift\/Codable",
-              "type" : "text"
-            },
-            {
-              "text" : " protocol adopted by ",
-              "type" : "text"
-            },
-            {
-              "code" : "Article",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : ". The operator publishes the resulting JSON string to the downstream subscriber. If the encoding operation fails, which can happen in the case of complex properties that can’t be directly transformed into JSON, the stream terminates and the error is passed to the downstream subscriber.",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        },
-        {
-          "code" : [
-            "struct Article: Codable {",
-            "    let title: String",
-            "    let author: String",
-            "    let pubDate: Date",
-            "}",
-            "",
-            "let dataProvider = PassthroughSubject<Article, Never>()",
-            "let cancellable = dataProvider",
-            "    .encode(encoder: JSONEncoder())",
-            "    .sink(receiveCompletion: { print (\"Completion: \\($0)\") },",
-            "          receiveValue: {  data in",
-            "            guard let stringRepresentation = String(data: data, encoding: .utf8) else { return }",
-            "            print(\"Data received \\(data) string representation: \\(stringRepresentation)\")",
-            "    })",
-            "",
-            "dataProvider.send(Article(title: \"My First Article\", author: \"Gita Kumar\", pubDate: Date()))",
-            "",
-            "\/\/ Prints: \"Data received 86 bytes string representation: {\"title\":\"My First Article\",\"author\":\"Gita Kumar\",\"pubDate\":606211803.279603}\""
-          ],
-          "syntax" : null,
-          "type" : "codeListing"
-        }
-      ],
-      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -617,10 +435,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/encode(encoder:)": {
   "abstract" : [
-    {
-      "text" : "Encodes the output from upstream using a specified encoder.",
-      "type" : "text"
-    }
+
   ],
   "conformance" : {
     "availabilityPrefix" : [

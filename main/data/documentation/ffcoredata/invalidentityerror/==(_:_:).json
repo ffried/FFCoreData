@@ -41,21 +41,11 @@
       },
       {
         "kind" : "text",
-        "text" : "("
-      },
-      {
-        "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:10FFCoreData18InvalidEntityErrorV",
-        "text" : "InvalidEntityError"
+        "text" : "(`Self`"
       },
       {
         "kind" : "text",
-        "text" : ", "
-      },
-      {
-        "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:10FFCoreData18InvalidEntityErrorV",
-        "text" : "InvalidEntityError"
+        "text" : ", `Self`"
       },
       {
         "kind" : "text",
@@ -126,13 +116,7 @@
             },
             {
               "kind" : "text",
-              "text" : ": "
-            },
-            {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/InvalidEntityError",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10FFCoreData18InvalidEntityErrorV",
-              "text" : "InvalidEntityError"
+              "text" : ": `Self`"
             },
             {
               "kind" : "text",
@@ -144,13 +128,7 @@
             },
             {
               "kind" : "text",
-              "text" : ": "
-            },
-            {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/InvalidEntityError",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10FFCoreData18InvalidEntityErrorV",
-              "text" : "InvalidEntityError"
+              "text" : ": `Self`"
             },
             {
               "kind" : "text",
@@ -262,21 +240,11 @@
     },
     {
       "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10FFCoreData18InvalidEntityErrorV",
-      "text" : "InvalidEntityError"
+      "text" : "(`Self`"
     },
     {
       "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10FFCoreData18InvalidEntityErrorV",
-      "text" : "InvalidEntityError"
+      "text" : ", `Self`"
     },
     {
       "kind" : "text",

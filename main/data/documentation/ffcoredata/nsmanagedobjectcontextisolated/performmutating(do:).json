@@ -53,7 +53,15 @@
       },
       {
         "kind" : "text",
-        "text" : ": ("
+        "text" : ": "
+      },
+      {
+        "kind" : "attribute",
+        "text" : "@Sendable"
+      },
+      {
+        "kind" : "text",
+        "text" : " ("
       },
       {
         "kind" : "keyword",
@@ -65,6 +73,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedVAARi_zrlE5Valuexmfp",
         "text" : "Value"
       },
       {
@@ -81,6 +90,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV15performMutating2doqd__qd__xzYbqd_0_YKYTc_tYaqd_0_YKs5ErrorRd_0_r0_lF1FL_qd_0_mfp",
         "text" : "F"
       },
       {
@@ -89,10 +99,15 @@
       },
       {
         "kind" : "keyword",
-        "text" : "sending "
+        "text" : "sending"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV15performMutating2doqd__qd__xzYbqd_0_YKYTc_tYaqd_0_YKs5ErrorRd_0_r0_lF1TL_qd__mfp",
         "text" : "T"
       },
       {
@@ -117,6 +132,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV15performMutating2doqd__qd__xzYbqd_0_YKYTc_tYaqd_0_YKs5ErrorRd_0_r0_lF1FL_qd_0_mfp",
         "text" : "F"
       },
       {
@@ -125,6 +141,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV15performMutating2doqd__qd__xzYbqd_0_YKYTc_tYaqd_0_YKs5ErrorRd_0_r0_lF1TL_qd__mfp",
         "text" : "T"
       }
     ],
@@ -139,6 +156,20 @@
         "deprecated" : false,
         "introducedAt" : "15.0",
         "name" : "iOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "15.0",
+        "name" : "iPadOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "15.0",
+        "name" : "Mac Catalyst",
         "unavailable" : false
       },
       {
@@ -241,11 +272,19 @@
             },
             {
               "kind" : "attribute",
-              "text" : "@escaping "
+              "text" : "@escaping"
             },
             {
               "kind" : "text",
-              "text" : "("
+              "text" : " "
+            },
+            {
+              "kind" : "attribute",
+              "text" : "@Sendable"
+            },
+            {
+              "kind" : "text",
+              "text" : " ("
             },
             {
               "kind" : "keyword",
@@ -257,6 +296,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedVAARi_zrlE5Valuexmfp",
               "text" : "Value"
             },
             {
@@ -273,6 +313,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV15performMutating2doqd__qd__xzYbqd_0_YKYTc_tYaqd_0_YKs5ErrorRd_0_r0_lF1FL_qd_0_mfp",
               "text" : "F"
             },
             {
@@ -281,10 +322,15 @@
             },
             {
               "kind" : "keyword",
-              "text" : "sending "
+              "text" : "sending"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV15performMutating2doqd__qd__xzYbqd_0_YKYTc_tYaqd_0_YKs5ErrorRd_0_r0_lF1TL_qd__mfp",
               "text" : "T"
             },
             {
@@ -309,6 +355,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV15performMutating2doqd__qd__xzYbqd_0_YKYTc_tYaqd_0_YKs5ErrorRd_0_r0_lF1FL_qd_0_mfp",
               "text" : "F"
             },
             {
@@ -317,6 +364,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV15performMutating2doqd__qd__xzYbqd_0_YKYTc_tYaqd_0_YKs5ErrorRd_0_r0_lF1TL_qd__mfp",
               "text" : "T"
             },
             {
@@ -457,7 +505,15 @@
     },
     {
       "kind" : "text",
-      "text" : ": ("
+      "text" : ": "
+    },
+    {
+      "kind" : "attribute",
+      "text" : "@Sendable"
+    },
+    {
+      "kind" : "text",
+      "text" : " ("
     },
     {
       "kind" : "keyword",
@@ -469,6 +525,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedVAARi_zrlE5Valuexmfp",
       "text" : "Value"
     },
     {
@@ -485,6 +542,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV15performMutating2doqd__qd__xzYbqd_0_YKYTc_tYaqd_0_YKs5ErrorRd_0_r0_lF1FL_qd_0_mfp",
       "text" : "F"
     },
     {
@@ -493,10 +551,15 @@
     },
     {
       "kind" : "keyword",
-      "text" : "sending "
+      "text" : "sending"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV15performMutating2doqd__qd__xzYbqd_0_YKYTc_tYaqd_0_YKs5ErrorRd_0_r0_lF1TL_qd__mfp",
       "text" : "T"
     },
     {
@@ -521,6 +584,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV15performMutating2doqd__qd__xzYbqd_0_YKYTc_tYaqd_0_YKs5ErrorRd_0_r0_lF1FL_qd_0_mfp",
       "text" : "F"
     },
     {
@@ -529,6 +593,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV15performMutating2doqd__qd__xzYbqd_0_YKYTc_tYaqd_0_YKs5ErrorRd_0_r0_lF1TL_qd__mfp",
       "text" : "T"
     }
   ],

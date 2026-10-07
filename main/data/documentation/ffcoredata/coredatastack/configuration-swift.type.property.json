@@ -41,15 +41,6 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:10FFCoreData04CoreB5StackO",
-        "text" : "CoreDataStack"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
-      },
-      {
-        "kind" : "typeIdentifier",
         "preciseIdentifier" : "s:10FFCoreData04CoreB5StackO13ConfigurationV",
         "text" : "Configuration"
       }
@@ -102,16 +93,6 @@
             {
               "kind" : "text",
               "text" : ": "
-            },
-            {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10FFCoreData04CoreB5StackO",
-              "text" : "CoreDataStack"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
             },
             {
               "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct",
@@ -268,15 +249,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10FFCoreData04CoreB5StackO",
-      "text" : "CoreDataStack"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

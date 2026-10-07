@@ -1,10 +1,4 @@
 {
-  "abstract" : [
-    {
-      "text" : "Specifies the scheduler on which to receive elements from the publisher.",
-      "type" : "text"
-    }
-  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -138,6 +132,20 @@
         "deprecated" : false,
         "introducedAt" : "13.0",
         "name" : "iOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "iPadOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "Mac Catalyst",
         "unavailable" : false
       },
       {
@@ -310,262 +318,6 @@
         }
       ],
       "kind" : "declarations"
-    },
-    {
-      "kind" : "parameters",
-      "parameters" : [
-        {
-          "content" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "The scheduler the publisher uses for element delivery.",
-                  "type" : "text"
-                }
-              ],
-              "type" : "paragraph"
-            }
-          ],
-          "name" : "scheduler"
-        },
-        {
-          "content" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "Scheduler options used to customize element delivery.",
-                  "type" : "text"
-                }
-              ],
-              "type" : "paragraph"
-            }
-          ],
-          "name" : "options"
-        }
-      ]
-    },
-    {
-      "content" : [
-        {
-          "anchor" : "return-value",
-          "level" : 2,
-          "text" : "Return Value",
-          "type" : "heading"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "A publisher that delivers elements using the specified scheduler.",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        }
-      ],
-      "kind" : "content"
-    },
-    {
-      "content" : [
-        {
-          "anchor" : "discussion",
-          "level" : 2,
-          "text" : "Discussion",
-          "type" : "heading"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "You use the ",
-              "type" : "text"
-            },
-            {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSFetchedResultsController\/Publisher\/receive(on:options:)",
-              "isActive" : true,
-              "type" : "reference"
-            },
-            {
-              "text" : " operator to receive results and completion on a specific scheduler, such as performing UI work on the main run loop. In contrast with ",
-              "type" : "text"
-            },
-            {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSFetchedResultsController\/Publisher\/subscribe(on:options:)",
-              "isActive" : true,
-              "type" : "reference"
-            },
-            {
-              "text" : ", which affects upstream messages, ",
-              "type" : "text"
-            },
-            {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSFetchedResultsController\/Publisher\/receive(on:options:)",
-              "isActive" : true,
-              "type" : "reference"
-            },
-            {
-              "text" : " changes the execution context of downstream messages.",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "In the following example, the ",
-              "type" : "text"
-            },
-            {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSFetchedResultsController\/Publisher\/subscribe(on:options:)",
-              "isActive" : true,
-              "type" : "reference"
-            },
-            {
-              "text" : " operator causes ",
-              "type" : "text"
-            },
-            {
-              "code" : "jsonPublisher",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : " to receive requests on ",
-              "type" : "text"
-            },
-            {
-              "code" : "backgroundQueue",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : ", while the",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSFetchedResultsController\/Publisher\/receive(on:options:)",
-              "isActive" : true,
-              "type" : "reference"
-            },
-            {
-              "text" : " causes ",
-              "type" : "text"
-            },
-            {
-              "code" : "labelUpdater",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : " to receive elements and completion on ",
-              "type" : "text"
-            },
-            {
-              "code" : "RunLoop.main",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : ".",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        },
-        {
-          "code" : [
-            "let jsonPublisher = MyJSONLoaderPublisher() \/\/ Some publisher.",
-            "let labelUpdater = MyLabelUpdateSubscriber() \/\/ Some subscriber that updates the UI.",
-            "",
-            "jsonPublisher",
-            "    .subscribe(on: backgroundQueue)",
-            "    .receive(on: RunLoop.main)",
-            "    .subscribe(labelUpdater)"
-          ],
-          "syntax" : null,
-          "type" : "codeListing"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "Prefer ",
-              "type" : "text"
-            },
-            {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSFetchedResultsController\/Publisher\/receive(on:options:)",
-              "isActive" : true,
-              "type" : "reference"
-            },
-            {
-              "text" : " over explicit use of dispatch queues when performing work in subscribers. For example, instead of the following pattern:",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        },
-        {
-          "code" : [
-            "pub.sink {",
-            "    DispatchQueue.main.async {",
-            "        \/\/ Do something.",
-            "    }",
-            "}"
-          ],
-          "syntax" : null,
-          "type" : "codeListing"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "Use this pattern instead:",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        },
-        {
-          "code" : [
-            "pub.receive(on: DispatchQueue.main).sink {",
-            "    \/\/ Do something.",
-            "}"
-          ],
-          "syntax" : null,
-          "type" : "codeListing"
-        },
-        {
-          "content" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "",
-                  "type" : "text"
-                },
-                {
-                  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSFetchedResultsController\/Publisher\/receive(on:options:)",
-                  "isActive" : true,
-                  "type" : "reference"
-                },
-                {
-                  "text" : " doesn’t affect the scheduler used to call the subscriber’s ",
-                  "type" : "text"
-                },
-                {
-                  "code" : "Subscriber\/receive(subscription:)",
-                  "type" : "codeVoice"
-                },
-                {
-                  "text" : " method.",
-                  "type" : "text"
-                }
-              ],
-              "type" : "paragraph"
-            }
-          ],
-          "name" : "Note",
-          "style" : "note",
-          "type" : "aside"
-        }
-      ],
-      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -709,10 +461,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/receive(on:options:)": {
   "abstract" : [
-    {
-      "text" : "Specifies the scheduler on which to receive elements from the publisher.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -821,121 +570,6 @@
   "title" : "receive(on:options:)",
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/receive(on:options:)"
-},
-"doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/subscribe(on:options:)": {
-  "abstract" : [
-    {
-      "text" : "Specifies the scheduler on which to perform subscribe, cancel, and request operations.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "subscribe"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "genericParameter",
-      "text" : "S"
-    },
-    {
-      "kind" : "text",
-      "text" : ">("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "on"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "S"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "options"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "S"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Combine9SchedulerP0B7OptionsQa",
-      "text" : "SchedulerOptions"
-    },
-    {
-      "kind" : "text",
-      "text" : "?) -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Combine10PublishersO",
-      "text" : "Publishers"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Combine10PublishersO11SubscribeOnV",
-      "text" : "SubscribeOn"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "S"
-    },
-    {
-      "kind" : "text",
-      "text" : ">"
-    }
-  ],
-  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSFetchedResultsController\/Publisher\/subscribe(on:options:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "subscribe(on:options:)",
-  "type" : "topic",
-  "url" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/subscribe(on:options:)"
 }
 }
 }

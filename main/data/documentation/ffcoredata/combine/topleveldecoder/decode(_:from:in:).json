@@ -73,6 +73,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7Combine15TopLevelDecoderP10FFCoreDataE6decode_4from2inqd__qd__m_5InputQzSo22NSManagedObjectContextCtKs8SendableRzAD04CoreF9DecodableRd__sAlIRQlF6EntityL_qd__mfp",
         "text" : "Entity"
       },
       {
@@ -86,14 +87,6 @@
       {
         "kind" : "text",
         "text" : ": "
-      },
-      {
-        "kind" : "typeIdentifier",
-        "text" : "Self"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
       },
       {
         "kind" : "typeIdentifier",
@@ -131,6 +124,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:7Combine15TopLevelDecoderP10FFCoreDataE6decode_4from2inqd__qd__m_5InputQzSo22NSManagedObjectContextCtKs8SendableRzAD04CoreF9DecodableRd__sAlIRQlF6EntityL_qd__mfp",
         "text" : "Entity"
       }
     ],
@@ -148,6 +142,20 @@
         "deprecated" : false,
         "introducedAt" : "13.0",
         "name" : "iOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "iPadOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "Mac Catalyst",
         "unavailable" : false
       },
       {
@@ -174,7 +182,7 @@
     ],
     "remoteSource" : {
       "fileName" : "CoreDataDecodable.swift",
-      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObject\/CoreDataDecodable.swift#L161"
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObject\/CoreDataDecodable.swift#L165"
     },
     "role" : "symbol",
     "roleHeading" : "Instance Method",
@@ -234,6 +242,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Combine15TopLevelDecoderP10FFCoreDataE6decode_4from2inqd__qd__m_5InputQzSo22NSManagedObjectContextCtKs8SendableRzAD04CoreF9DecodableRd__sAlIRQlF6EntityL_qd__mfp",
               "text" : "Entity"
             },
             {
@@ -255,14 +264,6 @@
             {
               "kind" : "text",
               "text" : ": "
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Self"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
             },
             {
               "kind" : "typeIdentifier",
@@ -308,6 +309,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:7Combine15TopLevelDecoderP10FFCoreDataE6decode_4from2inqd__qd__m_5InputQzSo22NSManagedObjectContextCtKs8SendableRzAD04CoreF9DecodableRd__sAlIRQlF6EntityL_qd__mfp",
               "text" : "Entity"
             },
             {
@@ -637,6 +639,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine15TopLevelDecoderP10FFCoreDataE6decode_4from2inqd__qd__m_5InputQzSo22NSManagedObjectContextCtKs8SendableRzAD04CoreF9DecodableRd__sAlIRQlF6EntityL_qd__mfp",
       "text" : "Entity"
     },
     {
@@ -650,14 +653,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -695,6 +690,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine15TopLevelDecoderP10FFCoreDataE6decode_4from2inqd__qd__m_5InputQzSo22NSManagedObjectContextCtKs8SendableRzAD04CoreF9DecodableRd__sAlIRQlF6EntityL_qd__mfp",
       "text" : "Entity"
     }
   ],

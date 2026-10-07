@@ -17,7 +17,7 @@
     "fragments" : [
       {
         "kind" : "keyword",
-        "text" : "var"
+        "text" : "let"
       },
       {
         "kind" : "text",
@@ -30,23 +30,6 @@
       {
         "kind" : "text",
         "text" : ": "
-      },
-      {
-        "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:10FFCoreData31FetchedResultsControllerManagerC",
-        "text" : "FetchedResultsControllerManager"
-      },
-      {
-        "kind" : "text",
-        "text" : "<"
-      },
-      {
-        "kind" : "typeIdentifier",
-        "text" : "Result"
-      },
-      {
-        "kind" : "text",
-        "text" : ">."
       },
       {
         "kind" : "typeIdentifier",
@@ -65,7 +48,7 @@
     ],
     "remoteSource" : {
       "fileName" : "FetchedResulsControllerDelegate.swift",
-      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSFetchedResultsController\/FetchedResulsControllerDelegate.swift#L40"
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSFetchedResultsController\/FetchedResulsControllerDelegate.swift#L38"
     },
     "role" : "symbol",
     "roleHeading" : "Instance Property",
@@ -98,14 +81,6 @@
             },
             {
               "kind" : "keyword",
-              "text" : "weak"
-            },
-            {
-              "kind" : "text",
-              "text" : " "
-            },
-            {
-              "kind" : "keyword",
               "text" : "final"
             },
             {
@@ -114,7 +89,15 @@
             },
             {
               "kind" : "keyword",
-              "text" : "var"
+              "text" : "weak"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "let"
             },
             {
               "kind" : "text",
@@ -129,24 +112,6 @@
               "text" : ": "
             },
             {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/FetchedResultsControllerManager",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10FFCoreData31FetchedResultsControllerManagerC",
-              "text" : "FetchedResultsControllerManager"
-            },
-            {
-              "kind" : "text",
-              "text" : "<"
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Result"
-            },
-            {
-              "kind" : "text",
-              "text" : ">."
-            },
-            {
               "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/FetchedResultsControllerManager\/Controller",
               "kind" : "typeIdentifier",
               "preciseIdentifier" : "s:10FFCoreData31FetchedResultsControllerManagerC0E0a",
@@ -154,7 +119,7 @@
             },
             {
               "kind" : "text",
-              "text" : "? { get }"
+              "text" : "?"
             }
           ]
         }
@@ -264,7 +229,7 @@
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "var"
+      "text" : "let"
     },
     {
       "kind" : "text",
@@ -277,23 +242,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10FFCoreData31FetchedResultsControllerManagerC",
-      "text" : "FetchedResultsControllerManager"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Result"
-    },
-    {
-      "kind" : "text",
-      "text" : ">."
     },
     {
       "kind" : "typeIdentifier",

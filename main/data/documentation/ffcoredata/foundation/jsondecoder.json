@@ -216,6 +216,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation11JSONDecoderC10FFCoreDataE6decode_4fromxxm_AA0D0VtKAD04CoreD9DecodableRzlF6EntityL_xmfp",
       "text" : "Entity"
     },
     {
@@ -249,6 +250,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation11JSONDecoderC10FFCoreDataE6decode_4fromxxm_AA0D0VtKAD04CoreD9DecodableRzlF6EntityL_xmfp",
       "text" : "Entity"
     }
   ],
@@ -317,6 +319,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation11JSONDecoderC10FFCoreDataE6decode_4from2inxxm_AA0D0VSo22NSManagedObjectContextCtKAD04CoreD9DecodableRzlF6EntityL_xmfp",
       "text" : "Entity"
     },
     {
@@ -367,6 +370,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation11JSONDecoderC10FFCoreDataE6decode_4from2inxxm_AA0D0VSo22NSManagedObjectContextCtKAD04CoreD9DecodableRzlF6EntityL_xmfp",
       "text" : "Entity"
     }
   ],

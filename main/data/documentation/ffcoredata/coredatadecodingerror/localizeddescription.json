@@ -1,10 +1,4 @@
 {
-  "abstract" : [
-    {
-      "text" : "Retrieve the localized description for this error.",
-      "type" : "text"
-    }
-  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -58,6 +52,20 @@
         "deprecated" : false,
         "introducedAt" : "8.0",
         "name" : "iOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "8.0",
+        "name" : "iPadOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "8.0",
+        "name" : "Mac Catalyst",
         "unavailable" : false
       },
       {
@@ -206,10 +214,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreDataDecodingError/localizedDescription": {
   "abstract" : [
-    {
-      "text" : "Retrieve the localized description for this error.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {

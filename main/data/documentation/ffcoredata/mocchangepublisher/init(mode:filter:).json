@@ -50,6 +50,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:10FFCoreData18MOCChangePublisherV6Filterxmfp",
         "text" : "Filter"
       },
       {
@@ -68,6 +69,20 @@
         "deprecated" : false,
         "introducedAt" : "13.0",
         "name" : "iOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "iPadOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "Mac Catalyst",
         "unavailable" : false
       },
       {
@@ -148,6 +163,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10FFCoreData18MOCChangePublisherV6Filterxmfp",
               "text" : "Filter"
             },
             {
@@ -264,6 +280,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData18MOCChangePublisherV6Filterxmfp",
       "text" : "Filter"
     },
     {

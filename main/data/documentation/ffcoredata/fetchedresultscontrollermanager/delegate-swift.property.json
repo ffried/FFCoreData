@@ -29,24 +29,15 @@
       },
       {
         "kind" : "text",
-        "text" : ": (any "
+        "text" : ": ("
       },
       {
-        "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:10FFCoreData31FetchedResultsControllerManagerC",
-        "text" : "FetchedResultsControllerManager"
-      },
-      {
-        "kind" : "text",
-        "text" : "<"
-      },
-      {
-        "kind" : "typeIdentifier",
-        "text" : "Result"
+        "kind" : "keyword",
+        "text" : "any"
       },
       {
         "kind" : "text",
-        "text" : ">."
+        "text" : " "
       },
       {
         "kind" : "typeIdentifier",
@@ -98,7 +89,7 @@
             },
             {
               "kind" : "keyword",
-              "text" : "weak"
+              "text" : "final"
             },
             {
               "kind" : "text",
@@ -106,7 +97,7 @@
             },
             {
               "kind" : "keyword",
-              "text" : "final"
+              "text" : "weak"
             },
             {
               "kind" : "text",
@@ -126,25 +117,15 @@
             },
             {
               "kind" : "text",
-              "text" : ": (any "
+              "text" : ": ("
             },
             {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/FetchedResultsControllerManager",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10FFCoreData31FetchedResultsControllerManagerC",
-              "text" : "FetchedResultsControllerManager"
-            },
-            {
-              "kind" : "text",
-              "text" : "<"
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Result"
+              "kind" : "keyword",
+              "text" : "any"
             },
             {
               "kind" : "text",
-              "text" : ">."
+              "text" : " "
             },
             {
               "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/FetchedResultsControllerManager\/Delegate-swift.typealias",
@@ -276,24 +257,15 @@
     },
     {
       "kind" : "text",
-      "text" : ": (any "
+      "text" : ": ("
     },
     {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10FFCoreData31FetchedResultsControllerManagerC",
-      "text" : "FetchedResultsControllerManager"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Result"
+      "kind" : "keyword",
+      "text" : "any"
     },
     {
       "kind" : "text",
-      "text" : ">."
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",

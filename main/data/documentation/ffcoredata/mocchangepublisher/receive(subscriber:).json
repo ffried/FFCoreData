@@ -49,6 +49,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:10FFCoreData18MOCChangePublisherV7receive10subscriberyqd___t7Combine10SubscriberRd__s5NeverO7FailureRtd__AA18MOCObservedChangesV5InputRtd__lF1SL_qd__mfp",
         "text" : "S"
       },
       {
@@ -67,6 +68,20 @@
         "deprecated" : false,
         "introducedAt" : "13.0",
         "name" : "iOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "iPadOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "Mac Catalyst",
         "unavailable" : false
       },
       {
@@ -145,6 +160,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10FFCoreData18MOCChangePublisherV7receive10subscriberyqd___t7Combine10SubscriberRd__s5NeverO7FailureRtd__AA18MOCObservedChangesV5InputRtd__lF1SL_qd__mfp",
               "text" : "S"
             },
             {
@@ -334,6 +350,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData18MOCChangePublisherV7receive10subscriberyqd___t7Combine10SubscriberRd__s5NeverO7FailureRtd__AA18MOCObservedChangesV5InputRtd__lF1SL_qd__mfp",
       "text" : "S"
     },
     {

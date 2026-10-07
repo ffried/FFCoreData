@@ -260,7 +260,15 @@
     },
     {
       "kind" : "text",
-      "text" : ": ("
+      "text" : ": "
+    },
+    {
+      "kind" : "attribute",
+      "text" : "@Sendable"
+    },
+    {
+      "kind" : "text",
+      "text" : " ("
     },
     {
       "kind" : "typeIdentifier",
@@ -318,6 +326,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingV3set_3foryqd__n_s8Sendable_s24ReferenceWritableKeyPathCyxqd__GXctlF1TL_qd__mfp",
       "text" : "T"
     },
     {
@@ -330,7 +339,15 @@
     },
     {
       "kind" : "text",
-      "text" : ": any "
+      "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -352,6 +369,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedVAARi_zrlE5Valuexmfp",
       "text" : "Value"
     },
     {
@@ -360,6 +378,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingV3set_3foryqd__n_s8Sendable_s24ReferenceWritableKeyPathCyxqd__GXctlF1TL_qd__mfp",
       "text" : "T"
     },
     {
@@ -405,6 +424,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingV3set_3foryqd___s8Sendable_s24ReferenceWritableKeyPathCyxqd__GXctsAHRd__lF1TL_qd__mfp",
       "text" : "T"
     },
     {
@@ -417,7 +437,15 @@
     },
     {
       "kind" : "text",
-      "text" : ": any "
+      "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -439,6 +467,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedVAARi_zrlE5Valuexmfp",
       "text" : "Value"
     },
     {
@@ -447,6 +476,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingV3set_3foryqd___s8Sendable_s24ReferenceWritableKeyPathCyxqd__GXctsAHRd__lF1TL_qd__mfp",
       "text" : "T"
     },
     {
@@ -488,7 +518,15 @@
     },
     {
       "kind" : "text",
-      "text" : " _: any "
+      "text" : " _: "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -510,6 +548,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedVAARi_zrlE5Valuexmfp",
       "text" : "Value"
     },
     {
@@ -518,6 +557,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingV13dynamicMemberqd__s8Sendable_s7KeyPathCyxqd__GXc_tcluip1TL_qd__mfp",
       "text" : "T"
     },
     {
@@ -526,6 +566,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingV13dynamicMemberqd__s8Sendable_s7KeyPathCyxqd__GXc_tcluip1TL_qd__mfp",
       "text" : "T"
     }
   ],
@@ -563,7 +604,15 @@
     },
     {
       "kind" : "text",
-      "text" : " _: any "
+      "text" : " _: "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -585,6 +634,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedVAARi_zrlE5Valuexmfp",
       "text" : "Value"
     },
     {
@@ -593,6 +643,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingV13dynamicMemberqd__s8Sendable_s24ReferenceWritableKeyPathCyxqd__GXc_tcsAGRd__luip1TL_qd__mfp",
       "text" : "T"
     },
     {
@@ -601,6 +652,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingV13dynamicMemberqd__s8Sendable_s24ReferenceWritableKeyPathCyxqd__GXc_tcsAGRd__luip1TL_qd__mfp",
       "text" : "T"
     }
   ],
@@ -638,7 +690,15 @@
     },
     {
       "kind" : "text",
-      "text" : " _: any "
+      "text" : " _: "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -660,6 +720,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedVAARi_zrlE5Valuexmfp",
       "text" : "Value"
     },
     {
@@ -668,6 +729,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingV13dynamicMemberqd__s8Sendable_s24ReferenceWritableKeyPathCyxqd__GXc_tcluip1TL_qd__mfp",
       "text" : "T"
     },
     {
@@ -676,6 +738,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingV13dynamicMemberqd__s8Sendable_s24ReferenceWritableKeyPathCyxqd__GXc_tcluip1TL_qd__mfp",
       "text" : "T"
     }
   ],
@@ -729,7 +792,15 @@
     },
     {
       "kind" : "text",
-      "text" : ": ("
+      "text" : ": "
+    },
+    {
+      "kind" : "attribute",
+      "text" : "@Sendable"
+    },
+    {
+      "kind" : "text",
+      "text" : " ("
     },
     {
       "kind" : "keyword",
@@ -741,6 +812,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedVAARi_zrlE5Valuexmfp",
       "text" : "Value"
     },
     {
@@ -757,6 +829,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingV16withMutableValue2doqd__qd__xzYbqd_0_YKYTXE_tqd_0_YKs5ErrorRd_0_r0_lF1FL_qd_0_mfp",
       "text" : "F"
     },
     {
@@ -765,10 +838,15 @@
     },
     {
       "kind" : "keyword",
-      "text" : "sending "
+      "text" : "sending"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingV16withMutableValue2doqd__qd__xzYbqd_0_YKYTXE_tqd_0_YKs5ErrorRd_0_r0_lF1TL_qd__mfp",
       "text" : "T"
     },
     {
@@ -785,6 +863,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingV16withMutableValue2doqd__qd__xzYbqd_0_YKYTXE_tqd_0_YKs5ErrorRd_0_r0_lF1FL_qd_0_mfp",
       "text" : "F"
     },
     {
@@ -793,6 +872,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingV16withMutableValue2doqd__qd__xzYbqd_0_YKYTXE_tqd_0_YKs5ErrorRd_0_r0_lF1TL_qd__mfp",
       "text" : "T"
     }
   ],
@@ -846,7 +926,15 @@
     },
     {
       "kind" : "text",
-      "text" : ": ("
+      "text" : ": "
+    },
+    {
+      "kind" : "attribute",
+      "text" : "@Sendable"
+    },
+    {
+      "kind" : "text",
+      "text" : " ("
     },
     {
       "kind" : "keyword",
@@ -858,6 +946,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedVAARi_zrlE5Valuexmfp",
       "text" : "Value"
     },
     {
@@ -874,6 +963,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingVAARi_zrlE9withValue2doqd__qd__xYbqd_0_YKYTXE_tqd_0_YKs5ErrorRd_0_Ri_d__r0_lF1FL_qd_0_mfp",
       "text" : "F"
     },
     {
@@ -882,10 +972,15 @@
     },
     {
       "kind" : "keyword",
-      "text" : "sending "
+      "text" : "sending"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingVAARi_zrlE9withValue2doqd__qd__xYbqd_0_YKYTXE_tqd_0_YKs5ErrorRd_0_Ri_d__r0_lF1TL_qd__mfp",
       "text" : "T"
     },
     {
@@ -902,6 +997,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingVAARi_zrlE9withValue2doqd__qd__xYbqd_0_YKYTXE_tqd_0_YKs5ErrorRd_0_Ri_d__r0_lF1FL_qd_0_mfp",
       "text" : "F"
     },
     {
@@ -910,6 +1006,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV8BlockingVAARi_zrlE9withValue2doqd__qd__xYbqd_0_YKYTXE_tqd_0_YKs5ErrorRd_0_Ri_d__r0_lF1TL_qd__mfp",
       "text" : "T"
     }
   ],

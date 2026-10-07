@@ -44,6 +44,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:So26NSFetchedResultsControllerC10FFCoreDataE10ResultTypexmfp",
         "text" : "ResultType"
       },
       {
@@ -62,6 +63,20 @@
         "deprecated" : false,
         "introducedAt" : "13.0",
         "name" : "iOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "iPadOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "Mac Catalyst",
         "unavailable" : false
       },
       {
@@ -133,6 +148,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:So26NSFetchedResultsControllerC10FFCoreDataE10ResultTypexmfp",
               "text" : "ResultType"
             },
             {
@@ -324,6 +340,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:So26NSFetchedResultsControllerC10FFCoreDataE10ResultTypexmfp",
       "text" : "ResultType"
     },
     {

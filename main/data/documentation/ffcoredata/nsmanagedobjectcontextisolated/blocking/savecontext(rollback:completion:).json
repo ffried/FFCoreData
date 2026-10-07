@@ -55,7 +55,15 @@
       },
       {
         "kind" : "text",
-        "text" : ": ("
+        "text" : ": "
+      },
+      {
+        "kind" : "attribute",
+        "text" : "@Sendable"
+      },
+      {
+        "kind" : "text",
+        "text" : " ("
       },
       {
         "kind" : "typeIdentifier",
@@ -135,11 +143,19 @@
             },
             {
               "kind" : "attribute",
-              "text" : "@escaping "
+              "text" : "@escaping"
             },
             {
               "kind" : "text",
-              "text" : "("
+              "text" : " "
+            },
+            {
+              "kind" : "attribute",
+              "text" : "@Sendable"
+            },
+            {
+              "kind" : "text",
+              "text" : " ("
             },
             {
               "kind" : "typeIdentifier",
@@ -295,7 +311,15 @@
     },
     {
       "kind" : "text",
-      "text" : ": ("
+      "text" : ": "
+    },
+    {
+      "kind" : "attribute",
+      "text" : "@Sendable"
+    },
+    {
+      "kind" : "text",
+      "text" : " ("
     },
     {
       "kind" : "typeIdentifier",

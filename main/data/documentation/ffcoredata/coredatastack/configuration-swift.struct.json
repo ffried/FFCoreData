@@ -42,7 +42,7 @@
     ],
     "remoteSource" : {
       "fileName" : "CoreDataManager.swift",
-      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/CoreDataManager\/CoreDataManager.swift#L261"
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/CoreDataManager\/CoreDataManager.swift#L265"
     },
     "role" : "symbol",
     "roleHeading" : "Structure",
@@ -551,24 +551,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10FFCoreData04CoreB5StackO",
-      "text" : "CoreDataStack"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10FFCoreData04CoreB5StackO13ConfigurationV",
-      "text" : "Configuration"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:10FFCoreData04CoreB5StackO13ConfigurationV7OptionsV",
       "text" : "Options"
     },
@@ -675,24 +657,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10FFCoreData04CoreB5StackO",
-      "text" : "CoreDataStack"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10FFCoreData04CoreB5StackO13ConfigurationV",
-      "text" : "Configuration"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:10FFCoreData04CoreB5StackO13ConfigurationV7OptionsV",
       "text" : "Options"
     },
@@ -762,24 +726,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10FFCoreData04CoreB5StackO",
-      "text" : "CoreDataStack"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10FFCoreData04CoreB5StackO13ConfigurationV",
-      "text" : "Configuration"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

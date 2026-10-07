@@ -52,7 +52,15 @@
       },
       {
         "kind" : "text",
-        "text" : "<any "
+        "text" : "<"
+      },
+      {
+        "kind" : "keyword",
+        "text" : "any"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
       },
       {
         "kind" : "typeIdentifier",
@@ -120,7 +128,15 @@
             },
             {
               "kind" : "text",
-              "text" : "<any "
+              "text" : "<"
+            },
+            {
+              "kind" : "keyword",
+              "text" : "any"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
             },
             {
               "kind" : "typeIdentifier",
@@ -243,7 +259,15 @@
     },
     {
       "kind" : "text",
-      "text" : "<any "
+      "text" : "<"
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",

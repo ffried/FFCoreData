@@ -50,6 +50,20 @@
       {
         "beta" : false,
         "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "iPadOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "Mac Catalyst",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
         "introducedAt" : "10.15",
         "name" : "macOS",
         "unavailable" : false
@@ -104,24 +118,6 @@
             {
               "kind" : "text",
               "text" : " = "
-            },
-            {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10FFCoreData10MOCChangesV",
-              "text" : "MOCChanges"
-            },
-            {
-              "kind" : "text",
-              "text" : "<"
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Filter"
-            },
-            {
-              "kind" : "text",
-              "text" : ">."
             },
             {
               "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/AsyncIterator",

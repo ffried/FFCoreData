@@ -41,6 +41,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV3set_3foryqd___s8Sendable_s24ReferenceWritableKeyPathCyxqd__GXctYasAFRd__lF1TL_qd__mfp",
         "text" : "T"
       },
       {
@@ -53,7 +54,15 @@
       },
       {
         "kind" : "text",
-        "text" : ": any "
+        "text" : ": "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "any"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
       },
       {
         "kind" : "typeIdentifier",
@@ -75,6 +84,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedVAARi_zrlE5Valuexmfp",
         "text" : "Value"
       },
       {
@@ -83,6 +93,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV3set_3foryqd___s8Sendable_s24ReferenceWritableKeyPathCyxqd__GXctYasAFRd__lF1TL_qd__mfp",
         "text" : "T"
       },
       {
@@ -105,6 +116,20 @@
         "deprecated" : false,
         "introducedAt" : "15.0",
         "name" : "iOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "15.0",
+        "name" : "iPadOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "15.0",
+        "name" : "Mac Catalyst",
         "unavailable" : false
       },
       {
@@ -191,6 +216,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV3set_3foryqd___s8Sendable_s24ReferenceWritableKeyPathCyxqd__GXctYasAFRd__lF1TL_qd__mfp",
               "text" : "T"
             },
             {
@@ -211,7 +237,15 @@
             },
             {
               "kind" : "text",
-              "text" : ": any "
+              "text" : ": "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "any"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
             },
             {
               "kind" : "typeIdentifier",
@@ -233,6 +267,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedVAARi_zrlE5Valuexmfp",
               "text" : "Value"
             },
             {
@@ -241,6 +276,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV3set_3foryqd___s8Sendable_s24ReferenceWritableKeyPathCyxqd__GXctYasAFRd__lF1TL_qd__mfp",
               "text" : "T"
             },
             {
@@ -377,6 +413,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV3set_3foryqd___s8Sendable_s24ReferenceWritableKeyPathCyxqd__GXctYasAFRd__lF1TL_qd__mfp",
       "text" : "T"
     },
     {
@@ -389,7 +426,15 @@
     },
     {
       "kind" : "text",
-      "text" : ": any "
+      "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -411,6 +456,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedVAARi_zrlE5Valuexmfp",
       "text" : "Value"
     },
     {
@@ -419,6 +465,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV3set_3foryqd___s8Sendable_s24ReferenceWritableKeyPathCyxqd__GXctYasAFRd__lF1TL_qd__mfp",
       "text" : "T"
     },
     {

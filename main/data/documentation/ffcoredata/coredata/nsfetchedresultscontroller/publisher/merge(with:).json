@@ -1,10 +1,4 @@
 {
-  "abstract" : [
-    {
-      "text" : "Combines elements from this publisher with those from another publisher of the same type, delivering an interleaved sequence of elements.",
-      "type" : "text"
-    }
-  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -97,6 +91,20 @@
         "deprecated" : false,
         "introducedAt" : "13.0",
         "name" : "iOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "iPadOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "Mac Catalyst",
         "unavailable" : false
       },
       {
@@ -207,45 +215,6 @@
         }
       ],
       "kind" : "declarations"
-    },
-    {
-      "kind" : "parameters",
-      "parameters" : [
-        {
-          "content" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "Another publisher of this publisher’s type.",
-                  "type" : "text"
-                }
-              ],
-              "type" : "paragraph"
-            }
-          ],
-          "name" : "other"
-        }
-      ]
-    },
-    {
-      "content" : [
-        {
-          "anchor" : "return-value",
-          "level" : 2,
-          "text" : "Return Value",
-          "type" : "heading"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "A publisher that emits an event when either upstream publisher emits an event.",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        }
-      ],
-      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -389,10 +358,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/merge(with:)": {
   "abstract" : [
-    {
-      "text" : "Combines elements from this publisher with those from another publisher of the same type, delivering an interleaved sequence of elements.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {

@@ -49,7 +49,8 @@
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct\/Options-swift.struct\/formIntersection(_:)",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct\/Options-swift.struct\/formSymmetricDifference(_:)",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct\/Options-swift.struct\/formUnion(_:)",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct\/Options-swift.struct\/insert(_:)",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct\/Options-swift.struct\/insert(_:)-3k4dy",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct\/Options-swift.struct\/insert(_:)-7uu9k",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct\/Options-swift.struct\/intersection(_:)",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct\/Options-swift.struct\/remove(_:)",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct\/Options-swift.struct\/symmetricDifference(_:)",
@@ -179,18 +180,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreDataStack/Configuration-swift.struct/Options-swift.struct/contains(_:)": {
   "abstract" : [
-    {
-      "text" : "Returns a Boolean value that indicates whether a given element is a",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "member of the option set.",
-      "type" : "text"
-    }
+
   ],
   "conformance" : {
     "availabilityPrefix" : [
@@ -264,18 +254,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreDataStack/Configuration-swift.struct/Options-swift.struct/formIntersection(_:)": {
   "abstract" : [
-    {
-      "text" : "Removes all elements of this option set that are not",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "also present in the given set.",
-      "type" : "text"
-    }
+
   ],
   "conformance" : {
     "availabilityPrefix" : [
@@ -344,18 +323,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreDataStack/Configuration-swift.struct/Options-swift.struct/formSymmetricDifference(_:)": {
   "abstract" : [
-    {
-      "text" : "Replaces this set with a new set containing all elements",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "contained in either this set or the given set, but not in both.",
-      "type" : "text"
-    }
+
   ],
   "conformance" : {
     "availabilityPrefix" : [
@@ -424,10 +392,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreDataStack/Configuration-swift.struct/Options-swift.struct/formUnion(_:)": {
   "abstract" : [
-    {
-      "text" : "Inserts the elements of another set into this option set.",
-      "type" : "text"
-    }
+
   ],
   "conformance" : {
     "availabilityPrefix" : [
@@ -496,10 +461,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreDataStack/Configuration-swift.struct/Options-swift.struct/init()": {
   "abstract" : [
-    {
-      "text" : "Creates an empty option set.",
-      "type" : "text"
-    }
+
   ],
   "conformance" : {
     "availabilityPrefix" : [
@@ -550,12 +512,9 @@
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/options-swift.struct\/init()"
 },
-"doc://FFCoreData/documentation/FFCoreData/CoreDataStack/Configuration-swift.struct/Options-swift.struct/insert(_:)": {
+"doc://FFCoreData/documentation/FFCoreData/CoreDataStack/Configuration-swift.struct/Options-swift.struct/insert(_:)-3k4dy": {
   "abstract" : [
-    {
-      "text" : "Adds the given element to the option set if it is not already a member.",
-      "type" : "text"
-    }
+
   ],
   "conformance" : {
     "availabilityPrefix" : [
@@ -658,27 +617,144 @@
       "text" : ")"
     }
   ],
-  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct\/Options-swift.struct\/insert(_:)",
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct\/Options-swift.struct\/insert(_:)-3k4dy",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "insert(_:)",
   "type" : "topic",
-  "url" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/options-swift.struct\/insert(_:)"
+  "url" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/options-swift.struct\/insert(_:)-3k4dy"
+},
+"doc://FFCoreData/documentation/FFCoreData/CoreDataStack/Configuration-swift.struct/Options-swift.struct/insert(_:)-7uu9k": {
+  "abstract" : [
+
+  ],
+  "conformance" : {
+    "availabilityPrefix" : [
+      {
+        "text" : "Available when",
+        "type" : "text"
+      }
+    ],
+    "conformancePrefix" : [
+      {
+        "text" : "Conforms when",
+        "type" : "text"
+      }
+    ],
+    "constraints" : [
+      {
+        "code" : "Self",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : " is ",
+        "type" : "text"
+      },
+      {
+        "code" : "Self.Element",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : " and ",
+        "type" : "text"
+      },
+      {
+        "code" : "RawValue",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : " conforms to ",
+        "type" : "text"
+      },
+      {
+        "code" : "FixedWidthInteger",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : ".",
+        "type" : "text"
+      }
+    ]
+  },
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "insert"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s10SetAlgebraP7ElementQa",
+      "text" : "Element"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> (inserted"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ", memberAfterInsert"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s10SetAlgebraP7ElementQa",
+      "text" : "Element"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct\/Options-swift.struct\/insert(_:)-7uu9k",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "insert(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/coredatastack\/configuration-swift.struct\/options-swift.struct\/insert(_:)-7uu9k"
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreDataStack/Configuration-swift.struct/Options-swift.struct/intersection(_:)": {
   "abstract" : [
-    {
-      "text" : "Returns a new option set with only the elements contained in both this",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "set and the given set.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -719,10 +795,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreDataStack/Configuration-swift.struct/Options-swift.struct/remove(_:)": {
   "abstract" : [
-    {
-      "text" : "Removes the given element and all elements subsumed by it.",
-      "type" : "text"
-    }
+
   ],
   "conformance" : {
     "availabilityPrefix" : [
@@ -817,18 +890,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreDataStack/Configuration-swift.struct/Options-swift.struct/symmetricDifference(_:)": {
   "abstract" : [
-    {
-      "text" : "Returns a new option set with the elements contained in this set or in",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "the given set, but not in both.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -869,18 +931,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreDataStack/Configuration-swift.struct/Options-swift.struct/union(_:)": {
   "abstract" : [
-    {
-      "text" : "Returns a new option set of the elements contained in this set, in the",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "given set, or in both.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -921,10 +972,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreDataStack/Configuration-swift.struct/Options-swift.struct/update(with:)": {
   "abstract" : [
-    {
-      "text" : "Inserts the given element into the set.",
-      "type" : "text"
-    }
+
   ],
   "conformance" : {
     "availabilityPrefix" : [

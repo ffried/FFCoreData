@@ -78,7 +78,7 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:10FFCoreData16MOCBlockObserverC7Handlera",
+        "preciseIdentifier" : "s:10FFCoreData16MOCBlockObserverCAARi_zrlE7Handlera",
         "text" : "Handler"
       },
       {
@@ -175,7 +175,11 @@
             },
             {
               "kind" : "attribute",
-              "text" : "@escaping "
+              "text" : "@escaping"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
             },
             {
               "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCBlockObserver",
@@ -200,7 +204,7 @@
             {
               "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCBlockObserver\/Handler-swift.typealias",
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10FFCoreData16MOCBlockObserverC7Handlera",
+              "preciseIdentifier" : "s:10FFCoreData16MOCBlockObserverCAARi_zrlE7Handlera",
               "text" : "Handler"
             },
             {
@@ -375,7 +379,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10FFCoreData16MOCBlockObserverC7Handlera",
+      "preciseIdentifier" : "s:10FFCoreData16MOCBlockObserverCAARi_zrlE7Handlera",
       "text" : "Handler"
     },
     {

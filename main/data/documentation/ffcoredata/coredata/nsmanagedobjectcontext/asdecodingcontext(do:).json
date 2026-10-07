@@ -21,7 +21,7 @@
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "CoreData",
-    "externalID" : "s:So22NSManagedObjectContextC10FFCoreDataE010asDecodingC02doxxyKYTXE_tKlF",
+    "externalID" : "s:So22NSManagedObjectContextC10FFCoreDataE010asDecodingC02doxxyq_YKYTXE_tq_YKs5ErrorR_Ri_zr0_lF",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -45,6 +45,14 @@
       },
       {
         "kind" : "text",
+        "text" : ", "
+      },
+      {
+        "kind" : "genericParameter",
+        "text" : "F"
+      },
+      {
+        "kind" : "text",
         "text" : ">("
       },
       {
@@ -53,7 +61,15 @@
       },
       {
         "kind" : "text",
-        "text" : ": () "
+        "text" : ": "
+      },
+      {
+        "kind" : "attribute",
+        "text" : "@Sendable"
+      },
+      {
+        "kind" : "text",
+        "text" : " () "
       },
       {
         "kind" : "keyword",
@@ -61,14 +77,28 @@
       },
       {
         "kind" : "text",
-        "text" : " -> "
-      },
-      {
-        "kind" : "keyword",
-        "text" : "sending "
+        "text" : "("
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:So22NSManagedObjectContextC10FFCoreDataE010asDecodingC02doxxyq_YKYTXE_tq_YKs5ErrorR_Ri_zr0_lF1FL_q_mfp",
+        "text" : "F"
+      },
+      {
+        "kind" : "text",
+        "text" : ") -> "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "sending"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:So22NSManagedObjectContextC10FFCoreDataE010asDecodingC02doxxyq_YKYTXE_tq_YKs5ErrorR_Ri_zr0_lF1TL_xmfp",
         "text" : "T"
       },
       {
@@ -77,14 +107,24 @@
       },
       {
         "kind" : "keyword",
-        "text" : "rethrows"
+        "text" : "throws"
       },
       {
         "kind" : "text",
-        "text" : " -> sending "
+        "text" : "("
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:So22NSManagedObjectContextC10FFCoreDataE010asDecodingC02doxxyq_YKYTXE_tq_YKs5ErrorR_Ri_zr0_lF1FL_q_mfp",
+        "text" : "F"
+      },
+      {
+        "kind" : "text",
+        "text" : ") -> sending "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:So22NSManagedObjectContextC10FFCoreDataE010asDecodingC02doxxyq_YKYTXE_tq_YKs5ErrorR_Ri_zr0_lF1TL_xmfp",
         "text" : "T"
       }
     ],
@@ -154,6 +194,14 @@
             },
             {
               "kind" : "text",
+              "text" : ", "
+            },
+            {
+              "kind" : "genericParameter",
+              "text" : "F"
+            },
+            {
+              "kind" : "text",
               "text" : ">("
             },
             {
@@ -170,7 +218,15 @@
             },
             {
               "kind" : "text",
-              "text" : ": () "
+              "text" : ": "
+            },
+            {
+              "kind" : "attribute",
+              "text" : "@Sendable"
+            },
+            {
+              "kind" : "text",
+              "text" : " () "
             },
             {
               "kind" : "keyword",
@@ -178,14 +234,28 @@
             },
             {
               "kind" : "text",
-              "text" : " -> "
-            },
-            {
-              "kind" : "keyword",
-              "text" : "sending "
+              "text" : "("
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:So22NSManagedObjectContextC10FFCoreDataE010asDecodingC02doxxyq_YKYTXE_tq_YKs5ErrorR_Ri_zr0_lF1FL_q_mfp",
+              "text" : "F"
+            },
+            {
+              "kind" : "text",
+              "text" : ") -> "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "sending"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:So22NSManagedObjectContextC10FFCoreDataE010asDecodingC02doxxyq_YKYTXE_tq_YKs5ErrorR_Ri_zr0_lF1TL_xmfp",
               "text" : "T"
             },
             {
@@ -194,15 +264,62 @@
             },
             {
               "kind" : "keyword",
-              "text" : "rethrows"
+              "text" : "throws"
             },
             {
               "kind" : "text",
-              "text" : " -> sending "
+              "text" : "("
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:So22NSManagedObjectContextC10FFCoreDataE010asDecodingC02doxxyq_YKYTXE_tq_YKs5ErrorR_Ri_zr0_lF1FL_q_mfp",
+              "text" : "F"
+            },
+            {
+              "kind" : "text",
+              "text" : ") -> sending "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:So22NSManagedObjectContextC10FFCoreDataE010asDecodingC02doxxyq_YKYTXE_tq_YKs5ErrorR_Ri_zr0_lF1TL_xmfp",
+              "text" : "T"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "where"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "text" : "F"
+            },
+            {
+              "kind" : "text",
+              "text" : " : "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:s5ErrorP",
+              "text" : "Error"
+            },
+            {
+              "kind" : "text",
+              "text" : ", "
             },
             {
               "kind" : "typeIdentifier",
               "text" : "T"
+            },
+            {
+              "kind" : "text",
+              "text" : " : ~Copyable"
             }
           ]
         }
@@ -418,6 +535,14 @@
     },
     {
       "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "F"
+    },
+    {
+      "kind" : "text",
       "text" : ">("
     },
     {
@@ -426,7 +551,15 @@
     },
     {
       "kind" : "text",
-      "text" : ": () "
+      "text" : ": "
+    },
+    {
+      "kind" : "attribute",
+      "text" : "@Sendable"
+    },
+    {
+      "kind" : "text",
+      "text" : " () "
     },
     {
       "kind" : "keyword",
@@ -434,14 +567,28 @@
     },
     {
       "kind" : "text",
-      "text" : " -> "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "sending "
+      "text" : "("
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:So22NSManagedObjectContextC10FFCoreDataE010asDecodingC02doxxyq_YKYTXE_tq_YKs5ErrorR_Ri_zr0_lF1FL_q_mfp",
+      "text" : "F"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "sending"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:So22NSManagedObjectContextC10FFCoreDataE010asDecodingC02doxxyq_YKYTXE_tq_YKs5ErrorR_Ri_zr0_lF1TL_xmfp",
       "text" : "T"
     },
     {
@@ -450,14 +597,24 @@
     },
     {
       "kind" : "keyword",
-      "text" : "rethrows"
+      "text" : "throws"
     },
     {
       "kind" : "text",
-      "text" : " -> sending "
+      "text" : "("
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:So22NSManagedObjectContextC10FFCoreDataE010asDecodingC02doxxyq_YKYTXE_tq_YKs5ErrorR_Ri_zr0_lF1FL_q_mfp",
+      "text" : "F"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> sending "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:So22NSManagedObjectContextC10FFCoreDataE010asDecodingC02doxxyq_YKYTXE_tq_YKs5ErrorR_Ri_zr0_lF1TL_xmfp",
       "text" : "T"
     }
   ],

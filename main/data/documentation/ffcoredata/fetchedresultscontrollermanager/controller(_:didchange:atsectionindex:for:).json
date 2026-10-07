@@ -38,7 +38,15 @@
       },
       {
         "kind" : "text",
-        "text" : "<any "
+        "text" : "<"
+      },
+      {
+        "kind" : "keyword",
+        "text" : "any"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
       },
       {
         "kind" : "typeIdentifier",
@@ -55,7 +63,15 @@
       },
       {
         "kind" : "text",
-        "text" : ": any "
+        "text" : ": "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "any"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
       },
       {
         "kind" : "typeIdentifier",
@@ -128,6 +144,14 @@
           "tokens" : [
             {
               "kind" : "attribute",
+              "text" : "@objc"
+            },
+            {
+              "kind" : "text",
+              "text" : "(controller:didChangeSection:atIndex:forChangeType:) "
+            },
+            {
+              "kind" : "attribute",
               "text" : "@"
             },
             {
@@ -138,14 +162,6 @@
             {
               "kind" : "text",
               "text" : " "
-            },
-            {
-              "kind" : "attribute",
-              "text" : "@objc"
-            },
-            {
-              "kind" : "text",
-              "text" : "(controller:didChangeSection:atIndex:forChangeType:) "
             },
             {
               "kind" : "keyword",
@@ -194,7 +210,15 @@
             },
             {
               "kind" : "text",
-              "text" : "<any "
+              "text" : "<"
+            },
+            {
+              "kind" : "keyword",
+              "text" : "any"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
             },
             {
               "kind" : "typeIdentifier",
@@ -219,7 +243,15 @@
             },
             {
               "kind" : "text",
-              "text" : ": any "
+              "text" : ": "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "any"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
             },
             {
               "kind" : "typeIdentifier",
@@ -378,7 +410,15 @@
     },
     {
       "kind" : "text",
-      "text" : "<any "
+      "text" : "<"
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -395,7 +435,15 @@
     },
     {
       "kind" : "text",
-      "text" : ": any "
+      "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",

@@ -61,6 +61,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:10FFCoreData1xopyAA23FetchableSortExpressionVyxGs7KeyPathCyxq_GAA0C0RzSLR_r0_lF5ModelL_xmfp",
         "text" : "Model"
       },
       {
@@ -69,6 +70,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:10FFCoreData1xopyAA23FetchableSortExpressionVyxGs7KeyPathCyxq_GAA0C0RzSLR_r0_lF5ValueL_q_mfp",
         "text" : "Value"
       },
       {
@@ -86,6 +88,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:10FFCoreData1xopyAA23FetchableSortExpressionVyxGs7KeyPathCyxq_GAA0C0RzSLR_r0_lF5ModelL_xmfp",
         "text" : "Model"
       },
       {
@@ -173,6 +176,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10FFCoreData1xopyAA23FetchableSortExpressionVyxGs7KeyPathCyxq_GAA0C0RzSLR_r0_lF5ModelL_xmfp",
               "text" : "Model"
             },
             {
@@ -181,6 +185,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10FFCoreData1xopyAA23FetchableSortExpressionVyxGs7KeyPathCyxq_GAA0C0RzSLR_r0_lF5ValueL_q_mfp",
               "text" : "Value"
             },
             {
@@ -199,6 +204,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10FFCoreData1xopyAA23FetchableSortExpressionVyxGs7KeyPathCyxq_GAA0C0RzSLR_r0_lF5ModelL_xmfp",
               "text" : "Model"
             },
             {
@@ -397,6 +403,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData1xopyAA23FetchableSortExpressionVyxGs7KeyPathCyxq_GAA0C0RzSLR_r0_lF5ModelL_xmfp",
       "text" : "Model"
     },
     {
@@ -405,6 +412,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData1xopyAA23FetchableSortExpressionVyxGs7KeyPathCyxq_GAA0C0RzSLR_r0_lF5ValueL_q_mfp",
       "text" : "Value"
     },
     {
@@ -422,6 +430,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData1xopyAA23FetchableSortExpressionVyxGs7KeyPathCyxq_GAA0C0RzSLR_r0_lF5ModelL_xmfp",
       "text" : "Model"
     },
     {

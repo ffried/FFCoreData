@@ -98,10 +98,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/InvalidEntityError/localizedDescription": {
   "abstract" : [
-    {
-      "text" : "Retrieve the localized description for this error.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {

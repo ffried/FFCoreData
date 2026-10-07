@@ -75,20 +75,20 @@
               "text" : " = "
             },
             {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Creatable",
+              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable",
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10FFCoreData9CreatableP",
-              "text" : "Creatable"
+              "preciseIdentifier" : "s:10FFCoreData9FetchableP",
+              "text" : "Fetchable"
             },
             {
               "kind" : "text",
               "text" : " & "
             },
             {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Fetchable",
+              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/Creatable",
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10FFCoreData9FetchableP",
-              "text" : "Fetchable"
+              "preciseIdentifier" : "s:10FFCoreData9CreatableP",
+              "text" : "Creatable"
             }
           ]
         }

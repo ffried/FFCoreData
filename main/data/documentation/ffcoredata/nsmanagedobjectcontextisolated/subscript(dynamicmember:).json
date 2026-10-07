@@ -37,7 +37,15 @@
       },
       {
         "kind" : "text",
-        "text" : " _: any "
+        "text" : " _: "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "any"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
       },
       {
         "kind" : "typeIdentifier",
@@ -59,6 +67,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedVAARi_zrlE5Valuexmfp",
         "text" : "Value"
       },
       {
@@ -67,14 +76,24 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV13dynamicMemberqd__s8Sendable_s7KeyPathCyxqd__GXc_tcluip1TL_qd__mfp",
         "text" : "T"
       },
       {
         "kind" : "text",
-        "text" : ">) -> "
+        "text" : ">) -> sending "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "sending"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV13dynamicMemberqd__s8Sendable_s7KeyPathCyxqd__GXc_tcluip1TL_qd__mfp",
         "text" : "T"
       }
     ],
@@ -89,6 +108,20 @@
         "deprecated" : false,
         "introducedAt" : "15.0",
         "name" : "iOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "15.0",
+        "name" : "iPadOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "15.0",
+        "name" : "Mac Catalyst",
         "unavailable" : false
       },
       {
@@ -115,7 +148,7 @@
     ],
     "remoteSource" : {
       "fileName" : "NSManagedObjectContextIsolated.swift",
-      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObjectContext\/NSManagedObjectContextIsolated.swift#L153"
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObjectContext\/NSManagedObjectContextIsolated.swift#L146"
     },
     "role" : "symbol",
     "roleHeading" : "Instance Subscript",
@@ -163,7 +196,15 @@
             },
             {
               "kind" : "text",
-              "text" : ": any "
+              "text" : ": "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "any"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
             },
             {
               "kind" : "typeIdentifier",
@@ -185,6 +226,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedVAARi_zrlE5Valuexmfp",
               "text" : "Value"
             },
             {
@@ -193,14 +235,24 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV13dynamicMemberqd__s8Sendable_s7KeyPathCyxqd__GXc_tcluip1TL_qd__mfp",
               "text" : "T"
             },
             {
               "kind" : "text",
-              "text" : ">) -> "
+              "text" : ">) -> sending "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "sending"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV13dynamicMemberqd__s8Sendable_s7KeyPathCyxqd__GXc_tcluip1TL_qd__mfp",
               "text" : "T"
             },
             {
@@ -320,7 +372,15 @@
     },
     {
       "kind" : "text",
-      "text" : " _: any "
+      "text" : " _: "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -342,6 +402,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedVAARi_zrlE5Valuexmfp",
       "text" : "Value"
     },
     {
@@ -350,14 +411,24 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV13dynamicMemberqd__s8Sendable_s7KeyPathCyxqd__GXc_tcluip1TL_qd__mfp",
       "text" : "T"
     },
     {
       "kind" : "text",
-      "text" : ">) -> "
+      "text" : ">) -> sending "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "sending"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV13dynamicMemberqd__s8Sendable_s7KeyPathCyxqd__GXc_tcluip1TL_qd__mfp",
       "text" : "T"
     }
   ],

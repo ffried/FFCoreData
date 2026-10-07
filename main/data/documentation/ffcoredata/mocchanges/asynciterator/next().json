@@ -42,32 +42,6 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:10FFCoreData10MOCChangesV",
-        "text" : "MOCChanges"
-      },
-      {
-        "kind" : "text",
-        "text" : "<"
-      },
-      {
-        "kind" : "typeIdentifier",
-        "text" : "Filter"
-      },
-      {
-        "kind" : "text",
-        "text" : ">."
-      },
-      {
-        "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:10FFCoreData10MOCChangesV13AsyncIteratorV",
-        "text" : "AsyncIterator"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
-      },
-      {
-        "kind" : "typeIdentifier",
         "preciseIdentifier" : "s:10FFCoreData10MOCChangesV13AsyncIteratorV7Elementa",
         "text" : "Element"
       },
@@ -87,6 +61,20 @@
         "deprecated" : false,
         "introducedAt" : "13.0",
         "name" : "iOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "iPadOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "Mac Catalyst",
         "unavailable" : false
       },
       {
@@ -113,7 +101,7 @@
     ],
     "remoteSource" : {
       "fileName" : "MOCChanges.swift",
-      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/ManagedObjectContext%20Observer\/MOCChanges.swift#L39"
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/ManagedObjectContext%20Observer\/MOCChanges.swift#L41"
     },
     "role" : "symbol",
     "roleHeading" : "Instance Method",
@@ -131,6 +119,14 @@
             "macOS"
           ],
           "tokens" : [
+            {
+              "kind" : "attribute",
+              "text" : "@concurrent"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
             {
               "kind" : "keyword",
               "text" : "mutating"
@@ -162,34 +158,6 @@
             {
               "kind" : "text",
               "text" : " -> "
-            },
-            {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10FFCoreData10MOCChangesV",
-              "text" : "MOCChanges"
-            },
-            {
-              "kind" : "text",
-              "text" : "<"
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Filter"
-            },
-            {
-              "kind" : "text",
-              "text" : ">."
-            },
-            {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/AsyncIterator",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10FFCoreData10MOCChangesV13AsyncIteratorV",
-              "text" : "AsyncIterator"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
             },
             {
               "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/AsyncIterator\/Element",
@@ -361,32 +329,6 @@
     {
       "kind" : "text",
       "text" : " -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10FFCoreData10MOCChangesV",
-      "text" : "MOCChanges"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Filter"
-    },
-    {
-      "kind" : "text",
-      "text" : ">."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10FFCoreData10MOCChangesV13AsyncIteratorV",
-      "text" : "AsyncIterator"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

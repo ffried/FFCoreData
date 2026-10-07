@@ -1,10 +1,4 @@
 {
-  "abstract" : [
-    {
-      "text" : "Converts any failure from the upstream publisher into a new error.",
-      "type" : "text"
-    }
-  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -122,6 +116,20 @@
         "deprecated" : false,
         "introducedAt" : "13.0",
         "name" : "iOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "iPadOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "Mac Catalyst",
         "unavailable" : false
       },
       {
@@ -294,178 +302,6 @@
         }
       ],
       "kind" : "declarations"
-    },
-    {
-      "kind" : "parameters",
-      "parameters" : [
-        {
-          "content" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "A closure that takes the upstream failure as a parameter and returns a new error for the publisher to terminate with.",
-                  "type" : "text"
-                }
-              ],
-              "type" : "paragraph"
-            }
-          ],
-          "name" : "transform"
-        }
-      ]
-    },
-    {
-      "content" : [
-        {
-          "anchor" : "return-value",
-          "level" : 2,
-          "text" : "Return Value",
-          "type" : "heading"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "A publisher that replaces any upstream failure with a new error produced by the ",
-              "type" : "text"
-            },
-            {
-              "code" : "transform",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : " closure.",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        }
-      ],
-      "kind" : "content"
-    },
-    {
-      "content" : [
-        {
-          "anchor" : "discussion",
-          "level" : 2,
-          "text" : "Discussion",
-          "type" : "heading"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "Use the ",
-              "type" : "text"
-            },
-            {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSFetchedResultsController\/Publisher\/mapError(_:)",
-              "isActive" : true,
-              "type" : "reference"
-            },
-            {
-              "text" : " operator when you need to replace one error type with another, or where a downstream operator needs the error types of its inputs to match.",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "The following example uses a ",
-              "type" : "text"
-            },
-            {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSFetchedResultsController\/Publisher\/tryMap(_:)",
-              "isActive" : true,
-              "type" : "reference"
-            },
-            {
-              "text" : " operator to divide ",
-              "type" : "text"
-            },
-            {
-              "code" : "1",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : " by each element produced by a sequence publisher. When the publisher produces a ",
-              "type" : "text"
-            },
-            {
-              "code" : "0",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : ", the ",
-              "type" : "text"
-            },
-            {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSFetchedResultsController\/Publisher\/tryMap(_:)",
-              "isActive" : true,
-              "type" : "reference"
-            },
-            {
-              "text" : " fails with a",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "code" : "DivisionByZeroError",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : ". The ",
-              "type" : "text"
-            },
-            {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSFetchedResultsController\/Publisher\/mapError(_:)",
-              "isActive" : true,
-              "type" : "reference"
-            },
-            {
-              "text" : " operator converts this into a ",
-              "type" : "text"
-            },
-            {
-              "code" : "MyGenericError",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : ".",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        },
-        {
-          "code" : [
-            "struct DivisionByZeroError: Error {}",
-            "struct MyGenericError: Error { var wrappedError: Error }",
-            "",
-            "func myDivide(_ dividend: Double, _ divisor: Double) throws -> Double {",
-            "       guard divisor != 0 else { throw DivisionByZeroError() }",
-            "       return dividend \/ divisor",
-            "   }",
-            "",
-            "let divisors: [Double] = [5, 4, 3, 2, 1, 0]",
-            "divisors.publisher",
-            "    .tryMap { try myDivide(1, $0) }",
-            "    .mapError { MyGenericError(wrappedError: $0) }",
-            "    .sink(",
-            "        receiveCompletion: { print (\"completion: \\($0)\") ,",
-            "        receiveValue: { print (\"value: \\($0)\", terminator: \" \") }",
-            "     )",
-            "",
-            "\/\/ Prints: \"0.2 0.25 0.3333333333333333 0.5 1.0 completion: failure(MyGenericError(wrappedError: DivisionByZeroError()))\""
-          ],
-          "syntax" : null,
-          "type" : "codeListing"
-        }
-      ],
-      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -609,10 +445,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/mapError(_:)": {
   "abstract" : [
-    {
-      "text" : "Converts any failure from the upstream publisher into a new error.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -705,113 +538,6 @@
   "title" : "mapError(_:)",
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/maperror(_:)"
-},
-"doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/tryMap(_:)": {
-  "abstract" : [
-    {
-      "text" : "Transforms all elements from the upstream publisher with a provided error-throwing closure.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "tryMap"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "genericParameter",
-      "text" : "T"
-    },
-    {
-      "kind" : "text",
-      "text" : ">(("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Combine9PublisherP6OutputQa",
-      "text" : "Output"
-    },
-    {
-      "kind" : "text",
-      "text" : ") "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "throws"
-    },
-    {
-      "kind" : "text",
-      "text" : " -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "T"
-    },
-    {
-      "kind" : "text",
-      "text" : ") -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Combine10PublishersO",
-      "text" : "Publishers"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:7Combine10PublishersO6TryMapV",
-      "text" : "TryMap"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "T"
-    },
-    {
-      "kind" : "text",
-      "text" : ">"
-    }
-  ],
-  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSFetchedResultsController\/Publisher\/tryMap(_:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "tryMap(_:)",
-  "type" : "topic",
-  "url" : "\/documentation\/ffcoredata\/coredata\/nsfetchedresultscontroller\/publisher\/trymap(_:)"
 }
 }
 }

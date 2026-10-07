@@ -216,6 +216,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation19PropertyListDecoderC10FFCoreDataE6decode_4fromxxm_AA0F0VtKAD04CoreF9DecodableRzlF6EntityL_xmfp",
       "text" : "Entity"
     },
     {
@@ -249,6 +250,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation19PropertyListDecoderC10FFCoreDataE6decode_4fromxxm_AA0F0VtKAD04CoreF9DecodableRzlF6EntityL_xmfp",
       "text" : "Entity"
     }
   ],
@@ -317,6 +319,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation19PropertyListDecoderC10FFCoreDataE6decode_4from2inxxm_AA0F0VSo22NSManagedObjectContextCtKAD04CoreF9DecodableRzlF6EntityL_xmfp",
       "text" : "Entity"
     },
     {
@@ -367,6 +370,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation19PropertyListDecoderC10FFCoreDataE6decode_4from2inxxm_AA0F0VSo22NSManagedObjectContextCtKAD04CoreF9DecodableRzlF6EntityL_xmfp",
       "text" : "Entity"
     }
   ],

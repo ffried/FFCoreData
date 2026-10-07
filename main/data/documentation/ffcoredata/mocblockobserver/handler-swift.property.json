@@ -13,7 +13,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:10FFCoreData16MOCBlockObserverC7handleryyACyxG_AA18MOCObservedChangesVtcvp",
+    "externalID" : "s:10FFCoreData16MOCBlockObserverCAARi_zrlE7handleryyACyxG_AA18MOCObservedChangesVtcvp",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -33,24 +33,7 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:10FFCoreData16MOCBlockObserverC",
-        "text" : "MOCBlockObserver"
-      },
-      {
-        "kind" : "text",
-        "text" : "<"
-      },
-      {
-        "kind" : "typeIdentifier",
-        "text" : "Filter"
-      },
-      {
-        "kind" : "text",
-        "text" : ">."
-      },
-      {
-        "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:10FFCoreData16MOCBlockObserverC7Handlera",
+        "preciseIdentifier" : "s:10FFCoreData16MOCBlockObserverCAARi_zrlE7Handlera",
         "text" : "Handler"
       }
     ],
@@ -96,27 +79,9 @@
               "text" : ": "
             },
             {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCBlockObserver",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10FFCoreData16MOCBlockObserverC",
-              "text" : "MOCBlockObserver"
-            },
-            {
-              "kind" : "text",
-              "text" : "<"
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Filter"
-            },
-            {
-              "kind" : "text",
-              "text" : ">."
-            },
-            {
               "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCBlockObserver\/Handler-swift.typealias",
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10FFCoreData16MOCBlockObserverC7Handlera",
+              "preciseIdentifier" : "s:10FFCoreData16MOCBlockObserverCAARi_zrlE7Handlera",
               "text" : "Handler"
             }
           ]
@@ -243,24 +208,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10FFCoreData16MOCBlockObserverC",
-      "text" : "MOCBlockObserver"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Filter"
-    },
-    {
-      "kind" : "text",
-      "text" : ">."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10FFCoreData16MOCBlockObserverC7Handlera",
+      "preciseIdentifier" : "s:10FFCoreData16MOCBlockObserverCAARi_zrlE7Handlera",
       "text" : "Handler"
     }
   ],

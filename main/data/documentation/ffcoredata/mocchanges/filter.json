@@ -33,6 +33,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:10FFCoreData10MOCChangesV6Filterxmfp",
         "text" : "Filter"
       }
     ],
@@ -47,6 +48,20 @@
         "deprecated" : false,
         "introducedAt" : "13.0",
         "name" : "iOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "iPadOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "Mac Catalyst",
         "unavailable" : false
       },
       {
@@ -73,7 +88,7 @@
     ],
     "remoteSource" : {
       "fileName" : "MOCChanges.swift",
-      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/ManagedObjectContext%20Observer\/MOCChanges.swift#L50"
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/ManagedObjectContext%20Observer\/MOCChanges.swift#L57"
     },
     "role" : "symbol",
     "roleHeading" : "Instance Property",
@@ -109,6 +124,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10FFCoreData10MOCChangesV6Filterxmfp",
               "text" : "Filter"
             }
           ]
@@ -204,6 +220,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData10MOCChangesV6Filterxmfp",
       "text" : "Filter"
     }
   ],

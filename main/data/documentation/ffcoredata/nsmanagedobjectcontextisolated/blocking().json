@@ -33,23 +33,6 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV",
-        "text" : "NSManagedObjectContextIsolated"
-      },
-      {
-        "kind" : "text",
-        "text" : "<"
-      },
-      {
-        "kind" : "typeIdentifier",
-        "text" : "Value"
-      },
-      {
-        "kind" : "text",
-        "text" : ">."
-      },
-      {
-        "kind" : "typeIdentifier",
         "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedVAARi_zrlE8BlockingV",
         "text" : "Blocking"
       }
@@ -102,24 +85,6 @@
             {
               "kind" : "text",
               "text" : "() -> "
-            },
-            {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/NSManagedObjectContextIsolated",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV",
-              "text" : "NSManagedObjectContextIsolated"
-            },
-            {
-              "kind" : "text",
-              "text" : "<"
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Value"
-            },
-            {
-              "kind" : "text",
-              "text" : ">."
             },
             {
               "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/NSManagedObjectContextIsolated\/Blocking",
@@ -248,23 +213,6 @@
     {
       "kind" : "text",
       "text" : "() -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10FFCoreData30NSManagedObjectContextIsolatedV",
-      "text" : "NSManagedObjectContextIsolated"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Value"
-    },
-    {
-      "kind" : "text",
-      "text" : ">."
     },
     {
       "kind" : "typeIdentifier",

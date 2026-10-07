@@ -73,6 +73,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:10Foundation19PropertyListDecoderC10FFCoreDataE6decode_4from2inxxm_AA0F0VSo22NSManagedObjectContextCtKAD04CoreF9DecodableRzlF6EntityL_xmfp",
         "text" : "Entity"
       },
       {
@@ -123,6 +124,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:10Foundation19PropertyListDecoderC10FFCoreDataE6decode_4from2inxxm_AA0F0VSo22NSManagedObjectContextCtKAD04CoreF9DecodableRzlF6EntityL_xmfp",
         "text" : "Entity"
       }
     ],
@@ -136,7 +138,7 @@
     ],
     "remoteSource" : {
       "fileName" : "CoreDataDecodable.swift",
-      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObject\/CoreDataDecodable.swift#L220"
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObject\/CoreDataDecodable.swift#L224"
     },
     "role" : "symbol",
     "roleHeading" : "Instance Method",
@@ -204,6 +206,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10Foundation19PropertyListDecoderC10FFCoreDataE6decode_4from2inxxm_AA0F0VSo22NSManagedObjectContextCtKAD04CoreF9DecodableRzlF6EntityL_xmfp",
               "text" : "Entity"
             },
             {
@@ -270,6 +273,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10Foundation19PropertyListDecoderC10FFCoreDataE6decode_4from2inxxm_AA0F0VSo22NSManagedObjectContextCtKAD04CoreF9DecodableRzlF6EntityL_xmfp",
               "text" : "Entity"
             },
             {
@@ -587,6 +591,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation19PropertyListDecoderC10FFCoreDataE6decode_4from2inxxm_AA0F0VSo22NSManagedObjectContextCtKAD04CoreF9DecodableRzlF6EntityL_xmfp",
       "text" : "Entity"
     },
     {
@@ -637,6 +642,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10Foundation19PropertyListDecoderC10FFCoreDataE6decode_4from2inxxm_AA0F0VSo22NSManagedObjectContextCtKAD04CoreF9DecodableRzlF6EntityL_xmfp",
       "text" : "Entity"
     }
   ],

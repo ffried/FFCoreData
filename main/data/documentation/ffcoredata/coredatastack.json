@@ -88,8 +88,7 @@
     {
       "identifiers" : [
         "doc:\/\/FFCoreData\/s15BitwiseCopyableP",
-        "doc:\/\/FFCoreData\/s8SendableP",
-        "doc:\/\/FFCoreData\/s16SendableMetatypeP"
+        "doc:\/\/FFCoreData\/s8SendableP"
       ],
       "kind" : "relationships",
       "title" : "Conforms To",
@@ -334,15 +333,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10FFCoreData04CoreB5StackO",
-      "text" : "CoreDataStack"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:10FFCoreData04CoreB5StackO13ConfigurationV",
       "text" : "Configuration"
     }
@@ -549,7 +539,15 @@
     },
     {
       "kind" : "text",
-      "text" : ": ("
+      "text" : ": "
+    },
+    {
+      "kind" : "attribute",
+      "text" : "@Sendable"
+    },
+    {
+      "kind" : "text",
+      "text" : " ("
     },
     {
       "kind" : "typeIdentifier",
@@ -763,7 +761,15 @@
     },
     {
       "kind" : "text",
-      "text" : ": ("
+      "text" : ": "
+    },
+    {
+      "kind" : "attribute",
+      "text" : "@Sendable"
+    },
+    {
+      "kind" : "text",
+      "text" : " ("
     },
     {
       "kind" : "typeIdentifier",
@@ -785,11 +791,6 @@
 "doc://FFCoreData/s15BitwiseCopyableP": {
   "identifier" : "doc:\/\/FFCoreData\/s15BitwiseCopyableP",
   "title" : "Swift.BitwiseCopyable",
-  "type" : "unresolvable"
-},
-"doc://FFCoreData/s16SendableMetatypeP": {
-  "identifier" : "doc:\/\/FFCoreData\/s16SendableMetatypeP",
-  "title" : "Swift.SendableMetatype",
   "type" : "unresolvable"
 },
 "doc://FFCoreData/s8SendableP": {

@@ -1,18 +1,4 @@
 {
-  "abstract" : [
-    {
-      "text" : "Returns a new option set with the elements contained in this set or in",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "the given set, but not in both.",
-      "type" : "text"
-    }
-  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -133,61 +119,6 @@
         }
       ],
       "kind" : "declarations"
-    },
-    {
-      "kind" : "parameters",
-      "parameters" : [
-        {
-          "content" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "An option set.",
-                  "type" : "text"
-                }
-              ],
-              "type" : "paragraph"
-            }
-          ],
-          "name" : "other"
-        }
-      ]
-    },
-    {
-      "content" : [
-        {
-          "anchor" : "return-value",
-          "level" : 2,
-          "text" : "Return Value",
-          "type" : "heading"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "A new option set with only the elements contained in either",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "this set or ",
-              "type" : "text"
-            },
-            {
-              "code" : "other",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : ", but not in both.",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        }
-      ],
-      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -318,18 +249,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreDataStack/Configuration-swift.struct/Options-swift.struct/symmetricDifference(_:)": {
   "abstract" : [
-    {
-      "text" : "Returns a new option set with the elements contained in this set or in",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "the given set, but not in both.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {

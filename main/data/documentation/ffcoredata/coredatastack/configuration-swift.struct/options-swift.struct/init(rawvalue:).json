@@ -35,33 +35,6 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:10FFCoreData04CoreB5StackO",
-        "text" : "CoreDataStack"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
-      },
-      {
-        "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:10FFCoreData04CoreB5StackO13ConfigurationV",
-        "text" : "Configuration"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
-      },
-      {
-        "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:10FFCoreData04CoreB5StackO13ConfigurationV7OptionsV",
-        "text" : "Options"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
-      },
-      {
-        "kind" : "typeIdentifier",
         "preciseIdentifier" : "s:10FFCoreData04CoreB5StackO13ConfigurationV7OptionsV8RawValuea",
         "text" : "RawValue"
       },
@@ -77,7 +50,7 @@
     ],
     "remoteSource" : {
       "fileName" : "CoreDataManager.swift",
-      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/CoreDataManager\/CoreDataManager.swift#L274"
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/CoreDataManager\/CoreDataManager.swift#L278"
     },
     "role" : "symbol",
     "roleHeading" : "Initializer",
@@ -110,36 +83,6 @@
             {
               "kind" : "text",
               "text" : ": "
-            },
-            {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10FFCoreData04CoreB5StackO",
-              "text" : "CoreDataStack"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
-            },
-            {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10FFCoreData04CoreB5StackO13ConfigurationV",
-              "text" : "Configuration"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
-            },
-            {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct\/Options-swift.struct",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10FFCoreData04CoreB5StackO13ConfigurationV7OptionsV",
-              "text" : "Options"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
             },
             {
               "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct\/Options-swift.struct\/RawValue-swift.typealias",
@@ -334,33 +277,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10FFCoreData04CoreB5StackO",
-      "text" : "CoreDataStack"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10FFCoreData04CoreB5StackO13ConfigurationV",
-      "text" : "Configuration"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10FFCoreData04CoreB5StackO13ConfigurationV7OptionsV",
-      "text" : "Options"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

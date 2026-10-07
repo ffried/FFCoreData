@@ -223,6 +223,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine15TopLevelDecoderP10FFCoreDataE6decode_4from2inqd__qd__m_5InputQzSo22NSManagedObjectContextCtKs8SendableRzAD04CoreF9DecodableRd__sAlIRQlF6EntityL_qd__mfp",
       "text" : "Entity"
     },
     {
@@ -236,14 +237,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -281,6 +274,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:7Combine15TopLevelDecoderP10FFCoreDataE6decode_4from2inqd__qd__m_5InputQzSo22NSManagedObjectContextCtKs8SendableRzAD04CoreF9DecodableRd__sAlIRQlF6EntityL_qd__mfp",
       "text" : "Entity"
     }
   ],

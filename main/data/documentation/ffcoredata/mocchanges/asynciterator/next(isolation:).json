@@ -46,7 +46,15 @@
       },
       {
         "kind" : "text",
-        "text" : " (any "
+        "text" : " ("
+      },
+      {
+        "kind" : "keyword",
+        "text" : "any"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
       },
       {
         "kind" : "typeIdentifier",
@@ -75,64 +83,12 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:10FFCoreData10MOCChangesV",
-        "text" : "MOCChanges"
-      },
-      {
-        "kind" : "text",
-        "text" : "<"
-      },
-      {
-        "kind" : "typeIdentifier",
-        "text" : "Filter"
-      },
-      {
-        "kind" : "text",
-        "text" : ">."
-      },
-      {
-        "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:10FFCoreData10MOCChangesV13AsyncIteratorV",
-        "text" : "AsyncIterator"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
-      },
-      {
-        "kind" : "typeIdentifier",
         "preciseIdentifier" : "s:10FFCoreData10MOCChangesV13AsyncIteratorV7Failurea",
         "text" : "Failure"
       },
       {
         "kind" : "text",
         "text" : ") -> "
-      },
-      {
-        "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:10FFCoreData10MOCChangesV",
-        "text" : "MOCChanges"
-      },
-      {
-        "kind" : "text",
-        "text" : "<"
-      },
-      {
-        "kind" : "typeIdentifier",
-        "text" : "Filter"
-      },
-      {
-        "kind" : "text",
-        "text" : ">."
-      },
-      {
-        "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:10FFCoreData10MOCChangesV13AsyncIteratorV",
-        "text" : "AsyncIterator"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
       },
       {
         "kind" : "typeIdentifier",
@@ -155,6 +111,20 @@
         "deprecated" : false,
         "introducedAt" : "18.0",
         "name" : "iOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "18.0",
+        "name" : "iPadOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "18.0",
+        "name" : "Mac Catalyst",
         "unavailable" : false
       },
       {
@@ -188,7 +158,7 @@
     ],
     "remoteSource" : {
       "fileName" : "MOCChanges.swift",
-      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/ManagedObjectContext%20Observer\/MOCChanges.swift#L44"
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/ManagedObjectContext%20Observer\/MOCChanges.swift#L51"
     },
     "role" : "symbol",
     "roleHeading" : "Instance Method",
@@ -252,7 +222,15 @@
             },
             {
               "kind" : "text",
-              "text" : " (any "
+              "text" : " ("
+            },
+            {
+              "kind" : "keyword",
+              "text" : "any"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
             },
             {
               "kind" : "typeIdentifier",
@@ -280,34 +258,6 @@
               "text" : "("
             },
             {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10FFCoreData10MOCChangesV",
-              "text" : "MOCChanges"
-            },
-            {
-              "kind" : "text",
-              "text" : "<"
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Filter"
-            },
-            {
-              "kind" : "text",
-              "text" : ">."
-            },
-            {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/AsyncIterator",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10FFCoreData10MOCChangesV13AsyncIteratorV",
-              "text" : "AsyncIterator"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
-            },
-            {
               "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/AsyncIterator\/Failure",
               "kind" : "typeIdentifier",
               "preciseIdentifier" : "s:10FFCoreData10MOCChangesV13AsyncIteratorV7Failurea",
@@ -316,34 +266,6 @@
             {
               "kind" : "text",
               "text" : ") -> "
-            },
-            {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10FFCoreData10MOCChangesV",
-              "text" : "MOCChanges"
-            },
-            {
-              "kind" : "text",
-              "text" : "<"
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Filter"
-            },
-            {
-              "kind" : "text",
-              "text" : ">."
-            },
-            {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/AsyncIterator",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10FFCoreData10MOCChangesV13AsyncIteratorV",
-              "text" : "AsyncIterator"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
             },
             {
               "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCChanges\/AsyncIterator\/Element",
@@ -553,7 +475,15 @@
     },
     {
       "kind" : "text",
-      "text" : " (any "
+      "text" : " ("
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -582,64 +512,12 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10FFCoreData10MOCChangesV",
-      "text" : "MOCChanges"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Filter"
-    },
-    {
-      "kind" : "text",
-      "text" : ">."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10FFCoreData10MOCChangesV13AsyncIteratorV",
-      "text" : "AsyncIterator"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:10FFCoreData10MOCChangesV13AsyncIteratorV7Failurea",
       "text" : "Failure"
     },
     {
       "kind" : "text",
       "text" : ") -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10FFCoreData10MOCChangesV",
-      "text" : "MOCChanges"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Filter"
-    },
-    {
-      "kind" : "text",
-      "text" : ">."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10FFCoreData10MOCChangesV13AsyncIteratorV",
-      "text" : "AsyncIterator"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

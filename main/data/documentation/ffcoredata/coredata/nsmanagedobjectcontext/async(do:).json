@@ -39,7 +39,15 @@
       },
       {
         "kind" : "text",
-        "text" : ": () -> ())"
+        "text" : ": "
+      },
+      {
+        "kind" : "attribute",
+        "text" : "@Sendable"
+      },
+      {
+        "kind" : "text",
+        "text" : " () -> ())"
       }
     ],
     "modules" : [
@@ -50,17 +58,9 @@
         ]
       }
     ],
-    "platforms" : [
-      {
-        "beta" : false,
-        "deprecated" : true,
-        "renamed" : "perform",
-        "unavailable" : false
-      }
-    ],
     "remoteSource" : {
       "fileName" : "NSManagedObjectContext+Helpers.swift",
-      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObjectContext\/NSManagedObjectContext+Helpers.swift#L111"
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObjectContext\/NSManagedObjectContext+Helpers.swift#L142"
     },
     "role" : "symbol",
     "roleHeading" : "Instance Method",
@@ -136,11 +136,19 @@
             },
             {
               "kind" : "attribute",
-              "text" : "@escaping "
+              "text" : "@escaping"
             },
             {
               "kind" : "text",
-              "text" : "() -> ())"
+              "text" : " "
+            },
+            {
+              "kind" : "attribute",
+              "text" : "@Sendable"
+            },
+            {
+              "kind" : "text",
+              "text" : " () -> ())"
             }
           ]
         }
@@ -252,7 +260,15 @@
     },
     {
       "kind" : "text",
-      "text" : ": () -> ())"
+      "text" : ": "
+    },
+    {
+      "kind" : "attribute",
+      "text" : "@Sendable"
+    },
+    {
+      "kind" : "text",
+      "text" : " () -> ())"
     }
   ],
   "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSManagedObjectContext\/async(do:)",

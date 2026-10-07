@@ -131,42 +131,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/MOCChanges/AsyncIterator/next()-pamr": {
   "abstract" : [
-    {
-      "text" : "Default implementation of ",
-      "type" : "text"
-    },
-    {
-      "code" : "next()",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " in terms of ",
-      "type" : "text"
-    },
-    {
-      "code" : "next(isolation:)",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ", which",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "is required to maintain backward compatibility with existing async",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "iterators.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -245,42 +210,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/MOCChanges/AsyncIterator/next(isolation:)-124wd": {
   "abstract" : [
-    {
-      "text" : "Default implementation of ",
-      "type" : "text"
-    },
-    {
-      "code" : "next(isolation:)",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : " in terms of ",
-      "type" : "text"
-    },
-    {
-      "code" : "next()",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ", which",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "is required to maintain backward compatibility with existing async",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "iterators.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {

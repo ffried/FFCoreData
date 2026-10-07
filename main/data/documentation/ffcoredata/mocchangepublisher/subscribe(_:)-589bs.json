@@ -1,10 +1,4 @@
 {
-  "abstract" : [
-    {
-      "text" : "Attaches the specified subject to this publisher.",
-      "type" : "text"
-    }
-  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -74,6 +68,20 @@
         "deprecated" : false,
         "introducedAt" : "13.0",
         "name" : "iOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "iPadOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "Mac Catalyst",
         "unavailable" : false
       },
       {
@@ -264,25 +272,6 @@
         }
       ],
       "kind" : "declarations"
-    },
-    {
-      "kind" : "parameters",
-      "parameters" : [
-        {
-          "content" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "The subject to attach to this publisher.",
-                  "type" : "text"
-                }
-              ],
-              "type" : "paragraph"
-            }
-          ],
-          "name" : "subject"
-        }
-      ]
     }
   ],
   "schemaVersion" : {
@@ -351,10 +340,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/MOCChangePublisher/subscribe(_:)-589bs": {
   "abstract" : [
-    {
-      "text" : "Attaches the specified subject to this publisher.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {

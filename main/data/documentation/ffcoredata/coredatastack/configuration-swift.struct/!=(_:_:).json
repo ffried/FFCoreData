@@ -1,10 +1,4 @@
 {
-  "abstract" : [
-    {
-      "text" : "Returns a Boolean value indicating whether two values are not equal.",
-      "type" : "text"
-    }
-  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -21,7 +15,7 @@
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "Swift",
-    "externalID" : "s:SQsE2neoiySbx_xtFZ::SYNTHESIZED::s:10FFCoreData04CoreB5StackO13ConfigurationV",
+    "externalID" : "s:SQsRi_zRi0_zrlE2neoiySbx_xtFZ::SYNTHESIZED::s:10FFCoreData04CoreB5StackO13ConfigurationV",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -52,12 +46,28 @@
         "text" : "("
       },
       {
+        "kind" : "keyword",
+        "text" : "borrowing"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
         "kind" : "typeIdentifier",
         "text" : "Self"
       },
       {
         "kind" : "text",
         "text" : ", "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "borrowing"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
       },
       {
         "kind" : "typeIdentifier",
@@ -134,6 +144,14 @@
               "text" : ": "
             },
             {
+              "kind" : "keyword",
+              "text" : "borrowing"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
               "kind" : "typeIdentifier",
               "text" : "Self"
             },
@@ -148,6 +166,14 @@
             {
               "kind" : "text",
               "text" : ": "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "borrowing"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
             },
             {
               "kind" : "typeIdentifier",
@@ -166,136 +192,6 @@
         }
       ],
       "kind" : "declarations"
-    },
-    {
-      "kind" : "parameters",
-      "parameters" : [
-        {
-          "content" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "A value to compare.",
-                  "type" : "text"
-                }
-              ],
-              "type" : "paragraph"
-            }
-          ],
-          "name" : "lhs"
-        },
-        {
-          "content" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "Another value to compare.",
-                  "type" : "text"
-                }
-              ],
-              "type" : "paragraph"
-            }
-          ],
-          "name" : "rhs"
-        }
-      ]
-    },
-    {
-      "content" : [
-        {
-          "anchor" : "discussion",
-          "level" : 2,
-          "text" : "Discussion",
-          "type" : "heading"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "Inequality is the inverse of equality. For any values ",
-              "type" : "text"
-            },
-            {
-              "code" : "a",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : " and ",
-              "type" : "text"
-            },
-            {
-              "code" : "b",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : ", ",
-              "type" : "text"
-            },
-            {
-              "code" : "a != b",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "implies that ",
-              "type" : "text"
-            },
-            {
-              "code" : "a == b",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : " is ",
-              "type" : "text"
-            },
-            {
-              "code" : "false",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : ".",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "This is the default implementation of the not-equal-to operator (",
-              "type" : "text"
-            },
-            {
-              "code" : "!=",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : ")",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "for any type that conforms to ",
-              "type" : "text"
-            },
-            {
-              "code" : "Equatable",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : ".",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        }
-      ],
-      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -395,10 +291,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreDataStack/Configuration-swift.struct/!=(_:_:)": {
   "abstract" : [
-    {
-      "text" : "Returns a Boolean value indicating whether two values are not equal.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -430,12 +323,28 @@
       "text" : "("
     },
     {
+      "kind" : "keyword",
+      "text" : "borrowing"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
       "kind" : "typeIdentifier",
       "text" : "Self"
     },
     {
       "kind" : "text",
       "text" : ", "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "borrowing"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",

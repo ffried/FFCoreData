@@ -217,21 +217,11 @@
     },
     {
       "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10FFCoreData18InvalidEntityErrorV",
-      "text" : "InvalidEntityError"
+      "text" : "(`Self`"
     },
     {
       "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10FFCoreData18InvalidEntityErrorV",
-      "text" : "InvalidEntityError"
+      "text" : ", `Self`"
     },
     {
       "kind" : "text",

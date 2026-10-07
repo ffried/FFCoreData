@@ -1,10 +1,4 @@
 {
-  "abstract" : [
-    {
-      "text" : "Publishes only elements that don’t match the previous element.",
-      "type" : "text"
-    }
-  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -118,6 +112,20 @@
       {
         "beta" : false,
         "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "iPadOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "Mac Catalyst",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
         "introducedAt" : "10.15",
         "name" : "macOS",
         "unavailable" : false
@@ -199,125 +207,6 @@
         }
       ],
       "kind" : "declarations"
-    },
-    {
-      "content" : [
-        {
-          "anchor" : "return-value",
-          "level" : 2,
-          "text" : "Return Value",
-          "type" : "heading"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "A publisher that consumes — rather than publishes — duplicate elements.",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        }
-      ],
-      "kind" : "content"
-    },
-    {
-      "content" : [
-        {
-          "anchor" : "discussion",
-          "level" : 2,
-          "text" : "Discussion",
-          "type" : "heading"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "Use ",
-              "type" : "text"
-            },
-            {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSFetchedResultsController\/Publisher\/removeDuplicates()",
-              "isActive" : true,
-              "type" : "reference"
-            },
-            {
-              "text" : " to remove repeating elements from an upstream publisher. This operator has a two-element memory: the operator uses the current and previously published elements as the basis for its comparison.",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "In the example below, ",
-              "type" : "text"
-            },
-            {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSFetchedResultsController\/Publisher\/removeDuplicates()",
-              "isActive" : true,
-              "type" : "reference"
-            },
-            {
-              "text" : " triggers on the doubled, tripled, and quadrupled occurrences of ",
-              "type" : "text"
-            },
-            {
-              "code" : "1",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : ", ",
-              "type" : "text"
-            },
-            {
-              "code" : "3",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : ", and ",
-              "type" : "text"
-            },
-            {
-              "code" : "4",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : " respectively. Because the two-element memory considers only the current element and the previous element, the operator prints the final ",
-              "type" : "text"
-            },
-            {
-              "code" : "0",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : " in the example data since its immediate predecessor is ",
-              "type" : "text"
-            },
-            {
-              "code" : "4",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : ".",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        },
-        {
-          "code" : [
-            "let numbers = [0, 1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 0]",
-            "cancellable = numbers.publisher",
-            "    .removeDuplicates()",
-            "    .sink { print(\"\\($0)\", terminator: \" \") }",
-            "",
-            "\/\/ Prints: \"0 1 2 3 4 0\""
-          ],
-          "syntax" : null,
-          "type" : "codeListing"
-        }
-      ],
-      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -461,10 +350,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSFetchedResultsController/Publisher/removeDuplicates()": {
   "abstract" : [
-    {
-      "text" : "Publishes only elements that don’t match the previous element.",
-      "type" : "text"
-    }
+
   ],
   "conformance" : {
     "availabilityPrefix" : [

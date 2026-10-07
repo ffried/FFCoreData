@@ -13,7 +13,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:10FFCoreData16MOCBlockObserverC4mode6filter5queue13fireInitially7handlerACyxGAA18MOCObservationModeO_xSo16NSOperationQueueCSbyAI_AA18MOCObservedChangesVtctcfc",
+    "externalID" : "s:10FFCoreData16MOCBlockObserverCAARi_zrlE4mode6filter5queue13fireInitially7handlerACyxGAA18MOCObservationModeO_xSo16NSOperationQueueCSbyAI_AA18MOCObservedChangesVtctcfc",
     "fragments" : [
       {
         "kind" : "identifier",
@@ -49,7 +49,16 @@
         "text" : ": "
       },
       {
+        "kind" : "keyword",
+        "text" : "consuming"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:10FFCoreData16MOCBlockObserverCAARi_zrlE6Filterxmfp",
         "text" : "Filter"
       },
       {
@@ -100,24 +109,7 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:10FFCoreData16MOCBlockObserverC",
-        "text" : "MOCBlockObserver"
-      },
-      {
-        "kind" : "text",
-        "text" : "<"
-      },
-      {
-        "kind" : "typeIdentifier",
-        "text" : "Filter"
-      },
-      {
-        "kind" : "text",
-        "text" : ">."
-      },
-      {
-        "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:10FFCoreData16MOCBlockObserverC7Handlera",
+        "preciseIdentifier" : "s:10FFCoreData16MOCBlockObserverCAARi_zrlE7Handlera",
         "text" : "Handler"
       },
       {
@@ -185,7 +177,16 @@
               "text" : ": "
             },
             {
+              "kind" : "keyword",
+              "text" : "consuming"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10FFCoreData16MOCBlockObserverCAARi_zrlE6Filterxmfp",
               "text" : "Filter"
             },
             {
@@ -236,30 +237,16 @@
             },
             {
               "kind" : "attribute",
-              "text" : "@escaping "
-            },
-            {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCBlockObserver",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10FFCoreData16MOCBlockObserverC",
-              "text" : "MOCBlockObserver"
+              "text" : "@escaping"
             },
             {
               "kind" : "text",
-              "text" : "<"
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Filter"
-            },
-            {
-              "kind" : "text",
-              "text" : ">."
+              "text" : " "
             },
             {
               "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCBlockObserver\/Handler-swift.typealias",
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10FFCoreData16MOCBlockObserverC7Handlera",
+              "preciseIdentifier" : "s:10FFCoreData16MOCBlockObserverCAARi_zrlE7Handlera",
               "text" : "Handler"
             },
             {
@@ -406,7 +393,16 @@
       "text" : ": "
     },
     {
+      "kind" : "keyword",
+      "text" : "consuming"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData16MOCBlockObserverCAARi_zrlE6Filterxmfp",
       "text" : "Filter"
     },
     {
@@ -457,24 +453,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10FFCoreData16MOCBlockObserverC",
-      "text" : "MOCBlockObserver"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Filter"
-    },
-    {
-      "kind" : "text",
-      "text" : ">."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10FFCoreData16MOCBlockObserverC7Handlera",
+      "preciseIdentifier" : "s:10FFCoreData16MOCBlockObserverCAARi_zrlE7Handlera",
       "text" : "Handler"
     },
     {

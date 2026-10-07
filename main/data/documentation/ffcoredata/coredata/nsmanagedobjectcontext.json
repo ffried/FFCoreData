@@ -94,8 +94,8 @@
       "identifiers" : [
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSManagedObjectContext\/asDecodingContext(do:)",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSManagedObjectContext\/async(do:)",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSManagedObjectContext\/run(_:)-22umb",
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSManagedObjectContext\/run(_:)-7gmqd",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSManagedObjectContext\/run(_:)-1nlpq",
+        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSManagedObjectContext\/run(_:)-48is8",
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSManagedObjectContext\/sync(do:)"
       ],
       "title" : "Instance Methods"
@@ -207,6 +207,14 @@
     },
     {
       "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "F"
+    },
+    {
+      "kind" : "text",
       "text" : ">("
     },
     {
@@ -215,7 +223,15 @@
     },
     {
       "kind" : "text",
-      "text" : ": () "
+      "text" : ": "
+    },
+    {
+      "kind" : "attribute",
+      "text" : "@Sendable"
+    },
+    {
+      "kind" : "text",
+      "text" : " () "
     },
     {
       "kind" : "keyword",
@@ -223,14 +239,28 @@
     },
     {
       "kind" : "text",
-      "text" : " -> "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "sending "
+      "text" : "("
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:So22NSManagedObjectContextC10FFCoreDataE010asDecodingC02doxxyq_YKYTXE_tq_YKs5ErrorR_Ri_zr0_lF1FL_q_mfp",
+      "text" : "F"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "sending"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:So22NSManagedObjectContextC10FFCoreDataE010asDecodingC02doxxyq_YKYTXE_tq_YKs5ErrorR_Ri_zr0_lF1TL_xmfp",
       "text" : "T"
     },
     {
@@ -239,14 +269,24 @@
     },
     {
       "kind" : "keyword",
-      "text" : "rethrows"
+      "text" : "throws"
     },
     {
       "kind" : "text",
-      "text" : " -> sending "
+      "text" : "("
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:So22NSManagedObjectContextC10FFCoreDataE010asDecodingC02doxxyq_YKYTXE_tq_YKs5ErrorR_Ri_zr0_lF1FL_q_mfp",
+      "text" : "F"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> sending "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:So22NSManagedObjectContextC10FFCoreDataE010asDecodingC02doxxyq_YKYTXE_tq_YKs5ErrorR_Ri_zr0_lF1TL_xmfp",
       "text" : "T"
     }
   ],
@@ -285,7 +325,15 @@
     },
     {
       "kind" : "text",
-      "text" : ": () -> ())"
+      "text" : ": "
+    },
+    {
+      "kind" : "attribute",
+      "text" : "@Sendable"
+    },
+    {
+      "kind" : "text",
+      "text" : " () -> ())"
     }
   ],
   "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSManagedObjectContext\/async(do:)",
@@ -342,7 +390,15 @@
     },
     {
       "kind" : "text",
-      "text" : "<any "
+      "text" : "<"
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -374,7 +430,7 @@
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/coredata\/nsmanagedobjectcontext\/decodingcontext(at:)"
 },
-"doc://FFCoreData/documentation/FFCoreData/CoreData/NSManagedObjectContext/run(_:)-22umb": {
+"doc://FFCoreData/documentation/FFCoreData/CoreData/NSManagedObjectContext/run(_:)-1nlpq": {
   "abstract" : [
 
   ],
@@ -410,7 +466,133 @@
     },
     {
       "kind" : "text",
-      "text" : ">(("
+      "text" : ">("
+    },
+    {
+      "kind" : "attribute",
+      "text" : "@Sendable"
+    },
+    {
+      "kind" : "text",
+      "text" : " () "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:So22NSManagedObjectContextC10FFCoreDataE3runyxxyq_YKYTcYaq_YKs5ErrorR_Ri_zr0_lF1FL_q_mfp",
+      "text" : "F"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "sending"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:So22NSManagedObjectContextC10FFCoreDataE3runyxxyq_YKYTcYaq_YKs5ErrorR_Ri_zr0_lF1TL_xmfp",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "async"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:So22NSManagedObjectContextC10FFCoreDataE3runyxxyq_YKYTcYaq_YKs5ErrorR_Ri_zr0_lF1FL_q_mfp",
+      "text" : "F"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> sending "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:So22NSManagedObjectContextC10FFCoreDataE3runyxxyq_YKYTcYaq_YKs5ErrorR_Ri_zr0_lF1TL_xmfp",
+      "text" : "T"
+    }
+  ],
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSManagedObjectContext\/run(_:)-1nlpq",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "run(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/ffcoredata\/coredata\/nsmanagedobjectcontext\/run(_:)-1nlpq"
+},
+"doc://FFCoreData/documentation/FFCoreData/CoreData/NSManagedObjectContext/run(_:)-48is8": {
+  "abstract" : [
+
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "run"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "F"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "attribute",
+      "text" : "@Sendable"
+    },
+    {
+      "kind" : "text",
+      "text" : " ("
     },
     {
       "kind" : "typeIdentifier",
@@ -431,6 +613,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:So22NSManagedObjectContextC10FFCoreDataE3runyxxABq_YKYTcYaq_YKs5ErrorR_Ri_zr0_lF1FL_q_mfp",
       "text" : "F"
     },
     {
@@ -439,10 +622,15 @@
     },
     {
       "kind" : "keyword",
-      "text" : "sending "
+      "text" : "sending"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:So22NSManagedObjectContextC10FFCoreDataE3runyxxABq_YKYTcYaq_YKs5ErrorR_Ri_zr0_lF1TL_xmfp",
       "text" : "T"
     },
     {
@@ -467,6 +655,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:So22NSManagedObjectContextC10FFCoreDataE3runyxxABq_YKYTcYaq_YKs5ErrorR_Ri_zr0_lF1FL_q_mfp",
       "text" : "F"
     },
     {
@@ -475,117 +664,16 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:So22NSManagedObjectContextC10FFCoreDataE3runyxxABq_YKYTcYaq_YKs5ErrorR_Ri_zr0_lF1TL_xmfp",
       "text" : "T"
     }
   ],
-  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSManagedObjectContext\/run(_:)-22umb",
+  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSManagedObjectContext\/run(_:)-48is8",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "run(_:)",
   "type" : "topic",
-  "url" : "\/documentation\/ffcoredata\/coredata\/nsmanagedobjectcontext\/run(_:)-22umb"
-},
-"doc://FFCoreData/documentation/FFCoreData/CoreData/NSManagedObjectContext/run(_:)-7gmqd": {
-  "abstract" : [
-
-  ],
-  "deprecated" : true,
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "run"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "genericParameter",
-      "text" : "T"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "genericParameter",
-      "text" : "F"
-    },
-    {
-      "kind" : "text",
-      "text" : ">(() "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "throws"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "F"
-    },
-    {
-      "kind" : "text",
-      "text" : ") -> "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "sending "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "T"
-    },
-    {
-      "kind" : "text",
-      "text" : ") "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "async"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "throws"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "F"
-    },
-    {
-      "kind" : "text",
-      "text" : ") -> sending "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "T"
-    }
-  ],
-  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreData\/NSManagedObjectContext\/run(_:)-7gmqd",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "run(_:)",
-  "type" : "topic",
-  "url" : "\/documentation\/ffcoredata\/coredata\/nsmanagedobjectcontext\/run(_:)-7gmqd"
+  "url" : "\/documentation\/ffcoredata\/coredata\/nsmanagedobjectcontext\/run(_:)-48is8"
 },
 "doc://FFCoreData/documentation/FFCoreData/CoreData/NSManagedObjectContext/sync(do:)": {
   "abstract" : [
@@ -631,7 +719,15 @@
     },
     {
       "kind" : "text",
-      "text" : ": () "
+      "text" : ": "
+    },
+    {
+      "kind" : "attribute",
+      "text" : "@Sendable"
+    },
+    {
+      "kind" : "text",
+      "text" : " () "
     },
     {
       "kind" : "keyword",
@@ -643,6 +739,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:So22NSManagedObjectContextC10FFCoreDataE4sync2doxxyq_YKYTXE_tq_YKs5ErrorR_Ri_zr0_lF1FL_q_mfp",
       "text" : "F"
     },
     {
@@ -651,10 +748,15 @@
     },
     {
       "kind" : "keyword",
-      "text" : "sending "
+      "text" : "sending"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:So22NSManagedObjectContextC10FFCoreDataE4sync2doxxyq_YKYTXE_tq_YKs5ErrorR_Ri_zr0_lF1TL_xmfp",
       "text" : "T"
     },
     {
@@ -671,6 +773,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:So22NSManagedObjectContextC10FFCoreDataE4sync2doxxyq_YKYTXE_tq_YKs5ErrorR_Ri_zr0_lF1FL_q_mfp",
       "text" : "F"
     },
     {
@@ -679,6 +782,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:So22NSManagedObjectContextC10FFCoreDataE4sync2doxxyq_YKYTXE_tq_YKs5ErrorR_Ri_zr0_lF1TL_xmfp",
       "text" : "T"
     }
   ],

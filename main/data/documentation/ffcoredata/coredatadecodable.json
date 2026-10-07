@@ -155,14 +155,6 @@
         "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodable\/findOrCreate(for:in:)"
       ],
       "title" : "Type Methods"
-    },
-    {
-      "anchor" : "Default-Implementations",
-      "generated" : true,
-      "identifiers" : [
-        "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodable\/Decodable-Implementations"
-      ],
-      "title" : "Default Implementations"
     }
   ],
   "variants" : [
@@ -270,17 +262,6 @@
   "type" : "topic",
   "url" : "\/documentation\/ffcoredata\/coredatadecodable\/dto"
 },
-"doc://FFCoreData/documentation/FFCoreData/CoreDataDecodable/Decodable-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataDecodable\/Decodable-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "Decodable Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/ffcoredata\/coredatadecodable\/decodable-implementations"
-},
 "doc://FFCoreData/documentation/FFCoreData/CoreDataDecodable/findOrCreate(for:in:)": {
   "abstract" : [
 
@@ -318,14 +299,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",
@@ -398,14 +371,6 @@
     },
     {
       "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:10FFCoreData04CoreB9DecodableP3DTOQa",
       "text" : "DTO"
     },
@@ -471,14 +436,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Self"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

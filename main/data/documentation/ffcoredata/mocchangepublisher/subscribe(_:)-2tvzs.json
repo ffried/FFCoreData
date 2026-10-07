@@ -1,10 +1,4 @@
 {
-  "abstract" : [
-    {
-      "text" : "Attaches the specified subscriber to this publisher.",
-      "type" : "text"
-    }
-  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -69,6 +63,20 @@
         "deprecated" : false,
         "introducedAt" : "13.0",
         "name" : "iOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "iPadOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "Mac Catalyst",
         "unavailable" : false
       },
       {
@@ -250,101 +258,6 @@
         }
       ],
       "kind" : "declarations"
-    },
-    {
-      "kind" : "parameters",
-      "parameters" : [
-        {
-          "content" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "The subscriber to attach to this publisher. After attaching, the subscriber can start to receive values.",
-                  "type" : "text"
-                }
-              ],
-              "type" : "paragraph"
-            }
-          ],
-          "name" : "subscriber"
-        }
-      ]
-    },
-    {
-      "content" : [
-        {
-          "anchor" : "discussion",
-          "level" : 2,
-          "text" : "Discussion",
-          "type" : "heading"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "Always call this function instead of ",
-              "type" : "text"
-            },
-            {
-              "code" : "Publisher\/receive(subscriber:)",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : ".",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "Adopters of ",
-              "type" : "text"
-            },
-            {
-              "code" : "Publisher",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : " must implement ",
-              "type" : "text"
-            },
-            {
-              "code" : "Publisher\/receive(subscriber:)",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : ". The implementation of ",
-              "type" : "text"
-            },
-            {
-              "code" : "Publisher\/subscribe(_:)-4u8kn",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : " provided by ",
-              "type" : "text"
-            },
-            {
-              "code" : "Publisher",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : " calls through to ",
-              "type" : "text"
-            },
-            {
-              "code" : "Publisher\/receive(subscriber:)",
-              "type" : "codeVoice"
-            },
-            {
-              "text" : ".",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        }
-      ],
-      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -413,10 +326,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/MOCChangePublisher/subscribe(_:)-2tvzs": {
   "abstract" : [
-    {
-      "text" : "Attaches the specified subscriber to this publisher.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {

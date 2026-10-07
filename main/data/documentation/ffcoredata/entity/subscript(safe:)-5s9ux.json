@@ -95,7 +95,15 @@
       },
       {
         "kind" : "text",
-        "text" : " _: any "
+        "text" : " _: "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "any"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
       },
       {
         "kind" : "typeIdentifier",
@@ -125,6 +133,7 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:10FFCoreData6EntityPAASo15NSManagedObjectCRbzrlE4safeqd__s24ReferenceWritableKeyPathCyxqd__G_tcluip1TL_qd__mfp",
         "text" : "T"
       },
       {
@@ -133,20 +142,13 @@
       },
       {
         "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:10FFCoreData6EntityPAASo15NSManagedObjectCRbzrlE4safeqd__s24ReferenceWritableKeyPathCyxqd__G_tcluip1TL_qd__mfp",
         "text" : "T"
       }
     ],
     "modules" : [
       {
         "name" : "FFCoreData"
-      }
-    ],
-    "platforms" : [
-      {
-        "beta" : false,
-        "deprecated" : true,
-        "message" : "Use NSManagedObjectContextIsolated instead",
-        "unavailable" : false
       }
     ],
     "remoteSource" : {
@@ -207,7 +209,15 @@
             },
             {
               "kind" : "text",
-              "text" : ": any "
+              "text" : ": "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "any"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
             },
             {
               "kind" : "typeIdentifier",
@@ -237,6 +247,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10FFCoreData6EntityPAASo15NSManagedObjectCRbzrlE4safeqd__s24ReferenceWritableKeyPathCyxqd__G_tcluip1TL_qd__mfp",
               "text" : "T"
             },
             {
@@ -245,6 +256,7 @@
             },
             {
               "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:10FFCoreData6EntityPAASo15NSManagedObjectCRbzrlE4safeqd__s24ReferenceWritableKeyPathCyxqd__G_tcluip1TL_qd__mfp",
               "text" : "T"
             },
             {
@@ -408,7 +420,15 @@
     },
     {
       "kind" : "text",
-      "text" : " _: any "
+      "text" : " _: "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -438,6 +458,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData6EntityPAASo15NSManagedObjectCRbzrlE4safeqd__s24ReferenceWritableKeyPathCyxqd__G_tcluip1TL_qd__mfp",
       "text" : "T"
     },
     {
@@ -446,6 +467,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:10FFCoreData6EntityPAASo15NSManagedObjectCRbzrlE4safeqd__s24ReferenceWritableKeyPathCyxqd__G_tcluip1TL_qd__mfp",
       "text" : "T"
     }
   ],

@@ -1,10 +1,4 @@
 {
-  "abstract" : [
-    {
-      "text" : "Transforms all elements from an upstream publisher into a new publisher up to a maximum number of publishers you specify.",
-      "type" : "text"
-    }
-  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -213,6 +207,20 @@
         "deprecated" : false,
         "introducedAt" : "14.0",
         "name" : "iOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "14.0",
+        "name" : "iPadOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "14.0",
+        "name" : "Mac Catalyst",
         "unavailable" : false
       },
       {
@@ -446,67 +454,6 @@
         }
       ],
       "kind" : "declarations"
-    },
-    {
-      "kind" : "parameters",
-      "parameters" : [
-        {
-          "content" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "Specifies the maximum number of concurrent publisher subscriptions, or ",
-                  "type" : "text"
-                },
-                {
-                  "code" : "Combine\/Subscribers\/Demand\/unlimited",
-                  "type" : "codeVoice"
-                },
-                {
-                  "text" : " if unspecified.",
-                  "type" : "text"
-                }
-              ],
-              "type" : "paragraph"
-            }
-          ],
-          "name" : "maxPublishers"
-        },
-        {
-          "content" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "A closure that takes an element as a parameter and returns a publisher that produces elements of that type.",
-                  "type" : "text"
-                }
-              ],
-              "type" : "paragraph"
-            }
-          ],
-          "name" : "transform"
-        }
-      ]
-    },
-    {
-      "content" : [
-        {
-          "anchor" : "return-value",
-          "level" : 2,
-          "text" : "Return Value",
-          "type" : "heading"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "A publisher that transforms elements from an upstream  publisher into a publisher of that element’s type.",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
-        }
-      ],
-      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -575,10 +522,7 @@
 },
 "doc://FFCoreData/documentation/FFCoreData/MOCChangePublisher/flatMap(maxPublishers:_:)-9w4gt": {
   "abstract" : [
-    {
-      "text" : "Transforms all elements from an upstream publisher into a new publisher up to a maximum number of publishers you specify.",
-      "type" : "text"
-    }
+
   ],
   "conformance" : {
     "availabilityPrefix" : [

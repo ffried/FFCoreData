@@ -87,6 +87,20 @@
       {
         "beta" : false,
         "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "iPadOS",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
+        "introducedAt" : "13.0",
+        "name" : "Mac Catalyst",
+        "unavailable" : false
+      },
+      {
+        "beta" : false,
+        "deprecated" : false,
         "introducedAt" : "10.15",
         "name" : "macOS",
         "unavailable" : false
@@ -481,6 +495,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:So26NSFetchedResultsControllerC10FFCoreDataE10ResultTypexmfp",
       "text" : "ResultType"
     },
     {
@@ -527,6 +542,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:So26NSFetchedResultsControllerC10FFCoreDataE10ResultTypexmfp",
       "text" : "ResultType"
     },
     {
@@ -597,6 +613,7 @@
     },
     {
       "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:So26NSFetchedResultsControllerC10FFCoreDataE9PublisherV7receive10subscriberyqd___t7Combine10SubscriberRd__s5Error_p7FailureRtd__SayxG5InputRtd__lF1SL_qd__mfp",
       "text" : "S"
     },
     {

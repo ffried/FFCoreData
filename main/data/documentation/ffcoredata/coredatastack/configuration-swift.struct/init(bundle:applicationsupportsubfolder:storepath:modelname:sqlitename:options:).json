@@ -119,24 +119,6 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:10FFCoreData04CoreB5StackO",
-        "text" : "CoreDataStack"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
-      },
-      {
-        "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:10FFCoreData04CoreB5StackO13ConfigurationV",
-        "text" : "Configuration"
-      },
-      {
-        "kind" : "text",
-        "text" : "."
-      },
-      {
-        "kind" : "typeIdentifier",
         "preciseIdentifier" : "s:10FFCoreData04CoreB5StackO13ConfigurationV7OptionsV",
         "text" : "Options"
       },
@@ -152,7 +134,7 @@
     ],
     "remoteSource" : {
       "fileName" : "CoreDataManager.swift",
-      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/CoreDataManager\/CoreDataManager.swift#L385"
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/CoreDataManager\/CoreDataManager.swift#L389"
     },
     "role" : "symbol",
     "roleHeading" : "Initializer",
@@ -270,26 +252,6 @@
             {
               "kind" : "text",
               "text" : ": "
-            },
-            {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10FFCoreData04CoreB5StackO",
-              "text" : "CoreDataStack"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
-            },
-            {
-              "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct",
-              "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:10FFCoreData04CoreB5StackO13ConfigurationV",
-              "text" : "Configuration"
-            },
-            {
-              "kind" : "text",
-              "text" : "."
             },
             {
               "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/CoreDataStack\/Configuration-swift.struct\/Options-swift.struct",
@@ -538,24 +500,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10FFCoreData04CoreB5StackO",
-      "text" : "CoreDataStack"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10FFCoreData04CoreB5StackO13ConfigurationV",
-      "text" : "Configuration"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
     },
     {
       "kind" : "typeIdentifier",

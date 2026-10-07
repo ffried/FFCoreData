@@ -18,14 +18,6 @@
     "externalID" : "s:So11NSPredicateC10FFCoreDataE6format9argumentsABSS_ypdtcfc",
     "fragments" : [
       {
-        "kind" : "keyword",
-        "text" : "convenience"
-      },
-      {
-        "kind" : "text",
-        "text" : " "
-      },
-      {
         "kind" : "identifier",
         "text" : "init"
       },
@@ -231,14 +223,6 @@
 
   ],
   "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "convenience"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
     {
       "kind" : "identifier",
       "text" : "init"

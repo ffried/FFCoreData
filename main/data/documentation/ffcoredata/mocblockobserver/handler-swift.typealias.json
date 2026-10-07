@@ -13,7 +13,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:10FFCoreData16MOCBlockObserverC7Handlera",
+    "externalID" : "s:10FFCoreData16MOCBlockObserverCAARi_zrlE7Handlera",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -83,15 +83,7 @@
             },
             {
               "kind" : "text",
-              "text" : "<"
-            },
-            {
-              "kind" : "typeIdentifier",
-              "text" : "Filter"
-            },
-            {
-              "kind" : "text",
-              "text" : ">, "
+              "text" : ", "
             },
             {
               "identifier" : "doc:\/\/FFCoreData\/documentation\/FFCoreData\/MOCObservedChanges",

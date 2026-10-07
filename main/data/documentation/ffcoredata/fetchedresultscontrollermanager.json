@@ -140,8 +140,7 @@
         "doc:\/\/FFCoreData\/s23CustomStringConvertibleP",
         "doc:\/\/FFCoreData\/SQ",
         "doc:\/\/FFCoreData\/SH",
-        "doc:\/\/FFCoreData\/s8SendableP",
-        "doc:\/\/FFCoreData\/s16SendableMetatypeP"
+        "doc:\/\/FFCoreData\/s8SendableP"
       ],
       "kind" : "relationships",
       "title" : "Conforms To",
@@ -344,7 +343,15 @@
     },
     {
       "kind" : "text",
-      "text" : "<any "
+      "text" : "<"
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -458,7 +465,15 @@
     },
     {
       "kind" : "text",
-      "text" : "<any "
+      "text" : "<"
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -475,7 +490,15 @@
     },
     {
       "kind" : "text",
-      "text" : ": any "
+      "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -556,7 +579,15 @@
     },
     {
       "kind" : "text",
-      "text" : "<any "
+      "text" : "<"
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -629,7 +660,15 @@
     },
     {
       "kind" : "text",
-      "text" : "<any "
+      "text" : "<"
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -676,7 +715,15 @@
     },
     {
       "kind" : "text",
-      "text" : "<any "
+      "text" : "<"
+    },
+    {
+      "kind" : "keyword",
+      "text" : "any"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -714,24 +761,15 @@
     },
     {
       "kind" : "text",
-      "text" : ": (any "
+      "text" : ": ("
     },
     {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10FFCoreData31FetchedResultsControllerManagerC",
-      "text" : "FetchedResultsControllerManager"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Result"
+      "kind" : "keyword",
+      "text" : "any"
     },
     {
       "kind" : "text",
-      "text" : ">."
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -757,7 +795,7 @@
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "var"
+      "text" : "let"
     },
     {
       "kind" : "text",
@@ -770,23 +808,6 @@
     {
       "kind" : "text",
       "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:10FFCoreData31FetchedResultsControllerManagerC",
-      "text" : "FetchedResultsControllerManager"
-    },
-    {
-      "kind" : "text",
-      "text" : "<"
-    },
-    {
-      "kind" : "typeIdentifier",
-      "text" : "Result"
-    },
-    {
-      "kind" : "text",
-      "text" : ">."
     },
     {
       "kind" : "typeIdentifier",
@@ -818,11 +839,6 @@
 "doc://FFCoreData/objc(pl)NSObject": {
   "identifier" : "doc:\/\/FFCoreData\/objc(pl)NSObject",
   "title" : "ObjectiveC.NSObjectProtocol",
-  "type" : "unresolvable"
-},
-"doc://FFCoreData/s16SendableMetatypeP": {
-  "identifier" : "doc:\/\/FFCoreData\/s16SendableMetatypeP",
-  "title" : "Swift.SendableMetatype",
   "type" : "unresolvable"
 },
 "doc://FFCoreData/s23CustomStringConvertibleP": {
