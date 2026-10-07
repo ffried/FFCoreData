@@ -56,7 +56,17 @@ extension MOCObservedChanges {
         ],
                         to: &self,
                         transformingValuesTo: Set<NSManagedObject>.self,
-                        with: { m throws(F) in try m.filter(filter).map { $0.objectID } })
+                        with: { m throws(F) in
+#if swift(>=6.4)
+            return try m.filter(filter).map { $0.objectID }
+#else
+            do {
+                return try m.filter(filter).map { $0.objectID }
+            } catch {
+                throw error as! F
+            }
+#endif
+        })
     }
 
     internal init?<Filter: MOCObserverFilter & ~Copyable>(notification: Notification, filter: borrowing Filter) {
