@@ -122,10 +122,14 @@ extension NSManagedObjectContext {
     /// - Throws: Any error thrown by `work`.
     /// - Note: The context is only registered as valid decoding context for the during the execution of `work`.
     @preconcurrency
-    public final func asDecodingContext<T>(do work: @Sendable () throws -> sending T) rethrows -> sending T {
+    public final func asDecodingContext<T: ~Copyable, F>(do work: @Sendable () throws(F) -> sending T) throws(F) -> sending T {
         NSManagedObjectContext._decodingContext = self
         defer { NSManagedObjectContext._decodingContext = nil }
-        return try sync(do: work)
+        if #available(macOS 12, iOS 12, tvOS 12, watchOS 8, *) {
+            return try performAndWaitWithTypedThrows(work)
+        } else {
+            return try sync(do: work)
+        }
     }
 }
 

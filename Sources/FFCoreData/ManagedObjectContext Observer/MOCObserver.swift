@@ -21,7 +21,7 @@
 import Foundation
 public import CoreData
 
-public protocol MOCObserverFilter: Sendable {
+public protocol MOCObserverFilter: Sendable, ~Copyable {
     func include(managedObject: NSManagedObject) -> Bool
 }
 
@@ -48,7 +48,7 @@ public struct MOCObservedChanges: Sendable {
 }
 
 extension MOCObservedChanges {
-    fileprivate init(readingFrom changes: Dictionary<AnyHashable, Any>, filteringWith filter: (NSManagedObject) throws -> Bool) rethrows {
+    fileprivate init<F>(readingFrom changes: Dictionary<AnyHashable, Any>, filteringWith filter: (NSManagedObject) throws(F) -> Bool) throws(F) {
         try changes.map(keysToKeyPaths: [
             (NSInsertedObjectsKey, \.inserted),
             (NSUpdatedObjectsKey, \.updated),
@@ -56,23 +56,27 @@ extension MOCObservedChanges {
         ],
                         to: &self,
                         transformingValuesTo: Set<NSManagedObject>.self,
-                        with: { try $0.filter(filter).map { $0.objectID } })
+                        with: { m throws(F) in try m.filter(filter).map { $0.objectID } })
     }
 
-    internal init?<Filter: MOCObserverFilter>(notification: Notification, filter: Filter) {
+    internal init?<Filter: MOCObserverFilter & ~Copyable>(notification: Notification, filter: borrowing Filter) {
         assert(notification.name == .NSManagedObjectContextObjectsDidChange)
         guard let userInfo = notification.userInfo else { return nil }
-        self.init(readingFrom: userInfo, filteringWith: filter.include)
+        self.init(readingFrom: userInfo, filteringWith: { filter.include(managedObject: $0) })
     }
 }
 
 fileprivate extension Dictionary {
-    func map<Input, Output, Object>(keysToKeyPaths: Array<(key: Key, keyPath: WritableKeyPath<Object, Output>)>,
-                                    to object: inout Object,
-                                    transformingValuesTo input: Input.Type = Input.self,
-                                    with transformClosure: (Input) throws -> Output) rethrows {
-        try keysToKeyPaths.lazy
-            .compactMap { mapping in (self[mapping.key] as? Input).map { (input: $0, keyPath: mapping.keyPath) } }
-            .forEach { object[keyPath: $0.keyPath] = try transformClosure($0.input) }
+    func map<Input, Output, Object, Failure>(keysToKeyPaths: Array<(key: Key, keyPath: WritableKeyPath<Object, Output>)>,
+                                             to object: inout Object,
+                                             transformingValuesTo input: Input.Type = Input.self,
+                                             with transformClosure: (Input) throws(Failure) -> Output) throws(Failure) {
+        do {
+            try keysToKeyPaths.lazy
+                .compactMap { mapping in (self[mapping.key] as? Input).map { (input: $0, keyPath: mapping.keyPath) } }
+                .forEach { object[keyPath: $0.keyPath] = try transformClosure($0.input) }
+        } catch {
+            throw error as! Failure
+        }
     }
 }

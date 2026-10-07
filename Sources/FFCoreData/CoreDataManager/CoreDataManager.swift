@@ -221,12 +221,16 @@ public enum CoreDataStack {
         if #available(macOS 12, iOS 15, tvOS 15, watchOS 8, *) {
             guard await context.perform({ context._save(rollbackOnError: rollback) }) else { return false }
         } else {
-            guard await context.run({ context._save(rollbackOnError: rollback) }) else { return false }
+            guard await context.run({ $0._save(rollbackOnError: rollback) }) else { return false }
         }
         guard let parent = context.parent else { return true }
         let success = await saveContext(parent, rollback: rollback)
         if !success && rollback {
-            await context.run { $0.rollback() }
+            if #available(macOS 12, iOS 15, tvOS 15, watchOS 8, *) {
+                await context.perform { context.rollback() }
+            } else {
+                await context.run { $0.rollback() }
+            }
         }
         return success
     }

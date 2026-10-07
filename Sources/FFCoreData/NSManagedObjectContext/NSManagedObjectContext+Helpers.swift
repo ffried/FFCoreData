@@ -24,24 +24,55 @@ public import CoreData
 extension NSManagedObjectContext: @retroactive @unchecked Sendable {}
 #endif
 
+#if swift(>=6.2)
+@safe
+fileprivate struct NonCopyableWrapper<T: ~Copyable> {
+    private let valuePtr: UnsafeMutablePointer<T>
+
+    init(value: consuming T) {
+        unsafe valuePtr = .allocate(capacity: 1)
+        unsafe valuePtr.initialize(to: value)
+    }
+
+    consuming func consume() -> T {
+        defer { unsafe valuePtr.deallocate() }
+        return unsafe valuePtr.move()
+    }
+}
+#else
+fileprivate struct NonCopyableWrapper<T: ~Copyable> {
+    private let valuePtr: UnsafeMutablePointer<T>
+
+    init(value: consuming T) {
+        valuePtr = .allocate(capacity: 1)
+        valuePtr.initialize(to: value)
+    }
+
+    /*consuming*/ func consume() -> T {
+        defer { valuePtr.deallocate() }
+        return valuePtr.move()
+    }
+}
+#endif
+
 @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
 extension NSManagedObjectContext {
-    internal final nonisolated func performAndWaitWithTypedThrows<T, F>(
+    internal final nonisolated func performAndWaitWithTypedThrows<T: ~Copyable, F>(
         _ work: @Sendable () throws(F) -> sending T
     ) throws(F) -> sending T {
         do {
-            return try performAndWait { try work() }
+            return try performAndWait { NonCopyableWrapper(value: try work()) }.consume()
         } catch {
             throw error as! F
         }
     }
 
-    internal final nonisolated func performWithTypedThrows<T, F>(
+    internal final nonisolated func performWithTypedThrows<T: ~Copyable, F>(
         schedule: sending NSManagedObjectContext.ScheduledTaskType = .immediate,
         _ work: @Sendable @escaping () throws(F) -> sending T
     ) async throws(F) -> sending T {
         do {
-            return try await perform(schedule: schedule) { try work() }
+            return try await perform(schedule: schedule) { NonCopyableWrapper(value: try work()) }.consume()
         } catch {
             throw error as! F
         }
@@ -50,14 +81,14 @@ extension NSManagedObjectContext {
 
 #if compiler(>=6.2)
 @safe
-fileprivate final class UnsafeLaterInitialized<V>: @unchecked Sendable {
+fileprivate final class UnsafeLaterInitialized<V: ~Copyable>: @unchecked Sendable {
     private let ptr: UnsafeMutablePointer<V>
 
     init() {
         unsafe ptr = .allocate(capacity: 1)
     }
 
-    func initialize(with value: V) {
+    func initialize(with value: consuming V) {
         unsafe ptr.initialize(to: value)
     }
 
@@ -70,14 +101,14 @@ fileprivate final class UnsafeLaterInitialized<V>: @unchecked Sendable {
     }
 }
 #else
-fileprivate final class UnsafeLaterInitialized<V>: @unchecked Sendable {
+fileprivate final class UnsafeLaterInitialized<V: ~Copyable>: @unchecked Sendable {
     private let ptr: UnsafeMutablePointer<V>
 
     init() {
         ptr = .allocate(capacity: 1)
     }
 
-    func initialize(with value: V) {
+    func initialize(with value: consuming V) {
         ptr.initialize(to: value)
     }
 
@@ -97,7 +128,7 @@ extension NSManagedObjectContext {
     @available(iOS, deprecated: 15, message: "Use performAndWait", renamed: "performAndWait")
     @available(tvOS, deprecated: 15, message: "Use performAndWait", renamed: "performAndWait")
     @available(watchOS, deprecated: 8, message: "Use performAndWait", renamed: "performAndWait")
-    public nonisolated final func sync<T, F>(do work: @Sendable () throws(F) -> sending T) throws(F) -> sending T {
+    public nonisolated final func sync<T: ~Copyable, F>(do work: @Sendable () throws(F) -> sending T) throws(F) -> sending T {
         let result = UnsafeLaterInitialized<Result<T, F>>()
         performAndWait {
             result.initialize(with: Result(catching: work))
@@ -119,25 +150,25 @@ extension NSManagedObjectContext {
 @available(watchOS, introduced: 6, deprecated: 8, message: "Use perform")
 extension NSManagedObjectContext {
     @preconcurrency
-    public nonisolated final func run<T, F>(_ work: @escaping @Sendable (NSManagedObjectContext) throws(F) -> sending T) async throws(F) -> sending T {
+    public nonisolated final func run<T: ~Copyable, F>(_ work: @escaping @Sendable (NSManagedObjectContext) throws(F) -> sending T) async throws(F) -> sending T {
 #if compiler(>=6.2)
-        unsafe try await withUnsafeContinuation { (continuation: UnsafeContinuation<Result<T, F>, Never>) in
+        unsafe try await withUnsafeContinuation { (continuation: UnsafeContinuation<NonCopyableWrapper<Result<T, F>>, Never>) in
             perform {
-                unsafe continuation.resume(returning: .init(catching: { () throws(F) -> T in try work(self) }))
+                unsafe continuation.resume(returning: .init(value: .init(catching: { () throws(F) -> T in try work(self) })))
             }
-        }.get()
+        }.consume().get()
 #else
-        try await withUnsafeContinuation { (continuation: UnsafeContinuation<Result<T, F>, Never>) in
+        try await withUnsafeContinuation { (continuation: UnsafeContinuation<NonCopyableWrapper<Result<T, F>>, Never>) in
             perform {
-                continuation.resume(returning: .init(catching: { () throws(F) -> T in try work(self) }))
+                continuation.resume(returning: .init(value: .init(catching: { () throws(F) -> T in try work(self) })))
             }
-        }.get()
+        }.consume().get()
 #endif
     }
 
     @inlinable
     @preconcurrency
-    public nonisolated final func run<T, F>(_ work: @escaping @Sendable () throws(F) -> sending T) async throws(F) -> sending T {
+    public nonisolated final func run<T: ~Copyable, F>(_ work: @escaping @Sendable () throws(F) -> sending T) async throws(F) -> sending T {
         try await run { (_) throws(F) -> T in try work() }
     }
 }

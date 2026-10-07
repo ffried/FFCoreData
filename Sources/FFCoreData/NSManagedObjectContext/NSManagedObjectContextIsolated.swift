@@ -91,7 +91,7 @@ public struct NSManagedObjectContextIsolated<Value: ~Copyable>: @unchecked Senda
             self[dynamicMember: member] = newValue
         }
 
-        public func withValue<T, F>(do work: @Sendable (borrowing Value) throws(F) -> sending T) throws(F) -> sending T {
+        public func withValue<T: ~Copyable, F>(do work: @Sendable (borrowing Value) throws(F) -> sending T) throws(F) -> sending T {
             if #available(macOS 12, iOS 15, tvOS 15, watchOS 8, *) {
                 try context.performAndWaitWithTypedThrows { () throws(F) -> sending T in try work(value) }
             } else {
@@ -172,7 +172,7 @@ public struct NSManagedObjectContextIsolated<Value: ~Copyable>: @unchecked Senda
     }
 
     @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
-    public func perform<T, F>(do work: @escaping @Sendable (borrowing Value) throws(F) -> sending T) async throws(F) -> sending T
+    public func perform<T: ~Copyable, F>(do work: @escaping @Sendable (borrowing Value) throws(F) -> sending T) async throws(F) -> sending T
     where Value: Copyable
     {
         try await context.performWithTypedThrows { () throws(F) -> sending T in try work(value) }

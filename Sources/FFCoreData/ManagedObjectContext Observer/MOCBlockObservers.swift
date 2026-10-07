@@ -22,7 +22,7 @@ import Foundation
 public import CoreData
 
 @available(*, noasync, message: "Use MOCChanges instead")
-public final class MOCBlockObserver<Filter: MOCObserverFilter> {
+public final class MOCBlockObserver<Filter: MOCObserverFilter & ~Copyable> {
     public typealias Handler = (MOCBlockObserver, MOCObservedChanges) -> ()
 
     public let mode: MOCObservationMode
@@ -34,7 +34,7 @@ public final class MOCBlockObserver<Filter: MOCObserverFilter> {
     private var observers = Array<any NSObjectProtocol>()
 
     public init(mode: MOCObservationMode,
-                filter: Filter,
+                filter: consuming Filter,
                 queue: OperationQueue = .current ?? .main,
                 fireInitially: Bool,
                 handler: @escaping Handler) {
