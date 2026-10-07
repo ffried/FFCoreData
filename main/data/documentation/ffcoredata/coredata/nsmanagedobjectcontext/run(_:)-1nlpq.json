@@ -199,7 +199,7 @@
     ],
     "remoteSource" : {
       "fileName" : "NSManagedObjectContext+Helpers.swift",
-      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObjectContext\/NSManagedObjectContext+Helpers.swift#L171"
+      "url" : "https:\/\/github.com\/ffried\/FFCoreData\/blob\/refs\/heads\/main\/Sources\/FFCoreData\/NSManagedObjectContext\/NSManagedObjectContext+Helpers.swift#L177"
     },
     "role" : "symbol",
     "roleHeading" : "Instance Method",
