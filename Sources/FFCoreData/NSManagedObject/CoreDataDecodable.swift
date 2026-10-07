@@ -125,7 +125,7 @@ extension NSManagedObjectContext {
     public final func asDecodingContext<T: ~Copyable, F>(do work: @Sendable () throws(F) -> sending T) throws(F) -> sending T {
         NSManagedObjectContext._decodingContext = self
         defer { NSManagedObjectContext._decodingContext = nil }
-        if #available(macOS 12, iOS 12, tvOS 12, watchOS 8, *) {
+        if #available(macOS 12, iOS 15, tvOS 15, watchOS 8, *) {
             return try performAndWaitWithTypedThrows(work)
         } else {
             return try sync(do: work)
